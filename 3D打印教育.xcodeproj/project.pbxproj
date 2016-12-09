@@ -17,6 +17,9 @@
 		7485FB191DF90A1B00E6D23D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7485FB171DF90A1B00E6D23D /* LaunchScreen.storyboard */; };
 		7485FB241DF90A1B00E6D23D /* _D____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB231DF90A1B00E6D23D /* _D____Tests.m */; };
 		7485FB2F1DF90A1B00E6D23D /* _D____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB2E1DF90A1B00E6D23D /* _D____UITests.m */; };
+		7485FB4A1DFA831E00E6D23D /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB491DFA831E00E6D23D /* Constants.m */; };
+		7485FB521DFA8CCC00E6D23D /* LCNavigationStackService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB511DFA8CCC00E6D23D /* LCNavigationStackService.m */; };
+		7485FB551DFA8FCD00E6D23D /* BaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB541DFA8FCD00E6D23D /* BaseViewModel.m */; };
 		D2781A4C36A2A69961E1662A /* libPods-3D打印教育.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C89CD1AB96CEC93A8A4619C /* libPods-3D打印教育.a */; };
 /* End PBXBuildFile section */
 
@@ -54,11 +57,20 @@
 		7485FB181DF90A1B00E6D23D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7485FB1A1DF90A1B00E6D23D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7485FB1F1DF90A1B00E6D23D /* 3D打印教育Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "3D打印教育Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7485FB231DF90A1B00E6D23D /* _D____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _D____Tests.m; sourceTree = "<group>"; };
+		7485FB231DF90A1B00E6D23D /* _D____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_D____Tests.m"; sourceTree = "<group>"; };
 		7485FB251DF90A1B00E6D23D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7485FB2A1DF90A1B00E6D23D /* 3D打印教育UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "3D打印教育UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7485FB2E1DF90A1B00E6D23D /* _D____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _D____UITests.m; sourceTree = "<group>"; };
+		7485FB2E1DF90A1B00E6D23D /* _D____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_D____UITests.m"; sourceTree = "<group>"; };
 		7485FB301DF90A1B00E6D23D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7485FB461DFA7EBE00E6D23D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		7485FB471DFA81F400E6D23D /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		7485FB481DFA831E00E6D23D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		7485FB491DFA831E00E6D23D /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		7485FB501DFA8CCC00E6D23D /* LCNavigationStackService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNavigationStackService.h; sourceTree = "<group>"; };
+		7485FB511DFA8CCC00E6D23D /* LCNavigationStackService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNavigationStackService.m; sourceTree = "<group>"; };
+		7485FB531DFA8FCD00E6D23D /* BaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewModel.h; sourceTree = "<group>"; };
+		7485FB541DFA8FCD00E6D23D /* BaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewModel.m; sourceTree = "<group>"; };
+		7485FB561DFA90BA00E6D23D /* LCNavigationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNavigationProtocol.h; sourceTree = "<group>"; };
 		927A6CCB0A9DACC2135DFAB3 /* Pods-3D打印教育.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育.release.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育/Pods-3D打印教育.release.xcconfig"; sourceTree = "<group>"; };
 		A3F85E570F0B86617C398C40 /* Pods-3D打印教育UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育UITests/Pods-3D打印教育UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CAC66B562E4D4586217D7131 /* Pods-3D打印教育Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育Tests/Pods-3D打印教育Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +118,10 @@
 		7485FAFD1DF90A1B00E6D23D = {
 			isa = PBXGroup;
 			children = (
+				7485FB3C1DFA7A1B00E6D23D /* Macro */,
+				7485FB401DFA7B0000E6D23D /* Util */,
+				7485FB3E1DFA7A8700E6D23D /* BaseClass */,
+				7485FB3F1DFA7AD700E6D23D /* Vendor */,
 				7485FB081DF90A1B00E6D23D /* 3D打印教育 */,
 				7485FB221DF90A1B00E6D23D /* 3D打印教育Tests */,
 				7485FB2D1DF90A1B00E6D23D /* 3D打印教育UITests */,
@@ -130,12 +146,8 @@
 			children = (
 				7485FB0C1DF90A1B00E6D23D /* AppDelegate.h */,
 				7485FB0D1DF90A1B00E6D23D /* AppDelegate.m */,
-				7485FB0F1DF90A1B00E6D23D /* ViewController.h */,
-				7485FB101DF90A1B00E6D23D /* ViewController.m */,
-				7485FB121DF90A1B00E6D23D /* Main.storyboard */,
 				7485FB151DF90A1B00E6D23D /* Assets.xcassets */,
-				7485FB171DF90A1B00E6D23D /* LaunchScreen.storyboard */,
-				7485FB1A1DF90A1B00E6D23D /* Info.plist */,
+				7485FB411DFA7C9B00E6D23D /* Section */,
 				7485FB091DF90A1B00E6D23D /* Supporting Files */,
 			);
 			path = "3D打印教育";
@@ -144,6 +156,12 @@
 		7485FB091DF90A1B00E6D23D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7485FB0F1DF90A1B00E6D23D /* ViewController.h */,
+				7485FB101DF90A1B00E6D23D /* ViewController.m */,
+				7485FB461DFA7EBE00E6D23D /* PrefixHeader.pch */,
+				7485FB121DF90A1B00E6D23D /* Main.storyboard */,
+				7485FB171DF90A1B00E6D23D /* LaunchScreen.storyboard */,
+				7485FB1A1DF90A1B00E6D23D /* Info.plist */,
 				7485FB0A1DF90A1B00E6D23D /* main.m */,
 			);
 			name = "Supporting Files";
@@ -165,6 +183,121 @@
 				7485FB301DF90A1B00E6D23D /* Info.plist */,
 			);
 			path = "3D打印教育UITests";
+			sourceTree = "<group>";
+		};
+		7485FB3C1DFA7A1B00E6D23D /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				7485FB471DFA81F400E6D23D /* Macro.h */,
+				7485FB481DFA831E00E6D23D /* Constants.h */,
+				7485FB491DFA831E00E6D23D /* Constants.m */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		7485FB3E1DFA7A8700E6D23D /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				7485FB4C1DFA8BF300E6D23D /* BaseProtocol */,
+				7485FB4B1DFA8BF300E6D23D /* BaseModel */,
+				7485FB4F1DFA8BF300E6D23D /* BaseViewModel */,
+				7485FB4D1DFA8BF300E6D23D /* BaseView */,
+				7485FB4E1DFA8BF300E6D23D /* BaseViewController */,
+				7485FB501DFA8CCC00E6D23D /* LCNavigationStackService.h */,
+				7485FB511DFA8CCC00E6D23D /* LCNavigationStackService.m */,
+			);
+			path = BaseClass;
+			sourceTree = "<group>";
+		};
+		7485FB3F1DFA7AD700E6D23D /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		7485FB401DFA7B0000E6D23D /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		7485FB411DFA7C9B00E6D23D /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				7485FB421DFA7DBF00E6D23D /* Home */,
+				7485FB431DFA7DBF00E6D23D /* MyCourse */,
+				7485FB441DFA7DBF00E6D23D /* News */,
+				7485FB451DFA7DBF00E6D23D /* PersonalCenter */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
+		7485FB421DFA7DBF00E6D23D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7485FB431DFA7DBF00E6D23D /* MyCourse */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MyCourse;
+			sourceTree = "<group>";
+		};
+		7485FB441DFA7DBF00E6D23D /* News */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		7485FB451DFA7DBF00E6D23D /* PersonalCenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PersonalCenter;
+			sourceTree = "<group>";
+		};
+		7485FB4B1DFA8BF300E6D23D /* BaseModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BaseModel;
+			sourceTree = "<group>";
+		};
+		7485FB4C1DFA8BF300E6D23D /* BaseProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				7485FB561DFA90BA00E6D23D /* LCNavigationProtocol.h */,
+			);
+			path = BaseProtocol;
+			sourceTree = "<group>";
+		};
+		7485FB4D1DFA8BF300E6D23D /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BaseView;
+			sourceTree = "<group>";
+		};
+		7485FB4E1DFA8BF300E6D23D /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		7485FB4F1DFA8BF300E6D23D /* BaseViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7485FB531DFA8FCD00E6D23D /* BaseViewModel.h */,
+				7485FB541DFA8FCD00E6D23D /* BaseViewModel.m */,
+			);
+			path = BaseViewModel;
 			sourceTree = "<group>";
 		};
 		7CF7E8E8EEADEF4A3F51B948 /* Pods */ = {
@@ -361,7 +494,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		532337754077B5F6A324933C /* [CP] Check Pods Manifest.lock */ = {
@@ -376,7 +509,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		619936B583BA30E448F7D56E /* [CP] Check Pods Manifest.lock */ = {
@@ -391,7 +524,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		7AE78CE43A9ABD8F55A3F6B8 /* [CP] Copy Pods Resources */ = {
@@ -462,8 +595,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7485FB111DF90A1B00E6D23D /* ViewController.m in Sources */,
+				7485FB551DFA8FCD00E6D23D /* BaseViewModel.m in Sources */,
 				7485FB0E1DF90A1B00E6D23D /* AppDelegate.m in Sources */,
+				7485FB521DFA8CCC00E6D23D /* LCNavigationStackService.m in Sources */,
 				7485FB0B1DF90A1B00E6D23D /* main.m in Sources */,
+				7485FB4A1DFA831E00E6D23D /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,6 +750,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = U7UTR28EZN;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "3D打印教育/PrefixHeader.pch";
 				INFOPLIST_FILE = "3D打印教育/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -628,6 +766,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = U7UTR28EZN;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "3D打印教育/PrefixHeader.pch";
 				INFOPLIST_FILE = "3D打印教育/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -705,6 +845,7 @@
 				7485FB351DF90A1B00E6D23D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7485FB361DF90A1B00E6D23D /* Build configuration list for PBXNativeTarget "3D打印教育Tests" */ = {
 			isa = XCConfigurationList;
@@ -713,6 +854,7 @@
 				7485FB381DF90A1B00E6D23D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7485FB391DF90A1B00E6D23D /* Build configuration list for PBXNativeTarget "3D打印教育UITests" */ = {
 			isa = XCConfigurationList;
@@ -721,6 +863,7 @@
 				7485FB3B1DF90A1B00E6D23D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
