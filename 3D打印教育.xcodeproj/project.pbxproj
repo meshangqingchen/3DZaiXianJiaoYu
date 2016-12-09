@@ -1,0 +1,728 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0F11177C443D027DA922D87D /* libPods-3D打印教育UITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DBF95BA3B50A72F1D90E98 /* libPods-3D打印教育UITests.a */; };
+		50B60F3078357F2892DCCBBE /* libPods-3D打印教育Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07292B1A3BBA36271BE58103 /* libPods-3D打印教育Tests.a */; };
+		7485FB0B1DF90A1B00E6D23D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB0A1DF90A1B00E6D23D /* main.m */; };
+		7485FB0E1DF90A1B00E6D23D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB0D1DF90A1B00E6D23D /* AppDelegate.m */; };
+		7485FB111DF90A1B00E6D23D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB101DF90A1B00E6D23D /* ViewController.m */; };
+		7485FB141DF90A1B00E6D23D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7485FB121DF90A1B00E6D23D /* Main.storyboard */; };
+		7485FB161DF90A1B00E6D23D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7485FB151DF90A1B00E6D23D /* Assets.xcassets */; };
+		7485FB191DF90A1B00E6D23D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7485FB171DF90A1B00E6D23D /* LaunchScreen.storyboard */; };
+		7485FB241DF90A1B00E6D23D /* _D____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB231DF90A1B00E6D23D /* _D____Tests.m */; };
+		7485FB2F1DF90A1B00E6D23D /* _D____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB2E1DF90A1B00E6D23D /* _D____UITests.m */; };
+		D2781A4C36A2A69961E1662A /* libPods-3D打印教育.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C89CD1AB96CEC93A8A4619C /* libPods-3D打印教育.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7485FB201DF90A1B00E6D23D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7485FAFE1DF90A1B00E6D23D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7485FB051DF90A1B00E6D23D;
+			remoteInfo = "3D打印教育";
+		};
+		7485FB2B1DF90A1B00E6D23D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7485FAFE1DF90A1B00E6D23D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7485FB051DF90A1B00E6D23D;
+			remoteInfo = "3D打印教育";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07292B1A3BBA36271BE58103 /* libPods-3D打印教育Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-3D打印教育Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		192E2E0F89E7F4F69C76271E /* Pods-3D打印教育.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育.debug.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育/Pods-3D打印教育.debug.xcconfig"; sourceTree = "<group>"; };
+		1C89CD1AB96CEC93A8A4619C /* libPods-3D打印教育.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-3D打印教育.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		32876FEFACD3DB506A734AC0 /* Pods-3D打印教育UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育UITests/Pods-3D打印教育UITests.release.xcconfig"; sourceTree = "<group>"; };
+		4AB760ED2370B73D2088A043 /* Pods-3D打印教育Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育Tests/Pods-3D打印教育Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		7485FB061DF90A1B00E6D23D /* 3D打印教育.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "3D打印教育.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7485FB0A1DF90A1B00E6D23D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7485FB0C1DF90A1B00E6D23D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7485FB0D1DF90A1B00E6D23D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7485FB0F1DF90A1B00E6D23D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7485FB101DF90A1B00E6D23D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7485FB131DF90A1B00E6D23D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7485FB151DF90A1B00E6D23D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7485FB181DF90A1B00E6D23D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7485FB1A1DF90A1B00E6D23D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7485FB1F1DF90A1B00E6D23D /* 3D打印教育Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "3D打印教育Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7485FB231DF90A1B00E6D23D /* _D____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _D____Tests.m; sourceTree = "<group>"; };
+		7485FB251DF90A1B00E6D23D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7485FB2A1DF90A1B00E6D23D /* 3D打印教育UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "3D打印教育UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7485FB2E1DF90A1B00E6D23D /* _D____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _D____UITests.m; sourceTree = "<group>"; };
+		7485FB301DF90A1B00E6D23D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		927A6CCB0A9DACC2135DFAB3 /* Pods-3D打印教育.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育.release.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育/Pods-3D打印教育.release.xcconfig"; sourceTree = "<group>"; };
+		A3F85E570F0B86617C398C40 /* Pods-3D打印教育UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育UITests/Pods-3D打印教育UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CAC66B562E4D4586217D7131 /* Pods-3D打印教育Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育Tests/Pods-3D打印教育Tests.release.xcconfig"; sourceTree = "<group>"; };
+		E3DBF95BA3B50A72F1D90E98 /* libPods-3D打印教育UITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-3D打印教育UITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7485FB031DF90A1B00E6D23D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2781A4C36A2A69961E1662A /* libPods-3D打印教育.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7485FB1C1DF90A1B00E6D23D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50B60F3078357F2892DCCBBE /* libPods-3D打印教育Tests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7485FB271DF90A1B00E6D23D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F11177C443D027DA922D87D /* libPods-3D打印教育UITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		223AB18E1706D100774B32C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C89CD1AB96CEC93A8A4619C /* libPods-3D打印教育.a */,
+				07292B1A3BBA36271BE58103 /* libPods-3D打印教育Tests.a */,
+				E3DBF95BA3B50A72F1D90E98 /* libPods-3D打印教育UITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7485FAFD1DF90A1B00E6D23D = {
+			isa = PBXGroup;
+			children = (
+				7485FB081DF90A1B00E6D23D /* 3D打印教育 */,
+				7485FB221DF90A1B00E6D23D /* 3D打印教育Tests */,
+				7485FB2D1DF90A1B00E6D23D /* 3D打印教育UITests */,
+				7485FB071DF90A1B00E6D23D /* Products */,
+				7CF7E8E8EEADEF4A3F51B948 /* Pods */,
+				223AB18E1706D100774B32C3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7485FB071DF90A1B00E6D23D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7485FB061DF90A1B00E6D23D /* 3D打印教育.app */,
+				7485FB1F1DF90A1B00E6D23D /* 3D打印教育Tests.xctest */,
+				7485FB2A1DF90A1B00E6D23D /* 3D打印教育UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7485FB081DF90A1B00E6D23D /* 3D打印教育 */ = {
+			isa = PBXGroup;
+			children = (
+				7485FB0C1DF90A1B00E6D23D /* AppDelegate.h */,
+				7485FB0D1DF90A1B00E6D23D /* AppDelegate.m */,
+				7485FB0F1DF90A1B00E6D23D /* ViewController.h */,
+				7485FB101DF90A1B00E6D23D /* ViewController.m */,
+				7485FB121DF90A1B00E6D23D /* Main.storyboard */,
+				7485FB151DF90A1B00E6D23D /* Assets.xcassets */,
+				7485FB171DF90A1B00E6D23D /* LaunchScreen.storyboard */,
+				7485FB1A1DF90A1B00E6D23D /* Info.plist */,
+				7485FB091DF90A1B00E6D23D /* Supporting Files */,
+			);
+			path = "3D打印教育";
+			sourceTree = "<group>";
+		};
+		7485FB091DF90A1B00E6D23D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7485FB0A1DF90A1B00E6D23D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7485FB221DF90A1B00E6D23D /* 3D打印教育Tests */ = {
+			isa = PBXGroup;
+			children = (
+				7485FB231DF90A1B00E6D23D /* _D____Tests.m */,
+				7485FB251DF90A1B00E6D23D /* Info.plist */,
+			);
+			path = "3D打印教育Tests";
+			sourceTree = "<group>";
+		};
+		7485FB2D1DF90A1B00E6D23D /* 3D打印教育UITests */ = {
+			isa = PBXGroup;
+			children = (
+				7485FB2E1DF90A1B00E6D23D /* _D____UITests.m */,
+				7485FB301DF90A1B00E6D23D /* Info.plist */,
+			);
+			path = "3D打印教育UITests";
+			sourceTree = "<group>";
+		};
+		7CF7E8E8EEADEF4A3F51B948 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				192E2E0F89E7F4F69C76271E /* Pods-3D打印教育.debug.xcconfig */,
+				927A6CCB0A9DACC2135DFAB3 /* Pods-3D打印教育.release.xcconfig */,
+				4AB760ED2370B73D2088A043 /* Pods-3D打印教育Tests.debug.xcconfig */,
+				CAC66B562E4D4586217D7131 /* Pods-3D打印教育Tests.release.xcconfig */,
+				A3F85E570F0B86617C398C40 /* Pods-3D打印教育UITests.debug.xcconfig */,
+				32876FEFACD3DB506A734AC0 /* Pods-3D打印教育UITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7485FB051DF90A1B00E6D23D /* 3D打印教育 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7485FB331DF90A1B00E6D23D /* Build configuration list for PBXNativeTarget "3D打印教育" */;
+			buildPhases = (
+				532337754077B5F6A324933C /* [CP] Check Pods Manifest.lock */,
+				7485FB021DF90A1B00E6D23D /* Sources */,
+				7485FB031DF90A1B00E6D23D /* Frameworks */,
+				7485FB041DF90A1B00E6D23D /* Resources */,
+				877FBBA6146E3B3185CD48EF /* [CP] Embed Pods Frameworks */,
+				7AE78CE43A9ABD8F55A3F6B8 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "3D打印教育";
+			productName = "3D打印教育";
+			productReference = 7485FB061DF90A1B00E6D23D /* 3D打印教育.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7485FB1E1DF90A1B00E6D23D /* 3D打印教育Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7485FB361DF90A1B00E6D23D /* Build configuration list for PBXNativeTarget "3D打印教育Tests" */;
+			buildPhases = (
+				4BBBB38BBED76BA1DE282399 /* [CP] Check Pods Manifest.lock */,
+				7485FB1B1DF90A1B00E6D23D /* Sources */,
+				7485FB1C1DF90A1B00E6D23D /* Frameworks */,
+				7485FB1D1DF90A1B00E6D23D /* Resources */,
+				E4DC6824D3F643E038E52226 /* [CP] Embed Pods Frameworks */,
+				D13A16ACF1D3D2932B80EFC4 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7485FB211DF90A1B00E6D23D /* PBXTargetDependency */,
+			);
+			name = "3D打印教育Tests";
+			productName = "3D打印教育Tests";
+			productReference = 7485FB1F1DF90A1B00E6D23D /* 3D打印教育Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7485FB291DF90A1B00E6D23D /* 3D打印教育UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7485FB391DF90A1B00E6D23D /* Build configuration list for PBXNativeTarget "3D打印教育UITests" */;
+			buildPhases = (
+				619936B583BA30E448F7D56E /* [CP] Check Pods Manifest.lock */,
+				7485FB261DF90A1B00E6D23D /* Sources */,
+				7485FB271DF90A1B00E6D23D /* Frameworks */,
+				7485FB281DF90A1B00E6D23D /* Resources */,
+				011FDC1ABED455CEBB315900 /* [CP] Embed Pods Frameworks */,
+				198D19703BA9003D522758A9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7485FB2C1DF90A1B00E6D23D /* PBXTargetDependency */,
+			);
+			name = "3D打印教育UITests";
+			productName = "3D打印教育UITests";
+			productReference = 7485FB2A1DF90A1B00E6D23D /* 3D打印教育UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7485FAFE1DF90A1B00E6D23D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = 3D;
+				TargetAttributes = {
+					7485FB051DF90A1B00E6D23D = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = U7UTR28EZN;
+						ProvisioningStyle = Automatic;
+					};
+					7485FB1E1DF90A1B00E6D23D = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7485FB051DF90A1B00E6D23D;
+					};
+					7485FB291DF90A1B00E6D23D = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7485FB051DF90A1B00E6D23D;
+					};
+				};
+			};
+			buildConfigurationList = 7485FB011DF90A1B00E6D23D /* Build configuration list for PBXProject "3D打印教育" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7485FAFD1DF90A1B00E6D23D;
+			productRefGroup = 7485FB071DF90A1B00E6D23D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7485FB051DF90A1B00E6D23D /* 3D打印教育 */,
+				7485FB1E1DF90A1B00E6D23D /* 3D打印教育Tests */,
+				7485FB291DF90A1B00E6D23D /* 3D打印教育UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7485FB041DF90A1B00E6D23D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7485FB191DF90A1B00E6D23D /* LaunchScreen.storyboard in Resources */,
+				7485FB161DF90A1B00E6D23D /* Assets.xcassets in Resources */,
+				7485FB141DF90A1B00E6D23D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7485FB1D1DF90A1B00E6D23D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7485FB281DF90A1B00E6D23D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		011FDC1ABED455CEBB315900 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-3D打印教育UITests/Pods-3D打印教育UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		198D19703BA9003D522758A9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-3D打印教育UITests/Pods-3D打印教育UITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BBBB38BBED76BA1DE282399 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		532337754077B5F6A324933C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		619936B583BA30E448F7D56E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7AE78CE43A9ABD8F55A3F6B8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-3D打印教育/Pods-3D打印教育-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		877FBBA6146E3B3185CD48EF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-3D打印教育/Pods-3D打印教育-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D13A16ACF1D3D2932B80EFC4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-3D打印教育Tests/Pods-3D打印教育Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4DC6824D3F643E038E52226 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-3D打印教育Tests/Pods-3D打印教育Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7485FB021DF90A1B00E6D23D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7485FB111DF90A1B00E6D23D /* ViewController.m in Sources */,
+				7485FB0E1DF90A1B00E6D23D /* AppDelegate.m in Sources */,
+				7485FB0B1DF90A1B00E6D23D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7485FB1B1DF90A1B00E6D23D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7485FB241DF90A1B00E6D23D /* _D____Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7485FB261DF90A1B00E6D23D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7485FB2F1DF90A1B00E6D23D /* _D____UITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7485FB211DF90A1B00E6D23D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7485FB051DF90A1B00E6D23D /* 3D打印教育 */;
+			targetProxy = 7485FB201DF90A1B00E6D23D /* PBXContainerItemProxy */;
+		};
+		7485FB2C1DF90A1B00E6D23D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7485FB051DF90A1B00E6D23D /* 3D打印教育 */;
+			targetProxy = 7485FB2B1DF90A1B00E6D23D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7485FB121DF90A1B00E6D23D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7485FB131DF90A1B00E6D23D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7485FB171DF90A1B00E6D23D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7485FB181DF90A1B00E6D23D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7485FB311DF90A1B00E6D23D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7485FB321DF90A1B00E6D23D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7485FB341DF90A1B00E6D23D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 192E2E0F89E7F4F69C76271E /* Pods-3D打印教育.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = U7UTR28EZN;
+				INFOPLIST_FILE = "3D打印教育/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.3ddyjy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7485FB351DF90A1B00E6D23D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 927A6CCB0A9DACC2135DFAB3 /* Pods-3D打印教育.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = U7UTR28EZN;
+				INFOPLIST_FILE = "3D打印教育/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.3ddyjy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7485FB371DF90A1B00E6D23D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AB760ED2370B73D2088A043 /* Pods-3D打印教育Tests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "3D打印教育Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "lcc.-D----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/3D打印教育.app/3D打印教育";
+			};
+			name = Debug;
+		};
+		7485FB381DF90A1B00E6D23D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAC66B562E4D4586217D7131 /* Pods-3D打印教育Tests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "3D打印教育Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "lcc.-D----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/3D打印教育.app/3D打印教育";
+			};
+			name = Release;
+		};
+		7485FB3A1DF90A1B00E6D23D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3F85E570F0B86617C398C40 /* Pods-3D打印教育UITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = "3D打印教育UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "lcc.-D----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "3D打印教育";
+			};
+			name = Debug;
+		};
+		7485FB3B1DF90A1B00E6D23D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32876FEFACD3DB506A734AC0 /* Pods-3D打印教育UITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = "3D打印教育UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "lcc.-D----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "3D打印教育";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7485FB011DF90A1B00E6D23D /* Build configuration list for PBXProject "3D打印教育" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7485FB311DF90A1B00E6D23D /* Debug */,
+				7485FB321DF90A1B00E6D23D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7485FB331DF90A1B00E6D23D /* Build configuration list for PBXNativeTarget "3D打印教育" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7485FB341DF90A1B00E6D23D /* Debug */,
+				7485FB351DF90A1B00E6D23D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7485FB361DF90A1B00E6D23D /* Build configuration list for PBXNativeTarget "3D打印教育Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7485FB371DF90A1B00E6D23D /* Debug */,
+				7485FB381DF90A1B00E6D23D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7485FB391DF90A1B00E6D23D /* Build configuration list for PBXNativeTarget "3D打印教育UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7485FB3A1DF90A1B00E6D23D /* Debug */,
+				7485FB3B1DF90A1B00E6D23D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7485FAFE1DF90A1B00E6D23D /* Project object */;
+}
