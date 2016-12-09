@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface Constants : NSObject
+
+extern NSString *const KEY_TITLE;
+
+extern NSString *const KEY_DATASOURCE;
 //extern NSString *const
 //extern NSString *const
 //extern NSString *const
@@ -17,6 +21,5 @@
 //extern NSString *const
 //extern NSString *const
 //extern NSString *const
-//extern NSString *const
-extern NSString *const KEY_TITLE ;
+
 @end

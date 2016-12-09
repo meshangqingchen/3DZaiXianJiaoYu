@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "BaseViewModel.h"
 @protocol LCNavigationProtocol <NSObject>
+
 - (void)pushViewModel:(BaseViewModel *)viewModel animated:(BOOL)animated;
 
 - (void)popViewModelAnimated:(BOOL)animated;

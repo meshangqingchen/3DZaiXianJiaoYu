@@ -7,8 +7,8 @@
 //
 
 #import "LCNavigationStackService.h"
-
-@interface LCNavigationStackService ()
+#import "LCNavigationProtocol.h"
+@interface LCNavigationStackService () <LCNavigationProtocol>
 
 @end
 
@@ -37,4 +37,40 @@
 {
     return self.navigationControllers.lastObject;
 }
+
+//这个是导航的 真正跳转的方法.
+- (void)pushViewModel:(BaseViewModel *)viewModel animated:(BOOL)animated{
+
+}
+
+- (void)popViewModelAnimated:(BOOL)animated{
+
+}
+
+/**
+ *  pop到倒数第几view controller
+ */
+- (void)popToBeforeViewModelWithNum:(NSInteger)num animated:(BOOL)animated complete:(void(^)(BOOL finished))block{
+
+}
+
+- (void)popToRootViewModelAnimated:(BOOL)animated{
+
+}
+
+- (void)presentViewModel:(BaseViewModel *)viewModel animated:(BOOL)animated completion:(void(^)())completion{
+
+}
+
+- (void)dismissViewModelAnimated:(BOOL)animated completion:(void(^)())completion{
+
+}
+
+/// Reset the corresponding view controller as the root view controller of the application's window.
+///
+/// viewModel - the view model
+- (void)resetRootViewModel:(BaseViewModel *)viewModel{
+
+}
+
 @end

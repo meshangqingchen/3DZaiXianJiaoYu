@@ -8,7 +8,25 @@
 
 #import "BaseViewModel.h"
 
+@interface BaseViewModel ()
+@property (nonatomic, copy, readwrite) NSDictionary *params;
+@property(nonatomic,strong,readwrite) id <LCNavigationProtocol> navigationStackService;
+
+@end
+
 @implementation BaseViewModel
 
+-(instancetype)initWithServices:(id<LCNavigationProtocol>)services params:(NSDictionary *)params{
+    if (self = [super init]) {
+        self.params = params;
+        self.title = params[KEY_TITLE];
+        self.navigationStackService = services;
+        [self initialize];
+    }
+    return self;
+}
 
+-(void)initialize{
+//父类来实现
+};
 @end

@@ -20,6 +20,10 @@
 		7485FB4A1DFA831E00E6D23D /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB491DFA831E00E6D23D /* Constants.m */; };
 		7485FB521DFA8CCC00E6D23D /* LCNavigationStackService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB511DFA8CCC00E6D23D /* LCNavigationStackService.m */; };
 		7485FB551DFA8FCD00E6D23D /* BaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB541DFA8FCD00E6D23D /* BaseViewModel.m */; };
+		7485FB5A1DFA9AFF00E6D23D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB591DFA9AFF00E6D23D /* BaseViewController.m */; };
+		7485FB5D1DFAA36600E6D23D /* BaseTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB5C1DFAA36600E6D23D /* BaseTableViewModel.m */; };
+		7485FB601DFAA3A100E6D23D /* BaseCollectionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB5F1DFAA3A100E6D23D /* BaseCollectionViewModel.m */; };
+		7485FB631DFAA85800E6D23D /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB621DFAA85800E6D23D /* BaseTableViewController.m */; };
 		D2781A4C36A2A69961E1662A /* libPods-3D打印教育.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C89CD1AB96CEC93A8A4619C /* libPods-3D打印教育.a */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +75,14 @@
 		7485FB531DFA8FCD00E6D23D /* BaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewModel.h; sourceTree = "<group>"; };
 		7485FB541DFA8FCD00E6D23D /* BaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewModel.m; sourceTree = "<group>"; };
 		7485FB561DFA90BA00E6D23D /* LCNavigationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNavigationProtocol.h; sourceTree = "<group>"; };
+		7485FB581DFA9AFF00E6D23D /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		7485FB591DFA9AFF00E6D23D /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		7485FB5B1DFAA36600E6D23D /* BaseTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewModel.h; sourceTree = "<group>"; };
+		7485FB5C1DFAA36600E6D23D /* BaseTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewModel.m; sourceTree = "<group>"; };
+		7485FB5E1DFAA3A100E6D23D /* BaseCollectionViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollectionViewModel.h; sourceTree = "<group>"; };
+		7485FB5F1DFAA3A100E6D23D /* BaseCollectionViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionViewModel.m; sourceTree = "<group>"; };
+		7485FB611DFAA85800E6D23D /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		7485FB621DFAA85800E6D23D /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 		927A6CCB0A9DACC2135DFAB3 /* Pods-3D打印教育.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育.release.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育/Pods-3D打印教育.release.xcconfig"; sourceTree = "<group>"; };
 		A3F85E570F0B86617C398C40 /* Pods-3D打印教育UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育UITests/Pods-3D打印教育UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CAC66B562E4D4586217D7131 /* Pods-3D打印教育Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育Tests/Pods-3D打印教育Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +217,10 @@
 				7485FB4E1DFA8BF300E6D23D /* BaseViewController */,
 				7485FB501DFA8CCC00E6D23D /* LCNavigationStackService.h */,
 				7485FB511DFA8CCC00E6D23D /* LCNavigationStackService.m */,
+				7485FB581DFA9AFF00E6D23D /* BaseViewController.h */,
+				7485FB591DFA9AFF00E6D23D /* BaseViewController.m */,
+				7485FB611DFAA85800E6D23D /* BaseTableViewController.h */,
+				7485FB621DFAA85800E6D23D /* BaseTableViewController.m */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -296,6 +312,10 @@
 			children = (
 				7485FB531DFA8FCD00E6D23D /* BaseViewModel.h */,
 				7485FB541DFA8FCD00E6D23D /* BaseViewModel.m */,
+				7485FB5B1DFAA36600E6D23D /* BaseTableViewModel.h */,
+				7485FB5C1DFAA36600E6D23D /* BaseTableViewModel.m */,
+				7485FB5E1DFAA3A100E6D23D /* BaseCollectionViewModel.h */,
+				7485FB5F1DFAA3A100E6D23D /* BaseCollectionViewModel.m */,
 			);
 			path = BaseViewModel;
 			sourceTree = "<group>";
@@ -598,7 +618,11 @@
 				7485FB551DFA8FCD00E6D23D /* BaseViewModel.m in Sources */,
 				7485FB0E1DF90A1B00E6D23D /* AppDelegate.m in Sources */,
 				7485FB521DFA8CCC00E6D23D /* LCNavigationStackService.m in Sources */,
+				7485FB631DFAA85800E6D23D /* BaseTableViewController.m in Sources */,
 				7485FB0B1DF90A1B00E6D23D /* main.m in Sources */,
+				7485FB601DFAA3A100E6D23D /* BaseCollectionViewModel.m in Sources */,
+				7485FB5A1DFA9AFF00E6D23D /* BaseViewController.m in Sources */,
+				7485FB5D1DFAA36600E6D23D /* BaseTableViewModel.m in Sources */,
 				7485FB4A1DFA831E00E6D23D /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol  LCNavigationProtocol;
+
 @interface BaseViewModel : NSObject
 
 @property (nonatomic, copy, readonly) NSDictionary *params;
 @property (nonatomic, copy) NSString *title;
 /// 添加导航left back item
 @property (nonatomic, assign) BOOL shouldNavBackItem;
+@property(nonatomic,strong,readonly) id <LCNavigationProtocol> navigationStackService;
 
-
--(instancetype)initWithServices:(id)services params:(NSDictionary *)params;
+-(instancetype)initWithServices:(id <LCNavigationProtocol>)services params:(NSDictionary *)params;
 - (void)initialize;
 @end
