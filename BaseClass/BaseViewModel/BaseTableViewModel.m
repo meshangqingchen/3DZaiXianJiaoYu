@@ -13,14 +13,11 @@
     [super initialize];
     self.shouldPullToRefresh = NO;
     self.shouldInfiniteScrolling = NO;
+    self.mutableDataArr = [NSMutableArray array];
     self.curpage = 1;
 }
 
--(void)didSelectRowAtIndexPath:(NSIndexPath *)indexpath in:(UITableView *)tableView{
+-(void)didSelectRowAtIndexPath:(NSIndexPath *)indexpath in:(UITableView *)tableView{}
 
-}
-
--(void)requestRemoteDataWithPage:(NSUInteger)page completeHandle:(void (^)(id))complete{
-
-}
+-(void)requestRemoteDataWithPage:(NSUInteger)page completeHandle:(void (^)(id))complete{}
 @end

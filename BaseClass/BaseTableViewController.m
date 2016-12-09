@@ -12,8 +12,8 @@
 
 static void *xxcontext = &xxcontext;
 @interface BaseTableViewController ()
-@property (nonatomic, assign, readwrite) UIEdgeInsets contentInset;
 
+@property (nonatomic, assign, readwrite) UIEdgeInsets contentInset;
 @property (nonatomic, strong, readonly) BaseTableViewModel *viewModel;
 @end
 
@@ -90,6 +90,7 @@ static void *xxcontext = &xxcontext;
     [super bindViewModel];
     [self.viewModel addObserver:self forKeyPath:KEY_DATASOURCE options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:xxcontext];
 }
+
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
    
     if (context == xxcontext) {
@@ -101,9 +102,21 @@ static void *xxcontext = &xxcontext;
     }
 }
 
+-(void)dealloc{
+    [self.viewModel removeObserver:self forKeyPath:KEY_DATASOURCE];
+    _tableView.dataSource = nil;
+    _tableView.delegate = nil;
+}
+
 -(void)reloadData{
     [self.tableView reloadData];
 }
+
+- (UIEdgeInsets)contentInset
+{
+    return UIEdgeInsetsMake(64, 0, 0, 0);
+}
+
 
 
 - (void)didReceiveMemoryWarning {
