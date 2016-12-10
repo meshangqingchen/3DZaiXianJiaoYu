@@ -68,6 +68,10 @@ static void *xxcontext = &xxcontext;
             }];
         }];
     }
+    
+    [self.viewModel requestRemoteDataWithPage:self.viewModel.page completeHandle:^(id responseObj) {
+        
+    }];
 }
 
 

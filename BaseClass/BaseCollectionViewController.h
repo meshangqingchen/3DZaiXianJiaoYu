@@ -10,13 +10,13 @@
 #import <UIScrollView+EmptyDataSet.h>
 @interface BaseCollectionViewController : BaseViewController
 <
-UITableViewDelegate,
-UITableViewDataSource,
+UICollectionViewDelegate,
+UICollectionViewDataSource,
 DZNEmptyDataSetDelegate,
 DZNEmptyDataSetSource
 >
 
-@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, assign, readonly) UIEdgeInsets contentInset;
 
 @end
