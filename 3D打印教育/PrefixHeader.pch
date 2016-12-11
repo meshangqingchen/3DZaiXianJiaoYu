@@ -13,6 +13,8 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 #import "Macro.h"
 #import "Constants.h"
+#import "KDFont.h"
+#import "KDColor.h"
 #import "AppDelegate.h"
 
 

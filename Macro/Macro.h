@@ -45,6 +45,9 @@
 #define MYLog(fmt, ...)
 #endif
 
+#define kMBPROGRESSHUD_LABEL_TEXT @"加载中..."
+
+#define  kBadgeTipStr @"badgeTip"
 
 #define kStrFormat(str,...) [NSString stringWithFormat:str,##__VA_ARGS__]
 

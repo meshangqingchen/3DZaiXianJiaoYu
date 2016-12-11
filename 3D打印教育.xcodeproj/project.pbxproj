@@ -25,6 +25,64 @@
 		7485FB601DFAA3A100E6D23D /* BaseCollectionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB5F1DFAA3A100E6D23D /* BaseCollectionViewModel.m */; };
 		7485FB631DFAA85800E6D23D /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB621DFAA85800E6D23D /* BaseTableViewController.m */; };
 		7485FB661DFABF0200E6D23D /* BaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB651DFABF0200E6D23D /* BaseCollectionViewController.m */; };
+		7485FB941DFC382800E6D23D /* JCAlertView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7485FB681DFC382800E6D23D /* JCAlertView.bundle */; };
+		7485FB951DFC382800E6D23D /* JCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB6A1DFC382800E6D23D /* JCAlertView.m */; };
+		7485FB961DFC382800E6D23D /* RDVTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB6D1DFC382800E6D23D /* RDVTabBar.m */; };
+		7485FB971DFC382800E6D23D /* RDVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB6F1DFC382800E6D23D /* RDVTabBarController.m */; };
+		7485FB981DFC382800E6D23D /* RDVTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB711DFC382800E6D23D /* RDVTabBarItem.m */; };
+		7485FB991DFC382800E6D23D /* WMMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB751DFC382800E6D23D /* WMMenuItem.m */; };
+		7485FB9A1DFC382800E6D23D /* WMMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB771DFC382800E6D23D /* WMMenuView.m */; };
+		7485FB9B1DFC382800E6D23D /* WMProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB791DFC382800E6D23D /* WMProgressView.m */; };
+		7485FB9C1DFC382800E6D23D /* WMScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB7B1DFC382800E6D23D /* WMScrollView.m */; };
+		7485FB9D1DFC382800E6D23D /* WMPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB7E1DFC382800E6D23D /* WMPageController.m */; };
+		7485FB9E1DFC382800E6D23D /* Emotion.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7485FB811DFC382800E6D23D /* Emotion.bundle */; };
+		7485FB9F1DFC382800E6D23D /* emotion.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7485FB821DFC382800E6D23D /* emotion.plist */; };
+		7485FBA01DFC382800E6D23D /* emotionToText.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7485FB831DFC382800E6D23D /* emotionToText.plist */; };
+		7485FBA11DFC382800E6D23D /* UITextField+YZEmotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB851DFC382800E6D23D /* UITextField+YZEmotion.m */; };
+		7485FBA21DFC382800E6D23D /* UITextView+YZEmotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB871DFC382800E6D23D /* UITextView+YZEmotion.m */; };
+		7485FBA31DFC382800E6D23D /* YZEmotionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB891DFC382800E6D23D /* YZEmotionCell.m */; };
+		7485FBA41DFC382800E6D23D /* YZEmotionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7485FB8A1DFC382800E6D23D /* YZEmotionCell.xib */; };
+		7485FBA51DFC382800E6D23D /* YZEmotionKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB8C1DFC382800E6D23D /* YZEmotionKeyboard.m */; };
+		7485FBA61DFC382800E6D23D /* YZEmotionKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7485FB8D1DFC382800E6D23D /* YZEmotionKeyboard.xib */; };
+		7485FBA71DFC382800E6D23D /* YZEmotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB8F1DFC382800E6D23D /* YZEmotionManager.m */; };
+		7485FBA81DFC382800E6D23D /* YZEmotionPageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB911DFC382800E6D23D /* YZEmotionPageCell.m */; };
+		7485FBA91DFC382800E6D23D /* YZTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB931DFC382800E6D23D /* YZTextAttachment.m */; };
+		7485FBB31DFC389B00E6D23D /* CustomBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBAC1DFC389B00E6D23D /* CustomBarItem.m */; };
+		7485FBB41DFC389B00E6D23D /* RTRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBAE1DFC389B00E6D23D /* RTRootNavigationController.m */; };
+		7485FBB51DFC389B00E6D23D /* UINavigationItem+CustomItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBB01DFC389B00E6D23D /* UINavigationItem+CustomItem.m */; };
+		7485FBB61DFC389B00E6D23D /* UIViewController+RTRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBB21DFC389B00E6D23D /* UIViewController+RTRootNavigationController.m */; };
+		7485FBF91DFC39FB00E6D23D /* NSDate+CalendarLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBB91DFC39FB00E6D23D /* NSDate+CalendarLogic.m */; };
+		7485FBFA1DFC39FB00E6D23D /* NSDate+KDAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBBB1DFC39FB00E6D23D /* NSDate+KDAdd.m */; };
+		7485FBFB1DFC39FB00E6D23D /* NSObject+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBBD1DFC39FB00E6D23D /* NSObject+Common.m */; };
+		7485FBFC1DFC39FB00E6D23D /* NSObject+Parse.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBBF1DFC39FB00E6D23D /* NSObject+Parse.m */; };
+		7485FBFD1DFC39FB00E6D23D /* NSString+PJR.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBC11DFC39FB00E6D23D /* NSString+PJR.m */; };
+		7485FBFE1DFC39FB00E6D23D /* UIAlertController+supportedInterfaceOrientations.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBC31DFC39FB00E6D23D /* UIAlertController+supportedInterfaceOrientations.m */; };
+		7485FBFF1DFC39FB00E6D23D /* UIButton+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBC51DFC39FB00E6D23D /* UIButton+Common.m */; };
+		7485FC001DFC39FB00E6D23D /* UIImage+RoundeCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBC71DFC39FB00E6D23D /* UIImage+RoundeCorner.m */; };
+		7485FC011DFC39FB00E6D23D /* UIPickerView+KDAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBC91DFC39FB00E6D23D /* UIPickerView+KDAdd.m */; };
+		7485FC021DFC39FB00E6D23D /* UIScrollView+Refresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBCB1DFC39FB00E6D23D /* UIScrollView+Refresh.m */; };
+		7485FC031DFC39FB00E6D23D /* UIView+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBCD1DFC39FB00E6D23D /* UIView+Animation.m */; };
+		7485FC041DFC39FB00E6D23D /* UIView+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBCF1DFC39FB00E6D23D /* UIView+HUD.m */; };
+		7485FC051DFC39FB00E6D23D /* UIView+KDAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBD11DFC39FB00E6D23D /* UIView+KDAdd.m */; };
+		7485FC061DFC39FB00E6D23D /* UIViewController+Example.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBD31DFC39FB00E6D23D /* UIViewController+Example.m */; };
+		7485FC071DFC39FB00E6D23D /* UIViewController+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBD51DFC39FB00E6D23D /* UIViewController+Swizzle.m */; };
+		7485FC081DFC39FB00E6D23D /* KDColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBD81DFC39FB00E6D23D /* KDColor.m */; };
+		7485FC091DFC39FB00E6D23D /* KDFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBDA1DFC39FB00E6D23D /* KDFont.m */; };
+		7485FC0A1DFC39FB00E6D23D /* KDRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBDC1DFC39FB00E6D23D /* KDRouter.m */; };
+		7485FC0B1DFC39FB00E6D23D /* NSDateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBDE1DFC39FB00E6D23D /* NSDateUtils.m */; };
+		7485FC0C1DFC39FB00E6D23D /* RegexUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBE01DFC39FB00E6D23D /* RegexUtil.m */; };
+		7485FC0D1DFC39FB00E6D23D /* LCAboutYYWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBE41DFC39FB00E6D23D /* LCAboutYYWebImage.m */; };
+		7485FC0E1DFC39FB00E6D23D /* MBLHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBE81DFC39FB00E6D23D /* MBLHeader.m */; };
+		7485FC0F1DFC39FB00E6D23D /* MBLHeaderImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBEA1DFC39FB00E6D23D /* MBLHeaderImageView.m */; };
+		7485FC101DFC39FB00E6D23D /* LCTextFiled.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBEC1DFC39FB00E6D23D /* LCTextFiled.m */; };
+		7485FC111DFC39FB00E6D23D /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBEE1DFC39FB00E6D23D /* UIPlaceHolderTextView.m */; };
+		7485FC121DFC39FB00E6D23D /* KDFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBF11DFC39FB00E6D23D /* KDFileManager.m */; };
+		7485FC131DFC39FB00E6D23D /* KDNetAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBF31DFC39FB00E6D23D /* KDNetAPIManager.m */; };
+		7485FC141DFC39FB00E6D23D /* KDNetAPIManager_User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBF51DFC39FB00E6D23D /* KDNetAPIManager_User.m */; };
+		7485FC151DFC39FB00E6D23D /* ObjcRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FBF81DFC39FB00E6D23D /* ObjcRuntime.m */; };
+		7485FCBA1DFD4FC800E6D23D /* JDStatusBarNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FCB51DFD4FC800E6D23D /* JDStatusBarNotification.m */; };
+		7485FCBB1DFD4FC800E6D23D /* JDStatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FCB71DFD4FC800E6D23D /* JDStatusBarStyle.m */; };
+		7485FCBC1DFD4FC800E6D23D /* JDStatusBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FCB91DFD4FC800E6D23D /* JDStatusBarView.m */; };
 		D2781A4C36A2A69961E1662A /* libPods-3D打印教育.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C89CD1AB96CEC93A8A4619C /* libPods-3D打印教育.a */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +144,118 @@
 		7485FB621DFAA85800E6D23D /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 		7485FB641DFABF0200E6D23D /* BaseCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollectionViewController.h; sourceTree = "<group>"; };
 		7485FB651DFABF0200E6D23D /* BaseCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionViewController.m; sourceTree = "<group>"; };
+		7485FB681DFC382800E6D23D /* JCAlertView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JCAlertView.bundle; sourceTree = "<group>"; };
+		7485FB691DFC382800E6D23D /* JCAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCAlertView.h; sourceTree = "<group>"; };
+		7485FB6A1DFC382800E6D23D /* JCAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCAlertView.m; sourceTree = "<group>"; };
+		7485FB6C1DFC382800E6D23D /* RDVTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBar.h; sourceTree = "<group>"; };
+		7485FB6D1DFC382800E6D23D /* RDVTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBar.m; sourceTree = "<group>"; };
+		7485FB6E1DFC382800E6D23D /* RDVTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBarController.h; sourceTree = "<group>"; };
+		7485FB6F1DFC382800E6D23D /* RDVTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBarController.m; sourceTree = "<group>"; };
+		7485FB701DFC382800E6D23D /* RDVTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTabBarItem.h; sourceTree = "<group>"; };
+		7485FB711DFC382800E6D23D /* RDVTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTabBarItem.m; sourceTree = "<group>"; };
+		7485FB741DFC382800E6D23D /* WMMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMenuItem.h; sourceTree = "<group>"; };
+		7485FB751DFC382800E6D23D /* WMMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMMenuItem.m; sourceTree = "<group>"; };
+		7485FB761DFC382800E6D23D /* WMMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMenuView.h; sourceTree = "<group>"; };
+		7485FB771DFC382800E6D23D /* WMMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMMenuView.m; sourceTree = "<group>"; };
+		7485FB781DFC382800E6D23D /* WMProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMProgressView.h; sourceTree = "<group>"; };
+		7485FB791DFC382800E6D23D /* WMProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMProgressView.m; sourceTree = "<group>"; };
+		7485FB7A1DFC382800E6D23D /* WMScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMScrollView.h; sourceTree = "<group>"; };
+		7485FB7B1DFC382800E6D23D /* WMScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMScrollView.m; sourceTree = "<group>"; };
+		7485FB7C1DFC382800E6D23D /* WMPageConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPageConst.h; sourceTree = "<group>"; };
+		7485FB7D1DFC382800E6D23D /* WMPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPageController.h; sourceTree = "<group>"; };
+		7485FB7E1DFC382800E6D23D /* WMPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPageController.m; sourceTree = "<group>"; };
+		7485FB811DFC382800E6D23D /* Emotion.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emotion.bundle; sourceTree = "<group>"; };
+		7485FB821DFC382800E6D23D /* emotion.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emotion.plist; sourceTree = "<group>"; };
+		7485FB831DFC382800E6D23D /* emotionToText.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emotionToText.plist; sourceTree = "<group>"; };
+		7485FB841DFC382800E6D23D /* UITextField+YZEmotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+YZEmotion.h"; sourceTree = "<group>"; };
+		7485FB851DFC382800E6D23D /* UITextField+YZEmotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+YZEmotion.m"; sourceTree = "<group>"; };
+		7485FB861DFC382800E6D23D /* UITextView+YZEmotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+YZEmotion.h"; sourceTree = "<group>"; };
+		7485FB871DFC382800E6D23D /* UITextView+YZEmotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+YZEmotion.m"; sourceTree = "<group>"; };
+		7485FB881DFC382800E6D23D /* YZEmotionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZEmotionCell.h; sourceTree = "<group>"; };
+		7485FB891DFC382800E6D23D /* YZEmotionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZEmotionCell.m; sourceTree = "<group>"; };
+		7485FB8A1DFC382800E6D23D /* YZEmotionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YZEmotionCell.xib; sourceTree = "<group>"; };
+		7485FB8B1DFC382800E6D23D /* YZEmotionKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZEmotionKeyboard.h; sourceTree = "<group>"; };
+		7485FB8C1DFC382800E6D23D /* YZEmotionKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZEmotionKeyboard.m; sourceTree = "<group>"; };
+		7485FB8D1DFC382800E6D23D /* YZEmotionKeyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YZEmotionKeyboard.xib; sourceTree = "<group>"; };
+		7485FB8E1DFC382800E6D23D /* YZEmotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZEmotionManager.h; sourceTree = "<group>"; };
+		7485FB8F1DFC382800E6D23D /* YZEmotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZEmotionManager.m; sourceTree = "<group>"; };
+		7485FB901DFC382800E6D23D /* YZEmotionPageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZEmotionPageCell.h; sourceTree = "<group>"; };
+		7485FB911DFC382800E6D23D /* YZEmotionPageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZEmotionPageCell.m; sourceTree = "<group>"; };
+		7485FB921DFC382800E6D23D /* YZTextAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZTextAttachment.h; sourceTree = "<group>"; };
+		7485FB931DFC382800E6D23D /* YZTextAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZTextAttachment.m; sourceTree = "<group>"; };
+		7485FBAB1DFC389B00E6D23D /* CustomBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBarItem.h; sourceTree = "<group>"; };
+		7485FBAC1DFC389B00E6D23D /* CustomBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBarItem.m; sourceTree = "<group>"; };
+		7485FBAD1DFC389B00E6D23D /* RTRootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTRootNavigationController.h; sourceTree = "<group>"; };
+		7485FBAE1DFC389B00E6D23D /* RTRootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTRootNavigationController.m; sourceTree = "<group>"; };
+		7485FBAF1DFC389B00E6D23D /* UINavigationItem+CustomItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+CustomItem.h"; sourceTree = "<group>"; };
+		7485FBB01DFC389B00E6D23D /* UINavigationItem+CustomItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+CustomItem.m"; sourceTree = "<group>"; };
+		7485FBB11DFC389B00E6D23D /* UIViewController+RTRootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RTRootNavigationController.h"; sourceTree = "<group>"; };
+		7485FBB21DFC389B00E6D23D /* UIViewController+RTRootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RTRootNavigationController.m"; sourceTree = "<group>"; };
+		7485FBB81DFC39FB00E6D23D /* NSDate+CalendarLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CalendarLogic.h"; sourceTree = "<group>"; };
+		7485FBB91DFC39FB00E6D23D /* NSDate+CalendarLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CalendarLogic.m"; sourceTree = "<group>"; };
+		7485FBBA1DFC39FB00E6D23D /* NSDate+KDAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+KDAdd.h"; sourceTree = "<group>"; };
+		7485FBBB1DFC39FB00E6D23D /* NSDate+KDAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+KDAdd.m"; sourceTree = "<group>"; };
+		7485FBBC1DFC39FB00E6D23D /* NSObject+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Common.h"; sourceTree = "<group>"; };
+		7485FBBD1DFC39FB00E6D23D /* NSObject+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Common.m"; sourceTree = "<group>"; };
+		7485FBBE1DFC39FB00E6D23D /* NSObject+Parse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Parse.h"; sourceTree = "<group>"; };
+		7485FBBF1DFC39FB00E6D23D /* NSObject+Parse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Parse.m"; sourceTree = "<group>"; };
+		7485FBC01DFC39FB00E6D23D /* NSString+PJR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PJR.h"; sourceTree = "<group>"; };
+		7485FBC11DFC39FB00E6D23D /* NSString+PJR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PJR.m"; sourceTree = "<group>"; };
+		7485FBC21DFC39FB00E6D23D /* UIAlertController+supportedInterfaceOrientations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+supportedInterfaceOrientations.h"; sourceTree = "<group>"; };
+		7485FBC31DFC39FB00E6D23D /* UIAlertController+supportedInterfaceOrientations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+supportedInterfaceOrientations.m"; sourceTree = "<group>"; };
+		7485FBC41DFC39FB00E6D23D /* UIButton+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Common.h"; sourceTree = "<group>"; };
+		7485FBC51DFC39FB00E6D23D /* UIButton+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Common.m"; sourceTree = "<group>"; };
+		7485FBC61DFC39FB00E6D23D /* UIImage+RoundeCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundeCorner.h"; sourceTree = "<group>"; };
+		7485FBC71DFC39FB00E6D23D /* UIImage+RoundeCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundeCorner.m"; sourceTree = "<group>"; };
+		7485FBC81DFC39FB00E6D23D /* UIPickerView+KDAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPickerView+KDAdd.h"; sourceTree = "<group>"; };
+		7485FBC91DFC39FB00E6D23D /* UIPickerView+KDAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPickerView+KDAdd.m"; sourceTree = "<group>"; };
+		7485FBCA1DFC39FB00E6D23D /* UIScrollView+Refresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Refresh.h"; sourceTree = "<group>"; };
+		7485FBCB1DFC39FB00E6D23D /* UIScrollView+Refresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Refresh.m"; sourceTree = "<group>"; };
+		7485FBCC1DFC39FB00E6D23D /* UIView+Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Animation.h"; sourceTree = "<group>"; };
+		7485FBCD1DFC39FB00E6D23D /* UIView+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Animation.m"; sourceTree = "<group>"; };
+		7485FBCE1DFC39FB00E6D23D /* UIView+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HUD.h"; sourceTree = "<group>"; };
+		7485FBCF1DFC39FB00E6D23D /* UIView+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HUD.m"; sourceTree = "<group>"; };
+		7485FBD01DFC39FB00E6D23D /* UIView+KDAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+KDAdd.h"; sourceTree = "<group>"; };
+		7485FBD11DFC39FB00E6D23D /* UIView+KDAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+KDAdd.m"; sourceTree = "<group>"; };
+		7485FBD21DFC39FB00E6D23D /* UIViewController+Example.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Example.h"; sourceTree = "<group>"; };
+		7485FBD31DFC39FB00E6D23D /* UIViewController+Example.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Example.m"; sourceTree = "<group>"; };
+		7485FBD41DFC39FB00E6D23D /* UIViewController+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Swizzle.h"; sourceTree = "<group>"; };
+		7485FBD51DFC39FB00E6D23D /* UIViewController+Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Swizzle.m"; sourceTree = "<group>"; };
+		7485FBD71DFC39FB00E6D23D /* KDColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDColor.h; sourceTree = "<group>"; };
+		7485FBD81DFC39FB00E6D23D /* KDColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDColor.m; sourceTree = "<group>"; };
+		7485FBD91DFC39FB00E6D23D /* KDFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDFont.h; sourceTree = "<group>"; };
+		7485FBDA1DFC39FB00E6D23D /* KDFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDFont.m; sourceTree = "<group>"; };
+		7485FBDB1DFC39FB00E6D23D /* KDRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDRouter.h; sourceTree = "<group>"; };
+		7485FBDC1DFC39FB00E6D23D /* KDRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDRouter.m; sourceTree = "<group>"; };
+		7485FBDD1DFC39FB00E6D23D /* NSDateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateUtils.h; sourceTree = "<group>"; };
+		7485FBDE1DFC39FB00E6D23D /* NSDateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateUtils.m; sourceTree = "<group>"; };
+		7485FBDF1DFC39FB00E6D23D /* RegexUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexUtil.h; sourceTree = "<group>"; };
+		7485FBE01DFC39FB00E6D23D /* RegexUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexUtil.m; sourceTree = "<group>"; };
+		7485FBE11DFC39FB00E6D23D /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
+		7485FBE31DFC39FB00E6D23D /* LCAboutYYWebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCAboutYYWebImage.h; sourceTree = "<group>"; };
+		7485FBE41DFC39FB00E6D23D /* LCAboutYYWebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCAboutYYWebImage.m; sourceTree = "<group>"; };
+		7485FBE71DFC39FB00E6D23D /* MBLHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBLHeader.h; sourceTree = "<group>"; };
+		7485FBE81DFC39FB00E6D23D /* MBLHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBLHeader.m; sourceTree = "<group>"; };
+		7485FBE91DFC39FB00E6D23D /* MBLHeaderImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBLHeaderImageView.h; sourceTree = "<group>"; };
+		7485FBEA1DFC39FB00E6D23D /* MBLHeaderImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBLHeaderImageView.m; sourceTree = "<group>"; };
+		7485FBEB1DFC39FB00E6D23D /* LCTextFiled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTextFiled.h; sourceTree = "<group>"; };
+		7485FBEC1DFC39FB00E6D23D /* LCTextFiled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTextFiled.m; sourceTree = "<group>"; };
+		7485FBED1DFC39FB00E6D23D /* UIPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPlaceHolderTextView.h; sourceTree = "<group>"; };
+		7485FBEE1DFC39FB00E6D23D /* UIPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPlaceHolderTextView.m; sourceTree = "<group>"; };
+		7485FBF01DFC39FB00E6D23D /* KDFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDFileManager.h; sourceTree = "<group>"; };
+		7485FBF11DFC39FB00E6D23D /* KDFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDFileManager.m; sourceTree = "<group>"; };
+		7485FBF21DFC39FB00E6D23D /* KDNetAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDNetAPIManager.h; sourceTree = "<group>"; };
+		7485FBF31DFC39FB00E6D23D /* KDNetAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDNetAPIManager.m; sourceTree = "<group>"; };
+		7485FBF41DFC39FB00E6D23D /* KDNetAPIManager_User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDNetAPIManager_User.h; sourceTree = "<group>"; };
+		7485FBF51DFC39FB00E6D23D /* KDNetAPIManager_User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDNetAPIManager_User.m; sourceTree = "<group>"; };
+		7485FBF71DFC39FB00E6D23D /* ObjcRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjcRuntime.h; sourceTree = "<group>"; };
+		7485FBF81DFC39FB00E6D23D /* ObjcRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjcRuntime.m; sourceTree = "<group>"; };
+		7485FCB41DFD4FC800E6D23D /* JDStatusBarNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDStatusBarNotification.h; sourceTree = "<group>"; };
+		7485FCB51DFD4FC800E6D23D /* JDStatusBarNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDStatusBarNotification.m; sourceTree = "<group>"; };
+		7485FCB61DFD4FC800E6D23D /* JDStatusBarStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDStatusBarStyle.h; sourceTree = "<group>"; };
+		7485FCB71DFD4FC800E6D23D /* JDStatusBarStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDStatusBarStyle.m; sourceTree = "<group>"; };
+		7485FCB81DFD4FC800E6D23D /* JDStatusBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDStatusBarView.h; sourceTree = "<group>"; };
+		7485FCB91DFD4FC800E6D23D /* JDStatusBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDStatusBarView.m; sourceTree = "<group>"; };
 		927A6CCB0A9DACC2135DFAB3 /* Pods-3D打印教育.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育.release.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育/Pods-3D打印教育.release.xcconfig"; sourceTree = "<group>"; };
 		A3F85E570F0B86617C398C40 /* Pods-3D打印教育UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育UITests/Pods-3D打印教育UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CAC66B562E4D4586217D7131 /* Pods-3D打印教育Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育Tests/Pods-3D打印教育Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -233,6 +403,12 @@
 		7485FB3F1DFA7AD700E6D23D /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				7485FCB31DFD4FC800E6D23D /* JDStatusBarNotification */,
+				7485FBAA1DFC389B00E6D23D /* Nva */,
+				7485FB671DFC382800E6D23D /* JCAlertView */,
+				7485FB6B1DFC382800E6D23D /* RDVTabBarController */,
+				7485FB721DFC382800E6D23D /* WMPageController */,
+				7485FB7F1DFC382800E6D23D /* YZEmotionKeyboard */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -240,6 +416,10 @@
 		7485FB401DFA7B0000E6D23D /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				7485FBB71DFC39FB00E6D23D /* Category */,
+				7485FBD61DFC39FB00E6D23D /* Common */,
+				7485FBEF1DFC39FB00E6D23D /* Manager */,
+				7485FBF61DFC39FB00E6D23D /* ObjcRuntime */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -323,6 +503,228 @@
 				7485FB5F1DFAA3A100E6D23D /* BaseCollectionViewModel.m */,
 			);
 			path = BaseViewModel;
+			sourceTree = "<group>";
+		};
+		7485FB671DFC382800E6D23D /* JCAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				7485FB681DFC382800E6D23D /* JCAlertView.bundle */,
+				7485FB691DFC382800E6D23D /* JCAlertView.h */,
+				7485FB6A1DFC382800E6D23D /* JCAlertView.m */,
+			);
+			path = JCAlertView;
+			sourceTree = "<group>";
+		};
+		7485FB6B1DFC382800E6D23D /* RDVTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				7485FB6C1DFC382800E6D23D /* RDVTabBar.h */,
+				7485FB6D1DFC382800E6D23D /* RDVTabBar.m */,
+				7485FB6E1DFC382800E6D23D /* RDVTabBarController.h */,
+				7485FB6F1DFC382800E6D23D /* RDVTabBarController.m */,
+				7485FB701DFC382800E6D23D /* RDVTabBarItem.h */,
+				7485FB711DFC382800E6D23D /* RDVTabBarItem.m */,
+			);
+			path = RDVTabBarController;
+			sourceTree = "<group>";
+		};
+		7485FB721DFC382800E6D23D /* WMPageController */ = {
+			isa = PBXGroup;
+			children = (
+				7485FB731DFC382800E6D23D /* WMMenuView */,
+				7485FB7C1DFC382800E6D23D /* WMPageConst.h */,
+				7485FB7D1DFC382800E6D23D /* WMPageController.h */,
+				7485FB7E1DFC382800E6D23D /* WMPageController.m */,
+			);
+			path = WMPageController;
+			sourceTree = "<group>";
+		};
+		7485FB731DFC382800E6D23D /* WMMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				7485FB741DFC382800E6D23D /* WMMenuItem.h */,
+				7485FB751DFC382800E6D23D /* WMMenuItem.m */,
+				7485FB761DFC382800E6D23D /* WMMenuView.h */,
+				7485FB771DFC382800E6D23D /* WMMenuView.m */,
+				7485FB781DFC382800E6D23D /* WMProgressView.h */,
+				7485FB791DFC382800E6D23D /* WMProgressView.m */,
+				7485FB7A1DFC382800E6D23D /* WMScrollView.h */,
+				7485FB7B1DFC382800E6D23D /* WMScrollView.m */,
+			);
+			path = WMMenuView;
+			sourceTree = "<group>";
+		};
+		7485FB7F1DFC382800E6D23D /* YZEmotionKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				7485FB801DFC382800E6D23D /* Resource */,
+				7485FB841DFC382800E6D23D /* UITextField+YZEmotion.h */,
+				7485FB851DFC382800E6D23D /* UITextField+YZEmotion.m */,
+				7485FB861DFC382800E6D23D /* UITextView+YZEmotion.h */,
+				7485FB871DFC382800E6D23D /* UITextView+YZEmotion.m */,
+				7485FB881DFC382800E6D23D /* YZEmotionCell.h */,
+				7485FB891DFC382800E6D23D /* YZEmotionCell.m */,
+				7485FB8A1DFC382800E6D23D /* YZEmotionCell.xib */,
+				7485FB8B1DFC382800E6D23D /* YZEmotionKeyboard.h */,
+				7485FB8C1DFC382800E6D23D /* YZEmotionKeyboard.m */,
+				7485FB8D1DFC382800E6D23D /* YZEmotionKeyboard.xib */,
+				7485FB8E1DFC382800E6D23D /* YZEmotionManager.h */,
+				7485FB8F1DFC382800E6D23D /* YZEmotionManager.m */,
+				7485FB901DFC382800E6D23D /* YZEmotionPageCell.h */,
+				7485FB911DFC382800E6D23D /* YZEmotionPageCell.m */,
+				7485FB921DFC382800E6D23D /* YZTextAttachment.h */,
+				7485FB931DFC382800E6D23D /* YZTextAttachment.m */,
+			);
+			path = YZEmotionKeyboard;
+			sourceTree = "<group>";
+		};
+		7485FB801DFC382800E6D23D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				7485FB811DFC382800E6D23D /* Emotion.bundle */,
+				7485FB821DFC382800E6D23D /* emotion.plist */,
+				7485FB831DFC382800E6D23D /* emotionToText.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		7485FBAA1DFC389B00E6D23D /* Nva */ = {
+			isa = PBXGroup;
+			children = (
+				7485FBAB1DFC389B00E6D23D /* CustomBarItem.h */,
+				7485FBAC1DFC389B00E6D23D /* CustomBarItem.m */,
+				7485FBAD1DFC389B00E6D23D /* RTRootNavigationController.h */,
+				7485FBAE1DFC389B00E6D23D /* RTRootNavigationController.m */,
+				7485FBAF1DFC389B00E6D23D /* UINavigationItem+CustomItem.h */,
+				7485FBB01DFC389B00E6D23D /* UINavigationItem+CustomItem.m */,
+				7485FBB11DFC389B00E6D23D /* UIViewController+RTRootNavigationController.h */,
+				7485FBB21DFC389B00E6D23D /* UIViewController+RTRootNavigationController.m */,
+			);
+			path = Nva;
+			sourceTree = "<group>";
+		};
+		7485FBB71DFC39FB00E6D23D /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				7485FBB81DFC39FB00E6D23D /* NSDate+CalendarLogic.h */,
+				7485FBB91DFC39FB00E6D23D /* NSDate+CalendarLogic.m */,
+				7485FBBA1DFC39FB00E6D23D /* NSDate+KDAdd.h */,
+				7485FBBB1DFC39FB00E6D23D /* NSDate+KDAdd.m */,
+				7485FBBC1DFC39FB00E6D23D /* NSObject+Common.h */,
+				7485FBBD1DFC39FB00E6D23D /* NSObject+Common.m */,
+				7485FBBE1DFC39FB00E6D23D /* NSObject+Parse.h */,
+				7485FBBF1DFC39FB00E6D23D /* NSObject+Parse.m */,
+				7485FBC01DFC39FB00E6D23D /* NSString+PJR.h */,
+				7485FBC11DFC39FB00E6D23D /* NSString+PJR.m */,
+				7485FBC21DFC39FB00E6D23D /* UIAlertController+supportedInterfaceOrientations.h */,
+				7485FBC31DFC39FB00E6D23D /* UIAlertController+supportedInterfaceOrientations.m */,
+				7485FBC41DFC39FB00E6D23D /* UIButton+Common.h */,
+				7485FBC51DFC39FB00E6D23D /* UIButton+Common.m */,
+				7485FBC61DFC39FB00E6D23D /* UIImage+RoundeCorner.h */,
+				7485FBC71DFC39FB00E6D23D /* UIImage+RoundeCorner.m */,
+				7485FBC81DFC39FB00E6D23D /* UIPickerView+KDAdd.h */,
+				7485FBC91DFC39FB00E6D23D /* UIPickerView+KDAdd.m */,
+				7485FBCA1DFC39FB00E6D23D /* UIScrollView+Refresh.h */,
+				7485FBCB1DFC39FB00E6D23D /* UIScrollView+Refresh.m */,
+				7485FBCC1DFC39FB00E6D23D /* UIView+Animation.h */,
+				7485FBCD1DFC39FB00E6D23D /* UIView+Animation.m */,
+				7485FBCE1DFC39FB00E6D23D /* UIView+HUD.h */,
+				7485FBCF1DFC39FB00E6D23D /* UIView+HUD.m */,
+				7485FBD01DFC39FB00E6D23D /* UIView+KDAdd.h */,
+				7485FBD11DFC39FB00E6D23D /* UIView+KDAdd.m */,
+				7485FBD21DFC39FB00E6D23D /* UIViewController+Example.h */,
+				7485FBD31DFC39FB00E6D23D /* UIViewController+Example.m */,
+				7485FBD41DFC39FB00E6D23D /* UIViewController+Swizzle.h */,
+				7485FBD51DFC39FB00E6D23D /* UIViewController+Swizzle.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		7485FBD61DFC39FB00E6D23D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7485FBD71DFC39FB00E6D23D /* KDColor.h */,
+				7485FBD81DFC39FB00E6D23D /* KDColor.m */,
+				7485FBD91DFC39FB00E6D23D /* KDFont.h */,
+				7485FBDA1DFC39FB00E6D23D /* KDFont.m */,
+				7485FBDB1DFC39FB00E6D23D /* KDRouter.h */,
+				7485FBDC1DFC39FB00E6D23D /* KDRouter.m */,
+				7485FBDD1DFC39FB00E6D23D /* NSDateUtils.h */,
+				7485FBDE1DFC39FB00E6D23D /* NSDateUtils.m */,
+				7485FBDF1DFC39FB00E6D23D /* RegexUtil.h */,
+				7485FBE01DFC39FB00E6D23D /* RegexUtil.m */,
+				7485FBE11DFC39FB00E6D23D /* SynthesizeSingleton.h */,
+				7485FBE21DFC39FB00E6D23D /* Tools */,
+				7485FBE51DFC39FB00E6D23D /* Views */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		7485FBE21DFC39FB00E6D23D /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				7485FBE31DFC39FB00E6D23D /* LCAboutYYWebImage.h */,
+				7485FBE41DFC39FB00E6D23D /* LCAboutYYWebImage.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		7485FBE51DFC39FB00E6D23D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7485FBE61DFC39FB00E6D23D /* CycleBanner */,
+				7485FBEB1DFC39FB00E6D23D /* LCTextFiled.h */,
+				7485FBEC1DFC39FB00E6D23D /* LCTextFiled.m */,
+				7485FBED1DFC39FB00E6D23D /* UIPlaceHolderTextView.h */,
+				7485FBEE1DFC39FB00E6D23D /* UIPlaceHolderTextView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7485FBE61DFC39FB00E6D23D /* CycleBanner */ = {
+			isa = PBXGroup;
+			children = (
+				7485FBE71DFC39FB00E6D23D /* MBLHeader.h */,
+				7485FBE81DFC39FB00E6D23D /* MBLHeader.m */,
+				7485FBE91DFC39FB00E6D23D /* MBLHeaderImageView.h */,
+				7485FBEA1DFC39FB00E6D23D /* MBLHeaderImageView.m */,
+			);
+			path = CycleBanner;
+			sourceTree = "<group>";
+		};
+		7485FBEF1DFC39FB00E6D23D /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7485FBF01DFC39FB00E6D23D /* KDFileManager.h */,
+				7485FBF11DFC39FB00E6D23D /* KDFileManager.m */,
+				7485FBF21DFC39FB00E6D23D /* KDNetAPIManager.h */,
+				7485FBF31DFC39FB00E6D23D /* KDNetAPIManager.m */,
+				7485FBF41DFC39FB00E6D23D /* KDNetAPIManager_User.h */,
+				7485FBF51DFC39FB00E6D23D /* KDNetAPIManager_User.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		7485FBF61DFC39FB00E6D23D /* ObjcRuntime */ = {
+			isa = PBXGroup;
+			children = (
+				7485FBF71DFC39FB00E6D23D /* ObjcRuntime.h */,
+				7485FBF81DFC39FB00E6D23D /* ObjcRuntime.m */,
+			);
+			path = ObjcRuntime;
+			sourceTree = "<group>";
+		};
+		7485FCB31DFD4FC800E6D23D /* JDStatusBarNotification */ = {
+			isa = PBXGroup;
+			children = (
+				7485FCB41DFD4FC800E6D23D /* JDStatusBarNotification.h */,
+				7485FCB51DFD4FC800E6D23D /* JDStatusBarNotification.m */,
+				7485FCB61DFD4FC800E6D23D /* JDStatusBarStyle.h */,
+				7485FCB71DFD4FC800E6D23D /* JDStatusBarStyle.m */,
+				7485FCB81DFD4FC800E6D23D /* JDStatusBarView.h */,
+				7485FCB91DFD4FC800E6D23D /* JDStatusBarView.m */,
+			);
+			path = JDStatusBarNotification;
 			sourceTree = "<group>";
 		};
 		7CF7E8E8EEADEF4A3F51B948 /* Pods */ = {
@@ -454,9 +856,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7485FBA41DFC382800E6D23D /* YZEmotionCell.xib in Resources */,
+				7485FB9F1DFC382800E6D23D /* emotion.plist in Resources */,
+				7485FBA61DFC382800E6D23D /* YZEmotionKeyboard.xib in Resources */,
+				7485FBA01DFC382800E6D23D /* emotionToText.plist in Resources */,
 				7485FB191DF90A1B00E6D23D /* LaunchScreen.storyboard in Resources */,
 				7485FB161DF90A1B00E6D23D /* Assets.xcassets in Resources */,
+				7485FB941DFC382800E6D23D /* JCAlertView.bundle in Resources */,
 				7485FB141DF90A1B00E6D23D /* Main.storyboard in Resources */,
+				7485FB9E1DFC382800E6D23D /* Emotion.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,17 +1027,69 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7485FC0B1DFC39FB00E6D23D /* NSDateUtils.m in Sources */,
+				7485FB9A1DFC382800E6D23D /* WMMenuView.m in Sources */,
+				7485FBA11DFC382800E6D23D /* UITextField+YZEmotion.m in Sources */,
+				7485FC111DFC39FB00E6D23D /* UIPlaceHolderTextView.m in Sources */,
 				7485FB111DF90A1B00E6D23D /* ViewController.m in Sources */,
+				7485FBF91DFC39FB00E6D23D /* NSDate+CalendarLogic.m in Sources */,
+				7485FC0A1DFC39FB00E6D23D /* KDRouter.m in Sources */,
+				7485FBFD1DFC39FB00E6D23D /* NSString+PJR.m in Sources */,
+				7485FC041DFC39FB00E6D23D /* UIView+HUD.m in Sources */,
 				7485FB551DFA8FCD00E6D23D /* BaseViewModel.m in Sources */,
+				7485FB9C1DFC382800E6D23D /* WMScrollView.m in Sources */,
+				7485FC121DFC39FB00E6D23D /* KDFileManager.m in Sources */,
+				7485FBB31DFC389B00E6D23D /* CustomBarItem.m in Sources */,
+				7485FBFC1DFC39FB00E6D23D /* NSObject+Parse.m in Sources */,
+				7485FCBA1DFD4FC800E6D23D /* JDStatusBarNotification.m in Sources */,
+				7485FBB51DFC389B00E6D23D /* UINavigationItem+CustomItem.m in Sources */,
+				7485FC101DFC39FB00E6D23D /* LCTextFiled.m in Sources */,
+				7485FBB61DFC389B00E6D23D /* UIViewController+RTRootNavigationController.m in Sources */,
+				7485FB9B1DFC382800E6D23D /* WMProgressView.m in Sources */,
+				7485FCBB1DFD4FC800E6D23D /* JDStatusBarStyle.m in Sources */,
+				7485FB971DFC382800E6D23D /* RDVTabBarController.m in Sources */,
+				7485FC0E1DFC39FB00E6D23D /* MBLHeader.m in Sources */,
+				7485FB9D1DFC382800E6D23D /* WMPageController.m in Sources */,
+				7485FC021DFC39FB00E6D23D /* UIScrollView+Refresh.m in Sources */,
+				7485FC031DFC39FB00E6D23D /* UIView+Animation.m in Sources */,
+				7485FBFF1DFC39FB00E6D23D /* UIButton+Common.m in Sources */,
+				7485FC0F1DFC39FB00E6D23D /* MBLHeaderImageView.m in Sources */,
+				7485FC061DFC39FB00E6D23D /* UIViewController+Example.m in Sources */,
+				7485FBFE1DFC39FB00E6D23D /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
+				7485FC141DFC39FB00E6D23D /* KDNetAPIManager_User.m in Sources */,
 				7485FB661DFABF0200E6D23D /* BaseCollectionViewController.m in Sources */,
+				7485FC011DFC39FB00E6D23D /* UIPickerView+KDAdd.m in Sources */,
+				7485FC051DFC39FB00E6D23D /* UIView+KDAdd.m in Sources */,
 				7485FB0E1DF90A1B00E6D23D /* AppDelegate.m in Sources */,
+				7485FBFB1DFC39FB00E6D23D /* NSObject+Common.m in Sources */,
+				7485FB981DFC382800E6D23D /* RDVTabBarItem.m in Sources */,
+				7485FB951DFC382800E6D23D /* JCAlertView.m in Sources */,
 				7485FB521DFA8CCC00E6D23D /* LCNavigationStackService.m in Sources */,
 				7485FB631DFAA85800E6D23D /* BaseTableViewController.m in Sources */,
+				7485FC0D1DFC39FB00E6D23D /* LCAboutYYWebImage.m in Sources */,
+				7485FC001DFC39FB00E6D23D /* UIImage+RoundeCorner.m in Sources */,
+				7485FBA21DFC382800E6D23D /* UITextView+YZEmotion.m in Sources */,
+				7485FBA71DFC382800E6D23D /* YZEmotionManager.m in Sources */,
+				7485FCBC1DFD4FC800E6D23D /* JDStatusBarView.m in Sources */,
 				7485FB0B1DF90A1B00E6D23D /* main.m in Sources */,
+				7485FBA91DFC382800E6D23D /* YZTextAttachment.m in Sources */,
 				7485FB601DFAA3A100E6D23D /* BaseCollectionViewModel.m in Sources */,
 				7485FB5A1DFA9AFF00E6D23D /* BaseViewController.m in Sources */,
+				7485FBFA1DFC39FB00E6D23D /* NSDate+KDAdd.m in Sources */,
+				7485FC081DFC39FB00E6D23D /* KDColor.m in Sources */,
 				7485FB5D1DFAA36600E6D23D /* BaseTableViewModel.m in Sources */,
+				7485FBA31DFC382800E6D23D /* YZEmotionCell.m in Sources */,
+				7485FB961DFC382800E6D23D /* RDVTabBar.m in Sources */,
+				7485FC091DFC39FB00E6D23D /* KDFont.m in Sources */,
+				7485FC0C1DFC39FB00E6D23D /* RegexUtil.m in Sources */,
+				7485FBB41DFC389B00E6D23D /* RTRootNavigationController.m in Sources */,
+				7485FC071DFC39FB00E6D23D /* UIViewController+Swizzle.m in Sources */,
+				7485FC151DFC39FB00E6D23D /* ObjcRuntime.m in Sources */,
+				7485FBA51DFC382800E6D23D /* YZEmotionKeyboard.m in Sources */,
 				7485FB4A1DFA831E00E6D23D /* Constants.m in Sources */,
+				7485FC131DFC39FB00E6D23D /* KDNetAPIManager.m in Sources */,
+				7485FB991DFC382800E6D23D /* WMMenuItem.m in Sources */,
+				7485FBA81DFC382800E6D23D /* YZEmotionPageCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
