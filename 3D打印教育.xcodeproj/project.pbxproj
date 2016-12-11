@@ -20,11 +20,8 @@
 		7485FB4A1DFA831E00E6D23D /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB491DFA831E00E6D23D /* Constants.m */; };
 		7485FB521DFA8CCC00E6D23D /* LCNavigationStackService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB511DFA8CCC00E6D23D /* LCNavigationStackService.m */; };
 		7485FB551DFA8FCD00E6D23D /* BaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB541DFA8FCD00E6D23D /* BaseViewModel.m */; };
-		7485FB5A1DFA9AFF00E6D23D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB591DFA9AFF00E6D23D /* BaseViewController.m */; };
 		7485FB5D1DFAA36600E6D23D /* BaseTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB5C1DFAA36600E6D23D /* BaseTableViewModel.m */; };
 		7485FB601DFAA3A100E6D23D /* BaseCollectionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB5F1DFAA3A100E6D23D /* BaseCollectionViewModel.m */; };
-		7485FB631DFAA85800E6D23D /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB621DFAA85800E6D23D /* BaseTableViewController.m */; };
-		7485FB661DFABF0200E6D23D /* BaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB651DFABF0200E6D23D /* BaseCollectionViewController.m */; };
 		7485FB941DFC382800E6D23D /* JCAlertView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7485FB681DFC382800E6D23D /* JCAlertView.bundle */; };
 		7485FB951DFC382800E6D23D /* JCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB6A1DFC382800E6D23D /* JCAlertView.m */; };
 		7485FB961DFC382800E6D23D /* RDVTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB6D1DFC382800E6D23D /* RDVTabBar.m */; };
@@ -83,6 +80,9 @@
 		7485FCBA1DFD4FC800E6D23D /* JDStatusBarNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FCB51DFD4FC800E6D23D /* JDStatusBarNotification.m */; };
 		7485FCBB1DFD4FC800E6D23D /* JDStatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FCB71DFD4FC800E6D23D /* JDStatusBarStyle.m */; };
 		7485FCBC1DFD4FC800E6D23D /* JDStatusBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FCB91DFD4FC800E6D23D /* JDStatusBarView.m */; };
+		7485FCC31DFD523100E6D23D /* BaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FCBE1DFD523100E6D23D /* BaseCollectionViewController.m */; };
+		7485FCC41DFD523100E6D23D /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FCC01DFD523100E6D23D /* BaseTableViewController.m */; };
+		7485FCC51DFD523100E6D23D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FCC21DFD523100E6D23D /* BaseViewController.m */; };
 		D2781A4C36A2A69961E1662A /* libPods-3D打印教育.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C89CD1AB96CEC93A8A4619C /* libPods-3D打印教育.a */; };
 /* End PBXBuildFile section */
 
@@ -134,16 +134,10 @@
 		7485FB531DFA8FCD00E6D23D /* BaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewModel.h; sourceTree = "<group>"; };
 		7485FB541DFA8FCD00E6D23D /* BaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewModel.m; sourceTree = "<group>"; };
 		7485FB561DFA90BA00E6D23D /* LCNavigationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNavigationProtocol.h; sourceTree = "<group>"; };
-		7485FB581DFA9AFF00E6D23D /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
-		7485FB591DFA9AFF00E6D23D /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		7485FB5B1DFAA36600E6D23D /* BaseTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewModel.h; sourceTree = "<group>"; };
 		7485FB5C1DFAA36600E6D23D /* BaseTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewModel.m; sourceTree = "<group>"; };
 		7485FB5E1DFAA3A100E6D23D /* BaseCollectionViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollectionViewModel.h; sourceTree = "<group>"; };
 		7485FB5F1DFAA3A100E6D23D /* BaseCollectionViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionViewModel.m; sourceTree = "<group>"; };
-		7485FB611DFAA85800E6D23D /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
-		7485FB621DFAA85800E6D23D /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
-		7485FB641DFABF0200E6D23D /* BaseCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollectionViewController.h; sourceTree = "<group>"; };
-		7485FB651DFABF0200E6D23D /* BaseCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionViewController.m; sourceTree = "<group>"; };
 		7485FB681DFC382800E6D23D /* JCAlertView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JCAlertView.bundle; sourceTree = "<group>"; };
 		7485FB691DFC382800E6D23D /* JCAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCAlertView.h; sourceTree = "<group>"; };
 		7485FB6A1DFC382800E6D23D /* JCAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCAlertView.m; sourceTree = "<group>"; };
@@ -256,6 +250,12 @@
 		7485FCB71DFD4FC800E6D23D /* JDStatusBarStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDStatusBarStyle.m; sourceTree = "<group>"; };
 		7485FCB81DFD4FC800E6D23D /* JDStatusBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDStatusBarView.h; sourceTree = "<group>"; };
 		7485FCB91DFD4FC800E6D23D /* JDStatusBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDStatusBarView.m; sourceTree = "<group>"; };
+		7485FCBD1DFD523100E6D23D /* BaseCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollectionViewController.h; sourceTree = "<group>"; };
+		7485FCBE1DFD523100E6D23D /* BaseCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionViewController.m; sourceTree = "<group>"; };
+		7485FCBF1DFD523100E6D23D /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		7485FCC01DFD523100E6D23D /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		7485FCC11DFD523100E6D23D /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		7485FCC21DFD523100E6D23D /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		927A6CCB0A9DACC2135DFAB3 /* Pods-3D打印教育.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育.release.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育/Pods-3D打印教育.release.xcconfig"; sourceTree = "<group>"; };
 		A3F85E570F0B86617C398C40 /* Pods-3D打印教育UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育UITests/Pods-3D打印教育UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CAC66B562E4D4586217D7131 /* Pods-3D打印教育Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育Tests/Pods-3D打印教育Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -390,12 +390,6 @@
 				7485FB4E1DFA8BF300E6D23D /* BaseViewController */,
 				7485FB501DFA8CCC00E6D23D /* LCNavigationStackService.h */,
 				7485FB511DFA8CCC00E6D23D /* LCNavigationStackService.m */,
-				7485FB581DFA9AFF00E6D23D /* BaseViewController.h */,
-				7485FB591DFA9AFF00E6D23D /* BaseViewController.m */,
-				7485FB611DFAA85800E6D23D /* BaseTableViewController.h */,
-				7485FB621DFAA85800E6D23D /* BaseTableViewController.m */,
-				7485FB641DFABF0200E6D23D /* BaseCollectionViewController.h */,
-				7485FB651DFABF0200E6D23D /* BaseCollectionViewController.m */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -488,6 +482,12 @@
 		7485FB4E1DFA8BF300E6D23D /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
+				7485FCBD1DFD523100E6D23D /* BaseCollectionViewController.h */,
+				7485FCBE1DFD523100E6D23D /* BaseCollectionViewController.m */,
+				7485FCBF1DFD523100E6D23D /* BaseTableViewController.h */,
+				7485FCC01DFD523100E6D23D /* BaseTableViewController.m */,
+				7485FCC11DFD523100E6D23D /* BaseViewController.h */,
+				7485FCC21DFD523100E6D23D /* BaseViewController.m */,
 			);
 			path = BaseViewController;
 			sourceTree = "<group>";
@@ -1046,6 +1046,7 @@
 				7485FC101DFC39FB00E6D23D /* LCTextFiled.m in Sources */,
 				7485FBB61DFC389B00E6D23D /* UIViewController+RTRootNavigationController.m in Sources */,
 				7485FB9B1DFC382800E6D23D /* WMProgressView.m in Sources */,
+				7485FCC51DFD523100E6D23D /* BaseViewController.m in Sources */,
 				7485FCBB1DFD4FC800E6D23D /* JDStatusBarStyle.m in Sources */,
 				7485FB971DFC382800E6D23D /* RDVTabBarController.m in Sources */,
 				7485FC0E1DFC39FB00E6D23D /* MBLHeader.m in Sources */,
@@ -1057,24 +1058,23 @@
 				7485FC061DFC39FB00E6D23D /* UIViewController+Example.m in Sources */,
 				7485FBFE1DFC39FB00E6D23D /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
 				7485FC141DFC39FB00E6D23D /* KDNetAPIManager_User.m in Sources */,
-				7485FB661DFABF0200E6D23D /* BaseCollectionViewController.m in Sources */,
 				7485FC011DFC39FB00E6D23D /* UIPickerView+KDAdd.m in Sources */,
 				7485FC051DFC39FB00E6D23D /* UIView+KDAdd.m in Sources */,
+				7485FCC41DFD523100E6D23D /* BaseTableViewController.m in Sources */,
 				7485FB0E1DF90A1B00E6D23D /* AppDelegate.m in Sources */,
 				7485FBFB1DFC39FB00E6D23D /* NSObject+Common.m in Sources */,
 				7485FB981DFC382800E6D23D /* RDVTabBarItem.m in Sources */,
 				7485FB951DFC382800E6D23D /* JCAlertView.m in Sources */,
 				7485FB521DFA8CCC00E6D23D /* LCNavigationStackService.m in Sources */,
-				7485FB631DFAA85800E6D23D /* BaseTableViewController.m in Sources */,
 				7485FC0D1DFC39FB00E6D23D /* LCAboutYYWebImage.m in Sources */,
 				7485FC001DFC39FB00E6D23D /* UIImage+RoundeCorner.m in Sources */,
+				7485FCC31DFD523100E6D23D /* BaseCollectionViewController.m in Sources */,
 				7485FBA21DFC382800E6D23D /* UITextView+YZEmotion.m in Sources */,
 				7485FBA71DFC382800E6D23D /* YZEmotionManager.m in Sources */,
 				7485FCBC1DFD4FC800E6D23D /* JDStatusBarView.m in Sources */,
 				7485FB0B1DF90A1B00E6D23D /* main.m in Sources */,
 				7485FBA91DFC382800E6D23D /* YZTextAttachment.m in Sources */,
 				7485FB601DFAA3A100E6D23D /* BaseCollectionViewModel.m in Sources */,
-				7485FB5A1DFA9AFF00E6D23D /* BaseViewController.m in Sources */,
 				7485FBFA1DFC39FB00E6D23D /* NSDate+KDAdd.m in Sources */,
 				7485FC081DFC39FB00E6D23D /* KDColor.m in Sources */,
 				7485FB5D1DFAA36600E6D23D /* BaseTableViewModel.m in Sources */,
