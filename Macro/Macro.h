@@ -15,7 +15,9 @@
 #define SCALE ([UIScreen mainScreen].scale)
 #define SCREEN_MAX_LENGTH (MAX(SCREEN_WIDTH, SCREEN_HEIGHT))
 #define SCREEN_MIN_LENGTH (MIN(SCREEN_WIDTH, SCREEN_HEIGHT))
-
+//搜索条的宽度
+#define SEARCHTEXTFIELD_W SCREEN_WIDTH * 630 / 750
+#define SEARCHTEXTFIELD_FREAM CGRectMake(15, 7, SEARCHTEXTFIELD_W, 30)
 
 // 颜色(RGB)
 #define RGBCOLOR(r, g, b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]

@@ -10,13 +10,7 @@
 
 @implementation LCTextFiled
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+
 
 //控制清除按钮的位置
 -(CGRect)clearButtonRectForBounds:(CGRect)bounds
@@ -35,7 +29,8 @@ return CGRectMake(bounds.origin.x + bounds.size.width - 50, bounds.origin.y + bo
 -(CGRect)textRectForBounds:(CGRect)bounds
 {
     //return CGRectInset(bounds, 50, 0);
-    CGRect inset = CGRectMake(bounds.origin.x+10, bounds.origin.y, bounds.size.width , bounds.size.height);//更好理解些
+    UIImage *image = [UIImage imageNamed:@"fangdajing"];
+    CGRect inset = CGRectMake(bounds.origin.x +15+5+image.size.width, bounds.origin.y, bounds.size.width , bounds.size.height);//更好理解些
     
     return inset;
     
@@ -51,7 +46,8 @@ return CGRectMake(bounds.origin.x + bounds.size.width - 50, bounds.origin.y + bo
 //控制左视图位置
 - (CGRect)leftViewRectForBounds:(CGRect)bounds
 {
-    CGRect inset = CGRectMake(bounds.origin.x +15, bounds.origin.y+9, 15, 13);
+    UIImage *image = [UIImage imageNamed:@"fangdajing"];
+    CGRect inset = CGRectMake(bounds.origin.x +15, (self.height-image.size.height)/2, image.size.width, image.size.height);
     return inset;
     //return CGRectInset(bounds,50,0);
 }

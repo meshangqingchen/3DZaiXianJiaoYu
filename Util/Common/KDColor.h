@@ -16,7 +16,7 @@
 + (UIColor *)getX1Color;
 ///0xffffff 白色
 + (UIColor *)getC0Color;
-///0xf98a88 粉红
+///0x15c209 搜索条的背景色
 + (UIColor *)getC1Color;
 ///0x333333 字体黑
 + (UIColor *)getC2Color;

@@ -8,8 +8,10 @@
 
 #import "LCHomeViewController.h"
 #import "LCHomeViewModel.h"
-@interface LCHomeViewController ()
+#import "LCTextFiled.h"
+@interface LCHomeViewController ()<UITextFieldDelegate>
 @property(nonatomic,strong) LCHomeViewModel *viewModel;
+@property(nonatomic,strong) LCTextFiled *tf;
 @end
 
 @implementation LCHomeViewController
@@ -17,7 +19,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor yellowColor];
-    
+    _tf = [[LCTextFiled alloc]initWithFrame:SEARCHTEXTFIELD_FREAM];
+    _tf.delegate = self;
+    _tf.backgroundColor = [KDColor getC1Color];
+    _tf.leftView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"fangdajing"]];
+    _tf.leftViewMode = UITextFieldViewModeAlways;
+    _tf.text = @"搜索想要的内容";
+    _tf.textColor = [KDColor getC0Color];
+    _tf.font = [[KDFont sharedKDFont] getF28Font];
+    [self.navigationController.navigationBar addSubview:_tf];
+}
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    NSLog(@"asd");
+    return NO;
 }
 
 - (void)didReceiveMemoryWarning {
