@@ -10,6 +10,7 @@
 #import "LCRootViewModel.h"
 //TabBar控制器
 #import "RDVTabBarController.h"
+#import "RDVTabBarItem.h"
 //导航控制器
 #import "RTRootNavigationController.h"
 //四个模块控制器
@@ -37,6 +38,7 @@
     [self addChildViewController:self.tabBarController];
     [self.view addSubview:self.tabBarController.view];
     [self setupViewControllers];
+    [self customizeTabBarForController];
 }
 
 -(void)setupViewControllers{
@@ -58,10 +60,23 @@
 }
 
 -(void)customizeTabBarForController{
-    NSArray* selecttabBarItemImages = @[@"glasses_select",@"clothes_select"];
-    NSArray* nomailtabBarItemImages = @[@"glasses_nomal",@"clothes_nomal"];
-    NSArray *tabBarItemTitles       = @[@"课程",@"我的"];
+    NSArray* selecttabBarItemImages = @[@"home_select",@"course_select",@"news_select",@"personal_select"];
+    NSArray* nomailtabBarItemImages = @[@"home_nomal",@"course_nomal",@"news_nomal",@"personal_nomal"];
+    NSArray *tabBarItemTitles       = @[@"首页",@"我的课程",@"资讯",@"我"];
+
     NSArray *items = [[self.tabBarController tabBar] items];
+    int index = 0;
+    for (RDVTabBarItem *item in items) {
+        [item setBackgroundSelectedImage:[UIImage imageNamed:@"tabBar_background"] withUnselectedImage:[UIImage imageNamed:@"tabBar_background"]];
+        item.titlePositionAdjustment = UIOffsetMake(0, 5);
+        UIImage *selectImage = [UIImage imageNamed:selecttabBarItemImages[index]];
+        UIImage *nomailImage = [UIImage imageNamed:nomailtabBarItemImages[index]];
+        [item setFinishedSelectedImage:selectImage withFinishedUnselectedImage:nomailImage];
+        
+        [item setTitle:tabBarItemTitles[index]];
+        index++;
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {

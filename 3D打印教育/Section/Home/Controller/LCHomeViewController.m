@@ -7,16 +7,17 @@
 //
 
 #import "LCHomeViewController.h"
-
+#import "LCHomeViewModel.h"
 @interface LCHomeViewController ()
-
+@property(nonatomic,strong) LCHomeViewModel *viewModel;
 @end
 
 @implementation LCHomeViewController
-
+@dynamic viewModel;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor yellowColor];
+    
 }
 
 - (void)didReceiveMemoryWarning {
