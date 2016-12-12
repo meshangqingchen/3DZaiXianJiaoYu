@@ -118,7 +118,7 @@ static void *xxcontext = &xxcontext;
 
 - (UIEdgeInsets)contentInset
 {
-    return UIEdgeInsetsMake(64, 0, 0, 0);
+    return UIEdgeInsetsMake(0, 0, 0, 0);
 }
 
 

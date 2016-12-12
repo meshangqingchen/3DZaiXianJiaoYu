@@ -92,6 +92,7 @@
 		7485FCEF1DFE45B900E6D23D /* LCNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FCEE1DFE45B900E6D23D /* LCNewsViewController.m */; };
 		7485FCF51DFE46E500E6D23D /* LCPersonalCenterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FCF41DFE46E500E6D23D /* LCPersonalCenterViewModel.m */; };
 		7485FCF81DFE475500E6D23D /* LCPersonalCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FCF71DFE475500E6D23D /* LCPersonalCenterViewController.m */; };
+		7485FCFB1DFE82C300E6D23D /* LCHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FCFA1DFE82C300E6D23D /* LCHomeViewController.m */; };
 		D2781A4C36A2A69961E1662A /* libPods-3D打印教育.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C89CD1AB96CEC93A8A4619C /* libPods-3D打印教育.a */; };
 /* End PBXBuildFile section */
 
@@ -283,6 +284,8 @@
 		7485FCF41DFE46E500E6D23D /* LCPersonalCenterViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPersonalCenterViewModel.m; sourceTree = "<group>"; };
 		7485FCF61DFE475500E6D23D /* LCPersonalCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPersonalCenterViewController.h; sourceTree = "<group>"; };
 		7485FCF71DFE475500E6D23D /* LCPersonalCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPersonalCenterViewController.m; sourceTree = "<group>"; };
+		7485FCF91DFE82C300E6D23D /* LCHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHomeViewController.h; sourceTree = "<group>"; };
+		7485FCFA1DFE82C300E6D23D /* LCHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHomeViewController.m; sourceTree = "<group>"; };
 		927A6CCB0A9DACC2135DFAB3 /* Pods-3D打印教育.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育.release.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育/Pods-3D打印教育.release.xcconfig"; sourceTree = "<group>"; };
 		A3F85E570F0B86617C398C40 /* Pods-3D打印教育UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育UITests/Pods-3D打印教育UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CAC66B562E4D4586217D7131 /* Pods-3D打印教育Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育Tests/Pods-3D打印教育Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -687,12 +690,12 @@
 		7485FBD61DFC39FB00E6D23D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				7485FBDB1DFC39FB00E6D23D /* KDRouter.h */,
+				7485FBDC1DFC39FB00E6D23D /* KDRouter.m */,
 				7485FBD71DFC39FB00E6D23D /* KDColor.h */,
 				7485FBD81DFC39FB00E6D23D /* KDColor.m */,
 				7485FBD91DFC39FB00E6D23D /* KDFont.h */,
 				7485FBDA1DFC39FB00E6D23D /* KDFont.m */,
-				7485FBDB1DFC39FB00E6D23D /* KDRouter.h */,
-				7485FBDC1DFC39FB00E6D23D /* KDRouter.m */,
 				7485FBDD1DFC39FB00E6D23D /* NSDateUtils.h */,
 				7485FBDE1DFC39FB00E6D23D /* NSDateUtils.m */,
 				7485FBDF1DFC39FB00E6D23D /* RegexUtil.h */,
@@ -785,6 +788,8 @@
 		7485FCC71DFE41AD00E6D23D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7485FCF91DFE82C300E6D23D /* LCHomeViewController.h */,
+				7485FCFA1DFE82C300E6D23D /* LCHomeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1293,6 +1298,7 @@
 				7485FCBC1DFD4FC800E6D23D /* JDStatusBarView.m in Sources */,
 				7485FB0B1DF90A1B00E6D23D /* main.m in Sources */,
 				7485FBA91DFC382800E6D23D /* YZTextAttachment.m in Sources */,
+				7485FCFB1DFE82C300E6D23D /* LCHomeViewController.m in Sources */,
 				7485FCE91DFE451400E6D23D /* LCMyCourseViewController.m in Sources */,
 				7485FB601DFAA3A100E6D23D /* BaseCollectionViewModel.m in Sources */,
 				7485FBFA1DFC39FB00E6D23D /* NSDate+KDAdd.m in Sources */,

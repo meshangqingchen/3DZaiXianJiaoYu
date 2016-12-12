@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface LCNavigationStackService : NSObject
+#import "LCNavigationProtocol.h"
+@interface LCNavigationStackService : NSObject<LCNavigationProtocol>
 /// Pushes the navigation controller.
 ///
 /// navigationController - the navigation controller

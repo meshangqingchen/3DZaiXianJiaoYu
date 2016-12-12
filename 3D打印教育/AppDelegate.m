@@ -7,18 +7,63 @@
 //
 
 #import "AppDelegate.h"
+#import <PLeakSniffer/PLeakSniffer.h>
+#import <UIKit+AFNetworking.h>
+#import <IQKeyboardManager.h>
+#import "BaseViewModel.h"
+#import "LCRootViewModel.h"
 
 @interface AppDelegate ()
-
+@property(nonatomic,strong,readwrite) LCNavigationStackService *navigationStackService;
+@property(nonatomic,assign,readwrite) AFNetworkReachabilityStatus networkStatus;
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self configureKeyboardManager];
+    [self configureReachability];
+    [self configureAppearance];
+    self.navigationStackService = [[LCNavigationStackService alloc]init];
+    [self.navigationStackService resetRootViewModel:[self createRootViewModel]];
+    [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+- (void)configureKeyboardManager
+{
+    IQKeyboardManager.sharedManager.enableAutoToolbar = NO;
+    IQKeyboardManager.sharedManager.shouldResignOnTouchOutside = YES;
+}
+
+- (void)configureReachability
+{
+    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+    //网络状态监测
+    @weakify(self)
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        MYLog(@"Reachability: %@", AFStringFromNetworkReachabilityStatus(status));
+        @strongify(self);
+        self.networkStatus = status;
+    }];
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+}
+
+- (void)configureAppearance {
+    // 0x2F434F
+    [UINavigationBar appearance].barTintColor = [KDColor getX1Color];
+    [UINavigationBar appearance].barStyle  = UIBarStyleBlackOpaque;
+//    [UINavigationBar appearance].tintColor = [UIColor whiteColor];
+    [UINavigationBar appearance].translucent = NO;
+//    [UISegmentedControl appearance].tintColor = [UIColor whiteColor];
+//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+}
+
+- (BaseViewModel *)createRootViewModel
+{
+    return [[LCRootViewModel alloc] initWithServices:self.navigationStackService params:nil];
 }
 
 

@@ -35,34 +35,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(KDRouter)
 - (NSDictionary *)viewModelViewMappings {
 	if(_viewModelViewMappings == nil) {
         _viewModelViewMappings = @{
-                                   @"KDRootViewModel" : @"KDRootViewController",
-                                   @"WVideoDetailsViewModel":@"WVideoDetailsViewController",
-                                   @"LCClassViewModel":@"LCClassViewController",
-                                   @"LCBenKeViewModel":@"LCBenKeViewController",
-                                   @"LCShuoShiViewModel":@"LCShuoShiViewController",
-                                   @"LC3DCollegeViewModel":@"LC3DCollegeViewController",
-                                   @"LCBenKeOptionalViewModel":@"LCBenKeOptionalViewController",
-                                   @"LCTeenagerEducationViewModel":@"LCTeenagerEducationViewController",
-                                   @"LCApplicationEducationViewModel":@"LCApplicationEducationViewController",
-                                   @"LCWonderfulThemeViewModel":@"LCWonderfulThemeViewController",
-                                   @"LCVideoParentViewModel":@"LCVideoParentViewController",
-                                   @"LCCourseIntroductionViewMode":@"LCCourseIntroductionViewController",
-                                   @"LCSyllabusViewModel":@"LCSyllabusViewController",
-                                   @"LCLoginViewModel":@"LCLoginViewController",
-                                   @"LCForgotPasswordViewModel":@"LCForgotPasswordViewController",
-                                   @"LCRegisteredViewModel":@"LCRegisteredViewController",
-                                   @"LCMyCollectionViewModel":@"LCMyCollectionViewController",
-                                   @"LCCommonSettingViewModel":@"LCCommonSettingViewController",
-                                   @"LCFeedbackViewModel":@"LCFeedbackViewController",
-                                   @"LCClassListViewModel":@"LCClassListViewController",
-                                   @"LCEditdataViewModel":@"LCEditdataViewController",
-                                   @"WAboutUsViewModel":@"WAboutUsViewController",
-                                   @"LCChangePhoneViewModel":@"LCChangePhoneViewController",
-                                   @"LCChangePasswordViewModel":@"LCChangePasswordViewController",
-                                   @"LCTeacherTableViewModel":@"LCTeacherTableViewController",
-                                   @"LCTeacherViewModel":@"LCTeacherDetailViewController",
-                                   @"LCVideoCollectionViewModel":@"LCVideoCollectionViewController",
-                                   @"LCBaoMingViewModel":@"LCBaoMingViewController"
+                                   @"LCRootViewModel" : @"LCRootViewController",
                                    };
     }
 	return _viewModelViewMappings;

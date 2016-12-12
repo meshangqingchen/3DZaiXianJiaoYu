@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "LCNavigationStackService.h"
+#import <AFNetworkReachabilityManager.h>
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-
+@property(nonatomic,strong,readonly) LCNavigationStackService *navigationStackService;
+@property(nonatomic,assign,readonly) AFNetworkReachabilityStatus networkStatus;
 @end
 
