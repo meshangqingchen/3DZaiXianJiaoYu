@@ -83,6 +83,15 @@
 		7485FCC31DFD523100E6D23D /* BaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FCBE1DFD523100E6D23D /* BaseCollectionViewController.m */; };
 		7485FCC41DFD523100E6D23D /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FCC01DFD523100E6D23D /* BaseTableViewController.m */; };
 		7485FCC51DFD523100E6D23D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FCC21DFD523100E6D23D /* BaseViewController.m */; };
+		7485FCDD1DFE425D00E6D23D /* LCRootViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FCDC1DFE425D00E6D23D /* LCRootViewModel.m */; };
+		7485FCE01DFE42BE00E6D23D /* LCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FCDF1DFE42BE00E6D23D /* LCRootViewController.m */; };
+		7485FCE31DFE442800E6D23D /* LCHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FCE21DFE442800E6D23D /* LCHomeViewModel.m */; };
+		7485FCE61DFE44FB00E6D23D /* LCMyCourseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FCE51DFE44FB00E6D23D /* LCMyCourseViewModel.m */; };
+		7485FCE91DFE451400E6D23D /* LCMyCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FCE81DFE451400E6D23D /* LCMyCourseViewController.m */; };
+		7485FCEC1DFE455300E6D23D /* LCNewsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FCEB1DFE455300E6D23D /* LCNewsViewModel.m */; };
+		7485FCEF1DFE45B900E6D23D /* LCNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FCEE1DFE45B900E6D23D /* LCNewsViewController.m */; };
+		7485FCF51DFE46E500E6D23D /* LCPersonalCenterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FCF41DFE46E500E6D23D /* LCPersonalCenterViewModel.m */; };
+		7485FCF81DFE475500E6D23D /* LCPersonalCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FCF71DFE475500E6D23D /* LCPersonalCenterViewController.m */; };
 		D2781A4C36A2A69961E1662A /* libPods-3D打印教育.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C89CD1AB96CEC93A8A4619C /* libPods-3D打印教育.a */; };
 /* End PBXBuildFile section */
 
@@ -256,6 +265,24 @@
 		7485FCC01DFD523100E6D23D /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 		7485FCC11DFD523100E6D23D /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		7485FCC21DFD523100E6D23D /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		7485FCDB1DFE425D00E6D23D /* LCRootViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCRootViewModel.h; sourceTree = "<group>"; };
+		7485FCDC1DFE425D00E6D23D /* LCRootViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCRootViewModel.m; sourceTree = "<group>"; };
+		7485FCDE1DFE42BE00E6D23D /* LCRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCRootViewController.h; sourceTree = "<group>"; };
+		7485FCDF1DFE42BE00E6D23D /* LCRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCRootViewController.m; sourceTree = "<group>"; };
+		7485FCE11DFE442800E6D23D /* LCHomeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHomeViewModel.h; sourceTree = "<group>"; };
+		7485FCE21DFE442800E6D23D /* LCHomeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHomeViewModel.m; sourceTree = "<group>"; };
+		7485FCE41DFE44FB00E6D23D /* LCMyCourseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMyCourseViewModel.h; sourceTree = "<group>"; };
+		7485FCE51DFE44FB00E6D23D /* LCMyCourseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMyCourseViewModel.m; sourceTree = "<group>"; };
+		7485FCE71DFE451400E6D23D /* LCMyCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMyCourseViewController.h; sourceTree = "<group>"; };
+		7485FCE81DFE451400E6D23D /* LCMyCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMyCourseViewController.m; sourceTree = "<group>"; };
+		7485FCEA1DFE455300E6D23D /* LCNewsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNewsViewModel.h; sourceTree = "<group>"; };
+		7485FCEB1DFE455300E6D23D /* LCNewsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNewsViewModel.m; sourceTree = "<group>"; };
+		7485FCED1DFE45B900E6D23D /* LCNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNewsViewController.h; sourceTree = "<group>"; };
+		7485FCEE1DFE45B900E6D23D /* LCNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNewsViewController.m; sourceTree = "<group>"; };
+		7485FCF31DFE46E500E6D23D /* LCPersonalCenterViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPersonalCenterViewModel.h; sourceTree = "<group>"; };
+		7485FCF41DFE46E500E6D23D /* LCPersonalCenterViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPersonalCenterViewModel.m; sourceTree = "<group>"; };
+		7485FCF61DFE475500E6D23D /* LCPersonalCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPersonalCenterViewController.h; sourceTree = "<group>"; };
+		7485FCF71DFE475500E6D23D /* LCPersonalCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPersonalCenterViewController.m; sourceTree = "<group>"; };
 		927A6CCB0A9DACC2135DFAB3 /* Pods-3D打印教育.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育.release.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育/Pods-3D打印教育.release.xcconfig"; sourceTree = "<group>"; };
 		A3F85E570F0B86617C398C40 /* Pods-3D打印教育UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育UITests/Pods-3D打印教育UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CAC66B562E4D4586217D7131 /* Pods-3D打印教育Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育Tests/Pods-3D打印教育Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -421,6 +448,7 @@
 		7485FB411DFA7C9B00E6D23D /* Section */ = {
 			isa = PBXGroup;
 			children = (
+				7485FCC61DFE414000E6D23D /* Root */,
 				7485FB421DFA7DBF00E6D23D /* Home */,
 				7485FB431DFA7DBF00E6D23D /* MyCourse */,
 				7485FB441DFA7DBF00E6D23D /* News */,
@@ -432,6 +460,10 @@
 		7485FB421DFA7DBF00E6D23D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7485FCC81DFE41AD00E6D23D /* Model */,
+				7485FCC91DFE41AD00E6D23D /* View */,
+				7485FCCA1DFE41AD00E6D23D /* ViewModel */,
+				7485FCC71DFE41AD00E6D23D /* Controller */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -439,6 +471,10 @@
 		7485FB431DFA7DBF00E6D23D /* MyCourse */ = {
 			isa = PBXGroup;
 			children = (
+				7485FCD81DFE420400E6D23D /* Model */,
+				7485FCD91DFE420400E6D23D /* View */,
+				7485FCDA1DFE420400E6D23D /* ViewModel */,
+				7485FCD71DFE420400E6D23D /* Controller */,
 			);
 			path = MyCourse;
 			sourceTree = "<group>";
@@ -446,6 +482,10 @@
 		7485FB441DFA7DBF00E6D23D /* News */ = {
 			isa = PBXGroup;
 			children = (
+				7485FCD41DFE41FA00E6D23D /* Model */,
+				7485FCD51DFE41FA00E6D23D /* View */,
+				7485FCD61DFE41FA00E6D23D /* ViewModel */,
+				7485FCD31DFE41FA00E6D23D /* Controller */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -453,6 +493,10 @@
 		7485FB451DFA7DBF00E6D23D /* PersonalCenter */ = {
 			isa = PBXGroup;
 			children = (
+				7485FCD01DFE41ED00E6D23D /* Model */,
+				7485FCD11DFE41ED00E6D23D /* View */,
+				7485FCD21DFE41ED00E6D23D /* ViewModel */,
+				7485FCCF1DFE41ED00E6D23D /* Controller */,
 			);
 			path = PersonalCenter;
 			sourceTree = "<group>";
@@ -725,6 +769,175 @@
 				7485FCB91DFD4FC800E6D23D /* JDStatusBarView.m */,
 			);
 			path = JDStatusBarNotification;
+			sourceTree = "<group>";
+		};
+		7485FCC61DFE414000E6D23D /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				7485FCCC1DFE41BE00E6D23D /* Model */,
+				7485FCCD1DFE41BE00E6D23D /* View */,
+				7485FCCE1DFE41BE00E6D23D /* ViewModel */,
+				7485FCCB1DFE41BE00E6D23D /* Controller */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		7485FCC71DFE41AD00E6D23D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7485FCC81DFE41AD00E6D23D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7485FCC91DFE41AD00E6D23D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7485FCCA1DFE41AD00E6D23D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7485FCE11DFE442800E6D23D /* LCHomeViewModel.h */,
+				7485FCE21DFE442800E6D23D /* LCHomeViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7485FCCB1DFE41BE00E6D23D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7485FCDE1DFE42BE00E6D23D /* LCRootViewController.h */,
+				7485FCDF1DFE42BE00E6D23D /* LCRootViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7485FCCC1DFE41BE00E6D23D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7485FCCD1DFE41BE00E6D23D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7485FCCE1DFE41BE00E6D23D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7485FCDB1DFE425D00E6D23D /* LCRootViewModel.h */,
+				7485FCDC1DFE425D00E6D23D /* LCRootViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7485FCCF1DFE41ED00E6D23D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7485FCF61DFE475500E6D23D /* LCPersonalCenterViewController.h */,
+				7485FCF71DFE475500E6D23D /* LCPersonalCenterViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7485FCD01DFE41ED00E6D23D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7485FCD11DFE41ED00E6D23D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7485FCD21DFE41ED00E6D23D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7485FCF31DFE46E500E6D23D /* LCPersonalCenterViewModel.h */,
+				7485FCF41DFE46E500E6D23D /* LCPersonalCenterViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7485FCD31DFE41FA00E6D23D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7485FCED1DFE45B900E6D23D /* LCNewsViewController.h */,
+				7485FCEE1DFE45B900E6D23D /* LCNewsViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7485FCD41DFE41FA00E6D23D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7485FCD51DFE41FA00E6D23D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7485FCD61DFE41FA00E6D23D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7485FCEA1DFE455300E6D23D /* LCNewsViewModel.h */,
+				7485FCEB1DFE455300E6D23D /* LCNewsViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7485FCD71DFE420400E6D23D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7485FCE71DFE451400E6D23D /* LCMyCourseViewController.h */,
+				7485FCE81DFE451400E6D23D /* LCMyCourseViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7485FCD81DFE420400E6D23D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7485FCD91DFE420400E6D23D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7485FCDA1DFE420400E6D23D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7485FCE41DFE44FB00E6D23D /* LCMyCourseViewModel.h */,
+				7485FCE51DFE44FB00E6D23D /* LCMyCourseViewModel.m */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		7CF7E8E8EEADEF4A3F51B948 /* Pods */ = {
@@ -1029,7 +1242,9 @@
 			files = (
 				7485FC0B1DFC39FB00E6D23D /* NSDateUtils.m in Sources */,
 				7485FB9A1DFC382800E6D23D /* WMMenuView.m in Sources */,
+				7485FCEF1DFE45B900E6D23D /* LCNewsViewController.m in Sources */,
 				7485FBA11DFC382800E6D23D /* UITextField+YZEmotion.m in Sources */,
+				7485FCE61DFE44FB00E6D23D /* LCMyCourseViewModel.m in Sources */,
 				7485FC111DFC39FB00E6D23D /* UIPlaceHolderTextView.m in Sources */,
 				7485FB111DF90A1B00E6D23D /* ViewController.m in Sources */,
 				7485FBF91DFC39FB00E6D23D /* NSDate+CalendarLogic.m in Sources */,
@@ -1037,6 +1252,7 @@
 				7485FBFD1DFC39FB00E6D23D /* NSString+PJR.m in Sources */,
 				7485FC041DFC39FB00E6D23D /* UIView+HUD.m in Sources */,
 				7485FB551DFA8FCD00E6D23D /* BaseViewModel.m in Sources */,
+				7485FCF81DFE475500E6D23D /* LCPersonalCenterViewController.m in Sources */,
 				7485FB9C1DFC382800E6D23D /* WMScrollView.m in Sources */,
 				7485FC121DFC39FB00E6D23D /* KDFileManager.m in Sources */,
 				7485FBB31DFC389B00E6D23D /* CustomBarItem.m in Sources */,
@@ -1048,6 +1264,7 @@
 				7485FB9B1DFC382800E6D23D /* WMProgressView.m in Sources */,
 				7485FCC51DFD523100E6D23D /* BaseViewController.m in Sources */,
 				7485FCBB1DFD4FC800E6D23D /* JDStatusBarStyle.m in Sources */,
+				7485FCE01DFE42BE00E6D23D /* LCRootViewController.m in Sources */,
 				7485FB971DFC382800E6D23D /* RDVTabBarController.m in Sources */,
 				7485FC0E1DFC39FB00E6D23D /* MBLHeader.m in Sources */,
 				7485FB9D1DFC382800E6D23D /* WMPageController.m in Sources */,
@@ -1056,6 +1273,7 @@
 				7485FBFF1DFC39FB00E6D23D /* UIButton+Common.m in Sources */,
 				7485FC0F1DFC39FB00E6D23D /* MBLHeaderImageView.m in Sources */,
 				7485FC061DFC39FB00E6D23D /* UIViewController+Example.m in Sources */,
+				7485FCEC1DFE455300E6D23D /* LCNewsViewModel.m in Sources */,
 				7485FBFE1DFC39FB00E6D23D /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
 				7485FC141DFC39FB00E6D23D /* KDNetAPIManager_User.m in Sources */,
 				7485FC011DFC39FB00E6D23D /* UIPickerView+KDAdd.m in Sources */,
@@ -1070,14 +1288,17 @@
 				7485FC001DFC39FB00E6D23D /* UIImage+RoundeCorner.m in Sources */,
 				7485FCC31DFD523100E6D23D /* BaseCollectionViewController.m in Sources */,
 				7485FBA21DFC382800E6D23D /* UITextView+YZEmotion.m in Sources */,
+				7485FCDD1DFE425D00E6D23D /* LCRootViewModel.m in Sources */,
 				7485FBA71DFC382800E6D23D /* YZEmotionManager.m in Sources */,
 				7485FCBC1DFD4FC800E6D23D /* JDStatusBarView.m in Sources */,
 				7485FB0B1DF90A1B00E6D23D /* main.m in Sources */,
 				7485FBA91DFC382800E6D23D /* YZTextAttachment.m in Sources */,
+				7485FCE91DFE451400E6D23D /* LCMyCourseViewController.m in Sources */,
 				7485FB601DFAA3A100E6D23D /* BaseCollectionViewModel.m in Sources */,
 				7485FBFA1DFC39FB00E6D23D /* NSDate+KDAdd.m in Sources */,
 				7485FC081DFC39FB00E6D23D /* KDColor.m in Sources */,
 				7485FB5D1DFAA36600E6D23D /* BaseTableViewModel.m in Sources */,
+				7485FCF51DFE46E500E6D23D /* LCPersonalCenterViewModel.m in Sources */,
 				7485FBA31DFC382800E6D23D /* YZEmotionCell.m in Sources */,
 				7485FB961DFC382800E6D23D /* RDVTabBar.m in Sources */,
 				7485FC091DFC39FB00E6D23D /* KDFont.m in Sources */,
@@ -1085,6 +1306,7 @@
 				7485FBB41DFC389B00E6D23D /* RTRootNavigationController.m in Sources */,
 				7485FC071DFC39FB00E6D23D /* UIViewController+Swizzle.m in Sources */,
 				7485FC151DFC39FB00E6D23D /* ObjcRuntime.m in Sources */,
+				7485FCE31DFE442800E6D23D /* LCHomeViewModel.m in Sources */,
 				7485FBA51DFC382800E6D23D /* YZEmotionKeyboard.m in Sources */,
 				7485FB4A1DFA831E00E6D23D /* Constants.m in Sources */,
 				7485FC131DFC39FB00E6D23D /* KDNetAPIManager.m in Sources */,
