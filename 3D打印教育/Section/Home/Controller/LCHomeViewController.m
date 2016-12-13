@@ -21,6 +21,7 @@
     self.view.backgroundColor = [UIColor yellowColor];
     _tf = [[LCTextFiled alloc]initWithFrame:SEARCHTEXTFIELD_FREAM];
     _tf.delegate = self;
+    _tf.layer.cornerRadius = 15;
     _tf.backgroundColor = [KDColor getC1Color];
     _tf.leftView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"fangdajing"]];
     _tf.leftViewMode = UITextFieldViewModeAlways;

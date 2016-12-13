@@ -27,7 +27,7 @@
 }
 
 + (UIColor *)getC1Color {
-    return kUIColorRGB16(0x1eb7bd);//1EB7BD
+    return kUIColorRGB16(0x15c2c9);//1EB7BD
 }
 
 + (UIColor *)getC2Color {
