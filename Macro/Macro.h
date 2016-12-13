@@ -18,7 +18,17 @@
 //搜索条的宽度
 #define SEARCHTEXTFIELD_W SCREEN_WIDTH * 630 / 750
 #define SEARCHTEXTFIELD_FREAM CGRectMake(15, 7, SEARCHTEXTFIELD_W, 30)
+//普通collectionCell的宽度
+#define NORMALE_COLLECTIONCELL_W (SCREEN_WIDTH - 40)/2
+#define NORMALE_COLLECTIONCELL_H (NORMALE_COLLECTIONCELL_W)*306/355
+//377
+#define BIGIMAGEADDTEXT_W SCREEN_WIDTH-30
+#define BIGIMAGEADDTEXT_H (BIGIMAGEADDTEXT_W)*377/690
 
+#define BIGIMAGE_W  SCREEN_WIDTH-30
+#define BIGIMAGE_H  (BIGIMAGE_W) * 290 / 690
+
+#define SECTION_H  39
 // 颜色(RGB)
 #define RGBCOLOR(r, g, b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
 #define RGBACOLOR(r, g, b, a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]

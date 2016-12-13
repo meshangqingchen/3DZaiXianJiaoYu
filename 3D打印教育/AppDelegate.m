@@ -28,7 +28,6 @@
     self.navigationStackService = [[LCNavigationStackService alloc]init];
     [self.navigationStackService resetRootViewModel:[self createRootViewModel]];
     [self.window makeKeyAndVisible];
-    
     return YES;
 }
 

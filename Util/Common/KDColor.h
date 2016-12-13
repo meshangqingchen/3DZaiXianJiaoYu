@@ -22,7 +22,7 @@
 + (UIColor *)getC2Color;
 ///0x666666 字体灰
 + (UIColor *)getC3Color;
-///0xf1f1f1 名师讲堂灰
+///0xbbc1c3 更多 灰色
 + (UIColor *)getC4Color;
 ///0x989898 名师讲堂字体灰
 + (UIColor *)getC5Color;
