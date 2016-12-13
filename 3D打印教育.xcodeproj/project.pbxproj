@@ -123,6 +123,11 @@
 		7485FDAD1DFFFA1500E6D23D /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FD941DFFFA1500E6D23D /* UIImageView+WebCache.m */; };
 		7485FDAE1DFFFA1500E6D23D /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FD961DFFFA1500E6D23D /* UIView+WebCacheOperation.m */; };
 		7485FDAF1DFFFA1500E6D23D /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FD981DFFFA1500E6D23D /* UIView+SDExtension.m */; };
+		7485FDB21DFFFD4500E6D23D /* LCCollectionReusableBannerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FDB11DFFFD4500E6D23D /* LCCollectionReusableBannerHeaderView.m */; };
+		7485FDB71E0004D400E6D23D /* h1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7485FDB31E0004D400E6D23D /* h1.jpg */; };
+		7485FDB81E0004D400E6D23D /* h3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7485FDB41E0004D400E6D23D /* h3.jpg */; };
+		7485FDB91E0004D400E6D23D /* h2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7485FDB51E0004D400E6D23D /* h2.jpg */; };
+		7485FDBA1E0004D400E6D23D /* h4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7485FDB61E0004D400E6D23D /* h4.jpg */; };
 		D2781A4C36A2A69961E1662A /* libPods-3D打印教育.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C89CD1AB96CEC93A8A4619C /* libPods-3D打印教育.a */; };
 /* End PBXBuildFile section */
 
@@ -378,6 +383,12 @@
 		7485FD961DFFFA1500E6D23D /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		7485FD971DFFFA1500E6D23D /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
 		7485FD981DFFFA1500E6D23D /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
+		7485FDB01DFFFD4500E6D23D /* LCCollectionReusableBannerHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCollectionReusableBannerHeaderView.h; sourceTree = "<group>"; };
+		7485FDB11DFFFD4500E6D23D /* LCCollectionReusableBannerHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCollectionReusableBannerHeaderView.m; sourceTree = "<group>"; };
+		7485FDB31E0004D400E6D23D /* h1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h1.jpg; sourceTree = "<group>"; };
+		7485FDB41E0004D400E6D23D /* h3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h3.jpg; sourceTree = "<group>"; };
+		7485FDB51E0004D400E6D23D /* h2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h2.jpg; sourceTree = "<group>"; };
+		7485FDB61E0004D400E6D23D /* h4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h4.jpg; sourceTree = "<group>"; };
 		927A6CCB0A9DACC2135DFAB3 /* Pods-3D打印教育.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育.release.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育/Pods-3D打印教育.release.xcconfig"; sourceTree = "<group>"; };
 		A3F85E570F0B86617C398C40 /* Pods-3D打印教育UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育UITests/Pods-3D打印教育UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CAC66B562E4D4586217D7131 /* Pods-3D打印教育Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育Tests/Pods-3D打印教育Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -470,6 +481,10 @@
 				7485FB171DF90A1B00E6D23D /* LaunchScreen.storyboard */,
 				7485FB1A1DF90A1B00E6D23D /* Info.plist */,
 				7485FB0A1DF90A1B00E6D23D /* main.m */,
+				7485FDB31E0004D400E6D23D /* h1.jpg */,
+				7485FDB41E0004D400E6D23D /* h3.jpg */,
+				7485FDB51E0004D400E6D23D /* h2.jpg */,
+				7485FDB61E0004D400E6D23D /* h4.jpg */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -895,6 +910,8 @@
 			children = (
 				7485FD181DFFE0C800E6D23D /* LCCollectionReusableHeaderView.h */,
 				7485FD191DFFE0C800E6D23D /* LCCollectionReusableHeaderView.m */,
+				7485FDB01DFFFD4500E6D23D /* LCCollectionReusableBannerHeaderView.h */,
+				7485FDB11DFFFD4500E6D23D /* LCCollectionReusableBannerHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1260,10 +1277,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7485FDBA1E0004D400E6D23D /* h4.jpg in Resources */,
+				7485FDB71E0004D400E6D23D /* h1.jpg in Resources */,
 				7485FBA41DFC382800E6D23D /* YZEmotionCell.xib in Resources */,
 				7485FB9F1DFC382800E6D23D /* emotion.plist in Resources */,
+				7485FDB91E0004D400E6D23D /* h2.jpg in Resources */,
 				7485FBA61DFC382800E6D23D /* YZEmotionKeyboard.xib in Resources */,
 				7485FBA01DFC382800E6D23D /* emotionToText.plist in Resources */,
+				7485FDB81E0004D400E6D23D /* h3.jpg in Resources */,
 				7485FB191DF90A1B00E6D23D /* LaunchScreen.storyboard in Resources */,
 				7485FB161DF90A1B00E6D23D /* Assets.xcassets in Resources */,
 				7485FB941DFC382800E6D23D /* JCAlertView.bundle in Resources */,
@@ -1495,6 +1516,7 @@
 				7485FB981DFC382800E6D23D /* RDVTabBarItem.m in Sources */,
 				7485FDA41DFFFA1500E6D23D /* SDWebImageDownloader.m in Sources */,
 				7485FB951DFC382800E6D23D /* JCAlertView.m in Sources */,
+				7485FDB21DFFFD4500E6D23D /* LCCollectionReusableBannerHeaderView.m in Sources */,
 				7485FB521DFA8CCC00E6D23D /* LCNavigationStackService.m in Sources */,
 				7485FDA01DFFFA1500E6D23D /* NSData+ImageContentType.m in Sources */,
 				7485FC0D1DFC39FB00E6D23D /* LCAboutYYWebImage.m in Sources */,

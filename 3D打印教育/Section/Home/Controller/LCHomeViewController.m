@@ -13,6 +13,7 @@
 #import "LCBigImageAndTextCollectionViewCell.h"
 #import "LCBigImageCollectionViewCell.h"
 #import "LCCollectionReusableHeaderView.h"
+#import "LCCollectionReusableBannerHeaderView.h"
 
 #import "LCHomeCollectionCellModel.h"
 #import "LCHomeCollectionSectionModel.h"
@@ -31,6 +32,7 @@ static NSString *identifierNomal = @"LCNomalCollectionViewCell";
 static NSString *identifierBigImageAndText = @"LCBigImageAndTextCollectionViewCell";
 static NSString *identifierBigImage = @"LCBigImageCollectionViewCell";
 static NSString *identifierSectionHeader = @"LCCollectionReusableHeaderView";
+static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView";
 @implementation LCHomeViewController
 @dynamic viewModel,collectionView;
 - (void)viewDidLoad {
@@ -57,6 +59,8 @@ static NSString *identifierSectionHeader = @"LCCollectionReusableHeaderView";
     [self.collectionView registerClass:[LCBigImageCollectionViewCell class] forCellWithReuseIdentifier:identifierBigImage];
     
     [self.collectionView registerClass:[LCCollectionReusableHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:identifierSectionHeader];
+    [self.collectionView registerClass:[LCCollectionReusableBannerHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:identifierBannerHeader];
+    
     [super viewDidLoad];
 }
 
@@ -108,16 +112,19 @@ static NSString *identifierSectionHeader = @"LCCollectionReusableHeaderView";
     return nil;
 }
 
-//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
-//
-//}
-
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        LCCollectionReusableBannerHeaderView *bannerHeaderView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:identifierBannerHeader forIndexPath:indexPath];
+        return bannerHeaderView;
+    }
     LCCollectionReusableHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:identifierSectionHeader forIndexPath:indexPath];
     return headerView;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    if (section == 0 ) {
+        return CGSizeMake(SCREEN_WIDTH, BANANER_H);
+    }
     return CGSizeMake(SCREEN_WIDTH, SECTION_H);
 }
 
