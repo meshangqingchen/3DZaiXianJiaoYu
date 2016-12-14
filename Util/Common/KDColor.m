@@ -43,7 +43,7 @@
 }
 
 + (UIColor *)getC5Color {
-    return kUIColorRGB16(0x989898);
+    return kUIColorRGB16(0xf5f9fa);
 }
 
 + (UIColor *)getC6Color {

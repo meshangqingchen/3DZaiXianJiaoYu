@@ -174,7 +174,9 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
     return UIEdgeInsetsZero;
 }
 
-
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    [self.viewModel didSelectRowAtIndexPath:indexPath in:collectionView];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -8,13 +8,15 @@
 #import "LCHomeViewModel.h"
 #import "LCHomeCollectionSectionModel.h"
 #import "LCHomeCollectionCellModel.h"
+#import "LCVideoDetailViewModel.h"
 @implementation LCHomeViewModel
 -(void)initialize{
 
 }
 
 -(void)didSelectRowAtIndexPath:(NSIndexPath *)indexpath in:(UICollectionView *)collectionView{
-    
+    LCVideoDetailViewModel *videoDetailVM = [[LCVideoDetailViewModel alloc]initWithServices:self.navigationStackService params:nil];
+    [self.navigationStackService pushViewModel:videoDetailVM animated:YES];
 }
 -(void)requestRemoteDataWithPage:(NSUInteger)page completeHandle:(void(^)(id responseObj))complete{
     

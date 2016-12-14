@@ -58,7 +58,7 @@
                 
                 case ButtonImageTitleStyleRight:
             {
-                //图片在右，文字在左
+                //图片在右，文字在左 {top, left, bottom, right}
                 self.titleEdgeInsets = UIEdgeInsetsMake(0,
                                                         -(imageRect.size.width + padding/2),
                                                         0,

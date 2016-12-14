@@ -24,8 +24,9 @@
 + (UIColor *)getC3Color;
 ///0xbbc1c3 更多 灰色
 + (UIColor *)getC4Color;
-///0x989898 名师讲堂字体灰
+///0xf5f9fa 视频详情导航栏背景色
 + (UIColor *)getC5Color;
+
 ///0xefb918 视频分数金黄色
 + (UIColor *)getC6Color;
 ///0xe57a23 视频界面限量免费咖啡色

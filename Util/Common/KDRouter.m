@@ -36,6 +36,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(KDRouter)
 	if(_viewModelViewMappings == nil) {
         _viewModelViewMappings = @{
                                    @"LCRootViewModel" : @"LCRootViewController",
+                                   @"LCVideoDetailViewModel" : @"LCVideoDetailViewController"
                                    };
     }
 	return _viewModelViewMappings;
@@ -45,8 +46,10 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(KDRouter)
 
 - (NSSet *)rootViewControllers {
 	if(_rootViewControllers == nil) {
-       _rootViewControllers = [NSSet setWithObjects:@"LCClassViewController",
-                                                    @"KDMyselfViewController", nil];
+       _rootViewControllers = [NSSet setWithObjects:@"LCHomeViewController",
+                                                    @"LCMyCourseViewController",
+                                                    @"LCNewsViewController",
+                                                    @"LCPersonalCenterViewController", nil];
         }
 	return _rootViewControllers;
 }
