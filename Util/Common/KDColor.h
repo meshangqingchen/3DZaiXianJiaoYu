@@ -26,11 +26,11 @@
 + (UIColor *)getC4Color;
 ///0xf5f9fa 视频详情导航栏背景色
 + (UIColor *)getC5Color;
-
-///0xefb918 视频分数金黄色
+///0xdedede 视频详情导航下面的宇哥灰边
 + (UIColor *)getC6Color;
-///0xe57a23 视频界面限量免费咖啡色
+///0xd9d9d9 视频详情界面tabbar的背景色
 + (UIColor *)getC7Color;
+
 ///0xcccccc 登录的LineView别景色
 + (UIColor *)getC8Color;
 ///0xf4a752 获取验证码按钮 背景色黄

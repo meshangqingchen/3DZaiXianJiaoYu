@@ -15,6 +15,7 @@
 @property(nonatomic,strong) UIImageView *jsJJImageV;
 @property(nonatomic,strong) UIImageView *headerImageV;
 @property(nonatomic,strong) UIImageView *cJJImageV;
+
 @property(nonatomic,strong) UILabel *couresNLB;
 @property(nonatomic,strong) UILabel *courseNameLB;
 @property(nonatomic,strong) UILabel *courseDLB;

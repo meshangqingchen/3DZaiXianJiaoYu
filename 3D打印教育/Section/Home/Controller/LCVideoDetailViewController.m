@@ -36,6 +36,7 @@
     [self.view addSubview:videoView];
     
     LCVideoDetailTabBar *tabbarView = [[LCVideoDetailTabBar alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT-49, SCREEN_WIDTH, 49)];
+    tabbarView.backgroundColor = [KDColor getC5Color];
     [self.view addSubview:tabbarView];
     
     
