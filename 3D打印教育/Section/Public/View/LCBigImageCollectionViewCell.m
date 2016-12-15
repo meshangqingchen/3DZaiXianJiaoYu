@@ -20,5 +20,6 @@
     self.backImageView.backgroundColor = [UIColor greenColor];
 }
 
+-(void)bindViewModel:(id)viewModel{}
 
 @end

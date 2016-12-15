@@ -139,6 +139,8 @@
 		7485FDCF1E00F89800E6D23D /* LCCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FDCE1E00F89800E6D23D /* LCCourseViewController.m */; };
 		7485FDD21E00F8CF00E6D23D /* LCEvaluateViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FDD11E00F8CF00E6D23D /* LCEvaluateViewModel.m */; };
 		7485FDD51E00F8E700E6D23D /* LCEvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FDD41E00F8E700E6D23D /* LCEvaluateViewController.m */; };
+		74C4FB491E028F55007BC549 /* LCEvaluateCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C4FB481E028F55007BC549 /* LCEvaluateCellViewModel.m */; };
+		74C4FB4C1E029319007BC549 /* LCSonEvaluateCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C4FB4B1E029319007BC549 /* LCSonEvaluateCellViewModel.m */; };
 		D2781A4C36A2A69961E1662A /* libPods-3D打印教育.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C89CD1AB96CEC93A8A4619C /* libPods-3D打印教育.a */; };
 /* End PBXBuildFile section */
 
@@ -422,6 +424,10 @@
 		7485FDD11E00F8CF00E6D23D /* LCEvaluateViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCEvaluateViewModel.m; sourceTree = "<group>"; };
 		7485FDD31E00F8E700E6D23D /* LCEvaluateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCEvaluateViewController.h; sourceTree = "<group>"; };
 		7485FDD41E00F8E700E6D23D /* LCEvaluateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCEvaluateViewController.m; sourceTree = "<group>"; };
+		74C4FB471E028F55007BC549 /* LCEvaluateCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCEvaluateCellViewModel.h; sourceTree = "<group>"; };
+		74C4FB481E028F55007BC549 /* LCEvaluateCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCEvaluateCellViewModel.m; sourceTree = "<group>"; };
+		74C4FB4A1E029319007BC549 /* LCSonEvaluateCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCSonEvaluateCellViewModel.h; sourceTree = "<group>"; };
+		74C4FB4B1E029319007BC549 /* LCSonEvaluateCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCSonEvaluateCellViewModel.m; sourceTree = "<group>"; };
 		927A6CCB0A9DACC2135DFAB3 /* Pods-3D打印教育.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育.release.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育/Pods-3D打印教育.release.xcconfig"; sourceTree = "<group>"; };
 		A3F85E570F0B86617C398C40 /* Pods-3D打印教育UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育UITests/Pods-3D打印教育UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CAC66B562E4D4586217D7131 /* Pods-3D打印教育Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育Tests/Pods-3D打印教育Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -980,6 +986,10 @@
 				7485FDCB1E00F87C00E6D23D /* LCCourseViewModel.m */,
 				7485FDD01E00F8CF00E6D23D /* LCEvaluateViewModel.h */,
 				7485FDD11E00F8CF00E6D23D /* LCEvaluateViewModel.m */,
+				74C4FB471E028F55007BC549 /* LCEvaluateCellViewModel.h */,
+				74C4FB481E028F55007BC549 /* LCEvaluateCellViewModel.m */,
+				74C4FB4A1E029319007BC549 /* LCSonEvaluateCellViewModel.h */,
+				74C4FB4B1E029319007BC549 /* LCSonEvaluateCellViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1533,6 +1543,7 @@
 				747812C41E01127200507DCA /* BaseView.m in Sources */,
 				7485FD1A1DFFE0C800E6D23D /* LCCollectionReusableHeaderView.m in Sources */,
 				7485FCF81DFE475500E6D23D /* LCPersonalCenterViewController.m in Sources */,
+				74C4FB491E028F55007BC549 /* LCEvaluateCellViewModel.m in Sources */,
 				7485FB9C1DFC382800E6D23D /* WMScrollView.m in Sources */,
 				7485FC121DFC39FB00E6D23D /* KDFileManager.m in Sources */,
 				7485FBB31DFC389B00E6D23D /* CustomBarItem.m in Sources */,
@@ -1571,6 +1582,7 @@
 				7485FC011DFC39FB00E6D23D /* UIPickerView+KDAdd.m in Sources */,
 				7485FC051DFC39FB00E6D23D /* UIView+KDAdd.m in Sources */,
 				7485FCC41DFD523100E6D23D /* BaseTableViewController.m in Sources */,
+				74C4FB4C1E029319007BC549 /* LCSonEvaluateCellViewModel.m in Sources */,
 				7485FB0E1DF90A1B00E6D23D /* AppDelegate.m in Sources */,
 				7485FBFB1DFC39FB00E6D23D /* NSObject+Common.m in Sources */,
 				7485FB981DFC382800E6D23D /* RDVTabBarItem.m in Sources */,

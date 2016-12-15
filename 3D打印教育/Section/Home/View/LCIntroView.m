@@ -14,6 +14,8 @@
     self.starImgV  = [UIImageView new];
     UIImage *img = [UIImage imageNamed:@"select_xiaoxingxing"];
     _starImgV.image = img;
+    
+    
     [self addSubview:_starImgV];
     [_starImgV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(15);

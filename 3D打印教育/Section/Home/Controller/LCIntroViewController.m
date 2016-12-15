@@ -32,7 +32,7 @@
         make.bottom.mas_equalTo(-3);
     }];
     
-    _introView = [LCIntroView new];
+    _introView = [[LCIntroView alloc]init];
     _introView.backgroundColor = [KDColor getC0Color];
     
     [_introView bindViewModel:nil];

@@ -9,20 +9,28 @@
 #import "BaseView.h"
 
 @implementation BaseView
--(instancetype)init{
-    if (self = [super init]) {
-        [self setupViews];
-    }
-    return self;
-}
+
+//-(instancetype)init{
+//    self = [super init];
+//    
+//    if (self) {
+//    
+//    }
+//    return self;
+//}
 
 -(instancetype)initWithFrame:(CGRect)frame{
-    if (self = [super initWithFrame:frame]) {
+    self = [super initWithFrame:frame];
+    if (self) {
         [self setupViews];
     }
     return self;
 }
 
--(void)setupViews{};
--(void)bindViewModel:(id)viewModel{};
+-(void)setupViews{
+
+};
+-(void)bindViewModel:(id)viewModel{
+
+};
 @end

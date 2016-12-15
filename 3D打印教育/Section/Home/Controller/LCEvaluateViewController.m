@@ -7,21 +7,30 @@
 //
 
 #import "LCEvaluateViewController.h"
-
+#import "LCEvaluateViewModel.h"
 @interface LCEvaluateViewController ()
-
+@property(nonatomic,strong) LCEvaluateViewModel *viewModel;
+@property(nonatomic,strong) UITableView *tableView;
 @end
 
 @implementation LCEvaluateViewController
-
+@dynamic viewModel,tableView;
 - (void)viewDidLoad {
+    
+    self.tableView = [[UITableView alloc]init];
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(0);
+        make.top.mas_equalTo(3);
+        make.bottom.mas_equalTo(-3);
+    }];
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = [KDColor getC6Color];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 /*
