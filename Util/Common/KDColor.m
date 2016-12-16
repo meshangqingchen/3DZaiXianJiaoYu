@@ -55,11 +55,11 @@
 }
 
 + (UIColor *)getC8Color {
-    return kUIColorRGB16(0xcccccc);
+    return kUIColorRGB16(0x63a7ca);
 }
 
 + (UIColor *)getC9Color {
-    return kUIColorRGB16(0xf4a752);
+    return kUIColorRGB16(0xf2f2f2);
 }
 
 + (UIColor *)getC10Color {

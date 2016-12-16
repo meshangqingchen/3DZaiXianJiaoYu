@@ -141,6 +141,8 @@
 		7485FDD51E00F8E700E6D23D /* LCEvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FDD41E00F8E700E6D23D /* LCEvaluateViewController.m */; };
 		74C4FB491E028F55007BC549 /* LCEvaluateCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C4FB481E028F55007BC549 /* LCEvaluateCellViewModel.m */; };
 		74C4FB4C1E029319007BC549 /* LCSonEvaluateCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C4FB4B1E029319007BC549 /* LCSonEvaluateCellViewModel.m */; };
+		74D2F66D1E0394DA00C84317 /* LCTextLinePositionModifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D2F66C1E0394DA00C84317 /* LCTextLinePositionModifier.m */; };
+		74D2F6701E03A14800C84317 /* LCVideoDetailEvaluateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D2F66F1E03A14800C84317 /* LCVideoDetailEvaluateCell.m */; };
 		D2781A4C36A2A69961E1662A /* libPods-3D打印教育.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C89CD1AB96CEC93A8A4619C /* libPods-3D打印教育.a */; };
 /* End PBXBuildFile section */
 
@@ -428,6 +430,10 @@
 		74C4FB481E028F55007BC549 /* LCEvaluateCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCEvaluateCellViewModel.m; sourceTree = "<group>"; };
 		74C4FB4A1E029319007BC549 /* LCSonEvaluateCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCSonEvaluateCellViewModel.h; sourceTree = "<group>"; };
 		74C4FB4B1E029319007BC549 /* LCSonEvaluateCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCSonEvaluateCellViewModel.m; sourceTree = "<group>"; };
+		74D2F66B1E0394DA00C84317 /* LCTextLinePositionModifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTextLinePositionModifier.h; sourceTree = "<group>"; };
+		74D2F66C1E0394DA00C84317 /* LCTextLinePositionModifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTextLinePositionModifier.m; sourceTree = "<group>"; };
+		74D2F66E1E03A14800C84317 /* LCVideoDetailEvaluateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCVideoDetailEvaluateCell.h; sourceTree = "<group>"; };
+		74D2F66F1E03A14800C84317 /* LCVideoDetailEvaluateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCVideoDetailEvaluateCell.m; sourceTree = "<group>"; };
 		927A6CCB0A9DACC2135DFAB3 /* Pods-3D打印教育.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育.release.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育/Pods-3D打印教育.release.xcconfig"; sourceTree = "<group>"; };
 		A3F85E570F0B86617C398C40 /* Pods-3D打印教育UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育UITests/Pods-3D打印教育UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CAC66B562E4D4586217D7131 /* Pods-3D打印教育Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育Tests/Pods-3D打印教育Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -857,6 +863,8 @@
 				7485FBDE1DFC39FB00E6D23D /* NSDateUtils.m */,
 				7485FBDF1DFC39FB00E6D23D /* RegexUtil.h */,
 				7485FBE01DFC39FB00E6D23D /* RegexUtil.m */,
+				74D2F66B1E0394DA00C84317 /* LCTextLinePositionModifier.h */,
+				74D2F66C1E0394DA00C84317 /* LCTextLinePositionModifier.m */,
 				7485FBE11DFC39FB00E6D23D /* SynthesizeSingleton.h */,
 				7485FBE21DFC39FB00E6D23D /* Tools */,
 				7485FBE51DFC39FB00E6D23D /* Views */,
@@ -965,6 +973,8 @@
 				747812C61E0113A200507DCA /* LCVideoDetailTabBar.m */,
 				747812C81E011D5C00507DCA /* LCIntroView.h */,
 				747812C91E011D5C00507DCA /* LCIntroView.m */,
+				74D2F66E1E03A14800C84317 /* LCVideoDetailEvaluateCell.h */,
+				74D2F66F1E03A14800C84317 /* LCVideoDetailEvaluateCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1536,6 +1546,7 @@
 				7485FC0A1DFC39FB00E6D23D /* KDRouter.m in Sources */,
 				7485FD9F1DFFFA1500E6D23D /* MKAnnotationView+WebCache.m in Sources */,
 				7485FBFD1DFC39FB00E6D23D /* NSString+PJR.m in Sources */,
+				74D2F66D1E0394DA00C84317 /* LCTextLinePositionModifier.m in Sources */,
 				7485FD141DFFB8D600E6D23D /* LCHomeCollectionCellModel.m in Sources */,
 				7485FD111DFF9DAD00E6D23D /* LCBigImageAndTextCollectionViewCell.m in Sources */,
 				7485FC041DFC39FB00E6D23D /* UIView+HUD.m in Sources */,
@@ -1578,6 +1589,7 @@
 				7485FC061DFC39FB00E6D23D /* UIViewController+Example.m in Sources */,
 				7485FCEC1DFE455300E6D23D /* LCNewsViewModel.m in Sources */,
 				7485FBFE1DFC39FB00E6D23D /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
+				74D2F6701E03A14800C84317 /* LCVideoDetailEvaluateCell.m in Sources */,
 				7485FC141DFC39FB00E6D23D /* KDNetAPIManager_User.m in Sources */,
 				7485FC011DFC39FB00E6D23D /* UIPickerView+KDAdd.m in Sources */,
 				7485FC051DFC39FB00E6D23D /* UIView+KDAdd.m in Sources */,

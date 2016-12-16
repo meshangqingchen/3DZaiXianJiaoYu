@@ -8,6 +8,9 @@
 
 #import "LCEvaluateViewController.h"
 #import "LCEvaluateViewModel.h"
+#import "LCVideoDetailEvaluateCell.h"
+
+#import "LCEvaluateCellViewModel.h"
 @interface LCEvaluateViewController ()
 @property(nonatomic,strong) LCEvaluateViewModel *viewModel;
 @property(nonatomic,strong) UITableView *tableView;
@@ -24,23 +27,24 @@
         make.top.mas_equalTo(3);
         make.bottom.mas_equalTo(-3);
     }];
+    
+    [self.tableView registerClass:[LCVideoDetailEvaluateCell class] forCellReuseIdentifier:@"cell"];
     [super viewDidLoad];
     self.view.backgroundColor = [KDColor getC6Color];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return self.viewModel.dataSource.count;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    LCVideoDetailEvaluateCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    [cell bindViewModel:self.viewModel.dataSource[indexPath.row]];
+    return cell;
 }
-*/
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    LCEvaluateCellViewModel *CellviewModel = self.viewModel.dataSource[indexPath.row];
+    return CellviewModel.cell_H;
+}
 @end

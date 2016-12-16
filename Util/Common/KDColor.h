@@ -30,11 +30,11 @@
 + (UIColor *)getC6Color;
 ///0xd9d9d9 视频详情界面tabbar的背景色
 + (UIColor *)getC7Color;
-
-///0xcccccc 登录的LineView别景色
+///0x63a7ca 二级评论name的颜色
 + (UIColor *)getC8Color;
-///0xf4a752 获取验证码按钮 背景色黄
+///0xf2f2f2 二级评论backView颜色
 + (UIColor *)getC9Color;
+
 ///0x00000 alpha 60%
 + (UIColor *)getC10Color;
 ///0xeeeeee 意见反馈背景 灰色
