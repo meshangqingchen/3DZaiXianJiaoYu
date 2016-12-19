@@ -21,9 +21,9 @@ PODS:
   - MJRefresh (3.1.12)
   - PLeakSniffer (0.1.0)
   - Reveal-iOS-SDK (1.6.2)
-  - YYKit (1.0.7):
-    - YYKit/no-arc (= 1.0.7)
-  - YYKit/no-arc (1.0.7)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
   - ZFPlayer (2.1.1):
     - Masonry
 
@@ -36,7 +36,7 @@ DEPENDENCIES:
   - MJRefresh (= 3.1.12)
   - PLeakSniffer
   - Reveal-iOS-SDK
-  - YYKit (= 1.0.7)
+  - YYKit (= 1.0.9)
   - ZFPlayer
 
 SPEC CHECKSUMS:
@@ -48,9 +48,9 @@ SPEC CHECKSUMS:
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   PLeakSniffer: f7eb13cd3a36150e0a2fd5fe8a33ca83bd2646d4
   Reveal-iOS-SDK: e2250b3c155bcfac53ae223ddc1f76d08f206c33
-  YYKit: 843d1b26e20b82c695790c9a89907eaa1e99907f
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZFPlayer: c36657da33c28c75dfb100e98e7976b5b3e1fc10
 
-PODFILE CHECKSUM: 5d71f71b5361472c01d6fab88b0ed6fa0348e8e0
+PODFILE CHECKSUM: fa931dec4958810718cc6d8682f43415f8bc999c
 
 COCOAPODS: 1.1.1

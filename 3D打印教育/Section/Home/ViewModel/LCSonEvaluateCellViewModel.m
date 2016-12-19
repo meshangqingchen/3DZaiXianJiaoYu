@@ -36,10 +36,10 @@
         [sonEvaAtt insertAttributedString:nameAtt atIndex:0];
         
         // 高亮状态的背景 点击名字高亮颜色
-        YYTextBorder *highlightBorder = [YYTextBorder new];
-        highlightBorder.insets = UIEdgeInsetsMake(-2, 0, 2, 0);
-        highlightBorder.cornerRadius = 4;
-        highlightBorder.fillColor = [KDColor getC22Color];
+        YYTextBorder *highlightBorder = [YYTextBorder alloc];
+        highlightBorder.insets = UIEdgeInsetsMake(-2, 0, -1, 0);
+        highlightBorder.cornerRadius = 3;
+        highlightBorder.fillColor = [KDColor getC11Color];
         //高亮状态
         YYTextHighlight *highlight = [[YYTextHighlight alloc]init];
         [highlight setBackgroundBorder:highlightBorder];
@@ -47,7 +47,7 @@
         
         LCTextLinePositionModifier *modifier = [LCTextLinePositionModifier new];
         modifier.font = [UIFont fontWithName:@"Heiti SC" size:15];
-        modifier.paddingTop = 0;
+        modifier.paddingTop = 3;
         modifier.paddingBottom = 0;
         
         YYTextContainer *container = [YYTextContainer new];

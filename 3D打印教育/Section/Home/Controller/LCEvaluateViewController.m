@@ -33,9 +33,7 @@
     self.view.backgroundColor = [KDColor getC6Color];
 }
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.viewModel.dataSource.count;
-}
+
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     LCVideoDetailEvaluateCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];

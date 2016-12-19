@@ -7,7 +7,7 @@ target '3D打印教育' do
 
   # Pods for 3D打印教育
 
-    pod 'YYKit', '1.0.7'
+    pod 'YYKit', '1.0.9'
     pod 'Masonry', '1.0.1'
     pod 'MBProgressHUD', '1.0.0'
     pod 'IQKeyboardManager', '4.0.4'

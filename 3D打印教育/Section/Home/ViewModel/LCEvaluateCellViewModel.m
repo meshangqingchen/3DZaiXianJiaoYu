@@ -29,7 +29,7 @@
 
         LCTextLinePositionModifier *modifier = [LCTextLinePositionModifier new];
         modifier.font = [UIFont fontWithName:@"Heiti SC" size:15];
-        modifier.paddingTop = 0;
+        modifier.paddingTop = 2;
         modifier.paddingBottom = 0;
         
         YYTextContainer *container = [YYTextContainer new];
@@ -42,6 +42,7 @@
         //二级评论数组
         if (arr==nil | arr.count==0){
             _sonAllEva_H = 0;
+            _cell_H = _evaluate_H + _sonAllEva_H  + 15 + 21 + 3 + 15 + 15 + 21;
         }else{
             self.sonEvaluateArr = arr;
             for (int i=0; i<arr.count; i++) {
@@ -55,8 +56,9 @@
             _sonAllEva_H = _sonAllEva_H + 10 + 16 + 3 + 10;
             NSLog(@"%lf",_sonAllEva_H);
             NSLog(@"%lf",_sonAllEva_H);
+            _cell_H = _evaluate_H + _sonAllEva_H + 15 + 15 + 21 + 3 + 15 + 15 + 21;
         }
-        _cell_H = _evaluate_H + _sonAllEva_H + 15 + 15 + 21 + 3 + 15 + 15 + 21;
+        
     }
     return self;
 }

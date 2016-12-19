@@ -34,21 +34,20 @@
 + (UIColor *)getC8Color;
 ///0xf2f2f2 二级评论backView颜色
 + (UIColor *)getC9Color;
-
 ///0x00000 alpha 60%
 + (UIColor *)getC10Color;
-///0xeeeeee 意见反馈背景 灰色
+///0xcbe7f5 超链接高亮背景色
 + (UIColor *)getC11Color;
+
+
+
+
 ///0xc8c8c8 意见反馈textView阴影背景 灰
 + (UIColor *)getC12Color;
 ///0xe2e2e2 没有内容的提示字体颜色
 + (UIColor *)getC13Color;
 ///0xf7f7f7 首页视频卡片下面的灰色
 + (UIColor *)getC14Color;
-
-
-
-
 ///0xd2d2d2 jcAlerView的线条色
 + (UIColor *)getC15Color;
 ///0xfcd757 老师列表 LineView

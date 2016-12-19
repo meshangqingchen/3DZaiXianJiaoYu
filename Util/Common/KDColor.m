@@ -67,7 +67,7 @@
 }
 
 + (UIColor *)getC11Color {
-    return kUIColorRGB16(0xeeeeee);
+    return kUIColorRGB16(0xcbe7f5);
 }
 
 + (UIColor *)getC12Color {

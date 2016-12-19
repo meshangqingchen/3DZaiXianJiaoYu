@@ -82,6 +82,7 @@
     
     [_numHuiFu setTitleColor:[KDColor getC8Color] forState:0];
     _numHuiFu.titleLabel.font = [[KDFont sharedKDFont]getF30Font];
+    _numHuiFu.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     
 }
 
@@ -96,30 +97,38 @@
     _numHuiFu.bottom = _backView.bottom;
     _numHuiFu.top = _backView.height-26;
     
+    
+    
     if (evaluateCellViewModel.sonEvaluateArr.count > 0) {
-        NSString * title = [NSString stringWithFormat:@"共%lu多少条回复",(unsigned long)evaluateCellViewModel.sonEvaluateArr.count];
+        self.backView.hidden = NO;
+        NSString * title = [NSString stringWithFormat:@"共%lu多少条回复 >",(unsigned long)evaluateCellViewModel.sonEvaluateArr.count];
         [_numHuiFu setTitle:title forState:0];
         for (int i=0; i<evaluateCellViewModel.sonEvaluateArr.count; i++) {
             LCSonEvaluateCellViewModel *sonEvaViewModel = evaluateCellViewModel.sonEvaluateArr[i];
             if (i==0) {
                 _sonEvaYLB1.height = sonEvaViewModel.sonEva_H;
                 _sonEvaYLB1.textLayout = sonEvaViewModel.textLayout;
+                _sonEvaYLB2.hidden = YES;
+                _sonEvaYLB3.hidden = YES;
             }
             if (i==1) {
                 _sonEvaYLB2.top = _sonEvaYLB1.bottom+5;
                 _sonEvaYLB2.height = sonEvaViewModel.sonEva_H;
                 _sonEvaYLB2.textLayout = sonEvaViewModel.textLayout;
+                _sonEvaYLB2.hidden = NO;
             }
             if (i==2) {
                 _sonEvaYLB3.top = _sonEvaYLB2.bottom+5;
                 _sonEvaYLB3.height = sonEvaViewModel.sonEva_H;
                 _sonEvaYLB3.textLayout = sonEvaViewModel.textLayout;
+                _sonEvaYLB3.hidden = NO;
                 break;
             }
         }
+    }else{
+        self.backView.hidden = YES;
     }
-    
-    
+
     self.nameLB.text = evaluateCellViewModel.name;
     self.evaYLB.textLayout = evaluateCellViewModel.evaTextLayout;
 }
