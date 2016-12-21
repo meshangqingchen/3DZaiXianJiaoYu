@@ -13,6 +13,8 @@
 @property(nonatomic,strong) NSString *sonEvalua;
 @property(nonatomic,strong) YYTextLayout *textLayout;
 @property(nonatomic,assign) CGFloat sonEva_H;
+
+
 -(instancetype)initWithModel:(id)model;
 -(instancetype)initWithName:(NSString *)string and:(NSString*)sonEvalua;
 

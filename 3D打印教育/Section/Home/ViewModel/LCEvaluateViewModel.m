@@ -9,9 +9,17 @@
 #import "LCEvaluateViewModel.h"
 #import "LCSonEvaluateCellViewModel.h"
 #import "LCEvaluateCellViewModel.h"
+
+#import "LCEvaluateDetailViewModel.h"
 @implementation LCEvaluateViewModel
 -(void)initialize{
     [super initialize];
+    @weakify(self)
+    [self setHuifu:^(NSString *ID) {
+        @strongify(self)
+        LCEvaluateDetailViewModel *evaluateDetailVM = [[LCEvaluateDetailViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"TITLE啊`"}];
+        [self.navigationStackService pushViewModel:evaluateDetailVM animated:YES];
+    }];
 }
 
 -(void)requestRemoteDataWithPage:(NSUInteger)page completeHandle:(void (^)(id))complete{
@@ -27,24 +35,27 @@
     LCEvaluateCellViewModel *eval = [[LCEvaluateCellViewModel alloc]initWithEvaluteStr:@"每当我情绪低落的时候我就会想想我为神马这么叼,每当我沾沾自喜的时候我就问自己为什吗比吊的人这么多" and:@[sonE1,sonE2,sonE3,sonE1,sonE2,sonE3]];
     eval.imgURL = nil;
     eval.name = @"你全力以赴也打不败的男人";
-
+    eval.huifu = self.huifu;
+    
     
     LCEvaluateCellViewModel *eval1 = [[LCEvaluateCellViewModel alloc]initWithEvaluteStr:@"每当我情绪低落的时候我就会想想我为神马这么叼,每当我沾沾自喜的时候我就问自己为什吗比吊的人这么多" and:@[sonE1,sonE2,sonE3]];
     eval1.imgURL = nil;
     eval1.name = @"你全力以赴也打不败的男人";
+    eval1.huifu = self.huifu;
     
     LCEvaluateCellViewModel *eval2 = [[LCEvaluateCellViewModel alloc]initWithEvaluteStr:@"每当我情绪低落的时候我就会想想我为神马这么叼,每当我沾沾自喜的时候我就问自己为什吗比吊的人这么多" and:@[sonE1,sonE2]];
     eval2.imgURL = nil;
     eval2.name = @"你全力以赴也打不败的男人";
+    eval2.huifu = self.huifu;
     
     LCEvaluateCellViewModel *eval3 = [[LCEvaluateCellViewModel alloc]initWithEvaluteStr:@"每当我情绪低落的时候我就会想想我为神马这么叼,每当我沾沾自喜的时候我就问自己为什吗比吊的人这么多" and:@[sonE1]];
     eval3.imgURL = nil;
     eval3.name = @"你全力以赴也打不败的男人";
-    
+    eval3.huifu = self.huifu;
     LCEvaluateCellViewModel *eval4 = [[LCEvaluateCellViewModel alloc]initWithEvaluteStr:@"每当我情绪低落的时候我就会想想我为神马这么叼,每当我沾沾自喜的时候我就问自己为什吗比吊的人这么多" and:@[]];
     eval4.imgURL = nil;
     eval4.name = @"你全力以赴也打不败的男人";
-
+    eval4.huifu = self.huifu;
     
     [self.mutableDataArr addObjectsFromArray:@[eval,eval1,eval2,eval3,eval4]];//@[eval,eval1,eval2,eval3,eval4]
     self.dataSource = self.mutableDataArr.copy;

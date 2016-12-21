@@ -36,7 +36,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(KDRouter)
 	if(_viewModelViewMappings == nil) {
         _viewModelViewMappings = @{
                                    @"LCRootViewModel" : @"LCRootViewController",
-                                   @"LCVideoDetailViewModel" : @"LCVideoDetailViewController"
+                                   @"LCVideoDetailViewModel" : @"LCVideoDetailViewController",
+                                   @"LCEvaluateDetailViewModel" : @"LCEvaluateDetailViewController"
                                    };
     }
 	return _viewModelViewMappings;

@@ -29,7 +29,7 @@
 
         LCTextLinePositionModifier *modifier = [LCTextLinePositionModifier new];
         modifier.font = [UIFont fontWithName:@"Heiti SC" size:15];
-        modifier.paddingTop = 2;
+        modifier.paddingTop = 0;
         modifier.paddingBottom = 0;
         
         YYTextContainer *container = [YYTextContainer new];

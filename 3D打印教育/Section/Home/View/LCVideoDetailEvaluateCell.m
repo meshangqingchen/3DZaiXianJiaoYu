@@ -11,6 +11,7 @@
 
 @interface LCVideoDetailEvaluateCell ()
 @property(nonatomic,strong) UIView *backView;
+@property(nonatomic,strong) LCEvaluateCellViewModel *evaluateCellViewModel;
 @end
 
 @implementation LCVideoDetailEvaluateCell
@@ -41,6 +42,24 @@
     _tiemLB.height = 15;
     _tiemLB.width = 200;
     
+    self.huifuBT = [UIButton new];
+    [self.contentView addSubview:_huifuBT];
+    _huifuBT.backgroundColor = [UIColor orangeColor];
+    _huifuBT.top = 21;
+    _huifuBT.width = 30;
+    _huifuBT.height = 15;
+    _huifuBT.right = SCREEN_WIDTH-25;
+    _huifuBT.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    _huifuBT.titleLabel.font = [[KDFont sharedKDFont]getF28Font];
+    [_huifuBT setTitle:@"回复" forState:0];
+    [_huifuBT setTitleColor:[KDColor getX0Color] forState:0];
+    @weakify(self)
+    [_huifuBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+        @strongify(self)
+        MYLog(@"回复事件");
+        !self.evaluateCellViewModel.huifu ? : self.evaluateCellViewModel.huifu(@"asd");
+    }];
+    
     self.evaYLB = [YYLabel new];
     [self.contentView addSubview:_evaYLB];
     _evaYLB.backgroundColor = [UIColor redColor];
@@ -60,6 +79,12 @@
     _sonEvaYLB1.top = 10;
     _sonEvaYLB1.left = 10;
     _sonEvaYLB1.width = SCREEN_WIDTH-70-10-10-15;
+    _sonEvaYLB1.highlightTapAction = ^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect) {
+        MYLog(@"containerView = %@",containerView);
+        MYLog(@"text = %@",text);
+        MYLog(@"range %@",NSStringFromRange(range));
+        MYLog(@"rect = %@",NSStringFromCGRect(rect));
+    };
     
     self.sonEvaYLB2 = [YYLabel new];
     [backView addSubview:_sonEvaYLB2];
@@ -89,6 +114,7 @@
 
 -(void)bindViewModel:(id)viewModel{
     LCEvaluateCellViewModel *evaluateCellViewModel = viewModel;
+    self.evaluateCellViewModel = evaluateCellViewModel;
     _evaYLB.height = evaluateCellViewModel.evaluate_H;
     _backView.top = _evaYLB.bottom+15;
     

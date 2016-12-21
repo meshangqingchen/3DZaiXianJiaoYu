@@ -16,6 +16,8 @@
 @property(nonatomic,strong) UITableView *tableView;
 @end
 
+static NSString *identifier = @"LCVideoDetailEvaluateCell";
+
 @implementation LCEvaluateViewController
 @dynamic viewModel,tableView;
 - (void)viewDidLoad {
@@ -28,7 +30,7 @@
         make.bottom.mas_equalTo(-3);
     }];
     
-    [self.tableView registerClass:[LCVideoDetailEvaluateCell class] forCellReuseIdentifier:@"cell"];
+    [self.tableView registerClass:[LCVideoDetailEvaluateCell class] forCellReuseIdentifier:identifier];
     [super viewDidLoad];
     self.view.backgroundColor = [KDColor getC6Color];
 }
@@ -36,7 +38,7 @@
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    LCVideoDetailEvaluateCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    LCVideoDetailEvaluateCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     [cell bindViewModel:self.viewModel.dataSource[indexPath.row]];
     return cell;
 }

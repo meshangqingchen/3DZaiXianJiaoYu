@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 
 @interface KDColor : NSObject
-///0x999999 课程title nomail 线条背景色
+///0x999999 回复字体颜色
 + (UIColor *)getX0Color;
 ///0x23dee5 课程蓝色title select 系统导航
 + (UIColor *)getX1Color;
