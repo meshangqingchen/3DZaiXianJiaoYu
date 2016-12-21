@@ -142,6 +142,8 @@
 		7485FDD51E00F8E700E6D23D /* LCEvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FDD41E00F8E700E6D23D /* LCEvaluateViewController.m */; };
 		748CF1DC1E0A71F100E60F68 /* LCDetailEvaluateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 748CF1DB1E0A71F100E60F68 /* LCDetailEvaluateCell.m */; };
 		748CF1E21E0A733900E60F68 /* LCEvaluateDetailCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 748CF1E11E0A733900E60F68 /* LCEvaluateDetailCellViewModel.m */; };
+		748CF1E51E0A9DA300E60F68 /* LCDetailEvaluateHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 748CF1E41E0A9DA300E60F68 /* LCDetailEvaluateHeaderView.m */; };
+		748CF1E81E0A9FE100E60F68 /* LCDetailEvaluateHeaderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 748CF1E71E0A9FE100E60F68 /* LCDetailEvaluateHeaderViewModel.m */; };
 		74C4FB491E028F55007BC549 /* LCEvaluateCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C4FB481E028F55007BC549 /* LCEvaluateCellViewModel.m */; };
 		74C4FB4C1E029319007BC549 /* LCSonEvaluateCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C4FB4B1E029319007BC549 /* LCSonEvaluateCellViewModel.m */; };
 		74D2F66D1E0394DA00C84317 /* LCTextLinePositionModifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D2F66C1E0394DA00C84317 /* LCTextLinePositionModifier.m */; };
@@ -437,6 +439,10 @@
 		748CF1DB1E0A71F100E60F68 /* LCDetailEvaluateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDetailEvaluateCell.m; sourceTree = "<group>"; };
 		748CF1E01E0A733900E60F68 /* LCEvaluateDetailCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCEvaluateDetailCellViewModel.h; sourceTree = "<group>"; };
 		748CF1E11E0A733900E60F68 /* LCEvaluateDetailCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCEvaluateDetailCellViewModel.m; sourceTree = "<group>"; };
+		748CF1E31E0A9DA300E60F68 /* LCDetailEvaluateHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDetailEvaluateHeaderView.h; sourceTree = "<group>"; };
+		748CF1E41E0A9DA300E60F68 /* LCDetailEvaluateHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDetailEvaluateHeaderView.m; sourceTree = "<group>"; };
+		748CF1E61E0A9FE100E60F68 /* LCDetailEvaluateHeaderViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDetailEvaluateHeaderViewModel.h; sourceTree = "<group>"; };
+		748CF1E71E0A9FE100E60F68 /* LCDetailEvaluateHeaderViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDetailEvaluateHeaderViewModel.m; sourceTree = "<group>"; };
 		74C4FB471E028F55007BC549 /* LCEvaluateCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCEvaluateCellViewModel.h; sourceTree = "<group>"; };
 		74C4FB481E028F55007BC549 /* LCEvaluateCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCEvaluateCellViewModel.m; sourceTree = "<group>"; };
 		74C4FB4A1E029319007BC549 /* LCSonEvaluateCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCSonEvaluateCellViewModel.h; sourceTree = "<group>"; };
@@ -996,6 +1002,8 @@
 				74D2F66F1E03A14800C84317 /* LCVideoDetailEvaluateCell.m */,
 				748CF1DA1E0A71F100E60F68 /* LCDetailEvaluateCell.h */,
 				748CF1DB1E0A71F100E60F68 /* LCDetailEvaluateCell.m */,
+				748CF1E31E0A9DA300E60F68 /* LCDetailEvaluateHeaderView.h */,
+				748CF1E41E0A9DA300E60F68 /* LCDetailEvaluateHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1025,6 +1033,8 @@
 				74D2F6721E08067400C84317 /* LCEvaluateDetailViewModel.m */,
 				748CF1E01E0A733900E60F68 /* LCEvaluateDetailCellViewModel.h */,
 				748CF1E11E0A733900E60F68 /* LCEvaluateDetailCellViewModel.m */,
+				748CF1E61E0A9FE100E60F68 /* LCDetailEvaluateHeaderViewModel.h */,
+				748CF1E71E0A9FE100E60F68 /* LCDetailEvaluateHeaderViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1562,6 +1572,7 @@
 				7485FD9A1DFFFA1500E6D23D /* TAAnimatedDotView.m in Sources */,
 				7485FBA11DFC382800E6D23D /* UITextField+YZEmotion.m in Sources */,
 				7485FDAD1DFFFA1500E6D23D /* UIImageView+WebCache.m in Sources */,
+				748CF1E81E0A9FE100E60F68 /* LCDetailEvaluateHeaderViewModel.m in Sources */,
 				7485FCE61DFE44FB00E6D23D /* LCMyCourseViewModel.m in Sources */,
 				7485FC111DFC39FB00E6D23D /* UIPlaceHolderTextView.m in Sources */,
 				7485FD9E1DFFFA1500E6D23D /* SDCycleScrollView.m in Sources */,
@@ -1637,6 +1648,7 @@
 				7485FDAE1DFFFA1500E6D23D /* UIView+WebCacheOperation.m in Sources */,
 				7485FCDD1DFE425D00E6D23D /* LCRootViewModel.m in Sources */,
 				7485FDA71DFFFA1500E6D23D /* SDWebImagePrefetcher.m in Sources */,
+				748CF1E51E0A9DA300E60F68 /* LCDetailEvaluateHeaderView.m in Sources */,
 				74D2F6731E08067400C84317 /* LCEvaluateDetailViewModel.m in Sources */,
 				7485FBA71DFC382800E6D23D /* YZEmotionManager.m in Sources */,
 				747812CA1E011D5C00507DCA /* LCIntroView.m in Sources */,

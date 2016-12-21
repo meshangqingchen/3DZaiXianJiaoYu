@@ -8,6 +8,7 @@
 
 #import "LCEvaluateDetailViewModel.h"
 #import "LCEvaluateDetailCellViewModel.h"
+#import "LCDetailEvaluateHeaderViewModel.h"
 @implementation LCEvaluateDetailViewModel
 -(void)initialize{
     [super initialize];
@@ -31,5 +32,9 @@
     LCEvaluateDetailCellViewModel *evaDrtailCellVM5 = [[LCEvaluateDetailCellViewModel alloc]initWithName:@"你的名字" and:@"可不咋地"];
     [self.mutableDataArr addObjectsFromArray:@[evaDrtailCellVM1,evaDrtailCellVM2,evaDrtailCellVM3,evaDrtailCellVM4,evaDrtailCellVM5]];
     self.dataSource = self.mutableDataArr.copy;
+    
+    LCDetailEvaluateHeaderViewModel *headviewModel = [[LCDetailEvaluateHeaderViewModel alloc]initWithName:@"我是头视图" and:@"因此在邀请明星艺人这一环节中，有污点之人一律坚决拒绝。而“洪荒少女”傅园慧前一阵据说已经受邀参加本届春晚，如果最终她真能登台表演的话，那将是对傅园慧最大的认可."];
+    
+    !self.headerViewBindViewModel ? : self.headerViewBindViewModel(headviewModel);
 }
 @end

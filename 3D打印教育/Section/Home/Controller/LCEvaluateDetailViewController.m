@@ -11,6 +11,9 @@
 #import "LCDetailEvaluateCell.h"
 #import "LCEvaluateDetailCellViewModel.h"
 
+#import "LCDetailEvaluateHeaderView.h"
+#import "LCDetailEvaluateHeaderViewModel.h"
+
 @interface LCEvaluateDetailViewController ()
 @property(nonatomic,strong) LCEvaluateDetailViewModel *viewModel;
 @property(nonatomic,strong) UITableView *tableView;
@@ -26,8 +29,16 @@ static NSString *identifier = @"LCDetailEvaluateCell";
     [self.view addSubview:self.tableView];
     [self.tableView registerClass:[LCDetailEvaluateCell class] forCellReuseIdentifier:identifier];
     
+    @weakify(self)
+    [self.viewModel setHeaderViewBindViewModel:^(id viewModel) {
+        LCDetailEvaluateHeaderViewModel *headerVM = viewModel;
+        LCDetailEvaluateHeaderView *headerView = [LCDetailEvaluateHeaderView new];
+        headerView.size = CGSizeMake(SCREEN_WIDTH, headerVM.headerView_H);
+        @strongify(self)
+        [headerView bindViewModel:viewModel];
+        self.tableView.tableHeaderView = headerView;
+    }];
     [super viewDidLoad];
-    
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

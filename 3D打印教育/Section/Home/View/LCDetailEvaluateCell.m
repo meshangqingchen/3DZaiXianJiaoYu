@@ -11,6 +11,8 @@
 @implementation LCDetailEvaluateCell
 
 -(void)setupViews{
+    
+    self.contentView.backgroundColor = [KDColor getC9Color];
     self.headerImgView = [[UIImageView alloc]initWithFrame:CGRectMake(15, 15, 40, 40)];
     _headerImgView.backgroundColor = [UIColor orangeColor];
     [self.contentView addSubview:_headerImgView];

@@ -9,5 +9,5 @@
 #import "BaseTableViewModel.h"
 
 @interface LCEvaluateDetailViewModel : BaseTableViewModel
-
+@property(nonatomic,copy) void (^headerViewBindViewModel)(id viewModel);
 @end
