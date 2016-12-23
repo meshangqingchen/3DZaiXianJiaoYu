@@ -38,14 +38,12 @@
 + (UIColor *)getC10Color;
 ///0xcbe7f5 超链接高亮背景色
 + (UIColor *)getC11Color;
-
-
-
-
-///0xc8c8c8 意见反馈textView阴影背景 灰
+///0xeeeeee 评论详情的评论按钮阴影边界色
 + (UIColor *)getC12Color;
-///0xe2e2e2 没有内容的提示字体颜色
+///0xcbcbcb inputAccessoryView上的发送按钮背景色
 + (UIColor *)getC13Color;
+
+
 ///0xf7f7f7 首页视频卡片下面的灰色
 + (UIColor *)getC14Color;
 ///0xd2d2d2 jcAlerView的线条色

@@ -63,7 +63,7 @@
 }
 
 + (UIColor *)getC10Color {
-    return [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
+    return [UIColor colorWithRed:0 green:0 blue:0 alpha:0.3];
 }
 
 + (UIColor *)getC11Color {
@@ -71,11 +71,11 @@
 }
 
 + (UIColor *)getC12Color {
-    return kUIColorRGB16(0xc8c8c8);
+    return kUIColorRGB16(0xeeeeee);
 }
 
 + (UIColor *)getC13Color {
-    return kUIColorRGB16(0xe2e2e2);
+    return kUIColorRGB16(0xcbcbcb);
 }
 + (UIColor *)getC14Color {
     return kUIColorRGB16(0xf7f7f7);
