@@ -9,5 +9,7 @@
 #import "BaseViewModel.h"
 
 @interface LCIntroViewModel : BaseViewModel
+@property(nonatomic,copy) void (^networkRequests)(NSString *videoID);
+@property(nonatomic,copy) void (^bindViewModel)(id viewModel);
 
 @end

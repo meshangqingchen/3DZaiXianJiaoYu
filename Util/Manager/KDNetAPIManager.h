@@ -47,4 +47,6 @@ static NSString *const AppNetAPIBaseURLString = @"http://www.wxswjy.com/api.php/
                        andMethodType:(NetworkMethod)method
                          andMimeType:(NSString *)mimeType
                       completeHandle:(void(^)(id responseObj,NSError *error))complete;
+
+
 @end

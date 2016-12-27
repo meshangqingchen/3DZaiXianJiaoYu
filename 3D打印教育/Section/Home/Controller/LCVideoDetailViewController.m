@@ -8,6 +8,7 @@
 
 #import "LCVideoDetailViewController.h"
 #import "LCVideoDetailViewModel.h"
+#import "LCVideoDetailViewViewModel.h"
 
 #import "LCIntroViewModel.h"
 #import "LCCourseViewModel.h"
@@ -18,8 +19,11 @@
 #import "LCEvaluateViewController.h"
 //下面的tabbar
 #import "LCVideoDetailTabBar.h"
+#import "LCDetailEvaluateInputAccessoryView.h"
 @interface LCVideoDetailViewController ()
 @property(nonatomic,strong) LCVideoDetailViewModel *viewModel;
+@property(nonatomic,strong) LCDetailEvaluateInputAccessoryView *lcInputAccessoryView;
+@property(nonatomic,strong) UIView *backView;
 @end
 
 @implementation LCVideoDetailViewController
@@ -35,10 +39,28 @@
     videoView.backgroundColor = [UIColor blackColor];
     [self.view addSubview:videoView];
     
+    self.backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    [self.view addSubview:_backView];
+    _backView.backgroundColor = [KDColor getC10Color];
+    _backView.hidden = YES;
+
+    self.lcInputAccessoryView = [[LCDetailEvaluateInputAccessoryView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, 276/2)];
+    [self.view addSubview:_lcInputAccessoryView];
+    @weakify(self)
+    [self.viewModel setPopLcInputAccessoryView:^(NSString *videoID) {
+        @strongify(self)
+        [self.lcInputAccessoryView.textView becomeFirstResponder];
+    }];
+    
     LCVideoDetailTabBar *tabbarView = [[LCVideoDetailTabBar alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT-49, SCREEN_WIDTH, 49)];
     tabbarView.backgroundColor = [KDColor getC5Color];
     [self.view addSubview:tabbarView];
     
+    
+    [self.viewModel setBindViewModel:^(LCVideoDetailViewViewModel *videoDetailVideModel) {
+        [tabbarView bindViewModel:videoDetailVideModel];
+    }];
+    !self.viewModel.networkRequests ? : self.viewModel.networkRequests(nil);
     
 }
 
@@ -67,30 +89,55 @@
 }
 
 - (NSMutableArray *)getValues{
-/*
- #import "LCIntroViewModel.h"
- #import "LCCourseViewModel.h"
- #import "LCEvaluateViewModel.h"
- */
     LCIntroViewModel *IntroViewModel = [[LCIntroViewModel alloc]initWithServices:self.viewModel.navigationStackService params:nil];
     LCCourseViewModel *courseViewModel = [[LCCourseViewModel alloc]initWithServices:self.viewModel.navigationStackService params:nil];
     LCEvaluateViewModel *evaluateViewModel = [[LCEvaluateViewModel alloc]initWithServices:self.viewModel.navigationStackService params:nil];
     return [@[IntroViewModel,courseViewModel,evaluateViewModel] mutableCopy];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    //添加对键盘弹起的监听
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(openKeyboard:) name:UIKeyboardWillShowNotification object:nil];
+    //添加对键盘收起的监听
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeKeyboard:) name:UIKeyboardWillHideNotification object:nil];
+    [center addObserver:self selector:@selector(changeKeyboard:) name:UIKeyboardWillChangeFrameNotification object:nil];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear: animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillChangeFrameNotification object:nil];
 }
-*/
+
+-(void)openKeyboard:(NSNotification *)notification
+{
+    _backView.hidden = NO;
+}
+
+-(void)closeKeyboard:(NSNotification *)notification
+{
+    _backView.hidden = YES;
+}
+
+-(void)changeKeyboard:(NSNotification *)notification
+{
+    //键盘高度
+    CGFloat keyBoard_Y = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue].origin.y;
+    // 从通知的userInfo中取得动画的选项
+    NSInteger option = [notification.userInfo[UIKeyboardAnimationCurveUserInfoKey] intValue];
+    // 从通知的userInfo中取得动画的时长
+    CGFloat duration = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    [UIView animateWithDuration:duration delay:0 options:option animations:^{
+        if (keyBoard_Y == SCREEN_HEIGHT) {
+            self.lcInputAccessoryView.top = keyBoard_Y;
+        }else{
+            self.lcInputAccessoryView.top = keyBoard_Y-276/2;
+        }
+    } completion:nil];
+}
+
 
 @end

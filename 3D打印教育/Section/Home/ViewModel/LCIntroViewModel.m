@@ -9,5 +9,8 @@
 #import "LCIntroViewModel.h"
 
 @implementation LCIntroViewModel
-
+-(void)initialize{
+    [super initialize];
+   
+}
 @end

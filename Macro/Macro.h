@@ -69,4 +69,15 @@
 
 #define kSharedAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
 
+// 缓存主目录
+#define HSCachesDirectory [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"LCCache"]
+
+// 保存文件名
+#define HSFileName(url) url.md5String
+
+// 文件的存放路径（caches）
+#define HSFileFullpath(url) [HSCachesDirectory stringByAppendingPathComponent:HSFileName(url)]
+
+// 文件的已下载长度
+#define HSDownloadLength(url) [[[NSFileManager defaultManager] attributesOfItemAtPath:HSFileFullpath(url) error:nil][NSFileSize] integerValue]
 #endif /* Macro_h */

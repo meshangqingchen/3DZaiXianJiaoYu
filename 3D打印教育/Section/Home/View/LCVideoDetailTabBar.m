@@ -8,10 +8,18 @@
 
 #import "LCVideoDetailTabBar.h"
 #import "UIButton+ImageTitleStyle.h"
+
+#import "LCVideoDetailViewViewModel.h"
+
+@interface LCVideoDetailTabBar ()
+@property(nonatomic,strong) LCVideoDetailViewViewModel *videoDetailViewViewModel;
+@end
+
 @implementation LCVideoDetailTabBar
 
 -(void)setupViews{
     
+    @weakify(self)
     CGFloat w = SCREEN_WIDTH/5;
     self.downloadBT = [UIButton new];
     [_downloadBT setImage:[UIImage imageNamed:@"xiazai"] forState:0];
@@ -24,6 +32,10 @@
         make.width.mas_equalTo(w);
     }];
     [_downloadBT setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:7];
+    [_downloadBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+        @strongify(self)
+        !self.videoDetailViewViewModel.downLoadVideo ? : self.videoDetailViewViewModel.downLoadVideo(@"videoID");
+    }];
     
     self.shareBT = [UIButton new];
     [_shareBT setImage:[UIImage imageNamed:@"fenxiang"] forState:0];
@@ -37,7 +49,12 @@
         make.width.mas_equalTo(w);
     }];
     [_shareBT setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:7];
-
+    [_shareBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+        @strongify(self)
+        !self.videoDetailViewViewModel.shareVideo ? : self.videoDetailViewViewModel.shareVideo(@"videoID");
+    }];
+    
+    
     self.collectBT = [UIButton new];
     [_collectBT setImage:[UIImage imageNamed:@"normal_daxingxing"] forState:0];
     [_collectBT setImage:[UIImage imageNamed:@"select_daxingxing"] forState:UIControlStateSelected];
@@ -51,7 +68,12 @@
         make.width.mas_equalTo(w);
     }];
     [_collectBT setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:7];
-
+    [_collectBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+        @strongify(self)
+        !self.videoDetailViewViewModel.collectVideo ? : self.videoDetailViewViewModel.collectVideo(@"videoID",sender);
+    }];
+    
+    
     self.commentBT = [UIButton new];
     [_commentBT setImage:[UIImage imageNamed:@"pinglun"] forState:0];
     [_commentBT setTitleColor:[KDColor getC3Color] forState:0];
@@ -64,7 +86,12 @@
         make.width.mas_equalTo(w);
     }];
     [_commentBT setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:7];
-
+    [_commentBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+        @strongify(self)
+        !self.videoDetailViewViewModel.pinglunVideo ? : self.videoDetailViewViewModel.pinglunVideo(@"videoID");
+    }];
+    
+    
     self.counselBT = [UIButton new];
     [_counselBT setImage:[UIImage imageNamed:@"zixun"] forState:0];
     [_counselBT setTitleColor:[KDColor getC3Color] forState:0];
@@ -77,9 +104,13 @@
         make.width.mas_equalTo(w);
     }];
     [_counselBT setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:7];
+    [_counselBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+        @strongify(self)
+        !self.videoDetailViewViewModel.consultVideo ? : self.videoDetailViewViewModel.consultVideo(@"videoID");
+    }];
 }
 
 -(void)bindViewModel:(id)viewModel{
-
+    self.videoDetailViewViewModel = viewModel;
 }
 @end

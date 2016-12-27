@@ -13,6 +13,7 @@
 static NSTimeInterval kAppNetTimeoutInterval = 30;
 
 
+
 @implementation KDNetAPIManager
 
 static KDNetAPIManager *_sharedManager = nil;
@@ -235,6 +236,9 @@ static dispatch_once_t onceToken;
     }
     return data;
 }
+
+
+
 
 
 @end

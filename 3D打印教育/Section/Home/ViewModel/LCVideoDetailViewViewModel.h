@@ -1,24 +1,21 @@
 //
-//  LCVideoDetailViewModel.h
+//  LCVideoDetailViewViewModel.h
 //  3D打印教育
 //
-//  Created by 3D on 16/12/14.
+//  Created by 3D on 16/12/26.
 //  Copyright © 2016年 3D. All rights reserved.
 //
 
-#import "BaseViewModel.h"
+#import <Foundation/Foundation.h>
 
-@interface LCVideoDetailViewModel : BaseViewModel
+@interface LCVideoDetailViewViewModel : NSObject
 
-@property(nonatomic,copy) void (^networkRequests)(NSString *videoID);
-@property(nonatomic,copy) void (^bindViewModel)(id viewModel);
-
+//事件
 @property(nonatomic,copy) void (^downLoadVideo)(NSString* videoID);
 @property(nonatomic,copy) void (^shareVideo)(NSString *videoID);
 @property(nonatomic,copy) void (^collectVideo)(NSString *videoID,UIButton *collection_BT);
 @property(nonatomic,copy) void (^pinglunVideo)(NSString *videoID);
 @property(nonatomic,copy) void (^consultVideo)(NSString *videoID);
-@property(nonatomic,copy) void (^popLcInputAccessoryView)(NSString *videoID);
 
-
+-(instancetype)initWithViewModel:(id)viewModel;
 @end
