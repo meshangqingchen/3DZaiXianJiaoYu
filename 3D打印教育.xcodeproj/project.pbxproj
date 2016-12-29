@@ -34,6 +34,10 @@
 		748245101E14D5DE004735DB /* LCNotificationViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7482450F1E14D5DE004735DB /* LCNotificationViewModel.m */; };
 		748245131E14D5FF004735DB /* LCMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 748245121E14D5FF004735DB /* LCMessageViewController.m */; };
 		748245161E14D61C004735DB /* LCNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 748245151E14D61C004735DB /* LCNotificationViewController.m */; };
+		748245191E14F162004735DB /* LCMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 748245181E14F162004735DB /* LCMessageCell.m */; };
+		7482451C1E14F18F004735DB /* LCNotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7482451B1E14F18F004735DB /* LCNotificationCell.m */; };
+		7482451F1E14F8A3004735DB /* LCMessageCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7482451E1E14F8A3004735DB /* LCMessageCellViewModel.m */; };
+		748245221E14F8DB004735DB /* LCNotificationCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 748245211E14F8DB004735DB /* LCNotificationCellViewModel.m */; };
 		7485FB0B1DF90A1B00E6D23D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB0A1DF90A1B00E6D23D /* main.m */; };
 		7485FB0E1DF90A1B00E6D23D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB0D1DF90A1B00E6D23D /* AppDelegate.m */; };
 		7485FB111DF90A1B00E6D23D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB101DF90A1B00E6D23D /* ViewController.m */; };
@@ -251,6 +255,14 @@
 		748245121E14D5FF004735DB /* LCMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMessageViewController.m; sourceTree = "<group>"; };
 		748245141E14D61C004735DB /* LCNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNotificationViewController.h; sourceTree = "<group>"; };
 		748245151E14D61C004735DB /* LCNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNotificationViewController.m; sourceTree = "<group>"; };
+		748245171E14F162004735DB /* LCMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMessageCell.h; sourceTree = "<group>"; };
+		748245181E14F162004735DB /* LCMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMessageCell.m; sourceTree = "<group>"; };
+		7482451A1E14F18F004735DB /* LCNotificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNotificationCell.h; sourceTree = "<group>"; };
+		7482451B1E14F18F004735DB /* LCNotificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNotificationCell.m; sourceTree = "<group>"; };
+		7482451D1E14F8A3004735DB /* LCMessageCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMessageCellViewModel.h; sourceTree = "<group>"; };
+		7482451E1E14F8A3004735DB /* LCMessageCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMessageCellViewModel.m; sourceTree = "<group>"; };
+		748245201E14F8DB004735DB /* LCNotificationCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNotificationCellViewModel.h; sourceTree = "<group>"; };
+		748245211E14F8DB004735DB /* LCNotificationCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNotificationCellViewModel.m; sourceTree = "<group>"; };
 		7485FB061DF90A1B00E6D23D /* 3D打印教育.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "3D打印教育.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7485FB0A1DF90A1B00E6D23D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7485FB0C1DF90A1B00E6D23D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1111,6 +1123,10 @@
 				740F0EFA1E1121BC00EEFC3B /* LCCourseDownLoadCell.m */,
 				740F0EFF1E12132400EEFC3B /* LCCourseDownLoadHeaderView.h */,
 				740F0F001E12132400EEFC3B /* LCCourseDownLoadHeaderView.m */,
+				748245171E14F162004735DB /* LCMessageCell.h */,
+				748245181E14F162004735DB /* LCMessageCell.m */,
+				7482451A1E14F18F004735DB /* LCNotificationCell.h */,
+				7482451B1E14F18F004735DB /* LCNotificationCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1158,8 +1174,12 @@
 				748245091E14D52A004735DB /* LCMyMessageViewModel.m */,
 				7482450B1E14D5AB004735DB /* LCMessageViewModel.h */,
 				7482450C1E14D5AB004735DB /* LCMessageViewModel.m */,
+				7482451D1E14F8A3004735DB /* LCMessageCellViewModel.h */,
+				7482451E1E14F8A3004735DB /* LCMessageCellViewModel.m */,
 				7482450E1E14D5DE004735DB /* LCNotificationViewModel.h */,
 				7482450F1E14D5DE004735DB /* LCNotificationViewModel.m */,
+				748245201E14F8DB004735DB /* LCNotificationCellViewModel.h */,
+				748245211E14F8DB004735DB /* LCNotificationCellViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1689,6 +1709,7 @@
 			files = (
 				7485FC0B1DFC39FB00E6D23D /* NSDateUtils.m in Sources */,
 				7485FB9A1DFC382800E6D23D /* WMMenuView.m in Sources */,
+				748245221E14F8DB004735DB /* LCNotificationCellViewModel.m in Sources */,
 				740F0EE61E10C0F600EEFC3B /* BaseSectionTableHeaderFooterView.m in Sources */,
 				740F0EF21E10FBBD00EEFC3B /* LCVideoDetailViewViewModel.m in Sources */,
 				74F90D011E1265B7005E5D09 /* LCHomeModel.m in Sources */,
@@ -1725,6 +1746,7 @@
 				7485FCF81DFE475500E6D23D /* LCPersonalCenterViewController.m in Sources */,
 				74C4FB491E028F55007BC549 /* LCEvaluateCellViewModel.m in Sources */,
 				7485FB9C1DFC382800E6D23D /* WMScrollView.m in Sources */,
+				748245191E14F162004735DB /* LCMessageCell.m in Sources */,
 				740F0EFE1E1126B500EEFC3B /* LCCourseDownLoadCellViewModel.m in Sources */,
 				748CF1EE1E0B7DFF00E60F68 /* LCDetailEvaluateInputAccessoryView.m in Sources */,
 				7485FC121DFC39FB00E6D23D /* KDFileManager.m in Sources */,
@@ -1735,6 +1757,7 @@
 				7485FBB31DFC389B00E6D23D /* CustomBarItem.m in Sources */,
 				7485FDA81DFFFA1500E6D23D /* UIButton+WebCache.m in Sources */,
 				7485FBFC1DFC39FB00E6D23D /* NSObject+Parse.m in Sources */,
+				7482451C1E14F18F004735DB /* LCNotificationCell.m in Sources */,
 				7485FD991DFFFA1500E6D23D /* TAAbstractDotView.m in Sources */,
 				7485FD9D1DFFFA1500E6D23D /* SDCollectionViewCell.m in Sources */,
 				7485FCBA1DFD4FC800E6D23D /* JDStatusBarNotification.m in Sources */,
@@ -1758,6 +1781,7 @@
 				7485FDC91E00F83000E6D23D /* LCIntroViewController.m in Sources */,
 				7485FDA51DFFFA1500E6D23D /* SDWebImageDownloaderOperation.m in Sources */,
 				7485FDCF1E00F89800E6D23D /* LCCourseViewController.m in Sources */,
+				7482451F1E14F8A3004735DB /* LCMessageCellViewModel.m in Sources */,
 				7485FC021DFC39FB00E6D23D /* UIScrollView+Refresh.m in Sources */,
 				7485FDA11DFFFA1500E6D23D /* SDImageCache.m in Sources */,
 				7485FDA61DFFFA1500E6D23D /* SDWebImageManager.m in Sources */,

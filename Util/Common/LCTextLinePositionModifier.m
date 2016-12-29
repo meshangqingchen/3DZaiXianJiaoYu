@@ -30,6 +30,14 @@
     return self;
 }
 
+-(instancetype)initWithLineHeightMultiple:(CGFloat)lineHeightMultiple{
+    if (self = [super init]) {
+        _lineHeightMultiple = lineHeightMultiple;
+    }
+    return self;
+}
+
+
 - (void)modifyLines:(NSArray *)lines fromText:(NSAttributedString *)text inContainer:(YYTextContainer *)container {
     //CGFloat ascent = _font.ascender;
     CGFloat ascent = _font.pointSize * 0.86;

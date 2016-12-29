@@ -19,6 +19,7 @@
 #import "LCHomeCollectionSectionModel.h"
 
 #import "UINavigationItem+CustomItem.h"
+#import "LCMyMessageViewModel.h"
 @interface LCHomeViewController ()
 <
 UITextFieldDelegate,
@@ -70,13 +71,14 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     UIImage *have_image = [UIImage imageNamed:@"have_message"];
-    MYLog(@"%@",have_image);
-    MYLog(@"%@",NSStringFromCGSize(have_image.size));
     
+    MYLog(@"%@",@"根据接口来判断 显示那个状态的铃铛");
     CustomBarItem *rightItem = [self.navigationItem setItemWithImage:@"have_message" size:have_image.size itemType:right];
+    @weakify(self)
     [rightItem addBlockForControlEvents:UIControlEventTouchUpInside block:^(id sender) {
-//        [self.view endEditing:YES];
-//        [self.viewModel.navigationStackService popViewModelAnimated:YES];
+        @strongify(self)
+        LCMyMessageViewModel *myMessageVM = [[LCMyMessageViewModel alloc]initWithServices:self.viewModel.navigationStackService params:@{KEY_TITLE:@"我的消息"}];
+        [self.viewModel.navigationStackService pushViewModel:myMessageVM animated:YES];
     }];
 }
 

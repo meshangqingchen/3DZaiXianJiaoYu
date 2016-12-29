@@ -18,4 +18,6 @@
 @property (nonatomic, assign) CGFloat paddingBottom; //文本底部留白
 @property (nonatomic, assign) CGFloat lineHeightMultiple; //行距倍数
 - (CGFloat)heightForLineCount:(NSUInteger)lineCount;
+
+-(instancetype)initWithLineHeightMultiple:(CGFloat)lineHeightMultiple;
 @end

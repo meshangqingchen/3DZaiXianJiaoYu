@@ -7,13 +7,13 @@
 //
 
 #import "LCNotificationViewController.h"
-
+#import "LCNotificationViewModel.h"
 @interface LCNotificationViewController ()
-
+@property(nonatomic,strong) LCNotificationViewModel *viewModel;
 @end
 
 @implementation LCNotificationViewController
-
+@dynamic viewModel;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

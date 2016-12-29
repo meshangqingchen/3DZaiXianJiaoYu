@@ -10,4 +10,6 @@
 
 @interface LCNotificationViewModel : BaseTableViewModel
 
+
+
 @end

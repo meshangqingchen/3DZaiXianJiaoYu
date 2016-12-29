@@ -41,10 +41,13 @@
         self.titleSizeSelected = 17;
         self.titleColorNormal = [KDColor getC2Color];
         self.titleColorSelected = [KDColor getX1Color];
-        self.itemsMargins = @[@35,@50,@50,@35];
+        self.progressWidth = 100;
         self.viewFrame = CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64);
         self.keys = [self getKeys];
         self.values = [self getValues];
+        
+        //设置红圈上标
+        self.menuView.dataSource = self;
     }
     return self;
 }
@@ -60,5 +63,11 @@
     return [@[IntroViewModel,courseViewModel] mutableCopy];
 }
 
+//- (UIView *)menuView:(WMMenuView *)menu badgeViewAtIndex:(NSInteger)index;
 
+- (UIView *)menuView:(WMMenuView *)menu badgeViewAtIndex:(NSInteger)index{
+    UIImageView *redPointImageV = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"red_point"]];
+    redPointImageV.frame = CGRectMake(45, 7, 7, 7);
+    return redPointImageV;
+}
 @end
