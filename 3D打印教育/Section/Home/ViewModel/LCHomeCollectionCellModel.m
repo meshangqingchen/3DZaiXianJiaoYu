@@ -7,11 +7,15 @@
 //
 
 #import "LCHomeCollectionCellModel.h"
-
+#import "LCHomeModel.h"
 @implementation LCHomeCollectionCellModel
 -(instancetype)initWithModel:(id)model{
     if (self = [super init]) {
-        
+        LChomeList *homeList = model;
+        self.title = homeList.name;
+        self.bigImgURL = [NSURL URLWithString:homeList.big_image];
+        self.smallImgURL = [NSURL URLWithString:homeList.image];
+        self.idd = homeList.iid;
     }
     return self;
 }

@@ -17,6 +17,8 @@
 
 #import "LCHomeCollectionCellModel.h"
 #import "LCHomeCollectionSectionModel.h"
+
+#import "UINavigationItem+CustomItem.h"
 @interface LCHomeViewController ()
 <
 UITextFieldDelegate,
@@ -37,7 +39,7 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
 @dynamic viewModel,collectionView;
 - (void)viewDidLoad {
     
-    self.view.backgroundColor = [UIColor yellowColor];
+//    self.view.backgroundColor = [UIColor yellowColor];
     _tf = [[LCTextFiled alloc]initWithFrame:SEARCHTEXTFIELD_FREAM];
     _tf.delegate = self;
     _tf.layer.cornerRadius = 15;
@@ -53,6 +55,7 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
     _flowLayout.minimumLineSpacing = 0;
     _flowLayout.minimumInteritemSpacing = 10;
     self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, STATUS_HEIGHT+NAVIGATIONBAR_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT-(STATUS_HEIGHT+NAVIGATIONBAR_HEIGHT+49)) collectionViewLayout:_flowLayout];
+    self.collectionView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.collectionView];
     [self.collectionView registerClass:[LCNomalCollectionViewCell class] forCellWithReuseIdentifier:identifierNomal];
     [self.collectionView registerClass:[LCBigImageAndTextCollectionViewCell class] forCellWithReuseIdentifier:identifierBigImageAndText];
@@ -62,6 +65,19 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
     [self.collectionView registerClass:[LCCollectionReusableBannerHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:identifierBannerHeader];
     
     [super viewDidLoad];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    UIImage *have_image = [UIImage imageNamed:@"have_message"];
+    MYLog(@"%@",have_image);
+    MYLog(@"%@",NSStringFromCGSize(have_image.size));
+    
+    CustomBarItem *rightItem = [self.navigationItem setItemWithImage:@"have_message" size:have_image.size itemType:right];
+    [rightItem addBlockForControlEvents:UIControlEventTouchUpInside block:^(id sender) {
+//        [self.view endEditing:YES];
+//        [self.viewModel.navigationStackService popViewModelAnimated:YES];
+    }];
 }
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
@@ -80,29 +96,29 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    LCHomeCollectionSectionModel *model =  self.viewModel.dataSource[indexPath.section];
-    switch (model.sectionTyp) {
+    LCHomeCollectionSectionModel *sectionModel =  self.viewModel.dataSource[indexPath.section];
+    switch (sectionModel.sectionTyp) {
         case LCNormail:{
             LCNomalCollectionViewCell *normalCell = [collectionView dequeueReusableCellWithReuseIdentifier:identifierNomal forIndexPath:indexPath];
-            [normalCell bindViewModel:model.data[indexPath.row]];
+            [normalCell bindViewModel:sectionModel.data[indexPath.row]];
             return normalCell;
             break;
         }
         case LCBigImageAddText:{
             if (indexPath.row == 0) {
                 LCBigImageAndTextCollectionViewCell *bigAndTextCell = [collectionView dequeueReusableCellWithReuseIdentifier:identifierBigImageAndText forIndexPath:indexPath];
-                [bigAndTextCell bindViewModel:model.data];
+                [bigAndTextCell bindViewModel:sectionModel.data[indexPath.row]];
                 return bigAndTextCell;
             }else{
                 LCNomalCollectionViewCell *normalCell = [collectionView dequeueReusableCellWithReuseIdentifier:identifierNomal forIndexPath:indexPath];
-                [normalCell bindViewModel:model.data[indexPath.row]];
+                [normalCell bindViewModel:sectionModel.data[indexPath.row]];
                 return normalCell;
             }
             break;
         }
         case LCBigImage:{
             LCBigImageCollectionViewCell *bigImageCell = [collectionView dequeueReusableCellWithReuseIdentifier:identifierBigImage forIndexPath:indexPath];
-            [bigImageCell bindViewModel:model.data];
+            [bigImageCell bindViewModel:sectionModel.data[indexPath.row]];
             return bigImageCell;
             break;
         }
@@ -114,10 +130,15 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
+        LCHomeCollectionSectionModel *sectionModel =  self.viewModel.dataSource[indexPath.section];
         LCCollectionReusableBannerHeaderView *bannerHeaderView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:identifierBannerHeader forIndexPath:indexPath];
+        [bannerHeaderView bindViewModel:sectionModel andBannerViewModel:self.viewModel.homeBannerDataArr];
         return bannerHeaderView;
     }
+    
+    LCHomeCollectionSectionModel *sectionModel =  self.viewModel.dataSource[indexPath.section];
     LCCollectionReusableHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:identifierSectionHeader forIndexPath:indexPath];
+    [headerView bindViewModel:sectionModel];
     return headerView;
 }
 

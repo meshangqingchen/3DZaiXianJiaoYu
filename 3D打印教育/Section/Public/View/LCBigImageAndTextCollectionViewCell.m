@@ -7,7 +7,7 @@
 //
 
 #import "LCBigImageAndTextCollectionViewCell.h"
-
+#import "LCHomeCollectionCellModel.h"
 @implementation LCBigImageAndTextCollectionViewCell
 
 -(void)setupViews{
@@ -29,5 +29,9 @@
     }];
 }
 
--(void)bindViewModel:(id)viewModel{}
+-(void)bindViewModel:(id)viewModel{
+    LCHomeCollectionCellModel * homeCellVM = viewModel;
+    self.titleLB.text = homeCellVM.title;
+    [self.backImageView setImageWithURL:homeCellVM.bigImgURL placeholder:[UIImage imageNamed:@""]];
+}
 @end

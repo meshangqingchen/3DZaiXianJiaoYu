@@ -43,6 +43,7 @@ static char overviewKey;
     self.itemType = type;
     self.items = [[NSMutableArray alloc] init];
     self.contentBarItem = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.contentBarItem.backgroundColor = [UIColor blackColor];
     self.contentBarItem.frame = CGRectMake(0, 0, size.width, size.height);
     [self.items addObject:self.contentBarItem];
 }
@@ -84,7 +85,7 @@ static char overviewKey;
     if (type == right) {
         
         [self.contentBarItem setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
-        [self setOffset:Default_Offset];
+//        [self setOffset:Default_Offset];
     }
     else if (type == left){
         

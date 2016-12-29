@@ -24,17 +24,16 @@ typedef NS_ENUM(NSUInteger , NetworkMethod) {
 
 //测试接口  http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json&ip=218.4.255.255
 //http://www.wxswjy.com/api.php/home/api/
-static NSString *const AppNetAPIBaseURLString = @"http://www.wxswjy.com/api.php/home/api/";//@"http://saas.petle.com.cn/api.php/";
+static NSString *const AppNetAPIBaseURLString = @"http://192.168.1.108/3d/api.php/home/api/";//@"http://saas.petle.com.cn/api.php/";
 
 
 @interface KDNetAPIManager : AFHTTPSessionManager
 
 + (instancetype)sharedJsonClient;
 
--(NSURLSessionDataTask *)requestJsonDataWithPath:(NSString *)aPath
-                                    encodeParams:(NSDictionary *)params
-                                  withMethodType:(NetworkMethod)method
-                                  completeHandle:(void(^)(id responseObj,NSError *error))complete;
+//andBaseApi:(NSString *)baseApi
+
+-(NSURLSessionDataTask *)requestJsonDataWithPath:(NSString *)aPath encodeParams:(NSDictionary *)params withMethodType:(NetworkMethod)method andBaseApi:(NSString *)baseApi completeHandle:(void(^)(id responseObj,NSError *error))complete;
 ///检查更行
 -(NSURLSessionDataTask *)checkAppUpdateWithPath:(NSString *)aPath  completeHandle:(void(^)(id responseObj,NSError *error))complete;
 

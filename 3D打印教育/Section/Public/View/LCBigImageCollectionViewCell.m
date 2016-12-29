@@ -7,7 +7,7 @@
 //
 
 #import "LCBigImageCollectionViewCell.h"
-
+#import "LCHomeCollectionCellModel.h"
 @implementation LCBigImageCollectionViewCell
 
 -(void)setupViews{
@@ -20,6 +20,9 @@
     self.backImageView.backgroundColor = [UIColor greenColor];
 }
 
--(void)bindViewModel:(id)viewModel{}
+-(void)bindViewModel:(id)viewModel{
+    LCHomeCollectionCellModel * homeCellVM = viewModel;
+    [self.backImageView setImageWithURL:homeCellVM.bigImgURL placeholder:[UIImage imageNamed:@""]];
+}
 
 @end

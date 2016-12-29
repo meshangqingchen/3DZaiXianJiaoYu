@@ -60,7 +60,7 @@
     [self.viewModel setBindViewModel:^(LCVideoDetailViewViewModel *videoDetailVideModel) {
         [tabbarView bindViewModel:videoDetailVideModel];
     }];
-    !self.viewModel.networkRequests ? : self.viewModel.networkRequests(nil);
+    !self.viewModel.networkRequests ? : self.viewModel.networkRequests(self.viewModel.planID);
     
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "LCNomalCollectionViewCell.h"
+#import "LCHomeCollectionCellModel.h"
 
 @implementation LCNomalCollectionViewCell
 
@@ -31,7 +32,10 @@
 }
 
 -(void)bindViewModel:(id)viewModel{
-    self.backImageView.image = [UIImage imageNamed:@""];
+//    self.backImageView.image = [UIImage imageNamed:@""];
+    LCHomeCollectionCellModel * homeCellVM = viewModel;
+    self.titleLB.text = homeCellVM.title;
+    [self.backImageView setImageWithURL:homeCellVM.smallImgURL placeholder:[UIImage imageNamed:@""]];
 };
 
 @end

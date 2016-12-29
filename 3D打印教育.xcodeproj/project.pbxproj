@@ -21,11 +21,19 @@
 		740F0EF81E11210800EEFC3B /* LCCourseDownLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 740F0EF71E11210800EEFC3B /* LCCourseDownLoadViewController.m */; };
 		740F0EFB1E1121BC00EEFC3B /* LCCourseDownLoadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 740F0EFA1E1121BC00EEFC3B /* LCCourseDownLoadCell.m */; };
 		740F0EFE1E1126B500EEFC3B /* LCCourseDownLoadCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 740F0EFD1E1126B500EEFC3B /* LCCourseDownLoadCellViewModel.m */; };
+		740F0F011E12132400EEFC3B /* LCCourseDownLoadHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 740F0F001E12132400EEFC3B /* LCCourseDownLoadHeaderView.m */; };
 		74746E311E0E7B75002B0BFF /* HSSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74746E301E0E7B75002B0BFF /* HSSessionModel.m */; };
 		747812C41E01127200507DCA /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 747812C31E01127200507DCA /* BaseView.m */; };
 		747812C71E0113A200507DCA /* LCVideoDetailTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 747812C61E0113A200507DCA /* LCVideoDetailTabBar.m */; };
 		747812CA1E011D5C00507DCA /* LCIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 747812C91E011D5C00507DCA /* LCIntroView.m */; };
 		747EFB701E080F4100041C56 /* UIView+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 747EFB6F1E080F4100041C56 /* UIView+BlocksKit.m */; };
+		748245041E13C363004735DB /* LCHomeDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 748245031E13C363004735DB /* LCHomeDetailModel.m */; };
+		748245071E14D4B7004735DB /* LCMyMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 748245061E14D4B7004735DB /* LCMyMessageViewController.m */; };
+		7482450A1E14D52A004735DB /* LCMyMessageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 748245091E14D52A004735DB /* LCMyMessageViewModel.m */; };
+		7482450D1E14D5AB004735DB /* LCMessageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7482450C1E14D5AB004735DB /* LCMessageViewModel.m */; };
+		748245101E14D5DE004735DB /* LCNotificationViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7482450F1E14D5DE004735DB /* LCNotificationViewModel.m */; };
+		748245131E14D5FF004735DB /* LCMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 748245121E14D5FF004735DB /* LCMessageViewController.m */; };
+		748245161E14D61C004735DB /* LCNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 748245151E14D61C004735DB /* LCNotificationViewController.m */; };
 		7485FB0B1DF90A1B00E6D23D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB0A1DF90A1B00E6D23D /* main.m */; };
 		7485FB0E1DF90A1B00E6D23D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB0D1DF90A1B00E6D23D /* AppDelegate.m */; };
 		7485FB111DF90A1B00E6D23D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FB101DF90A1B00E6D23D /* ViewController.m */; };
@@ -165,6 +173,8 @@
 		74D2F6701E03A14800C84317 /* LCVideoDetailEvaluateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D2F66F1E03A14800C84317 /* LCVideoDetailEvaluateCell.m */; };
 		74D2F6731E08067400C84317 /* LCEvaluateDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D2F6721E08067400C84317 /* LCEvaluateDetailViewModel.m */; };
 		74D2F6761E080AAE00C84317 /* LCEvaluateDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D2F6751E080AAE00C84317 /* LCEvaluateDetailViewController.m */; };
+		74F90D011E1265B7005E5D09 /* LCHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F90D001E1265B7005E5D09 /* LCHomeModel.m */; };
+		74F90D071E1381A4005E5D09 /* LCHomeCollectionBananaViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F90D061E1381A4005E5D09 /* LCHomeCollectionBananaViewModel.m */; };
 		D2781A4C36A2A69961E1662A /* libPods-3D打印教育.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C89CD1AB96CEC93A8A4619C /* libPods-3D打印教育.a */; };
 /* End PBXBuildFile section */
 
@@ -215,6 +225,8 @@
 		740F0EFA1E1121BC00EEFC3B /* LCCourseDownLoadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCourseDownLoadCell.m; sourceTree = "<group>"; };
 		740F0EFC1E1126B500EEFC3B /* LCCourseDownLoadCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCourseDownLoadCellViewModel.h; sourceTree = "<group>"; };
 		740F0EFD1E1126B500EEFC3B /* LCCourseDownLoadCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCourseDownLoadCellViewModel.m; sourceTree = "<group>"; };
+		740F0EFF1E12132400EEFC3B /* LCCourseDownLoadHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCourseDownLoadHeaderView.h; sourceTree = "<group>"; };
+		740F0F001E12132400EEFC3B /* LCCourseDownLoadHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCourseDownLoadHeaderView.m; sourceTree = "<group>"; };
 		74746E2F1E0E7B75002B0BFF /* HSSessionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSessionModel.h; sourceTree = "<group>"; };
 		74746E301E0E7B75002B0BFF /* HSSessionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSessionModel.m; sourceTree = "<group>"; };
 		747812C21E01127200507DCA /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
@@ -225,6 +237,20 @@
 		747812C91E011D5C00507DCA /* LCIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCIntroView.m; sourceTree = "<group>"; };
 		747EFB6E1E080F4100041C56 /* UIView+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BlocksKit.h"; sourceTree = "<group>"; };
 		747EFB6F1E080F4100041C56 /* UIView+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BlocksKit.m"; sourceTree = "<group>"; };
+		748245021E13C363004735DB /* LCHomeDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHomeDetailModel.h; sourceTree = "<group>"; };
+		748245031E13C363004735DB /* LCHomeDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHomeDetailModel.m; sourceTree = "<group>"; };
+		748245051E14D4B7004735DB /* LCMyMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMyMessageViewController.h; sourceTree = "<group>"; };
+		748245061E14D4B7004735DB /* LCMyMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMyMessageViewController.m; sourceTree = "<group>"; };
+		748245081E14D52A004735DB /* LCMyMessageViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMyMessageViewModel.h; sourceTree = "<group>"; };
+		748245091E14D52A004735DB /* LCMyMessageViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMyMessageViewModel.m; sourceTree = "<group>"; };
+		7482450B1E14D5AB004735DB /* LCMessageViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMessageViewModel.h; sourceTree = "<group>"; };
+		7482450C1E14D5AB004735DB /* LCMessageViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMessageViewModel.m; sourceTree = "<group>"; };
+		7482450E1E14D5DE004735DB /* LCNotificationViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNotificationViewModel.h; sourceTree = "<group>"; };
+		7482450F1E14D5DE004735DB /* LCNotificationViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNotificationViewModel.m; sourceTree = "<group>"; };
+		748245111E14D5FF004735DB /* LCMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMessageViewController.h; sourceTree = "<group>"; };
+		748245121E14D5FF004735DB /* LCMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMessageViewController.m; sourceTree = "<group>"; };
+		748245141E14D61C004735DB /* LCNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNotificationViewController.h; sourceTree = "<group>"; };
+		748245151E14D61C004735DB /* LCNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNotificationViewController.m; sourceTree = "<group>"; };
 		7485FB061DF90A1B00E6D23D /* 3D打印教育.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "3D打印教育.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7485FB0A1DF90A1B00E6D23D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7485FB0C1DF90A1B00E6D23D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -500,6 +526,10 @@
 		74D2F6721E08067400C84317 /* LCEvaluateDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCEvaluateDetailViewModel.m; sourceTree = "<group>"; };
 		74D2F6741E080AAE00C84317 /* LCEvaluateDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCEvaluateDetailViewController.h; sourceTree = "<group>"; };
 		74D2F6751E080AAE00C84317 /* LCEvaluateDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCEvaluateDetailViewController.m; sourceTree = "<group>"; };
+		74F90CFF1E1265B7005E5D09 /* LCHomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHomeModel.h; sourceTree = "<group>"; };
+		74F90D001E1265B7005E5D09 /* LCHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHomeModel.m; sourceTree = "<group>"; };
+		74F90D051E1381A4005E5D09 /* LCHomeCollectionBananaViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHomeCollectionBananaViewModel.h; sourceTree = "<group>"; };
+		74F90D061E1381A4005E5D09 /* LCHomeCollectionBananaViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHomeCollectionBananaViewModel.m; sourceTree = "<group>"; };
 		927A6CCB0A9DACC2135DFAB3 /* Pods-3D打印教育.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育.release.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育/Pods-3D打印教育.release.xcconfig"; sourceTree = "<group>"; };
 		A3F85E570F0B86617C398C40 /* Pods-3D打印教育UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育UITests/Pods-3D打印教育UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CAC66B562E4D4586217D7131 /* Pods-3D打印教育Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-3D打印教育Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-3D打印教育Tests/Pods-3D打印教育Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -1031,6 +1061,12 @@
 				74D2F6751E080AAE00C84317 /* LCEvaluateDetailViewController.m */,
 				740F0EF61E11210800EEFC3B /* LCCourseDownLoadViewController.h */,
 				740F0EF71E11210800EEFC3B /* LCCourseDownLoadViewController.m */,
+				748245051E14D4B7004735DB /* LCMyMessageViewController.h */,
+				748245061E14D4B7004735DB /* LCMyMessageViewController.m */,
+				748245111E14D5FF004735DB /* LCMessageViewController.h */,
+				748245121E14D5FF004735DB /* LCMessageViewController.m */,
+				748245141E14D61C004735DB /* LCNotificationViewController.h */,
+				748245151E14D61C004735DB /* LCNotificationViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1038,6 +1074,10 @@
 		7485FCC81DFE41AD00E6D23D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				74F90CFF1E1265B7005E5D09 /* LCHomeModel.h */,
+				74F90D001E1265B7005E5D09 /* LCHomeModel.m */,
+				748245021E13C363004735DB /* LCHomeDetailModel.h */,
+				748245031E13C363004735DB /* LCHomeDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1069,6 +1109,8 @@
 				748CF1ED1E0B7DFF00E60F68 /* LCDetailEvaluateInputAccessoryView.m */,
 				740F0EF91E1121BC00EEFC3B /* LCCourseDownLoadCell.h */,
 				740F0EFA1E1121BC00EEFC3B /* LCCourseDownLoadCell.m */,
+				740F0EFF1E12132400EEFC3B /* LCCourseDownLoadHeaderView.h */,
+				740F0F001E12132400EEFC3B /* LCCourseDownLoadHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1082,6 +1124,8 @@
 				7485FD131DFFB8D600E6D23D /* LCHomeCollectionCellModel.m */,
 				7485FD151DFFBF3000E6D23D /* LCHomeCollectionSectionModel.h */,
 				7485FD161DFFBF3000E6D23D /* LCHomeCollectionSectionModel.m */,
+				74F90D051E1381A4005E5D09 /* LCHomeCollectionBananaViewModel.h */,
+				74F90D061E1381A4005E5D09 /* LCHomeCollectionBananaViewModel.m */,
 				7485FDBE1E00EEAC00E6D23D /* LCVideoDetailViewModel.h */,
 				7485FDBF1E00EEAC00E6D23D /* LCVideoDetailViewModel.m */,
 				740F0EF01E10FBBD00EEFC3B /* LCVideoDetailViewViewModel.h */,
@@ -1110,6 +1154,12 @@
 				740F0EF41E1120A900EEFC3B /* LCCourseDownLoadViewModel.m */,
 				740F0EFC1E1126B500EEFC3B /* LCCourseDownLoadCellViewModel.h */,
 				740F0EFD1E1126B500EEFC3B /* LCCourseDownLoadCellViewModel.m */,
+				748245081E14D52A004735DB /* LCMyMessageViewModel.h */,
+				748245091E14D52A004735DB /* LCMyMessageViewModel.m */,
+				7482450B1E14D5AB004735DB /* LCMessageViewModel.h */,
+				7482450C1E14D5AB004735DB /* LCMessageViewModel.m */,
+				7482450E1E14D5DE004735DB /* LCNotificationViewModel.h */,
+				7482450F1E14D5DE004735DB /* LCNotificationViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1641,12 +1691,14 @@
 				7485FB9A1DFC382800E6D23D /* WMMenuView.m in Sources */,
 				740F0EE61E10C0F600EEFC3B /* BaseSectionTableHeaderFooterView.m in Sources */,
 				740F0EF21E10FBBD00EEFC3B /* LCVideoDetailViewViewModel.m in Sources */,
+				74F90D011E1265B7005E5D09 /* LCHomeModel.m in Sources */,
 				7485FD1D1DFFECDD00E6D23D /* UIButton+ImageTitleStyle.m in Sources */,
 				7485FDAB1DFFFA1500E6D23D /* UIImage+WebP.m in Sources */,
 				7485FD0E1DFF9D7700E6D23D /* LCBigImageCollectionViewCell.m in Sources */,
 				7485FD171DFFBF3000E6D23D /* LCHomeCollectionSectionModel.m in Sources */,
 				7485FCEF1DFE45B900E6D23D /* LCNewsViewController.m in Sources */,
 				7485FD9A1DFFFA1500E6D23D /* TAAnimatedDotView.m in Sources */,
+				7482450D1E14D5AB004735DB /* LCMessageViewModel.m in Sources */,
 				7485FBA11DFC382800E6D23D /* UITextField+YZEmotion.m in Sources */,
 				7485FDAD1DFFFA1500E6D23D /* UIImageView+WebCache.m in Sources */,
 				748CF1E81E0A9FE100E60F68 /* LCDetailEvaluateHeaderViewModel.m in Sources */,
@@ -1659,6 +1711,7 @@
 				7485FC0A1DFC39FB00E6D23D /* KDRouter.m in Sources */,
 				7485FD9F1DFFFA1500E6D23D /* MKAnnotationView+WebCache.m in Sources */,
 				7485FBFD1DFC39FB00E6D23D /* NSString+PJR.m in Sources */,
+				74F90D071E1381A4005E5D09 /* LCHomeCollectionBananaViewModel.m in Sources */,
 				74D2F66D1E0394DA00C84317 /* LCTextLinePositionModifier.m in Sources */,
 				7485FD141DFFB8D600E6D23D /* LCHomeCollectionCellModel.m in Sources */,
 				74D2F6761E080AAE00C84317 /* LCEvaluateDetailViewController.m in Sources */,
@@ -1676,6 +1729,7 @@
 				748CF1EE1E0B7DFF00E60F68 /* LCDetailEvaluateInputAccessoryView.m in Sources */,
 				7485FC121DFC39FB00E6D23D /* KDFileManager.m in Sources */,
 				740F0EE31E10B62B00EEFC3B /* LCCourseCell.m in Sources */,
+				748245071E14D4B7004735DB /* LCMyMessageViewController.m in Sources */,
 				740F0E951E0E833D00EEFC3B /* NSString+Hash.m in Sources */,
 				740F0E981E0E84E900EEFC3B /* LCDownLoadManager.m in Sources */,
 				7485FBB31DFC389B00E6D23D /* CustomBarItem.m in Sources */,
@@ -1696,6 +1750,7 @@
 				7485FCE01DFE42BE00E6D23D /* LCRootViewController.m in Sources */,
 				7485FB971DFC382800E6D23D /* RDVTabBarController.m in Sources */,
 				7485FB9D1DFC382800E6D23D /* WMPageController.m in Sources */,
+				7482450A1E14D52A004735DB /* LCMyMessageViewModel.m in Sources */,
 				7485FDC31E00EEE200E6D23D /* LCVideoDetailViewController.m in Sources */,
 				7485FCFF1DFF91A400E6D23D /* BaseTableViewCell.m in Sources */,
 				7485FDC61E00F81600E6D23D /* LCIntroViewModel.m in Sources */,
@@ -1737,6 +1792,7 @@
 				748CF1EB1E0B704700E60F68 /* LCDetailEvaluateBottomView.m in Sources */,
 				740F0EE91E10C1C600EEFC3B /* LCCourseSectionHeaderView.m in Sources */,
 				748CF1E51E0A9DA300E60F68 /* LCDetailEvaluateHeaderView.m in Sources */,
+				748245131E14D5FF004735DB /* LCMessageViewController.m in Sources */,
 				74D2F6731E08067400C84317 /* LCEvaluateDetailViewModel.m in Sources */,
 				7485FBA71DFC382800E6D23D /* YZEmotionManager.m in Sources */,
 				747812CA1E011D5C00507DCA /* LCIntroView.m in Sources */,
@@ -1758,13 +1814,16 @@
 				7485FDD21E00F8CF00E6D23D /* LCEvaluateViewModel.m in Sources */,
 				7485FB5D1DFAA36600E6D23D /* BaseTableViewModel.m in Sources */,
 				7485FCF51DFE46E500E6D23D /* LCPersonalCenterViewModel.m in Sources */,
+				748245161E14D61C004735DB /* LCNotificationViewController.m in Sources */,
 				747EFB701E080F4100041C56 /* UIView+BlocksKit.m in Sources */,
 				7485FBA31DFC382800E6D23D /* YZEmotionCell.m in Sources */,
 				7485FB961DFC382800E6D23D /* RDVTabBar.m in Sources */,
+				748245041E13C363004735DB /* LCHomeDetailModel.m in Sources */,
 				7485FC091DFC39FB00E6D23D /* KDFont.m in Sources */,
 				7485FC0C1DFC39FB00E6D23D /* RegexUtil.m in Sources */,
 				7485FDA21DFFFA1500E6D23D /* SDWebImageCompat.m in Sources */,
 				7485FBB41DFC389B00E6D23D /* RTRootNavigationController.m in Sources */,
+				748245101E14D5DE004735DB /* LCNotificationViewModel.m in Sources */,
 				7485FC071DFC39FB00E6D23D /* UIViewController+Swizzle.m in Sources */,
 				7485FC151DFC39FB00E6D23D /* ObjcRuntime.m in Sources */,
 				7485FCE31DFE442800E6D23D /* LCHomeViewModel.m in Sources */,
@@ -1778,6 +1837,7 @@
 				7485FDAC1DFFFA1500E6D23D /* UIImageView+HighlightedWebCache.m in Sources */,
 				7485FD031DFF936000E6D23D /* BaseCollectionViewCell.m in Sources */,
 				7485FBA81DFC382800E6D23D /* YZEmotionPageCell.m in Sources */,
+				740F0F011E12132400EEFC3B /* LCCourseDownLoadHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

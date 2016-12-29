@@ -8,46 +8,45 @@
 #import "LCHomeViewModel.h"
 #import "LCHomeCollectionSectionModel.h"
 #import "LCHomeCollectionCellModel.h"
+#import "LCHomeCollectionBananaViewModel.h"
 #import "LCVideoDetailViewModel.h"
+
+
+#import "LCHomeModel.h"
 @implementation LCHomeViewModel
 -(void)initialize{
-
+    [super initialize];
+    
+    [self setClickBanner:^(NSInteger carouselTyp, NSString *iid) {
+        //根据typ 和 id 要转界面
+    }];
 }
 
 -(void)didSelectRowAtIndexPath:(NSIndexPath *)indexpath in:(UICollectionView *)collectionView{
+    LCHomeCollectionSectionModel *sectionModel = self.dataSource[indexpath.section];
+    LCHomeCollectionCellModel *cellViewModel = sectionModel.data[indexpath.row];
     LCVideoDetailViewModel *videoDetailVM = [[LCVideoDetailViewModel alloc]initWithServices:self.navigationStackService params:nil];
+    videoDetailVM.planID = cellViewModel.idd;
     [self.navigationStackService pushViewModel:videoDetailVM animated:YES];
 }
 -(void)requestRemoteDataWithPage:(NSUInteger)page completeHandle:(void(^)(id responseObj))complete{
     
-    LCHomeCollectionCellModel *cellmodel = [[LCHomeCollectionCellModel alloc]initWithModel:nil];
-    cellmodel.imgURL = nil;
-    cellmodel.title = @"飞机模型操作";
-    
-    LCHomeCollectionSectionModel *sectionModel = [[LCHomeCollectionSectionModel alloc]initWithModel:nil];
- 
-    sectionModel.sectionTyp = LCBigImage;
-    sectionModel.sectionTitle = @"免费好课";
-    sectionModel.data = @[cellmodel,cellmodel,cellmodel,cellmodel];
-    
-    LCHomeCollectionSectionModel *sectionModel2 = [[LCHomeCollectionSectionModel alloc]initWithModel:nil];
-   
-    sectionModel2.sectionTyp = LCBigImageAddText;
-    sectionModel2.sectionTitle = @"畅销好可";
-    sectionModel2.data = @[cellmodel,cellmodel,cellmodel,cellmodel];
-    
-    LCHomeCollectionSectionModel *sectionModel3 = [[LCHomeCollectionSectionModel alloc]initWithModel:nil];
-    /*
-     LCNormail,
-     LCBigImageAddText,
-     LCBigImage
-     */
-    sectionModel3.sectionTyp = LCBigImage;
-    sectionModel3.sectionTitle = @"免费好课";
-    sectionModel3.data = @[cellmodel,cellmodel,cellmodel,cellmodel];
-    
-    self.mutableDataArr = @[sectionModel,sectionModel2,sectionModel3].mutableCopy;
-    self.dataSource = self.mutableDataArr.copy;
-
+    [self.netApi_Manager homeJsonCompleteHandle:^(id responseObj, NSError *error) {
+        LCHomeModel *homeModel = [LCHomeModel parseJSON:responseObj];
+        NSArray *homeCarousellistArr =  homeModel.contents.carouselList;
+        NSMutableArray *tempArr = [NSMutableArray array];
+        for (int i=0; i<homeCarousellistArr.count; i++) {
+            LCHomeCollectionBananaViewModel *homeCarousellistVM = [[LCHomeCollectionBananaViewModel alloc]initWithModel:homeCarousellistArr[i]];
+            homeCarousellistVM.clickBanner = self.clickBanner;
+            [tempArr addObject:homeCarousellistVM];
+        }
+        self.homeBannerDataArr = tempArr.copy;
+        
+        for (int i=0; i<homeModel.contents.plan.count; i++) {
+            LCHomeCollectionSectionModel *sectionModel = [[LCHomeCollectionSectionModel alloc]initWithModel:homeModel.contents.plan[i]];
+            [self.mutableDataArr addObject:sectionModel];
+            self.dataSource = self.mutableDataArr.copy;
+        }
+    }];
 }
 @end

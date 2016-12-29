@@ -9,5 +9,6 @@
 #import "BaseTableViewModel.h"
 
 @interface LCCourseDownLoadViewModel : BaseTableViewModel
+@property(nonatomic,copy) void (^headerViewBindViewModel)(id viewModel);
 
 @end

@@ -8,10 +8,14 @@
 
 #import "LCCollectionReusableBannerHeaderView.h"
 #import "UIButton+ImageTitleStyle.h"
+#import "LCHomeCollectionSectionModel.h"
+
+#import "LCHomeCollectionBananaViewModel.h"
 
 @interface LCCollectionReusableBannerHeaderView ()
 <SDCycleScrollViewDelegate>
-
+@property(nonatomic,strong) NSMutableArray *imageURLArr;
+@property(nonatomic,strong) NSMutableArray *titleArr;
 @end
 
 @implementation LCCollectionReusableBannerHeaderView
@@ -73,20 +77,62 @@
     }];
     [_moreBT setButtonImageTitleStyle:ButtonImageTitleStyleRight padding:5];
 
-    self.centerImageView = [UIImageView new];
-    _centerImageView.image = [UIImage imageNamed:@"zhuantituijian"];
-    [self.backImageView addSubview:_centerImageView];
-    CGSize imageSize = _centerImageView.image.size;
-    [_centerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.centerLB = [UILabel new];
+    _centerLB.text = @"免费好课";
+    _centerLB.textColor = [KDColor getC2Color];
+    _centerLB.font = [[KDFont sharedKDFont]getF32Font];
+    [self.backImageView addSubview:_centerLB];
+    [_centerLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.mas_equalTo(0);
-        make.width.mas_equalTo(imageSize.width);
-        make.height.mas_equalTo(imageSize.height);
     }];
-
-
+    
+    
 }
 
--(void)bindViewModel:(id)viewModel{
+-(void)bindViewModel:(id)viewModel andBannerViewModel:(id)bannerVM{
+    LCHomeCollectionSectionModel *sectionVM = viewModel;
+    self.titleLB.text = sectionVM.sectionTitle;
+    if (sectionVM.sectionTyp == LCBigImage) {
+        self.centerLB.hidden = NO;
+        self.titleLB.hidden = YES;
+    }else{
+        self.centerLB.hidden = YES;
+        self.titleLB.hidden = NO;
+    }
+    self.bannerDataArr = bannerVM;
+}
 
+-(void)setBannerDataArr:(NSArray *)bannerDataArr{
+    if (_bannerDataArr == bannerDataArr) return;
+    _bannerDataArr = bannerDataArr;
+    
+    for (int i=0; i<self.bannerDataArr.count; i++) {
+        LCHomeCollectionBananaViewModel *bannerVM = self.bannerDataArr[i];
+        [self.imageURLArr addObject:bannerVM.bigImageURL];
+        [self.titleArr addObject:bannerVM.name];
+    }
+    self.bannerView.imageURLStringsGroup = self.imageURLArr.copy;
+    self.bannerView.titlesGroup = self.titleArr.copy;
+}
+
+-(NSMutableArray *)imageURLArr{
+    if (!_imageURLArr) {
+        _imageURLArr = [NSMutableArray array];
+    }
+    return _imageURLArr;
+}
+
+-(NSMutableArray *)titleArr{
+    if (!_titleArr) {
+        _titleArr = [NSMutableArray array];
+    }
+    return _titleArr;
+}
+
+
+-(void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
+    MYLog(@"===== %ld",index);
+    LCHomeCollectionBananaViewModel *bannerVM = self.bannerDataArr[index];
+    !bannerVM.clickBanner ? : bannerVM.clickBanner(bannerVM.carouselType,bannerVM.iid);
 }
 @end

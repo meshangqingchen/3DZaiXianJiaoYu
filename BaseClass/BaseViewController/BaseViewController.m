@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-
+#import "UINavigationItem+CustomItem.h"
 @interface BaseViewController ()
 @property (nonatomic, strong, readwrite) BaseViewModel *viewModel;
 
@@ -43,4 +43,18 @@
 //父类去实现
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if (self.viewModel.shouldNavBackItem) {
+        CustomBarItem *leftItem = [self.navigationItem setItemWithImage:@"Myself_back_image" size:CGSizeMake(20, 26) itemType:left];
+        [leftItem setOffset:-6];
+        @weakify(self)
+        [leftItem addBlockForControlEvents:UIControlEventTouchUpInside block:^(id sender) {
+            @strongify(self)
+            [self.view endEditing:YES];
+            [self.viewModel.navigationStackService popViewModelAnimated:YES];
+        }];
+    }
+    
+}
 @end

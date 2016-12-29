@@ -16,6 +16,8 @@
 
 #import "LCDetailEvaluateBottomView.h"
 #import "LCDetailEvaluateInputAccessoryView.h"
+
+#import "UINavigationItem+CustomItem.h"
 @interface LCEvaluateDetailViewController ()
 @property(nonatomic,strong) LCEvaluateDetailViewModel *viewModel;
 @property(nonatomic,strong) UITableView *tableView;
@@ -80,6 +82,14 @@ static NSString *identifier = @"LCDetailEvaluateCell";
     //添加对键盘收起的监听
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeKeyboard:) name:UIKeyboardWillHideNotification object:nil];
     [center addObserver:self selector:@selector(changeKeyboard:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    
+    UIImage *have_image = [UIImage imageNamed:@"have_message"];
+    
+    CustomBarItem *rightItem = [[UINavigationItem alloc]setItemWithImage:@"have_message" size:have_image.size itemType:right];
+    [rightItem addBlockForControlEvents:UIControlEventTouchUpInside block:^(id sender) {
+        //        [self.view endEditing:YES];
+        //        [self.viewModel.navigationStackService popViewModelAnimated:YES];
+    }];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{

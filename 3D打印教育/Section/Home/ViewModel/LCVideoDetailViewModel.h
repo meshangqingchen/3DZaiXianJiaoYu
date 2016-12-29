@@ -9,8 +9,8 @@
 #import "BaseViewModel.h"
 
 @interface LCVideoDetailViewModel : BaseViewModel
-
-@property(nonatomic,copy) void (^networkRequests)(NSString *videoID);
+@property(nonatomic,strong) NSString *planID;
+@property(nonatomic,copy) void (^networkRequests)(NSString *planID);
 @property(nonatomic,copy) void (^bindViewModel)(id viewModel);
 
 @property(nonatomic,copy) void (^downLoadVideo)(NSString* videoID);

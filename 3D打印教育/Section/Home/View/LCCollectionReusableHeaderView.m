@@ -8,7 +8,7 @@
 
 #import "LCCollectionReusableHeaderView.h"
 #import "UIButton+ImageTitleStyle.h"
-
+#import "LCHomeCollectionSectionModel.h"
 @implementation LCCollectionReusableHeaderView
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame: frame]) {
@@ -48,18 +48,25 @@
     }];
     [_moreBT setButtonImageTitleStyle:ButtonImageTitleStyleRight padding:5];
     
-    self.centerImageView = [UIImageView new];
-    _centerImageView.image = [UIImage imageNamed:@"zhuantituijian"];
-    [self addSubview:_centerImageView];
-    CGSize imageSize = _centerImageView.image.size;
-    [_centerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.centerLB = [UILabel new];
+    _centerLB.text = @"免费好课";
+    _centerLB.textColor = [KDColor getC2Color];
+    _centerLB.font = [[KDFont sharedKDFont]getF32Font];
+    [self addSubview:_centerLB];
+    [_centerLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.mas_equalTo(0);
-        make.width.mas_equalTo(imageSize.width);
-        make.height.mas_equalTo(imageSize.height);
     }];
 }
 -(void)bindViewModel:(id)viewModel{
-
+    LCHomeCollectionSectionModel *sectionVM = viewModel;
+    self.titleLB.text = sectionVM.sectionTitle;
+    if (sectionVM.sectionTyp == LCBigImage) {
+        self.centerLB.hidden = NO;
+        self.titleLB.hidden = YES;
+    }else{
+        self.centerLB.hidden = YES;
+        self.titleLB.hidden = NO;
+    }
 }
 
 

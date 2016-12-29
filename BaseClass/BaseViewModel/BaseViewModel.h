@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "KDNetAPIManager_User.h"
+#import "NSObject+Parse.h"
 @protocol  LCNavigationProtocol;
 
 @interface BaseViewModel : NSObject
-
+@property(nonatomic,strong, readonly) KDNetAPIManager_User *netApi_Manager;
 @property (nonatomic, copy, readonly) NSDictionary *params;
 @property (nonatomic, copy) NSString *title;
 /// 添加导航left back item

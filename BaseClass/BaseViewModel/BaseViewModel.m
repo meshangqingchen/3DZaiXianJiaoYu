@@ -9,6 +9,8 @@
 #import "BaseViewModel.h"
 
 @interface BaseViewModel ()
+
+@property(nonatomic,strong, readwrite) KDNetAPIManager_User *netApi_Manager;
 @property (nonatomic, copy, readwrite) NSDictionary *params;
 @property(nonatomic,strong,readwrite) id <LCNavigationProtocol> navigationStackService;
 
@@ -21,6 +23,7 @@
         self.params = params;
         self.title = params[KEY_TITLE];
         self.navigationStackService = services;
+        self.netApi_Manager = [KDNetAPIManager_User sharedKDNetAPIManager_User];
         [self initialize];
     }
     return self;

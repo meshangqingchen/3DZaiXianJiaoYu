@@ -11,10 +11,12 @@
 @interface LCCollectionReusableBannerHeaderView : UICollectionReusableView
 @property(nonatomic,strong) UILabel *titleLB;
 @property(nonatomic,strong) UIButton *moreBT;
-@property(nonatomic,strong) UIImageView *centerImageView;
+@property(nonatomic,strong) UILabel *centerLB;
 @property(nonatomic,strong) UIImageView *backImageView;
-
 @property(nonatomic,strong) SDCycleScrollView *bannerView;
+
+@property(nonatomic,strong) NSArray *bannerDataArr;
+
 -(void)setupViews;
--(void)bindViewModel:(id)viewModel;
+-(void)bindViewModel:(id)viewModel andBannerViewModel:(id)bannerVM;
 @end

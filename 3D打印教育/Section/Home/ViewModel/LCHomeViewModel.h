@@ -9,5 +9,7 @@
 #import "BaseCollectionViewModel.h"
 
 @interface LCHomeViewModel : BaseCollectionViewModel
+@property(nonatomic,strong) NSArray *homeBannerDataArr;
+@property(nonatomic,copy) void (^clickBanner)(NSInteger carouselTyp, NSString *iid);
 
 @end

@@ -11,8 +11,10 @@
 
 
 @interface LCHomeCollectionCellModel : NSObject
-@property(nonatomic,strong) NSURL *imgURL;
+@property(nonatomic,strong) NSURL *bigImgURL;
+@property(nonatomic,strong) NSURL *smallImgURL;
 @property(nonatomic,strong) NSString *title;
+@property(nonatomic,strong) NSString *idd;
 
 -(instancetype)initWithModel:(id)model;
 @end

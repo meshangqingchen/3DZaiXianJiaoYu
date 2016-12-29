@@ -12,6 +12,7 @@
 @implementation LCEvaluateDetailViewModel
 -(void)initialize{
     [super initialize];
+    self.shouldNavBackItem = YES;
     
 }
 

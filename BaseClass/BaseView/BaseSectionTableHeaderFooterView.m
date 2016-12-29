@@ -19,5 +19,5 @@
 
 -(void)setupViews{};
 -(void)bindViewModel:(id)viewModel{}
-
+-(void)bindViewModel:(id)viewModel AndIndexPath:(NSIndexPath *)indexPath{};
 @end
