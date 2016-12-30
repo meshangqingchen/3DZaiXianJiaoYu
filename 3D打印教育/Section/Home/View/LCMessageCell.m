@@ -55,14 +55,15 @@
     LCMessageCellViewModel *messageCellVM = viewModel;
     self.detailLB.height = messageCellVM.detail_H;
 
-    _nickName.text = messageCellVM.nickName;
-    _detailLB.textLayout = messageCellVM.detailLayout;
-
     _detailLB.backgroundColor = [UIColor yellowColor];
     if (messageCellVM.ifReaded) {
-        
+        //根据数据 填充颜色
     }else{
     
     }
+    
+    _nickName.text = messageCellVM.nickName;
+    _detailLB.textLayout = messageCellVM.detailLayout;
+    _timeLB.text = messageCellVM.timeStr;
 }
 @end

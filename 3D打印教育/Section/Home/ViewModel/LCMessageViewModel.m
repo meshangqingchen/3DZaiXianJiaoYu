@@ -11,6 +11,9 @@
 @implementation LCMessageViewModel
 -(void)initialize{
     [super initialize];
+    [self setClickHeaderViewBT:^(NSString *userID) {
+        
+    }];
     
 }
 
@@ -33,6 +36,10 @@
                                                                                          @"时间":@"12-12 13:20"}];
     
     [self.mutableDataArr addObjectsFromArray:@[messageCellVM0,messageCellVM1,messageCellVM2]];
+    
+    //在请求完成 数据的时候给 headerView赋值 让headerView知道按钮应该 显示神马颜色
+    !self.headerViewBindViewModel ? : self.headerViewBindViewModel(@"Yes");
     self.dataSource= self.mutableDataArr.copy;
+    
 }
 @end

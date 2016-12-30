@@ -9,5 +9,8 @@
 #import "BaseTableViewCell.h"
 
 @interface LCNotificationCell : BaseTableViewCell
+@property(nonatomic,strong) UILabel *nickName;
+@property(nonatomic,strong) YYLabel *detailLB;
+@property(nonatomic,strong) UILabel *timeLB;
 
 @end

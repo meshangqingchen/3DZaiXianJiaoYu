@@ -9,5 +9,8 @@
 #import "LCMyMessageViewModel.h"
 
 @implementation LCMyMessageViewModel
-
+-(void)initialize{
+    [super initialize];
+    self.shouldNavBackItem = YES;
+}
 @end

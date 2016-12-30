@@ -173,6 +173,7 @@
 		748CF1EE1E0B7DFF00E60F68 /* LCDetailEvaluateInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 748CF1ED1E0B7DFF00E60F68 /* LCDetailEvaluateInputAccessoryView.m */; };
 		74C4FB491E028F55007BC549 /* LCEvaluateCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C4FB481E028F55007BC549 /* LCEvaluateCellViewModel.m */; };
 		74C4FB4C1E029319007BC549 /* LCSonEvaluateCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C4FB4B1E029319007BC549 /* LCSonEvaluateCellViewModel.m */; };
+		74C91A671E160D950065BAFE /* LCMessageAndNotificationHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C91A661E160D950065BAFE /* LCMessageAndNotificationHeaderView.m */; };
 		74D2F66D1E0394DA00C84317 /* LCTextLinePositionModifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D2F66C1E0394DA00C84317 /* LCTextLinePositionModifier.m */; };
 		74D2F6701E03A14800C84317 /* LCVideoDetailEvaluateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D2F66F1E03A14800C84317 /* LCVideoDetailEvaluateCell.m */; };
 		74D2F6731E08067400C84317 /* LCEvaluateDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D2F6721E08067400C84317 /* LCEvaluateDetailViewModel.m */; };
@@ -530,6 +531,8 @@
 		74C4FB481E028F55007BC549 /* LCEvaluateCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCEvaluateCellViewModel.m; sourceTree = "<group>"; };
 		74C4FB4A1E029319007BC549 /* LCSonEvaluateCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCSonEvaluateCellViewModel.h; sourceTree = "<group>"; };
 		74C4FB4B1E029319007BC549 /* LCSonEvaluateCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCSonEvaluateCellViewModel.m; sourceTree = "<group>"; };
+		74C91A651E160D950065BAFE /* LCMessageAndNotificationHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMessageAndNotificationHeaderView.h; sourceTree = "<group>"; };
+		74C91A661E160D950065BAFE /* LCMessageAndNotificationHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMessageAndNotificationHeaderView.m; sourceTree = "<group>"; };
 		74D2F66B1E0394DA00C84317 /* LCTextLinePositionModifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTextLinePositionModifier.h; sourceTree = "<group>"; };
 		74D2F66C1E0394DA00C84317 /* LCTextLinePositionModifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTextLinePositionModifier.m; sourceTree = "<group>"; };
 		74D2F66E1E03A14800C84317 /* LCVideoDetailEvaluateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCVideoDetailEvaluateCell.h; sourceTree = "<group>"; };
@@ -1329,6 +1332,8 @@
 				7485FD101DFF9DAD00E6D23D /* LCBigImageAndTextCollectionViewCell.m */,
 				7485FD0C1DFF9D7700E6D23D /* LCBigImageCollectionViewCell.h */,
 				7485FD0D1DFF9D7700E6D23D /* LCBigImageCollectionViewCell.m */,
+				74C91A651E160D950065BAFE /* LCMessageAndNotificationHeaderView.h */,
+				74C91A661E160D950065BAFE /* LCMessageAndNotificationHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1708,6 +1713,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7485FC0B1DFC39FB00E6D23D /* NSDateUtils.m in Sources */,
+				74C91A671E160D950065BAFE /* LCMessageAndNotificationHeaderView.m in Sources */,
 				7485FB9A1DFC382800E6D23D /* WMMenuView.m in Sources */,
 				748245221E14F8DB004735DB /* LCNotificationCellViewModel.m in Sources */,
 				740F0EE61E10C0F600EEFC3B /* BaseSectionTableHeaderFooterView.m in Sources */,

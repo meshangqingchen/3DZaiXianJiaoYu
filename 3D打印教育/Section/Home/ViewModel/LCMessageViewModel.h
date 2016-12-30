@@ -9,5 +9,7 @@
 #import "BaseTableViewModel.h"
 
 @interface LCMessageViewModel : BaseTableViewModel
+@property(nonatomic,copy) void (^headerViewBindViewModel)(id viewModel);
+@property(nonatomic,copy) void (^clickHeaderViewBT)(NSString *userID);//可能不用 用户ID
 
 @end

@@ -13,6 +13,9 @@
 @property(nonatomic,strong) YYTextLayout *detailLayout;
 @property(nonatomic,strong) NSString *timeStr;
 @property(nonatomic)BOOL ifReaded;
+@property(nonatomic)CGFloat detail_H;
+@property(nonatomic)CGFloat cell_H;
 
 -(instancetype)initWithModel:(id)model;
+-(instancetype)initWithDic:(id)Model;
 @end
