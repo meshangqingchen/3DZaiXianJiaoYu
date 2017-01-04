@@ -15,9 +15,9 @@
 
 #import <Foundation/Foundation.h>
 typedef enum {
-    VideoMessageType,
+    VideoMessageType = 0,
     NewsMessageType,
-    DuihuaMessageType
+    TalkMessageType
 }MessageType;
 
 @interface LCMessageCellViewModel : NSObject
@@ -26,6 +26,7 @@ typedef enum {
 @property(nonatomic,strong) YYTextLayout *detailLayout;
 @property(nonatomic,strong) NSString *timeStr;
 @property(nonatomic)BOOL ifReaded;
+@property(nonatomic,assign) MessageType messageType;
 
 
 @property(nonatomic)CGFloat detail_H;

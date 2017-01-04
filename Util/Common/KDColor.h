@@ -42,14 +42,17 @@
 + (UIColor *)getC12Color;
 ///0xcbcbcb inputAccessoryView上的发送按钮背景色
 + (UIColor *)getC13Color;
-
-
-///0xf7f7f7 首页视频卡片下面的灰色
+///0xdddddd 老师收到消息后,会及时作出回复LB背景色
 + (UIColor *)getC14Color;
-///0xd2d2d2 jcAlerView的线条色
+///0xcccccc 真是够了有的lineView线是d9d9d9
 + (UIColor *)getC15Color;
-///0xfcd757 老师列表 LineView
+///0x23dee5 会话发送可点击按钮颜色
 + (UIColor *)getC17Color;
+
+
+
+
+
 ///0xfda228 提交订单 黄
 + (UIColor *)getC18Color;
 ///0xc9c9c9

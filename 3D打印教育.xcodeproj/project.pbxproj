@@ -22,6 +22,10 @@
 		740F0EFB1E1121BC00EEFC3B /* LCCourseDownLoadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 740F0EFA1E1121BC00EEFC3B /* LCCourseDownLoadCell.m */; };
 		740F0EFE1E1126B500EEFC3B /* LCCourseDownLoadCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 740F0EFD1E1126B500EEFC3B /* LCCourseDownLoadCellViewModel.m */; };
 		740F0F011E12132400EEFC3B /* LCCourseDownLoadHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 740F0F001E12132400EEFC3B /* LCCourseDownLoadHeaderView.m */; };
+		74388C471E1B3DBA00DF2795 /* LCUserTeacherTalkCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74388C461E1B3DBA00DF2795 /* LCUserTeacherTalkCellViewModel.m */; };
+		74388C4A1E1B503D00DF2795 /* LCFromTeacherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74388C491E1B503D00DF2795 /* LCFromTeacherCell.m */; };
+		74388C4D1E1B505000DF2795 /* LCFromUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74388C4C1E1B505000DF2795 /* LCFromUserCell.m */; };
+		74388C501E1B8E3300DF2795 /* LCUserTeacherTalkBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74388C4F1E1B8E3300DF2795 /* LCUserTeacherTalkBottomView.m */; };
 		74746E311E0E7B75002B0BFF /* HSSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74746E301E0E7B75002B0BFF /* HSSessionModel.m */; };
 		747812C41E01127200507DCA /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 747812C31E01127200507DCA /* BaseView.m */; };
 		747812C71E0113A200507DCA /* LCVideoDetailTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 747812C61E0113A200507DCA /* LCVideoDetailTabBar.m */; };
@@ -174,6 +178,8 @@
 		74C4FB491E028F55007BC549 /* LCEvaluateCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C4FB481E028F55007BC549 /* LCEvaluateCellViewModel.m */; };
 		74C4FB4C1E029319007BC549 /* LCSonEvaluateCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C4FB4B1E029319007BC549 /* LCSonEvaluateCellViewModel.m */; };
 		74C91A671E160D950065BAFE /* LCMessageAndNotificationHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C91A661E160D950065BAFE /* LCMessageAndNotificationHeaderView.m */; };
+		74C91A6A1E1643480065BAFE /* LCUserTeacherTalkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C91A691E1643480065BAFE /* LCUserTeacherTalkViewController.m */; };
+		74C91A6D1E1644860065BAFE /* LCUserTeacherTalkViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C91A6C1E1644860065BAFE /* LCUserTeacherTalkViewModel.m */; };
 		74D2F66D1E0394DA00C84317 /* LCTextLinePositionModifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D2F66C1E0394DA00C84317 /* LCTextLinePositionModifier.m */; };
 		74D2F6701E03A14800C84317 /* LCVideoDetailEvaluateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D2F66F1E03A14800C84317 /* LCVideoDetailEvaluateCell.m */; };
 		74D2F6731E08067400C84317 /* LCEvaluateDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D2F6721E08067400C84317 /* LCEvaluateDetailViewModel.m */; };
@@ -232,6 +238,14 @@
 		740F0EFD1E1126B500EEFC3B /* LCCourseDownLoadCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCourseDownLoadCellViewModel.m; sourceTree = "<group>"; };
 		740F0EFF1E12132400EEFC3B /* LCCourseDownLoadHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCourseDownLoadHeaderView.h; sourceTree = "<group>"; };
 		740F0F001E12132400EEFC3B /* LCCourseDownLoadHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCourseDownLoadHeaderView.m; sourceTree = "<group>"; };
+		74388C451E1B3DBA00DF2795 /* LCUserTeacherTalkCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCUserTeacherTalkCellViewModel.h; sourceTree = "<group>"; };
+		74388C461E1B3DBA00DF2795 /* LCUserTeacherTalkCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCUserTeacherTalkCellViewModel.m; sourceTree = "<group>"; };
+		74388C481E1B503D00DF2795 /* LCFromTeacherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCFromTeacherCell.h; sourceTree = "<group>"; };
+		74388C491E1B503D00DF2795 /* LCFromTeacherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCFromTeacherCell.m; sourceTree = "<group>"; };
+		74388C4B1E1B505000DF2795 /* LCFromUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCFromUserCell.h; sourceTree = "<group>"; };
+		74388C4C1E1B505000DF2795 /* LCFromUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCFromUserCell.m; sourceTree = "<group>"; };
+		74388C4E1E1B8E3300DF2795 /* LCUserTeacherTalkBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCUserTeacherTalkBottomView.h; sourceTree = "<group>"; };
+		74388C4F1E1B8E3300DF2795 /* LCUserTeacherTalkBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCUserTeacherTalkBottomView.m; sourceTree = "<group>"; };
 		74746E2F1E0E7B75002B0BFF /* HSSessionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSessionModel.h; sourceTree = "<group>"; };
 		74746E301E0E7B75002B0BFF /* HSSessionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSessionModel.m; sourceTree = "<group>"; };
 		747812C21E01127200507DCA /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
@@ -533,6 +547,10 @@
 		74C4FB4B1E029319007BC549 /* LCSonEvaluateCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCSonEvaluateCellViewModel.m; sourceTree = "<group>"; };
 		74C91A651E160D950065BAFE /* LCMessageAndNotificationHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMessageAndNotificationHeaderView.h; sourceTree = "<group>"; };
 		74C91A661E160D950065BAFE /* LCMessageAndNotificationHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMessageAndNotificationHeaderView.m; sourceTree = "<group>"; };
+		74C91A681E1643480065BAFE /* LCUserTeacherTalkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCUserTeacherTalkViewController.h; sourceTree = "<group>"; };
+		74C91A691E1643480065BAFE /* LCUserTeacherTalkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCUserTeacherTalkViewController.m; sourceTree = "<group>"; };
+		74C91A6B1E1644860065BAFE /* LCUserTeacherTalkViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCUserTeacherTalkViewModel.h; sourceTree = "<group>"; };
+		74C91A6C1E1644860065BAFE /* LCUserTeacherTalkViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCUserTeacherTalkViewModel.m; sourceTree = "<group>"; };
 		74D2F66B1E0394DA00C84317 /* LCTextLinePositionModifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTextLinePositionModifier.h; sourceTree = "<group>"; };
 		74D2F66C1E0394DA00C84317 /* LCTextLinePositionModifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTextLinePositionModifier.m; sourceTree = "<group>"; };
 		74D2F66E1E03A14800C84317 /* LCVideoDetailEvaluateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCVideoDetailEvaluateCell.h; sourceTree = "<group>"; };
@@ -1082,6 +1100,8 @@
 				748245121E14D5FF004735DB /* LCMessageViewController.m */,
 				748245141E14D61C004735DB /* LCNotificationViewController.h */,
 				748245151E14D61C004735DB /* LCNotificationViewController.m */,
+				74C91A681E1643480065BAFE /* LCUserTeacherTalkViewController.h */,
+				74C91A691E1643480065BAFE /* LCUserTeacherTalkViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1130,6 +1150,12 @@
 				748245181E14F162004735DB /* LCMessageCell.m */,
 				7482451A1E14F18F004735DB /* LCNotificationCell.h */,
 				7482451B1E14F18F004735DB /* LCNotificationCell.m */,
+				74388C481E1B503D00DF2795 /* LCFromTeacherCell.h */,
+				74388C491E1B503D00DF2795 /* LCFromTeacherCell.m */,
+				74388C4B1E1B505000DF2795 /* LCFromUserCell.h */,
+				74388C4C1E1B505000DF2795 /* LCFromUserCell.m */,
+				74388C4E1E1B8E3300DF2795 /* LCUserTeacherTalkBottomView.h */,
+				74388C4F1E1B8E3300DF2795 /* LCUserTeacherTalkBottomView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1183,6 +1209,10 @@
 				7482450F1E14D5DE004735DB /* LCNotificationViewModel.m */,
 				748245201E14F8DB004735DB /* LCNotificationCellViewModel.h */,
 				748245211E14F8DB004735DB /* LCNotificationCellViewModel.m */,
+				74C91A6B1E1644860065BAFE /* LCUserTeacherTalkViewModel.h */,
+				74C91A6C1E1644860065BAFE /* LCUserTeacherTalkViewModel.m */,
+				74388C451E1B3DBA00DF2795 /* LCUserTeacherTalkCellViewModel.h */,
+				74388C461E1B3DBA00DF2795 /* LCUserTeacherTalkCellViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1738,6 +1768,7 @@
 				7485FC0A1DFC39FB00E6D23D /* KDRouter.m in Sources */,
 				7485FD9F1DFFFA1500E6D23D /* MKAnnotationView+WebCache.m in Sources */,
 				7485FBFD1DFC39FB00E6D23D /* NSString+PJR.m in Sources */,
+				74388C501E1B8E3300DF2795 /* LCUserTeacherTalkBottomView.m in Sources */,
 				74F90D071E1381A4005E5D09 /* LCHomeCollectionBananaViewModel.m in Sources */,
 				74D2F66D1E0394DA00C84317 /* LCTextLinePositionModifier.m in Sources */,
 				7485FD141DFFB8D600E6D23D /* LCHomeCollectionCellModel.m in Sources */,
@@ -1776,6 +1807,7 @@
 				7485FDAF1DFFFA1500E6D23D /* UIView+SDExtension.m in Sources */,
 				7485FCC51DFD523100E6D23D /* BaseViewController.m in Sources */,
 				7485FCBB1DFD4FC800E6D23D /* JDStatusBarStyle.m in Sources */,
+				74C91A6A1E1643480065BAFE /* LCUserTeacherTalkViewController.m in Sources */,
 				7485FCE01DFE42BE00E6D23D /* LCRootViewController.m in Sources */,
 				7485FB971DFC382800E6D23D /* RDVTabBarController.m in Sources */,
 				7485FB9D1DFC382800E6D23D /* WMPageController.m in Sources */,
@@ -1788,7 +1820,9 @@
 				7485FDA51DFFFA1500E6D23D /* SDWebImageDownloaderOperation.m in Sources */,
 				7485FDCF1E00F89800E6D23D /* LCCourseViewController.m in Sources */,
 				7482451F1E14F8A3004735DB /* LCMessageCellViewModel.m in Sources */,
+				74388C471E1B3DBA00DF2795 /* LCUserTeacherTalkCellViewModel.m in Sources */,
 				7485FC021DFC39FB00E6D23D /* UIScrollView+Refresh.m in Sources */,
+				74388C4D1E1B505000DF2795 /* LCFromUserCell.m in Sources */,
 				7485FDA11DFFFA1500E6D23D /* SDImageCache.m in Sources */,
 				7485FDA61DFFFA1500E6D23D /* SDWebImageManager.m in Sources */,
 				74746E311E0E7B75002B0BFF /* HSSessionModel.m in Sources */,
@@ -1837,6 +1871,7 @@
 				7485FB601DFAA3A100E6D23D /* BaseCollectionViewModel.m in Sources */,
 				747812C71E0113A200507DCA /* LCVideoDetailTabBar.m in Sources */,
 				7485FBFA1DFC39FB00E6D23D /* NSDate+KDAdd.m in Sources */,
+				74388C4A1E1B503D00DF2795 /* LCFromTeacherCell.m in Sources */,
 				740F0EFB1E1121BC00EEFC3B /* LCCourseDownLoadCell.m in Sources */,
 				7485FC081DFC39FB00E6D23D /* KDColor.m in Sources */,
 				7485FDD51E00F8E700E6D23D /* LCEvaluateViewController.m in Sources */,
@@ -1848,6 +1883,7 @@
 				747EFB701E080F4100041C56 /* UIView+BlocksKit.m in Sources */,
 				7485FBA31DFC382800E6D23D /* YZEmotionCell.m in Sources */,
 				7485FB961DFC382800E6D23D /* RDVTabBar.m in Sources */,
+				74C91A6D1E1644860065BAFE /* LCUserTeacherTalkViewModel.m in Sources */,
 				748245041E13C363004735DB /* LCHomeDetailModel.m in Sources */,
 				7485FC091DFC39FB00E6D23D /* KDFont.m in Sources */,
 				7485FC0C1DFC39FB00E6D23D /* RegexUtil.m in Sources */,

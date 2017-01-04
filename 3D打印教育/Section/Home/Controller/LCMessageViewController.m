@@ -57,4 +57,7 @@ static NSString *identifier = @"LCMessageCelllll";
     return messageCellVM.cell_H;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self.viewModel didSelectRowAtIndexPath:indexPath in:tableView];
+}
 @end

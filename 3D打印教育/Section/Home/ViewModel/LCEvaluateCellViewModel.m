@@ -22,6 +22,7 @@
 -(instancetype)initWithEvaluteStr:(NSString *)evaluate and:(NSArray *)arr{
     if (self = [super init]) {
         
+        
         //评论详情
         NSMutableAttributedString *evaAtt = [[NSMutableAttributedString alloc]initWithString:evaluate];
         evaAtt.font = [[KDFont sharedKDFont]getF30Font];

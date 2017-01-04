@@ -78,16 +78,16 @@
     return kUIColorRGB16(0xcbcbcb);
 }
 + (UIColor *)getC14Color {
-    return kUIColorRGB16(0xf7f7f7);
+    return kUIColorRGB16(0xdddddd);
 }
 + (UIColor *)getC15Color {
-    return kUIColorRGB16(0xd2d2d2);
+    return kUIColorRGB16(0xcccccc);
 }
 + (UIColor *)getC16Color {
     return kUIColorRGB16(0xfbfbf5);
 }
 + (UIColor *)getC17Color {
-    return kUIColorRGB16(0xfcd757);
+    return kUIColorRGB16(0x23dee5);
 }
 + (UIColor *)getC18Color {
     return kUIColorRGB16(0xfda228);
