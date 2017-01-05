@@ -6,8 +6,8 @@
 //  Copyright © 2016年 3D. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "BaseTableViewController.h"
 
-@interface LCPersonalCenterViewController : BaseViewController
+@interface LCPersonalCenterViewController : BaseTableViewController
 
 @end

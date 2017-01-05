@@ -33,6 +33,9 @@
 		74388C9E1E1E0C4E00DF2795 /* LCMySelfMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74388C9D1E1E0C4E00DF2795 /* LCMySelfMainCell.m */; };
 		74388CA11E1E0D8B00DF2795 /* LCMySelfMainCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74388CA01E1E0D8B00DF2795 /* LCMySelfMainCellViewModel.m */; };
 		744EEBC61E1E4F3D002FE8B1 /* LCMySelfMainHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 744EEBC51E1E4F3D002FE8B1 /* LCMySelfMainHeaderView.m */; };
+		744EEBC91E1E62A5002FE8B1 /* LCPersonalCenterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 744EEBC81E1E62A5002FE8B1 /* LCPersonalCenterCell.m */; };
+		744EEBCC1E1E62D6002FE8B1 /* LCPersonalCenterHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 744EEBCB1E1E62D6002FE8B1 /* LCPersonalCenterHeaderView.m */; };
+		744EEBCF1E1E94B5002FE8B1 /* LCPersonalCenterCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 744EEBCE1E1E94B5002FE8B1 /* LCPersonalCenterCellViewModel.m */; };
 		74746E311E0E7B75002B0BFF /* HSSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74746E301E0E7B75002B0BFF /* HSSessionModel.m */; };
 		747812C41E01127200507DCA /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 747812C31E01127200507DCA /* BaseView.m */; };
 		747812C71E0113A200507DCA /* LCVideoDetailTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 747812C61E0113A200507DCA /* LCVideoDetailTabBar.m */; };
@@ -267,6 +270,12 @@
 		74388CA01E1E0D8B00DF2795 /* LCMySelfMainCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMySelfMainCellViewModel.m; sourceTree = "<group>"; };
 		744EEBC41E1E4F3D002FE8B1 /* LCMySelfMainHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMySelfMainHeaderView.h; sourceTree = "<group>"; };
 		744EEBC51E1E4F3D002FE8B1 /* LCMySelfMainHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMySelfMainHeaderView.m; sourceTree = "<group>"; };
+		744EEBC71E1E62A5002FE8B1 /* LCPersonalCenterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPersonalCenterCell.h; sourceTree = "<group>"; };
+		744EEBC81E1E62A5002FE8B1 /* LCPersonalCenterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPersonalCenterCell.m; sourceTree = "<group>"; };
+		744EEBCA1E1E62D6002FE8B1 /* LCPersonalCenterHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPersonalCenterHeaderView.h; sourceTree = "<group>"; };
+		744EEBCB1E1E62D6002FE8B1 /* LCPersonalCenterHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPersonalCenterHeaderView.m; sourceTree = "<group>"; };
+		744EEBCD1E1E94B5002FE8B1 /* LCPersonalCenterCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPersonalCenterCellViewModel.h; sourceTree = "<group>"; };
+		744EEBCE1E1E94B5002FE8B1 /* LCPersonalCenterCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPersonalCenterCellViewModel.m; sourceTree = "<group>"; };
 		74746E2F1E0E7B75002B0BFF /* HSSessionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSessionModel.h; sourceTree = "<group>"; };
 		74746E301E0E7B75002B0BFF /* HSSessionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSessionModel.m; sourceTree = "<group>"; };
 		747812C21E01127200507DCA /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
@@ -1299,6 +1308,10 @@
 		7485FCD11DFE41ED00E6D23D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				744EEBC71E1E62A5002FE8B1 /* LCPersonalCenterCell.h */,
+				744EEBC81E1E62A5002FE8B1 /* LCPersonalCenterCell.m */,
+				744EEBCA1E1E62D6002FE8B1 /* LCPersonalCenterHeaderView.h */,
+				744EEBCB1E1E62D6002FE8B1 /* LCPersonalCenterHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1308,6 +1321,8 @@
 			children = (
 				7485FCF31DFE46E500E6D23D /* LCPersonalCenterViewModel.h */,
 				7485FCF41DFE46E500E6D23D /* LCPersonalCenterViewModel.m */,
+				744EEBCD1E1E94B5002FE8B1 /* LCPersonalCenterCellViewModel.h */,
+				744EEBCE1E1E94B5002FE8B1 /* LCPersonalCenterCellViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1867,6 +1882,7 @@
 				7485FC031DFC39FB00E6D23D /* UIView+Animation.m in Sources */,
 				7485FBFF1DFC39FB00E6D23D /* UIButton+Common.m in Sources */,
 				7485FC061DFC39FB00E6D23D /* UIViewController+Example.m in Sources */,
+				744EEBCF1E1E94B5002FE8B1 /* LCPersonalCenterCellViewModel.m in Sources */,
 				7485FCEC1DFE455300E6D23D /* LCNewsViewModel.m in Sources */,
 				7485FBFE1DFC39FB00E6D23D /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
 				74D2F6701E03A14800C84317 /* LCVideoDetailEvaluateCell.m in Sources */,
@@ -1880,6 +1896,7 @@
 				7485FB981DFC382800E6D23D /* RDVTabBarItem.m in Sources */,
 				7485FDA41DFFFA1500E6D23D /* SDWebImageDownloader.m in Sources */,
 				7485FB951DFC382800E6D23D /* JCAlertView.m in Sources */,
+				744EEBC91E1E62A5002FE8B1 /* LCPersonalCenterCell.m in Sources */,
 				7485FDB21DFFFD4500E6D23D /* LCCollectionReusableBannerHeaderView.m in Sources */,
 				7485FB521DFA8CCC00E6D23D /* LCNavigationStackService.m in Sources */,
 				7485FDA01DFFFA1500E6D23D /* NSData+ImageContentType.m in Sources */,
@@ -1926,6 +1943,7 @@
 				74388C951E1DE06300DF2795 /* LCMyCourseCellViewModel.m in Sources */,
 				74C91A6D1E1644860065BAFE /* LCUserTeacherTalkViewModel.m in Sources */,
 				748245041E13C363004735DB /* LCHomeDetailModel.m in Sources */,
+				744EEBCC1E1E62D6002FE8B1 /* LCPersonalCenterHeaderView.m in Sources */,
 				7485FC091DFC39FB00E6D23D /* KDFont.m in Sources */,
 				7485FC0C1DFC39FB00E6D23D /* RegexUtil.m in Sources */,
 				7485FDA21DFFFA1500E6D23D /* SDWebImageCompat.m in Sources */,

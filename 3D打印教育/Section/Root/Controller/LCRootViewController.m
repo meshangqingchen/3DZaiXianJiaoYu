@@ -48,10 +48,10 @@
     LCMyCourseViewController *myCourseVC = [[LCMyCourseViewController alloc]initWithViewModel:self.viewModel.myCourseViewModel];
     RTRootNavigationController *myCourseNVC = [[RTRootNavigationController alloc]initWithRootViewController:myCourseVC];
     
-    LCNewsViewController *newsVC = [[LCNewsViewController alloc]initWithViewModel:self.viewModel.homeViewModel];
+    LCNewsViewController *newsVC = [[LCNewsViewController alloc]initWithViewModel:self.viewModel.newsViewModel];
     RTRootNavigationController *newsNVC = [[RTRootNavigationController alloc]initWithRootViewController:newsVC];
     
-    LCPersonalCenterViewController *personalCenterVC = [[LCPersonalCenterViewController alloc]initWithViewModel:self.viewModel.homeViewModel];
+    LCPersonalCenterViewController *personalCenterVC = [[LCPersonalCenterViewController alloc]initWithViewModel:self.viewModel.personalCenterViewModel];
     RTRootNavigationController *personalCenterNVC = [[RTRootNavigationController alloc]initWithRootViewController:personalCenterVC];
     
     [self.tabBarController setViewControllers:@[homeNVC,myCourseNVC,newsNVC,personalCenterNVC]];

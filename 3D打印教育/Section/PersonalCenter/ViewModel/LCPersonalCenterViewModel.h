@@ -6,8 +6,8 @@
 //  Copyright © 2016年 3D. All rights reserved.
 //
 
-#import "BaseViewModel.h"
+#import "BaseTableViewModel.h"
 
-@interface LCPersonalCenterViewModel : BaseViewModel
+@interface LCPersonalCenterViewModel : BaseTableViewModel
 
 @end
