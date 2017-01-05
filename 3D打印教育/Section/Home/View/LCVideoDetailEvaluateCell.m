@@ -8,7 +8,7 @@
 
 #import "LCVideoDetailEvaluateCell.h"
 #import "LCEvaluateCellViewModel.h"
-
+#import "UIView+BlocksKit.h"
 @interface LCVideoDetailEvaluateCell ()
 @property(nonatomic,strong) UIView *backView;
 @property(nonatomic,strong) LCEvaluateCellViewModel *evaluateCellViewModel;
@@ -17,7 +17,11 @@
 @implementation LCVideoDetailEvaluateCell
 -(void)setupViews{
     self.headerImgView = [[UIImageView alloc]initWithFrame:CGRectMake(15, 15, 40, 40)];
+    self.headerImgView.userInteractionEnabled = YES;
     _headerImgView.backgroundColor = [UIColor orangeColor];
+    [_headerImgView bk_whenTapped:^{
+        !self.evaluateCellViewModel.headerImageViewClick ? : self.evaluateCellViewModel.headerImageViewClick(@"userID");
+    }];
     [self.contentView addSubview:_headerImgView];
     
     self.nameLB = [UILabel new];
@@ -31,16 +35,16 @@
     _nameLB.backgroundColor = [UIColor yellowColor];
    
     
-    self.tiemLB = [UILabel new];
-    [self.contentView addSubview:_tiemLB];
-    _tiemLB.backgroundColor = [UIColor blueColor];
-    _tiemLB.text = @"12-13 11:49";
-    _tiemLB.font = [[KDFont sharedKDFont]getF28Font];
-    _tiemLB.textColor = [KDColor getX0Color];
-    _tiemLB.left = _nameLB.left;
-    _tiemLB.top = _nameLB.bottom+3;
-    _tiemLB.height = 15;
-    _tiemLB.width = 200;
+    self.timeLB = [UILabel new];
+    [self.contentView addSubview:_timeLB];
+    _timeLB.backgroundColor = [UIColor blueColor];
+    _timeLB.text = @"12-13 11:49";
+    _timeLB.font = [[KDFont sharedKDFont]getF28Font];
+    _timeLB.textColor = [KDColor getX0Color];
+    _timeLB.left = _nameLB.left;
+    _timeLB.top = _nameLB.bottom+3;
+    _timeLB.height = 15;
+    _timeLB.width = 200;
     
     self.huifuBT = [UIButton new];
     [self.contentView addSubview:_huifuBT];
@@ -57,13 +61,13 @@
     [_huifuBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
         @strongify(self)
         MYLog(@"回复事件");
-        !self.evaluateCellViewModel.huifu ? : self.evaluateCellViewModel.huifu(@"asd");
+        !self.evaluateCellViewModel.huifu ? : self.evaluateCellViewModel.huifu(@"evaID");
     }];
     
     self.evaYLB = [YYLabel new];
     [self.contentView addSubview:_evaYLB];
     _evaYLB.backgroundColor = [UIColor redColor];
-    _evaYLB.top = _tiemLB.bottom+21;
+    _evaYLB.top = _timeLB.bottom+21;
     _evaYLB.left = 70;
     _evaYLB.width = SCREEN_WIDTH-70-25;
     
@@ -97,7 +101,6 @@
     _sonEvaYLB3.width = SCREEN_WIDTH-70-10-10-15;
     
     
-    
     self.numHuiFu = [UIButton new];
     [backView addSubview:_numHuiFu];
     _numHuiFu.backgroundColor = [UIColor orangeColor];
@@ -117,13 +120,10 @@
     self.evaluateCellViewModel = evaluateCellViewModel;
     _evaYLB.height = evaluateCellViewModel.evaluate_H;
     _backView.top = _evaYLB.bottom+15;
-    
     _backView.height = evaluateCellViewModel.sonAllEva_H;
     
     _numHuiFu.bottom = _backView.bottom;
     _numHuiFu.top = _backView.height-26;
-    
-    
     
     if (evaluateCellViewModel.sonEvaluateArr.count > 0) {
         self.backView.hidden = NO;

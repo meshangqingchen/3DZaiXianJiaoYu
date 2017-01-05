@@ -71,7 +71,7 @@
 
 @property (nonatomic, copy) NSString *sex;
 
-@property (nonatomic, copy) NSString *discription;
+@property (nonatomic, copy) NSString *discrip;
 
 @property (nonatomic, strong) NSArray<NSString *> *shot_discription;
 

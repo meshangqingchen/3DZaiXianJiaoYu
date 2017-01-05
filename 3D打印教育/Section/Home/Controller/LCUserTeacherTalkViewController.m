@@ -15,7 +15,11 @@
 
 #import "LCUserTeacherTalkBottomView.h"
 
-@interface LCUserTeacherTalkViewController ()<YYTextViewDelegate>
+@interface LCUserTeacherTalkViewController ()
+<
+YYTextViewDelegate,
+UIGestureRecognizerDelegate //结局手势冲突
+>
 @property(nonatomic,strong) UITableView *tableView;
 @property(nonatomic,strong) LCUserTeacherTalkViewModel *viewModel;
 @property(nonatomic,strong) LCUserTeacherTalkBottomView *bottomView;
@@ -29,12 +33,15 @@ static NSString *identifierTeacher = @"LCFromTeacherCell";
 
 - (void)viewDidLoad {
 
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64-49) style:UITableViewStylePlain];
     self.tableView.backgroundColor = [KDColor getC9Color];
     [self.view addSubview:self.tableView];
     [self.tableView registerClass:[LCFromUserCell class] forCellReuseIdentifier:identifierUser];
     [self.tableView registerClass:[LCFromTeacherCell class] forCellReuseIdentifier:identifierTeacher];
    
+    UIPanGestureRecognizer *panGR = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(pan:)];
+    panGR.delegate = self;
+    [self.tableView addGestureRecognizer:panGR];
     
     UILabel *bottomLB = [UILabel new];
     bottomLB.text = @"老师收到消息后,会及时作出回复";
@@ -53,6 +60,7 @@ static NSString *identifierTeacher = @"LCFromTeacherCell";
     }];
     
     LCUserTeacherTalkBottomView *bottomView = [LCUserTeacherTalkBottomView new];
+    bottomView.textView.delegate = self;
     self.bottomView = bottomView;
     [self.view addSubview:bottomView];
     [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -60,17 +68,32 @@ static NSString *identifierTeacher = @"LCFromTeacherCell";
     }];
     
     
-    @weakify(self)
+    @weakify(bottomView)
     [bottomView.fasongBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
-        @strongify(self)
-//        bottomView.backgroundColor = [UIColor yellowColor];
-        self.view.backgroundColor = [UIColor yellowColor];
+        @strongify(bottomView)
+        [bottomView.textView resignFirstResponder];
     }];
-    
-    
-    
     [super viewDidLoad];
     
+}
+
+-(void)pan:(UIPanGestureRecognizer *)gr
+{
+    // location:绝对位置,所有点都相对于self.view的左顶点的距离
+    // translation：位移(位置的偏移量，所有点都相对于动作起点的距离)
+//    CGPoint location = [gr locationInView:self.view];
+    CGPoint translation = [gr translationInView:self.view];
+    
+    if (translation.y >= 0) {
+        [self.bottomView.textView resignFirstResponder];
+    }
+}
+// 滑动手势 协议方法UIGestureRecognizerDelegate
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    if ([otherGestureRecognizer.view isKindOfClass:[UITableView class]]) {
+        return YES;
+    }
+    return NO;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -98,28 +121,35 @@ static NSString *identifierTeacher = @"LCFromTeacherCell";
 
 -(void)closeKeyboard:(NSNotification *)notification
 {
-
+    self.tableView.contentOffset = CGPointMake(0, 0);
 }
 
 -(void)changeKeyboard:(NSNotification *)notification
 {
+    
+    
+//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.viewModel.dataSource.count-1 inSection:0];
+//    CGRect cellRect = [self.tableView rectForRowAtIndexPath:indexPath];
+    
     MYLog(@"=====%@",notification.userInfo);
     NSLog(@"====");
-    //键盘高度
-    CGFloat keyBoard_H = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue].size.height;
+    //键盘的额Y坐标
+    CGFloat keyBoardEND_Y = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue].origin.y;
     // 从通知的userInfo中取得动画的选项
     NSInteger option = [notification.userInfo[UIKeyboardAnimationCurveUserInfoKey] intValue];
     // 从通知的userInfo中取得动画的时长
     CGFloat duration = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
     [self.bottomView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(-keyBoard_H);
+        make.bottom.mas_equalTo(-(SCREEN_HEIGHT-keyBoardEND_Y));
     }];
     
     
-//    - (void)scrollToRowAtIndexPath:(NSIndexPath *)indexPath atScrollPosition:(UITableViewScrollPosition)scrollPosition animated:(BOOL)animated;
-    
+    CGFloat keyBoardBegin_Y= [notification.userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue].origin.y;
+    CGFloat change_Y = keyBoardBegin_Y - keyBoardEND_Y;
+    NSLog(@"=========== %f",change_Y);
     [UIView animateWithDuration:duration delay:0 options:option animations:^{
         [self.view layoutIfNeeded];
+        self.tableView.contentOffset = CGPointMake(0, self.tableView.contentOffset.y + change_Y);
     } completion:nil];
 }
 
@@ -147,4 +177,23 @@ static NSString *identifierTeacher = @"LCFromTeacherCell";
     LCUserTeacherTalkCellViewModel *cellVM = self.viewModel.dataSource[indexPath.row];
     return cellVM.cell_H;
 }
+
+//改变textView的高度
+- (void)textViewDidChange:(YYTextView *)textView{
+    if (textView.textLayout.textBoundingSize.height > 35 & textView.textLayout.textBoundingSize.height < 80) {
+        [self.bottomView.textView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo((textView.textLayout.textBoundingSize.height));
+        }];
+    }
+    if ([textView.text isEqualToString:@""] || textView.text == nil) {
+        [self.bottomView.textView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(35);
+        }];
+        self.bottomView.fasongBT.backgroundColor = [KDColor getC15Color];
+    }else{
+        self.bottomView.fasongBT.backgroundColor = [KDColor getC17Color];
+    }
+}
+
+
 @end

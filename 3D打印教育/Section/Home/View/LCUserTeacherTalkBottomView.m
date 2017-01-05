@@ -27,7 +27,7 @@
     [_fasongBT setTitle:@"发送" forState:0];
     [_fasongBT setTitleColor:[KDColor getC0Color] forState:0];
     _fasongBT.titleLabel.font = [[KDFont sharedKDFont]getF30Font];
-    _fasongBT.backgroundColor = [KDColor getC17Color];
+    _fasongBT.backgroundColor = [KDColor getC15Color];
     _fasongBT.layer.cornerRadius = 4;
     [_fasongBT mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(-15);

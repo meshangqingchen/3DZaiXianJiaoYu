@@ -48,14 +48,20 @@
 + (UIColor *)getC15Color;
 ///0x23dee5 会话发送可点击按钮颜色
 + (UIColor *)getC17Color;
-
-
-
-
-
-///0xfda228 提交订单 黄
+///0x1bb8be 已完成课时
 + (UIColor *)getC18Color;
-///0xc9c9c9
+
+
+
+
+
+
+
+
+
+
+
+///
 + (UIColor *)getC19Color;
 ///0xCACACA 登录注册字体颜色
 + (UIColor *)getC20Color;

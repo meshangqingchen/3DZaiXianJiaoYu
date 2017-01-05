@@ -11,7 +11,7 @@
 @interface LCVideoDetailEvaluateCell : BaseTableViewCell
 @property(nonatomic,strong) UIImageView *headerImgView;
 @property(nonatomic,strong) UILabel *nameLB;
-@property(nonatomic,strong) UILabel *tiemLB;
+@property(nonatomic,strong) UILabel *timeLB;
 @property(nonatomic,strong) YYLabel *evaYLB;
 @property(nonatomic,strong) UIButton *huifuBT;
 @property(nonatomic,strong) YYLabel *sonEvaYLB1;

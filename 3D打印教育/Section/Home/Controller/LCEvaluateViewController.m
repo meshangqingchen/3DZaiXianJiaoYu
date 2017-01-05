@@ -36,7 +36,6 @@ static NSString *identifier = @"LCVideoDetailEvaluateCell";
 }
 
 
-
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     LCVideoDetailEvaluateCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     [cell bindViewModel:self.viewModel.dataSource[indexPath.row]];

@@ -50,13 +50,11 @@
                 LCSonEvaluateCellViewModel *sonEvaCellViewModel = arr[i];
                 _sonAllEva_H = _sonAllEva_H + sonEvaCellViewModel.sonEva_H + 5;
                 if (i==2) {
-                    NSLog(@"%lf",_sonAllEva_H);
+                    
                     break;
                 }
             }
             _sonAllEva_H = _sonAllEva_H + 10 + 16 + 3 + 10;
-            NSLog(@"%lf",_sonAllEva_H);
-            NSLog(@"%lf",_sonAllEva_H);
             _cell_H = _evaluate_H + _sonAllEva_H + 15 + 15 + 21 + 3 + 15 + 15 + 21;
         }
         

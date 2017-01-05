@@ -8,13 +8,14 @@
 
 #import "LCDetailEvaluateCell.h"
 #import "LCEvaluateDetailCellViewModel.h"
-@implementation LCDetailEvaluateCell
 
+@implementation LCDetailEvaluateCell
 -(void)setupViews{
     
     self.contentView.backgroundColor = [KDColor getC9Color];
     self.headerImgView = [[UIImageView alloc]initWithFrame:CGRectMake(15, 15, 40, 40)];
     _headerImgView.backgroundColor = [UIColor orangeColor];
+    
     [self.contentView addSubview:_headerImgView];
     
     self.nameLB = [UILabel new];
@@ -28,16 +29,16 @@
     _nameLB.backgroundColor = [UIColor yellowColor];
     
     
-    self.tiemLB = [UILabel new];
-    [self.contentView addSubview:_tiemLB];
-    _tiemLB.backgroundColor = [UIColor blueColor];
-    _tiemLB.text = @"12-13 11:49";
-    _tiemLB.font = [[KDFont sharedKDFont]getF28Font];
-    _tiemLB.textColor = [KDColor getX0Color];
-    _tiemLB.left = _nameLB.left;
-    _tiemLB.top = _nameLB.bottom+3;
-    _tiemLB.height = 15;
-    _tiemLB.width = 200;
+    self.timeLB = [UILabel new];
+    [self.contentView addSubview:_timeLB];
+    _timeLB.backgroundColor = [UIColor blueColor];
+    _timeLB.text = @"12-13 11:49";
+    _timeLB.font = [[KDFont sharedKDFont]getF28Font];
+    _timeLB.textColor = [KDColor getX0Color];
+    _timeLB.left = _nameLB.left;
+    _timeLB.top = _nameLB.bottom+3;
+    _timeLB.height = 15;
+    _timeLB.width = 200;
     
     self.huifuBT = [UIButton new];
     [self.contentView addSubview:_huifuBT];
@@ -60,7 +61,7 @@
     self.evaYLB = [YYLabel new];
     [self.contentView addSubview:_evaYLB];
     _evaYLB.backgroundColor = [UIColor redColor];
-    _evaYLB.top = _tiemLB.bottom+21;
+    _evaYLB.top = _timeLB.bottom+21;
     _evaYLB.left = 70;
     _evaYLB.width = SCREEN_WIDTH-70-25;
 
@@ -72,7 +73,7 @@
     self.evaYLB.height = evaDetailCellVM.detail_H;
     
     self.nameLB.text = evaDetailCellVM.name;
-    self.tiemLB.text = evaDetailCellVM.time;
+    self.timeLB.text = evaDetailCellVM.time;
     self.evaYLB.textLayout = evaDetailCellVM.detailLayout;
     
 }

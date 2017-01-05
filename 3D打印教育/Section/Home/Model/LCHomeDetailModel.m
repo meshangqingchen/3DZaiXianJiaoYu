@@ -29,7 +29,7 @@
 @implementation LCCourseModelTeacher
 
 + (NSDictionary *)modelCustomPropertyMapper {
-    return @{@"iid" : @"id"};
+    return @{@"iid" : @"id",@"discription":@"discrip"};
 }
 
 @end

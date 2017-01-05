@@ -42,7 +42,16 @@
         @strongify(self)
         MYLog(@"=== === %@",planID);
         [self.netApi_Manager courseDetailWithPlanld:planID CompleteHandle:^(id responseObj, NSError *error) {
-            MYLog(@"%@",responseObj);
+            
+            if ([NSJSONSerialization isValidJSONObject:(NSDictionary *)responseObj]) {
+                NSError *error1;
+                NSData *jsonData = [NSJSONSerialization dataWithJSONObject:(NSDictionary *)responseObj options:NSJSONWritingPrettyPrinted error:&error1];
+                NSString *json = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+                NSLog(@"==---=%@===",json);
+                
+            }
+
+            
             LCHomeDetailModel *homeDetailModel = [LCHomeDetailModel parseJSON:responseObj];
             MYLog(@"mymymy");
             MYLog(@" === %@",homeDetailModel);

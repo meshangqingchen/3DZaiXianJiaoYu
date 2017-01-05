@@ -11,7 +11,7 @@
 - (void)bk_whenTouches:(NSUInteger)numberOfTouches tapped:(NSUInteger)numberOfTaps handler:(void (^)(void))block
 {
 	if (!block) return;
-	
+
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithActionBlock:^(UITapGestureRecognizer *sender) {
         if (sender.state == UIGestureRecognizerStateRecognized) block();
     }];

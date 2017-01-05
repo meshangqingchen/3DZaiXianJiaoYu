@@ -9,6 +9,7 @@
 #import "BaseTableViewModel.h"
 
 @interface LCEvaluateViewModel : BaseTableViewModel
-@property(nonatomic,copy) void(^huifu)(NSString *ID);
+@property(nonatomic,copy) void(^huifu)(NSString *evaluateID);
+@property(nonatomic,copy) void(^headerImageViewClick)(NSString *evaluateUserID);
 
 @end

@@ -90,10 +90,10 @@
     return kUIColorRGB16(0x23dee5);
 }
 + (UIColor *)getC18Color {
-    return kUIColorRGB16(0xfda228);
+    return kUIColorRGB16(0x1bb8be);
 }
 + (UIColor *)getC19Color {
-    return kUIColorRGB16(0xc9c9c9);
+    return kUIColorRGB16(0x5af9fa);
 }
 + (UIColor *)getC20Color {
     return kUIColorRGB16(0xCACACA);

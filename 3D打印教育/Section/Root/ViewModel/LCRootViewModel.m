@@ -20,7 +20,7 @@
 -(void)initialize{
     [super initialize];
     self.homeViewModel = [[LCHomeViewModel alloc]initWithServices:self.navigationStackService params:nil];
-    self.myCourseViewModel = [[LCMyCourseViewModel alloc]initWithServices:self.navigationStackService params:nil];
+    self.myCourseViewModel = [[LCMyCourseViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"我的课程"}];
     self.newsViewModel = [[LCNewsViewModel alloc]initWithServices:self.navigationStackService params:nil];
     self.personalCenterViewModel = [[LCPersonalCenterViewModel alloc]initWithServices:self.navigationStackService params:nil];
 }
