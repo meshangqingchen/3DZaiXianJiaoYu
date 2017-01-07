@@ -9,5 +9,7 @@
 #import "BaseTableViewModel.h"
 
 @interface LCPersonalCenterViewModel : BaseTableViewModel
+@property(nonatomic,copy) void (^bindViewModel)(id viewModel);//给headerView赋值;
+@property(nonatomic,copy) void (^goToLoginVC)();
 
 @end

@@ -10,4 +10,8 @@
 
 @interface LCPersonalCenterHeaderView : BaseView
 
+@property(nonatomic,strong) UIImageView *headerImageView;
+@property(nonatomic,strong) UILabel *topTitleLB;
+@property(nonatomic,strong) UILabel *signatureLB;
+
 @end

@@ -11,6 +11,9 @@
 @implementation LCPersonalCenterCell
 
 -(void)setupViews{
+    
+    self.contentView.backgroundColor = [KDColor getC0Color];
+    
     UIImage *image = [UIImage imageNamed:@"gerendongtai"];
     self.leftImageView = [UIImageView new];
     [self.contentView addSubview:_leftImageView];
@@ -38,6 +41,13 @@
         make.size.mas_equalTo(rightImge.size);
     }];
     
+    UIView *lineView = [UIView new];
+    lineView.backgroundColor = [KDColor getC7Color];
+    [self.contentView addSubview:lineView];
+    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.mas_offset(0);
+        make.height.mas_equalTo(0.5);
+    }];
 }
 
 -(void)bindViewModel:(id)viewModel{

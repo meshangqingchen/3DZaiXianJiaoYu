@@ -69,18 +69,21 @@
     UINavigationController *presentingViewController = self.navigationControllers.lastObject;
     if (![viewController isKindOfClass:[UINavigationController class]]) {
         viewController = [[RTRootNavigationController alloc] initWithRootViewController:viewController];
+        MYLog(@" viewController %@",viewController);
+        MYLog(@" viewController %@",viewController);
     }
     [self pushNavigationController:(UINavigationController *)viewController];
     [presentingViewController presentViewController:viewController animated:animated completion:completion];
-
 }
 
 - (void)dismissViewModelAnimated:(BOOL)animated completion:(void(^)())completion{
-    [self.navigationControllers.lastObject dismissViewModelAnimated:animated completion:completion];
+    
+    [self.navigationControllers.lastObject dismissViewControllerAnimated:animated completion:completion];
+    [self popNavigationController];
 }
 
 /// Reset the corresponding view controller as the root view controller of the application's window.
-///
+
 /// viewModel - the view model
 - (void)resetRootViewModel:(BaseViewModel *)viewModel{
     [self.navigationControllers removeAllObjects];

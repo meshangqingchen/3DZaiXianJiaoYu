@@ -1,49 +1,42 @@
 //
-//  LCPersonalCenterViewController.m
+//  LCSetingViewController.m
 //  3D打印教育
 //
-//  Created by 3D on 16/12/12.
-//  Copyright © 2016年 3D. All rights reserved.
+//  Created by 3D on 17/1/7.
+//  Copyright © 2017年 3D. All rights reserved.
 //
 
-#import "LCPersonalCenterViewController.h"
-#import "LCPersonalCenterViewModel.h"
+#import "LCSetingViewController.h"
+#import "LCSetingViewModel.h"
 
-#import "LCPersonalCenterCell.h"
-#import "LCPersonalCenterHeaderView.h"
-@interface LCPersonalCenterViewController ()
-@property(nonatomic,strong) LCPersonalCenterViewModel *viewModel;
+#import "LCSetingCell.h"
+@interface LCSetingViewController ()
+@property(nonatomic,strong) LCSetingViewModel *viewModel;
 @property(nonatomic,strong) UITableView *tableView;
 @end
 
-static NSString *identifier = @"LCPersonalCenterCell";
+static NSString *identifier = @"LCSetingCell";
 static NSString *identifierHeader = @"UITableViewHeaderFooterView";
 
-@implementation LCPersonalCenterViewController
+@implementation LCSetingViewController
 @dynamic viewModel,tableView;
-
 - (void)viewDidLoad {
     
-    self.navigationController.navigationBar.hidden = YES;
-    
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64) style:UITableViewStylePlain];
     self.tableView.backgroundColor = [KDColor getC19Color];
     self.tableView.rowHeight = 35;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self.tableView registerClass:[LCPersonalCenterCell class] forCellReuseIdentifier:identifier];
+    [self.tableView registerClass:[LCSetingCell class] forCellReuseIdentifier:identifier];
     [self.tableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:identifierHeader];
     
     [self.view addSubview:self.tableView];
     
     self.tableView.tableFooterView = [UIView new];
-    LCPersonalCenterHeaderView *headerView = [[LCPersonalCenterHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 170)];
-    self.tableView.tableHeaderView = headerView;
-    [self.viewModel setBindViewModel:^(id model) {
-        [headerView bindViewModel:model];
-    }];
-    [super viewDidLoad];
     
+    [super viewDidLoad];
+
 }
+
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return self.viewModel.dataSource.count;
@@ -56,9 +49,9 @@ static NSString *identifierHeader = @"UITableViewHeaderFooterView";
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    LCPersonalCenterCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+    LCSetingCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     NSArray *setionArr = self.viewModel.dataSource[indexPath.section];
-    [cell bindViewModel:setionArr[indexPath.row]];
+    [cell bindViewModel:setionArr[indexPath.row] AndIndexPath:indexPath];
     return cell;
 }
 
@@ -73,7 +66,8 @@ static NSString *identifierHeader = @"UITableViewHeaderFooterView";
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 5;
+    return 15;
 }
+
 
 @end

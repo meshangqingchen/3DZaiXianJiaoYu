@@ -19,6 +19,7 @@
 #import "LCNewsViewController.h"
 #import "LCPersonalCenterViewController.h"
 
+#import "LCNavigationStackService.h"//栈实例
 
 @interface LCRootViewController ()<RDVTabBarControllerDelegate>
 @property(nonatomic,strong) LCRootViewModel *viewModel;
@@ -76,7 +77,12 @@
         [item setTitle:tabBarItemTitles[index]];
         index++;
     }
+}
 
+-(void)tabBarController:(RDVTabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    
+    [(LCNavigationStackService *)self.viewModel.navigationStackService popNavigationController];
+    [(LCNavigationStackService *)self.viewModel.navigationStackService pushNavigationController:(id)viewController];
 }
 
 - (void)didReceiveMemoryWarning {

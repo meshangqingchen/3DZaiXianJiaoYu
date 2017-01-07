@@ -50,21 +50,17 @@
 + (UIColor *)getC17Color;
 ///0x1bb8be 已完成课时
 + (UIColor *)getC18Color;
-
-
-
-
-
-
-
-
-
-
-
-///
+///0xf5f5f5 个人中心tableView背景色
 + (UIColor *)getC19Color;
-///0xCACACA 登录注册字体颜色
+///0xec2222 登录注册字体颜色
 + (UIColor *)getC20Color;
+
+
+
+
+
+
+
 ///#0xE6E6E6 登录背景se
 + (UIColor *)getC21Color;
 

@@ -41,7 +41,10 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(KDRouter)
                                    @"LCCourseDownLoadViewModel" : @"LCCourseDownLoadViewController",
                                    @"LCMyMessageViewModel" : @"LCMyMessageViewController",
                                    @"LCUserTeacherTalkViewModel" : @"LCUserTeacherTalkViewController",
-                                   @"LCMySelfMainViewModel" : @"LCMySelfMainViewController"};
+                                   @"LCMySelfMainViewModel" : @"LCMySelfMainViewController",
+                                   @"LCLoginViewModel" : @"LCLoginViewController",
+                                   @"textViewModel" : @"textViewController",
+                                   @"LCSetingViewModel" : @"LCSetingViewController"};
     }
 	return _viewModelViewMappings;
 }
