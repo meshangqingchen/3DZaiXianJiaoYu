@@ -28,9 +28,10 @@
         if (!self.headerVM) return ;
         if (self.headerVM.ifNeedLog) {
             //需要登录 跳转到登录界面
-            self.headerVM.goToLoginVC();
+            !self.headerVM.goToLoginVC ? : self.headerVM.goToLoginVC();
         }else{
             //跳转到  其他几面
+            !self.headerVM.pushToEditDataVM ? : self.headerVM.pushToEditDataVM(@"viewModel");
         }
     }];
     [self addSubview:backView];

@@ -16,7 +16,7 @@
 
 //事件
 @property(nonatomic,copy) void (^goToLoginVC)();
-
+@property(nonatomic,copy) void (^pushToEditDataVM)(id viewModel); //编辑个人资料
 
 -(instancetype)initWithModel:(id)model;
 @end

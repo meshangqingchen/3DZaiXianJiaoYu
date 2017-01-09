@@ -10,6 +10,7 @@
 #import "LCPersonalCenterCellViewModel.h"     //cellVM
 #import "LCPersonalCenterHeaderViewModel.h"   //headerVM
 #import "LCLoginViewModel.h"   //登录VM
+#import "LCEditPersonalDetailViewModel.h"
 #import "LCSetingViewModel.h"  //设置VM
 @implementation LCPersonalCenterViewModel
 -(void)initialize{
@@ -19,6 +20,13 @@
         @strongify(self)
         LCLoginViewModel *loginVM = [[LCLoginViewModel alloc]initWithServices:self.navigationStackService params:nil];
         [self.navigationStackService presentViewModel:loginVM animated:YES completion:nil];
+    }];
+    
+    [self setPushToEditDataVM:^(id viewModel) {
+        @strongify(self)
+        LCEditPersonalDetailViewModel *editPersonalDetailVM = [[LCEditPersonalDetailViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"编辑个人资料"}];
+        
+        [self.navigationStackService pushViewModel:editPersonalDetailVM animated:YES];
     }];
 }
 
@@ -46,17 +54,18 @@
     NSDictionary *dic = nil;
     //这里自动登录
 //    if (x) {
-//     dic = @{@"topTitle":@"我是nickName",@"headerImageURL":@"---",@"signature":@"我的一个签名给我一个梦醒",
-//                              @"ifneedLog":@0};
+     dic = @{@"topTitle":@"我是nickName",@"headerImageURL":@"---",@"signature":@"我的一个签名给我一个梦醒",
+                              @"ifneedLog":@0};
 //    }else{
-     dic = @{@"topTitle":@"登录/注册",
-                              @"headerImageURL":@"---",
-                              @"signature":@"",
-                              @"ifneedLog":@1};
+//     dic = @{@"topTitle":@"登录/注册",
+//                              @"headerImageURL":@"---",
+//                              @"signature":@"",
+//                              @"ifneedLog":@1};
 //    }
     
     LCPersonalCenterHeaderViewModel *headerVM = [[LCPersonalCenterHeaderViewModel alloc]initWithModel:dic];
     headerVM.goToLoginVC = self.goToLoginVC;
+    headerVM.pushToEditDataVM = self.pushToEditDataVM;
     !self.bindViewModel ? :self.bindViewModel(headerVM);
 
     //消息、课程、收藏、设置、意见反馈
