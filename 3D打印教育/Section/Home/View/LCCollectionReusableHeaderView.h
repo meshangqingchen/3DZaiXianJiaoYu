@@ -11,7 +11,7 @@
 @interface LCCollectionReusableHeaderView : UICollectionReusableView
 @property(nonatomic,strong) UILabel *titleLB;
 @property(nonatomic,strong) UIButton *moreBT;
-@property(nonatomic,strong) UILabel *centerLB;
+//@property(nonatomic,strong) UILabel *centerLB;
 @property(nonatomic,strong) UIImageView *backImageView;
 
 -(void)setupViews;

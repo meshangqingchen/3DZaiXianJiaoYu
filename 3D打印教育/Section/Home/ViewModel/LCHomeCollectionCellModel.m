@@ -11,11 +11,11 @@
 @implementation LCHomeCollectionCellModel
 -(instancetype)initWithModel:(id)model{
     if (self = [super init]) {
-        LChomeList *homeList = model;
-        self.title = homeList.name;
-        self.bigImgURL = [NSURL URLWithString:homeList.big_image];
-        self.smallImgURL = [NSURL URLWithString:homeList.image];
-        self.idd = homeList.iid;
+        LCHomeRecommendclasstypelist *recommendClassType = model;
+        self.bigImgURL = [NSURL URLWithString:recommendClassType.big_image];
+        self.smallImgURL = [NSURL URLWithString:recommendClassType.image];
+        self.title = recommendClassType.name;
+        self.idd = recommendClassType.iid;
     }
     return self;
 }

@@ -11,9 +11,9 @@
 @interface LCHomeCollectionBananaViewModel : NSObject
 
 @property (nonatomic, copy) NSString *iid;
-@property (nonatomic, copy) NSString *bigImageURL;
-@property (nonatomic, copy) NSString *smallImageURL;
-@property (nonatomic, assign) NSInteger carouselType;
+@property (nonatomic, copy) NSURL *imageURL;
+@property (nonatomic, copy) NSURL *detailURL;
+
 @property (nonatomic, copy) NSString *name;
 
 //事件

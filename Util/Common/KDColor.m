@@ -102,7 +102,7 @@
     return kUIColorRGB16(0xf4a752);
 }
 + (UIColor *)getC22Color {
-    return kUIColorRGB16(0xa3a3a3);
+    return kUIColorRGB16(0x989898);
 }
 + (UIColor *)getC23Color {
     return kUIColorRGB16(0xa3a3a3);

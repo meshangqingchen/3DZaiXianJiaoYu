@@ -11,41 +11,55 @@
 @implementation LCHomeModel
 
 @end
+
 @implementation LCHomeContents
 
 + (NSDictionary *)modelContainerPropertyGenericClass {
-    return @{@"carouselList" : [LCHomeCarousellist class], @"plan" : [LCHomePlan class]};
+    return @{@"classTypeList" : [LCHomeClasstypelist class], @"recommendClassTypeList" : [LCHomeRecommendclasstypelist class], @"teacherList" : [LCHomeTeacherlist class], @"carouselList" : [LCHomeCarousellist class], @"signUpList" : [LCHomeSignuplist class]};
 }
 
+@end
+
+//+ (NSDictionary *)modelCustomPropertyMapper {
+//    return @{@"iid" : @"id",@"discription":@"discrip"};
+//}
+
+
+
+@implementation LCHomeClasstypelist
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"iid" : @"id"};
+}
+@end
+
+
+@implementation LCHomeRecommendclasstypelist
+
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"iid" : @"id",@"discription":@"discrip"};
+}
+
+@end
+
+
+@implementation LCHomeTeacherlist
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"iid" : @"id"};
+}
 @end
 
 
 @implementation LCHomeCarousellist
-
 + (NSDictionary *)modelCustomPropertyMapper {
-    return @{@"iid" : @"id",
-             @"discri" : @"discription"};
+    return @{@"iid" : @"id",@"discription":@"discrip"};
 }
-
 @end
 
 
-@implementation LCHomePlan
-
-+ (NSDictionary *)modelContainerPropertyGenericClass {
-    return @{@"list" : [LChomeList class]};
-}
-
-@end
-
-
-@implementation LChomeList
-
+@implementation LCHomeSignuplist
 + (NSDictionary *)modelCustomPropertyMapper {
-    return @{@"iid" : @"id"};
-    
+    return @{@"iid" : @"id",@"discription":@"discrip"};
 }
-
 @end
 
 

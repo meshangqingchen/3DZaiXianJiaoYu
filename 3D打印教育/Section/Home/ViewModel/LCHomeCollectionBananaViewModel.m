@@ -11,13 +11,11 @@
 @implementation LCHomeCollectionBananaViewModel
 -(instancetype)initWithModel:(id)model{
     if (self = [super init]) {
-        LCHomeCarousellist *homeCarouselList = model;
-        
-        self.name = homeCarouselList.name;
-        self.carouselType = homeCarouselList.carousel_type;
-        self.iid = homeCarouselList.iid;
-        self.smallImageURL = homeCarouselList.image;
-        self.bigImageURL = homeCarouselList.big_image;
+        LCHomeCarousellist *carouselModel = model;
+        self.iid = carouselModel.iid;
+        self.imageURL = [NSURL URLWithString:carouselModel.image];
+        self.detailURL = [NSURL URLWithString:carouselModel.url];
+        self.name = carouselModel.name;
     }
     return self;
 }

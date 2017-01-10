@@ -8,13 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSUInteger,LCSectionTyp){
-    LCNormail,
-    LCBigImageAddText,
-    LCBigImage
-};
+
 @interface LCHomeCollectionSectionModel : NSObject
-@property(nonatomic,assign) LCSectionTyp sectionTyp;
+//@property(nonatomic,assign) LCSectionTyp sectionTyp;
 @property(nonatomic,strong) NSString *sectionTitle;
 @property(nonatomic,strong) NSArray *data;
 -(instancetype)initWithModel:(id)model;

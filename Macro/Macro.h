@@ -28,7 +28,7 @@
 #define BIGIMAGE_W  SCREEN_WIDTH-30
 #define BIGIMAGE_H  (BIGIMAGE_W) * 290 / 690
 //轮播高
-#define BANANER_H (SCREEN_WIDTH)*(350+78)/750
+#define BANANER_H (SCREEN_WIDTH)*300/750+95+39
 //每个sectionHead的高
 #define SECTION_H  39
 //视频的高

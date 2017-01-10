@@ -56,12 +56,12 @@
 + (UIColor *)getC20Color;
 ///0xf4a752 获取验证码按钮 背景色黄
 + (UIColor *)getC21Color;
-
-
-
-
-
+///0x989898 首页老师介绍的字
 + (UIColor *)getC22Color;
+
+
+
+
 + (UIColor *)getC23Color;
 + (UIColor *)getC24Color;
 + (UIColor *)getC25Color;

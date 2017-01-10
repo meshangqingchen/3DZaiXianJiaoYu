@@ -9,9 +9,13 @@
 #import "LCHomeViewController.h"
 #import "LCHomeViewModel.h"
 #import "LCTextFiled.h"
-#import "LCNomalCollectionViewCell.h"
+
+#import "LCSmallCollectionViewCell.h"
 #import "LCBigImageAndTextCollectionViewCell.h"
-#import "LCBigImageCollectionViewCell.h"
+#import "LCNomalCollectionViewCell.h"
+#import "LCTeachersCollectionViewCell.h"
+
+
 #import "LCCollectionReusableHeaderView.h"
 #import "LCCollectionReusableBannerHeaderView.h"
 
@@ -19,6 +23,7 @@
 #import "LCHomeCollectionSectionModel.h"
 
 #import "UINavigationItem+CustomItem.h"
+
 #import "LCMyMessageViewModel.h"
 @interface LCHomeViewController ()
 <
@@ -31,9 +36,12 @@ UICollectionViewDelegateFlowLayout
 @property(nonatomic,strong) UICollectionViewFlowLayout *flowLayout;
 @end
 
-static NSString *identifierNomal = @"LCNomalCollectionViewCell";
+static NSString *identifierSmall = @"LCSmallCollectionViewCell";
 static NSString *identifierBigImageAndText = @"LCBigImageAndTextCollectionViewCell";
-static NSString *identifierBigImage = @"LCBigImageCollectionViewCell";
+static NSString *identifierNomal = @"LCNomalCollectionViewCell";
+static NSString *identifierteacher = @"LCTeachersCollectionViewCell";
+
+
 static NSString *identifierSectionHeader = @"LCCollectionReusableHeaderView";
 static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView";
 @implementation LCHomeViewController
@@ -53,16 +61,25 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
     [self.navigationController.navigationBar addSubview:_tf];
     
     _flowLayout = [[UICollectionViewFlowLayout alloc]init];
-    _flowLayout.minimumLineSpacing = 0;
-    _flowLayout.minimumInteritemSpacing = 10;
-    self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, STATUS_HEIGHT+NAVIGATIONBAR_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT-(STATUS_HEIGHT+NAVIGATIONBAR_HEIGHT+49)) collectionViewLayout:_flowLayout];
+    
+    self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-(64+49)) collectionViewLayout:_flowLayout];
     self.collectionView.backgroundColor = [UIColor whiteColor];
+    
     [self.view addSubview:self.collectionView];
-    [self.collectionView registerClass:[LCNomalCollectionViewCell class] forCellWithReuseIdentifier:identifierNomal];
+    
+    
+    [self.collectionView registerClass:[LCSmallCollectionViewCell class] forCellWithReuseIdentifier:identifierSmall];
+    
     [self.collectionView registerClass:[LCBigImageAndTextCollectionViewCell class] forCellWithReuseIdentifier:identifierBigImageAndText];
-    [self.collectionView registerClass:[LCBigImageCollectionViewCell class] forCellWithReuseIdentifier:identifierBigImage];
+
+    
+    [self.collectionView registerClass:[LCNomalCollectionViewCell class] forCellWithReuseIdentifier:identifierNomal];
+    
+    [self.collectionView registerClass:[LCTeachersCollectionViewCell class] forCellWithReuseIdentifier:identifierteacher];
+    
     
     [self.collectionView registerClass:[LCCollectionReusableHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:identifierSectionHeader];
+    
     [self.collectionView registerClass:[LCCollectionReusableBannerHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:identifierBannerHeader];
     
     [super viewDidLoad];
@@ -98,52 +115,45 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    LCHomeCollectionSectionModel *sectionModel =  self.viewModel.dataSource[indexPath.section];
-    switch (sectionModel.sectionTyp) {
-        case LCNormail:{
-            LCNomalCollectionViewCell *normalCell = [collectionView dequeueReusableCellWithReuseIdentifier:identifierNomal forIndexPath:indexPath];
-            [normalCell bindViewModel:sectionModel.data[indexPath.row]];
-            return normalCell;
-            break;
-        }
-        case LCBigImageAddText:{
-            if (indexPath.row == 0) {
-                LCBigImageAndTextCollectionViewCell *bigAndTextCell = [collectionView dequeueReusableCellWithReuseIdentifier:identifierBigImageAndText forIndexPath:indexPath];
-                [bigAndTextCell bindViewModel:sectionModel.data[indexPath.row]];
-                return bigAndTextCell;
-            }else{
-                LCNomalCollectionViewCell *normalCell = [collectionView dequeueReusableCellWithReuseIdentifier:identifierNomal forIndexPath:indexPath];
-                [normalCell bindViewModel:sectionModel.data[indexPath.row]];
-                return normalCell;
-            }
-            break;
-        }
-        case LCBigImage:{
-            LCBigImageCollectionViewCell *bigImageCell = [collectionView dequeueReusableCellWithReuseIdentifier:identifierBigImage forIndexPath:indexPath];
-            [bigImageCell bindViewModel:sectionModel.data[indexPath.row]];
-            return bigImageCell;
-            break;
-        }
-        default:
-            break;
+    
+    LCHomeCollectionSectionModel *sectionModel = self.viewModel.dataSource[indexPath.section];
+    
+    if (indexPath.section == 0) {
+        LCSmallCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifierSmall forIndexPath:indexPath];
+        [cell bindViewModel:sectionModel.data[indexPath.row]];
+        return cell;
+    }else if (indexPath.section == 1 & indexPath.row == 0){
+        LCBigImageAndTextCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifierBigImageAndText forIndexPath:indexPath];
+        [cell bindViewModel:sectionModel.data[indexPath.row]];
+        return cell;
+        
+    }else if (indexPath.section == 1 & indexPath.row != 0){
+        LCNomalCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifierNomal forIndexPath:indexPath];
+        [cell bindViewModel:sectionModel.data[indexPath.row]];
+        return cell;
+    }else if (indexPath.section == 2){
+        LCTeachersCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifierteacher forIndexPath:indexPath];
+        [cell bindViewModel:sectionModel.data[indexPath.row]];
+        return cell;
+    }else{
+        
+        return nil;
     }
-    return nil;
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    LCHomeCollectionSectionModel *sectionModel =  self.viewModel.dataSource[indexPath.section];
     if (indexPath.section == 0) {
-        LCHomeCollectionSectionModel *sectionModel =  self.viewModel.dataSource[indexPath.section];
         LCCollectionReusableBannerHeaderView *bannerHeaderView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:identifierBannerHeader forIndexPath:indexPath];
-        [bannerHeaderView bindViewModel:sectionModel andBannerViewModel:self.viewModel.homeBannerDataArr];
+        [bannerHeaderView bindViewModel:sectionModel andBannerViewModel:self.viewModel.homeBannerDataArr andsignUpViewModel:self.viewModel.homesignUpListDataArr];
         return bannerHeaderView;
     }
-    
-    LCHomeCollectionSectionModel *sectionModel =  self.viewModel.dataSource[indexPath.section];
     LCCollectionReusableHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:identifierSectionHeader forIndexPath:indexPath];
     [headerView bindViewModel:sectionModel];
     return headerView;
 }
 
+//这个是头的高度
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
     if (section == 0 ) {
         return CGSizeMake(SCREEN_WIDTH, BANANER_H);
@@ -152,49 +162,63 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    LCHomeCollectionSectionModel *model =  self.viewModel.dataSource[indexPath.section];
-    switch (model.sectionTyp) {
-        case LCNormail:{
-            return CGSizeMake(NORMALE_COLLECTIONCELL_W, NORMALE_COLLECTIONCELL_H);
-            break;
-        }
-        case LCBigImageAddText:{
-            if (indexPath.row == 0) {
-                return CGSizeMake(BIGIMAGEADDTEXT_W, BIGIMAGEADDTEXT_H);
-            }else{
-                return CGSizeMake(NORMALE_COLLECTIONCELL_W, NORMALE_COLLECTIONCELL_H);
-            }
-            break;
-        }
-        case LCBigImage:{
-            return CGSizeMake(BIGIMAGE_W, BIGIMAGE_H);
-            break;
-        }
-        default:
-            break;
+   
+    if (indexPath.section == 0) {
+        
+        return CGSizeMake(60, 66);
+    }else if (indexPath.section == 1 & indexPath.row == 0){
+         return CGSizeMake(BIGIMAGEADDTEXT_W, BIGIMAGEADDTEXT_H);
+        
+    }else if (indexPath.section == 1 & indexPath.row != 0){
+        return CGSizeMake(NORMALE_COLLECTIONCELL_W, NORMALE_COLLECTIONCELL_H);
+    }else if (indexPath.section == 2){
+        //SCREEN_WIDTH/750*(622-88)
+        return CGSizeMake(SCREEN_WIDTH, SCREEN_WIDTH/750*504);
+    }else{
+        return CGSizeZero;
     }
-    return CGSizeZero;
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    LCHomeCollectionSectionModel *model =  self.viewModel.dataSource[section];
-    switch (model.sectionTyp) {
-        case LCNormail:{
-            return  UIEdgeInsetsMake(15, 15, 0, 15);
-            break;
-        }
-        case LCBigImageAddText:{//{top, left, bottom, right}
-            return  UIEdgeInsetsMake(25, 15, 0, 15);
-            break;
-        }
-        case LCBigImage:{
-            return  UIEdgeInsetsMake(15, 15, 20, 15);
-            break;
-        }
-        default:
-            break;
+    //{top, left, bottom, right}
+    if (section == 0) {
+        return  UIEdgeInsetsMake(20, 85/2, 20, 85/2);
+    }else if (section == 1){
+        return  UIEdgeInsetsMake(25, 15, 0, 15);
+    }else if (section == 2){
+        return  UIEdgeInsetsMake(0, 0, 0, 0);
+    }else{
+        return UIEdgeInsetsZero;
     }
-    return UIEdgeInsetsZero;
+
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
+    
+    if (section == 0) {
+        return 15;
+    }else if (section == 1){
+        return 0;
+    }else if (section == 2){
+        return 0;
+    }else{
+        return 0;
+    }
+
+}
+
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
+    
+    if (section == 0) {
+        return ((SCREEN_WIDTH-60*3-85)/2);
+    }else if (section == 1){
+        return 10;
+    }else if (section == 2){
+        return 0;
+    }else{
+        return 0;
+    }
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{

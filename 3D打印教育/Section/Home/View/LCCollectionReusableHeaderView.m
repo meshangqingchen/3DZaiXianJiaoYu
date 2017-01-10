@@ -48,25 +48,19 @@
     }];
     [_moreBT setButtonImageTitleStyle:ButtonImageTitleStyleRight padding:5];
     
-    self.centerLB = [UILabel new];
-    _centerLB.text = @"免费好课";
-    _centerLB.textColor = [KDColor getC2Color];
-    _centerLB.font = [[KDFont sharedKDFont]getF32Font];
-    [self addSubview:_centerLB];
-    [_centerLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.mas_equalTo(0);
-    }];
+//    self.centerLB = [UILabel new];
+//    _centerLB.text = @"免费好课";
+//    _centerLB.textColor = [KDColor getC2Color];
+//    _centerLB.font = [[KDFont sharedKDFont]getF32Font];
+//    [self addSubview:_centerLB];
+//    [_centerLB mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.center.mas_equalTo(0);
+//    }];
 }
 -(void)bindViewModel:(id)viewModel{
     LCHomeCollectionSectionModel *sectionVM = viewModel;
     self.titleLB.text = sectionVM.sectionTitle;
-    if (sectionVM.sectionTyp == LCBigImage) {
-        self.centerLB.hidden = NO;
-        self.titleLB.hidden = YES;
-    }else{
-        self.centerLB.hidden = YES;
-        self.titleLB.hidden = NO;
-    }
+    
 }
 
 

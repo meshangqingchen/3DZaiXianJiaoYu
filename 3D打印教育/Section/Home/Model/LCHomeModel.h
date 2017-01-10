@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class LCHomeContents,LCHomeCarousellist,LCHomePlan,LChomeList;
+@class LCHomeContents,LCHomeClasstypelist,LCHomeRecommendclasstypelist,LCHomeTeacherlist,LCHomeCarousellist,LCHomeSignuplist;
 @interface LCHomeModel : NSObject
 
 @property (nonatomic, assign) NSInteger status;
@@ -21,80 +21,98 @@
 
 @property (nonatomic, strong) LCHomeContents *contents;
 
+
 @end
+
 @interface LCHomeContents : NSObject
+
+@property (nonatomic, strong) NSArray<LCHomeClasstypelist *> *classTypeList;
+
+@property (nonatomic, strong) NSArray<LCHomeRecommendclasstypelist *> *recommendClassTypeList;
+
+@property (nonatomic, strong) NSArray<LCHomeTeacherlist *> *teacherList;
 
 @property (nonatomic, strong) NSArray<LCHomeCarousellist *> *carouselList;
 
-@property (nonatomic, strong) NSArray<LCHomePlan *> *plan;
+@property (nonatomic, strong) NSArray<LCHomeSignuplist *> *signUpList;
+
+@end
+
+@interface LCHomeClasstypelist : NSObject
+
+@property (nonatomic, copy) NSString *status;
+
+@property (nonatomic, copy) NSString *iid;
+
+@property (nonatomic, copy) NSString *img;
+
+@property (nonatomic, copy) NSString *name;
+
+@property (nonatomic, copy) NSString *created_time;
+
+@property (nonatomic, copy) NSString *updated_time;
+
+@end
+
+@interface LCHomeRecommendclasstypelist : NSObject
+
+@property (nonatomic, copy) NSString *updated_time;
+
+@property (nonatomic, copy) NSString *iid;
+
+@property (nonatomic, copy) NSString *big_image;
+
+@property (nonatomic, copy) NSString *name;
+
+@property (nonatomic, copy) NSString *image;
+
+@property (nonatomic, copy) NSString *created_time;
+
+@end
+
+@interface LCHomeTeacherlist : NSObject
+
+@property (nonatomic, copy) NSString *nick_name;
+
+@property (nonatomic, copy) NSString *avatar;
+
+@property (nonatomic, copy) NSString *position;
+
+@property (nonatomic, copy) NSString *iid;
+
+@property (nonatomic, copy) NSString *sex;
+
+@property (nonatomic, copy) NSString *discrip;
+
+@property (nonatomic, copy) NSString *shot_discription;
 
 @end
 
 @interface LCHomeCarousellist : NSObject
 
-@property (nonatomic, copy) NSString *iid;
-
-@property (nonatomic, copy) NSString *big_image;
-
-@property (nonatomic, copy) NSString *created_time;
-
-//@property (nonatomic, copy) NSString *status;
-
-@property (nonatomic, copy) NSString *recommend;
-
-//@property (nonatomic, copy) NSString *type;
-
-//@property (nonatomic, copy) NSString *discri;
-
-@property (nonatomic, copy) NSString *updated_time;
-
-@property (nonatomic, copy) NSString *image;
-
-//@property (nonatomic, copy) NSString *class_id;
-
-//@property (nonatomic, copy) NSString *sort;
-
-@property (nonatomic, assign) NSInteger carousel_type;
-
-@property (nonatomic, copy) NSString *name;
-
-@end
-
-@interface LCHomePlan : NSObject
-
-@property (nonatomic, assign) NSInteger template_type;
-
-@property (nonatomic, copy) NSString *plan_type_name;
-
-@property (nonatomic, strong) NSArray<LChomeList *> *list;
-
-@end
-
-@interface LChomeList : NSObject
+@property (nonatomic, copy) NSString *discrip;
 
 @property (nonatomic, copy) NSString *iid;
 
-@property (nonatomic, copy) NSString *big_image;
-
-@property (nonatomic, copy) NSString *created_time;
-
-@property (nonatomic, copy) NSString *recommend;
-
-@property (nonatomic, copy) NSString *type;
-
-@property (nonatomic, copy) NSString *discription;
-
-@property (nonatomic, copy) NSString *updated_time;
+@property (nonatomic, copy) NSString *name;
 
 @property (nonatomic, copy) NSString *image;
 
-@property (nonatomic, copy) NSString *class_id;
+@property (nonatomic, copy) NSString *url;
 
-@property (nonatomic, copy) NSString *sort;
+@end
+
+@interface LCHomeSignuplist : NSObject
+
+@property (nonatomic, copy) NSString *discrip;
+
+@property (nonatomic, copy) NSString *iid;
 
 @property (nonatomic, copy) NSString *name;
 
-@property (nonatomic, copy) NSString *status;
+@property (nonatomic, copy) NSString *image;
+
+@property (nonatomic, copy) NSString *url;
 
 @end
 

@@ -12,6 +12,106 @@
 
 #import "LCHomeCollectionBananaViewModel.h"
 
+
+@implementation LCSignUpView
+
+-(void)setupViews{
+
+    CGFloat gap_W = (SCREEN_WIDTH- 60*3 - 85)/2;
+    CGFloat backView_W = 60;
+    
+    UIView *backView1 = [UIView new];
+    backView1.backgroundColor = [UIColor grayColor];
+    [self addSubview:backView1];
+    [backView1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_offset(85/2);
+        make.top.bottom.mas_offset(0);
+        make.width.mas_equalTo(backView_W);
+    }];
+    self.imageView1 = [UIImageView new];
+    _imageView1.backgroundColor = [UIColor orangeColor];
+    [backView1 addSubview:_imageView1];
+    [_imageView1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_offset(15);
+        make.size.mas_equalTo(CGSizeMake(50, 50));
+        make.centerX.mas_equalTo(0);
+    }];
+    self.lable1 = [UILabel new];
+    _lable1.textColor = [KDColor getC2Color];
+    _lable1.font = [[KDFont sharedKDFont]getF24Font];
+    _lable1.text = @"基础课程";
+    [backView1 addSubview:_lable1];
+    [_lable1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.imageView1.mas_bottom).mas_offset(4);
+        make.centerX.mas_offset(0);
+    }];
+    
+    
+    UIView *backView2 = [UIView new];
+    backView2.backgroundColor = [UIColor grayColor];
+    [self addSubview:backView2];
+    [backView2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(backView1.mas_right).mas_equalTo(gap_W);
+        make.top.bottom.mas_offset(0);
+        make.width.mas_equalTo(backView_W);
+    }];
+    self.imageView2 = [UIImageView new];
+    _imageView2.backgroundColor = [UIColor orangeColor];
+    [backView2 addSubview:_imageView2];
+    [_imageView2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_offset(15);
+        make.size.mas_equalTo(CGSizeMake(50, 50));
+        make.centerX.mas_equalTo(0);
+    }];
+    self.lable2 = [UILabel new];
+    _lable2.textColor = [KDColor getC2Color];
+    _lable2.font = [[KDFont sharedKDFont]getF24Font];
+    _lable2.text = @"基础课程";
+    [backView2 addSubview:_lable2];
+    [_lable2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.imageView1.mas_bottom).mas_offset(4);
+        make.centerX.mas_offset(0);
+    }];
+
+    
+    
+    UIView *backView3 = [UIView new];
+    backView3.backgroundColor = [UIColor grayColor];
+    [self addSubview:backView3];
+    [backView3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(backView2.mas_right).mas_equalTo(gap_W);
+        make.top.bottom.mas_offset(0);
+        make.width.mas_equalTo(backView_W);
+
+    }];
+    self.imageView3 = [UIImageView new];
+    _imageView3.backgroundColor = [UIColor orangeColor];
+    [backView3 addSubview:_imageView3];
+    [_imageView3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_offset(15);
+        make.size.mas_equalTo(CGSizeMake(50, 50));
+        make.centerX.mas_equalTo(0);
+    }];
+    self.lable3 = [UILabel new];
+    _lable3.textColor = [KDColor getC2Color];
+    _lable3.font = [[KDFont sharedKDFont]getF24Font];
+    _lable3.text = @"基础课程";
+    [backView3 addSubview:_lable3];
+    [_lable3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.imageView1.mas_bottom).mas_offset(4);
+        make.centerX.mas_offset(0);
+    }];
+
+}
+
+-(void)bindViewModel:(id)viewModel{
+
+}
+
+@end
+
+
+
 @interface LCCollectionReusableBannerHeaderView ()
 <SDCycleScrollViewDelegate>
 @property(nonatomic,strong) NSMutableArray *imageURLArr;
@@ -46,6 +146,16 @@
     
     [self addSubview:_bannerView];
     
+    self.signUpView = [LCSignUpView new];
+    [self addSubview:_signUpView];
+    _signUpView.backgroundColor = [UIColor yellowColor];
+    [_signUpView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_offset(0);
+        make.top.mas_equalTo(self.bannerView.mas_bottom).mas_offset(0);
+        make.height.mas_equalTo(95);
+    }];
+    
+    
     self.backImageView = [UIImageView new];
     _backImageView.image = [UIImage imageNamed:@"head_backImage"];
     [self addSubview:self.backImageView];
@@ -77,29 +187,32 @@
     }];
     [_moreBT setButtonImageTitleStyle:ButtonImageTitleStyleRight padding:5];
 
-    self.centerLB = [UILabel new];
-    _centerLB.text = @"免费好课";
-    _centerLB.textColor = [KDColor getC2Color];
-    _centerLB.font = [[KDFont sharedKDFont]getF32Font];
-    [self.backImageView addSubview:_centerLB];
-    [_centerLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.mas_equalTo(0);
-    }];
+//    self.centerLB = [UILabel new];
+//    _centerLB.text = @"免费好课";
+//    _centerLB.textColor = [KDColor getC2Color];
+//    _centerLB.font = [[KDFont sharedKDFont]getF32Font];
+//    [self.backImageView addSubview:_centerLB];
+//    [_centerLB mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.center.mas_equalTo(0);
+//    }];
     
     
 }
 
--(void)bindViewModel:(id)viewModel andBannerViewModel:(id)bannerVM{
+-(void)bindViewModel:(id)viewModel andBannerViewModel:(id)bannerVM andsignUpViewModel:(id)signUpVM{
+    
     LCHomeCollectionSectionModel *sectionVM = viewModel;
     self.titleLB.text = sectionVM.sectionTitle;
-    if (sectionVM.sectionTyp == LCBigImage) {
-        self.centerLB.hidden = NO;
-        self.titleLB.hidden = YES;
-    }else{
-        self.centerLB.hidden = YES;
-        self.titleLB.hidden = NO;
-    }
     self.bannerDataArr = bannerVM;
+    self.signUpDataArr = signUpVM;
+}
+
+
+-(void)setSignUpDataArr:(NSArray *)signUpDataArr{
+    if (_signUpDataArr == signUpDataArr) return;
+    _signUpDataArr = signUpDataArr;
+    [self.signUpView bindViewModel:_signUpDataArr];
+    
 }
 
 -(void)setBannerDataArr:(NSArray *)bannerDataArr{
@@ -108,7 +221,7 @@
     
     for (int i=0; i<self.bannerDataArr.count; i++) {
         LCHomeCollectionBananaViewModel *bannerVM = self.bannerDataArr[i];
-        [self.imageURLArr addObject:bannerVM.bigImageURL];
+        [self.imageURLArr addObject:bannerVM.imageURL];
         [self.titleArr addObject:bannerVM.name];
     }
     self.bannerView.imageURLStringsGroup = self.imageURLArr.copy;
@@ -133,6 +246,6 @@
 -(void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
     MYLog(@"===== %ld",index);
     LCHomeCollectionBananaViewModel *bannerVM = self.bannerDataArr[index];
-    !bannerVM.clickBanner ? : bannerVM.clickBanner(bannerVM.carouselType,bannerVM.iid);
+//    !bannerVM.clickBanner ? : bannerVM.clickBanner(@"");
 }
 @end
