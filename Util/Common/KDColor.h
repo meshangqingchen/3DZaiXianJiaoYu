@@ -54,15 +54,12 @@
 + (UIColor *)getC19Color;
 ///0xec2222 登录注册字体颜色
 + (UIColor *)getC20Color;
-
-
-
-
-
-
-
-///#0xE6E6E6 登录背景se
+///0xf4a752 获取验证码按钮 背景色黄
 + (UIColor *)getC21Color;
+
+
+
+
 
 + (UIColor *)getC22Color;
 + (UIColor *)getC23Color;

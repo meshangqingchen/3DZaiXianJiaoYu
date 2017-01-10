@@ -43,6 +43,13 @@
 		74450C8C1E237B6900F01EB7 /* LCEditPersonalDetailCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450C8B1E237B6900F01EB7 /* LCEditPersonalDetailCellViewModel.m */; };
 		74450C8F1E238F1B00F01EB7 /* LCChangeNickNameAlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450C8E1E238F1B00F01EB7 /* LCChangeNickNameAlerView.m */; };
 		74450C931E23BB3700F01EB7 /* LCSelectBirthdayAlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450C911E23BB3700F01EB7 /* LCSelectBirthdayAlerView.m */; };
+		74450C971E2478FA00F01EB7 /* LCChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450C961E2478FA00F01EB7 /* LCChangePasswordViewController.m */; };
+		74450C9A1E24791300F01EB7 /* LCChangePasswordViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450C991E24791300F01EB7 /* LCChangePasswordViewModel.m */; };
+		74450C9D1E247C0500F01EB7 /* LCChangePasswordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450C9C1E247C0500F01EB7 /* LCChangePasswordCell.m */; };
+		74450CA01E24817500F01EB7 /* LCUseOldPaswordChangePaswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450C9F1E24817500F01EB7 /* LCUseOldPaswordChangePaswordViewController.m */; };
+		74450CA31E24818F00F01EB7 /* LCUseOldPaswordChangePaswordViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450CA21E24818F00F01EB7 /* LCUseOldPaswordChangePaswordViewModel.m */; };
+		74450CA61E249AA000F01EB7 /* LCUseVerificationChangePasswordViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450CA51E249AA000F01EB7 /* LCUseVerificationChangePasswordViewModel.m */; };
+		74450CA91E249ABC00F01EB7 /* LCUseVerificationChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450CA81E249ABC00F01EB7 /* LCUseVerificationChangePasswordViewController.m */; };
 		744EEBC61E1E4F3D002FE8B1 /* LCMySelfMainHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 744EEBC51E1E4F3D002FE8B1 /* LCMySelfMainHeaderView.m */; };
 		744EEBC91E1E62A5002FE8B1 /* LCPersonalCenterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 744EEBC81E1E62A5002FE8B1 /* LCPersonalCenterCell.m */; };
 		744EEBCC1E1E62D6002FE8B1 /* LCPersonalCenterHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 744EEBCB1E1E62D6002FE8B1 /* LCPersonalCenterHeaderView.m */; };
@@ -304,6 +311,20 @@
 		74450C8E1E238F1B00F01EB7 /* LCChangeNickNameAlerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCChangeNickNameAlerView.m; sourceTree = "<group>"; };
 		74450C901E23BB3700F01EB7 /* LCSelectBirthdayAlerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCSelectBirthdayAlerView.h; sourceTree = "<group>"; };
 		74450C911E23BB3700F01EB7 /* LCSelectBirthdayAlerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCSelectBirthdayAlerView.m; sourceTree = "<group>"; };
+		74450C951E2478FA00F01EB7 /* LCChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCChangePasswordViewController.h; sourceTree = "<group>"; };
+		74450C961E2478FA00F01EB7 /* LCChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCChangePasswordViewController.m; sourceTree = "<group>"; };
+		74450C981E24791300F01EB7 /* LCChangePasswordViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCChangePasswordViewModel.h; sourceTree = "<group>"; };
+		74450C991E24791300F01EB7 /* LCChangePasswordViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCChangePasswordViewModel.m; sourceTree = "<group>"; };
+		74450C9B1E247C0500F01EB7 /* LCChangePasswordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCChangePasswordCell.h; sourceTree = "<group>"; };
+		74450C9C1E247C0500F01EB7 /* LCChangePasswordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCChangePasswordCell.m; sourceTree = "<group>"; };
+		74450C9E1E24817500F01EB7 /* LCUseOldPaswordChangePaswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCUseOldPaswordChangePaswordViewController.h; sourceTree = "<group>"; };
+		74450C9F1E24817500F01EB7 /* LCUseOldPaswordChangePaswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCUseOldPaswordChangePaswordViewController.m; sourceTree = "<group>"; };
+		74450CA11E24818F00F01EB7 /* LCUseOldPaswordChangePaswordViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCUseOldPaswordChangePaswordViewModel.h; sourceTree = "<group>"; };
+		74450CA21E24818F00F01EB7 /* LCUseOldPaswordChangePaswordViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCUseOldPaswordChangePaswordViewModel.m; sourceTree = "<group>"; };
+		74450CA41E249AA000F01EB7 /* LCUseVerificationChangePasswordViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCUseVerificationChangePasswordViewModel.h; sourceTree = "<group>"; };
+		74450CA51E249AA000F01EB7 /* LCUseVerificationChangePasswordViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCUseVerificationChangePasswordViewModel.m; sourceTree = "<group>"; };
+		74450CA71E249ABC00F01EB7 /* LCUseVerificationChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCUseVerificationChangePasswordViewController.h; sourceTree = "<group>"; };
+		74450CA81E249ABC00F01EB7 /* LCUseVerificationChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCUseVerificationChangePasswordViewController.m; sourceTree = "<group>"; };
 		744EEBC41E1E4F3D002FE8B1 /* LCMySelfMainHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMySelfMainHeaderView.h; sourceTree = "<group>"; };
 		744EEBC51E1E4F3D002FE8B1 /* LCMySelfMainHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMySelfMainHeaderView.m; sourceTree = "<group>"; };
 		744EEBC71E1E62A5002FE8B1 /* LCPersonalCenterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPersonalCenterCell.h; sourceTree = "<group>"; };
@@ -1343,6 +1364,12 @@
 				74450C851E236C8000F01EB7 /* LCEditPersonalDetailViewController.m */,
 				741B05901E20CBE7002860A7 /* LCSetingViewController.h */,
 				741B05911E20CBE7002860A7 /* LCSetingViewController.m */,
+				74450C951E2478FA00F01EB7 /* LCChangePasswordViewController.h */,
+				74450C961E2478FA00F01EB7 /* LCChangePasswordViewController.m */,
+				74450C9E1E24817500F01EB7 /* LCUseOldPaswordChangePaswordViewController.h */,
+				74450C9F1E24817500F01EB7 /* LCUseOldPaswordChangePaswordViewController.m */,
+				74450CA71E249ABC00F01EB7 /* LCUseVerificationChangePasswordViewController.h */,
+				74450CA81E249ABC00F01EB7 /* LCUseVerificationChangePasswordViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1369,6 +1396,8 @@
 				74450C911E23BB3700F01EB7 /* LCSelectBirthdayAlerView.m */,
 				741B05961E20D1BE002860A7 /* LCSetingCell.h */,
 				741B05971E20D1BE002860A7 /* LCSetingCell.m */,
+				74450C9B1E247C0500F01EB7 /* LCChangePasswordCell.h */,
+				74450C9C1E247C0500F01EB7 /* LCChangePasswordCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1390,6 +1419,12 @@
 				741B058E1E20CBC7002860A7 /* LCSetingViewModel.m */,
 				741B05931E20CD0B002860A7 /* LCSetingCellViewModel.h */,
 				741B05941E20CD0B002860A7 /* LCSetingCellViewModel.m */,
+				74450C981E24791300F01EB7 /* LCChangePasswordViewModel.h */,
+				74450C991E24791300F01EB7 /* LCChangePasswordViewModel.m */,
+				74450CA11E24818F00F01EB7 /* LCUseOldPaswordChangePaswordViewModel.h */,
+				74450CA21E24818F00F01EB7 /* LCUseOldPaswordChangePaswordViewModel.m */,
+				74450CA41E249AA000F01EB7 /* LCUseVerificationChangePasswordViewModel.h */,
+				74450CA51E249AA000F01EB7 /* LCUseVerificationChangePasswordViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1923,6 +1958,7 @@
 				7485FCE61DFE44FB00E6D23D /* LCMyCourseViewModel.m in Sources */,
 				741B058F1E20CBC7002860A7 /* LCSetingViewModel.m in Sources */,
 				7485FC111DFC39FB00E6D23D /* UIPlaceHolderTextView.m in Sources */,
+				74450C9D1E247C0500F01EB7 /* LCChangePasswordCell.m in Sources */,
 				7485FD9E1DFFFA1500E6D23D /* SDCycleScrollView.m in Sources */,
 				7485FDA91DFFFA1500E6D23D /* UIImage+GIF.m in Sources */,
 				7485FB111DF90A1B00E6D23D /* ViewController.m in Sources */,
@@ -1940,6 +1976,7 @@
 				740F0EEF1E10D92F00EEFC3B /* LCCourseCellSonViewModel.m in Sources */,
 				7485FC041DFC39FB00E6D23D /* UIView+HUD.m in Sources */,
 				7485FB551DFA8FCD00E6D23D /* BaseViewModel.m in Sources */,
+				74450C9A1E24791300F01EB7 /* LCChangePasswordViewModel.m in Sources */,
 				747812C41E01127200507DCA /* BaseView.m in Sources */,
 				7485FD1A1DFFE0C800E6D23D /* LCCollectionReusableHeaderView.m in Sources */,
 				740F0EEC1E10D7F800EEFC3B /* LCCourseCellViewModel.m in Sources */,
@@ -1975,7 +2012,10 @@
 				7485FB9B1DFC382800E6D23D /* WMProgressView.m in Sources */,
 				7485FDAF1DFFFA1500E6D23D /* UIView+SDExtension.m in Sources */,
 				7485FCC51DFD523100E6D23D /* BaseViewController.m in Sources */,
+				74450CA01E24817500F01EB7 /* LCUseOldPaswordChangePaswordViewController.m in Sources */,
+				74450CA91E249ABC00F01EB7 /* LCUseVerificationChangePasswordViewController.m in Sources */,
 				7485FCBB1DFD4FC800E6D23D /* JDStatusBarStyle.m in Sources */,
+				74450C971E2478FA00F01EB7 /* LCChangePasswordViewController.m in Sources */,
 				74C91A6A1E1643480065BAFE /* LCUserTeacherTalkViewController.m in Sources */,
 				7485FCE01DFE42BE00E6D23D /* LCRootViewController.m in Sources */,
 				7485FB971DFC382800E6D23D /* RDVTabBarController.m in Sources */,
@@ -2035,11 +2075,13 @@
 				748CF1E51E0A9DA300E60F68 /* LCDetailEvaluateHeaderView.m in Sources */,
 				748245131E14D5FF004735DB /* LCMessageViewController.m in Sources */,
 				74D2F6731E08067400C84317 /* LCEvaluateDetailViewModel.m in Sources */,
+				74450CA61E249AA000F01EB7 /* LCUseVerificationChangePasswordViewModel.m in Sources */,
 				7485FBA71DFC382800E6D23D /* YZEmotionManager.m in Sources */,
 				747812CA1E011D5C00507DCA /* LCIntroView.m in Sources */,
 				7485FCBC1DFD4FC800E6D23D /* JDStatusBarView.m in Sources */,
 				7485FDCC1E00F87C00E6D23D /* LCCourseViewModel.m in Sources */,
 				7485FB0B1DF90A1B00E6D23D /* main.m in Sources */,
+				74450CA31E24818F00F01EB7 /* LCUseOldPaswordChangePaswordViewModel.m in Sources */,
 				7485FBA91DFC382800E6D23D /* YZTextAttachment.m in Sources */,
 				7485FCFB1DFE82C300E6D23D /* LCHomeViewController.m in Sources */,
 				7485FCE91DFE451400E6D23D /* LCMyCourseViewController.m in Sources */,

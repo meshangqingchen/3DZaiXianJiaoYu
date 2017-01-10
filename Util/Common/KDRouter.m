@@ -45,7 +45,10 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(KDRouter)
                                    @"LCLoginViewModel" : @"LCLoginViewController",
                                    @"textViewModel" : @"textViewController",
                                    @"LCSetingViewModel" : @"LCSetingViewController",
-                                   @"LCEditPersonalDetailViewModel" : @"LCEditPersonalDetailViewController"};
+                                   @"LCEditPersonalDetailViewModel" : @"LCEditPersonalDetailViewController",
+                                   @"LCChangePasswordViewModel" : @"LCChangePasswordViewController",
+                                   @"LCUseOldPaswordChangePaswordViewModel" : @"LCUseOldPaswordChangePaswordViewController",
+                                   @"LCUseVerificationChangePasswordViewModel" : @"LCUseVerificationChangePasswordViewController"};
     }
 	return _viewModelViewMappings;
 }
