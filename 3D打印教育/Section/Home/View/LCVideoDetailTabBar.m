@@ -21,57 +21,38 @@
     
     @weakify(self)
     CGFloat w = SCREEN_WIDTH/5;
-    self.downloadBT = [UIButton new];
-    [_downloadBT setImage:[UIImage imageNamed:@"xiazai"] forState:0];
-    [_downloadBT setTitleColor:[KDColor getC3Color] forState:0];
-    _downloadBT.titleLabel.font = [[KDFont sharedKDFont]getF20Font];
-    [_downloadBT setTitle:@"下载" forState:0];
-    [self addSubview:_downloadBT];
-    [_downloadBT mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.bottom.mas_equalTo(0);
-        make.width.mas_equalTo(w);
-    }];
-    [_downloadBT setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:7];
-    [_downloadBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
-        @strongify(self)
-        !self.videoDetailViewViewModel.downLoadVideo ? : self.videoDetailViewViewModel.downLoadVideo(@"videoID");
-    }];
+//    self.downloadBT = [UIButton new];
+//    [_downloadBT setImage:[UIImage imageNamed:@"xiazai"] forState:0];
+//    [_downloadBT setTitleColor:[KDColor getC3Color] forState:0];
+//    _downloadBT.titleLabel.font = [[KDFont sharedKDFont]getF20Font];
+//    [_downloadBT setTitle:@"下载" forState:0];
+//    [self addSubview:_downloadBT];
+//    [_downloadBT mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.top.bottom.mas_equalTo(0);
+//        make.width.mas_equalTo(w);
+//    }];
+//    [_downloadBT setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:7];
+//    [_downloadBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+//        @strongify(self)
+//        !self.videoDetailViewViewModel.downLoadVideo ? : self.videoDetailViewViewModel.downLoadVideo(@"videoID");
+//    }];
     
-    self.shareBT = [UIButton new];
-    [_shareBT setImage:[UIImage imageNamed:@"fenxiang"] forState:0];
-    [_shareBT setTitleColor:[KDColor getC3Color] forState:0];
-    _shareBT.titleLabel.font = [[KDFont sharedKDFont]getF20Font];
-    [_shareBT setTitle:@"分享" forState:0];
-    [self addSubview:_shareBT];
-    [_shareBT mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(_downloadBT.mas_right).mas_equalTo(0);
-        make.top.bottom.mas_equalTo(0);
-        make.width.mas_equalTo(w);
-    }];
-    [_shareBT setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:7];
-    [_shareBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
-        @strongify(self)
-        !self.videoDetailViewViewModel.shareVideo ? : self.videoDetailViewViewModel.shareVideo(@"videoID");
-    }];
-    
-    
-    self.collectBT = [UIButton new];
-    [_collectBT setImage:[UIImage imageNamed:@"normal_daxingxing"] forState:0];
-    [_collectBT setImage:[UIImage imageNamed:@"select_daxingxing"] forState:UIControlStateSelected];
-    [_collectBT setTitleColor:[KDColor getC3Color] forState:0];
-    _collectBT.titleLabel.font = [[KDFont sharedKDFont]getF20Font];
-    [_collectBT setTitle:@"收藏" forState:0];
-    [self addSubview:_collectBT];
-    [_collectBT mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(_shareBT.mas_right).mas_equalTo(0);
-        make.top.bottom.mas_equalTo(0);
-        make.width.mas_equalTo(w);
-    }];
-    [_collectBT setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:7];
-    [_collectBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
-        @strongify(self)
-        !self.videoDetailViewViewModel.collectVideo ? : self.videoDetailViewViewModel.collectVideo(@"videoID",sender);
-    }];
+//    self.shareBT = [UIButton new];
+//    [_shareBT setImage:[UIImage imageNamed:@"fenxiang"] forState:0];
+//    [_shareBT setTitleColor:[KDColor getC3Color] forState:0];
+//    _shareBT.titleLabel.font = [[KDFont sharedKDFont]getF20Font];
+//    [_shareBT setTitle:@"分享" forState:0];
+//    [self addSubview:_shareBT];
+//    [_shareBT mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(_downloadBT.mas_right).mas_equalTo(0);
+//        make.top.bottom.mas_equalTo(0);
+//        make.width.mas_equalTo(w);
+//    }];
+//    [_shareBT setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:7];
+//    [_shareBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+//        @strongify(self)
+//        !self.videoDetailViewViewModel.shareVideo ? : self.videoDetailViewViewModel.shareVideo(@"videoID");
+//    }];
     
     
     self.commentBT = [UIButton new];
@@ -81,36 +62,76 @@
     [_commentBT setTitle:@"评论" forState:0];
     [self addSubview:_commentBT];
     [_commentBT mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(_collectBT.mas_right).mas_equalTo(0);
-        make.top.bottom.mas_equalTo(0);
+        make.left.mas_offset(0);
+        make.top.bottom.mas_offset(0);
         make.width.mas_equalTo(w);
     }];
     [_commentBT setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:7];
     [_commentBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
         @strongify(self)
-        !self.videoDetailViewViewModel.pinglunVideo ? : self.videoDetailViewViewModel.pinglunVideo(@"videoID");
+        !self.videoDetailViewViewModel.pinglunVideo ? : self.videoDetailViewViewModel.pinglunVideo(self.videoDetailViewViewModel.courseID);
     }];
+
     
-    
-    self.counselBT = [UIButton new];
-    [_counselBT setImage:[UIImage imageNamed:@"zixun"] forState:0];
-    [_counselBT setTitleColor:[KDColor getC3Color] forState:0];
-    _counselBT.titleLabel.font = [[KDFont sharedKDFont]getF20Font];
-    [_counselBT setTitle:@"咨询" forState:0];
-    [self addSubview:_counselBT];
-    [_counselBT mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(_commentBT.mas_right).mas_equalTo(0);
-        make.top.bottom.mas_equalTo(0);
-        make.width.mas_equalTo(w);
+    self.collectBT = [UIButton new];
+    [_collectBT setImage:[UIImage imageNamed:@"normal_daxingxing"] forState:0];
+    [_collectBT setImage:[UIImage imageNamed:@"select_daxingxing"] forState:UIControlStateSelected];
+    [_collectBT setTitleColor:[KDColor getC3Color] forState:0];
+    _collectBT.titleLabel.font = [[KDFont sharedKDFont]getF20Font];
+    [_collectBT setTitle:@"收藏" forState:0];
+    [self addSubview:_collectBT];
+    [_collectBT mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.commentBT.mas_right).mas_offset(0);
+        make.top.bottom.mas_offset(0);
+        make.width.mas_offset(w);
     }];
-    [_counselBT setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:7];
-    [_counselBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+    [_collectBT setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:7];
+    [_collectBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
         @strongify(self)
-        !self.videoDetailViewViewModel.consultVideo ? : self.videoDetailViewViewModel.consultVideo(@"videoID");
+        !self.videoDetailViewViewModel.collectVideo ? : self.videoDetailViewViewModel.collectVideo(self.videoDetailViewViewModel.courseID,sender);
     }];
+    
+    self.joinFreeCourseBT = [UIButton new];
+    [self.joinFreeCourseBT setTitle:@"参加该课程" forState:0];
+    [self.joinFreeCourseBT setTitleColor:[KDColor getC0Color] forState:0];
+    self.joinFreeCourseBT.titleLabel.font = [[KDFont sharedKDFont]getF30Font];
+    self.joinFreeCourseBT.backgroundColor = [KDColor getX1Color];
+    [self addSubview:_joinFreeCourseBT];
+    [self.joinFreeCourseBT mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.collectBT.mas_right).mas_offset(0);
+        make.bottom.top.mas_offset(0);
+        make.right.mas_offset(0);
+    }];
+    [self.joinFreeCourseBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+        @strongify(self)
+        !self.videoDetailViewViewModel.joinFreeCourse ? : self.videoDetailViewViewModel.joinFreeCourse(self.videoDetailViewViewModel.courseID);
+    }];
+    
+    
+    
+    
+//    self.counselBT = [UIButton new];
+//    [_counselBT setImage:[UIImage imageNamed:@"zixun"] forState:0];
+//    [_counselBT setTitleColor:[KDColor getC3Color] forState:0];
+//    _counselBT.titleLabel.font = [[KDFont sharedKDFont]getF20Font];
+//    [_counselBT setTitle:@"咨询" forState:0];
+//    [self addSubview:_counselBT];
+//    [_counselBT mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(_commentBT.mas_right).mas_equalTo(0);
+//        make.top.bottom.mas_equalTo(0);
+//        make.width.mas_equalTo(w);
+//    }];
+//    [_counselBT setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:7];
+//    [_counselBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+//        @strongify(self)
+//        !self.videoDetailViewViewModel.consultVideo ? : self.videoDetailViewViewModel.consultVideo(@"videoID");
+//    }];
+
+    
 }
 
 -(void)bindViewModel:(id)viewModel{
     self.videoDetailViewViewModel = viewModel;
+    self.collectBT.selected = self.videoDetailViewViewModel.ifCollected;
 }
 @end

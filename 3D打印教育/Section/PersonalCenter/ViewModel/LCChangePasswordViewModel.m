@@ -25,7 +25,7 @@
     }
 }
 
--(void)requestRemoteDataWithPage:(NSUInteger)page completeHandle:(void (^)(id))complete{
+-(void)requestRemoteDataWithPage:(NSUInteger)curpage completeHandle:(void (^)(id))complete{
     NSDictionary *dic =  @{@"leftTitle":@"使用当前密码验证"};
     NSDictionary *dic2 = @{@"leftTitle":@"使用手机号验证"};
     [self.mutableDataArr addObjectsFromArray:@[dic,dic2]];

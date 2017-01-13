@@ -7,12 +7,25 @@
 //
 
 #import "LCDetailEvaluateInputAccessoryView.h"
-
+#import <IQKeyboardManager.h>
 @implementation LCDetailEvaluateInputAccessoryView
 -(void)setupViews{
-    self.backgroundColor = [KDColor getC9Color];
-    self.textView = [[UIPlaceHolderTextView alloc]initWithFrame:CGRectMake(15, 15, SCREEN_WIDTH-30, 75)];
     
+//    self.userInteractionEnabled = NO;
+    IQKeyboardManager.sharedManager.shouldResignOnTouchOutside = NO;
+    self.starView = [[KDFiveStarView alloc] initWithStarSelectedImgName:@"star_selected" unselectImgName:@"star_unselect" starWH:20.f starPadding:10];
+
+    [self addSubview:_starView];
+    [_starView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_offset(0);
+        make.top.mas_offset(15);
+        make.width.mas_equalTo(140);
+        make.height.mas_equalTo(20);
+    }];
+    
+    self.backgroundColor = [UIColor whiteColor];
+    self.textView = [[UIPlaceHolderTextView alloc]initWithFrame:CGRectMake(15, 45, SCREEN_WIDTH-30, 75)];
+    _textView.backgroundColor =[KDColor getC9Color];
     _textView.placeholder = @"写评论...";
     _textView.layer.cornerRadius = 4;
     _textView.layer.borderWidth = 0.5;
@@ -24,7 +37,7 @@
     
     self.fasongBT = [UIButton new];
     _fasongBT.layer.cornerRadius = 3;
-    _fasongBT.backgroundColor = [KDColor getC13Color];
+    _fasongBT.backgroundColor = [KDColor getX1Color];
     _fasongBT.titleLabel.font = [[KDFont sharedKDFont]getF28Font];
     [_fasongBT setTitle:@"发送" forState:0];
     [_fasongBT setTitleColor:[KDColor getC0Color] forState:0];

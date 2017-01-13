@@ -9,5 +9,7 @@
 #import "BaseTableViewCell.h"
 
 @interface LCCourseCell : BaseTableViewCell
+@property(nonatomic,strong) UIImageView *videoImageView;
 @property(nonatomic,strong) UILabel *titleLB;
+@property(nonatomic,strong) UILabel *timeLB;
 @end

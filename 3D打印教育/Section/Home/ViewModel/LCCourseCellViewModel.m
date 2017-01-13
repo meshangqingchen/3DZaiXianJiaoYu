@@ -7,14 +7,18 @@
 //
 
 #import "LCCourseCellViewModel.h"
-
+#import "LCHomeDetailModel.h"
 @implementation LCCourseCellViewModel
 -(instancetype)initWithModel:(id)model{
     if (self = [super init]) {
-        NSDictionary *dic = model;
-        
-        self.title = dic[@"title"];
-        self.videoUrl = [NSURL URLWithString:dic[@"url"]];
+        LCVideoDetailVideolist *videoList = model;
+
+        self.idd = videoList.iid;
+        self.title = videoList.name;
+        self.imageURL = [NSURL URLWithString:videoList.img];
+        self.videoURL = [NSURL URLWithString:videoList.url];
+        self.creatTime = videoList.created_time;
+    
     }
     return self;
 }

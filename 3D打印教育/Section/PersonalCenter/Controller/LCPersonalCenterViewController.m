@@ -45,6 +45,11 @@ static NSString *identifierHeader = @"UITableViewHeaderFooterView";
     
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    !self.viewModel.networkRequestPersonalCenter ? : self.viewModel.networkRequestPersonalCenter();
+}
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return self.viewModel.dataSource.count;
 }

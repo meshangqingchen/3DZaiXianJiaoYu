@@ -19,5 +19,5 @@
 
 -(void)didSelectRowAtIndexPath:(NSIndexPath *)indexpath in:(UITableView *)tableView{}
 
--(void)requestRemoteDataWithPage:(NSUInteger)page completeHandle:(void (^)(id))complete{}
+-(void)requestRemoteDataWithPage:(NSUInteger)curpage completeHandle:(void (^)(id))complete{}
 @end

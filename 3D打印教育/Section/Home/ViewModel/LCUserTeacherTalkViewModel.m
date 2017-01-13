@@ -18,7 +18,7 @@
 
 }
 
--(void)requestRemoteDataWithPage:(NSUInteger)page completeHandle:(void (^)(id))complete{
+-(void)requestRemoteDataWithPage:(NSUInteger)curpage completeHandle:(void (^)(id))complete{
    
     LCUserTeacherTalkCellViewModel *userTeacherCellVM0 = [[LCUserTeacherTalkCellViewModel alloc]initWithModel: @{@"messageBody":@"我是",@"fromWho":@1}];
     

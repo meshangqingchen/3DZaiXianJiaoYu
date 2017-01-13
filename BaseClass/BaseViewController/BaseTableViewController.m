@@ -42,18 +42,19 @@ static void *xxcontext = &xxcontext;
         self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
             @strongify(self)
             self.viewModel.curpage = 1;
+            [self.viewModel.mutableDataArr removeAllObjects];
             [self.viewModel requestRemoteDataWithPage:self.viewModel.curpage completeHandle:^(id responseObj) {
                 [self.tableView.mj_header endRefreshing];
                 
                 // 这是下拉刷新 当上啦记载跟多的时候 没有了数据mj_footer 的状态就是endRefreshingWithNoMoreData就不能上啦了 所以在加载更多的时候 把状态改过来resetNoMoreData
                 
-//                NSDictionary *objDic = responseObj;
-//                NSNumber *morepage = objDic[@"morepage"];
-//                if ([morepage isEqual:@(1)]) {
-//                    [self.tableView.mj_footer resetNoMoreData];
-//                }else{
-//                    [self.tableView.mj_footer endRefreshingWithNoMoreData];
-//                }
+                NSDictionary *objDic = responseObj;
+                NSNumber *morepage = objDic[@"morepage"];
+                if ([morepage isEqual:@(1)]) {
+                    [self.tableView.mj_footer resetNoMoreData];
+                }else{
+                    [self.tableView.mj_footer endRefreshingWithNoMoreData];
+                }
             }];
         }];
     }
@@ -65,18 +66,18 @@ static void *xxcontext = &xxcontext;
             [self.viewModel requestRemoteDataWithPage:self.viewModel.curpage completeHandle:^(id responseObj) {
                 //morepage = 1是还有数据就用endRefreshing morepage=0没有更多数据了 endRefreshingWithNoMoreData
                 
-//                NSDictionary *objDic = responseObj;
-//                NSNumber *morepage = objDic[@"morepage"];
-//                if ([morepage isEqual:@(1)]) {
-//                    [self.tableView.mj_footer endRefreshing];
-//                }else{
-//                    [self.tableView.mj_footer endRefreshingWithNoMoreData];
-//                }
+                NSDictionary *objDic = responseObj;
+                NSNumber *morepage = objDic[@"morepage"];
+                if ([morepage isEqual:@(1)]) {
+                    [self.tableView.mj_footer endRefreshing];
+                }else{
+                    [self.tableView.mj_footer endRefreshingWithNoMoreData];
+                }
             }];
         }];
     }
     
-    [self.viewModel requestRemoteDataWithPage:self.viewModel.page completeHandle:^(id responseObj) {
+    [self.viewModel requestRemoteDataWithPage:self.viewModel.curpage completeHandle:^(id responseObj) {
         
     }];
 }

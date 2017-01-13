@@ -10,17 +10,25 @@
 
 @interface KDNetAPIManager_User : NSObject
 SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
-/////登录
-//-(NSURLSessionDataTask *)loginWith:(NSString *)phoneNum andPassword:(NSString *)password completeHandle:(void(^)(id responseObj,NSError *error))complete;
-//
-/////自动登录
-//-(NSURLSessionDataTask *)loginWithAuto:(NSString*)loginAuto completeHandle:(void (^)(id responseObj, NSError *error))complete;
-//
-/////注册
-//-(NSURLSessionDataTask *)registeredWith:(NSString *)phoneNum andPassword:(NSString *)password andRePassword:(NSString *)rePassword andNickname:(NSString *)nickname andVerification:(NSString *)code completeHandle:(void(^)(id responseObj,NSError *error))complete;
-//
-/////发短信
-//-(NSURLSessionDataTask *)getPhoneCordeWith:(NSString *)phoneNum andOperation:(NSString *)operation completeHandle:(void(^)(id responseObj,NSError *error))complete;
+
+///发短信
+-(NSURLSessionDataTask *)getPhoneCordeWith:(NSString *)phoneNum andOperation:(NSString *)operation completeHandle:(void(^)(id responseObj,NSError *error))complete;
+
+///注册
+-(NSURLSessionDataTask *)registeredWith:(NSString *)phoneNum andPassword:(NSString *)password andRePassword:(NSString *)rePassword andNickname:(NSString *)nickname andVerification:(NSString *)code completeHandle:(void(^)(id responseObj,NSError *error))complete;
+
+///登录
+-(NSURLSessionDataTask *)loginWith:(NSString *)phoneNum andPassword:(NSString *)password completeHandle:(void(^)(id responseObj,NSError *error))complete;
+
+///自动登录
+-(NSURLSessionDataTask *)loginWithAuto:(NSString*)loginAuto completeHandle:(void (^)(id responseObj, NSError *error))complete;
+
+///忘记密码设置新密码
+-(NSURLSessionDataTask *)forgotPasswordSettingNewPasswordWithPhone:(NSString *)phoneNum andNewPassword:(NSString *)newPassword andRePassword:(NSString *)rePassword andCord:(NSString *)cord CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
+
+
+
+
 
 
 
@@ -33,8 +41,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 //-(NSURLSessionDataTask *)adNewsDetailWithNewsID:(NSString *)adNewsID completeHandle:(void(^)(id responseObj,NSError *error))complete;
 /////更多好课
 //-(NSURLSessionDataTask *)courseListWithCurpage:(NSUInteger)curpage completeHandle:(void(^)(id responseObj,NSError *error))complete;
-/////个人信息
-//-(NSURLSessionDataTask *)personalInformationCompleteHandle:(void(^)(id responseObj,NSError *error))complete;
+
 /////修改昵称
 //-(NSURLSessionDataTask *)changeNickName:(NSString *)nickName CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 /////串头像
@@ -45,8 +52,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 //+(NSURLSessionDataTask *)changePhoneNum:(NSString *)phoneNum andCode:(NSString *)code CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 /////意见反馈
 //-(NSURLSessionDataTask *)suggestionFeedbackMsg:(NSString *)msg amdContact:(NSString *)contact CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
-/////忘记密码设置新密码
-//-(NSURLSessionDataTask *)forgotPasswordSettingNewPasswordWithPhone:(NSString *)phoneNum andNewPassword:(NSString *)newPassword andRePassword:(NSString *)rePassword andCord:(NSString *)cord CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 /////视频详情
 //-(NSURLSessionDataTask *)videoDetailVideoID:(NSString *)videoID CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 /////报名
@@ -74,9 +79,17 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 /////检查更新
 //+(NSURLSessionDataTask *)checkUpdateWith:(NSString *)strUrl CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 
-///home
+///home首页
 -(NSURLSessionDataTask *)homeJsonCompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 ///课程详情
 -(NSURLSessionDataTask *)courseDetailWithPlanld:(NSString *)planId CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
+///课程评价列表 assessListWithPlanld
+-(NSURLSessionDataTask *)assessListWithPlanld:(NSString *)planId andCurpage:(NSInteger)curpage CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
+///收藏OBJ 
+-(NSURLSessionDataTask *)addCollectWithOBJ:(NSString *)OBJID andType:(NSInteger)type CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
+///免费加入课程
+-(NSURLSessionDataTask *)addFreeCourse:(NSString *)coursrID CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 
+///个人信息
+-(NSURLSessionDataTask *)personalInformationCompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 @end

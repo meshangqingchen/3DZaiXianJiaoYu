@@ -36,7 +36,7 @@
 @implementation LCHomeRecommendclasstypelist
 
 + (NSDictionary *)modelCustomPropertyMapper {
-    return @{@"iid" : @"id",@"discription":@"discrip"};
+    return @{@"iid" : @"id",@"discrip":@"discription"};
 }
 
 @end
@@ -51,14 +51,14 @@
 
 @implementation LCHomeCarousellist
 + (NSDictionary *)modelCustomPropertyMapper {
-    return @{@"iid" : @"id",@"discription":@"discrip"};
+    return @{@"iid" : @"id",@"discrip":@"discription"};//discrip
 }
 @end
 
 
 @implementation LCHomeSignuplist
 + (NSDictionary *)modelCustomPropertyMapper {
-    return @{@"iid" : @"id",@"discription":@"discrip"};
+    return @{@"iid" : @"id",@"discrip":@"discription"};
 }
 @end
 

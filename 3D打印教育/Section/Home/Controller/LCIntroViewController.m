@@ -34,12 +34,17 @@
     
     _introView = [[LCIntroView alloc]init];
     _introView.backgroundColor = [KDColor getC0Color];
-    
-    [_introView bindViewModel:nil];
     [_scroView addSubview:_introView];
     [_introView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
         make.width.mas_equalTo(SCREEN_WIDTH);
+    }];
+    
+    
+    @weakify(self)
+    [self.viewModel setBindViewModel:^(id viewModel) {
+        @strongify(self)
+        [self.introView bindViewModel:viewModel];
     }];
 }
 

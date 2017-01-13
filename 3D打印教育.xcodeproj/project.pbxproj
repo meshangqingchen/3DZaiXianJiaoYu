@@ -55,6 +55,13 @@
 		74450CB21E24C40500F01EB7 /* LCTeachersCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450CB11E24C40500F01EB7 /* LCTeachersCollectionViewCell.m */; };
 		74450CB61E24C4FF00F01EB7 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450CB51E24C4FF00F01EB7 /* iCarousel.m */; };
 		74450CB91E24C72B00F01EB7 /* LCTeacherCollectionCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450CB81E24C72B00F01EB7 /* LCTeacherCollectionCellViewModel.m */; };
+		74450CBC1E25F1CE00F01EB7 /* LCIntroViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450CBB1E25F1CE00F01EB7 /* LCIntroViewViewModel.m */; };
+		74450CBF1E261EDC00F01EB7 /* LCAssessListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450CBE1E261EDC00F01EB7 /* LCAssessListModel.m */; };
+		74450CC21E271C7B00F01EB7 /* LCRegisteredViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450CC11E271C7B00F01EB7 /* LCRegisteredViewModel.m */; };
+		74450CC51E271C9700F01EB7 /* LCRegisteredViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450CC41E271C9700F01EB7 /* LCRegisteredViewController.m */; };
+		74450CC81E27210400F01EB7 /* LCForgotPasswordViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450CC71E27210400F01EB7 /* LCForgotPasswordViewModel.m */; };
+		74450CCB1E27211300F01EB7 /* LCForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450CCA1E27211300F01EB7 /* LCForgotPasswordViewController.m */; };
+		74450CD11E273FB500F01EB7 /* LCUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450CD01E273FB500F01EB7 /* LCUserModel.m */; };
 		744EEBC61E1E4F3D002FE8B1 /* LCMySelfMainHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 744EEBC51E1E4F3D002FE8B1 /* LCMySelfMainHeaderView.m */; };
 		744EEBC91E1E62A5002FE8B1 /* LCPersonalCenterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 744EEBC81E1E62A5002FE8B1 /* LCPersonalCenterCell.m */; };
 		744EEBCC1E1E62D6002FE8B1 /* LCPersonalCenterHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 744EEBCB1E1E62D6002FE8B1 /* LCPersonalCenterHeaderView.m */; };
@@ -63,6 +70,8 @@
 		747812C41E01127200507DCA /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 747812C31E01127200507DCA /* BaseView.m */; };
 		747812C71E0113A200507DCA /* LCVideoDetailTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 747812C61E0113A200507DCA /* LCVideoDetailTabBar.m */; };
 		747812CA1E011D5C00507DCA /* LCIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 747812C91E011D5C00507DCA /* LCIntroView.m */; };
+		747BF1AC1E275331000137E5 /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF1AB1E275331000137E5 /* LaunchViewController.m */; };
+		747BF1F11E279C59000137E5 /* KDFiveStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF1F01E279C59000137E5 /* KDFiveStarView.m */; };
 		747EFB701E080F4100041C56 /* UIView+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 747EFB6F1E080F4100041C56 /* UIView+BlocksKit.m */; };
 		748245041E13C363004735DB /* LCHomeDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 748245031E13C363004735DB /* LCHomeDetailModel.m */; };
 		748245071E14D4B7004735DB /* LCMyMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 748245061E14D4B7004735DB /* LCMyMessageViewController.m */; };
@@ -340,6 +349,20 @@
 		74450CB51E24C4FF00F01EB7 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		74450CB71E24C72B00F01EB7 /* LCTeacherCollectionCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTeacherCollectionCellViewModel.h; sourceTree = "<group>"; };
 		74450CB81E24C72B00F01EB7 /* LCTeacherCollectionCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTeacherCollectionCellViewModel.m; sourceTree = "<group>"; };
+		74450CBA1E25F1CE00F01EB7 /* LCIntroViewViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCIntroViewViewModel.h; sourceTree = "<group>"; };
+		74450CBB1E25F1CE00F01EB7 /* LCIntroViewViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCIntroViewViewModel.m; sourceTree = "<group>"; };
+		74450CBD1E261EDC00F01EB7 /* LCAssessListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCAssessListModel.h; sourceTree = "<group>"; };
+		74450CBE1E261EDC00F01EB7 /* LCAssessListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCAssessListModel.m; sourceTree = "<group>"; };
+		74450CC01E271C7B00F01EB7 /* LCRegisteredViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCRegisteredViewModel.h; sourceTree = "<group>"; };
+		74450CC11E271C7B00F01EB7 /* LCRegisteredViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCRegisteredViewModel.m; sourceTree = "<group>"; };
+		74450CC31E271C9700F01EB7 /* LCRegisteredViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCRegisteredViewController.h; sourceTree = "<group>"; };
+		74450CC41E271C9700F01EB7 /* LCRegisteredViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCRegisteredViewController.m; sourceTree = "<group>"; };
+		74450CC61E27210400F01EB7 /* LCForgotPasswordViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCForgotPasswordViewModel.h; sourceTree = "<group>"; };
+		74450CC71E27210400F01EB7 /* LCForgotPasswordViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCForgotPasswordViewModel.m; sourceTree = "<group>"; };
+		74450CC91E27211300F01EB7 /* LCForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCForgotPasswordViewController.h; sourceTree = "<group>"; };
+		74450CCA1E27211300F01EB7 /* LCForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCForgotPasswordViewController.m; sourceTree = "<group>"; };
+		74450CCF1E273FB500F01EB7 /* LCUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCUserModel.h; sourceTree = "<group>"; };
+		74450CD01E273FB500F01EB7 /* LCUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCUserModel.m; sourceTree = "<group>"; };
 		744EEBC41E1E4F3D002FE8B1 /* LCMySelfMainHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMySelfMainHeaderView.h; sourceTree = "<group>"; };
 		744EEBC51E1E4F3D002FE8B1 /* LCMySelfMainHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMySelfMainHeaderView.m; sourceTree = "<group>"; };
 		744EEBC71E1E62A5002FE8B1 /* LCPersonalCenterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPersonalCenterCell.h; sourceTree = "<group>"; };
@@ -356,6 +379,10 @@
 		747812C61E0113A200507DCA /* LCVideoDetailTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCVideoDetailTabBar.m; sourceTree = "<group>"; };
 		747812C81E011D5C00507DCA /* LCIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCIntroView.h; sourceTree = "<group>"; };
 		747812C91E011D5C00507DCA /* LCIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCIntroView.m; sourceTree = "<group>"; };
+		747BF1AA1E275331000137E5 /* LaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchViewController.h; sourceTree = "<group>"; };
+		747BF1AB1E275331000137E5 /* LaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchViewController.m; sourceTree = "<group>"; };
+		747BF1EF1E279C59000137E5 /* KDFiveStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDFiveStarView.h; sourceTree = "<group>"; };
+		747BF1F01E279C59000137E5 /* KDFiveStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDFiveStarView.m; sourceTree = "<group>"; };
 		747EFB6E1E080F4100041C56 /* UIView+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BlocksKit.h"; sourceTree = "<group>"; };
 		747EFB6F1E080F4100041C56 /* UIView+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BlocksKit.m"; sourceTree = "<group>"; };
 		748245021E13C363004735DB /* LCHomeDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHomeDetailModel.h; sourceTree = "<group>"; };
@@ -818,6 +845,8 @@
 				7485FB4E1DFA8BF300E6D23D /* BaseViewController */,
 				7485FB501DFA8CCC00E6D23D /* LCNavigationStackService.h */,
 				7485FB511DFA8CCC00E6D23D /* LCNavigationStackService.m */,
+				74450CCF1E273FB500F01EB7 /* LCUserModel.h */,
+				74450CD01E273FB500F01EB7 /* LCUserModel.m */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -1117,6 +1146,8 @@
 				7485FBE01DFC39FB00E6D23D /* RegexUtil.m */,
 				74D2F66B1E0394DA00C84317 /* LCTextLinePositionModifier.h */,
 				74D2F66C1E0394DA00C84317 /* LCTextLinePositionModifier.m */,
+				747BF1EF1E279C59000137E5 /* KDFiveStarView.h */,
+				747BF1F01E279C59000137E5 /* KDFiveStarView.m */,
 				741B05991E20F4E1002860A7 /* NKColorSwitch.h */,
 				741B059A1E20F4E1002860A7 /* NKColorSwitch.m */,
 				7485FBE11DFC39FB00E6D23D /* SynthesizeSingleton.h */,
@@ -1236,6 +1267,8 @@
 				74F90D001E1265B7005E5D09 /* LCHomeModel.m */,
 				748245021E13C363004735DB /* LCHomeDetailModel.h */,
 				748245031E13C363004735DB /* LCHomeDetailModel.m */,
+				74450CBD1E261EDC00F01EB7 /* LCAssessListModel.h */,
+				74450CBE1E261EDC00F01EB7 /* LCAssessListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1308,6 +1341,8 @@
 				740F0EF11E10FBBD00EEFC3B /* LCVideoDetailViewViewModel.m */,
 				7485FDC41E00F81600E6D23D /* LCIntroViewModel.h */,
 				7485FDC51E00F81600E6D23D /* LCIntroViewModel.m */,
+				74450CBA1E25F1CE00F01EB7 /* LCIntroViewViewModel.h */,
+				74450CBB1E25F1CE00F01EB7 /* LCIntroViewViewModel.m */,
 				7485FDCA1E00F87C00E6D23D /* LCCourseViewModel.h */,
 				7485FDCB1E00F87C00E6D23D /* LCCourseViewModel.m */,
 				740F0EEA1E10D7F800EEFC3B /* LCCourseCellViewModel.h */,
@@ -1653,6 +1688,10 @@
 			children = (
 				74C3D9F11E1F5EEB00BA7F0F /* LCLoginViewModel.h */,
 				74C3D9F21E1F5EEB00BA7F0F /* LCLoginViewModel.m */,
+				74450CC01E271C7B00F01EB7 /* LCRegisteredViewModel.h */,
+				74450CC11E271C7B00F01EB7 /* LCRegisteredViewModel.m */,
+				74450CC61E27210400F01EB7 /* LCForgotPasswordViewModel.h */,
+				74450CC71E27210400F01EB7 /* LCForgotPasswordViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1662,6 +1701,12 @@
 			children = (
 				74C3D9F41E1F5F0D00BA7F0F /* LCLoginViewController.h */,
 				74C3D9F51E1F5F0D00BA7F0F /* LCLoginViewController.m */,
+				74450CC31E271C9700F01EB7 /* LCRegisteredViewController.h */,
+				74450CC41E271C9700F01EB7 /* LCRegisteredViewController.m */,
+				74450CC91E27211300F01EB7 /* LCForgotPasswordViewController.h */,
+				74450CCA1E27211300F01EB7 /* LCForgotPasswordViewController.m */,
+				747BF1AA1E275331000137E5 /* LaunchViewController.h */,
+				747BF1AB1E275331000137E5 /* LaunchViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2014,6 +2059,7 @@
 				747812C41E01127200507DCA /* BaseView.m in Sources */,
 				7485FD1A1DFFE0C800E6D23D /* LCCollectionReusableHeaderView.m in Sources */,
 				740F0EEC1E10D7F800EEFC3B /* LCCourseCellViewModel.m in Sources */,
+				74450CBF1E261EDC00F01EB7 /* LCAssessListModel.m in Sources */,
 				7485FCF81DFE475500E6D23D /* LCPersonalCenterViewController.m in Sources */,
 				74C4FB491E028F55007BC549 /* LCEvaluateCellViewModel.m in Sources */,
 				7485FB9C1DFC382800E6D23D /* WMScrollView.m in Sources */,
@@ -2031,9 +2077,11 @@
 				7485FBB31DFC389B00E6D23D /* CustomBarItem.m in Sources */,
 				7485FDA81DFFFA1500E6D23D /* UIButton+WebCache.m in Sources */,
 				74450C831E236C5D00F01EB7 /* LCEditPersonalDetailViewModel.m in Sources */,
+				74450CCB1E27211300F01EB7 /* LCForgotPasswordViewController.m in Sources */,
 				7485FBFC1DFC39FB00E6D23D /* NSObject+Parse.m in Sources */,
 				74450CAF1E24BB3200F01EB7 /* LCHomeSmallCollectionCellModel.m in Sources */,
 				7482451C1E14F18F004735DB /* LCNotificationCell.m in Sources */,
+				74450CBC1E25F1CE00F01EB7 /* LCIntroViewViewModel.m in Sources */,
 				74C3D9F61E1F5F0D00BA7F0F /* LCLoginViewController.m in Sources */,
 				7485FD991DFFFA1500E6D23D /* TAAbstractDotView.m in Sources */,
 				7485FD9D1DFFFA1500E6D23D /* SDCollectionViewCell.m in Sources */,
@@ -2047,6 +2095,7 @@
 				7485FB9B1DFC382800E6D23D /* WMProgressView.m in Sources */,
 				7485FDAF1DFFFA1500E6D23D /* UIView+SDExtension.m in Sources */,
 				7485FCC51DFD523100E6D23D /* BaseViewController.m in Sources */,
+				74450CC21E271C7B00F01EB7 /* LCRegisteredViewModel.m in Sources */,
 				74450CA01E24817500F01EB7 /* LCUseOldPaswordChangePaswordViewController.m in Sources */,
 				74450CA91E249ABC00F01EB7 /* LCUseVerificationChangePasswordViewController.m in Sources */,
 				7485FCBB1DFD4FC800E6D23D /* JDStatusBarStyle.m in Sources */,
@@ -2062,6 +2111,7 @@
 				7485FDAA1DFFFA1500E6D23D /* UIImage+MultiFormat.m in Sources */,
 				7485FDC91E00F83000E6D23D /* LCIntroViewController.m in Sources */,
 				741B05951E20CD0B002860A7 /* LCSetingCellViewModel.m in Sources */,
+				74450CC51E271C9700F01EB7 /* LCRegisteredViewController.m in Sources */,
 				7485FDA51DFFFA1500E6D23D /* SDWebImageDownloaderOperation.m in Sources */,
 				7485FDCF1E00F89800E6D23D /* LCCourseViewController.m in Sources */,
 				7482451F1E14F8A3004735DB /* LCMessageCellViewModel.m in Sources */,
@@ -2078,6 +2128,7 @@
 				744EEBCF1E1E94B5002FE8B1 /* LCPersonalCenterCellViewModel.m in Sources */,
 				7485FCEC1DFE455300E6D23D /* LCNewsViewModel.m in Sources */,
 				7485FBFE1DFC39FB00E6D23D /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
+				747BF1AC1E275331000137E5 /* LaunchViewController.m in Sources */,
 				74D2F6701E03A14800C84317 /* LCVideoDetailEvaluateCell.m in Sources */,
 				7485FC141DFC39FB00E6D23D /* KDNetAPIManager_User.m in Sources */,
 				7485FC011DFC39FB00E6D23D /* UIPickerView+KDAdd.m in Sources */,
@@ -2094,6 +2145,7 @@
 				7485FDB21DFFFD4500E6D23D /* LCCollectionReusableBannerHeaderView.m in Sources */,
 				74450C931E23BB3700F01EB7 /* LCSelectBirthdayAlerView.m in Sources */,
 				7485FB521DFA8CCC00E6D23D /* LCNavigationStackService.m in Sources */,
+				747BF1F11E279C59000137E5 /* KDFiveStarView.m in Sources */,
 				7485FDA01DFFFA1500E6D23D /* NSData+ImageContentType.m in Sources */,
 				7485FC0D1DFC39FB00E6D23D /* LCAboutYYWebImage.m in Sources */,
 				74C3D9F31E1F5EEB00BA7F0F /* LCLoginViewModel.m in Sources */,
@@ -2108,6 +2160,7 @@
 				748CF1EB1E0B704700E60F68 /* LCDetailEvaluateBottomView.m in Sources */,
 				74450C8C1E237B6900F01EB7 /* LCEditPersonalDetailCellViewModel.m in Sources */,
 				740F0EE91E10C1C600EEFC3B /* LCCourseSectionHeaderView.m in Sources */,
+				74450CD11E273FB500F01EB7 /* LCUserModel.m in Sources */,
 				74450CAC1E24B68200F01EB7 /* LCSmallCollectionViewCell.m in Sources */,
 				748CF1E51E0A9DA300E60F68 /* LCDetailEvaluateHeaderView.m in Sources */,
 				748245131E14D5FF004735DB /* LCMessageViewController.m in Sources */,
@@ -2117,6 +2170,7 @@
 				747812CA1E011D5C00507DCA /* LCIntroView.m in Sources */,
 				7485FCBC1DFD4FC800E6D23D /* JDStatusBarView.m in Sources */,
 				7485FDCC1E00F87C00E6D23D /* LCCourseViewModel.m in Sources */,
+				74450CC81E27210400F01EB7 /* LCForgotPasswordViewModel.m in Sources */,
 				7485FB0B1DF90A1B00E6D23D /* main.m in Sources */,
 				74450CA31E24818F00F01EB7 /* LCUseOldPaswordChangePaswordViewModel.m in Sources */,
 				7485FBA91DFC382800E6D23D /* YZTextAttachment.m in Sources */,

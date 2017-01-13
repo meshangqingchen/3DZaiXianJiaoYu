@@ -9,5 +9,5 @@
 #import "BaseTableViewModel.h"
 
 @interface LCCourseViewModel : BaseTableViewModel
-
+@property(nonatomic,copy) void (^fromVideoVMGetData)(id model);
 @end

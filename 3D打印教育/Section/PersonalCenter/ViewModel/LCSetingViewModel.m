@@ -29,7 +29,7 @@
     }
 }
 
--(void)requestRemoteDataWithPage:(NSUInteger)page completeHandle:(void (^)(id))complete{
+-(void)requestRemoteDataWithPage:(NSUInteger)curpage completeHandle:(void (^)(id))complete{
     LCSetingCellViewModel *cellVM0 = [[LCSetingCellViewModel alloc]initWithModel:@{@"leftTitle":@"修改密码",@"middleTitle":@"",@"rightType":@"jiantou"}];
     LCSetingCellViewModel *cellVM1 = [[LCSetingCellViewModel alloc]initWithModel:@{@"leftTitle":@"安允许2G/3?G/4G网络观看视频",@"middleTitle":@"",@"rightType":@"kaiguan"}];
     LCSetingCellViewModel *cellVM2 = [[LCSetingCellViewModel alloc]initWithModel:@{@"leftTitle":@"清除缓存",@"middleTitle":@"",@"rightType":@"shuzi"}];

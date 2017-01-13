@@ -9,9 +9,9 @@
 #import "BaseView.h"
 
 @interface LCVideoDetailTabBar : BaseView
-@property(nonatomic,strong) UIButton *downloadBT;
-@property(nonatomic,strong) UIButton *shareBT;
-@property(nonatomic,strong) UIButton *collectBT;
-@property(nonatomic,strong) UIButton *commentBT;
-@property(nonatomic,strong) UIButton *counselBT;
+
+@property(nonatomic,strong) UIButton *commentBT; //评论
+@property(nonatomic,strong) UIButton *collectBT; //收藏
+@property(nonatomic,strong) UIButton *joinFreeCourseBT; //参加课程
+
 @end

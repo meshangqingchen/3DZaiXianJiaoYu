@@ -18,7 +18,7 @@
 
 }
 
--(void)requestRemoteDataWithPage:(NSUInteger)page completeHandle:(void (^)(id))complete{
+-(void)requestRemoteDataWithPage:(NSUInteger)curpage completeHandle:(void (^)(id))complete{
     LCMySelfMainCellViewModel *cellVM0 = [[LCMySelfMainCellViewModel alloc]initWithModel:@{@"nickName":@"swift一统天下",@"evaDetail":@"一切都在匆匆的脚步中一切都在匆匆的脚步中"}];
     LCMySelfMainCellViewModel *cellVM1 = [[LCMySelfMainCellViewModel alloc]initWithModel:@{@"nickName":@"swift一统天下",@"evaDetail":@"一切都在匆匆的切都在匆匆的脚步中"}];
 

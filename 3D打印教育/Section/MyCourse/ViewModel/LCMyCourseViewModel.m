@@ -18,7 +18,7 @@
 
 }
 
--(void)requestRemoteDataWithPage:(NSUInteger)page completeHandle:(void (^)(id))complete{
+-(void)requestRemoteDataWithPage:(NSUInteger)curpage completeHandle:(void (^)(id))complete{
     LCMyCourseCellViewModel *myCourseCellVM0 = [[LCMyCourseCellViewModel alloc]initWithModel:@{@"finished":@"已经完成了1/8",@"title":@"3d课程是无敌的3d课程是无敌的3d课程是无敌的"}];
     LCMyCourseCellViewModel *myCourseCellVM1 = [[LCMyCourseCellViewModel alloc]initWithModel:@{@"finished":@"已经完成了1/8",@"title":@"学挖掘机到到蓝翔"}];
     LCMyCourseCellViewModel *myCourseCellVM2 = [[LCMyCourseCellViewModel alloc]initWithModel:@{@"finished":@"已经完成了1/8",@"title":@"学挖掘机到到蓝翔学挖掘机到到蓝翔学挖掘机到到蓝翔学挖掘机到到蓝翔学挖掘机到到蓝翔学挖掘机到到蓝翔学挖掘机到到蓝翔学挖掘机到到蓝翔"}];

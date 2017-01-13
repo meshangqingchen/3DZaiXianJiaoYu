@@ -9,7 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface LCCourseCellViewModel : NSObject
+@property(nonatomic,strong) NSString *idd;
 @property(nonatomic,strong) NSString *title;
-@property(nonatomic,strong) NSURL *videoUrl;
+@property(nonatomic,strong) NSURL *imageURL;
+@property(nonatomic,strong) NSURL *videoURL;
+@property(nonatomic,strong) NSString *creatTime;
 -(instancetype)initWithModel:(id)model;
 @end

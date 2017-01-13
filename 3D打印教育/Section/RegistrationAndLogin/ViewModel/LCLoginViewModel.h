@@ -9,5 +9,10 @@
 #import "BaseViewModel.h"
 
 @interface LCLoginViewModel : BaseViewModel
+@property(nonatomic,copy) void(^goToForgotVC)();
+@property(nonatomic,copy) void(^goToRegisterdVC)();
 @property(nonatomic,copy) void (^goBackVC)();
+
+@property(nonatomic,copy) void (^login)(NSString *phoneNum , NSString *password);
+
 @end

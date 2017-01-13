@@ -4,7 +4,7 @@
 //
 //  Created by 3D on 16/12/19.
 //  Copyright © 2016年 3D. All rights reserved.
-//
+//  评论详情 没用了....
 
 #import "LCEvaluateDetailViewController.h"
 #import "LCEvaluateDetailViewModel.h"

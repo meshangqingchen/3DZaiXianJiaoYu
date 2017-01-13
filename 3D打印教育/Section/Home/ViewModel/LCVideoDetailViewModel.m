@@ -8,65 +8,73 @@
 
 #import "LCVideoDetailViewModel.h"
 #import "LCVideoDetailViewViewModel.h"
-
 #import "LCCourseDownLoadViewModel.h" //下载列表 课程下载
-
 #import "LCHomeDetailModel.h"
+
+#import "NSObject+Common.h"
 @implementation LCVideoDetailViewModel
 -(void)initialize{
     [super initialize];
     @weakify(self)
+   
+    [self setJoinFreeCourse:^(NSString *courseID) {
+        MYLog(@"参加免费课程");
+        @strongify(self);
+        [self.netApi_Manager addFreeCourse:courseID CompleteHandle:^(id responseObj, NSError *error) {
+            NSDictionary *dic  =responseObj;
+            NSString *msg = dic[@"msg"];
+            [NSObject showWarning:msg];
+        }];
+    }];
     
-    [self setDownLoadVideo:^(NSString *videoID) {
-        MYLog(@"下载");
-        @strongify(self)
-        LCCourseDownLoadViewModel *downLoadVM = [[LCCourseDownLoadViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"课程下载"}];
-        [self.navigationStackService pushViewModel:downLoadVM animated:YES];
-    }];
-    [self setShareVideo:^(NSString *videoID) {
-        MYLog(@"分享");
-    }];
-    [self setCollectVideo:^(NSString *videoID, UIButton *collection_BT) {
+    [self setCollectVideo:^(NSString *courseID, UIButton *collection_BT) {
         MYLog(@"收藏");
+        @strongify(self);
+        [self.netApi_Manager addCollectWithOBJ:courseID andType:1 CompleteHandle:^(id responseObj, NSError *error) {
+            NSDictionary *dic  =responseObj;
+            NSString *msg = dic[@"msg"];
+            if ([msg isEqualToString:@"收藏成功"]) {
+                collection_BT.selected = YES;
+            }
+            
+        }];
     }];
-    [self setPinglunVideo:^(NSString *videoID) {
+    
+    [self setPinglunVideo:^(NSString *courseID) {
         MYLog(@"评论");
         @strongify(self)
-        !self.popLcInputAccessoryView ? : self.popLcInputAccessoryView(videoID);
+        !self.popLcInputAccessoryView ? : self.popLcInputAccessoryView(courseID);
     }];
-    [self setConsultVideo:^(NSString *videoID) {
-        MYLog(@"资讯");
-    }];
+
     
-   [self setNetworkRequests:^(NSString *planID) {
+    //网络
+    [self setNetworkRequests:^(NSString *planID) {
         @strongify(self)
         MYLog(@"=== === %@",planID);
-        [self.netApi_Manager courseDetailWithPlanld:planID CompleteHandle:^(id responseObj, NSError *error) {
-            
-            if ([NSJSONSerialization isValidJSONObject:(NSDictionary *)responseObj]) {
-                NSError *error1;
-                NSData *jsonData = [NSJSONSerialization dataWithJSONObject:(NSDictionary *)responseObj options:NSJSONWritingPrettyPrinted error:&error1];
-                NSString *json = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-                NSLog(@"==---=%@===",json);
-                
-            }
-
-            
+        [self.netApi_Manager courseDetailWithPlanld:@"6" CompleteHandle:^(id responseObj, NSError *error) {
             LCHomeDetailModel *homeDetailModel = [LCHomeDetailModel parseJSON:responseObj];
-            MYLog(@"mymymy");
-            MYLog(@" === %@",homeDetailModel);
-            MYLog(@" === %@",homeDetailModel);
-            MYLog(@" === %@",homeDetailModel);
+
+            MYLog("%@",homeDetailModel);
+            MYLog("%@",homeDetailModel);
+            MYLog("%@",homeDetailModel);
+//            //这个是课程的简介
+//            LCVideoDetailContents *videoDetailContents = homeDetailModel.contents;
+//            //这个是课程中视频的数组
+//            NSArray<LCVideoDetailVideolist *> *videoList = videoDetailContents.videoList;
+//            LCVideoDetailTeacher *teacher = videoDetailContents.teacher;
+            
+            !self.chuanShuData ? : self.chuanShuData(homeDetailModel);
+            
+            
+            LCVideoDetailViewViewModel *videoDetailViewViewModel = [[LCVideoDetailViewViewModel alloc]initWithViewModel:homeDetailModel];
+            
+            videoDetailViewViewModel.collectVideo = self.collectVideo;
+            videoDetailViewViewModel.pinglunVideo = self.pinglunVideo;
+            videoDetailViewViewModel.joinFreeCourse = self.joinFreeCourse;
+            !self.bindViewModel ? : self.bindViewModel(videoDetailViewViewModel);
+            
         }];
-        
         //经过网络请求 得到数据 再回调数据给收藏按钮神马的赋值状态
-        LCVideoDetailViewViewModel *videoDetailViewViewModel = [[LCVideoDetailViewViewModel alloc]initWithViewModel:@"model"];
-        videoDetailViewViewModel.downLoadVideo = self.downLoadVideo;
-        videoDetailViewViewModel.shareVideo    = self.shareVideo;
-        videoDetailViewViewModel.collectVideo = self.collectVideo;
-        videoDetailViewViewModel.pinglunVideo = self.pinglunVideo;
-        videoDetailViewViewModel.consultVideo = self.consultVideo;
-        !self.bindViewModel ? : self.bindViewModel(videoDetailViewViewModel);
     }];
 }
 @end

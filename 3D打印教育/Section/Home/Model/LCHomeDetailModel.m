@@ -13,34 +13,33 @@
 @end
 
 
-@implementation LCCourseDetailContents
 
-+ (NSDictionary *)modelCustomPropertyMapper {
-    return @{@"iid" : @"id"};
-}
+@implementation LCVideoDetailContents
 
 
 + (NSDictionary *)modelContainerPropertyGenericClass {
-    return @{@"videoList" : [LCCourseModelVideolist class]};
+    return @{@"videoList" : [LCVideoDetailVideolist class]};
 }
-@end
-
-
-@implementation LCCourseModelTeacher
-
-+ (NSDictionary *)modelCustomPropertyMapper {
-    return @{@"iid" : @"id",@"discription":@"discrip"};
-}
-
-@end
-
-
-@implementation LCCourseModelVideolist
 
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{@"iid" : @"id"};
 }
 
+
+@end
+
+
+@implementation LCVideoDetailTeacher
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"iid" : @"id",@"discription":@"discrip"};
+}
+@end
+
+
+@implementation LCVideoDetailVideolist
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"iid" : @"id"};
+}
 @end
 
 

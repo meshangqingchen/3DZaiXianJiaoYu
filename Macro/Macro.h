@@ -69,6 +69,10 @@
 
 #define kSharedAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
 
+#define LCENCRYPTKey @"LCEncryptKey"  //加密key
+#define LCCLOIN_AUTO @"LCClogin_auto"  //自动登录的key
+
+
 // 缓存主目录
 #define HSCachesDirectory [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"LCCache"]
 

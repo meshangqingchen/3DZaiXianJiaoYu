@@ -120,6 +120,7 @@
         self.loginBT.selected = !self.loginBT.selected;
         
 //        !self.viewModel.goToRootVC ? : self.viewModel.goToRootVC(self.phoneNumtextField.text,self.passwordTextField.text);
+        !self.viewModel.login ? : self.viewModel.login(self.phoneNumtextField.text,self.passwordTextField.text);
     }];
     
     self.forgetPasswordBT = [UIButton new];
@@ -138,7 +139,7 @@
         @strongify(self)
         self.forgetPasswordBT.selected = YES;
         self.registerBT.selected = NO;
-//        !self.viewModel.goToForgotVC ? :self.viewModel.goToForgotVC();
+        !self.viewModel.goToForgotVC ? :self.viewModel.goToForgotVC();
     }];
     
     self.registerBT = [UIButton new];
@@ -158,7 +159,7 @@
         @strongify(self)
         self.forgetPasswordBT.selected = NO;
         self.registerBT.selected = YES;
-//        !self.viewModel.goToRegisterdVC ? :self.viewModel.goToRegisterdVC();
+        !self.viewModel.goToRegisterdVC ? :self.viewModel.goToRegisterdVC();
     }];
     
     //返回按钮.........

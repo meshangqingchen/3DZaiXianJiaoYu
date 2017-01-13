@@ -64,7 +64,7 @@ static dispatch_once_t onceToken;
     [mutableDic setObject:time forKey:@"time"];
     [mutableDic setObject:[KDFileManager readUserDataForKey:@"LCCkey"] ? [KDFileManager readUserDataForKey:@"LCCkey"] : @"YangtechApiKey_3feFE4" forKey:@"key"];
     [mutableDic setObject:[[NSString stringWithFormat:@"%@%@",time,[KDFileManager readUserDataForKey:@"LCCkey"] ? [KDFileManager readUserDataForKey:@"LCCkey"] : @"YangtechApiKey_3feFE4"] md5String] forKey:@"signature"];
-   MYLog(@"mutableDic = %@",mutableDic);
+   MYLog(@"参数 = = = = =  = %@",mutableDic);
     switch (method) {
         case Get:
             return [self LC_GET:aPath parameters:mutableDic andBaseApi:baseApi completeHandle:complete];

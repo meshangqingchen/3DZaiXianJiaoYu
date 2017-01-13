@@ -30,8 +30,8 @@ static void *xxcontext = &xxcontext;
     if (self.viewModel.shouldPullToRefresh) {
         self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
             @strongify(self)
-            self.viewModel.page = 1;
-            [self.viewModel requestRemoteDataWithPage:self.viewModel.page completeHandle:^(id responseObj) {
+            self.viewModel.curpage = 1;
+            [self.viewModel requestRemoteDataWithPage:self.viewModel.curpage completeHandle:^(id responseObj) {
                 [self.collectionView.mj_header endRefreshing];
                 NSDictionary *objDic = responseObj;
                 NSNumber *morepage = objDic[@"morepage"];
@@ -46,7 +46,7 @@ static void *xxcontext = &xxcontext;
     
     if (self.viewModel.shouldInfiniteScrolling) {
         self.collectionView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-            self.viewModel.page = self.viewModel.page + 1;
+            self.viewModel.curpage = self.viewModel.curpage + 1;
             [self.viewModel requestRemoteDataWithPage:self.viewModel.page completeHandle:^(id responseObj) {
                 @strongify(self)
 //                NSDictionary *objDic = responseObj;
@@ -60,7 +60,7 @@ static void *xxcontext = &xxcontext;
         }];
     }
     
-    [self.viewModel requestRemoteDataWithPage:self.viewModel.page completeHandle:^(id responseObj) {
+    [self.viewModel requestRemoteDataWithPage:self.viewModel.curpage completeHandle:^(id responseObj) {
         
     }];
 

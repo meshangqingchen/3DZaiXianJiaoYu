@@ -31,14 +31,10 @@
     LCVideoDetailViewModel *videoDetailVM = [[LCVideoDetailViewModel alloc]initWithServices:self.navigationStackService params:nil];
     videoDetailVM.planID = cellViewModel.idd;
     [self.navigationStackService pushViewModel:videoDetailVM animated:YES];
-
-    
 }
--(void)requestRemoteDataWithPage:(NSUInteger)page completeHandle:(void(^)(id responseObj))complete{
+-(void)requestRemoteDataWithPage:(NSUInteger)curpage completeHandle:(void(^)(id responseObj))complete{
     
 //    LCHomeModel *homeModel = [LCHomeModel parseJSON:nil];
-//
-//    
 //    MYLog(@"+++++homeModel = %@",homeModel);
 //    MYLog(@"+++++homeModel = %@",homeModel);
 //    MYLog(@"+++++homeModel = %@",homeModel);
@@ -84,12 +80,6 @@
     
     [self.netApi_Manager homeJsonCompleteHandle:^(id responseObj, NSError *error) {
         LCHomeModel *homeModel = [LCHomeModel parseJSON:responseObj];
-        
-        
-        MYLog(@"+++++homeModel = %@",homeModel);
-        MYLog(@"+++++homeModel = %@",homeModel);
-        MYLog(@"+++++homeModel = %@",homeModel);
-        
         
         NSMutableArray *bannerMutableArr = [NSMutableArray array];
         for (int i = 0; i<homeModel.contents.carouselList.count; i++) {

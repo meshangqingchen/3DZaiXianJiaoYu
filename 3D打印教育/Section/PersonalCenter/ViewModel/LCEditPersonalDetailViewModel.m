@@ -94,7 +94,7 @@
     }
 }
 
--(void)requestRemoteDataWithPage:(NSUInteger)page completeHandle:(void (^)(id))complete{
+-(void)requestRemoteDataWithPage:(NSUInteger)curpage completeHandle:(void (^)(id))complete{
     self.cellVMHeaderImage = [[LCEditPersonalDetailCellViewModel alloc]initWithModel:@{@"leftTitle":@"头像",@"rightTitle":@"",@"rightImageUrl":@"----"}];
     self.cellVMNickName = [[LCEditPersonalDetailCellViewModel alloc]initWithModel:@{@"leftTitle":@"昵称",@"rightTitle":@"哈哈"}];
     self.cellVMSex = [[LCEditPersonalDetailCellViewModel alloc]initWithModel:@{@"leftTitle":@"性别",@"rightTitle":@"男"}];

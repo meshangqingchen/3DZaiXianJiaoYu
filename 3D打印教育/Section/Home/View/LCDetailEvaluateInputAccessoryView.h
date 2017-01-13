@@ -8,7 +8,9 @@
 
 #import "BaseView.h"
 #import "UIPlaceHolderTextView.h"
+#import "KDFiveStarView.h"
 @interface LCDetailEvaluateInputAccessoryView : BaseView
 @property(nonatomic,strong) UIPlaceHolderTextView *textView;
 @property(nonatomic,strong) UIButton *fasongBT;
+@property(nonatomic,strong) KDFiveStarView *starView;
 @end

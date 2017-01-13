@@ -9,7 +9,9 @@
 #import "BaseViewModel.h"
 
 @interface LCIntroViewModel : BaseViewModel
-@property(nonatomic,copy) void (^networkRequests)(NSString *videoID);
+//@property(nonatomic,copy) void (^networkRequests)(NSString *videoID);
 @property(nonatomic,copy) void (^bindViewModel)(id viewModel);
+
+@property(nonatomic,copy) void (^fromVideoVMGetData)(id model);
 
 @end

@@ -24,6 +24,9 @@
 @property(nonatomic,strong) LCVideoDetailViewModel *viewModel;
 @property(nonatomic,strong) LCDetailEvaluateInputAccessoryView *lcInputAccessoryView;
 @property(nonatomic,strong) UIView *backView;
+
+@property(nonatomic,strong) LCIntroViewModel *IntroViewModel;
+@property(nonatomic,strong) LCCourseViewModel *courseViewModel;
 @end
 
 @implementation LCVideoDetailViewController
@@ -44,7 +47,7 @@
     _backView.backgroundColor = [KDColor getC10Color];
     _backView.hidden = YES;
 
-    self.lcInputAccessoryView = [[LCDetailEvaluateInputAccessoryView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, 276/2)];
+    self.lcInputAccessoryView = [[LCDetailEvaluateInputAccessoryView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, 276/2+30)];
     [self.view addSubview:_lcInputAccessoryView];
     @weakify(self)
     [self.viewModel setPopLcInputAccessoryView:^(NSString *videoID) {
@@ -56,10 +59,18 @@
     tabbarView.backgroundColor = [KDColor getC5Color];
     [self.view addSubview:tabbarView];
     
-    
+    //给tabBar传输数据 判断是否 用户收藏了
     [self.viewModel setBindViewModel:^(LCVideoDetailViewViewModel *videoDetailVideModel) {
         [tabbarView bindViewModel:videoDetailVideModel];
     }];
+    
+    [self.viewModel setChuanShuData:^(id model) {
+        @strongify(self)
+        !self.IntroViewModel.fromVideoVMGetData ? : self.IntroViewModel.fromVideoVMGetData(model);
+        !self.courseViewModel.fromVideoVMGetData ? : self.courseViewModel.fromVideoVMGetData(model);
+    }];
+    
+    //网络请求
     !self.viewModel.networkRequests ? : self.viewModel.networkRequests(self.viewModel.planID);
     
 }
@@ -89,8 +100,13 @@
 }
 
 - (NSMutableArray *)getValues{
+    //简介VM
     LCIntroViewModel *IntroViewModel = [[LCIntroViewModel alloc]initWithServices:self.viewModel.navigationStackService params:nil];
+    self.IntroViewModel = IntroViewModel;
+    //课程VM
     LCCourseViewModel *courseViewModel = [[LCCourseViewModel alloc]initWithServices:self.viewModel.navigationStackService params:nil];
+    self.courseViewModel = courseViewModel;
+    
     LCEvaluateViewModel *evaluateViewModel = [[LCEvaluateViewModel alloc]initWithServices:self.viewModel.navigationStackService params:nil];
     return [@[IntroViewModel,courseViewModel,evaluateViewModel] mutableCopy];
 }
@@ -134,7 +150,7 @@
         if (keyBoard_Y == SCREEN_HEIGHT) {
             self.lcInputAccessoryView.top = keyBoard_Y;
         }else{
-            self.lcInputAccessoryView.top = keyBoard_Y-276/2;
+            self.lcInputAccessoryView.top = keyBoard_Y-(276/2+30);
         }
     } completion:nil];
 }

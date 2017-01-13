@@ -21,7 +21,7 @@
 }
 
 
--(void)requestRemoteDataWithPage:(NSUInteger)page completeHandle:(void (^)(id))complete{
+-(void)requestRemoteDataWithPage:(NSUInteger)curpage completeHandle:(void (^)(id))complete{
     LCEvaluateDetailCellViewModel *evaDrtailCellVM1 = [[LCEvaluateDetailCellViewModel alloc]initWithName:@"开飞机小白菜" and:@"事中取胜的经验，技术以及突破传统观念的完美设计。强劲的V8和V10发动机、全时四轮驱动系统和奥迪全铝车身空间框架结构，赋予了奥迪R8出众的动力性能，以及在赛道和公路上的卓越表现。"];
     
     LCEvaluateDetailCellViewModel *evaDrtailCellVM2 = [[LCEvaluateDetailCellViewModel alloc]initWithName:@"我是土豆" and:@"你愁啥因此在邀请明星艺人这一环节中，有污点之人一律坚决拒绝。而“洪荒少女”傅园慧前一阵据说已经受邀参"];

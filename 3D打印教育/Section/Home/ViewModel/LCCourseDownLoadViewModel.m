@@ -14,7 +14,7 @@
     
 }
 
--(void)requestRemoteDataWithPage:(NSUInteger)page completeHandle:(void (^)(id))complete{
+-(void)requestRemoteDataWithPage:(NSUInteger)curpage completeHandle:(void (^)(id))complete{
     
     //请求数据..
     LCCourseDownLoadCellViewModel *courseDownLoadCellVM = [[LCCourseDownLoadCellViewModel alloc]initWithModel:nil];

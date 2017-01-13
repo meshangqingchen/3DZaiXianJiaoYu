@@ -10,8 +10,13 @@
 #import <PLeakSniffer/PLeakSniffer.h>
 #import <UIKit+AFNetworking.h>
 #import <IQKeyboardManager.h>
+
+#import "KDFileManager.h"
+
 #import "BaseViewModel.h"
 #import "LCRootViewModel.h"
+#import "LaunchViewController.h"
+
 
 @interface AppDelegate ()
 @property(nonatomic,strong,readwrite) LCNavigationStackService *navigationStackService;
@@ -25,9 +30,46 @@
     [self configureKeyboardManager];
     [self configureReachability];
     [self configureAppearance];
-    self.navigationStackService = [[LCNavigationStackService alloc]init];
-    [self.navigationStackService resetRootViewModel:[self createRootViewModel]];
+    
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = [LaunchViewController new];
     [self.window makeKeyAndVisible];
+    
+    
+//    self.navigationStackService = [[LCNavigationStackService alloc]init];
+//    [self.navigationStackService resetRootViewModel:[self createRootViewModel]];
+//    [self.window makeKeyAndVisible];
+    
+    [KDFileManager removeUserDataForkey:LCENCRYPTKey];
+    if ([KDFileManager readUserDataForKey:LCCLOIN_AUTO]) {
+        [[KDNetAPIManager_User sharedKDNetAPIManager_User]loginWithAuto:[KDFileManager readUserDataForKey:LCCLOIN_AUTO] completeHandle:^(id responseObj, NSError *error) {
+            NSNumber *status = responseObj[@"status"];
+            if ([status isEqualToNumber:@1]) {
+                //如果状态是1 就代表自动登录成功了
+                NSDictionary *contents = responseObj[@"contents"];
+                NSString     *encryptKey = contents[@"key"];
+                [KDFileManager saveUserData:encryptKey forKey:LCENCRYPTKey];
+            }
+            
+            self.navigationStackService = [[LCNavigationStackService alloc]init];
+            self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+            [self.navigationStackService resetRootViewModel:[self createRootViewModel]];
+            [self.window makeKeyAndVisible];
+            
+//            MYLog(@" = = = %@",responseObj);
+//            MYLog(@" = = = %@",responseObj);
+//            MYLog(@" = = = %@",responseObj);
+        }];
+    }else{
+        self.navigationStackService = [[LCNavigationStackService alloc]init];
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        [self.navigationStackService resetRootViewModel:[self createRootViewModel]];
+        [self.window makeKeyAndVisible];
+    }
+    
+    
     return YES;
 }
 

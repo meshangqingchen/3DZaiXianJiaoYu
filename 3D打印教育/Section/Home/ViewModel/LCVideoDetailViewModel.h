@@ -12,13 +12,14 @@
 @property(nonatomic,strong) NSString *planID;
 @property(nonatomic,copy) void (^networkRequests)(NSString *planID);
 @property(nonatomic,copy) void (^bindViewModel)(id viewModel);
+@property(nonatomic,copy) void (^chuanShuData)(id model);
 
-@property(nonatomic,copy) void (^downLoadVideo)(NSString* videoID);
-@property(nonatomic,copy) void (^shareVideo)(NSString *videoID);
-@property(nonatomic,copy) void (^collectVideo)(NSString *videoID,UIButton *collection_BT);
-@property(nonatomic,copy) void (^pinglunVideo)(NSString *videoID);
-@property(nonatomic,copy) void (^consultVideo)(NSString *videoID);
-@property(nonatomic,copy) void (^popLcInputAccessoryView)(NSString *videoID);
+
+@property(nonatomic,copy) void (^collectVideo)(NSString *courseID,UIButton *collection_BT);//收藏
+@property(nonatomic,copy) void (^pinglunVideo)(NSString *courseID);//评论
+@property(nonatomic,copy) void (^joinFreeCourse)(NSString *courseID); //参加课程
+
+@property(nonatomic,copy) void (^popLcInputAccessoryView)(NSString *courseID); //弹出评论键盘
 
 
 @end

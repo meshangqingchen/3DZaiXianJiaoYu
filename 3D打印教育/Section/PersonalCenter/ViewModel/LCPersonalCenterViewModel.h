@@ -13,4 +13,6 @@
 @property(nonatomic,copy) void (^goToLoginVC)(); //登录
 @property(nonatomic,copy) void (^pushToEditDataVM)(id viewModel); //编辑个人资料
 
+@property(nonatomic,copy) void (^networkRequestPersonalCenter)();
+
 @end

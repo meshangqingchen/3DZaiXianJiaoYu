@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@class LCCourseDetailContents,LCCourseModelTeacher,LCCourseModelVideolist;
-
+@class LCVideoDetailContents,LCVideoDetailTeacher,LCVideoDetailVideolist;
 @interface LCHomeDetailModel : NSObject
+
 
 @property (nonatomic, assign) NSInteger status;
 
@@ -20,10 +20,12 @@
 
 @property (nonatomic, copy) NSString *msg;
 
-@property (nonatomic, strong) LCCourseDetailContents *contents;
+@property (nonatomic, strong) LCVideoDetailContents *contents;
+
 
 @end
-@interface LCCourseDetailContents : NSObject
+
+@interface LCVideoDetailContents : NSObject
 
 @property (nonatomic, copy) NSString *iid;
 
@@ -33,19 +35,27 @@
 
 @property (nonatomic, copy) NSString *is_fav;
 
+@property (nonatomic, assign) NSInteger is_play;
+
 @property (nonatomic, copy) NSString *recommend;
 
-@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy) NSString *is_free;
 
-@property (nonatomic, copy) NSString *updated_time;
+@property (nonatomic, copy) NSString *type;
+                                      
+@property (nonatomic, copy) NSString *des;
+
+@property (nonatomic, copy) NSString *price;
 
 @property (nonatomic, copy) NSString *image;
 
-@property (nonatomic, strong) LCCourseModelTeacher *teacher;
+@property (nonatomic, copy) NSString *updated_time;
+
+@property (nonatomic, strong) LCVideoDetailTeacher *teacher;
 
 @property (nonatomic, copy) NSString *class_id;
 
-@property (nonatomic, strong) NSArray<LCCourseModelVideolist *> *videoList;
+@property (nonatomic, strong) NSArray<LCVideoDetailVideolist *> *videoList;
 
 @property (nonatomic, copy) NSString *fav_count;
 
@@ -57,7 +67,7 @@
 
 @end
 
-@interface LCCourseModelTeacher : NSObject
+@interface LCVideoDetailTeacher : NSObject
 
 @property (nonatomic, copy) NSString *nick_name;
 
@@ -77,7 +87,7 @@
 
 @end
 
-@interface LCCourseModelVideolist : NSObject
+@interface LCVideoDetailVideolist : NSObject
 
 @property (nonatomic, copy) NSString *iid;
 

@@ -8,6 +8,13 @@
 
 #import "LCIntroView.h"
 #import "UIButton+ImageTitleStyle.h"
+#import "LCIntroViewViewModel.h"
+#import "LCAboutYYWebImage.h"
+
+@interface LCIntroView ()<WKNavigationDelegate>
+
+@end
+
 @implementation LCIntroView
 
 -(void)setupViews{
@@ -68,12 +75,41 @@
 
 -(void)bindViewModel:(id)viewModel{
     
-    UILabel *lastLB = nil;
+    LCIntroViewViewModel *IntroViewViewModel = viewModel;
     
-    NSArray *testArr  = @[@"🇨🇳3D打印技术产业联盟创始人兼董事长",
-                          @"🇨🇳3D打印技术产业联盟创始人兼董事长",
-                          @"🇨🇳3D打印技术产业联盟创始人兼董事长",
-                          @"🇨🇳3D打印技术产业联盟创始人兼董事长"];
+//    @property(nonatomic,strong) UIImageView *starImgV;
+//    @property(nonatomic,strong) UILabel *numCollectLB;
+//    @property(nonatomic,strong) UIImageView *jsJJImageV;
+//    @property(nonatomic,strong) UIImageView *headerImageV;
+//    @property(nonatomic,strong) UIImageView *cJJImageV;
+//    
+//    @property(nonatomic,strong) UILabel *couresNLB;
+//    @property(nonatomic,strong) UILabel *courseNameLB;
+//    @property(nonatomic,strong) UILabel *courseDLB;
+//    @property(nonatomic,strong) WKWebView *webView;
+
+    self.numCollectLB.text = IntroViewViewModel.favCount;
+//    [self.headerImageV ]
+    [self.headerImageV setImageWithURL:IntroViewViewModel.teacherHeaderURL
+                            placeholder:[UIImage imageNamed:@"noLog_Headimage"]
+                                options:kNilOptions
+                                manager:[LCAboutYYWebImage avatarImageManager2]
+                               progress:nil
+                              transform:nil
+                            completion:nil];
+    
+//    @property(nonatomic,strong) NSString *favCount;
+//    @property(nonatomic,strong) NSURL *teacherHeaderURL;
+//    @property(nonatomic,strong) NSArray *teacherShaortDiscriptions;
+//    @property(nonatomic,strong) NSString *courseNamel;
+//    @property(nonatomic,strong) NSString *courseDisCription;
+    
+    UILabel *lastLB = nil;
+//    NSArray *testArr  = @[@"🇨🇳3D打印技术产业联盟创始人兼董事长",
+//                          @"🇨🇳3D打印技术产业联盟创始人兼董事长",
+//                          @"🇨🇳3D打印技术产业联盟创始人兼董事长",
+//                          @"🇨🇳3D打印技术产业联盟创始人兼董事长"];
+    NSArray *testArr = IntroViewViewModel.teacherShaortDiscriptions;
     for (int i=0; i<testArr.count; i++) {
         UILabel *lable = [UILabel new];
         lastLB.numberOfLines = 1;
@@ -144,7 +180,7 @@
     _courseNameLB.font = [[KDFont sharedKDFont]getF26Font];
     _courseNameLB.textAlignment = NSTextAlignmentLeft;
     _courseNameLB.numberOfLines = 0;
-    _courseNameLB.text = @"3D打印技术的概况与前景";
+    _courseNameLB.text = IntroViewViewModel.courseNamel;
     [self addSubview:_courseNameLB];
     [_courseNameLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(54);
@@ -162,23 +198,32 @@
         make.top.mas_equalTo(_courseNameLB.mas_bottom).mas_equalTo(20);
     }];
     
-    self.courseDetailLB = [UILabel new];
-    _courseDetailLB.textColor = [KDColor getC3Color];
-    _courseDetailLB.font = [[KDFont sharedKDFont]getF26Font];
-    _courseDetailLB.numberOfLines = 0;
-    NSString *testStr = @"这是一个很长很长的数据这是一个很长很长的数据这是一个很长很长的数据这是一个很长很长的数据这是一个很长很长的数据这是一个很长很长的数据这是一个很长很长的数据这是一个很长很长的数据这是一个很长很长的数据这是一个很长很长的数据这是一个很长很长的数据这是一个很长很长的数据这是一个很长很长的数据这是一个很长很长的数据这是一个很长很长的数据";
-    NSMutableAttributedString *LBAtt  =[[NSMutableAttributedString alloc]initWithString:testStr];
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    [paragraphStyle setLineSpacing:5.0];
-    [LBAtt addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, testStr.length)];
-    _courseDetailLB.attributedText = LBAtt.copy;
-    [self addSubview:_courseDetailLB];
-    [_courseDetailLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(54);
-        make.right.mas_equalTo(-54);
-        make.top.mas_equalTo(_courseDLB.mas_bottom).mas_offset(20);
-        make.bottom.mas_equalTo(-27);
+    self.webView = [WKWebView new];
+    self.webView.scrollView.scrollEnabled = NO;
+    self.webView.navigationDelegate = self;
+    [self addSubview:self.webView];
+    
+    [self.webView loadHTMLString:IntroViewViewModel.courseDisCription baseURL:nil];
+
+}
+
+- (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation{
+    @weakify(self)
+    [webView evaluateJavaScript:@"document.body.offsetHeight" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+        @strongify(self)
+        [result doubleValue];
+        
+//        self.webView.height =  [result doubleValue];
+//        self.courseIntroductionCellModel.callBackCell_H([result doubleValue]);
+        [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(54);
+            make.right.mas_equalTo(-54);
+            make.top.mas_equalTo(self.courseDLB.mas_bottom).mas_offset(20);
+            make.height.mas_equalTo([result doubleValue]);
+            make.bottom.mas_equalTo(-27);
+        }];
     }];
 }
+
 
 @end
