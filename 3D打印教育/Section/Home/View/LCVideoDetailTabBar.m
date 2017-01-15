@@ -10,6 +10,7 @@
 #import "UIButton+ImageTitleStyle.h"
 
 #import "LCVideoDetailViewViewModel.h"
+#import "NSObject+Common.h"
 
 @interface LCVideoDetailTabBar ()
 @property(nonatomic,strong) LCVideoDetailViewViewModel *videoDetailViewViewModel;
@@ -68,7 +69,13 @@
     }];
     [_commentBT setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:7];
     [_commentBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+        
         @strongify(self)
+        //is_assess
+//        if (self.videoDetailViewViewModel.isAssess == 0) {
+//            [NSObject showWarning:@"请先加入该课程"];
+//            return ;
+//        }
         !self.videoDetailViewViewModel.pinglunVideo ? : self.videoDetailViewViewModel.pinglunVideo(self.videoDetailViewViewModel.courseID);
     }];
 
@@ -104,7 +111,12 @@
     }];
     [self.joinFreeCourseBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
         @strongify(self)
-        !self.videoDetailViewViewModel.joinFreeCourse ? : self.videoDetailViewViewModel.joinFreeCourse(self.videoDetailViewViewModel.courseID);
+        if (self.videoDetailViewViewModel.ifFree) {
+            !self.videoDetailViewViewModel.joinFreeCourse ? : self.videoDetailViewViewModel.joinFreeCourse(self.videoDetailViewViewModel.courseID);
+        }else{
+            //(NSString *couresID,NSString *price,NSString *urlStr,NSString *title)
+            !self.videoDetailViewViewModel.creatOrder ? : self.videoDetailViewViewModel.creatOrder(self.videoDetailViewViewModel.courseID,self.videoDetailViewViewModel.price,self.videoDetailViewViewModel.imageURL,self.videoDetailViewViewModel.title);
+        }
     }];
     
     

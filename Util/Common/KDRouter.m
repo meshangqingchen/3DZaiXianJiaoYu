@@ -50,7 +50,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(KDRouter)
                                    @"LCUseOldPaswordChangePaswordViewModel" : @"LCUseOldPaswordChangePaswordViewController",
                                    @"LCUseVerificationChangePasswordViewModel" : @"LCUseVerificationChangePasswordViewController",
                                    @"LCRegisteredViewModel" : @"LCRegisteredViewController",
-                                   @"LCForgotPasswordViewModel" : @"LCForgotPasswordViewController"};
+                                   @"LCForgotPasswordViewModel" : @"LCForgotPasswordViewController",
+                                   @"LCWebImageViewModel" : @"LCWebImageViewController",
+                                   @"LCNotarizeOrderViewModel" : @"LCNotarizeOrderViewController"};
     }
 	return _viewModelViewMappings;
 }
@@ -61,7 +63,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(KDRouter)
 	if(_rootViewControllers == nil) {
        _rootViewControllers = [NSSet setWithObjects:@"LCHomeViewController",
                                                     @"LCMyCourseViewController",
-                                                    @"LCNewsViewController",
+                                                    @"LCCounselTeacherViewController",
                                                     @"LCPersonalCenterViewController", nil];
         }
 	return _rootViewControllers;

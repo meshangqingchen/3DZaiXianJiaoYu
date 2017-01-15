@@ -18,4 +18,9 @@
 + (void)showStatusBarSuccessStr:(NSString *)tipStr;
 + (void)showStatusBarErrorStr:(NSString *)errorStr;
 
+//显示忙
+- (void)showProgress;
+
+//隐藏提示
+- (void)hideProgress;
 @end

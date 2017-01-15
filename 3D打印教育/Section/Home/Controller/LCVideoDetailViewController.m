@@ -54,6 +54,11 @@
         @strongify(self)
         [self.lcInputAccessoryView.textView becomeFirstResponder];
     }];
+    [self.lcInputAccessoryView.fasongBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+        @strongify(self)
+        !self.viewModel.sendPingLun ? : self.viewModel.sendPingLun(self.viewModel.planID,self.lcInputAccessoryView.textView.text,self.lcInputAccessoryView.starView.count);
+        [self.lcInputAccessoryView.textView resignFirstResponder];
+    }];
     
     LCVideoDetailTabBar *tabbarView = [[LCVideoDetailTabBar alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT-49, SCREEN_WIDTH, 49)];
     tabbarView.backgroundColor = [KDColor getC5Color];

@@ -16,7 +16,8 @@
 //四个模块控制器
 #import "LCHomeViewController.h"
 #import "LCMyCourseViewController.h"
-#import "LCNewsViewController.h"
+//#import "LCNewsViewController.h"
+#import "LCCounselTeacherViewController.h"
 #import "LCPersonalCenterViewController.h"
 
 #import "LCNavigationStackService.h"//栈实例
@@ -49,13 +50,13 @@
     LCMyCourseViewController *myCourseVC = [[LCMyCourseViewController alloc]initWithViewModel:self.viewModel.myCourseViewModel];
     RTRootNavigationController *myCourseNVC = [[RTRootNavigationController alloc]initWithRootViewController:myCourseVC];
     
-    LCNewsViewController *newsVC = [[LCNewsViewController alloc]initWithViewModel:self.viewModel.newsViewModel];
-    RTRootNavigationController *newsNVC = [[RTRootNavigationController alloc]initWithRootViewController:newsVC];
+    LCCounselTeacherViewController *counselTeacherViewVC = [[LCCounselTeacherViewController alloc]initWithViewModel:self.viewModel.counselTeacherViewModel];
+    RTRootNavigationController *counselTeacherViewNVC = [[RTRootNavigationController alloc]initWithRootViewController:counselTeacherViewVC];
     
     LCPersonalCenterViewController *personalCenterVC = [[LCPersonalCenterViewController alloc]initWithViewModel:self.viewModel.personalCenterViewModel];
     RTRootNavigationController *personalCenterNVC = [[RTRootNavigationController alloc]initWithRootViewController:personalCenterVC];
     
-    [self.tabBarController setViewControllers:@[homeNVC,myCourseNVC,newsNVC,personalCenterNVC]];
+    [self.tabBarController setViewControllers:@[homeNVC,myCourseNVC,counselTeacherViewNVC,personalCenterNVC]];
     [kSharedAppDelegate.navigationStackService pushNavigationController:homeNVC];
     
 }
@@ -63,7 +64,7 @@
 -(void)customizeTabBarForController{
     NSArray* selecttabBarItemImages = @[@"home_select",@"course_select",@"news_select",@"personal_select"];
     NSArray* nomailtabBarItemImages = @[@"home_nomal",@"course_nomal",@"news_nomal",@"personal_nomal"];
-    NSArray *tabBarItemTitles       = @[@"首页",@"我的课程",@"资讯",@"我"];
+    NSArray *tabBarItemTitles       = @[@"首页",@"课程分类",@"专家咨询",@"我"];
 
     NSArray *items = [[self.tabBarController tabBar] items];
     int index = 0;
@@ -90,14 +91,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -11,7 +11,15 @@
 #import "LCHomeCollectionSectionModel.h"
 
 #import "LCHomeCollectionBananaViewModel.h"
+#import "UIView+BlocksKit.h"
+#import "LCAboutYYWebImage.h"
 
+@interface LCSignUpView ()
+@property(nonatomic,strong) LCHomeCollectionBananaViewModel *bannerVM1;
+@property(nonatomic,strong) LCHomeCollectionBananaViewModel *bannerVM2;
+@property(nonatomic,strong) LCHomeCollectionBananaViewModel *bannerVM3;
+
+@end
 
 @implementation LCSignUpView
 
@@ -29,6 +37,7 @@
         make.width.mas_equalTo(backView_W);
     }];
     self.imageView1 = [UIImageView new];
+    _imageView1.userInteractionEnabled = YES;
     _imageView1.backgroundColor = [UIColor orangeColor];
     [backView1 addSubview:_imageView1];
     [_imageView1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -45,7 +54,11 @@
         make.top.mas_equalTo(self.imageView1.mas_bottom).mas_offset(4);
         make.centerX.mas_offset(0);
     }];
-    
+    @weakify(self)
+    [backView1 bk_whenTapped:^{
+        @strongify(self)
+        !self.bannerVM1.clickBT ? : self.bannerVM1.clickBT(self.bannerVM1.className,self.bannerVM1.detailURL) ;
+    }];
     
     UIView *backView2 = [UIView new];
     backView2.backgroundColor = [UIColor grayColor];
@@ -56,6 +69,7 @@
         make.width.mas_equalTo(backView_W);
     }];
     self.imageView2 = [UIImageView new];
+    _imageView2.userInteractionEnabled = YES;
     _imageView2.backgroundColor = [UIColor orangeColor];
     [backView2 addSubview:_imageView2];
     [_imageView2 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -72,8 +86,10 @@
         make.top.mas_equalTo(self.imageView1.mas_bottom).mas_offset(4);
         make.centerX.mas_offset(0);
     }];
-
-    
+    [backView2 bk_whenTapped:^{
+        @strongify(self)
+        !self.bannerVM2.clickBT ? : self.bannerVM2.clickBT(self.bannerVM2.className,self.bannerVM2.detailURL) ;
+    }];
     
     UIView *backView3 = [UIView new];
     backView3.backgroundColor = [UIColor grayColor];
@@ -85,6 +101,7 @@
 
     }];
     self.imageView3 = [UIImageView new];
+    _imageView3.userInteractionEnabled = YES;
     _imageView3.backgroundColor = [UIColor orangeColor];
     [backView3 addSubview:_imageView3];
     [_imageView3 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -101,11 +118,46 @@
         make.top.mas_equalTo(self.imageView1.mas_bottom).mas_offset(4);
         make.centerX.mas_offset(0);
     }];
-
+    [backView3 bk_whenTapped:^{
+        @strongify(self)
+        !self.bannerVM3.clickBT ? : self.bannerVM3.clickBT(self.bannerVM3.className,self.bannerVM3.detailURL) ;
+    }];
 }
 
 -(void)bindViewModel:(id)viewModel{
-
+    NSArray *signUpDataArr = viewModel;
+    if (signUpDataArr.count == 3) {
+        LCHomeCollectionBananaViewModel *bannerVM1 = signUpDataArr[0];
+        self.bannerVM1 = bannerVM1;
+        [self.imageView1 setImageWithURL:bannerVM1.imageURL
+                               placeholder:[UIImage imageNamed:@"noLog_Headimage"]
+                                   options:kNilOptions
+                                   manager:[LCAboutYYWebImage avatarImageManager]
+                                  progress:nil
+                                 transform:nil
+                              completion:nil];
+        
+        LCHomeCollectionBananaViewModel *bannerVM2 = signUpDataArr[1];
+        self.bannerVM2 = bannerVM2;
+        [self.imageView2 setImageWithURL:bannerVM2.imageURL
+                             placeholder:[UIImage imageNamed:@"noLog_Headimage"]
+                                 options:kNilOptions
+                                 manager:[LCAboutYYWebImage avatarImageManager]
+                                progress:nil
+                               transform:nil
+                              completion:nil];
+        
+        
+        LCHomeCollectionBananaViewModel *bannerVM3 = signUpDataArr[2];
+        self.bannerVM3 = bannerVM3;
+        [self.imageView3 setImageWithURL:bannerVM3.imageURL
+                             placeholder:[UIImage imageNamed:@"noLog_Headimage"]
+                                 options:kNilOptions
+                                 manager:[LCAboutYYWebImage avatarImageManager]
+                                progress:nil
+                               transform:nil
+                              completion:nil];
+    }
 }
 
 @end
@@ -246,6 +298,6 @@
 -(void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
     MYLog(@"===== %ld",index);
     LCHomeCollectionBananaViewModel *bannerVM = self.bannerDataArr[index];
-//    !bannerVM.clickBanner ? : bannerVM.clickBanner(@"");
+    !bannerVM.clickBanner ? : bannerVM.clickBanner(bannerVM.className,bannerVM.detailURL);
 }
 @end

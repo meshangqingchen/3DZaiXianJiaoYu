@@ -13,10 +13,12 @@
 @property (nonatomic, copy) NSString *iid;
 @property (nonatomic, copy) NSURL *imageURL;
 @property (nonatomic, copy) NSURL *detailURL;
-
 @property (nonatomic, copy) NSString *name;
-
+@property(nonatomic,strong) NSString *className;
 //事件
-@property(nonatomic,copy) void (^clickBanner)(NSInteger carouselTyp, NSString *iid);
+@property(nonatomic,copy) void (^clickBanner)(NSString *className, NSURL *webURL);
+//三个按钮
+@property(nonatomic,copy) void (^clickBT)(NSString *className, NSURL *webURL);
+
 -(instancetype)initWithModel:(id)model;
 @end

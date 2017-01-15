@@ -12,6 +12,8 @@ typedef enum {
     fromUser
 }messageFromWho;
 
+
+
 @interface LCUserTeacherTalkCellViewModel : NSObject
 @property(nonatomic,strong) NSURL *headImageURL;
 @property(nonatomic,strong) NSString *messageBody;

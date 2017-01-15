@@ -11,6 +11,7 @@
 @interface LCHomeViewModel : BaseCollectionViewModel
 @property(nonatomic,strong) NSArray *homeBannerDataArr;
 @property(nonatomic,strong) NSArray *homesignUpListDataArr;
-@property(nonatomic,copy) void (^clickBanner)(NSInteger carouselTyp, NSString *iid);
+@property(nonatomic,copy) void (^clickBanner)(NSString *className, NSURL *webURL);
+@property(nonatomic,copy) void (^clickBT)(NSString *className, NSURL *webURL);
 
 @end

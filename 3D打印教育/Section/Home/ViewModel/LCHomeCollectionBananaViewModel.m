@@ -11,11 +11,22 @@
 @implementation LCHomeCollectionBananaViewModel
 -(instancetype)initWithModel:(id)model{
     if (self = [super init]) {
-        LCHomeCarousellist *carouselModel = model;
-        self.iid = carouselModel.iid;
-        self.imageURL = [NSURL URLWithString:carouselModel.image];
-        self.detailURL = [NSURL URLWithString:carouselModel.url];
-        self.name = carouselModel.name;
+        
+        if ([[model className]isEqualToString:@"LCHomeCarousellist"]) {
+            LCHomeCarousellist *carouselModel = model;
+            self.iid = carouselModel.iid;
+            self.imageURL = [NSURL URLWithString:carouselModel.image];
+            self.detailURL = [NSURL URLWithString:carouselModel.url];
+            self.name = carouselModel.name;
+            self.className = @"LCHomeCarousellist";
+        }else if ([[model className]isEqualToString:@"LCHomeSignuplist"]){
+            LCHomeSignuplist *carouselModel = model;
+            self.iid = carouselModel.iid;
+            self.imageURL = [NSURL URLWithString:carouselModel.image];
+            self.detailURL = [NSURL URLWithString:carouselModel.url];
+            self.name = carouselModel.name;
+            self.className = @"LCHomeSignuplist";
+        }
     }
     return self;
 }

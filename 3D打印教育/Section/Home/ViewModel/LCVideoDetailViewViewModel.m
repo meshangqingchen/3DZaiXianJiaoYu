@@ -19,6 +19,15 @@
         }else if ([homeDetailModel.contents.is_fav isEqualToString:@"0"]){
             self.ifCollected = NO;
         }
+        if ([homeDetailModel.contents.is_free isEqualToString:@"1"]) {
+            self.ifFree = YES;
+        }else if ([homeDetailModel.contents.is_free isEqualToString:@"0"]){
+            self.ifFree = NO;
+        }
+        self.isAssess = homeDetailModel.contents.is_assess;
+        self.price = homeDetailModel.contents.price;
+        self.imageURL = [NSURL URLWithString:homeDetailModel.contents.image];
+        self.title = homeDetailModel.contents.name;
     }
     return self;
 }

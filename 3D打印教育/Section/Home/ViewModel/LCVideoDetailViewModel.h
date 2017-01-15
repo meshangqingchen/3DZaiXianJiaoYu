@@ -17,7 +17,10 @@
 
 @property(nonatomic,copy) void (^collectVideo)(NSString *courseID,UIButton *collection_BT);//收藏
 @property(nonatomic,copy) void (^pinglunVideo)(NSString *courseID);//评论
-@property(nonatomic,copy) void (^joinFreeCourse)(NSString *courseID); //参加课程
+@property(nonatomic,copy) void (^joinFreeCourse)(NSString *courseID); //免费参加课程
+@property(nonatomic,copy) void (^creatOrder)(NSString *couresID,NSString *price,NSURL *urlStr,NSString *title);// 课程是 收费的生成订单第一步.
+
+@property(nonatomic,copy) void (^sendPingLun)(NSString *courseID,NSString* des,int garde);
 
 @property(nonatomic,copy) void (^popLcInputAccessoryView)(NSString *courseID); //弹出评论键盘
 

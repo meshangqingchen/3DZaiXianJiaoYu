@@ -15,22 +15,34 @@
 #import "LCHomeCollectionBananaViewModel.h" //bannerVM
 #import "LCVideoDetailViewModel.h"
 
+#import "LCWebImageViewModel.h"
+
 @implementation LCHomeViewModel
 -(void)initialize{
     [super initialize];
     
-    [self setClickBanner:^(NSInteger carouselTyp, NSString *iid) {
-        //根据typ 和 id 要转界面
+    @weakify(self)
+    [self setClickBanner:^(NSString *className, NSURL *webURL) {
+        @strongify(self)
+        LCWebImageViewModel *webImageVM = [[LCWebImageViewModel alloc]initWithServices:self.navigationStackService params:@{@"className":className,@"webURL":webURL}];
+        [self.navigationStackService pushViewModel:webImageVM animated:YES];
+    }];
+    [self setClickBT:^(NSString *className, NSURL *webURL) {
+        @strongify(self)
+        LCWebImageViewModel *webImageVM = [[LCWebImageViewModel alloc]initWithServices:self.navigationStackService params:@{@"className":className,@"webURL":webURL}];
+        [self.navigationStackService pushViewModel:webImageVM animated:YES];
     }];
 }
 
 -(void)didSelectRowAtIndexPath:(NSIndexPath *)indexpath in:(UICollectionView *)collectionView{
+    
     LCHomeCollectionSectionModel *sectionModel = self.dataSource[indexpath.section];
     LCHomeCollectionCellModel *cellViewModel = sectionModel.data[indexpath.row];
     
     LCVideoDetailViewModel *videoDetailVM = [[LCVideoDetailViewModel alloc]initWithServices:self.navigationStackService params:nil];
     videoDetailVM.planID = cellViewModel.idd;
     [self.navigationStackService pushViewModel:videoDetailVM animated:YES];
+    
 }
 -(void)requestRemoteDataWithPage:(NSUInteger)curpage completeHandle:(void(^)(id responseObj))complete{
     
@@ -84,6 +96,7 @@
         NSMutableArray *bannerMutableArr = [NSMutableArray array];
         for (int i = 0; i<homeModel.contents.carouselList.count; i++) {
             LCHomeCollectionBananaViewModel *bannerVM = [[LCHomeCollectionBananaViewModel alloc]initWithModel:homeModel.contents.carouselList[i]];
+            bannerVM.clickBanner = self.clickBanner;
             [bannerMutableArr addObject:bannerVM];
         }
         self.homeBannerDataArr = bannerMutableArr.copy;
@@ -92,6 +105,7 @@
         for (int i = 0; i<homeModel.contents.signUpList.count; i++) {
             //signUpList 和 carouselList 的model 一样 所以就创建 signUpList的ViewModel了
             LCHomeCollectionBananaViewModel *ignUpVM = [[LCHomeCollectionBananaViewModel alloc]initWithModel:homeModel.contents.signUpList[i]];
+            ignUpVM.clickBT = self.clickBT;
             [signUpListMutableArr addObject:ignUpVM];
         }
         self.homesignUpListDataArr = signUpListMutableArr.copy;

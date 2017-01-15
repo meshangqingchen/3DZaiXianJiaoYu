@@ -9,11 +9,13 @@
 #import "BaseViewModel.h"
 #import "LCHomeViewModel.h"
 #import "LCMyCourseViewModel.h"
-#import "LCNewsViewModel.h"
+//#import "LCNewsViewModel.h"
+#import "LCCounselTeacherViewModel.h"
 #import "LCPersonalCenterViewModel.h"
 @interface LCRootViewModel : BaseViewModel
 @property(nonatomic,strong,readonly) LCHomeViewModel *homeViewModel;
 @property(nonatomic,strong,readonly) LCMyCourseViewModel *myCourseViewModel;
-@property(nonatomic,strong,readonly) LCNewsViewModel *newsViewModel;
+//@property(nonatomic,strong,readonly) LCNewsViewModel *newsViewModel;
+@property(nonatomic,strong,readonly) LCCounselTeacherViewModel* counselTeacherViewModel;
 @property(nonatomic,strong,readonly) LCPersonalCenterViewModel *personalCenterViewModel;
 @end

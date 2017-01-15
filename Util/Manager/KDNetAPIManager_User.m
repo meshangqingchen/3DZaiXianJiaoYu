@@ -42,6 +42,14 @@ static NSString *const Api_own = @"own";
 static NSString *const Api_addFav = @"addFav";
 ///免费加入课程 addUserPlan
 static NSString *const Api_addUserPlan = @"addUserPlan";
+///评论 课程
+static NSString *const Api_addAssess = @"addAssess";
+///教师列表
+static NSString *const Api_teacherList = @"teacherList";
+///创建订单
+static NSString *const Api_addOrder = @"addOrder";
+
+
 
 /////首页
 //static NSString *const Api_homePage = @"homePage";
@@ -53,8 +61,7 @@ static NSString *const Api_addUserPlan = @"addUserPlan";
 //static NSString *const Api_video = @"video";
 /////更多好课
 //static NSString *const Api_getVideos = @"getVideos";
-/////教师列表
-//static NSString *const Api_teacherList = @"teacherList";
+
 
 /////编辑个人信息
 //static NSString *const Api_editOwn = @"editOwn";
@@ -69,6 +76,8 @@ static NSString *const Api_addUserPlan = @"addUserPlan";
 //static NSString *const Api_upload = @"upload";
 /////意见反馈
 //static NSString *const Api_createFeedBack = @"createFeedBack";
+
+
 ///忘记密码修改密码
 static NSString *const Api_forgetPassword = @"forgetPassword";
 /////报名
@@ -96,6 +105,10 @@ static NSString *const PARAM_phone            = @"phone";
 static NSString *const PARAM_operation        = @"operation";
 static NSString *const PARAM_objId            = @"objId";
 static NSString *const PARAM_type             = @"type";
+static NSString *const PARAM_grade            = @"grade";
+static NSString *const PARAM_description      = @"description";
+static NSString *const PARAM_price            = @"price";
+
 //static NSString *const PARAM_adNewsId         = @"adNewsId";
 //static NSString *const PARAM_teacherId        = @"teacherId";
 //static NSString *const PARAM_videoId          = @"videoId";
@@ -188,16 +201,23 @@ static NSString *const PARAM_type             = @"type";
         complete(responseObj,error);
     }];
 }
+///生成订单
+-(NSURLSessionDataTask *)creatOrderWith:(NSString *)courseID andPrice:(NSString *)price completeHandle:(void (^)(id, NSError *))complete{
+    
+    NSDictionary *params = @{PARAM_planId:courseID,PARAM_price:price};
+    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_addOrder encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+        complete(responseObj,error);
+    }];
+}
 
 
-//
-////老师列表
-//-(NSURLSessionDataTask *)teacherListWith:(NSUInteger)curpage completeHandle:(void (^)(id, NSError *))complete{
-//    NSDictionary *params = @{PARAM_curpage:@(curpage),PARAM_page:@9};
-//    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_teacherList encodeParams:params withMethodType:Post completeHandle:^(id responseObj, NSError *error) {
-//        complete(responseObj,error);
-//    }];
-//}
+//老师列表
+-(NSURLSessionDataTask *)teacherListWith:(NSUInteger)curpage completeHandle:(void (^)(id, NSError *))complete{
+    NSDictionary *params = @{PARAM_curpage:@(curpage),PARAM_page:@9};
+    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_teacherList encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+        complete(responseObj,error);
+    }];
+}
 //
 ////老师详情
 //-(NSURLSessionDataTask *)teacherDetailWith:(NSString *)teacherID completeHandle:(void (^)(id, NSError *))complete{
@@ -206,7 +226,8 @@ static NSString *const PARAM_type             = @"type";
 //        complete(responseObj,error);
 //    }];
 //}
-//
+
+
 ////首页广告位详情
 //-(NSURLSessionDataTask *)adNewsDetailWithNewsID:(NSString *)adNewsID completeHandle:(void (^)(id, NSError *))complete{
 //    NSDictionary *params = @{PARAM_adNewsId:adNewsID};
@@ -362,6 +383,15 @@ static NSString *const PARAM_type             = @"type";
 -(NSURLSessionDataTask *)addFreeCourse:(NSString *)coursrID CompleteHandle:(void (^)(id, NSError *))complete{
     NSDictionary *params = @{PARAM_planId:coursrID};
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_addUserPlan encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+        complete(responseObj,error);
+    }];
+}
+
+-(NSURLSessionDataTask *)evaluateCourse:(NSString *)coursrID andGrade:(int)grade andDes:(NSString *)des CompleteHandle:(void (^)(id, NSError *))complete{
+    
+    NSDictionary *params = @{PARAM_planId:coursrID,PARAM_grade:@(grade),PARAM_description:des};
+    
+    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_addAssess encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
     }];
 }

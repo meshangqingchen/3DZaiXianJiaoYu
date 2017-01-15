@@ -37,6 +37,8 @@
 
 @property (nonatomic, assign) NSInteger is_play;
 
+@property (nonatomic, assign) NSInteger is_assess;
+
 @property (nonatomic, copy) NSString *recommend;
 
 @property (nonatomic, copy) NSString *is_free;

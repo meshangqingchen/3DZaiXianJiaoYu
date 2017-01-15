@@ -26,15 +26,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 ///忘记密码设置新密码
 -(NSURLSessionDataTask *)forgotPasswordSettingNewPasswordWithPhone:(NSString *)phoneNum andNewPassword:(NSString *)newPassword andRePassword:(NSString *)rePassword andCord:(NSString *)cord CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 
+///老师列表
+-(NSURLSessionDataTask *)teacherListWith:(NSUInteger)curpage completeHandle:(void(^)(id responseObj,NSError *error))complete;
 
 
 
-
-
-
-/////老师列表
-//-(NSURLSessionDataTask *)teacherListWith:(NSUInteger)curpage completeHandle:(void(^)(id responseObj,NSError *error))complete;
-//
 /////老师详情
 //-(NSURLSessionDataTask *)teacherDetailWith:(NSString *)teacherID completeHandle:(void(^)(id responseObj,NSError *error))complete;
 /////首页广告位图片详情
@@ -89,7 +85,12 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 -(NSURLSessionDataTask *)addCollectWithOBJ:(NSString *)OBJID andType:(NSInteger)type CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 ///免费加入课程
 -(NSURLSessionDataTask *)addFreeCourse:(NSString *)coursrID CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
-
+///评价
+-(NSURLSessionDataTask *)evaluateCourse:(NSString *)coursrID andGrade:(int)grade andDes:(NSString *)des CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 ///个人信息
 -(NSURLSessionDataTask *)personalInformationCompleteHandle:(void(^)(id responseObj,NSError *error))complete;
+
+///参加收费课程 生成订单
+-(NSURLSessionDataTask *)creatOrderWith:(NSString *)courseID andPrice:(NSString *)price completeHandle:(void(^)(id responseObj,NSError *error))complete;
+
 @end

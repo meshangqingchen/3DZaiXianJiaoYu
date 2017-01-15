@@ -41,6 +41,7 @@
         make.right.mas_equalTo(-12);
         make.bottom.mas_equalTo(self.videoImageView);
     }];
+    
 
 }
 

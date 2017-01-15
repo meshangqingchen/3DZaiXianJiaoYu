@@ -64,6 +64,35 @@
     }
 }
 
+- (void)showProgress{
+    MBProgressHUD *progressHUD = [MBProgressHUD showHUDAddedTo:[self currentView] animated:YES];
+    [progressHUD hideAnimated:YES afterDelay:1];
+}
+
+//隐藏提示
+
+
+
+- (void)hideProgress{
+//    [MBProgressHUD hideAllHUDsForView:[self currentView] animated:YES];
+    [MBProgressHUD hideHUDForView:[self currentView] animated:YES];
+}
+
+- (UIView *)currentView{
+    UIViewController *controller = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+    
+    if ([controller isKindOfClass:[UITabBarController class]]) {
+        controller = [(UITabBarController *)controller selectedViewController];
+    }
+    if([controller isKindOfClass:[UINavigationController class]]) {
+        controller = [(UINavigationController *)controller visibleViewController];
+    }
+    if (!controller) {
+        return [UIApplication sharedApplication].keyWindow;
+    }
+    return controller.view;
+}
+
 
 
 @end
