@@ -22,7 +22,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(KDRouter)
 {
     NSString *viewController = self.viewModelViewMappings[NSStringFromClass(viewModel.class)];
     
-   
     if ([NSClassFromString(viewController) isSubclassOfClass:[BaseViewController class]]) {
         MYLog(@"====%@",viewController);
     }
@@ -64,7 +63,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(KDRouter)
 - (NSSet *)rootViewControllers {
 	if(_rootViewControllers == nil) {
        _rootViewControllers = [NSSet setWithObjects:@"LCHomeViewController",
-                                                    @"LCMyCourseViewController",
+                                                    @"LCCourseClassViewController",
                                                     @"LCCounselTeacherViewController",
                                                     @"LCPersonalCenterViewController", nil];
         }

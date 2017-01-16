@@ -10,7 +10,7 @@
 
 @interface LCRootViewModel ()
 @property(nonatomic,strong,readwrite) LCHomeViewModel *homeViewModel;
-@property(nonatomic,strong,readwrite) LCMyCourseViewModel *myCourseViewModel;
+@property(nonatomic,strong,readwrite) LCCourseClassViewModel *courseClassViewModel;
 //@property(nonatomic,strong,readwrite) LCNewsViewModel *newsViewModel;
 @property(nonatomic,strong,readwrite) LCCounselTeacherViewModel* counselTeacherViewModel;
 @property(nonatomic,strong,readwrite) LCPersonalCenterViewModel *personalCenterViewModel;
@@ -21,9 +21,9 @@
 -(void)initialize{
     [super initialize];
     self.homeViewModel = [[LCHomeViewModel alloc]initWithServices:self.navigationStackService params:nil];
-    self.myCourseViewModel = [[LCMyCourseViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"我的课程"}];
-//    self.newsViewModel = [[LCNewsViewModel alloc]initWithServices:self.navigationStackService params:nil];
+    self.courseClassViewModel = [[LCCourseClassViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"课程分类"}];
     self.counselTeacherViewModel =[[LCCounselTeacherViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"专家咨询"}];
+    
     self.personalCenterViewModel = [[LCPersonalCenterViewModel alloc]initWithServices:self.navigationStackService params:nil];
 }
 

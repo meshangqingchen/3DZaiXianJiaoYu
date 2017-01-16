@@ -15,8 +15,7 @@
 #import "RTRootNavigationController.h"
 //四个模块控制器
 #import "LCHomeViewController.h"
-#import "LCMyCourseViewController.h"
-//#import "LCNewsViewController.h"
+#import "LCCourseClassViewController.h"
 #import "LCCounselTeacherViewController.h"
 #import "LCPersonalCenterViewController.h"
 
@@ -47,8 +46,8 @@
     LCHomeViewController *homeVC = [[LCHomeViewController alloc]initWithViewModel:self.viewModel.homeViewModel];
     RTRootNavigationController *homeNVC = [[RTRootNavigationController alloc]initWithRootViewController:homeVC];
     
-    LCMyCourseViewController *myCourseVC = [[LCMyCourseViewController alloc]initWithViewModel:self.viewModel.myCourseViewModel];
-    RTRootNavigationController *myCourseNVC = [[RTRootNavigationController alloc]initWithRootViewController:myCourseVC];
+    LCCourseClassViewController *courseClassVC = [[LCCourseClassViewController alloc]initWithViewModel:self.viewModel.courseClassViewModel];
+    RTRootNavigationController *courseClassNVC = [[RTRootNavigationController alloc]initWithRootViewController:courseClassVC];
     
     LCCounselTeacherViewController *counselTeacherViewVC = [[LCCounselTeacherViewController alloc]initWithViewModel:self.viewModel.counselTeacherViewModel];
     RTRootNavigationController *counselTeacherViewNVC = [[RTRootNavigationController alloc]initWithRootViewController:counselTeacherViewVC];
@@ -56,7 +55,7 @@
     LCPersonalCenterViewController *personalCenterVC = [[LCPersonalCenterViewController alloc]initWithViewModel:self.viewModel.personalCenterViewModel];
     RTRootNavigationController *personalCenterNVC = [[RTRootNavigationController alloc]initWithRootViewController:personalCenterVC];
     
-    [self.tabBarController setViewControllers:@[homeNVC,myCourseNVC,counselTeacherViewNVC,personalCenterNVC]];
+    [self.tabBarController setViewControllers:@[homeNVC,courseClassNVC,counselTeacherViewNVC,personalCenterNVC]];
     [kSharedAppDelegate.navigationStackService pushNavigationController:homeNVC];
     
 }

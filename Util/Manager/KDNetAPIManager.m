@@ -21,7 +21,7 @@ static dispatch_once_t onceToken;
 
 +(instancetype)sharedJsonClient{
     dispatch_once(&onceToken, ^{
-        _sharedManager = [[KDNetAPIManager alloc]init];//[[KDNetAPIManager alloc]initWithBaseURL:[NSURL URLWithString:AppNetAPIBaseURLString]];
+        _sharedManager = [[KDNetAPIManager alloc]init];
     });
     return _sharedManager;
 }
@@ -98,11 +98,9 @@ static dispatch_once_t onceToken;
         //对错误统一的 提示
         if ([status isEqual: @0] & ![mas isEqualToString:@"自动登录失败"]) {
             [NSObject showWarning:jsonDic[@"msg"]];
-//            return ;
         }
         if (error != nil) {
             [NSObject showWarning:@"网络情求错误"];
-//            return ;
         }
         complete(responseObj ,error);
     }];
@@ -111,7 +109,7 @@ static dispatch_once_t onceToken;
 -(NSURLSessionDataTask*)requestPath:(NSString *)path parameters:(id)parameters method:(NSString *)method andBaseApi:(NSString *)baseApi completeHandle:(void(^)(id , NSError *))complete{
    //
     NSError *serializationError = nil;
-    NSString *urlStr = [NSString stringWithFormat:@"%@%@%@",@"http://192.168.1.108/3d/api.php/home/",baseApi,path];
+    NSString *urlStr = [NSString stringWithFormat:@"%@%@%@",AppNetAPIBaseURLString,baseApi,path];
     MYLog(@"%@",urlStr);
     MYLog(@"%@",urlStr);
     MYLog(@"%@",urlStr);

@@ -24,7 +24,9 @@ typedef NS_ENUM(NSUInteger , NetworkMethod) {
 
 //测试接口  http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json&ip=218.4.255.255
 //http://www.wxswjy.com/api.php/home/api/
-static NSString *const AppNetAPIBaseURLString = @"http://192.168.1.108/3d/api.php/home/api/";//@"http://saas.petle.com.cn/api.php/";
+//http://www.wxswjy.com/api2.php/home/ 服务器上的
+//@"http://192.168.1.108/3d/api.php/home/" 测试
+static NSString *const AppNetAPIBaseURLString = @"http://www.wxswjy.com/api2.php/home/";
 
 
 @interface KDNetAPIManager : AFHTTPSessionManager
