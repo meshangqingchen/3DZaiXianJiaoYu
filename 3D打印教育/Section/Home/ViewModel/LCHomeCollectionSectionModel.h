@@ -13,5 +13,7 @@
 //@property(nonatomic,assign) LCSectionTyp sectionTyp;
 @property(nonatomic,strong) NSString *sectionTitle;
 @property(nonatomic,strong) NSArray *data;
+@property(nonatomic,copy) void (^moreClick)(NSIndexPath *indexpath);
+
 -(instancetype)initWithModel:(id)model;
 @end

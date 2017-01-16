@@ -13,9 +13,10 @@
 #import "LCHomeCollectionSectionModel.h" //区VM
 #import "LCHomeModel.h"
 #import "LCHomeCollectionBananaViewModel.h" //bannerVM
-#import "LCVideoDetailViewModel.h"
-
-#import "LCWebImageViewModel.h"
+#import "LCVideoDetailViewModel.h"          //课程的detail
+#import "LCCourseCollectionViewModel.h"     //根据课程分类进课程 list
+#import "LCWebImageViewModel.h"             //大图
+#import "LCMoreTeacherViewModel.h"          //更多老师
 
 @implementation LCHomeViewModel
 -(void)initialize{
@@ -32,16 +33,38 @@
         LCWebImageViewModel *webImageVM = [[LCWebImageViewModel alloc]initWithServices:self.navigationStackService params:@{@"className":className,@"webURL":webURL}];
         [self.navigationStackService pushViewModel:webImageVM animated:YES];
     }];
+    
+    [self setMoreClick:^(NSIndexPath *indexPath) {
+        @strongify(self)
+        if (indexPath.section == 0) {
+            
+        }else if (indexPath.section == 1){
+            
+        }else if (indexPath.section == 2){
+            LCMoreTeacherViewModel *moreTeacherVM = [[LCMoreTeacherViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"讲师列表"}];
+            [self.navigationStackService pushViewModel:moreTeacherVM animated:YES];
+        }
+    }];
 }
 
 -(void)didSelectRowAtIndexPath:(NSIndexPath *)indexpath in:(UICollectionView *)collectionView{
     
     LCHomeCollectionSectionModel *sectionModel = self.dataSource[indexpath.section];
-    LCHomeCollectionCellModel *cellViewModel = sectionModel.data[indexpath.row];
+    if (indexpath.section == 0) {
+        LCHomeSmallCollectionCellModel *cellVM = sectionModel.data[indexpath.row];
+        LCCourseCollectionViewModel *courseCollectionVM = [[LCCourseCollectionViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:cellVM.title}];
+        courseCollectionVM.typeId = cellVM.iid;
+        [self.navigationStackService pushViewModel:courseCollectionVM animated:YES];
+    }else if (indexpath.section == 1){
+        LCHomeCollectionCellModel *cellViewModel = sectionModel.data[indexpath.row];
+        LCVideoDetailViewModel *videoDetailVM = [[LCVideoDetailViewModel alloc]initWithServices:self.navigationStackService params:nil];
+        videoDetailVM.planID = cellViewModel.idd;
+        [self.navigationStackService pushViewModel:videoDetailVM animated:YES];
+    }else if (indexpath.section == 2){
     
-    LCVideoDetailViewModel *videoDetailVM = [[LCVideoDetailViewModel alloc]initWithServices:self.navigationStackService params:nil];
-    videoDetailVM.planID = cellViewModel.idd;
-    [self.navigationStackService pushViewModel:videoDetailVM animated:YES];
+    }
+    
+    
     
 }
 -(void)requestRemoteDataWithPage:(NSUInteger)curpage completeHandle:(void(^)(id responseObj))complete{
@@ -121,7 +144,7 @@
         LCHomeCollectionSectionModel *sectionVM0 = [LCHomeCollectionSectionModel new];
         sectionVM0.sectionTitle = @"课程设置";
         sectionVM0.data = sectionDataArr0.copy;
-        
+        sectionVM0.moreClick = self.moreClick;
         
         NSMutableArray *sectionDataArr1 = [NSMutableArray array];
         for (int i = 0; i<homeModel.contents.recommendClassTypeList.count; i++) {
@@ -129,9 +152,9 @@
             [sectionDataArr1 addObject:CellVM];
         }
         LCHomeCollectionSectionModel *sectionVM1 = [LCHomeCollectionSectionModel new];
-        sectionVM1.sectionTitle = @"设备工艺";
+        sectionVM1.sectionTitle = @"精品课程";
         sectionVM1.data = sectionDataArr1.copy;
-        
+        sectionVM1.moreClick = self.moreClick;
         
         
         NSMutableArray *sectionDataArr2 = [NSMutableArray array];
@@ -143,10 +166,9 @@
         LCHomeCollectionSectionModel *sectionVM2 = [LCHomeCollectionSectionModel new];
         sectionVM2.sectionTitle = @"名师导航";
         sectionVM2.data = teacherArr;
-        
+        sectionVM2.moreClick = self.moreClick;
         [self.mutableDataArr addObjectsFromArray:@[sectionVM0,sectionVM1,sectionVM2]];
         self.dataSource = self.mutableDataArr.copy;
-        
     }];
 }
 @end

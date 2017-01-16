@@ -31,6 +31,7 @@ static void *xxcontext = &xxcontext;
         self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
             @strongify(self)
             self.viewModel.curpage = 1;
+            [self.viewModel.mutableDataArr removeAllObjects];
             [self.viewModel requestRemoteDataWithPage:self.viewModel.curpage completeHandle:^(id responseObj) {
                 [self.collectionView.mj_header endRefreshing];
                 NSDictionary *objDic = responseObj;
@@ -49,13 +50,13 @@ static void *xxcontext = &xxcontext;
             self.viewModel.curpage = self.viewModel.curpage + 1;
             [self.viewModel requestRemoteDataWithPage:self.viewModel.page completeHandle:^(id responseObj) {
                 @strongify(self)
-//                NSDictionary *objDic = responseObj;
-//                NSNumber *morepage = objDic[@"morepage"];
-//                if ([morepage isEqual:@(1)]) {
-//                    [self.collectionView.mj_footer endRefreshing];
-//                }else{
-//                    [self.collectionView.mj_footer endRefreshingWithNoMoreData];
-//                }
+                NSDictionary *objDic = responseObj;
+                NSNumber *morepage = objDic[@"morepage"];
+                if ([morepage isEqual:@(1)]) {
+                    [self.collectionView.mj_footer endRefreshing];
+                }else{
+                    [self.collectionView.mj_footer endRefreshingWithNoMoreData];
+                }
             }];
         }];
     }

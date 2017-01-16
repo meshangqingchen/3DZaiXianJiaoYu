@@ -145,11 +145,11 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
     LCHomeCollectionSectionModel *sectionModel =  self.viewModel.dataSource[indexPath.section];
     if (indexPath.section == 0) {
         LCCollectionReusableBannerHeaderView *bannerHeaderView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:identifierBannerHeader forIndexPath:indexPath];
-        [bannerHeaderView bindViewModel:sectionModel andBannerViewModel:self.viewModel.homeBannerDataArr andsignUpViewModel:self.viewModel.homesignUpListDataArr];
+        [bannerHeaderView bindViewModel:sectionModel andBannerViewModel:self.viewModel.homeBannerDataArr andsignUpViewModel:self.viewModel.homesignUpListDataArr andIndexPath:indexPath];
         return bannerHeaderView;
     }
     LCCollectionReusableHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:identifierSectionHeader forIndexPath:indexPath];
-    [headerView bindViewModel:sectionModel];
+    [headerView bindViewModel:sectionModel andIndexpath:indexPath];
     return headerView;
 }
 

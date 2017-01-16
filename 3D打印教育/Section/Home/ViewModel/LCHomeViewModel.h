@@ -14,4 +14,5 @@
 @property(nonatomic,copy) void (^clickBanner)(NSString *className, NSURL *webURL);
 @property(nonatomic,copy) void (^clickBT)(NSString *className, NSURL *webURL);
 
+@property(nonatomic,copy) void (^moreClick)(NSIndexPath *indexpath);
 @end

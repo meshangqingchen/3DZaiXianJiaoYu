@@ -58,11 +58,12 @@
 + (UIColor *)getC21Color;
 ///0x989898 首页老师介绍的字
 + (UIColor *)getC22Color;
-
-
-
-
+///0xf15518 购买价格
 + (UIColor *)getC23Color;
+
+
+
+//0xfcd757
 + (UIColor *)getC24Color;
 + (UIColor *)getC25Color;
 + (UIColor *)getC26Color;

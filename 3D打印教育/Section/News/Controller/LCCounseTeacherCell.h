@@ -8,7 +8,7 @@
 
 #import "BaseTableViewCell.h"
 
-@interface LCTeacherCell : BaseTableViewCell
+@interface LCCounseTeacherCell : BaseTableViewCell
 @property(nonatomic,strong) UIImageView *headImageView;
 @property(nonatomic,strong) UILabel *nickNameLB;
 @property(nonatomic,strong) UILabel *bottomLB;

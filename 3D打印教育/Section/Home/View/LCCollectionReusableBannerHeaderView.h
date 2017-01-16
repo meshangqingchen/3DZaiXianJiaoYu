@@ -29,6 +29,7 @@
 @property(nonatomic,strong) NSArray *bannerDataArr;
 @property(nonatomic,strong) NSArray *signUpDataArr;
 
+
 -(void)setupViews;
--(void)bindViewModel:(id)viewModel andBannerViewModel:(id)bannerVM andsignUpViewModel:(id)signUpVM;
+-(void)bindViewModel:(id)viewModel andBannerViewModel:(id)bannerVM andsignUpViewModel:(id)signUpVM andIndexPath:(NSIndexPath *)indexPath;
 @end

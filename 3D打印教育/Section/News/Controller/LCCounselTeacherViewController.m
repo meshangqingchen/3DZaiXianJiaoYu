@@ -8,14 +8,14 @@
 
 #import "LCCounselTeacherViewController.h"
 #import "LCCounselTeacherViewModel.h"
-#import "LCTeacherCell.h"
+#import "LCCounseTeacherCell.h"
 
 @interface LCCounselTeacherViewController ()
 @property(nonatomic,strong) LCCounselTeacherViewModel *viewModel;
 @property(nonatomic,strong) UITableView *tableView;
 @end
 
-static NSString *identifier = @"LCTeacherCell";
+static NSString *identifier = @"LCCounseTeacherCell";
 
 
 @implementation LCCounselTeacherViewController
@@ -28,7 +28,7 @@ static NSString *identifier = @"LCTeacherCell";
     self.tableView.rowHeight = 90;
     self.tableView.backgroundColor = [KDColor getC19Color];
     [self.view addSubview:self.tableView];
-    [self.tableView registerClass:[LCTeacherCell class] forCellReuseIdentifier:identifier];
+    [self.tableView registerClass:[LCCounseTeacherCell class] forCellReuseIdentifier:identifier];
 
     [super viewDidLoad];
     
@@ -39,7 +39,7 @@ static NSString *identifier = @"LCTeacherCell";
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    LCTeacherCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+    LCCounseTeacherCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     [cell bindViewModel:self.viewModel.dataSource[indexPath.row]];
     return cell;
 }

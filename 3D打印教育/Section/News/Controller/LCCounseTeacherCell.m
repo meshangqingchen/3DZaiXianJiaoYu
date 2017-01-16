@@ -6,10 +6,10 @@
 //  Copyright © 2017年 3D. All rights reserved.
 //
 
-#import "LCTeacherCell.h"
+#import "LCCounseTeacherCell.h"
 #import "LCCounselTeacherCellViewModel.h"
 #import "LCAboutYYWebImage.h"
-@implementation LCTeacherCell
+@implementation LCCounseTeacherCell
 
 -(void)setupViews{
     UIView *shadowView = [UIView new];

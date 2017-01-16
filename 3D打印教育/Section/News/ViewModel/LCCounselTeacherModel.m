@@ -20,7 +20,7 @@
 @implementation LCTeacherModel
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{@"iid" : @"id",@"discrip":@"discription"};
-}
+}                             
 @end
 
 

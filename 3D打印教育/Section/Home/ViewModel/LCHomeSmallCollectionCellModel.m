@@ -15,7 +15,7 @@
 
         self.smallImgURL = [NSURL URLWithString:homeClassType.img];
         self.title = homeClassType.name;
-        self.idd = homeClassType.iid;
+        self.iid = homeClassType.iid;
     }
     return self;
 }

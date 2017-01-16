@@ -9,6 +9,7 @@
 #import "LCNotarizeOrderViewController.h"
 #import "LCNotarizeOrderViewModel.h"
 
+
 @interface LCNotarizeOrderViewController ()
 @property(nonatomic,strong) LCNotarizeOrderViewModel *viewModel;
 @end
@@ -30,9 +31,8 @@
     lb.font = [[KDFont sharedKDFont]getF28Font];
     [backView1 addSubview:lb];
     [lb mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.centerY.mas_offset(0);
-//        make.left.mas_offset();
-        make.edges.mas_equalTo(0);
+        make.centerY.mas_offset(0);
+        make.left.mas_offset(15);
     }];
     
     
@@ -84,13 +84,114 @@
         make.centerY.mas_equalTo(0);
     }];
     
-//    UIView *backView4 = [[UIView alloc]initWithFrame:CGRectMake(0, 69, SCREEN_WIDTH, 44)];
-//    backView4.backgroundColor = [UIColor whiteColor];
-//    [self.view addSubview:backView4];
+    UILabel *changeZhifuLB = [UILabel new];
+    changeZhifuLB.text = @"选择支付方式";
+    changeZhifuLB.textColor = [KDColor getC3Color];
+    changeZhifuLB.numberOfLines = 2;
+    changeZhifuLB.font = [[KDFont sharedKDFont]getF26Font];
+    [self.view addSubview:changeZhifuLB];
+    [changeZhifuLB mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_offset(15);
+        make.top.mas_equalTo(backView3.mas_bottom).mas_equalTo(10);
+    }];
+//
+    UIView *backView4 = [UIView new];
+    backView4.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:backView4];
+    [backView4 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_offset(0);
+        make.top.mas_equalTo(changeZhifuLB.mas_bottom).mas_offset(15);
+        make.height.mas_offset(45);
+    }];
+    
+    UIImageView *zhifubaoImageView = [UIImageView new];
+    UIImage *zhifubaoImage = [UIImage imageNamed:@"zhifubao"];
+    zhifubaoImageView.image= zhifubaoImage;
+    [backView4 addSubview:zhifubaoImageView];
+    [zhifubaoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(15);
+        make.centerY.mas_offset(0);
+        make.size.mas_equalTo(zhifubaoImage.size);
+    }];
+    
+    UIImageView *duigouInageView = [UIImageView new];
+    UIImage *duigouImage = [UIImage imageNamed:@"duigou"];
+    duigouInageView.image= duigouImage;
+    [backView4 addSubview:duigouInageView];
+    [duigouInageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(-15);
+        make.centerY.mas_offset(0);
+        make.size.mas_equalTo(duigouImage.size);
+    }];
 
+    UIView *bottomLeftView = [UIView new];
+    bottomLeftView.backgroundColor = [KDColor getC5Color];
+    [self.view addSubview:bottomLeftView];
+    [bottomLeftView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.mas_offset(0);
+        make.height.mas_equalTo(49);
+        make.width.mas_equalTo(SCREEN_WIDTH-100);
+    }];
+    UILabel *trulyLB = [UILabel new];
+    trulyLB.text = @"实付金额:";
+    trulyLB.textColor = [KDColor getC3Color];
+    trulyLB.numberOfLines = 2;
+    trulyLB.font = [[KDFont sharedKDFont]getF32Font];
+    [bottomLeftView addSubview:trulyLB];
+    [trulyLB mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_offset(15);
+        make.centerY.mas_equalTo(0);
+    }];
+    float price = [self.viewModel.price floatValue];
     
+    UILabel *trulyPriceLB = [UILabel new];
+    trulyPriceLB.text = [NSString stringWithFormat:@"¥ %.2f",price];
+    trulyPriceLB.textColor = [KDColor getC23Color];
+    trulyPriceLB.numberOfLines = 2;
+    trulyPriceLB.font = [[KDFont sharedKDFont]getF32Font];
+    [bottomLeftView addSubview:trulyPriceLB];
+    [trulyPriceLB mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(trulyLB.mas_right).mas_offset(15);
+        make.centerY.mas_equalTo(0);
+    }];
     
+    UIButton *bottomRightBT = [UIButton new];
+    [bottomRightBT setTitle:@"确认支付" forState:0];
+    bottomRightBT.titleLabel.font = [[KDFont sharedKDFont] getF32Font];
+    [bottomRightBT setTitleColor:[KDColor getC0Color] forState:0];
+    bottomRightBT.backgroundColor = [KDColor getX1Color];
+    [self.view addSubview:bottomRightBT];
+    [bottomRightBT mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.bottom.mas_offset(0);
+        make.height.mas_equalTo(49);
+        make.width.mas_equalTo(100);
+    }];
+    @weakify(self)
+    [bottomRightBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+        @strongify(self)
+        
+        
+        
+    }];
 }
+
+
+- (NSString *)generateTradeNO
+{
+    static int kNumber = 15;
+    
+    NSString *sourceStr = @"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    NSMutableString *resultStr = [[NSMutableString alloc] init];
+    srand((unsigned)time(0));
+    for (int i = 0; i < kNumber; i++)
+    {
+        unsigned index = rand() % [sourceStr length];
+        NSString *oneStr = [sourceStr substringWithRange:NSMakeRange(index, 1)];
+        [resultStr appendString:oneStr];
+    }
+    return resultStr;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

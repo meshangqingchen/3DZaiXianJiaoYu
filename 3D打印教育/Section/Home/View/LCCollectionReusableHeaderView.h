@@ -15,5 +15,5 @@
 @property(nonatomic,strong) UIImageView *backImageView;
 
 -(void)setupViews;
--(void)bindViewModel:(id)viewModel;
+-(void)bindViewModel:(id)viewModel andIndexpath:(NSIndexPath *)indexPath;
 @end

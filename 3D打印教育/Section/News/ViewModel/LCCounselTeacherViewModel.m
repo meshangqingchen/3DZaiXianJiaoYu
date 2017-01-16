@@ -30,8 +30,8 @@
         for (int i=0; i<counselTeacherModel.contents.count; i++) {
             LCCounselTeacherCellViewModel *cellVM = [[LCCounselTeacherCellViewModel alloc]initWithModel:counselTeacherModel.contents[i]];
             [self.mutableDataArr addObject:cellVM];
-            self.dataSource = self.mutableDataArr.copy;
         }
+        self.dataSource = self.mutableDataArr.copy;
         complete(responseObj);
     }];
 }

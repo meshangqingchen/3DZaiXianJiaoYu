@@ -48,7 +48,8 @@ static NSString *const Api_addAssess = @"addAssess";
 static NSString *const Api_teacherList = @"teacherList";
 ///创建订单
 static NSString *const Api_addOrder = @"addOrder";
-
+///通过分类找课程
+static NSString *const Api_getPlanListByTypeId = @"getPlanListByTypeId";
 
 
 /////首页
@@ -104,10 +105,12 @@ static NSString *const PARAM_code             = @"code";
 static NSString *const PARAM_phone            = @"phone";
 static NSString *const PARAM_operation        = @"operation";
 static NSString *const PARAM_objId            = @"objId";
-static NSString *const PARAM_type             = @"type";
+static NSString *const PARAM_type             = @"type";  //收藏课程 还是 收藏视频 还是收藏 新闻
 static NSString *const PARAM_grade            = @"grade";
 static NSString *const PARAM_description      = @"description";
 static NSString *const PARAM_price            = @"price";
+static NSString *const PARAM_typeId           = @"typeId"; //课程分类type
+
 
 //static NSString *const PARAM_adNewsId         = @"adNewsId";
 //static NSString *const PARAM_teacherId        = @"teacherId";
@@ -236,15 +239,17 @@ static NSString *const PARAM_price            = @"price";
 //    }];
 //}
 //
+
+
 ////更多好课
-//-(NSURLSessionDataTask *)courseListWithCurpage:(NSUInteger)curpage completeHandle:(void (^)(id, NSError *))complete{
-//    
-//    NSDictionary *params = @{PARAM_curpage:@(curpage),PARAM_page:@10};
-//    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_getVideos encodeParams:params withMethodType:Post completeHandle:^(id responseObj, NSError *error) {
-//        complete(responseObj,error);
-//   }];
-//}
-//
+-(NSURLSessionDataTask *)courseListWithtypeId:(NSString *)typeId andCurpage:(NSUInteger)curpage completeHandle:(void (^)(id, NSError *))complete{
+    
+    NSDictionary *params = @{PARAM_typeId:typeId,PARAM_curpage:@(curpage),PARAM_page:@2};
+    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_getPlanListByTypeId encodeParams:params withMethodType:Post andBaseApi:BaseApi_plan completeHandle:^(id responseObj, NSError *error) {
+        complete(responseObj,error);
+    }];
+}
+
 
 //
 ////修改昵称

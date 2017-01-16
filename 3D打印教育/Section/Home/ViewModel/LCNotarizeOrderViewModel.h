@@ -15,5 +15,7 @@
 @property(nonatomic,strong) NSString *price;
 
 @property(nonatomic,copy) void (^networkRequest)();
+@property(nonatomic,copy) void (^zhifu)();
+
 
 @end

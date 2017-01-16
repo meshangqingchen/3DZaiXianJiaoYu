@@ -9,6 +9,12 @@
 #import "LCCollectionReusableHeaderView.h"
 #import "UIButton+ImageTitleStyle.h"
 #import "LCHomeCollectionSectionModel.h"
+
+@interface LCCollectionReusableHeaderView()
+@property(nonatomic,strong) LCHomeCollectionSectionModel *sectionVM;
+@property(nonatomic,strong) NSIndexPath *indexPath;
+@end
+
 @implementation LCCollectionReusableHeaderView
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame: frame]) {
@@ -47,18 +53,16 @@
         make.width.mas_equalTo(38);
     }];
     [_moreBT setButtonImageTitleStyle:ButtonImageTitleStyleRight padding:5];
-    
-//    self.centerLB = [UILabel new];
-//    _centerLB.text = @"免费好课";
-//    _centerLB.textColor = [KDColor getC2Color];
-//    _centerLB.font = [[KDFont sharedKDFont]getF32Font];
-//    [self addSubview:_centerLB];
-//    [_centerLB mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.center.mas_equalTo(0);
-//    }];
+    @weakify(self)
+    [_moreBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+        @strongify(self)
+        !self.sectionVM.moreClick ? : self.sectionVM.moreClick(self.indexPath);
+    }];
 }
--(void)bindViewModel:(id)viewModel{
+-(void)bindViewModel:(id)viewModel andIndexpath:(NSIndexPath *)indexPath{
     LCHomeCollectionSectionModel *sectionVM = viewModel;
+    self.sectionVM = sectionVM;
+    self.indexPath = indexPath;
     self.titleLB.text = sectionVM.sectionTitle;
     
 }

@@ -168,6 +168,8 @@
 <SDCycleScrollViewDelegate>
 @property(nonatomic,strong) NSMutableArray *imageURLArr;
 @property(nonatomic,strong) NSMutableArray *titleArr;
+@property(nonatomic,strong) LCHomeCollectionSectionModel *sectionVM;
+@property(nonatomic,strong) NSIndexPath *indexPath;
 @end
 
 @implementation LCCollectionReusableBannerHeaderView
@@ -238,22 +240,19 @@
         make.width.mas_equalTo(38);
     }];
     [_moreBT setButtonImageTitleStyle:ButtonImageTitleStyleRight padding:5];
-
-//    self.centerLB = [UILabel new];
-//    _centerLB.text = @"免费好课";
-//    _centerLB.textColor = [KDColor getC2Color];
-//    _centerLB.font = [[KDFont sharedKDFont]getF32Font];
-//    [self.backImageView addSubview:_centerLB];
-//    [_centerLB mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.center.mas_equalTo(0);
-//    }];
-    
+    @weakify(self)
+    [_moreBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+        @strongify(self)
+        !self.sectionVM.moreClick ? : self.sectionVM.moreClick(self.indexPath);
+    }];
     
 }
 
--(void)bindViewModel:(id)viewModel andBannerViewModel:(id)bannerVM andsignUpViewModel:(id)signUpVM{
+-(void)bindViewModel:(id)viewModel andBannerViewModel:(id)bannerVM andsignUpViewModel:(id)signUpVM andIndexPath:(NSIndexPath *)indexPath{
     
     LCHomeCollectionSectionModel *sectionVM = viewModel;
+    self.sectionVM = sectionVM;
+    self.indexPath = indexPath;
     self.titleLB.text = sectionVM.sectionTitle;
     self.bannerDataArr = bannerVM;
     self.signUpDataArr = signUpVM;

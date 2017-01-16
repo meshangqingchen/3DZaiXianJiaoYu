@@ -35,8 +35,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 //-(NSURLSessionDataTask *)teacherDetailWith:(NSString *)teacherID completeHandle:(void(^)(id responseObj,NSError *error))complete;
 /////首页广告位图片详情
 //-(NSURLSessionDataTask *)adNewsDetailWithNewsID:(NSString *)adNewsID completeHandle:(void(^)(id responseObj,NSError *error))complete;
-/////更多好课
-//-(NSURLSessionDataTask *)courseListWithCurpage:(NSUInteger)curpage completeHandle:(void(^)(id responseObj,NSError *error))complete;
+
+///根据课程分类的 typeID查找课程List
+-(NSURLSessionDataTask *)courseListWithtypeId:(NSString *)typeId andCurpage:(NSUInteger)curpage  completeHandle:(void(^)(id responseObj,NSError *error))complete;
 
 /////修改昵称
 //-(NSURLSessionDataTask *)changeNickName:(NSString *)nickName CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
