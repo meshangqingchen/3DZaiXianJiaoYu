@@ -241,10 +241,17 @@ static NSString *const PARAM_typeId           = @"typeId"; //课程分类type
 //
 
 
-////更多好课
+////根据课程的分类找课程的list
 -(NSURLSessionDataTask *)courseListWithtypeId:(NSString *)typeId andCurpage:(NSUInteger)curpage completeHandle:(void (^)(id, NSError *))complete{
     
     NSDictionary *params = @{PARAM_typeId:typeId,PARAM_curpage:@(curpage),PARAM_page:@2};
+    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_getPlanListByTypeId encodeParams:params withMethodType:Post andBaseApi:BaseApi_plan completeHandle:^(id responseObj, NSError *error) {
+        complete(responseObj,error);
+    }];
+}
+
+-(NSURLSessionDataTask *)moreCourseListAndCurpage:(NSUInteger)curpage completeHandle:(void (^)(id, NSError *))complete{
+    NSDictionary *params = @{PARAM_curpage:@(curpage),PARAM_page:@2};
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_getPlanListByTypeId encodeParams:params withMethodType:Post andBaseApi:BaseApi_plan completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
     }];

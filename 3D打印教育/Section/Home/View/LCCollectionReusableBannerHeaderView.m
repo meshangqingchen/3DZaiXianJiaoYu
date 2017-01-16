@@ -228,23 +228,23 @@
         make.centerY.mas_equalTo(0);
     }];
     
-    self.moreBT = [UIButton new];
-    [_moreBT setImage:[UIImage imageNamed:@"danjiantou"] forState:0];
-    [_moreBT setTitle:@"更多" forState:0];
-    _moreBT.titleLabel.font = [[KDFont sharedKDFont]getF26Font];
-    [_moreBT setTitleColor:[KDColor getC4Color] forState:0];
-    [self.backImageView addSubview:_moreBT];
-    [_moreBT mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(-15);
-        make.top.bottom.mas_equalTo(0);
-        make.width.mas_equalTo(38);
-    }];
-    [_moreBT setButtonImageTitleStyle:ButtonImageTitleStyleRight padding:5];
-    @weakify(self)
-    [_moreBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
-        @strongify(self)
-        !self.sectionVM.moreClick ? : self.sectionVM.moreClick(self.indexPath);
-    }];
+//    self.moreBT = [UIButton new];
+//    [_moreBT setImage:[UIImage imageNamed:@"danjiantou"] forState:0];
+//    [_moreBT setTitle:@"更多" forState:0];
+//    _moreBT.titleLabel.font = [[KDFont sharedKDFont]getF26Font];
+//    [_moreBT setTitleColor:[KDColor getC4Color] forState:0];
+//    [self.backImageView addSubview:_moreBT];
+//    [_moreBT mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.right.mas_equalTo(-15);
+//        make.top.bottom.mas_equalTo(0);
+//        make.width.mas_equalTo(38);
+//    }];
+//    [_moreBT setButtonImageTitleStyle:ButtonImageTitleStyleRight padding:5];
+//    @weakify(self)
+//    [_moreBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+//        @strongify(self)
+//        !self.sectionVM.moreClick ? : self.sectionVM.moreClick(self.indexPath);
+//    }];
     
 }
 

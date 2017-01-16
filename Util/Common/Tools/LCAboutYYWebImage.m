@@ -50,7 +50,6 @@
                 CGFloat min = MIN(image.size.width, image.size.height);
                 newImg = [image imageByResizeToSize:CGSizeMake(min, min) contentMode:UIViewContentModeCenter];
             }
-            
             UIImage *imgg = [newImg imageByRoundCornerRadius:newImg.size.width/2 borderWidth:10 borderColor:[KDColor getX1Color]];
             return imgg; // a large value
         };
@@ -82,40 +81,3 @@
     return manager;
 }
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

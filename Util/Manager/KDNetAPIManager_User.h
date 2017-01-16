@@ -38,6 +38,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 
 ///根据课程分类的 typeID查找课程List
 -(NSURLSessionDataTask *)courseListWithtypeId:(NSString *)typeId andCurpage:(NSUInteger)curpage  completeHandle:(void(^)(id responseObj,NSError *error))complete;
+///更多推荐课程
+-(NSURLSessionDataTask *)moreCourseListAndCurpage:(NSUInteger)curpage  completeHandle:(void(^)(id responseObj,NSError *error))complete;
+
 
 /////修改昵称
 //-(NSURLSessionDataTask *)changeNickName:(NSString *)nickName CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
