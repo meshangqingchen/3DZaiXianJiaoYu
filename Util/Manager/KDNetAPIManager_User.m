@@ -89,6 +89,10 @@ static NSString *const Api_createFeedBack = @"createFeedBack";
 static NSString *const Api_forgetPassword = @"forgetPassword";
 ///报名
 static NSString *const Api_enrol = @"enrol";
+///课程分类
+static NSString *const Api_planTypeList = @"planTypeList";
+
+
 
 
 #pragma mark - api params key
@@ -104,9 +108,6 @@ static NSString *const PARAM_rePassword       = @"rePassword";
 static NSString *const PARAM_nickName         = @"nickName";
 static NSString *const PARAM_code             = @"code";
 static NSString *const PARAM_oldPassword      = @"oldPassword";
-
-
-
 static NSString *const PARAM_phone            = @"phone";
 static NSString *const PARAM_operation        = @"operation";
 static NSString *const PARAM_objId            = @"objId";
@@ -430,12 +431,17 @@ static NSString *const PARAM_discription      = @"discription";
         complete(responseObj,error);
     }];
 }
-
+///评价
 -(NSURLSessionDataTask *)evaluateCourse:(NSString *)coursrID andGrade:(int)grade andDes:(NSString *)des CompleteHandle:(void (^)(id, NSError *))complete{
     
     NSDictionary *params = @{PARAM_planId:coursrID,PARAM_grade:@(grade),PARAM_description:des};
-    
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_addAssess encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+        complete(responseObj,error);
+    }];
+}
+//课程分类
+-(NSURLSessionDataTask *)planTypeListCompleteHandle:(void (^)(id, NSError *))complete{
+    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_planTypeList encodeParams:nil withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
     }];
 }

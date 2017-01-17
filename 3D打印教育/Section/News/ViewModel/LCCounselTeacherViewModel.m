@@ -13,7 +13,6 @@
 @implementation LCCounselTeacherViewModel
 -(void)initialize{
     [super initialize];
-    self.shouldNavBackItem = YES;
     self.shouldPullToRefresh = YES;
     self.shouldInfiniteScrolling = YES;
     

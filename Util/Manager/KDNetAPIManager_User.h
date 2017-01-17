@@ -111,5 +111,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 
 ///参加收费课程 生成订单
 -(NSURLSessionDataTask *)creatOrderWith:(NSString *)courseID andPrice:(NSString *)price completeHandle:(void(^)(id responseObj,NSError *error))complete;
-
+///课程分类 planTypeList
+-(NSURLSessionDataTask *)planTypeListCompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 @end

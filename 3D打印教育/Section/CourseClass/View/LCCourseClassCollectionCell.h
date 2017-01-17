@@ -9,5 +9,6 @@
 #import "BaseCollectionViewCell.h"
 
 @interface LCCourseClassCollectionCell : BaseCollectionViewCell
+@property(nonatomic,strong) UILabel *titleLB;
 
 @end

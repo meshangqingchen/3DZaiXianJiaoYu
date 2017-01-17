@@ -9,5 +9,5 @@
 #import "BaseCollectionViewModel.h"
 
 @interface LCCourseClassViewModel : BaseCollectionViewModel
-
+@property(nonatomic,copy) void (^clickHeadView)(NSString *iid,NSString *title);
 @end
