@@ -38,7 +38,7 @@
     @weakify(self)
     [bt addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
         @strongify(self)
-//        !self.viewModel.baoMing ? : self.viewModel.baoMing();
+        !self.viewModel.baoMing ? : self.viewModel.baoMing();
     }];
     if ([self.viewModel.className isEqualToString:@"LCHomeCarousellist"]) {
         bt.hidden = YES;

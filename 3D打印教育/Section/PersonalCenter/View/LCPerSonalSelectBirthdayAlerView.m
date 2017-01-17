@@ -6,9 +6,9 @@
 //  Copyright © 2016年 3D. All rights reserved.
 //
 
-#import "LCSelectBirthdayAlerView.h"
+#import "LCPerSonalSelectBirthdayAlerView.h"
 
-@implementation LCSelectBirthdayAlerView
+@implementation LCPerSonalSelectBirthdayAlerView
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [KDColor getC0Color];

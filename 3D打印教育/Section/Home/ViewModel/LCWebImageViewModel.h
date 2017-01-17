@@ -11,4 +11,7 @@
 @interface LCWebImageViewModel : BaseViewModel
 @property(nonatomic,strong) NSURL *webURl;
 @property(nonatomic,strong) NSString *className;
+
+@property(nonatomic,copy) void (^baoMing)();
+
 @end

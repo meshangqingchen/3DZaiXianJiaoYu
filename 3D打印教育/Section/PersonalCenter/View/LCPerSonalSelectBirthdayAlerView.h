@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LCSelectBirthdayAlerView : UIView
+@interface LCPerSonalSelectBirthdayAlerView : UIView
 @property(nonatomic,strong) UIDatePicker *datePickerView;
 @property(nonatomic,strong) UIButton *leftBT;
 @property(nonatomic,strong) UIButton *rightBt;

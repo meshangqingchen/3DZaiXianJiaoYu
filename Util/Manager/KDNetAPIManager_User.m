@@ -87,8 +87,8 @@ static NSString *const Api_createFeedBack = @"createFeedBack";
 
 ///忘记密码修改密码
 static NSString *const Api_forgetPassword = @"forgetPassword";
-/////报名
-//static NSString *const Api_enrol = @"enrol";
+///报名
+static NSString *const Api_enrol = @"enrol";
 
 
 #pragma mark - api params key
@@ -127,16 +127,15 @@ static NSString *const PARAM_msg              = @"msg";
 
 
 //static NSString *const PARAM_img              = @"img";
-//static NSString *const PARAM_name             = @"name";
-//static NSString *const PARAM_sex              = @"sex"; //?可能是int类型
-//static NSString *const PARAM_birthday         = @"birthday";
-//static NSString *const PARAM_school           = @"school";
-//static NSString *const PARAM_major            = @"major";//专业
-//static NSString *const PARAM_education        = @"education";//学历
+static NSString *const PARAM_name             = @"name";
+
+static NSString *const PARAM_school           = @"school";
+static NSString *const PARAM_major            = @"major";//专业
+static NSString *const PARAM_education        = @"education";//学历
 
 static NSString *const PARAM_contact          = @"contact";
-//static NSString *const PARAM_qq               = @"qq";
-//static NSString *const PARAM_discription      = @"discription";
+static NSString *const PARAM_qq               = @"qq";
+static NSString *const PARAM_discription      = @"discription";
 
 
 ///发送短信
@@ -322,32 +321,32 @@ static NSString *const PARAM_contact          = @"contact";
 //        complete(responseObj,error);
 //    }];
 //}
-////报名
-//-(NSURLSessionDataTask *)baomingWithZhiYuan:(NSNumber *)zhiYuan
-//                                    andName:(NSString *)name
-//                                     andSex:(NSNumber *)sex
-//                                andBirthday:(NSString *)birthday
-//                            andBiYeYuanXiao:(NSString *)graduateSchool
-//                            andProfessional:(NSString *)professional
-//                                   andXueLi:(NSString *)xueLi
-//                                andPhoneNum:(NSString *)phoneNum
-//                                      andQQ:(NSString *)qq
-//                                  andBeiZhu:(NSString *)beiZhu
-//                             CompleteHandle:(void (^)(id, NSError *))complete{
-//    NSDictionary *params = @{PARAM_type:zhiYuan,
-//                             PARAM_name:name,
-//                             PARAM_sex:sex,
-//                             PARAM_birthday:birthday,
-//                             PARAM_school:graduateSchool,
-//                             PARAM_major:professional,
-//                             PARAM_education:xueLi,
-//                             PARAM_phone:phoneNum,
-//                             PARAM_qq:qq,
-//                             PARAM_discription:beiZhu};
-//    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_enrol encodeParams:params withMethodType:Post completeHandle:^(id responseObj, NSError *error) {
-//        complete(responseObj,error);
-//    }];
-//}
+//报名
+-(NSURLSessionDataTask *)baomingWithZhiYuan:(NSNumber *)zhiYuan
+                                    andName:(NSString *)name
+                                     andSex:(NSNumber *)sex
+                                andBirthday:(NSString *)birthday
+                            andBiYeYuanXiao:(NSString *)graduateSchool
+                            andProfessional:(NSString *)professional
+                                   andXueLi:(NSString *)xueLi
+                                andPhoneNum:(NSString *)phoneNum
+                                      andQQ:(NSString *)qq
+                                  andBeiZhu:(NSString *)beiZhu
+                             CompleteHandle:(void (^)(id, NSError *))complete{
+    NSDictionary *params = @{PARAM_type:zhiYuan,
+                             PARAM_name:name,
+                             PARAM_sex:sex,
+                             PARAM_birthday:birthday,
+                             PARAM_school:graduateSchool,
+                             PARAM_major:professional,
+                             PARAM_education:xueLi,
+                             PARAM_phone:phoneNum,
+                             PARAM_qq:qq,
+                             PARAM_discription:beiZhu};
+    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_favList encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+        complete(responseObj,error);
+    }];
+}
 ///上穿头像
 -(NSURLSessionDataTask *)uploadHeadImage:(UIImage *)image andName:(NSString *)name CompleteHandle:(void (^)(id, NSError *))complete{
     return [[KDNetAPIManager sharedJsonClient] uploadImageApi:Api_upload withParams:nil andImage:image andfilename:nil andName:name andMethodType:Post andMimeType:nil completeHandle:^(id responseObj, NSError *error) {

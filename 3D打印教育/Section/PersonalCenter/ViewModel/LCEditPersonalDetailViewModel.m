@@ -10,7 +10,7 @@
 #import "LCEditPersonalDetailCellViewModel.h"
 #import "JCAlertView.h"
 #import "LCChangeNickNameAlerView.h" //改变昵称的alerView;
-#import "LCSelectBirthdayAlerView.h" //改变生日
+#import "LCPerSonalSelectBirthdayAlerView.h" //改变生日
 #import "NSObject+Common.h"
 @interface LCEditPersonalDetailViewModel ()
 @property(nonatomic,strong) LCEditPersonalDetailCellViewModel *cellVMHeaderImage;
@@ -103,7 +103,7 @@
         
     }else if (indexpath.section == 0 & indexpath.row == 3){
         //出生日期
-        LCSelectBirthdayAlerView *selectBrithdayAlertView = [[LCSelectBirthdayAlerView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH-24, 44*5+4*0.5)];
+        LCPerSonalSelectBirthdayAlerView *selectBrithdayAlertView = [[LCPerSonalSelectBirthdayAlerView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH-24, 44*5+4*0.5)];
         alertView = [[JCAlertView alloc]initWithCustomView:selectBrithdayAlertView dismissWhenTouchedBackground:YES];
         [alertView show];
         

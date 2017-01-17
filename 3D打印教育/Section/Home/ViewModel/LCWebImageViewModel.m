@@ -7,11 +7,18 @@
 //
 
 #import "LCWebImageViewModel.h"
+#import "LCBaoMingViewModel.h"
+
 
 @implementation LCWebImageViewModel
 -(void)initialize{
     [super initialize];
-
+    @weakify(self)
+    [self setBaoMing:^{
+        @strongify(self)
+        LCBaoMingViewModel *baomingVM = [[LCBaoMingViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"在线报名"}];
+        [self.navigationStackService pushViewModel:baomingVM animated:YES];
+    }];
 }
 
 -(instancetype)initWithServices:(id<LCNavigationProtocol>)services params:(NSDictionary *)params{

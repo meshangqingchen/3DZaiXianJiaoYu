@@ -40,7 +40,7 @@
 		74450C891E2375CA00F01EB7 /* LCEditPersonalDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450C881E2375CA00F01EB7 /* LCEditPersonalDetailCell.m */; };
 		74450C8C1E237B6900F01EB7 /* LCEditPersonalDetailCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450C8B1E237B6900F01EB7 /* LCEditPersonalDetailCellViewModel.m */; };
 		74450C8F1E238F1B00F01EB7 /* LCChangeNickNameAlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450C8E1E238F1B00F01EB7 /* LCChangeNickNameAlerView.m */; };
-		74450C931E23BB3700F01EB7 /* LCSelectBirthdayAlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450C911E23BB3700F01EB7 /* LCSelectBirthdayAlerView.m */; };
+		74450C931E23BB3700F01EB7 /* LCPerSonalSelectBirthdayAlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450C911E23BB3700F01EB7 /* LCPerSonalSelectBirthdayAlerView.m */; };
 		74450C971E2478FA00F01EB7 /* LCChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450C961E2478FA00F01EB7 /* LCChangePasswordViewController.m */; };
 		74450C9A1E24791300F01EB7 /* LCChangePasswordViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450C991E24791300F01EB7 /* LCChangePasswordViewModel.m */; };
 		74450C9D1E247C0500F01EB7 /* LCChangePasswordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74450C9C1E247C0500F01EB7 /* LCChangePasswordCell.m */; };
@@ -123,6 +123,16 @@
 		747BF6A81E2E007F000137E5 /* LCFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6A71E2E007F000137E5 /* LCFeedbackViewController.m */; };
 		747BF6AD1E2E0556000137E5 /* WAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6AB1E2E0556000137E5 /* WAboutUsViewController.m */; };
 		747BF6B01E2E0575000137E5 /* WAboutUsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6AF1E2E0575000137E5 /* WAboutUsViewModel.m */; };
+		747BF6B31E2E18A9000137E5 /* LCBaoMingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6B21E2E18A9000137E5 /* LCBaoMingViewController.m */; };
+		747BF6B61E2E18E7000137E5 /* LCBaoMingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6B51E2E18E7000137E5 /* LCBaoMingViewModel.m */; };
+		747BF6C41E2E1936000137E5 /* LCBaoMingLBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6B71E2E1936000137E5 /* LCBaoMingLBCell.m */; };
+		747BF6C51E2E1936000137E5 /* LCBaoMingTFCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6B91E2E1936000137E5 /* LCBaoMingTFCell.m */; };
+		747BF6C61E2E1936000137E5 /* LCBaoMingFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6BB1E2E1936000137E5 /* LCBaoMingFooterView.m */; };
+		747BF6C71E2E1936000137E5 /* LCSelectZhiYuanAlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6BD1E2E1936000137E5 /* LCSelectZhiYuanAlerView.m */; };
+		747BF6C81E2E1936000137E5 /* LCSelectSexAlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6BF1E2E1936000137E5 /* LCSelectSexAlerView.m */; };
+		747BF6C91E2E1936000137E5 /* LCSelectBirthdayAlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6C11E2E1936000137E5 /* LCSelectBirthdayAlerView.m */; };
+		747BF6CA1E2E1936000137E5 /* LCSelectXueLiAlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6C31E2E1936000137E5 /* LCSelectXueLiAlerView.m */; };
+		747BF6CE1E2E1A15000137E5 /* LCBaoMingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6CD1E2E1A15000137E5 /* LCBaoMingModel.m */; };
 		747EFB701E080F4100041C56 /* UIView+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 747EFB6F1E080F4100041C56 /* UIView+BlocksKit.m */; };
 		748245041E13C363004735DB /* LCHomeDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 748245031E13C363004735DB /* LCHomeDetailModel.m */; };
 		748245071E14D4B7004735DB /* LCMyMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 748245061E14D4B7004735DB /* LCMyMessageViewController.m */; };
@@ -366,8 +376,8 @@
 		74450C8B1E237B6900F01EB7 /* LCEditPersonalDetailCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCEditPersonalDetailCellViewModel.m; sourceTree = "<group>"; };
 		74450C8D1E238F1B00F01EB7 /* LCChangeNickNameAlerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCChangeNickNameAlerView.h; sourceTree = "<group>"; };
 		74450C8E1E238F1B00F01EB7 /* LCChangeNickNameAlerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCChangeNickNameAlerView.m; sourceTree = "<group>"; };
-		74450C901E23BB3700F01EB7 /* LCSelectBirthdayAlerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCSelectBirthdayAlerView.h; sourceTree = "<group>"; };
-		74450C911E23BB3700F01EB7 /* LCSelectBirthdayAlerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCSelectBirthdayAlerView.m; sourceTree = "<group>"; };
+		74450C901E23BB3700F01EB7 /* LCPerSonalSelectBirthdayAlerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPerSonalSelectBirthdayAlerView.h; sourceTree = "<group>"; };
+		74450C911E23BB3700F01EB7 /* LCPerSonalSelectBirthdayAlerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPerSonalSelectBirthdayAlerView.m; sourceTree = "<group>"; };
 		74450C951E2478FA00F01EB7 /* LCChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCChangePasswordViewController.h; sourceTree = "<group>"; };
 		74450C961E2478FA00F01EB7 /* LCChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCChangePasswordViewController.m; sourceTree = "<group>"; };
 		74450C981E24791300F01EB7 /* LCChangePasswordViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCChangePasswordViewModel.h; sourceTree = "<group>"; };
@@ -593,6 +603,26 @@
 		747BF6AB1E2E0556000137E5 /* WAboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAboutUsViewController.m; sourceTree = "<group>"; };
 		747BF6AE1E2E0575000137E5 /* WAboutUsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAboutUsViewModel.h; sourceTree = "<group>"; };
 		747BF6AF1E2E0575000137E5 /* WAboutUsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAboutUsViewModel.m; sourceTree = "<group>"; };
+		747BF6B11E2E18A9000137E5 /* LCBaoMingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCBaoMingViewController.h; sourceTree = "<group>"; };
+		747BF6B21E2E18A9000137E5 /* LCBaoMingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCBaoMingViewController.m; sourceTree = "<group>"; };
+		747BF6B41E2E18E7000137E5 /* LCBaoMingViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCBaoMingViewModel.h; sourceTree = "<group>"; };
+		747BF6B51E2E18E7000137E5 /* LCBaoMingViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCBaoMingViewModel.m; sourceTree = "<group>"; };
+		747BF6B71E2E1936000137E5 /* LCBaoMingLBCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCBaoMingLBCell.m; sourceTree = "<group>"; };
+		747BF6B81E2E1936000137E5 /* LCBaoMingTFCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCBaoMingTFCell.h; sourceTree = "<group>"; };
+		747BF6B91E2E1936000137E5 /* LCBaoMingTFCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCBaoMingTFCell.m; sourceTree = "<group>"; };
+		747BF6BA1E2E1936000137E5 /* LCBaoMingFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCBaoMingFooterView.h; sourceTree = "<group>"; };
+		747BF6BB1E2E1936000137E5 /* LCBaoMingFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCBaoMingFooterView.m; sourceTree = "<group>"; };
+		747BF6BC1E2E1936000137E5 /* LCSelectZhiYuanAlerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCSelectZhiYuanAlerView.h; sourceTree = "<group>"; };
+		747BF6BD1E2E1936000137E5 /* LCSelectZhiYuanAlerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCSelectZhiYuanAlerView.m; sourceTree = "<group>"; };
+		747BF6BE1E2E1936000137E5 /* LCSelectSexAlerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCSelectSexAlerView.h; sourceTree = "<group>"; };
+		747BF6BF1E2E1936000137E5 /* LCSelectSexAlerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCSelectSexAlerView.m; sourceTree = "<group>"; };
+		747BF6C01E2E1936000137E5 /* LCSelectBirthdayAlerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCSelectBirthdayAlerView.h; sourceTree = "<group>"; };
+		747BF6C11E2E1936000137E5 /* LCSelectBirthdayAlerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCSelectBirthdayAlerView.m; sourceTree = "<group>"; };
+		747BF6C21E2E1936000137E5 /* LCSelectXueLiAlerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCSelectXueLiAlerView.h; sourceTree = "<group>"; };
+		747BF6C31E2E1936000137E5 /* LCSelectXueLiAlerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCSelectXueLiAlerView.m; sourceTree = "<group>"; };
+		747BF6CB1E2E1974000137E5 /* LCBaoMingLBCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCBaoMingLBCell.h; sourceTree = "<group>"; };
+		747BF6CC1E2E1A15000137E5 /* LCBaoMingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCBaoMingModel.h; sourceTree = "<group>"; };
+		747BF6CD1E2E1A15000137E5 /* LCBaoMingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCBaoMingModel.m; sourceTree = "<group>"; };
 		747EFB6E1E080F4100041C56 /* UIView+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BlocksKit.h"; sourceTree = "<group>"; };
 		747EFB6F1E080F4100041C56 /* UIView+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BlocksKit.m"; sourceTree = "<group>"; };
 		748245021E13C363004735DB /* LCHomeDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHomeDetailModel.h; sourceTree = "<group>"; };
@@ -1611,6 +1641,8 @@
 				7485FCFA1DFE82C300E6D23D /* LCHomeViewController.m */,
 				747BF60E1E2B2502000137E5 /* LCWebImageViewController.h */,
 				747BF60F1E2B2502000137E5 /* LCWebImageViewController.m */,
+				747BF6B11E2E18A9000137E5 /* LCBaoMingViewController.h */,
+				747BF6B21E2E18A9000137E5 /* LCBaoMingViewController.m */,
 				747BF6351E2C8882000137E5 /* LCCourseCollectionViewController.h */,
 				747BF6361E2C8882000137E5 /* LCCourseCollectionViewController.m */,
 				747BF65F1E2CACAD000137E5 /* LCMoreTeacherViewController.h */,
@@ -1656,6 +1688,8 @@
 				74450CBE1E261EDC00F01EB7 /* LCAssessListModel.m */,
 				747BF6321E2C7118000137E5 /* Order.h */,
 				747BF6331E2C7118000137E5 /* Order.m */,
+				747BF6CC1E2E1A15000137E5 /* LCBaoMingModel.h */,
+				747BF6CD1E2E1A15000137E5 /* LCBaoMingModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1728,6 +1762,8 @@
 				74F90D061E1381A4005E5D09 /* LCHomeCollectionBananaViewModel.m */,
 				747BF6111E2B251F000137E5 /* LCWebImageViewModel.h */,
 				747BF6121E2B251F000137E5 /* LCWebImageViewModel.m */,
+				747BF6B41E2E18E7000137E5 /* LCBaoMingViewModel.h */,
+				747BF6B51E2E18E7000137E5 /* LCBaoMingViewModel.m */,
 				747BF6381E2C88B6000137E5 /* LCCourseCollectionViewModel.h */,
 				747BF6391E2C88B6000137E5 /* LCCourseCollectionViewModel.m */,
 				747BF6411E2C9234000137E5 /* LCCourseCollectionCellViewModel.h */,
@@ -1869,8 +1905,8 @@
 				74450C881E2375CA00F01EB7 /* LCEditPersonalDetailCell.m */,
 				74450C8D1E238F1B00F01EB7 /* LCChangeNickNameAlerView.h */,
 				74450C8E1E238F1B00F01EB7 /* LCChangeNickNameAlerView.m */,
-				74450C901E23BB3700F01EB7 /* LCSelectBirthdayAlerView.h */,
-				74450C911E23BB3700F01EB7 /* LCSelectBirthdayAlerView.m */,
+				74450C901E23BB3700F01EB7 /* LCPerSonalSelectBirthdayAlerView.h */,
+				74450C911E23BB3700F01EB7 /* LCPerSonalSelectBirthdayAlerView.m */,
 				741B05961E20D1BE002860A7 /* LCSetingCell.h */,
 				741B05971E20D1BE002860A7 /* LCSetingCell.m */,
 				74450C9B1E247C0500F01EB7 /* LCChangePasswordCell.h */,
@@ -1979,6 +2015,20 @@
 				7485FD0D1DFF9D7700E6D23D /* LCBigImageCollectionViewCell.m */,
 				74C91A651E160D950065BAFE /* LCMessageAndNotificationHeaderView.h */,
 				74C91A661E160D950065BAFE /* LCMessageAndNotificationHeaderView.m */,
+				747BF6CB1E2E1974000137E5 /* LCBaoMingLBCell.h */,
+				747BF6B71E2E1936000137E5 /* LCBaoMingLBCell.m */,
+				747BF6B81E2E1936000137E5 /* LCBaoMingTFCell.h */,
+				747BF6B91E2E1936000137E5 /* LCBaoMingTFCell.m */,
+				747BF6BA1E2E1936000137E5 /* LCBaoMingFooterView.h */,
+				747BF6BB1E2E1936000137E5 /* LCBaoMingFooterView.m */,
+				747BF6BC1E2E1936000137E5 /* LCSelectZhiYuanAlerView.h */,
+				747BF6BD1E2E1936000137E5 /* LCSelectZhiYuanAlerView.m */,
+				747BF6BE1E2E1936000137E5 /* LCSelectSexAlerView.h */,
+				747BF6BF1E2E1936000137E5 /* LCSelectSexAlerView.m */,
+				747BF6C01E2E1936000137E5 /* LCSelectBirthdayAlerView.h */,
+				747BF6C11E2E1936000137E5 /* LCSelectBirthdayAlerView.m */,
+				747BF6C21E2E1936000137E5 /* LCSelectXueLiAlerView.h */,
+				747BF6C31E2E1936000137E5 /* LCSelectXueLiAlerView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2441,6 +2491,7 @@
 				747BF68D1E2DE10E000137E5 /* LCCollectOJoinRViewController.m in Sources */,
 				7485FBF91DFC39FB00E6D23D /* NSDate+CalendarLogic.m in Sources */,
 				7485FC0A1DFC39FB00E6D23D /* KDRouter.m in Sources */,
+				747BF6B61E2E18E7000137E5 /* LCBaoMingViewModel.m in Sources */,
 				7485FD9F1DFFFA1500E6D23D /* MKAnnotationView+WebCache.m in Sources */,
 				741B05921E20CBE7002860A7 /* LCSetingViewController.m in Sources */,
 				7485FBFD1DFC39FB00E6D23D /* NSString+PJR.m in Sources */,
@@ -2471,6 +2522,7 @@
 				748CF1EE1E0B7DFF00E60F68 /* LCDetailEvaluateInputAccessoryView.m in Sources */,
 				747BF5F61E28DC5F000137E5 /* RSADataSigner.m in Sources */,
 				7485FC121DFC39FB00E6D23D /* KDFileManager.m in Sources */,
+				747BF6C71E2E1936000137E5 /* LCSelectZhiYuanAlerView.m in Sources */,
 				74C3D9F91E1F687800BA7F0F /* LCPersonalCenterHeaderViewModel.m in Sources */,
 				740F0EE31E10B62B00EEFC3B /* LCCourseCell.m in Sources */,
 				748245071E14D4B7004735DB /* LCMyMessageViewController.m in Sources */,
@@ -2488,6 +2540,8 @@
 				74C3D9F61E1F5F0D00BA7F0F /* LCLoginViewController.m in Sources */,
 				7485FD991DFFFA1500E6D23D /* TAAbstractDotView.m in Sources */,
 				7485FD9D1DFFFA1500E6D23D /* SDCollectionViewCell.m in Sources */,
+				747BF6CA1E2E1936000137E5 /* LCSelectXueLiAlerView.m in Sources */,
+				747BF6C61E2E1936000137E5 /* LCBaoMingFooterView.m in Sources */,
 				74450C891E2375CA00F01EB7 /* LCEditPersonalDetailCell.m in Sources */,
 				7485FCBA1DFD4FC800E6D23D /* JDStatusBarNotification.m in Sources */,
 				747BF6841E2CCEFB000137E5 /* LCCourseClassViewController.m in Sources */,
@@ -2500,6 +2554,7 @@
 				7485FDAF1DFFFA1500E6D23D /* UIView+SDExtension.m in Sources */,
 				7485FCC51DFD523100E6D23D /* BaseViewController.m in Sources */,
 				74450CC21E271C7B00F01EB7 /* LCRegisteredViewModel.m in Sources */,
+				747BF6C51E2E1936000137E5 /* LCBaoMingTFCell.m in Sources */,
 				74450CA01E24817500F01EB7 /* LCUseOldPaswordChangePaswordViewController.m in Sources */,
 				74450CA91E249ABC00F01EB7 /* LCUseVerificationChangePasswordViewController.m in Sources */,
 				7485FCBB1DFD4FC800E6D23D /* JDStatusBarStyle.m in Sources */,
@@ -2534,6 +2589,7 @@
 				7485FC031DFC39FB00E6D23D /* UIView+Animation.m in Sources */,
 				747BF6101E2B2502000137E5 /* LCWebImageViewController.m in Sources */,
 				747BF6281E2B6CDA000137E5 /* LCNotarizeOrderViewModel.m in Sources */,
+				747BF6C41E2E1936000137E5 /* LCBaoMingLBCell.m in Sources */,
 				7485FBFF1DFC39FB00E6D23D /* UIButton+Common.m in Sources */,
 				7485FC061DFC39FB00E6D23D /* UIViewController+Example.m in Sources */,
 				744EEBCF1E1E94B5002FE8B1 /* LCPersonalCenterCellViewModel.m in Sources */,
@@ -2554,10 +2610,11 @@
 				7485FDA41DFFFA1500E6D23D /* SDWebImageDownloader.m in Sources */,
 				747BF6A81E2E007F000137E5 /* LCFeedbackViewController.m in Sources */,
 				7485FB951DFC382800E6D23D /* JCAlertView.m in Sources */,
+				747BF6B31E2E18A9000137E5 /* LCBaoMingViewController.m in Sources */,
 				744EEBC91E1E62A5002FE8B1 /* LCPersonalCenterCell.m in Sources */,
 				747BF63D1E2C8A20000137E5 /* LCCourseCollectionCell.m in Sources */,
 				7485FDB21DFFFD4500E6D23D /* LCCollectionReusableBannerHeaderView.m in Sources */,
-				74450C931E23BB3700F01EB7 /* LCSelectBirthdayAlerView.m in Sources */,
+				74450C931E23BB3700F01EB7 /* LCPerSonalSelectBirthdayAlerView.m in Sources */,
 				7485FB521DFA8CCC00E6D23D /* LCNavigationStackService.m in Sources */,
 				747BF1F11E279C59000137E5 /* KDFiveStarView.m in Sources */,
 				747BF6191E2B4CB5000137E5 /* LCCounselTeacherViewModel.m in Sources */,
@@ -2572,6 +2629,7 @@
 				74450C8F1E238F1B00F01EB7 /* LCChangeNickNameAlerView.m in Sources */,
 				7485FDAE1DFFFA1500E6D23D /* UIView+WebCacheOperation.m in Sources */,
 				747BF6221E2B5CAB000137E5 /* LCCounselTeacherCellViewModel.m in Sources */,
+				747BF6C91E2E1936000137E5 /* LCSelectBirthdayAlerView.m in Sources */,
 				7485FCDD1DFE425D00E6D23D /* LCRootViewModel.m in Sources */,
 				7485FDA71DFFFA1500E6D23D /* SDWebImagePrefetcher.m in Sources */,
 				747BF6611E2CACAD000137E5 /* LCMoreTeacherViewController.m in Sources */,
@@ -2579,6 +2637,7 @@
 				747BF63A1E2C88B6000137E5 /* LCCourseCollectionViewModel.m in Sources */,
 				74450C8C1E237B6900F01EB7 /* LCEditPersonalDetailCellViewModel.m in Sources */,
 				740F0EE91E10C1C600EEFC3B /* LCCourseSectionHeaderView.m in Sources */,
+				747BF6C81E2E1936000137E5 /* LCSelectSexAlerView.m in Sources */,
 				74450CD11E273FB500F01EB7 /* LCUserModel.m in Sources */,
 				74450CAC1E24B68200F01EB7 /* LCSmallCollectionViewCell.m in Sources */,
 				748CF1E51E0A9DA300E60F68 /* LCDetailEvaluateHeaderView.m in Sources */,
@@ -2634,6 +2693,7 @@
 				7485FC151DFC39FB00E6D23D /* ObjcRuntime.m in Sources */,
 				7485FCE31DFE442800E6D23D /* LCHomeViewModel.m in Sources */,
 				7485FBA51DFC382800E6D23D /* YZEmotionKeyboard.m in Sources */,
+				747BF6CE1E2E1A15000137E5 /* LCBaoMingModel.m in Sources */,
 				748CF1DC1E0A71F100E60F68 /* LCDetailEvaluateCell.m in Sources */,
 				7485FB4A1DFA831E00E6D23D /* Constants.m in Sources */,
 				747BF68A1E2CD154000137E5 /* LCCourseClassCollectionCell.m in Sources */,

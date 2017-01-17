@@ -65,18 +65,18 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 -(NSURLSessionDataTask *)suggestionFeedbackMsg:(NSString *)msg amdContact:(NSString *)contact CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 /////视频详情
 //-(NSURLSessionDataTask *)videoDetailVideoID:(NSString *)videoID CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
-/////报名
-//-(NSURLSessionDataTask *)baomingWithZhiYuan:(NSNumber *)zhiYuan
-//                                    andName:(NSString *)name
-//                                     andSex:(NSNumber *)sex
-//                                andBirthday:(NSString *)birthday
-//                            andBiYeYuanXiao:(NSString *)graduateSchool
-//                            andProfessional:(NSString *)professional
-//                                   andXueLi:(NSString *)xueLi
-//                                andPhoneNum:(NSString *)phoneNum
-//                                      andQQ:(NSString *)qq
-//                                  andBeiZhu:(NSString *)beiZhu
-//                             CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
+///报名
+-(NSURLSessionDataTask *)baomingWithZhiYuan:(NSNumber *)zhiYuan
+                                    andName:(NSString *)name
+                                     andSex:(NSNumber *)sex
+                                andBirthday:(NSString *)birthday
+                            andBiYeYuanXiao:(NSString *)graduateSchool
+                            andProfessional:(NSString *)professional
+                                   andXueLi:(NSString *)xueLi
+                                andPhoneNum:(NSString *)phoneNum
+                                      andQQ:(NSString *)qq
+                                  andBeiZhu:(NSString *)beiZhu
+                             CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 ///上传头像
 -(NSURLSessionDataTask *)uploadHeadImage:(UIImage *)image andName:(NSString *)name CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 ///收藏列表
