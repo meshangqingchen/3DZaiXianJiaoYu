@@ -38,6 +38,7 @@
     }];
     self.imageView1 = [UIImageView new];
     _imageView1.userInteractionEnabled = YES;
+    _imageView1.image = [UIImage imageNamed:@"11"];
     _imageView1.backgroundColor = [UIColor orangeColor];
     [backView1 addSubview:_imageView1];
     [_imageView1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -70,6 +71,7 @@
     }];
     self.imageView2 = [UIImageView new];
     _imageView2.userInteractionEnabled = YES;
+    _imageView2.image = [UIImage imageNamed:@"22"];
     _imageView2.backgroundColor = [UIColor orangeColor];
     [backView2 addSubview:_imageView2];
     [_imageView2 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -80,7 +82,7 @@
     self.lable2 = [UILabel new];
     _lable2.textColor = [KDColor getC2Color];
     _lable2.font = [[KDFont sharedKDFont]getF24Font];
-    _lable2.text = @"基础课程";
+    _lable2.text = @"职业院校";
     [backView2 addSubview:_lable2];
     [_lable2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.imageView1.mas_bottom).mas_offset(4);
@@ -103,6 +105,7 @@
     self.imageView3 = [UIImageView new];
     _imageView3.userInteractionEnabled = YES;
     _imageView3.backgroundColor = [UIColor orangeColor];
+    _imageView3.image = [UIImage imageNamed:@"33"];
     [backView3 addSubview:_imageView3];
     [_imageView3 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_offset(15);
@@ -112,7 +115,7 @@
     self.lable3 = [UILabel new];
     _lable3.textColor = [KDColor getC2Color];
     _lable3.font = [[KDFont sharedKDFont]getF24Font];
-    _lable3.text = @"基础课程";
+    _lable3.text = @"名校留学";
     [backView3 addSubview:_lable3];
     [_lable3 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.imageView1.mas_bottom).mas_offset(4);
@@ -129,34 +132,12 @@
     if (signUpDataArr.count == 3) {
         LCHomeCollectionBananaViewModel *bannerVM1 = signUpDataArr[0];
         self.bannerVM1 = bannerVM1;
-        [self.imageView1 setImageWithURL:bannerVM1.imageURL
-                               placeholder:[UIImage imageNamed:@"noLog_Headimage"]
-                                   options:kNilOptions
-                                   manager:[LCAboutYYWebImage avatarImageManager]
-                                  progress:nil
-                                 transform:nil
-                              completion:nil];
         
         LCHomeCollectionBananaViewModel *bannerVM2 = signUpDataArr[1];
         self.bannerVM2 = bannerVM2;
-        [self.imageView2 setImageWithURL:bannerVM2.imageURL
-                             placeholder:[UIImage imageNamed:@"noLog_Headimage"]
-                                 options:kNilOptions
-                                 manager:[LCAboutYYWebImage avatarImageManager]
-                                progress:nil
-                               transform:nil
-                              completion:nil];
-        
         
         LCHomeCollectionBananaViewModel *bannerVM3 = signUpDataArr[2];
         self.bannerVM3 = bannerVM3;
-        [self.imageView3 setImageWithURL:bannerVM3.imageURL
-                             placeholder:[UIImage imageNamed:@"noLog_Headimage"]
-                                 options:kNilOptions
-                                 manager:[LCAboutYYWebImage avatarImageManager]
-                                progress:nil
-                               transform:nil
-                              completion:nil];
     }
 }
 

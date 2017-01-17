@@ -100,7 +100,7 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
 }
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-    NSLog(@"asd");
+    !self.viewModel.searchClick ? : self.viewModel.searchClick();
     return NO;
 }
 

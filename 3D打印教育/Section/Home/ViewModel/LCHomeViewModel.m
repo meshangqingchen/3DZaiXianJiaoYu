@@ -17,6 +17,7 @@
 #import "LCCourseCollectionViewModel.h"     //根据课程分类进课程 list
 #import "LCWebImageViewModel.h"             //大图
 #import "LCMoreTeacherViewModel.h"          //更多老师
+#import "LCSearchViewModel.h"
 
 @implementation LCHomeViewModel
 -(void)initialize{
@@ -45,6 +46,12 @@
             LCMoreTeacherViewModel *moreTeacherVM = [[LCMoreTeacherViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"讲师列表"}];
             [self.navigationStackService pushViewModel:moreTeacherVM animated:YES];
         }
+    }];
+    
+    [self setSearchClick:^{
+        @strongify(self)
+        LCSearchViewModel *searchVM = [[LCSearchViewModel alloc]initWithServices:self.navigationStackService params:nil];
+        [self.navigationStackService pushViewModel:searchVM animated:YES];
     }];
 }
 

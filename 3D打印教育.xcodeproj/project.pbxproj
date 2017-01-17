@@ -133,6 +133,8 @@
 		747BF6C91E2E1936000137E5 /* LCSelectBirthdayAlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6C11E2E1936000137E5 /* LCSelectBirthdayAlerView.m */; };
 		747BF6CA1E2E1936000137E5 /* LCSelectXueLiAlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6C31E2E1936000137E5 /* LCSelectXueLiAlerView.m */; };
 		747BF6CE1E2E1A15000137E5 /* LCBaoMingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6CD1E2E1A15000137E5 /* LCBaoMingModel.m */; };
+		747BF6D11E2E26C3000137E5 /* LCSearchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6D01E2E26C3000137E5 /* LCSearchViewModel.m */; };
+		747BF6D41E2E26F8000137E5 /* LCSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6D31E2E26F8000137E5 /* LCSearchViewController.m */; };
 		747EFB701E080F4100041C56 /* UIView+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 747EFB6F1E080F4100041C56 /* UIView+BlocksKit.m */; };
 		748245041E13C363004735DB /* LCHomeDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 748245031E13C363004735DB /* LCHomeDetailModel.m */; };
 		748245071E14D4B7004735DB /* LCMyMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 748245061E14D4B7004735DB /* LCMyMessageViewController.m */; };
@@ -623,6 +625,10 @@
 		747BF6CB1E2E1974000137E5 /* LCBaoMingLBCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCBaoMingLBCell.h; sourceTree = "<group>"; };
 		747BF6CC1E2E1A15000137E5 /* LCBaoMingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCBaoMingModel.h; sourceTree = "<group>"; };
 		747BF6CD1E2E1A15000137E5 /* LCBaoMingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCBaoMingModel.m; sourceTree = "<group>"; };
+		747BF6CF1E2E26C3000137E5 /* LCSearchViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCSearchViewModel.h; sourceTree = "<group>"; };
+		747BF6D01E2E26C3000137E5 /* LCSearchViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCSearchViewModel.m; sourceTree = "<group>"; };
+		747BF6D21E2E26F8000137E5 /* LCSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCSearchViewController.h; sourceTree = "<group>"; };
+		747BF6D31E2E26F8000137E5 /* LCSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCSearchViewController.m; sourceTree = "<group>"; };
 		747EFB6E1E080F4100041C56 /* UIView+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BlocksKit.h"; sourceTree = "<group>"; };
 		747EFB6F1E080F4100041C56 /* UIView+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BlocksKit.m"; sourceTree = "<group>"; };
 		748245021E13C363004735DB /* LCHomeDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHomeDetailModel.h; sourceTree = "<group>"; };
@@ -1639,6 +1645,8 @@
 			children = (
 				7485FCF91DFE82C300E6D23D /* LCHomeViewController.h */,
 				7485FCFA1DFE82C300E6D23D /* LCHomeViewController.m */,
+				747BF6D21E2E26F8000137E5 /* LCSearchViewController.h */,
+				747BF6D31E2E26F8000137E5 /* LCSearchViewController.m */,
 				747BF60E1E2B2502000137E5 /* LCWebImageViewController.h */,
 				747BF60F1E2B2502000137E5 /* LCWebImageViewController.m */,
 				747BF6B11E2E18A9000137E5 /* LCBaoMingViewController.h */,
@@ -1750,6 +1758,8 @@
 			children = (
 				7485FCE11DFE442800E6D23D /* LCHomeViewModel.h */,
 				7485FCE21DFE442800E6D23D /* LCHomeViewModel.m */,
+				747BF6CF1E2E26C3000137E5 /* LCSearchViewModel.h */,
+				747BF6D01E2E26C3000137E5 /* LCSearchViewModel.m */,
 				74450CAD1E24BB3200F01EB7 /* LCHomeSmallCollectionCellModel.h */,
 				74450CAE1E24BB3200F01EB7 /* LCHomeSmallCollectionCellModel.m */,
 				7485FD121DFFB8D600E6D23D /* LCHomeCollectionCellModel.h */,
@@ -2670,6 +2680,7 @@
 				7485FDD21E00F8CF00E6D23D /* LCEvaluateViewModel.m in Sources */,
 				747BF6401E2C9149000137E5 /* LCCourseListModel.m in Sources */,
 				7485FB5D1DFAA36600E6D23D /* BaseTableViewModel.m in Sources */,
+				747BF6D41E2E26F8000137E5 /* LCSearchViewController.m in Sources */,
 				747BF6701E2CB843000137E5 /* LCTeacherCell.m in Sources */,
 				747BF6871E2CCF35000137E5 /* LCCourseClassViewModel.m in Sources */,
 				7485FCF51DFE46E500E6D23D /* LCPersonalCenterViewModel.m in Sources */,
@@ -2678,6 +2689,7 @@
 				747BF6B01E2E0575000137E5 /* WAboutUsViewModel.m in Sources */,
 				7485FBA31DFC382800E6D23D /* YZEmotionCell.m in Sources */,
 				747BF6A51E2E0063000137E5 /* LCFeedbackViewModel.m in Sources */,
+				747BF6D11E2E26C3000137E5 /* LCSearchViewModel.m in Sources */,
 				74450CB91E24C72B00F01EB7 /* LCTeacherCollectionCellViewModel.m in Sources */,
 				7485FB961DFC382800E6D23D /* RDVTabBar.m in Sources */,
 				74C91A6D1E1644860065BAFE /* LCUserTeacherTalkViewModel.m in Sources */,

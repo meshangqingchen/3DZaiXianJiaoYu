@@ -26,10 +26,8 @@ static NSString *LCBaoMingTFCellIdf = @"LCBaoMingTFCell";
 @dynamic viewModel,tableView;
 
 - (void)viewDidLoad {
-
-
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64) style:UITableViewStylePlain];
     
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64) style:UITableViewStylePlain];
     self.tableView.rowHeight = 145/2;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerClass:[LCBaoMingLBCell class] forCellReuseIdentifier:LCBaoMingLBCellIdf];

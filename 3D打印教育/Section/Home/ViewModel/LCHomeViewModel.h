@@ -15,4 +15,5 @@
 @property(nonatomic,copy) void (^clickBT)(NSString *className, NSURL *webURL);
 
 @property(nonatomic,copy) void (^moreClick)(NSIndexPath *indexpath);
+@property(nonatomic,copy) void (^searchClick)();
 @end
