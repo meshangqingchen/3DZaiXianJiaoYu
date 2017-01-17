@@ -10,4 +10,8 @@
 
 @interface LCSelectBirthdayAlerView : UIView
 @property(nonatomic,strong) UIDatePicker *datePickerView;
+@property(nonatomic,strong) UIButton *leftBT;
+@property(nonatomic,strong) UIButton *rightBt;
+
+@property(nonatomic,strong) NSString *timeStr;
 @end

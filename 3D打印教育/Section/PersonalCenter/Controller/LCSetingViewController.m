@@ -29,10 +29,9 @@ static NSString *identifierHeader = @"UITableViewHeaderFooterView";
     [self.tableView registerClass:[LCSetingCell class] forCellReuseIdentifier:identifier];
     [self.tableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:identifierHeader];
     
+    
     [self.view addSubview:self.tableView];
-    
     self.tableView.tableFooterView = [UIView new];
-    
     [super viewDidLoad];
 
 }

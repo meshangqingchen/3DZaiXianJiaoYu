@@ -212,7 +212,7 @@ static dispatch_once_t onceToken;
     };
     
     NSError *serializationError = nil;
-    NSString *string = [[NSURL URLWithString:aPath relativeToURL:self.baseURL] absoluteString];
+    NSString *string = [NSString stringWithFormat:@"%@%@%@",AppNetAPIBaseURLString,@"api/",aPath];
     NSMutableURLRequest *request = [self.requestSerializer multipartFormRequestWithMethod:@"POST" URLString:string parameters:params constructingBodyWithBlock:constructingBodyBlock error:&serializationError];
 #ifdef DEBUG
     if (serializationError) {
@@ -247,43 +247,4 @@ static dispatch_once_t onceToken;
     }
     return data;
 }
-
-
-
-
-
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

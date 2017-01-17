@@ -11,7 +11,7 @@
 #import "JCAlertView.h"
 #import "LCChangeNickNameAlerView.h" //改变昵称的alerView;
 #import "LCSelectBirthdayAlerView.h" //改变生日
-
+#import "NSObject+Common.h"
 @interface LCEditPersonalDetailViewModel ()
 @property(nonatomic,strong) LCEditPersonalDetailCellViewModel *cellVMHeaderImage;
 @property(nonatomic,strong) LCEditPersonalDetailCellViewModel *cellVMNickName;
@@ -29,38 +29,58 @@
     [self setChangeHeadImage:^(UIImage *headImage) {
         @strongify(self)
         //上传头像接口 //成功返回新的 url 失败返回 旧的URL
-        self.cellVMHeaderImage.rightURL = [NSURL URLWithString:@"---"];
-        self.dataSource = self.mutableDataArr.copy;
- 
+        [self.netApi_Manager uploadHeadImage:headImage andName:@"img" CompleteHandle:^(id responseObj, NSError *error) {
+            NSDictionary *dic = responseObj;
+            NSString *msg = dic[@"msg"];
+            [NSObject showWarning:msg];
+            if ([dic[@"status"] isEqualToNumber:@1]) {
+                NSDictionary *contents = dic[@"contents"];
+                NSString *imageStr = contents[@"avatar"];
+                self.cellVMHeaderImage.rightURL = [NSURL URLWithString:imageStr];
+                self.dataSource = self.mutableDataArr.copy;
+            }
+        }];
+         
     }];
     
     [self setSelectSex:^(NSString *sexStr) {
         @strongify(self)
-        //选择性别
-        self.cellVMSex.rightTitle = sexStr;
-        self.dataSource = self.mutableDataArr.copy;
-        //走接口
+        NSString *sexString = nil;
+        if ([sexStr isEqualToString:@"男"]) {
+            sexString = @"1";
+        }else if ([sexStr isEqualToString:@"女"]){
+            sexString = @"2";
+        }
+        
+        [self.netApi_Manager changeSex:sexString CompleteHandle:^(id responseObj, NSError *error) {
+            NSDictionary *dic = responseObj;
+            NSString *msg = dic[@"msg"];
+            [NSObject showWarning:msg];
+            if ([dic[@"status"] isEqualToNumber:@1]) {
+                self.cellVMSex.rightTitle = sexStr;
+                self.dataSource = self.mutableDataArr.copy;
+            }
+
+        }];
     }];
 }
 
 -(void)didSelectRowAtIndexPath:(NSIndexPath *)indexpath in:(UITableView *)tableView{
     
     JCAlertView *alertView = nil;
-    
     if (indexpath.section == 0 & indexpath.row == 1) {
         LCChangeNickNameAlerView *nickNameAlerView = [[LCChangeNickNameAlerView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH-50, 150)];
         nickNameAlerView.layer.cornerRadius = 5;
         alertView = [[JCAlertView alloc]initWithCustomView:nickNameAlerView dismissWhenTouchedBackground:YES];
         [alertView show];
-        @weakify(alertView)
+        
         [nickNameAlerView.leftBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
-            @strongify(alertView)
             [alertView dismissWithCompletion:nil];
         }];
         @weakify(nickNameAlerView)
         [nickNameAlerView.rightBt addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
             @strongify(nickNameAlerView)
-            @strongify(alertView)
+//            @strongify(alertView)
             [alertView dismissWithCompletion:nil];
             
             NSString *textFiledText = nickNameAlerView.textFiled.text;
@@ -68,9 +88,17 @@
             if (textFiledText == nil | textFiledText.length == 0) {
                 return ;
             }
-            self.cellVMNickName.rightTitle = textFiledText;
-            self.dataSource = self.mutableDataArr.copy;
+            
             //走网络接口
+            [self.netApi_Manager changeNickName:textFiledText CompleteHandle:^(id responseObj, NSError *error) {
+                NSDictionary *dic = responseObj;
+                NSString *msg = dic[@"msg"];
+                [NSObject showWarning:msg];
+                if ([dic[@"status"] isEqualToNumber:@1]) {
+                    self.cellVMNickName.rightTitle = textFiledText;
+                    self.dataSource = self.mutableDataArr.copy;
+                }
+            }];
         }];
         
     }else if (indexpath.section == 0 & indexpath.row == 3){
@@ -79,14 +107,35 @@
         alertView = [[JCAlertView alloc]initWithCustomView:selectBrithdayAlertView dismissWhenTouchedBackground:YES];
         [alertView show];
         
-        [selectBrithdayAlertView.datePickerView addBlockForControlEvents:UIControlEventValueChanged block:^(id  _Nonnull sender) {
-            UIDatePicker *datePicker = sender;
-            NSDate *birthdayDate = datePicker.date;
-            NSString *timeStr = [NSString stringWithFormat:@"%.0f",[birthdayDate timeIntervalSince1970]];//要传给后台的 时间戳
-            NSString *birthdayStr = [[self CreatdateFormatter] stringFromDate:birthdayDate];
-            self.cellVMBrithyDay.rightTitle = birthdayStr;
-            self.dataSource = self.mutableDataArr.copy;            
+        
+        [selectBrithdayAlertView.leftBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+//            @strongify(alertView)
+            [alertView dismissWithCompletion:nil];
         }];
+        
+        @weakify(selectBrithdayAlertView)
+        [selectBrithdayAlertView.rightBt addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+            @strongify(selectBrithdayAlertView)
+            [alertView dismissWithCompletion:nil];
+            
+            NSString *timeStr = selectBrithdayAlertView.timeStr;
+            //更改时间
+            if (timeStr == nil | timeStr.length == 0) {
+                return ;
+            }
+            //走网络接口
+            [self.netApi_Manager changeBirthday:timeStr CompleteHandle:^(id responseObj, NSError *error) {
+                NSDictionary *dic = responseObj;
+                NSString *msg = dic[@"msg"];
+                [NSObject showWarning:msg];
+                if ([dic[@"status"] isEqualToNumber:@1]) {
+                    self.cellVMBrithyDay.rightTitle = timeStr; //这里自己在转换 标准时间
+                    self.dataSource = self.mutableDataArr.copy;
+                }
+
+            }];
+        }];
+
     }else if (indexpath.section == 0 & indexpath.row == 4){
         //修改手机号
     }else if (indexpath.section == 1 & indexpath.row == 0){
@@ -95,12 +144,13 @@
 }
 
 -(void)requestRemoteDataWithPage:(NSUInteger)curpage completeHandle:(void (^)(id))complete{
-    self.cellVMHeaderImage = [[LCEditPersonalDetailCellViewModel alloc]initWithModel:@{@"leftTitle":@"头像",@"rightTitle":@"",@"rightImageUrl":@"----"}];
-    self.cellVMNickName = [[LCEditPersonalDetailCellViewModel alloc]initWithModel:@{@"leftTitle":@"昵称",@"rightTitle":@"哈哈"}];
-    self.cellVMSex = [[LCEditPersonalDetailCellViewModel alloc]initWithModel:@{@"leftTitle":@"性别",@"rightTitle":@"男"}];
-    self.cellVMBrithyDay = [[LCEditPersonalDetailCellViewModel alloc]initWithModel:@{@"leftTitle":@"出生日期",@"rightTitle":@""}];
-    self.cellVMPhoneNum = [[LCEditPersonalDetailCellViewModel alloc]initWithModel:@{@"leftTitle":@"手机号",@"rightTitle":@""}];
-    self.cellVMJianJie = [[LCEditPersonalDetailCellViewModel alloc]initWithModel:@{@"leftTitle":@"个人简介",@"rightTitle":@""}];
+    
+    self.cellVMHeaderImage = [[LCEditPersonalDetailCellViewModel alloc]initWithModel:@{@"leftTitle":@"头像",@"rightTitle":@"",@"rightImageUrl":self.selfCreatUser.avatar}];
+    self.cellVMNickName = [[LCEditPersonalDetailCellViewModel alloc]initWithModel:@{@"leftTitle":@"昵称",@"rightTitle":self.selfCreatUser.nick_name}];
+    self.cellVMSex = [[LCEditPersonalDetailCellViewModel alloc]initWithModel:@{@"leftTitle":@"性别",@"rightTitle":self.selfCreatUser.sex}];
+    self.cellVMBrithyDay = [[LCEditPersonalDetailCellViewModel alloc]initWithModel:@{@"leftTitle":@"出生日期",@"rightTitle":self.selfCreatUser.birthday}];
+    self.cellVMPhoneNum = [[LCEditPersonalDetailCellViewModel alloc]initWithModel:@{@"leftTitle":@"手机号",@"rightTitle":self.selfCreatUser.user_name}];
+    self.cellVMJianJie = [[LCEditPersonalDetailCellViewModel alloc]initWithModel:@{@"leftTitle":@"个人简介",@"rightTitle":self.selfCreatUser.des}];
     
     [self.mutableDataArr addObjectsFromArray:@[@[self.cellVMHeaderImage,
                                                  self.cellVMNickName,

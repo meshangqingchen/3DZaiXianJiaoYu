@@ -10,6 +10,8 @@
 #import "LCSetingCellViewModel.h"
 
 #import "LCChangePasswordViewModel.h" //修改密码
+#import "WAboutUsViewModel.h"        // 关于我们
+#import "NSObject+Common.h"
 @implementation LCSetingViewModel
 -(void)initialize{
     [super initialize];
@@ -23,9 +25,17 @@
     }else if (indexpath.section == 0&indexpath.row == 2){
     
     }else if (indexpath.section == 0 & indexpath.row == 3){
-    
+        WAboutUsViewModel *aboutUS = [[WAboutUsViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"关于我们"}];
+        [self.navigationStackService pushViewModel:aboutUS animated:YES];
     }else if (indexpath.section == 1 & indexpath.row == 0){
-    
+        //推出登录
+        [self.netApi_Manager logOutWithCompleteHandle:^(id responseObj, NSError *error) {
+            NSDictionary *dic = responseObj;
+            if ([dic[@"status"] isEqualToNumber:@1]) {
+                [self.navigationStackService popViewModelAnimated:YES];
+            }
+            [NSObject showWarning:dic[@"msg"]];
+        }];
     }
 }
 

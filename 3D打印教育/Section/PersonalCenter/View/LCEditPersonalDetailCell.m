@@ -8,6 +8,7 @@
 
 #import "LCEditPersonalDetailCell.h"
 #import "LCEditPersonalDetailCellViewModel.h"
+#import "LCAboutYYWebImage.h"
 @implementation LCEditPersonalDetailCell
 
 -(void)setupViews{
@@ -66,6 +67,13 @@
     self.leftLB.text = cellVM.leftTitle;
     self.rightLB.text = cellVM.rightTitle;
     self.headImageView.hidden = cellVM.headerViewHidden;
+    [self.headImageView setImageWithURL:cellVM.rightURL
+                         placeholder:[UIImage imageNamed:@"noLog_Headimage"]
+                             options:kNilOptions
+                             manager:[LCAboutYYWebImage avatarImageManager]
+                            progress:nil
+                           transform:nil
+                          completion:nil];
 }
 
 @end

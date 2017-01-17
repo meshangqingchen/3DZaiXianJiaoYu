@@ -9,5 +9,5 @@
 #import "BaseViewModel.h"
 
 @interface LCUseOldPaswordChangePaswordViewModel : BaseViewModel
-
+@property(nonatomic,copy) void (^changePassword)(NSString *oldPassword,NSString *newPassword,NSString *anewPassword);
 @end

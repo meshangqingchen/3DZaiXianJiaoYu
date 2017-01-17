@@ -61,5 +61,9 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>访问摄像头</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>访问相册</string>
 </dict>
 </plist>

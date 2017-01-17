@@ -8,7 +8,8 @@
 
 #import "LCSetingCell.h"
 #import "LCSetingCellViewModel.h"
-
+#import "KDFileManager.h"
+#import "UIView+BlocksKit.h"
 @implementation LCSetingCell
 -(void)setupViews{
     
@@ -53,20 +54,21 @@
     }];
     
     self.rightSwitch = [[NKColorSwitch alloc]initWithFrame:CGRectMake(SCREEN_WIDTH-33-15, 7.5, 33, 20)];
+    _rightSwitch.on = NO;
+    NSNumber *bofangNUM = [KDFileManager readUserDataForKey:LCCBOFANG];
+    if ([bofangNUM isEqualToNumber:@1]) {
+       _rightSwitch.on = YES;
+    }else{
+       _rightSwitch.on = NO;
+    }
     
     [_rightSwitch setTintColor:[KDColor getC7Color]];
     [_rightSwitch setOnTintColor:[UIColor greenColor]];
     [_rightSwitch setThumbTintColor:[UIColor whiteColor]];
     [_rightSwitch setShape:kNKColorSwitchShapeOval];
-    
-    
     [self.contentView addSubview:_rightSwitch];
-//    [_rightSwitch mas_makeConstraints:^(MASConstraintMaker *make) {
-////        make.right.mas_equalTo(-40);
-////        make.centerY.mas_equalTo(0);
-////        make.width.mas_equalTo(33);
-////        make.height.mas_equalTo(20);
-//    }];
+    
+    [_rightSwitch addTarget:self action:@selector(clickSwich) forControlEvents:UIControlEventValueChanged];
     
     UIView *lineView = [UIView new];
     lineView.backgroundColor = [KDColor getC7Color];
@@ -75,8 +77,6 @@
         make.bottom.left.right.mas_offset(0);
         make.height.mas_equalTo(0.5);
     }];
-    
-
 }
 
 -(void)bindViewModel:(id)viewModel AndIndexPath:(NSIndexPath *)indexPath{
@@ -113,4 +113,14 @@
     }
 }
 
+
+-(void)clickSwich{
+    NSNumber *bofangNUM = [KDFileManager readUserDataForKey:LCCBOFANG];
+    if ([bofangNUM isEqualToNumber:@1]) {
+        [KDFileManager saveUserData:@0 forKey:LCCBOFANG];
+    }else{
+        [KDFileManager saveUserData:@1 forKey:LCCBOFANG];
+    }
+
+}
 @end

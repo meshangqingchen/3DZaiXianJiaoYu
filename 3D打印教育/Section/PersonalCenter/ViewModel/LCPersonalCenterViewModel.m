@@ -14,6 +14,14 @@
 #import "LCLoginViewModel.h"   //登录VM
 #import "LCEditPersonalDetailViewModel.h"
 #import "LCSetingViewModel.h"  //设置VM
+#import "LCCollectOJoinRViewModel.h" // 课程 或者 收藏
+#import "LCFeedbackViewModel.h"      // 意见反馈
+
+
+@interface LCPersonalCenterViewModel ()
+@property(nonatomic,strong) LCUser *selfCreatUser;
+@end
+
 @implementation LCPersonalCenterViewModel
 -(void)initialize{
     [super initialize];
@@ -27,30 +35,18 @@
     [self setPushToEditDataVM:^(id viewModel) {
         @strongify(self)
         LCEditPersonalDetailViewModel *editPersonalDetailVM = [[LCEditPersonalDetailViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"编辑个人资料"}];
-        
+        editPersonalDetailVM.selfCreatUser = self.selfCreatUser;
         [self.navigationStackService pushViewModel:editPersonalDetailVM animated:YES];
     }];
     
     [self setNetworkRequestPersonalCenter:^{
         @strongify(self)
-        
-//        int x = arc4random() % 2;
-//        NSDictionary *dic = nil;
-//        //这里自动登录
-//        if (x) {
-//            dic = @{@"topTitle":@"我是nickName",@"headerImageURL":@"---",@"signature":@"我的一个签名给我一个梦醒",
-//                    @"ifneedLog":@0};
-//        }else{
-//            dic = @{@"topTitle":@"登录/注册",
-//                    @"headerImageURL":@"---",
-//                    @"signature":@"",
-//                    @"ifneedLog":@1};
-//        }
-        
         //个人中心
         [self.netApi_Manager personalInformationCompleteHandle:^(id responseObj, NSError *error) {
             
             LCUserModel *userModel = [LCUserModel parseJSON:responseObj];
+            LCUser *selfCreatUser = [[LCUser alloc]initWithUserContents:userModel.contents];
+            self.selfCreatUser = selfCreatUser;
             NSDictionary *dic = nil;
             if (userModel.status == 1) {
                 dic = @{@"topTitle":userModel.contents.nick_name,
@@ -81,14 +77,17 @@
     if ([cellVM.titleName isEqualToString:@"消息"]) {
         
     }else if ([cellVM.titleName isEqualToString:@"课程"]){
-    
+        LCCollectOJoinRViewModel *joinVM = [[LCCollectOJoinRViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"我的课程"}];
+        [self.navigationStackService pushViewModel:joinVM animated:YES];
     }else if ([cellVM.titleName isEqualToString:@"收藏"]){
-    
+        LCCollectOJoinRViewModel *collectVM = [[LCCollectOJoinRViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"我的收藏"}];
+        [self.navigationStackService pushViewModel:collectVM animated:YES];
     }else if ([cellVM.titleName isEqualToString:@"设置"]){
         LCSetingViewModel *setIngVM = [[LCSetingViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"设置"}];
         [self.navigationStackService pushViewModel:setIngVM animated:YES];
     }else if ([cellVM.titleName isEqualToString:@"意见反馈"]){
-    
+        LCFeedbackViewModel *feedbackVM = [[LCFeedbackViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"意见反馈"}];
+        [self.navigationStackService pushViewModel:feedbackVM animated:YES];
     }
 }
 

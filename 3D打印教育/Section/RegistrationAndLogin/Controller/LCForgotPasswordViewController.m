@@ -35,7 +35,7 @@
     [self.view addSubview:topLineView];
     [topLineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
-        make.top.mas_equalTo(64);
+        make.top.mas_equalTo(64+44);
         make.height.mas_equalTo(0.5);
     }];
     self.phoneNumTextField = [UITextField new];

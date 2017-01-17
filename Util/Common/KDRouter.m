@@ -53,7 +53,10 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(KDRouter)
                                    @"LCWebImageViewModel" : @"LCWebImageViewController",
                                    @"LCNotarizeOrderViewModel" : @"LCNotarizeOrderViewController",
                                    @"LCCourseCollectionViewModel" : @"LCCourseCollectionViewController",
-                                   @"LCMoreTeacherViewModel" : @"LCMoreTeacherViewController"};
+                                   @"LCMoreTeacherViewModel" : @"LCMoreTeacherViewController",
+                                   @"LCCollectOJoinRViewModel" : @"LCCollectOJoinRViewController",
+                                   @"LCFeedbackViewModel" : @"LCFeedbackViewController",
+                                   @"WAboutUsViewModel" : @"WAboutUsViewController"};
     }
 	return _viewModelViewMappings;
 }

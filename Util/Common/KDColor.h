@@ -60,12 +60,12 @@
 + (UIColor *)getC22Color;
 ///0xf15518 购买价格
 + (UIColor *)getC23Color;
-
-
-
 //0xfcd757
 + (UIColor *)getC24Color;
+
+//0xc8c8c8
 + (UIColor *)getC25Color;
+
 + (UIColor *)getC26Color;
 + (UIColor *)getC27Color;
 + (UIColor *)getC28Color;

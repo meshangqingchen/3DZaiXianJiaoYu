@@ -36,5 +36,27 @@
 
 @property (nonatomic, copy) NSString *user_name;
 
+@property(nonatomic,strong) NSString *birthday;
+
 @end
+
+@interface LCUser : NSObject
+
+@property (nonatomic, copy) NSString *nick_name;
+
+@property (nonatomic, copy) NSString *sex;
+
+@property (nonatomic, copy) NSString *email;
+
+@property (nonatomic, copy) NSString *avatar;
+
+@property (nonatomic, copy) NSString *des;
+
+@property (nonatomic, copy) NSString *user_name;
+
+@property(nonatomic,strong) NSString *birthday;
+
+-(instancetype)initWithUserContents:(LCUserContents *)userContents;
+@end
+
 

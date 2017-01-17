@@ -17,14 +17,14 @@
     @weakify(self)
     [self setGetPhoneCode:^(NSString *phoneNum) {
         @strongify(self)
-//        [self.netApi_Manager getPhoneCordeWith:phoneNum andOperation:@"找回密码" completeHandle:^(id responseObj, NSError *error) {
-//            NSDictionary *dic = responseObj;
-//            NSString *msg = dic[@"msg"];
-//            [NSObject showWarning:msg];
-//        }];
+        [self.netApi_Manager getPhoneCordeWith:phoneNum andOperation:@"修改密码" completeHandle:^(id responseObj, NSError *error) {
+            NSDictionary *dic = responseObj;
+            NSString *msg = dic[@"msg"];
+            [NSObject showWarning:msg];
+        }];
     }];
-    //设置新密码 (NSString *phoneNum,NSString *passwprd,NSString *repasswprd,NSString *code)
     
+    //设置新密码 (NSString *phoneNum,NSString *passwprd,NSString *repasswprd,NSString *code)
     [self setSettingNewPasswprd:^(NSString *phoneNum, NSString *passwprd, NSString *repasswprd, NSString *code) {
        
         if (phoneNum == nil || phoneNum.length == 0) {
@@ -48,11 +48,15 @@
             return ;
         }
         @strongify(self)
-//        [self.netApi_Manager forgotPasswordSettingNewPasswordWithPhone:phoneNum andNewPassword:passwprd andRePassword:repasswprd andCord:code CompleteHandle:^(id responseObj, NSError *error) {
-//            NSDictionary *dic = responseObj;
-//            NSString *msg = dic[@"msg"];
-//            [NSObject showWarning:msg];
-//        }];
+        [self.netApi_Manager forgotPasswordSettingNewPasswordWithPhone:phoneNum andNewPassword:passwprd andRePassword:repasswprd andCord:code CompleteHandle:^(id responseObj, NSError *error) {
+            NSDictionary *dic = responseObj;
+            NSString *msg = dic[@"msg"];
+            [NSObject showWarning:msg];
+          
+            if ([dic[@"status"] isEqualToNumber:@1]) {
+                [self.navigationStackService dismissViewModelAnimated:YES completion:nil];
+            }
+        }];
     }];
 
 }

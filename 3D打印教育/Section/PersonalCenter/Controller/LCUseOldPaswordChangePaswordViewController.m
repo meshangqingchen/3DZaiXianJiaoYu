@@ -148,7 +148,7 @@
     [finishBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
         @strongify(self)
         
-//        !self.viewModel.changePassword ? : self.viewModel.changePassword(self.oldPasswordTextfield.text,self.nnewPasswordTextfield.text);
+        !self.viewModel.changePassword ? : self.viewModel.changePassword(self.oldPasswordTextfield.text,self.nnewPasswordTextfield.text,self.againnewPasswordTextfield.text);
     }];
     
 }
