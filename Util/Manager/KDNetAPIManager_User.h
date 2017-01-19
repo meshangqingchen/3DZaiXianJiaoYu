@@ -29,10 +29,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 ///老师列表
 -(NSURLSessionDataTask *)teacherListWith:(NSUInteger)curpage completeHandle:(void(^)(id responseObj,NSError *error))complete;
 
-
-
-/////老师详情
-//-(NSURLSessionDataTask *)teacherDetailWith:(NSString *)teacherID completeHandle:(void(^)(id responseObj,NSError *error))complete;
+///老师详情
+-(NSURLSessionDataTask *)teacherDetailWith:(NSString *)teacherID completeHandle:(void(^)(id responseObj,NSError *error))complete;
 /////首页广告位图片详情
 //-(NSURLSessionDataTask *)adNewsDetailWithNewsID:(NSString *)adNewsID completeHandle:(void(^)(id responseObj,NSError *error))complete;
 
@@ -63,8 +61,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 //+(NSURLSessionDataTask *)changePhoneNum:(NSString *)phoneNum andCode:(NSString *)code CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 /////意见反馈
 -(NSURLSessionDataTask *)suggestionFeedbackMsg:(NSString *)msg amdContact:(NSString *)contact CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
-/////视频详情
-//-(NSURLSessionDataTask *)videoDetailVideoID:(NSString *)videoID CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
+
 ///报名
 -(NSURLSessionDataTask *)baomingWithZhiYuan:(NSNumber *)zhiYuan
                                     andName:(NSString *)name
@@ -84,11 +81,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 ///加入课程列表
 -(NSURLSessionDataTask *)joinCourseListWithCurpag:(NSUInteger )curpage CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 
-
-/////收藏视频
-//-(NSURLSessionDataTask *)addCollectWithVideoID:(NSString *)videoID CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
-/////删除收藏
-//-(NSURLSessionDataTask *)removeCollectWithVideoID:(NSString *)videoID CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 /////推出接口
 -(NSURLSessionDataTask *)logOutWithCompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 /////检查更新
@@ -102,6 +94,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 -(NSURLSessionDataTask *)assessListWithPlanld:(NSString *)planId andCurpage:(NSInteger)curpage CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 ///收藏OBJ 
 -(NSURLSessionDataTask *)addCollectWithOBJ:(NSString *)OBJID andType:(NSInteger)type CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
+///删除收藏
+-(NSURLSessionDataTask *)removeCollectWithOBJ:(NSString *)OBJID andType:(NSInteger)type CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
+
 ///免费加入课程
 -(NSURLSessionDataTask *)addFreeCourse:(NSString *)coursrID CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 ///评价
@@ -111,6 +106,16 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 
 ///参加收费课程 生成订单
 -(NSURLSessionDataTask *)creatOrderWith:(NSString *)courseID andPrice:(NSString *)price completeHandle:(void(^)(id responseObj,NSError *error))complete;
+-(NSURLSessionDataTask *)creatOrderWithZiXunTeacherID:(NSString *)teacherID andPrice:(NSString *)price completeHandle:(void(^)(id responseObj,NSError *error))complete;
+
 ///课程分类 planTypeList
 -(NSURLSessionDataTask *)planTypeListCompleteHandle:(void(^)(id responseObj,NSError *error))complete;
+///第三部 告诉后台老子支付好了
+-(NSURLSessionDataTask *)paySucceedWithOrder_sn:(NSString*)order_sn completeHandle:(void(^)(id responseObj,NSError *error))complete;
+///轮询接口
+-(NSURLSessionDataTask *)pollingWithTeacherID:(NSString *)teacherID CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
+///历史对话
+-(NSURLSessionDataTask *)historyTalkWithTeacherID:(NSString *)teacherID CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
+///发送消息
+-(NSURLSessionDataTask *)sendMessageWithTeacherID:(NSString *)teacherID andMessage:(NSString*)message CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 @end

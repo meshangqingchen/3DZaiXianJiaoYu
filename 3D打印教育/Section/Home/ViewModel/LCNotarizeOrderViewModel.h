@@ -13,9 +13,8 @@
 @property(nonatomic,strong) NSString *titleName;
 @property(nonatomic,strong) NSString *courseID;
 @property(nonatomic,strong) NSString *price;
+@property(nonatomic,strong) NSString *order_sn;
 
-@property(nonatomic,copy) void (^networkRequest)();
 @property(nonatomic,copy) void (^zhifu)();
-
 
 @end

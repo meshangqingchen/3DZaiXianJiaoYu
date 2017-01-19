@@ -36,6 +36,7 @@
         @strongify(self)
         [self.netApi_Manager loginWith:phoneNum andPassword:password completeHandle:^(id responseObj, NSError *error) {
             NSDictionary *jsonDic     = responseObj;
+            MYLog(@"%@",jsonDic);
             NSNumber *statusNum = jsonDic[@"status"];
             NSString *msg = jsonDic[@"msg"];
             if ([statusNum isEqualToNumber:@1]) {

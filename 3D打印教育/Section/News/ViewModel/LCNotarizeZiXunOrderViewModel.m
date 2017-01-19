@@ -1,31 +1,31 @@
 //
-//  LCNotarizeOrderModel.m
+//  LCNotarizeZiXunOrderViewModel.m
 //  3D打印教育
 //
-//  Created by 3D on 17/1/15.
+//  Created by 3D on 17/1/18.
 //  Copyright © 2017年 3D. All rights reserved.
 //
 
-#import "LCNotarizeOrderViewModel.h"
-#import "NSObject+Common.h"
+#import "LCNotarizeZiXunOrderViewModel.h"
+#import "LCTeacherDetailViewViewModel.h"
+#import "LCUserTeacherTalkViewModel.h"
+
 #import "KDFileManager.h"
+
 
 #import "Order.h"
 #import "RSADataSigner.h"
 #import <AlipaySDK/AlipaySDK.h>
-@interface LCNotarizeOrderViewModel ()
-
-@end
-
-@implementation LCNotarizeOrderViewModel
+@implementation LCNotarizeZiXunOrderViewModel
 -(void)initialize{
     [super initialize];
     self.shouldNavBackItem = YES;
+    
     @weakify(self)
-    [self setZhifu:^{
+    [self setQurenzhifu:^{
         @strongify(self)
-        NSString *appID = @"2017011205016142";
         
+        NSString *appID = @"2017011205016142";
         NSString *rsa2PrivateKey = LCCRSA2PRIVATEKEY;
         NSString *rsaPrivateKey = @"";
         /*
@@ -56,11 +56,11 @@
         
         // NOTE: 商品数据
         order.biz_content = [BizContent new];
-        order.biz_content.body = self.titleName;
+        order.biz_content.body = self.viewVM.teacherName;
         order.biz_content.subject = @"1";
         order.biz_content.out_trade_no = self.order_sn; //订单ID（由商家自行制定）
         order.biz_content.timeout_express = @"30m"; //超时时间设置
-        float price = [self.price floatValue];
+        float price = [self.viewVM.price floatValue];
         order.biz_content.total_amount = [NSString stringWithFormat:@"%.2f", price]; //商品价格
         
         //将商品信息拼接成字符串
@@ -103,21 +103,11 @@
             }];
         }
     }];
-    
-    //为课程支付成功
-    [kSharedAppDelegate setPayForCourseSucced:^{
-        
+    //为了资讯支付成功
+    [kSharedAppDelegate setPayForZixunSucceed:^{
+        @strongify(self)
+        LCUserTeacherTalkViewModel *userTeacherVM = [[LCUserTeacherTalkViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"资讯",@"teacherImageURL":self.viewVM.headImageURL,@"teacherIID":self.viewVM.teacherIID}];
+        [self.navigationStackService pushViewModel:userTeacherVM animated:YES];
     }];
-}
-
--(instancetype)initWithServices:(id<LCNavigationProtocol>)services params:(NSDictionary *)params{
-    if (self = [super initWithServices:services params:params]) {
-        self.titleName = params[@"titleName"];
-        self.price = params[@"price"];
-        self.imageURL = params[@"urlStr"];
-        self.courseID = params[@"couresID"];
-        self.order_sn = params[@"order_sn"];
-    }
-    return self;
 }
 @end

@@ -26,13 +26,10 @@ typedef NS_ENUM(NSUInteger , NetworkMethod) {
 //http://www.wxswjy.com/api.php/home/api/
 //http://www.wxswjy.com/api2.php/home/ 服务器上的
 //@"http://192.168.1.108/3d/api.php/home/" 测试
+
 static NSString *const AppNetAPIBaseURLString = @"http://www.wxswjy.com/api2.php/home/";
-
-
 @interface KDNetAPIManager : AFHTTPSessionManager
-
 + (instancetype)sharedJsonClient;
-
 //andBaseApi:(NSString *)baseApi
 
 -(NSURLSessionDataTask *)requestJsonDataWithPath:(NSString *)aPath encodeParams:(NSDictionary *)params withMethodType:(NetworkMethod)method andBaseApi:(NSString *)baseApi completeHandle:(void(^)(id responseObj,NSError *error))complete;

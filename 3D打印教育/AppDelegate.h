@@ -12,8 +12,11 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
 @property(nonatomic,strong,readonly) LCNavigationStackService *navigationStackService;
 @property(nonatomic,assign,readonly) AFNetworkReachabilityStatus networkStatus;
+
+
+@property(nonatomic,strong) void (^payForZixunSucceed)();
+@property(nonatomic,strong) void (^payForCourseSucced)();
 @end
 

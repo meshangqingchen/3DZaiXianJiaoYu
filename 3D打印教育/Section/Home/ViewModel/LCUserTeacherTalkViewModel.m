@@ -8,10 +8,41 @@
 
 #import "LCUserTeacherTalkViewModel.h"
 #import "LCUserTeacherTalkCellViewModel.h"
+#import "LCTalkModel.h"
+
+#import "NSObject+Common.h"
 @implementation LCUserTeacherTalkViewModel
+{
+    dispatch_source_t _timer;
+}
+
 -(void)initialize{
     [super initialize];
     self.shouldNavBackItem = YES;
+    [self starTime];
+    @weakify(self)
+    //发送消息
+    [self setSendMassage:^(NSString *messageString) {
+        @strongify(self)
+        if (!messageString || messageString.length == 0) {
+            [NSObject showWarning:@"不能发送空消息"];
+            return ;
+        }
+        [self.netApi_Manager sendMessageWithTeacherID:self.teacherIID andMessage:messageString CompleteHandle:^(id responseObj, NSError *error) {
+            MYLog(@"%@",responseObj);
+            MYLog(@"%@",responseObj);
+            MYLog(@"%@",responseObj);
+            NSDictionary *dic = responseObj;
+            if ([dic[@"status"] isEqualToNumber:@1]) {
+                LCUserTeacherTalkCellViewModel *messageCellVM = [[LCUserTeacherTalkCellViewModel alloc]initWithModel: @{@"messageBody":messageString,@"fromWho":@1}];
+                [self.mutableDataArr addObject:messageCellVM];
+                self.dataSource = self.mutableDataArr.copy;
+                !self.sendMassageSessed ? : self.sendMassageSessed();
+            }if ([dic[@"status"] isEqualToNumber:@0]) {
+                [NSObject showWarning:@"发送失败"];
+            }
+        }];
+    }];
 }
 
 -(void)didSelectRowAtIndexPath:(NSIndexPath *)indexpath in:(UITableView *)tableView{
@@ -20,25 +51,57 @@
 
 -(void)requestRemoteDataWithPage:(NSUInteger)curpage completeHandle:(void (^)(id))complete{
    
-    LCUserTeacherTalkCellViewModel *userTeacherCellVM0 = [[LCUserTeacherTalkCellViewModel alloc]initWithModel: @{@"messageBody":@"我是",@"fromWho":@1}];
+    [self.netApi_Manager historyTalkWithTeacherID:self.teacherIID CompleteHandle:^(id responseObj, NSError *error) {
+        MYLog(@" = = = %@",responseObj);
+        MYLog(@" = = = %@",responseObj);
+        MYLog(@" = = = %@",responseObj);
+        LCTalkModel *talkModel = [LCTalkModel parseJSON:responseObj];
+        for (int i = 0; i<talkModel.contents.list.count; i++) {
+            LCTalkList *messageModel = talkModel.contents.list[i];
+            
+            NSNumber *typeNUM = [messageModel.send_type numberValue];
+            LCUserTeacherTalkCellViewModel *messageCellVM = [[LCUserTeacherTalkCellViewModel alloc]initWithModel: @{@"messageBody":messageModel.discrip,@"fromWho":typeNUM}];
+            [self.mutableDataArr addObject:messageCellVM];
+        }
+        self.dataSource = self.mutableDataArr.copy;
+    }];
     
-    LCUserTeacherTalkCellViewModel *userTeacherCellVM1 = [[LCUserTeacherTalkCellViewModel alloc]initWithModel: @{@"messageBody":@"我是一名老师老师老师老师我是一名老师老师老师老师我是一名老师老师老师老师我是一名老师老师老师老师",@"fromWho":@0}];
-    
-    LCUserTeacherTalkCellViewModel *userTeacherCellVM2 = [[LCUserTeacherTalkCellViewModel alloc]initWithModel: @{@"messageBody":@"我是一名学生学生学生我是一名学生学生学生我是一名学生学生学生我是一名学生学生学生",@"fromWho":@1}];
-    
-    LCUserTeacherTalkCellViewModel *userTeacherCellVM3 = [[LCUserTeacherTalkCellViewModel alloc]initWithModel: @{@"messageBody":@"我是一名学生",@"fromWho":@1}];
-     LCUserTeacherTalkCellViewModel *userTeacherCellVM4 = [[LCUserTeacherTalkCellViewModel alloc]initWithModel: @{@"messageBody":@"我是一名老师我是一名老师我是一名老师我是一名老师我是一名老师我是一名老师我是一名老师",@"fromWho":@0}];
-   
-    LCUserTeacherTalkCellViewModel *userTeacherCellVM5 = [[LCUserTeacherTalkCellViewModel alloc]initWithModel: @{@"messageBody":@"我是一名老师老师老师老师我是一名老师老师老师老师我是一名老师老师老师老师我是一名老师老师老师老师",@"fromWho":@0}];
-    
-    LCUserTeacherTalkCellViewModel *userTeacherCellVM6 = [[LCUserTeacherTalkCellViewModel alloc]initWithModel: @{@"messageBody":@"我是一名学生学生学生我是一名学生学生学生我是一名学生学生学生我是一名学生学生学生",@"fromWho":@1}];
-    
-    LCUserTeacherTalkCellViewModel *userTeacherCellVM7 = [[LCUserTeacherTalkCellViewModel alloc]initWithModel: @{@"messageBody":@"我是一名学生",@"fromWho":@1}];
-    LCUserTeacherTalkCellViewModel *userTeacherCellVM8 = [[LCUserTeacherTalkCellViewModel alloc]initWithModel: @{@"messageBody":@"我是一名老师我是一名老师我是一名老师我是一名老师我是一名老师我是一名老师我是一名老师",@"fromWho":@0}];
-    LCUserTeacherTalkCellViewModel *userTeacherCellVM9 = [[LCUserTeacherTalkCellViewModel alloc]initWithModel: @{@"messageBody":@"我是",@"fromWho":@1}];
-    
-    [self.mutableDataArr addObjectsFromArray:@[userTeacherCellVM0,userTeacherCellVM1,userTeacherCellVM2,userTeacherCellVM3,userTeacherCellVM4,userTeacherCellVM5,userTeacherCellVM6,userTeacherCellVM7,userTeacherCellVM8,userTeacherCellVM9]];
-    
-    self.dataSource = self.mutableDataArr.copy;
 }
+
+-(void)starTime{
+    if (_timer != nil) {
+        dispatch_source_cancel(_timer);
+        _timer = nil;
+    }
+    dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    __block dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, globalQueue);
+    _timer = timer;
+    dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 15.0*NSEC_PER_SEC, 0);
+    dispatch_source_set_event_handler(timer, ^{
+        
+        [self.netApi_Manager pollingWithTeacherID:self.teacherIID CompleteHandle:^(id responseObj, NSError *error) {
+            
+            NSArray *contents = responseObj[@"contents"];
+            if (!contents && contents.count>0) {
+                for (int i = 0; i<contents.count; i++) {
+                    LCTalkList *messageModel =[LCTalkList parseJSON:contents[i]];
+                    NSNumber *typeNUM = [messageModel.send_type numberValue];
+                    LCUserTeacherTalkCellViewModel *messageCellVM = [[LCUserTeacherTalkCellViewModel alloc]initWithModel: @{@"messageBody":messageModel.discrip,@"fromWho":typeNUM}];
+                    [self.mutableDataArr addObject:messageCellVM];
+                }
+                self.dataSource = self.mutableDataArr.copy;
+            }
+        }];
+    });
+    dispatch_resume(timer);
+}
+
+-(instancetype)initWithServices:(id<LCNavigationProtocol>)services params:(NSDictionary *)params{
+    if (self = [super initWithServices:services params:params]) {
+        self.teacherImageURL = params[@"teacherImageURL"];
+        self.teacherIID = params[@"teacherIID"];
+    }
+    return self;
+}
+
 @end

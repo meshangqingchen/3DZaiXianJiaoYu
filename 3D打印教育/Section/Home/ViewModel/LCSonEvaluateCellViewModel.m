@@ -33,6 +33,10 @@
         nameAtt.color = [KDColor getC8Color];
         
 //        [sonEvaAtt insertString:nameMut atIndex:0];[A insertString:B atIndex:0] A = B+A = BA B的属性和A一样
+        
+        
+        
+        
         [sonEvaAtt insertAttributedString:nameAtt atIndex:0];
         
         // 高亮状态的背景 点击名字高亮颜色

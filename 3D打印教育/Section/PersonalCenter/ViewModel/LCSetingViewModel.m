@@ -8,6 +8,7 @@
 
 #import "LCSetingViewModel.h"
 #import "LCSetingCellViewModel.h"
+#import "KDFileManager.h"
 
 #import "LCChangePasswordViewModel.h" //修改密码
 #import "WAboutUsViewModel.h"        // 关于我们
@@ -33,6 +34,8 @@
             NSDictionary *dic = responseObj;
             if ([dic[@"status"] isEqualToNumber:@1]) {
                 [self.navigationStackService popViewModelAnimated:YES];
+                [KDFileManager removeUserDataForkey:LCENCRYPTKey];
+                [KDFileManager removeUserDataForkey:LCCLOIN_AUTO]; 
             }
             [NSObject showWarning:dic[@"msg"]];
         }];

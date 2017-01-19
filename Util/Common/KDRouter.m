@@ -58,7 +58,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(KDRouter)
                                    @"LCFeedbackViewModel" : @"LCFeedbackViewController",
                                    @"WAboutUsViewModel" : @"WAboutUsViewController",
                                    @"LCBaoMingViewModel" : @"LCBaoMingViewController",
-                                   @"LCSearchViewModel" : @"LCSearchViewController"};
+                                   @"LCSearchViewModel" : @"LCSearchViewController",
+                                   @"LCTeacherDetailViewModel" : @"LCTeacherDetailViewController",
+                                   @"LCNotarizeZiXunOrderViewModel" : @"LCNotarizeZiXunOrderViewController"};
     }
 	return _viewModelViewMappings;
 }

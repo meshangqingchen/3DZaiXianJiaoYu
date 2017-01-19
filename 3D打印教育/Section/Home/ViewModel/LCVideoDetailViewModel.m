@@ -11,6 +11,8 @@
 #import "LCCourseDownLoadViewModel.h" //下载列表 课程下载
 #import "LCHomeDetailModel.h"
 
+#import "KDFileManager.h"
+
 #import "NSObject+Common.h"
 #import "LCNotarizeOrderViewModel.h"
 
@@ -40,24 +42,57 @@
     //收费的事假 生成订单
     [self setCreatOrder:^(NSString *couresID,NSString *price,NSURL *urlStr,NSString *title) {
         @strongify(self);
-        LCNotarizeOrderViewModel *orderVM = [[LCNotarizeOrderViewModel alloc]initWithServices:self.navigationStackService params:@{@"couresID":couresID,
-                        @"price":price,
-                       @"urlStr":urlStr,
-                    @"titleName":title,
-                       KEY_TITLE:@"确认订单"}];
-        [self.navigationStackService pushViewModel:orderVM animated:YES];
+        
+        [self.netApi_Manager creatOrderWith:couresID andPrice:price completeHandle:^(id responseObj, NSError *error) {
+            NSDictionary *dic = responseObj;
+            if ([dic[@"status"] isEqualToNumber:@0]) {
+                [NSObject showWarning:dic[@"msg"]];
+            }else{
+                NSDictionary *contents = dic[@"contents"];
+                
+                NSString *order_sn = contents[@"order_sn"];
+                [KDFileManager saveUserData:order_sn forKey:LCCORDER_SN];
+                LCNotarizeOrderViewModel *orderVM = [[LCNotarizeOrderViewModel alloc]initWithServices:self.navigationStackService params:@{@"couresID":couresID,
+                                @"price":price,
+                               @"urlStr":urlStr,
+                            @"titleName":title,
+                             @"order_sn":order_sn,
+                               KEY_TITLE:@"确认订单"}];
+                [self.navigationStackService pushViewModel:orderVM animated:YES];
+            }
+            [NSObject hideProgress];
+        }];
     }];
     
     [self setCollectVideo:^(NSString *courseID, UIButton *collection_BT) {
-        MYLog(@"收藏");
+        
         @strongify(self);
-        [self.netApi_Manager addCollectWithOBJ:courseID andType:1 CompleteHandle:^(id responseObj, NSError *error) {
-            NSDictionary *dic  =responseObj;
-            NSString *msg = dic[@"msg"];
-            if ([msg isEqualToString:@"收藏成功"]) {
-                collection_BT.selected = YES;
-            }
-        }];
+        
+        if (self.videoDetailViewViewModel.ifCollected) {
+            //已经收藏
+            //删除收藏接口
+            [self.netApi_Manager removeCollectWithOBJ:courseID andType:1 CompleteHandle:^(id responseObj, NSError *error) {
+                NSDictionary *dic  =responseObj;
+                NSString *msg = dic[@"msg"];
+                if ([msg isEqualToString:@"取消收藏成功"]) { //ifCollected
+                    collection_BT.selected = NO;
+                    self.videoDetailViewViewModel.ifCollected = NO;
+                }
+            }];
+        }else{
+            //没有收藏
+            //加入收藏接口
+            [self.netApi_Manager addCollectWithOBJ:courseID andType:1 CompleteHandle:^(id responseObj, NSError *error) {
+                @strongify(self);
+                NSDictionary *dic  =responseObj;
+                NSString *msg = dic[@"msg"];
+                if ([msg isEqualToString:@"收藏成功"]) { //ifCollected
+                    collection_BT.selected = YES;
+                    [NSObject showWarning:msg];
+                    self.videoDetailViewViewModel.ifCollected = YES;
+                }
+            }];
+        }
     }];
     
     //都让弹出键盘

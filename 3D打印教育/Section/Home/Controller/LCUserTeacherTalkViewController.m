@@ -5,7 +5,7 @@
 //  Created by 3D on 16/12/30.
 //  Copyright © 2016年 3D. All rights reserved.
 //
-
+#import <IQKeyboardManager.h>
 #import "LCUserTeacherTalkViewController.h"
 #import "LCUserTeacherTalkViewModel.h"
 
@@ -35,10 +35,12 @@ static NSString *identifierTeacher = @"LCFromTeacherCell";
 
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64-49) style:UITableViewStylePlain];
     self.tableView.backgroundColor = [KDColor getC9Color];
-    [self.view addSubview:self.tableView];
+    
     [self.tableView registerClass:[LCFromUserCell class] forCellReuseIdentifier:identifierUser];
     [self.tableView registerClass:[LCFromTeacherCell class] forCellReuseIdentifier:identifierTeacher];
-   
+    [self.view addSubview:self.tableView];
+    self.tableView.tableFooterView = [UIView new];
+    
     UIPanGestureRecognizer *panGR = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(pan:)];
     panGR.delegate = self;
     [self.tableView addGestureRecognizer:panGR];
@@ -71,11 +73,31 @@ static NSString *identifierTeacher = @"LCFromTeacherCell";
     @weakify(bottomView)
     [bottomView.fasongBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
         @strongify(bottomView)
-        [bottomView.textView resignFirstResponder];
+        !self.viewModel.sendMassage ? : self.viewModel.sendMassage(bottomView.textView.text);
+        bottomView.textView.text = nil;
+        
+    }];
+    @weakify(self)
+    [self.viewModel setSendMassageSessed:^{
+        @strongify(self)
+        [self scrollToBottom];
     }];
     [super viewDidLoad];
     
 }
+
+
+
+-(void)scrollToBottom{
+    if (self.viewModel.dataSource.count == 0) {
+        return;
+    }
+    
+    
+    NSIndexPath *lastIndex = [NSIndexPath indexPathForRow:self.viewModel.dataSource.count-1 inSection:0];
+    [self.tableView scrollToRowAtIndexPath:lastIndex atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+}
+
 
 -(void)pan:(UIPanGestureRecognizer *)gr
 {
@@ -83,9 +105,13 @@ static NSString *identifierTeacher = @"LCFromTeacherCell";
     // translation：位移(位置的偏移量，所有点都相对于动作起点的距离)
 //    CGPoint location = [gr locationInView:self.view];
     CGPoint translation = [gr translationInView:self.view];
-    
-    if (translation.y >= 0) {
+    MYLog(@"%f",translation.y);
+    if (translation.y >= 100) {
         [self.bottomView.textView resignFirstResponder];
+    }
+    
+    if (translation.y <= -100){
+        [self.bottomView.textView becomeFirstResponder];
     }
 }
 // 滑动手势 协议方法UIGestureRecognizerDelegate
@@ -116,17 +142,17 @@ static NSString *identifierTeacher = @"LCFromTeacherCell";
 
 -(void)openKeyboard:(NSNotification *)notification
 {
+    
    
 }
 
 -(void)closeKeyboard:(NSNotification *)notification
 {
-    self.tableView.contentOffset = CGPointMake(0, 0);
+
 }
 
 -(void)changeKeyboard:(NSNotification *)notification
 {
-    
     
 //    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.viewModel.dataSource.count-1 inSection:0];
 //    CGRect cellRect = [self.tableView rectForRowAtIndexPath:indexPath];
@@ -143,13 +169,12 @@ static NSString *identifierTeacher = @"LCFromTeacherCell";
         make.bottom.mas_equalTo(-(SCREEN_HEIGHT-keyBoardEND_Y));
     }];
     
-    
     CGFloat keyBoardBegin_Y= [notification.userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue].origin.y;
     CGFloat change_Y = keyBoardBegin_Y - keyBoardEND_Y;
     NSLog(@"=========== %f",change_Y);
     [UIView animateWithDuration:duration delay:0 options:option animations:^{
         [self.view layoutIfNeeded];
-        self.tableView.contentOffset = CGPointMake(0, self.tableView.contentOffset.y + change_Y);
+//        self.tableView.contentOffset = CGPointMake(0, self.tableView.contentOffset.y + change_Y);
     } completion:nil];
 }
 

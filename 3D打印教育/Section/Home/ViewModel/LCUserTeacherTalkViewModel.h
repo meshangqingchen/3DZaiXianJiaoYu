@@ -9,5 +9,11 @@
 #import "BaseTableViewModel.h"
 
 @interface LCUserTeacherTalkViewModel : BaseTableViewModel
+@property(nonatomic,strong) NSURL *teacherImageURL;
+@property(nonatomic,strong) NSString *teacherIID;
+
+
+@property(nonatomic,copy) void(^sendMassage)(NSString *messageString);
+@property(nonatomic,copy) void(^sendMassageSessed)();
 
 @end

@@ -28,9 +28,6 @@ static dispatch_once_t onceToken;
 
 -(instancetype)init{
     if (self = [super init]) {
-        
-        
-
         self.requestSerializer.timeoutInterval = kAppNetTimeoutInterval;
         self.responseSerializer = [AFJSONResponseSerializer serializer];
         self.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/plain", @"text/javascript", @"text/json", @"text/html",@"text/plain", nil];
@@ -38,17 +35,17 @@ static dispatch_once_t onceToken;
     return self;
 }
 
--(instancetype)initWithBaseURL:(NSURL *)url{
-    self = [super initWithBaseURL:url];
-    if (!self) {
-        return nil;
-    }
-    self.requestSerializer.timeoutInterval = kAppNetTimeoutInterval;
-//    self.responseSerializer = [AFJSONResponseSerializer serializer];
-    self.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/plain", @"text/javascript", @"text/json", @"text/html", nil];
-    
-    return self;
-}
+//-(instancetype)initWithBaseURL:(NSURL *)url{
+//    self = [super initWithBaseURL:url];
+//    if (!self) {
+//        return nil;
+//    }
+//    self.requestSerializer.timeoutInterval = kAppNetTimeoutInterval;
+////    self.responseSerializer = [AFJSONResponseSerializer serializer];
+//    self.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/plain", @"text/javascript", @"text/json", @"text/html", nil];
+//    
+//    return self;
+//}
 
 
 -(NSURLSessionDataTask *)requestJsonDataWithPath:(NSString *)aPath encodeParams:(NSDictionary *)params withMethodType:(NetworkMethod)method andBaseApi:(NSString *)baseApi completeHandle:(void (^)(id, NSError *))complete{
@@ -58,12 +55,10 @@ static dispatch_once_t onceToken;
     NSMutableDictionary *mutableDic = @{}.mutableCopy;
     NSDate *date = [NSDate date];
     NSString *time = [NSString stringWithFormat:@"%ld-%ld-%ld %ld:%ld:%ld",date.year,date.month,date.day,date.hour,date.minute,date.second];
-    
-    
     [mutableDic addEntriesFromDictionary:params];
     [mutableDic setObject:time forKey:@"time"];
-    [mutableDic setObject:[KDFileManager readUserDataForKey:@"LCCkey"] ? [KDFileManager readUserDataForKey:@"LCCkey"] : @"YangtechApiKey_3feFE4" forKey:@"key"];
-    [mutableDic setObject:[[NSString stringWithFormat:@"%@%@",time,[KDFileManager readUserDataForKey:@"LCCkey"] ? [KDFileManager readUserDataForKey:@"LCCkey"] : @"YangtechApiKey_3feFE4"] md5String] forKey:@"signature"];
+    [mutableDic setObject:[KDFileManager readUserDataForKey:LCENCRYPTKey] ? [KDFileManager readUserDataForKey:LCENCRYPTKey] : @"YangtechApiKey_3feFE4" forKey:@"key"];
+    [mutableDic setObject:[[NSString stringWithFormat:@"%@%@",time,[KDFileManager readUserDataForKey:LCENCRYPTKey] ? [KDFileManager readUserDataForKey:LCENCRYPTKey] : @"YangtechApiKey_3feFE4"] md5String] forKey:@"signature"]; 
    MYLog(@"参数 = = = = =  = %@",mutableDic);
     switch (method) {
         case Get:
