@@ -33,14 +33,33 @@ static NSString *identifierTeacher = @"LCFromTeacherCell";
 
 - (void)viewDidLoad {
 
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64-49) style:UITableViewStylePlain];
-    self.tableView.backgroundColor = [KDColor getC9Color];
     
+    LCUserTeacherTalkBottomView *bottomView = [LCUserTeacherTalkBottomView new];
+    bottomView.textView.delegate = self;
+    self.bottomView = bottomView;
+    [self.view addSubview:bottomView];
+    [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.mas_equalTo(0);
+    }];
+    @weakify(bottomView)
+    [bottomView.fasongBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+        @strongify(bottomView)
+        !self.viewModel.sendMassage ? : self.viewModel.sendMassage(bottomView.textView.text);
+        bottomView.textView.text = nil;
+    }];
+    
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+    self.tableView.backgroundColor = [KDColor getC9Color];
     [self.tableView registerClass:[LCFromUserCell class] forCellReuseIdentifier:identifierUser];
     [self.tableView registerClass:[LCFromTeacherCell class] forCellReuseIdentifier:identifierTeacher];
     [self.view addSubview:self.tableView];
-    self.tableView.tableFooterView = [UIView new];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_offset(0);
+        make.top.mas_offset(64);
+        make.bottom.mas_equalTo(bottomView.mas_top).mas_equalTo(0);
+    }];
     
+    self.tableView.tableFooterView = [UIView new];
     UIPanGestureRecognizer *panGR = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(pan:)];
     panGR.delegate = self;
     [self.tableView addGestureRecognizer:panGR];
@@ -61,22 +80,6 @@ static NSString *identifierTeacher = @"LCFromTeacherCell";
         make.width.mas_equalTo(200);
     }];
     
-    LCUserTeacherTalkBottomView *bottomView = [LCUserTeacherTalkBottomView new];
-    bottomView.textView.delegate = self;
-    self.bottomView = bottomView;
-    [self.view addSubview:bottomView];
-    [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.mas_equalTo(0);
-    }];
-    
-    
-    @weakify(bottomView)
-    [bottomView.fasongBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
-        @strongify(bottomView)
-        !self.viewModel.sendMassage ? : self.viewModel.sendMassage(bottomView.textView.text);
-        bottomView.textView.text = nil;
-        
-    }];
     @weakify(self)
     [self.viewModel setSendMassageSessed:^{
         @strongify(self)
@@ -92,12 +95,9 @@ static NSString *identifierTeacher = @"LCFromTeacherCell";
     if (self.viewModel.dataSource.count == 0) {
         return;
     }
-    
-    
     NSIndexPath *lastIndex = [NSIndexPath indexPathForRow:self.viewModel.dataSource.count-1 inSection:0];
     [self.tableView scrollToRowAtIndexPath:lastIndex atScrollPosition:UITableViewScrollPositionBottom animated:YES];
 }
-
 
 -(void)pan:(UIPanGestureRecognizer *)gr
 {
