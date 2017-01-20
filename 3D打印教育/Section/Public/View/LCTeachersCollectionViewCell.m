@@ -72,7 +72,6 @@
     
     self.leftArrowBT = [UIButton new];
     [self addSubview:_leftArrowBT];
-    //    _leftArrowBT.image = [UIImage imageNamed:@"leftArrow"];//
     [_leftArrowBT setImage:[UIImage imageNamed:@"leftArrow"] forState:0];
     [_leftArrowBT mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(5);
@@ -83,12 +82,14 @@
     @weakify(self)
     [_leftArrowBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
         @strongify(self)
-        MYLog(@"===%@",self.cell.carousel);
-        //        MYLog(@"_____%ld",self.cell.currentItemIndex++);
-        if (self.cell.currentItemIndex >= self.cell.maxNum) {
-            self.cell.currentItemIndex = 1;
+        MYLog(@"===%ld",self.cell.currentItemIndex);
+        if (self.cell.currentItemIndex >= self.cell.maxNum-1) {
+            self.cell.currentItemIndex = -1;
         }
+        MYLog(@"===%ld",self.cell.currentItemIndex);
         [self.cell.carousel scrollToItemAtIndex:++self.cell.currentItemIndex animated:YES];
+        MYLog(@"%ld",self.cell.currentItemIndex);
+        MYLog(@"%ld",self.cell.currentItemIndex);
         MYLog(@"%ld",self.cell.currentItemIndex);
     }];
     
@@ -103,12 +104,11 @@
     }];
     [_rightArrowBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
         @strongify(self)
-        MYLog(@"++++%@",self.cell.carousel);
-        
         if (self.cell.currentItemIndex <= 0) {
             self.cell.currentItemIndex = self.cell.maxNum;
         }
         [self.cell.carousel scrollToItemAtIndex:--self.cell.currentItemIndex animated:YES];
+        
     }];
     
     self.textView = [TextView new];
@@ -123,8 +123,6 @@
 
 -(void)bindViewModel:(id)viewModel{
 
-    //头像
-    
     LCTeacherCollectionCellViewModel *teacherCellVM = viewModel;
 //    [self.headImageView setImageWithURL:nil placeholder:nil options:nil completion:nil];
     [self.headImageView setImageWithURL:teacherCellVM.headImageURL
@@ -183,8 +181,9 @@
 
 //跳转教师详情
 - (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index{
-//    LCCourseTeacherCellViewModel * TeacherCellVM = self.dataArr[index];
-//    !TeacherCellVM.pushToTeacherDetail ? : TeacherCellVM.pushToTeacherDetail(TeacherCellVM.teacherID);
+
+    LCTeacherCollectionCellViewModel *TeacherCellVM = self.dataArr[index];
+    !TeacherCellVM.pushToTeacherDetailViewModel ? : TeacherCellVM.pushToTeacherDetailViewModel(TeacherCellVM.teacherID);
 }
 
 

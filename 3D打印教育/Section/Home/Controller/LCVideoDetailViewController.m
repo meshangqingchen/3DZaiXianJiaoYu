@@ -20,13 +20,23 @@
 //下面的tabbar
 #import "LCVideoDetailTabBar.h"
 #import "LCDetailEvaluateInputAccessoryView.h"
+
+#import "LCHomeDetailModel.h"
 @interface LCVideoDetailViewController ()
+<
+ZFPlayerDelegate
+>
 @property(nonatomic,strong) LCVideoDetailViewModel *viewModel;
 @property(nonatomic,strong) LCDetailEvaluateInputAccessoryView *lcInputAccessoryView;
 @property(nonatomic,strong) UIView *backView;
 
 @property(nonatomic,strong) LCIntroViewModel *IntroViewModel;
 @property(nonatomic,strong) LCCourseViewModel *courseViewModel;
+
+@property(nonatomic,strong) UIView *videoViewFatherView;
+@property(nonatomic,strong) ZFPlayerView *playerView;
+@property(nonatomic,strong) ZFPlayerModel *playerModel;
+@property(nonatomic,strong) LCVideoDetailViewViewModel *videoDetailVideModel;
 @end
 
 @implementation LCVideoDetailViewController
@@ -38,9 +48,13 @@
     /*
      视频view
      */
-    UIView *videoView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, VIDEO_H)];
-    videoView.backgroundColor = [UIColor blackColor];
-    [self.view addSubview:videoView];
+    self.playerView = [[ZFPlayerView alloc]init];
+    self.playerView.delegate = self;
+    UIView *videoViewFatherView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, VIDEO_H)];
+    videoViewFatherView.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:videoViewFatherView];
+    self.videoViewFatherView = videoViewFatherView;
+    
     
     self.backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     [self.view addSubview:_backView];
@@ -66,6 +80,14 @@
     
     //给tabBar传输数据 判断是否 用户收藏了
     [self.viewModel setBindViewModel:^(LCVideoDetailViewViewModel *videoDetailVideModel) {
+        @strongify(self)
+        self.videoDetailVideModel = videoDetailVideModel;
+        if (videoDetailVideModel.ifPlay) {
+            [self creatZFPlayerModel:videoDetailVideModel.firstVideo];
+            [self.playerView playerControlView:nil playerModel:self.playerModel];
+            [self.playerView autoPlayTheVideo]; //自动播放
+        }
+        
         [tabbarView bindViewModel:videoDetailVideModel];
     }];
     
@@ -78,6 +100,22 @@
     //网络请求
     !self.viewModel.networkRequests ? : self.viewModel.networkRequests(self.viewModel.planID);
     
+    //这个是收费视频 付完款之后回调
+    [self.viewModel setCreatplayerModel:^{
+        @strongify(self)
+        self.videoDetailVideModel.ifPlay = YES; //付完款改变状态
+        [self creatZFPlayerModel:self.videoDetailVideModel.firstVideo];
+        [self.playerView playerControlView:nil playerModel:self.playerModel];
+        [self.playerView autoPlayTheVideo]; //自动播放
+    }];
+    //免费参加课程成功回调
+    [self.viewModel setJoinFreeCourseSucceed:^{
+        @strongify(self)
+        self.videoDetailVideModel.ifPlay = YES; //付完款改变状态
+        [self creatZFPlayerModel:self.videoDetailVideModel.firstVideo];
+        [self.playerView playerControlView:nil playerModel:self.playerModel];
+        [self.playerView autoPlayTheVideo]; //自动播放
+    }];
 }
 
 -(instancetype)initWithViewModel:(BaseViewModel *)viewModel{
@@ -160,5 +198,16 @@
     } completion:nil];
 }
 
+-(ZFPlayerModel *)creatZFPlayerModel:(LCVideoDetailVideolist *)model{
+    self.playerModel = [[ZFPlayerModel alloc]init];
+    _playerModel.title = model.name;
+    _playerModel.videoURL = [NSURL URLWithString:model.url];
+    _playerModel.fatherView = self.videoViewFatherView;
+    _playerModel.placeholderImage = [UIImage imageWithColor:[UIColor blackColor]];
+    return self.playerModel;
+}
 
+- (void)zf_playerBackAction{
+    [self.viewModel.navigationStackService popViewModelAnimated:YES];
+}
 @end

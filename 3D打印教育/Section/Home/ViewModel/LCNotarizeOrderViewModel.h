@@ -16,5 +16,5 @@
 @property(nonatomic,strong) NSString *order_sn;
 
 @property(nonatomic,copy) void (^zhifu)();
-
+@property(nonatomic,copy) void (^callBackforZifuSucceed)();//支付成功回调
 @end

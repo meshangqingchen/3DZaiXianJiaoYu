@@ -110,8 +110,10 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 
 ///课程分类 planTypeList
 -(NSURLSessionDataTask *)planTypeListCompleteHandle:(void(^)(id responseObj,NSError *error))complete;
-///第三部 告诉后台老子支付好了
--(NSURLSessionDataTask *)paySucceedWithOrder_sn:(NSString*)order_sn completeHandle:(void(^)(id responseObj,NSError *error))complete;
+///第三部通知后台
+-(NSURLSessionDataTask *)paySucceedWithCourseOrder_sn:(NSString*)order_sn completeHandle:(void(^)(id responseObj,NSError *error))complete;
+///第三部 告诉后台老子支付好了 这个资讯
+-(NSURLSessionDataTask *)paySucceedWithZiXunOrder_sn:(NSString*)order_sn completeHandle:(void(^)(id responseObj,NSError *error))complete;
 ///轮询接口
 -(NSURLSessionDataTask *)pollingWithTeacherID:(NSString *)teacherID CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 ///历史对话

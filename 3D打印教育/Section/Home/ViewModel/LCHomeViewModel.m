@@ -18,6 +18,7 @@
 #import "LCWebImageViewModel.h"             //大图
 #import "LCMoreTeacherViewModel.h"          //更多老师
 #import "LCSearchViewModel.h"
+#import "LCTeacherDetailViewModel.h"   //老师详情
 
 @implementation LCHomeViewModel
 -(void)initialize{
@@ -53,6 +54,13 @@
         LCSearchViewModel *searchVM = [[LCSearchViewModel alloc]initWithServices:self.navigationStackService params:nil];
         [self.navigationStackService pushViewModel:searchVM animated:YES];
     }];
+    
+    [self setPushToTeacherDetailViewModel:^(NSString * teacherID) {
+        @strongify(self)
+        LCTeacherDetailViewModel *teacherDeatilVM = [[LCTeacherDetailViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"讲师详情"}];
+        teacherDeatilVM.teacherID = teacherID;
+        [self.navigationStackService pushViewModel:teacherDeatilVM animated:YES];
+    }];
 }
 
 -(void)didSelectRowAtIndexPath:(NSIndexPath *)indexpath in:(UICollectionView *)collectionView{
@@ -72,9 +80,6 @@
     }else if (indexpath.section == 2){
     
     }
-    
-    
-    
 }
 -(void)requestRemoteDataWithPage:(NSUInteger)curpage completeHandle:(void(^)(id responseObj))complete{
     
@@ -169,6 +174,8 @@
         NSMutableArray *sectionDataArr2 = [NSMutableArray array];
         for (int i = 0; i<homeModel.contents.teacherList.count; i++) {
             LCTeacherCollectionCellViewModel *teacherCellVM = [[LCTeacherCollectionCellViewModel alloc]initWithModel:homeModel.contents.teacherList[i]];
+//            @property(nonatomic,copy) void (^pushToTeacherDetailViewModel)(NSString *teacherID); //跳转到teacher的详情
+            teacherCellVM.pushToTeacherDetailViewModel = self.pushToTeacherDetailViewModel;
             [sectionDataArr2 addObject:teacherCellVM];
         }
         NSArray *teacherArr = @[sectionDataArr2.copy];
@@ -176,6 +183,8 @@
         sectionVM2.sectionTitle = @"名师导航";
         sectionVM2.data = teacherArr;
         sectionVM2.moreClick = self.moreClick;
+        
+        
         [self.mutableDataArr addObjectsFromArray:@[sectionVM0,sectionVM1,sectionVM2]];
         self.dataSource = self.mutableDataArr.copy;
     }];

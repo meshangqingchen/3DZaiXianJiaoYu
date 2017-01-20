@@ -97,7 +97,9 @@ static NSString *const Api_forgetPassword = @"forgetPassword";
 static NSString *const Api_enrol = @"enrol";
 ///课程分类
 static NSString *const Api_planTypeList = @"planTypeList";
-///支付成功通知后台
+///收费课程
+static NSString *const Api_pay = @"pay";
+///支付成功通知后台 资讯
 static NSString *const Api_problemOrderPay = @"problemOrderPay";
 //getMessage 轮询
 static NSString *const Api_getMessage = @"getMessage";
@@ -466,14 +468,21 @@ static NSString *const PARAM_orderSn          = @"orderSn";
         complete(responseObj,error);
     }];
 }
-//第三部订单确认
--(NSURLSessionDataTask *)paySucceedWithOrder_sn:(NSString *)order_sn completeHandle:(void (^)(id, NSError *))complete{
+//第三部订单确认给后台 课程
+-(NSURLSessionDataTask *)paySucceedWithCourseOrder_sn:(NSString *)order_sn completeHandle:(void (^)(id, NSError *))complete{
+    NSDictionary *params = @{PARAM_orderSn:order_sn};
+    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_pay encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+        complete(responseObj,error);
+    }];
+}
+//第三部订单确认 资讯
+-(NSURLSessionDataTask *)paySucceedWithZiXunOrder_sn:(NSString *)order_sn completeHandle:(void (^)(id, NSError *))complete{
     NSDictionary *params = @{PARAM_orderSn:order_sn};
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_problemOrderPay encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
     }];
-
 }
+
 //轮询接口
 -(NSURLSessionDataTask *)pollingWithTeacherID:(NSString *)teacherID CompleteHandle:(void (^)(id, NSError *))complete{
     NSDictionary *params = @{PARAM_toId:teacherID};

@@ -91,10 +91,10 @@
                 if ([resultStatusNUM isEqualToNumber:@9000]|[resultStatusSTR isEqualToString:@"9000"]) {
                     NSString *order_sn = [KDFileManager readUserDataForKey:LCCORDER_SN];
                     //第一次请求
-                    [self.netApi_Manager paySucceedWithOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
+                    [self.netApi_Manager paySucceedWithZiXunOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
                         if (![responseObj[@"status"] isEqualToNumber:@1] || error) {
                             //第二次请求
-                            [self.netApi_Manager paySucceedWithOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
+                            [self.netApi_Manager paySucceedWithZiXunOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
                                 
                             }];
                         }
@@ -109,5 +109,9 @@
         LCUserTeacherTalkViewModel *userTeacherVM = [[LCUserTeacherTalkViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"资讯",@"teacherImageURL":self.viewVM.headImageURL,@"teacherIID":self.viewVM.teacherIID}];
         [self.navigationStackService pushViewModel:userTeacherVM animated:YES];
     }];
+}
+
+-(void)dealloc{
+    MYLog(@"测试释放了没");
 }
 @end

@@ -14,6 +14,8 @@
 @property(nonatomic,strong) NSString *introduce;
 @property(nonatomic,strong) NSString *textViewText;
 @property(nonatomic,strong) NSString *teacherID;
+@property(nonatomic,copy) void (^pushToTeacherDetailViewModel)(NSString *teacherID); //跳转到teacher的详情
+
 
 -(instancetype)initWithModel:(id)model;
 @end

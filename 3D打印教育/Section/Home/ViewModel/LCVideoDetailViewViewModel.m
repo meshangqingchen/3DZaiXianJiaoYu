@@ -7,7 +7,7 @@
 //
 
 #import "LCVideoDetailViewViewModel.h"
-#import "LCHomeDetailModel.h"
+
 
 @implementation LCVideoDetailViewViewModel
 -(instancetype)initWithViewModel:(id)viewModel{
@@ -24,10 +24,17 @@
         }else if ([homeDetailModel.contents.is_free isEqualToString:@"0"]){
             self.ifFree = NO;
         }
+        if (homeDetailModel.contents.is_play == 1) {
+            self.ifPlay = YES;
+        }else if (homeDetailModel.contents.is_play == 0){
+            self.ifPlay = NO;
+        }
         self.isAssess = homeDetailModel.contents.is_assess;
         self.price = homeDetailModel.contents.price;
         self.imageURL = [NSURL URLWithString:homeDetailModel.contents.image];
         self.title = homeDetailModel.contents.name;
+        LCVideoDetailVideolist *firstVideo = homeDetailModel.contents.videoList.firstObject;
+        self.firstVideo = firstVideo;
     }
     return self;
 }

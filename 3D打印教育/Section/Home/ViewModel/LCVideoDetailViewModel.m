@@ -18,6 +18,7 @@
 
 @interface LCVideoDetailViewModel ()
 @property(nonatomic,strong) LCVideoDetailViewViewModel *videoDetailViewViewModel;
+@property(nonatomic,copy) void (^callBackforZifuSucceed)();
 @end
 
 @implementation LCVideoDetailViewModel
@@ -35,6 +36,7 @@
             if ([msg isEqualToString:@"添加成功"]) {
                 //只有添加成功 才是第一次添加 所以这个时候是 应该让弹出键盘的允许用户评论的
                 self.videoDetailViewViewModel.isAssess = 1;
+                self.joinFreeCourseSucceed();//免费参加课程成功就自动播放.
             }
             [NSObject showWarning:msg];
         }];
@@ -57,7 +59,10 @@
                                @"urlStr":urlStr,
                             @"titleName":title,
                              @"order_sn":order_sn,
-                               KEY_TITLE:@"确认订单"}];
+                               KEY_TITLE:@"确认订单",
+                        @"callBackBlock":self.callBackforZifuSucceed}];
+                //这里应该 传递一个事件block 事件过去 应为在支付成功 我要知道 然后 创建playModel数据自动播放视频
+                
                 [self.navigationStackService pushViewModel:orderVM animated:YES];
             }
             [NSObject hideProgress];
@@ -65,9 +70,7 @@
     }];
     
     [self setCollectVideo:^(NSString *courseID, UIButton *collection_BT) {
-        
         @strongify(self);
-        
         if (self.videoDetailViewViewModel.ifCollected) {
             //已经收藏
             //删除收藏接口
@@ -132,6 +135,13 @@
             !self.bindViewModel ? : self.bindViewModel(videoDetailViewViewModel);
         }];
         //经过网络请求 得到数据 再回调数据给收藏按钮神马的赋值状态
+    }];
+    
+    //如果是收费的视频 支付成功的回调
+    [self setCallBackforZifuSucceed:^{
+        MYLog(@"老子支付成功了");
+        @strongify(self)
+        !self.creatplayerModel ? : self.creatplayerModel();
     }];
 }
 @end

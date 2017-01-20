@@ -91,22 +91,32 @@
                 if ([resultStatusNUM isEqualToNumber:@9000]|[resultStatusSTR isEqualToString:@"9000"]) {
                     NSString *order_sn = [KDFileManager readUserDataForKey:LCCORDER_SN];
                     //第一次请求
-                    [self.netApi_Manager paySucceedWithOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
-                        if (![responseObj[@"status"] isEqualToNumber:@1] || error) {
-                            //第二次请求
-                            [self.netApi_Manager paySucceedWithOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
-                                
-                            }];
-                        }
-                    }];
+//                    [self.netApi_Manager paySucceedWithOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
+//                        if ([responseObj[@"status"] isEqualToNumber:@1]) {
+//                            [kSharedAppDelegate setPayForCourseSucced:^{
+//                                !self.callBackforZifuSucceed ? : self.callBackforZifuSucceed();
+//                            }];
+//                        }
+//                        if (![responseObj[@"status"] isEqualToNumber:@1] || error) {
+//                            //第二次请求
+//                            [self.netApi_Manager paySucceedWithOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
+//                                if ([responseObj[@"status"] isEqualToNumber:@1]) {
+//                                    [kSharedAppDelegate setPayForCourseSucced:^{
+//                                        !self.callBackforZifuSucceed ? : self.callBackforZifuSucceed();
+//                                    }];
+//                                }
+//                            }];
+//                        }
+//                    }];
                 }
             }];
         }
     }];
     
-    //为课程支付成功
+    //为课程支付成功 课程支付成功 就返回并 播放第一个 视频
     [kSharedAppDelegate setPayForCourseSucced:^{
-        
+        !self.callBackforZifuSucceed ? : self.callBackforZifuSucceed();
+        [self.navigationStackService popViewModelAnimated:YES];
     }];
 }
 
@@ -117,7 +127,12 @@
         self.imageURL = params[@"urlStr"];
         self.courseID = params[@"couresID"];
         self.order_sn = params[@"order_sn"];
+        self.callBackforZifuSucceed = params[@"callBackBlock"];
     }
     return self;
+}
+
+-(void)dealloc{
+    MYLog(@"这个释放了");
 }
 @end

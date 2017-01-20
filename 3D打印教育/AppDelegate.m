@@ -169,18 +169,43 @@
                 NSString *order_sn = [KDFileManager readUserDataForKey:LCCORDER_SN];
                 MYLog(@"%@",order_sn);
                 MYLog(@"%@",order_sn);
-                [[KDNetAPIManager_User sharedKDNetAPIManager_User] paySucceedWithOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
-                    MYLog(@" = = %@",responseObj);
-                    MYLog(@" - - %@",responseObj);
-                }];
+                
                 //29000000000002801 19000000000002801
                 NSString *firstStr = [order_sn substringToIndex:1];
                 MYLog(@" - -%@",firstStr);
                 MYLog(@" - -%@",firstStr);
                 if ([firstStr isEqualToString:@"1"]) {
+                    [[KDNetAPIManager_User sharedKDNetAPIManager_User] paySucceedWithZiXunOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
+                        if ([responseObj[@"status"] isEqualToNumber:@0]) {
+                            [[KDNetAPIManager_User sharedKDNetAPIManager_User] paySucceedWithZiXunOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
+                                if ([responseObj[@"status"] isEqualToNumber:@0]) {
+                                    [[KDNetAPIManager_User sharedKDNetAPIManager_User] paySucceedWithZiXunOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
+                                        if ([responseObj[@"status"] isEqualToNumber:@0]) {
+                                            MYLog(@"真的错了 调了三次还是错的");
+                                        }
+                                    }];
+                                }
+                            }];
+                        }
+                    }];
                     !self.payForZixunSucceed ? : self.payForZixunSucceed();
+                    self.payForZixunSucceed = nil;
                 }else if ([firstStr isEqualToString:@"2"]){
-               
+                    [[KDNetAPIManager_User sharedKDNetAPIManager_User] paySucceedWithCourseOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
+                        if ([responseObj[@"status"] isEqualToNumber:@0]) {
+                            [[KDNetAPIManager_User sharedKDNetAPIManager_User] paySucceedWithCourseOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
+                                if ([responseObj[@"status"] isEqualToNumber:@0]) {
+                                    [[KDNetAPIManager_User sharedKDNetAPIManager_User] paySucceedWithCourseOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
+                                        if ([responseObj[@"status"] isEqualToNumber:@0]) {
+                                            MYLog(@"真的错了 调了三次还是错的");
+                                        }
+                                    }];
+                                }
+                            }];
+                        }
+                    }];
+                    !self.payForCourseSucced ? : self.payForCourseSucced();
+                    self.payForCourseSucced = nil;
                 }
             }
         }];

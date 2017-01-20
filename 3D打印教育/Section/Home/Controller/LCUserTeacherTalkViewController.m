@@ -85,11 +85,9 @@ static NSString *identifierTeacher = @"LCFromTeacherCell";
         @strongify(self)
         [self scrollToBottom];
     }];
-    [super viewDidLoad];
     
+    [super viewDidLoad];
 }
-
-
 
 -(void)scrollToBottom{
     if (self.viewModel.dataSource.count == 0) {
