@@ -25,14 +25,14 @@
     [super initialize];
     
     @weakify(self)
-    [self setClickBanner:^(NSString *className, NSURL *webURL) {
+    [self setClickBanner:^(NSString *className, NSURL *webURL,NSString *title) {
         @strongify(self)
-        LCWebImageViewModel *webImageVM = [[LCWebImageViewModel alloc]initWithServices:self.navigationStackService params:@{@"className":className,@"webURL":webURL}];
+        LCWebImageViewModel *webImageVM = [[LCWebImageViewModel alloc]initWithServices:self.navigationStackService params:@{@"className":className,@"webURL":webURL,KEY_TITLE:title}];
         [self.navigationStackService pushViewModel:webImageVM animated:YES];
     }];
-    [self setClickBT:^(NSString *className, NSURL *webURL) {
+    [self setClickBT:^(NSString *className, NSURL *webURL, NSString *title) {
         @strongify(self)
-        LCWebImageViewModel *webImageVM = [[LCWebImageViewModel alloc]initWithServices:self.navigationStackService params:@{@"className":className,@"webURL":webURL}];
+        LCWebImageViewModel *webImageVM = [[LCWebImageViewModel alloc]initWithServices:self.navigationStackService params:@{@"className":className,@"webURL":webURL,KEY_TITLE:title}];
         [self.navigationStackService pushViewModel:webImageVM animated:YES];
     }];
     

@@ -16,7 +16,6 @@
     
     
     self.headImageView = [UIImageView new];
-    _headImageView.backgroundColor = [UIColor orangeColor];
     [self addSubview:_headImageView];
     [_headImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.mas_equalTo(0);

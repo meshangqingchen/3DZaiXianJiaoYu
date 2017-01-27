@@ -9,6 +9,7 @@
 #import "LCVideoDetailEvaluateCell.h"
 #import "LCEvaluateCellViewModel.h"
 #import "UIView+BlocksKit.h"
+#import "LCAboutYYWebImage.h"
 @interface LCVideoDetailEvaluateCell ()
 //@property(nonatomic,strong) UIView *backView;
 //@property(nonatomic,strong) LCEvaluateCellViewModel *evaluateCellViewModel;
@@ -18,7 +19,6 @@
 -(void)setupViews{
     self.headerImgView = [[UIImageView alloc]initWithFrame:CGRectMake(15, 15, 40, 40)];
     self.headerImgView.userInteractionEnabled = YES;
-    _headerImgView.backgroundColor = [UIColor orangeColor];
 //    [_headerImgView bk_whenTapped:^{
 //        !self.evaluateCellViewModel.headerImageViewClick ? : self.evaluateCellViewModel.headerImageViewClick(@"userID");
 //    }];
@@ -32,12 +32,10 @@
     _nameLB.top = 21;
     _nameLB.width = 150;
     _nameLB.height = 15;
-    _nameLB.backgroundColor = [UIColor yellowColor];
    
     
     self.timeLB = [UILabel new];
     [self.contentView addSubview:_timeLB];
-    _timeLB.backgroundColor = [UIColor blueColor];
     _timeLB.text = @"12-13 11:49";
     _timeLB.font = [[KDFont sharedKDFont]getF28Font];
     _timeLB.textColor = [KDColor getX0Color];
@@ -57,7 +55,6 @@
     
     self.evaYLB = [YYLabel new];
     [self.contentView addSubview:_evaYLB];
-    _evaYLB.backgroundColor = [UIColor redColor];
     _evaYLB.top = _timeLB.bottom+21;
     _evaYLB.left = 70;
     _evaYLB.width = SCREEN_WIDTH-70-15;
@@ -146,10 +143,19 @@
 //        self.backView.hidden = YES;
 //    }
 
+    
     self.nameLB.text = evaluateCellViewModel.name;
     self.evaYLB.textLayout = evaluateCellViewModel.evaTextLayout;
     self.timeLB.text = evaluateCellViewModel.creatTime;
     [self.starView setStarDisabledAndCount:evaluateCellViewModel.grade];
+    [self.headerImgView setImageWithURL:evaluateCellViewModel.userHeaderURL
+                            placeholder:[UIImage imageNamed:@"noLog_Headimage"]
+                                options:kNilOptions
+                                manager:[LCAboutYYWebImage avatarImageManager1]
+                               progress:nil
+                              transform:nil
+                             completion:nil];
+    
 }
 
 @end

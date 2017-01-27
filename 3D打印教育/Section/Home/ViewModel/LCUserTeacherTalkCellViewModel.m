@@ -18,15 +18,18 @@
        
         NSMutableAttributedString *messageBodyAtt = [[NSMutableAttributedString alloc]initWithString:_messageBody];
         messageBodyAtt.font = [[KDFont sharedKDFont]getF28Font];
+        
+        //@"userImageURL":self.userHeadImageURL,@"teacherImageURL":self.teacherImageURL
+        
         if ([dic[@"fromWho"] isEqualToNumber:@0]) {
             self.fromWho = fromTeacher;
             messageBodyAtt.color = [KDColor getC2Color];
+            self.headImageURL = dic[@"teacherImageURL"];
         }else {
             self.fromWho = fromUser;
             messageBodyAtt.color = [KDColor getC0Color];
+            self.headImageURL = dic[@"userImageURL"];
         }
-        
-       
         
         LCTextLinePositionModifier *modifier = [[LCTextLinePositionModifier alloc]initWithLineHeightMultiple:1.2];
         modifier.font = [UIFont fontWithName:@"Heiti SC" size:14];

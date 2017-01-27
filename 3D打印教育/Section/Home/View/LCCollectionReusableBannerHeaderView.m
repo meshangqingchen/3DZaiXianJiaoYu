@@ -29,7 +29,6 @@
     CGFloat backView_W = 60;
     
     UIView *backView1 = [UIView new];
-    backView1.backgroundColor = [UIColor grayColor];
     [self addSubview:backView1];
     [backView1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_offset(85/2);
@@ -39,7 +38,6 @@
     self.imageView1 = [UIImageView new];
     _imageView1.userInteractionEnabled = YES;
     _imageView1.image = [UIImage imageNamed:@"11"];
-    _imageView1.backgroundColor = [UIColor orangeColor];
     [backView1 addSubview:_imageView1];
     [_imageView1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_offset(15);
@@ -58,11 +56,10 @@
     @weakify(self)
     [backView1 bk_whenTapped:^{
         @strongify(self)
-        !self.bannerVM1.clickBT ? : self.bannerVM1.clickBT(self.bannerVM1.className,self.bannerVM1.detailURL) ;
+        !self.bannerVM1.clickBT ? : self.bannerVM1.clickBT(self.bannerVM1.className,self.bannerVM1.detailURL,self.bannerVM1.name) ;
     }];
     
     UIView *backView2 = [UIView new];
-    backView2.backgroundColor = [UIColor grayColor];
     [self addSubview:backView2];
     [backView2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(backView1.mas_right).mas_equalTo(gap_W);
@@ -72,7 +69,6 @@
     self.imageView2 = [UIImageView new];
     _imageView2.userInteractionEnabled = YES;
     _imageView2.image = [UIImage imageNamed:@"22"];
-    _imageView2.backgroundColor = [UIColor orangeColor];
     [backView2 addSubview:_imageView2];
     [_imageView2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_offset(15);
@@ -90,11 +86,10 @@
     }];
     [backView2 bk_whenTapped:^{
         @strongify(self)
-        !self.bannerVM2.clickBT ? : self.bannerVM2.clickBT(self.bannerVM2.className,self.bannerVM2.detailURL) ;
+        !self.bannerVM2.clickBT ? : self.bannerVM2.clickBT(self.bannerVM2.className,self.bannerVM2.detailURL,self.bannerVM2.name) ;
     }];
     
     UIView *backView3 = [UIView new];
-    backView3.backgroundColor = [UIColor grayColor];
     [self addSubview:backView3];
     [backView3 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(backView2.mas_right).mas_equalTo(gap_W);
@@ -104,7 +99,6 @@
     }];
     self.imageView3 = [UIImageView new];
     _imageView3.userInteractionEnabled = YES;
-    _imageView3.backgroundColor = [UIColor orangeColor];
     _imageView3.image = [UIImage imageNamed:@"33"];
     [backView3 addSubview:_imageView3];
     [_imageView3 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -123,7 +117,7 @@
     }];
     [backView3 bk_whenTapped:^{
         @strongify(self)
-        !self.bannerVM3.clickBT ? : self.bannerVM3.clickBT(self.bannerVM3.className,self.bannerVM3.detailURL) ;
+        !self.bannerVM3.clickBT ? : self.bannerVM3.clickBT(self.bannerVM3.className,self.bannerVM3.detailURL,self.bannerVM3.name) ;
     }];
 }
 
@@ -163,27 +157,14 @@
 
 -(void)setupViews{
     
+    
     self.bannerView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH*300/750) delegate:self placeholderImage:[UIImage imageNamed:@""]];
-    
-    _bannerView.currentPageDotColor = [UIColor whiteColor];
     _bannerView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
-    _bannerView.localizationImageNamesGroup = @[@"h1.jpg",
-                                                @"h2.jpg",
-                                                @"h3.jpg",
-                                                @"h4.jpg",
-                                                @"h7" // 本地图片请填写全名
-                                                ];
-    _bannerView.titlesGroup = @[@"新建交流QQ群：185534916 ",
-                                @"感谢您的支持，如果下载的",
-                                @"如果代码在使用过程中出现问题",
-                                @"您可以发邮件到gsdios@126.com"
-                                ];
-    
     [self addSubview:_bannerView];
     
     self.signUpView = [LCSignUpView new];
     [self addSubview:_signUpView];
-    _signUpView.backgroundColor = [UIColor yellowColor];
+
     [_signUpView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_offset(0);
         make.top.mas_equalTo(self.bannerView.mas_bottom).mas_offset(0);
@@ -276,8 +257,7 @@
 
 
 -(void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
-    MYLog(@"===== %ld",index);
     LCHomeCollectionBananaViewModel *bannerVM = self.bannerDataArr[index];
-    !bannerVM.clickBanner ? : bannerVM.clickBanner(bannerVM.className,bannerVM.detailURL);
+    !bannerVM.clickBanner ? : bannerVM.clickBanner(bannerVM.className,bannerVM.detailURL,bannerVM.name);
 }
 @end

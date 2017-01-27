@@ -12,7 +12,7 @@
 
 -(void)setupViews{
     self.headerImgView = [[UIImageView alloc]initWithFrame:CGRectMake(15, 15, 40, 40)];
-    _headerImgView.backgroundColor = [UIColor orangeColor];
+//    _headerImgView.backgroundColor = [UIColor orangeColor];
     [self addSubview:_headerImgView];
     
     self.nameLB = [UILabel new];
@@ -23,12 +23,12 @@
     _nameLB.top = 21;
     _nameLB.width = 200;
     _nameLB.height = 15;
-    _nameLB.backgroundColor = [UIColor yellowColor];
+//    _nameLB.backgroundColor = [UIColor yellowColor];
     
     
     self.tiemLB = [UILabel new];
     [self addSubview:_tiemLB];
-    _tiemLB.backgroundColor = [UIColor blueColor];
+//    _tiemLB.backgroundColor = [UIColor blueColor];
     _tiemLB.text = @"12-13 11:49";
     _tiemLB.font = [[KDFont sharedKDFont]getF28Font];
     _tiemLB.textColor = [KDColor getX0Color];
@@ -39,7 +39,7 @@
     
     self.evaYLB = [YYLabel new];
     [self addSubview:_evaYLB];
-    _evaYLB.backgroundColor = [UIColor redColor];
+//    _evaYLB.backgroundColor = [UIColor redColor];
     _evaYLB.top = _tiemLB.bottom+21;
     _evaYLB.left = 70;
     _evaYLB.width = SCREEN_WIDTH-70-25;

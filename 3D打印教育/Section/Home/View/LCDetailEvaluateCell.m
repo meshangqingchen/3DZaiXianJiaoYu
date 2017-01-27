@@ -14,7 +14,7 @@
     
     self.contentView.backgroundColor = [KDColor getC9Color];
     self.headerImgView = [[UIImageView alloc]initWithFrame:CGRectMake(15, 15, 40, 40)];
-    _headerImgView.backgroundColor = [UIColor orangeColor];
+//    _headerImgView.backgroundColor = [UIColor orangeColor];
     
     [self.contentView addSubview:_headerImgView];
     
@@ -26,12 +26,12 @@
     _nameLB.top = 21;
     _nameLB.width = 200;
     _nameLB.height = 15;
-    _nameLB.backgroundColor = [UIColor yellowColor];
+//    _nameLB.backgroundColor = [UIColor yellowColor];
     
     
     self.timeLB = [UILabel new];
     [self.contentView addSubview:_timeLB];
-    _timeLB.backgroundColor = [UIColor blueColor];
+//    _timeLB.backgroundColor = [UIColor blueColor];
     _timeLB.text = @"12-13 11:49";
     _timeLB.font = [[KDFont sharedKDFont]getF28Font];
     _timeLB.textColor = [KDColor getX0Color];
@@ -42,7 +42,7 @@
     
     self.huifuBT = [UIButton new];
     [self.contentView addSubview:_huifuBT];
-    _huifuBT.backgroundColor = [UIColor orangeColor];
+//    _huifuBT.backgroundColor = [UIColor orangeColor];
     _huifuBT.top = 21;
     _huifuBT.width = 30;
     _huifuBT.height = 15;
@@ -60,7 +60,7 @@
     
     self.evaYLB = [YYLabel new];
     [self.contentView addSubview:_evaYLB];
-    _evaYLB.backgroundColor = [UIColor redColor];
+//    _evaYLB.backgroundColor = [UIColor redColor];
     _evaYLB.top = _timeLB.bottom+21;
     _evaYLB.left = 70;
     _evaYLB.width = SCREEN_WIDTH-70-25;

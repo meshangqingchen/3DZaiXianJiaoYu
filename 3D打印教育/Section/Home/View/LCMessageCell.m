@@ -12,12 +12,10 @@
 
 -(void)setupViews{
     self.headerImageV = [UIImageView new];
-    _headerImageV.backgroundColor = [UIColor orangeColor];
     _headerImageV.frame = CGRectMake(15, 10, 30, 30);
     [self.contentView addSubview:_headerImageV];
     
     self.nickName = [UILabel new];
-    _nickName.backgroundColor = [UIColor redColor];
     [self.contentView addSubview:_nickName];
     _nickName.font = [[KDFont sharedKDFont] getF24Font];
     _nickName.frame = CGRectMake(_headerImageV.right+5, 14, SCREEN_WIDTH-50, 15);
@@ -55,7 +53,6 @@
     LCMessageCellViewModel *messageCellVM = viewModel;
     self.detailLB.height = messageCellVM.detail_H;
 
-    _detailLB.backgroundColor = [UIColor yellowColor];
     if (messageCellVM.ifReaded) {
         //根据数据 填充颜色
     }else{

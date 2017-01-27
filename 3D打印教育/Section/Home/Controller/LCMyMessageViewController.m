@@ -23,6 +23,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIView *tempView = [UIView new];
+    [self.view addSubview:tempView];
+    tempView.backgroundColor = [UIColor whiteColor];
+    [tempView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.mas_offset(0);
+        make.top.mas_offset(64);
+    }];
+    
+    UIImage *zanwushujuImage = [UIImage imageNamed:@"zanwushuju"];
+    UIImageView *imageView = [UIImageView new];
+    imageView.image = zanwushujuImage;
+    [tempView addSubview:imageView];
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(0);
+        make.centerY.mas_equalTo(0);
+        make.size.mas_equalTo(zanwushujuImage.size);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,4 +10,5 @@
 
 @interface LCCourseViewModel : BaseTableViewModel
 @property(nonatomic,copy) void (^fromVideoVMGetData)(id model);
+@property(nonatomic,copy) void (^selectVideoCell)(id model);//事件
 @end

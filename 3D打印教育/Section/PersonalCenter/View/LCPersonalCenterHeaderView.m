@@ -11,6 +11,7 @@
 
 #import "LCPersonalCenterHeaderViewModel.h"
 #import "UIView+BlocksKit.h"
+#import "LCAboutYYWebImage.h"
 @interface LCPersonalCenterHeaderView ()
 @property(nonatomic,strong) LCPersonalCenterHeaderViewModel *headerVM;
 @end
@@ -39,7 +40,6 @@
     
     self.headerImageView = [UIImageView new];
     [backView addSubview:_headerImageView];
-    _headerImageView.backgroundColor = [UIColor orangeColor];
     [_headerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_offset(20);
         make.width.height.mas_equalTo(60);
@@ -113,6 +113,13 @@
     self.headerVM = viewModel;
     self.topTitleLB.text = _headerVM.topTitle;
     self.signatureLB.text = _headerVM.signature;
+    [self.headerImageView setImageWithURL:_headerVM.headerImageURL
+                            placeholder:[UIImage imageNamed:@"noLog_Headimage"]
+                                options:kNilOptions
+                                manager:[LCAboutYYWebImage avatarImageManager1]
+                               progress:nil
+                              transform:nil
+                             completion:nil];
 }
 
 @end

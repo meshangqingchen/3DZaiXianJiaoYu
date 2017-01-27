@@ -43,7 +43,6 @@
     backView2.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:backView2];
     UIImageView *imageView = [UIImageView new];
-    imageView.backgroundColor = [UIColor orangeColor];
 
     [imageView setImageWithURL:self.viewModel.imageURL placeholder:[UIImage imageNamed:@""]];
     [backView2 addSubview:imageView];

@@ -25,9 +25,16 @@
     _tf.backgroundColor = [KDColor getC1Color];
     _tf.leftView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"fangdajing"]];
     _tf.leftViewMode = UITextFieldViewModeAlways;
-    _tf.text = @"搜索想要的内容";
+
     _tf.textColor = [KDColor getC0Color];
     _tf.font = [[KDFont sharedKDFont] getF28Font];
+    NSString *placeholderString = @"搜一搜";
+    
+    NSMutableAttributedString *placeholder = [[NSMutableAttributedString alloc]initWithString:placeholderString];
+    [placeholder addAttribute:NSFontAttributeName value:[[KDFont sharedKDFont] getF28Font] range:NSMakeRange(0, placeholderString.length)];
+    [placeholder addAttribute:NSForegroundColorAttributeName value:[KDColor getC0Color] range:NSMakeRange(0,placeholderString.length)];
+    _tf.attributedPlaceholder = placeholder;
+
     [self.navigationController.navigationBar addSubview:_tf];
     
 }

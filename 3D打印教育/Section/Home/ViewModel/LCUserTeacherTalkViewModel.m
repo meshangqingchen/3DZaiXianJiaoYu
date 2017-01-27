@@ -29,9 +29,7 @@
             return ;
         }
         [self.netApi_Manager sendMessageWithTeacherID:self.teacherIID andMessage:messageString CompleteHandle:^(id responseObj, NSError *error) {
-            MYLog(@"%@",responseObj);
-            MYLog(@"%@",responseObj);
-            MYLog(@"%@",responseObj);
+            
             NSDictionary *dic = responseObj;
             if ([dic[@"status"] isEqualToNumber:@1]) {
                 LCUserTeacherTalkCellViewModel *messageCellVM = [[LCUserTeacherTalkCellViewModel alloc]initWithModel: @{@"messageBody":messageString,@"fromWho":@1}];
@@ -52,15 +50,13 @@
 -(void)requestRemoteDataWithPage:(NSUInteger)curpage completeHandle:(void (^)(id))complete{
    
     [self.netApi_Manager historyTalkWithTeacherID:self.teacherIID CompleteHandle:^(id responseObj, NSError *error) {
-        MYLog(@" = = = %@",responseObj);
-        MYLog(@" = = = %@",responseObj);
-        MYLog(@" = = = %@",responseObj);
         LCTalkModel *talkModel = [LCTalkModel parseJSON:responseObj];
+        self.userHeadImageURL = [NSURL URLWithString:talkModel.contents.user.avatar];
         for (int i = 0; i<talkModel.contents.list.count; i++) {
             LCTalkList *messageModel = talkModel.contents.list[i];
-            
+           
             NSNumber *typeNUM = [messageModel.send_type numberValue];
-            LCUserTeacherTalkCellViewModel *messageCellVM = [[LCUserTeacherTalkCellViewModel alloc]initWithModel: @{@"messageBody":messageModel.discrip,@"fromWho":typeNUM}];
+            LCUserTeacherTalkCellViewModel *messageCellVM = [[LCUserTeacherTalkCellViewModel alloc]initWithModel: @{@"messageBody":messageModel.discrip,@"fromWho":typeNUM,@"userImageURL":self.userHeadImageURL,@"teacherImageURL":self.teacherImageURL}];
             [self.mutableDataArr addObject:messageCellVM];
         }
         self.dataSource = self.mutableDataArr.copy;

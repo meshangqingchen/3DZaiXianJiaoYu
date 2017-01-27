@@ -8,6 +8,7 @@
 
 #import "LCFromTeacherCell.h"
 #import "LCUserTeacherTalkCellViewModel.h"
+#import "LCAboutYYWebImage.h"
 @interface LCFromTeacherCell ()
 @property(nonatomic,strong) UIImageView *backImageView1;
 @end
@@ -18,7 +19,6 @@
 -(void)setupViews{
     self.headImageView = [UIImageView new];
     _headImageView.frame = CGRectMake(10, 10, 40, 40);
-    _headImageView.backgroundColor = [UIColor orangeColor];
     [self.contentView addSubview:_headImageView];
     
     UIImage *userBackImage = [UIImage imageNamed:@"teacher_back"];
@@ -49,6 +49,12 @@
     _backImageView1.width = userTeacherTalkCellVM.messageBody_W+26;
     
     _messageBodyLB.textLayout = userTeacherTalkCellVM.messageBodyLayout;
-    
+    [self.headImageView setImageWithURL:userTeacherTalkCellVM.headImageURL
+                            placeholder:[UIImage imageNamed:@"noLog_Headimage"]
+                                options:kNilOptions
+                                manager:[LCAboutYYWebImage avatarImageManager2]
+                               progress:nil
+                              transform:nil
+                             completion:nil];
 }
 @end

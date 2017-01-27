@@ -76,7 +76,7 @@
 //    
 //    [self.mutableDataArr addObjectsFromArray:@[eval,eval1,eval2,eval3,eval4]];//@[eval,eval1,eval2,eval3,eval4]
 //    self.dataSource = self.mutableDataArr.copy;
-    [self.netApi_Manager assessListWithPlanld:@"6" andCurpage:curpage CompleteHandle:^(id responseObj, NSError *error) {
+    [self.netApi_Manager assessListWithPlanld:self.planID andCurpage:curpage CompleteHandle:^(id responseObj, NSError *error) {
         
         LCAssessListModel *assessListModel = [LCAssessListModel parseJSON:responseObj];
         for (int i=0; i<assessListModel.contents.count; i++) {
@@ -90,5 +90,12 @@
 
 -(void)didSelectRowAtIndexPath:(NSIndexPath *)indexpath in:(UITableView *)tableView{
     
+}
+
+-(instancetype)initWithServices:(id<LCNavigationProtocol>)services params:(NSDictionary *)params{
+    if (self = [super initWithServices:services params:params]) {
+        self.planID = params[@"planID"];
+    }
+    return self;
 }
 @end

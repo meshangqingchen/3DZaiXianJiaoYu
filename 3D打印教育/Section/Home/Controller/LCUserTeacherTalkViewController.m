@@ -124,9 +124,11 @@ static NSString *identifierTeacher = @"LCFromTeacherCell";
     [super viewWillAppear:animated];
     //添加对键盘弹起的监听
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    
     [center addObserver:self selector:@selector(openKeyboard:) name:UIKeyboardWillShowNotification object:nil];
     //添加对键盘收起的监听
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeKeyboard:) name:UIKeyboardWillHideNotification object:nil];
+    
     [center addObserver:self selector:@selector(changeKeyboard:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
 }

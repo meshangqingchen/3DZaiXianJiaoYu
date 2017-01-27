@@ -55,6 +55,9 @@ static NSString *identifier = @"LCCourseCell";
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self.viewModel didSelectRowAtIndexPath:indexPath in:tableView];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

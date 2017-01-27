@@ -12,9 +12,8 @@
 -(void)setupViews{
     
 //    self.backgroundCol 
-    self.contentView.backgroundColor = [UIColor grayColor];
+//    self.contentView.backgroundColor = [UIColor grayColor];
     self.backImageView = [UIImageView new];
-    self.backImageView.backgroundColor = [UIColor orangeColor];
     [self.contentView addSubview:_backImageView];
     [_backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_offset(0);

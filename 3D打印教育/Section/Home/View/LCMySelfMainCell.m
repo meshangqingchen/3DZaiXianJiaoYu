@@ -15,7 +15,6 @@
     shadowView.layer.cornerRadius = 3.5;
     shadowView.layer.shadowOpacity = 0.5;
     shadowView.layer.shadowOffset = CGSizeMake(0, 1);
-//    shadowView.layer.shadowColor = [UIColor redColor].CGColor;
     shadowView.layer.backgroundColor = [KDColor getC2Color].CGColor;
     [self.contentView addSubview:shadowView];
     [shadowView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -36,7 +35,6 @@
     
     
     self.headerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 15, 40, 40)];;
-    self.headerImageView.backgroundColor = [UIColor orangeColor];
     [cardView addSubview:_headerImageView];
     
     // 15
@@ -44,16 +42,13 @@
     [cardView addSubview:_nickNameLB];
     _nickNameLB.textColor = [KDColor getC2Color];
     _nickNameLB.font = [[KDFont sharedKDFont]getF28Font];
-    _nickNameLB.backgroundColor = [UIColor orangeColor];
     //15
     self.timeLB =[[UILabel alloc]initWithFrame:CGRectMake(_nickNameLB.left, _nickNameLB.bottom+5, 100, 14)];
     [cardView addSubview:_timeLB];
-    _timeLB.backgroundColor = [UIColor orangeColor];
     _timeLB.font = [[KDFont sharedKDFont]getF28Font];
     _timeLB.textColor = [KDColor getX0Color];//
     
     self.evaDetailLB = [YYLabel new];
-    _evaDetailLB.backgroundColor = [UIColor yellowColor];
     [cardView addSubview:_evaDetailLB];
     _evaDetailLB.left = 65;
     _evaDetailLB.top = _timeLB.bottom+21;

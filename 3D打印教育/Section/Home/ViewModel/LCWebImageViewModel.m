@@ -13,6 +13,7 @@
 @implementation LCWebImageViewModel
 -(void)initialize{
     [super initialize];
+    self.shouldNavBackItem = YES;
     @weakify(self)
     [self setBaoMing:^{
         @strongify(self)

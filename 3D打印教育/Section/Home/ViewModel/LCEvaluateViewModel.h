@@ -12,4 +12,5 @@
 //@property(nonatomic,copy) void(^huifu)(NSString *evaluateID);
 //@property(nonatomic,copy) void(^headerImageViewClick)(NSString *evaluateUserID);
 
+@property(nonatomic,strong) NSString *planID;
 @end

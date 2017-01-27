@@ -37,6 +37,8 @@ ZFPlayerDelegate
 @property(nonatomic,strong) ZFPlayerView *playerView;
 @property(nonatomic,strong) ZFPlayerModel *playerModel;
 @property(nonatomic,strong) LCVideoDetailViewViewModel *videoDetailVideModel;
+
+@property(nonatomic,copy) void (^selectVideoCell)(id model);//点击课程的cell 可以吧事件传递过去.
 @end
 
 @implementation LCVideoDetailViewController
@@ -93,7 +95,7 @@ ZFPlayerDelegate
     
     [self.viewModel setChuanShuData:^(id model) {
         @strongify(self)
-        !self.IntroViewModel.fromVideoVMGetData ? : self.IntroViewModel.fromVideoVMGetData(model);
+        !self.IntroViewModel.fromVideoVMGetData ? : self.IntroViewModel.fromVideoVMGetData(model);//得到数据
         !self.courseViewModel.fromVideoVMGetData ? : self.courseViewModel.fromVideoVMGetData(model);
     }];
     
@@ -116,6 +118,17 @@ ZFPlayerDelegate
         [self.playerView playerControlView:nil playerModel:self.playerModel];
         [self.playerView autoPlayTheVideo]; //自动播放
     }];
+    //点击课程控制器的每一个cell回调
+    [self setSelectVideoCell:^(LCVideoDetailVideolist *model) {
+        @strongify(self)
+        // = videoDetailVideModel;
+        if (self.videoDetailVideModel.ifPlay) {
+            [self creatZFPlayerModel:model];
+            [self.playerView resetToPlayNewVideo:self.playerModel];
+        }
+
+    }];
+    self.courseViewModel.selectVideoCell = self.selectVideoCell;
 }
 
 -(instancetype)initWithViewModel:(BaseViewModel *)viewModel{
@@ -150,7 +163,7 @@ ZFPlayerDelegate
     LCCourseViewModel *courseViewModel = [[LCCourseViewModel alloc]initWithServices:self.viewModel.navigationStackService params:nil];
     self.courseViewModel = courseViewModel;
     
-    LCEvaluateViewModel *evaluateViewModel = [[LCEvaluateViewModel alloc]initWithServices:self.viewModel.navigationStackService params:nil];
+    LCEvaluateViewModel *evaluateViewModel = [[LCEvaluateViewModel alloc]initWithServices:self.viewModel.navigationStackService params:@{@"planID":self.viewModel.planID}];
     return [@[IntroViewModel,courseViewModel,evaluateViewModel] mutableCopy];
 }
 

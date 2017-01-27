@@ -16,9 +16,9 @@
 @property (nonatomic, copy) NSString *name;
 @property(nonatomic,strong) NSString *className;
 //事件
-@property(nonatomic,copy) void (^clickBanner)(NSString *className, NSURL *webURL);
+@property(nonatomic,copy) void (^clickBanner)(NSString *className, NSURL *webURL,NSString *title);
 //三个按钮
-@property(nonatomic,copy) void (^clickBT)(NSString *className, NSURL *webURL);
+@property(nonatomic,copy) void (^clickBT)(NSString *className, NSURL *webURL,NSString *title);
 
 -(instancetype)initWithModel:(id)model;
 @end

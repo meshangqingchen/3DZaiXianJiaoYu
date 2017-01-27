@@ -24,7 +24,7 @@
     }];
     
     self.titleLB = [UILabel new];
-    _titleLB.font = [[KDFont sharedKDFont]getF22Font];
+    _titleLB.font = [[KDFont sharedKDFont]getF28Font];
     _titleLB.textColor = [KDColor getC3Color];
     [self.contentView addSubview:_titleLB];
     [_titleLB mas_makeConstraints:^(MASConstraintMaker *make) {

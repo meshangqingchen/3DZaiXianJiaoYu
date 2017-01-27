@@ -144,7 +144,8 @@
 }
 
 -(void)requestRemoteDataWithPage:(NSUInteger)curpage completeHandle:(void (^)(id))complete{
-    
+    MYLog(@"%@",self.selfCreatUser.avatar);
+    MYLog(@"%@",self.selfCreatUser.avatar);
     self.cellVMHeaderImage = [[LCEditPersonalDetailCellViewModel alloc]initWithModel:@{@"leftTitle":@"头像",@"rightTitle":@"",@"rightImageUrl":self.selfCreatUser.avatar}];
     self.cellVMNickName = [[LCEditPersonalDetailCellViewModel alloc]initWithModel:@{@"leftTitle":@"昵称",@"rightTitle":self.selfCreatUser.nick_name}];
     self.cellVMSex = [[LCEditPersonalDetailCellViewModel alloc]initWithModel:@{@"leftTitle":@"性别",@"rightTitle":self.selfCreatUser.sex}];

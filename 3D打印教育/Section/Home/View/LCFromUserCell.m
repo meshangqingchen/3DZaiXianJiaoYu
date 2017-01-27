@@ -8,6 +8,7 @@
 
 #import "LCFromUserCell.h"
 #import "LCUserTeacherTalkCellViewModel.h"
+#import "LCAboutYYWebImage.h"
 @interface LCFromUserCell ()
 @property(nonatomic,strong) UIImageView *backImageView1;
 @end
@@ -17,7 +18,6 @@
 -(void)setupViews{
     self.headImageView = [UIImageView new];
     _headImageView.frame = CGRectMake(SCREEN_WIDTH - 50, 10, 40, 40);
-    _headImageView.backgroundColor = [UIColor orangeColor];
     [self.contentView addSubview:_headImageView];
     
     UIImage *userBackImage = [UIImage imageNamed:@"user_back"];
@@ -31,8 +31,6 @@
     self.backImageView1.image = userBackImage;
     [self.contentView addSubview:_backImageView1];
     _backImageView1.top = 10;
-    _backImageView1.backgroundColor = [UIColor yellowColor];
-    
     self.messageBodyLB = [YYLabel new];
     [self.backImageView1 addSubview:_messageBodyLB];
     [_messageBodyLB mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -49,6 +47,13 @@
     _backImageView1.width = userTeacherTalkCellVM.messageBody_W+26;
     
     _messageBodyLB.textLayout = userTeacherTalkCellVM.messageBodyLayout;
-    
+//    [self.headImageView ]
+    [self.headImageView setImageWithURL:userTeacherTalkCellVM.headImageURL
+                            placeholder:[UIImage imageNamed:@"noLog_Headimage"]
+                                options:kNilOptions
+                                manager:[LCAboutYYWebImage avatarImageManager1]
+                               progress:nil
+                              transform:nil
+                             completion:nil];
 }
 @end

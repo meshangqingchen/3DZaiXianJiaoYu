@@ -11,7 +11,11 @@
 
 #import "LCCourseCellViewModel.h"
 
-//#import "LCCourseCellSonViewModel.h"
+@interface LCCourseViewModel ()
+@property(nonatomic,strong) NSArray *videoList;
+@end
+
+
 @implementation LCCourseViewModel
 -(void)initialize{
     [super initialize];
@@ -21,6 +25,7 @@
         @strongify(self)
         LCHomeDetailModel *homeDetailModel = model;
         NSArray<LCVideoDetailVideolist *> *videoList = homeDetailModel.contents.videoList;
+        self.videoList = videoList;
         for (int i = 0; i<videoList.count; i++) {
             LCCourseCellViewModel *cellVM = [[LCCourseCellViewModel alloc]initWithModel:videoList[i]];
             [self.mutableDataArr addObject:cellVM];
@@ -30,24 +35,8 @@
     }];
 }
 
-//-(void)requestRemoteDataWithPage:(NSUInteger)curpage completeHandle:(void (^)(id))complete{
-//    
-//    NSDictionary *dic = @{@"title":@"我是titleasd",@"url":@"1234567890"};
-//    LCCourseCellViewModel *cellViewModel = [[LCCourseCellViewModel alloc]initWithModel:dic];
-//    
-//    NSDictionary *dic1 = @{@"title":@"我是titleasd",@"url":@"1234567890"};
-//    LCCourseCellViewModel *cellViewModel1 = [[LCCourseCellViewModel alloc]initWithModel:dic1];
-//    NSDictionary *dic2 = @{@"title":@"我是titleasd",@"url":@"1234567890"};
-//    LCCourseCellViewModel *cellViewModel2 = [[LCCourseCellViewModel alloc]initWithModel:dic2];
-//    NSDictionary *dic3 = @{@"title":@"我是titleasd",@"url":@"1234567890"};
-//    LCCourseCellViewModel *cellViewModel3 = [[LCCourseCellViewModel alloc]initWithModel:dic3];
-//    
-//    [self.mutableDataArr addObjectsFromArray:@[cellViewModel,cellViewModel1,cellViewModel2,cellViewModel3]];
-//    self.dataSource = self.mutableDataArr.copy;
-//}
-//
-//-(void)didSelectRowAtIndexPath:(NSIndexPath *)indexpath in:(UITableView *)tableView{
-//
-//}
-
+-(void)didSelectRowAtIndexPath:(NSIndexPath *)indexpath in:(UITableView *)tableView{
+    LCVideoDetailVideolist *detailVideo = self.videoList[indexpath.row];
+    !self.selectVideoCell ? : self.selectVideoCell(detailVideo);
+}
 @end

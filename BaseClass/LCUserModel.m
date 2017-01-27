@@ -51,6 +51,9 @@
         if (userContents.email) {
             self.email = userContents.email;
         }
+        if (userContents.avatar) {
+            self.avatar = userContents.avatar;
+        }
         if (userContents.des) {
             self.des = userContents.des;
         }
@@ -60,6 +63,7 @@
         if (userContents.birthday) {
             self.birthday = userContents.birthday;
         }
+        
     }
     return self;
 }

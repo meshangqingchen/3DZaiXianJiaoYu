@@ -64,7 +64,6 @@
     }];
     
     self.headerImageV = [UIImageView new];
-    _headerImageV.backgroundColor = [UIColor orangeColor];
     [self addSubview:_headerImageV];
     [_headerImageV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(topLV.mas_bottom).mas_offset(20);

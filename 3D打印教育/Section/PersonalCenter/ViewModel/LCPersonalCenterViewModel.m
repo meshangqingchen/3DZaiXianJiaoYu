@@ -45,6 +45,7 @@
         [self.netApi_Manager personalInformationCompleteHandle:^(id responseObj, NSError *error) {
             
             LCUserModel *userModel = [LCUserModel parseJSON:responseObj];
+            
             LCUser *selfCreatUser = [[LCUser alloc]initWithUserContents:userModel.contents];
             self.selfCreatUser = selfCreatUser;
             NSDictionary *dic = nil;
