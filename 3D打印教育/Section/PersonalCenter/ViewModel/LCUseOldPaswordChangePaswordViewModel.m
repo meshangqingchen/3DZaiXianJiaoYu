@@ -11,6 +11,7 @@
 @implementation LCUseOldPaswordChangePaswordViewModel
 -(void)initialize{
     [super initialize];
+    self.shouldNavBackItem = YES;
     @weakify(self)
     [self setChangePassword:^(NSString *oldPassword,NSString *newPassword,NSString *anewPassword) {
         @strongify(self)

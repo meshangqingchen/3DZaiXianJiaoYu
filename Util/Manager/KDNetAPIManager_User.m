@@ -38,6 +38,8 @@ static NSString *const Api_login_in = @"login_in";
 static NSString *const Api_register = @"register";
 ///发送短信
 static NSString *const Api_phone = @"phone";
+/// loginPhone
+static NSString *const Api_loginPhone = @"loginPhone";
 ///个人信息
 static NSString *const Api_own = @"own";
 ///收藏
@@ -60,6 +62,8 @@ static NSString *const Api_createProblemOrder = @"createProblemOrder";
 static NSString *const Api_getPlanListByTypeId = @"getPlanListByTypeId";
 ///编辑个人信息
 static NSString *const Api_editOwn = @"editOwn";
+///通过验证码修改密码
+static NSString *const Api_loginEdit = @"loginEdit";
 ///收藏的列表
 static NSString *const Api_favList = @"favList";
 ///加入课程的列表
@@ -157,13 +161,18 @@ static NSString *const PARAM_discription      = @"discription";
 static NSString *const PARAM_orderSn          = @"orderSn";
 
 
-///发送短信
+///发送短信获得验证码
 -(NSURLSessionDataTask *)getPhoneCordeWith:(NSString *)phoneNum andOperation:(NSString *)operation completeHandle:(void (^)(id, NSError *))complete{
 
     NSDictionary *params = @{PARAM_phone:phoneNum,PARAM_operation:operation};
-    
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_phone encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
         
+        complete(responseObj,error);
+    }];
+}
+//不用电话号码发送 验证码 loginPhone
+-(NSURLSessionDataTask *)getPhoneCordeWithCompleteHandle:(void (^)(id, NSError *))complete{
+    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_loginPhone encodeParams:nil withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
     }];
 }
@@ -303,7 +312,7 @@ static NSString *const PARAM_orderSn          = @"orderSn";
 ///使用验证码
 -(NSURLSessionDataTask *)changePasswordWithCode:(NSString *)code andNewsPassword:(NSString *)nnewPassword andAgainNewsPassword:(NSString *)againnewPassword CompleteHandle:(void (^)(id, NSError *))complete{
     NSDictionary *params = @{PARAM_code:code,PARAM_password:nnewPassword,PARAM_rePassword:againnewPassword};
-    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_editOwn encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_loginEdit encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
     }];
 

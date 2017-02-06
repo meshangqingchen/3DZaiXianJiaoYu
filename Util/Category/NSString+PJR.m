@@ -261,6 +261,20 @@
 
 }
 
++(NSString *)getDataStrWithIntStr:(NSString *)intStr{
+
+    
+    NSInteger num = [intStr integerValue];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:num];
+    
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    [dateFormatter setDateFormat:@"YYYY-MM-dd"];
+    NSTimeZone* timeZone = [NSTimeZone timeZoneWithName:@"Asia/Beijing"];
+    [dateFormatter setTimeZone:timeZone];
+    return [dateFormatter stringFromDate:date];
+}
 
 
 

@@ -8,6 +8,7 @@
 
 #import "LCCollectCellViewModel.h"
 #import "LCCollectCourseModel.h"
+#import "NSString+PJR.h"
 @implementation LCCollectCellViewModel
 -(instancetype)initWithModel:(id)model{
     if (self = [super init]) {
@@ -15,7 +16,8 @@
         self.leftImageURL = [NSURL URLWithString:collectCourseModel.image];
         self.topStr = collectCourseModel.name;
         self.middleStr = [NSString stringWithFormat:@"讲师: %@",collectCourseModel.teacher_name];
-        self.bottomStr = [NSString stringWithFormat:@"收藏时间: %@",collectCourseModel.created_time];
+        self.bottomStr = [NSString stringWithFormat:@"收藏时间: %@",[NSString getDataStrWithIntStr:collectCourseModel.created_time]];
+        
         self.courseIID = collectCourseModel.iid;
     }
     return self;

@@ -14,7 +14,7 @@
     self.contentView.backgroundColor = [KDColor getC0Color];
     
     self.leftLB = [UILabel new];
-    _leftLB.font = [[KDFont sharedKDFont]getF22Font];
+    _leftLB.font = [[KDFont sharedKDFont]getF28Font];
     _leftLB.textColor = [KDColor getC2Color];
     [self.contentView addSubview:_leftLB];
     [_leftLB mas_makeConstraints:^(MASConstraintMaker *make) {

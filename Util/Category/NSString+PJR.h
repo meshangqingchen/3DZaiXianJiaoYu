@@ -71,4 +71,5 @@
 //自己
 //+(NSString *)stringEncodingWithMd5:(NSString *)inputString;
 
++ (NSString *)getDataStrWithIntStr:(NSString *)intStr;
 @end

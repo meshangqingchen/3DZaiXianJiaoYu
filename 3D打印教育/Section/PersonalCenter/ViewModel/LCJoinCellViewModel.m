@@ -8,6 +8,7 @@
 
 #import "LCJoinCellViewModel.h"
 #import "LCJoinCourseModel.h"
+#import "NSString+PJR.h"
 @implementation LCJoinCellViewModel
 -(instancetype)initWithModel:(id)model{
     if (self = [super init]) {
@@ -15,7 +16,7 @@
         self.leftImageURL = [NSURL URLWithString:joinCourseModel.image];
         self.topStr = joinCourseModel.name;
         self.middleStr = [NSString stringWithFormat:@"¥: %@",joinCourseModel.price];
-        self.bottomStr = [NSString stringWithFormat:@"参加课程时间: %@",joinCourseModel.created_time];
+        self.bottomStr = [NSString stringWithFormat:@"参加课程时间: %@",[NSString getDataStrWithIntStr: joinCourseModel.created_time]];
         self.courseIID = joinCourseModel.iid;
     }
     return self;

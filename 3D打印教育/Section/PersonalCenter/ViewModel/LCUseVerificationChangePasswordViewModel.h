@@ -10,4 +10,6 @@
 
 @interface LCUseVerificationChangePasswordViewModel : BaseViewModel
 @property(nonatomic,copy) void (^changePassword)(NSString *code,NSString *newPassword,NSString *anewPassword);
+
+@property(nonatomic,copy) void (^getVerificationCode)();
 @end

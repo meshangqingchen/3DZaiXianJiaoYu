@@ -28,5 +28,11 @@
             }
         }];
     }];
+    
+    [self setGetVerificationCode:^{
+        @strongify(self)
+        [self.netApi_Manager getPhoneCordeWithCompleteHandle:^(id responseObj, NSError *error) {
+        }];
+    }];
 }
 @end

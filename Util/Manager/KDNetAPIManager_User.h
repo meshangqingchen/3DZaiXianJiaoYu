@@ -11,8 +11,11 @@
 @interface KDNetAPIManager_User : NSObject
 SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 
-///发短信
+///发短信验证码
 -(NSURLSessionDataTask *)getPhoneCordeWith:(NSString *)phoneNum andOperation:(NSString *)operation completeHandle:(void(^)(id responseObj,NSError *error))complete;
+
+-(NSURLSessionDataTask *)getPhoneCordeWithCompleteHandle:(void(^)(id responseObj,NSError *error))complete;
+
 
 ///注册
 -(NSURLSessionDataTask *)registeredWith:(NSString *)phoneNum andPassword:(NSString *)password andRePassword:(NSString *)rePassword andNickname:(NSString *)nickname andVerification:(NSString *)code completeHandle:(void(^)(id responseObj,NSError *error))complete;

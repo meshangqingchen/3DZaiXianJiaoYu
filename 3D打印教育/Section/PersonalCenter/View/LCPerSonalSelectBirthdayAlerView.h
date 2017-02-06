@@ -14,4 +14,5 @@
 @property(nonatomic,strong) UIButton *rightBt;
 
 @property(nonatomic,strong) NSString *timeStr;
+
 @end

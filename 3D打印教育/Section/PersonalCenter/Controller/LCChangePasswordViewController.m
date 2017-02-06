@@ -29,7 +29,7 @@ static NSString *identifierHeader = @"UITableViewHeaderFooterView";
     
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64) style:UITableViewStylePlain];
     self.tableView.backgroundColor = [KDColor getC19Color];
-    self.tableView.rowHeight = 35;
+    self.tableView.rowHeight = 44;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerClass:[LCChangePasswordCell class] forCellReuseIdentifier:identifier];
     [self.tableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:identifierHeader];

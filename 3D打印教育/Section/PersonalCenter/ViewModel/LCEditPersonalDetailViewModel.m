@@ -13,6 +13,7 @@
 #import "LCPerSonalSelectBirthdayAlerView.h" //改变生日
 #import "LCChangeJianjieAlerView.h"
 #import "NSObject+Common.h"
+#import "NSString+PJR.h"
 @interface LCEditPersonalDetailViewModel ()
 @property(nonatomic,strong) LCEditPersonalDetailCellViewModel *cellVMHeaderImage;
 @property(nonatomic,strong) LCEditPersonalDetailCellViewModel *cellVMNickName;
@@ -106,7 +107,7 @@
         
     }else if (indexpath.section == 0 & indexpath.row == 3){
         //出生日期
-        LCPerSonalSelectBirthdayAlerView *selectBrithdayAlertView = [[LCPerSonalSelectBirthdayAlerView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH-24, 44*5+4*0.5)];
+        LCPerSonalSelectBirthdayAlerView *selectBrithdayAlertView = [[LCPerSonalSelectBirthdayAlerView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH-24, 44*5+4*0.5+20)];
         alertView = [[JCAlertView alloc]initWithCustomView:selectBrithdayAlertView dismissWhenTouchedBackground:YES];
         [alertView show];
         
@@ -122,6 +123,7 @@
             [alertView dismissWithCompletion:nil];
             
             NSString *timeStr = selectBrithdayAlertView.timeStr;
+            
             //更改时间
             if (timeStr == nil | timeStr.length == 0) {
                 return ;
@@ -132,7 +134,7 @@
                 NSString *msg = dic[@"msg"];
                 [NSObject showWarning:msg];
                 if ([dic[@"status"] isEqualToNumber:@1]) {
-                    self.cellVMBrithyDay.rightTitle = timeStr; //这里自己在转换 标准时间
+                    self.cellVMBrithyDay.rightTitle = [NSString getDataStrWithIntStr:timeStr]; //这里自己在转换 标准时间
                     self.dataSource = self.mutableDataArr.copy;
                 }
 
@@ -194,15 +196,5 @@
     self.dataSource = self.mutableDataArr.copy;
 }
 
-- (NSDateFormatter *)CreatdateFormatter {
-   
-        NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-        [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
-        [dateFormatter setDateFormat:@"YYYY--MM--dd"];
-        NSTimeZone* timeZone = [NSTimeZone timeZoneWithName:@"Asia/Beijing"];
-        [dateFormatter setTimeZone:timeZone];
-    return dateFormatter;
-}
 
 @end

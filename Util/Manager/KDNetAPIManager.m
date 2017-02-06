@@ -184,9 +184,15 @@ static dispatch_once_t onceToken;
 //    [mutableDic setObject:time forKey:@"time"];
 //    [mutableDic setObject:[KDFileManager readUserDataForKey:LCCKYE] ? [KDFileManager readUserDataForKey:LCCKYE] : @"YangtechApiKey_3feFE4" forKey:@"key"];
 //    [mutableDic setObject:[[NSString stringWithFormat:@"%@%@",time,[KDFileManager readUserDataForKey:LCCKYE] ? [KDFileManager readUserDataForKey:LCCKYE] : @"YangtechApiKey_3feFE4"] md5String] forKey:@"signature"];
-//    
+//
 //    MYLog(@"mutableDic===== ====== = %@",mutableDic);
     
+    NSDate *date = [NSDate date];
+    NSString *time = [NSString stringWithFormat:@"%ld-%ld-%ld %ld:%ld:%ld",date.year,date.month,date.day,date.hour,date.minute,date.second];
+    [mutableDic addEntriesFromDictionary:params];
+    [mutableDic setObject:time forKey:@"time"];
+    [mutableDic setObject:[KDFileManager readUserDataForKey:LCENCRYPTKey] ? [KDFileManager readUserDataForKey:LCENCRYPTKey] : @"YangtechApiKey_3feFE4" forKey:@"key"];
+    [mutableDic setObject:[[NSString stringWithFormat:@"%@%@",time,[KDFileManager readUserDataForKey:LCENCRYPTKey] ? [KDFileManager readUserDataForKey:LCENCRYPTKey] : @"YangtechApiKey_3feFE4"] md5String] forKey:@"signature"];
     if (mimeType == nil || ![mimeType isKindOfClass:[NSString class]] || mimeType.length == 0) {
         mimeType = @"image/jpeg";
     }
@@ -208,7 +214,7 @@ static dispatch_once_t onceToken;
     
     NSError *serializationError = nil;
     NSString *string = [NSString stringWithFormat:@"%@%@%@",AppNetAPIBaseURLString,@"api/",aPath];
-    NSMutableURLRequest *request = [self.requestSerializer multipartFormRequestWithMethod:@"POST" URLString:string parameters:params constructingBodyWithBlock:constructingBodyBlock error:&serializationError];
+    NSMutableURLRequest *request = [self.requestSerializer multipartFormRequestWithMethod:@"POST" URLString:string parameters:mutableDic constructingBodyWithBlock:constructingBodyBlock error:&serializationError];
 #ifdef DEBUG
     if (serializationError) {
         MYLog(@"======Request serializationError======\n%@\n",serializationError);

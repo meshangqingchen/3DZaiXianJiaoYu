@@ -7,7 +7,7 @@
 //
 
 #import "LCUserModel.h"
-
+#import "NSString+PJR.h"
 @implementation LCUserModel
 
 
@@ -61,9 +61,9 @@
             self.user_name = userContents.user_name;
         }
         if (userContents.birthday) {
-            self.birthday = userContents.birthday;
+            self.birthday = [NSString getDataStrWithIntStr:userContents.birthday];
+            
         }
-        
     }
     return self;
 }
