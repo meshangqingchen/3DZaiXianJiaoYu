@@ -25,7 +25,6 @@
     backView1.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:backView1];
     UILabel *lb = [UILabel new];
-    lb.backgroundColor = [UIColor redColor];
     lb.text = @"课程对应有效时间范围,请合理安排学习时间";
     lb.textColor = [KDColor getC2Color];
     lb.font = [[KDFont sharedKDFont]getF28Font];

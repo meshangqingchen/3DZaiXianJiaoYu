@@ -17,7 +17,6 @@
         make.left.top.right.mas_equalTo(0);
         make.height.mas_equalTo((SCREEN_WIDTH-30)*27/69);
     }];
-    self.backImageView.backgroundColor = [UIColor redColor];
     
     self.titleLB = [UILabel new];
     _titleLB.textColor = [KDColor getC2Color];

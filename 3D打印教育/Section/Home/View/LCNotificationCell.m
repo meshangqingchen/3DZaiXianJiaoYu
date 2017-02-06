@@ -13,7 +13,6 @@
 -(void)setupViews{
 
     self.nickName = [UILabel new];
-    _nickName.backgroundColor = [UIColor redColor];
     [self.contentView addSubview:_nickName];
     _nickName.font = [[KDFont sharedKDFont] getF24Font];
     _nickName.frame = CGRectMake(15, 20, SCREEN_WIDTH-15, 15);

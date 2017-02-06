@@ -41,7 +41,6 @@
     }];
     
     self.oldPasswordTextfield = [UITextField new];
-//    _oldPasswordTextfield.backgroundColor = [UIColor redColor];
     [topBackView addSubview:_oldPasswordTextfield];
     _oldPasswordTextfield.keyboardType =  UIKeyboardTypeNumberPad;
     _oldPasswordTextfield.secureTextEntry = YES;

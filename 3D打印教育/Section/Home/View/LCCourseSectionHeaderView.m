@@ -11,7 +11,6 @@
 @implementation LCCourseSectionHeaderView
 
 -(void)setupViews{
-    self.contentView.backgroundColor = [UIColor redColor];
     self.titleLB = [UILabel new];
     _titleLB.textColor = [KDColor getC2Color];
     _titleLB.font = [[KDFont sharedKDFont]getF30Font];

@@ -31,6 +31,7 @@ static NSString *identifier = @"LCVideoDetailEvaluateCell";
     }];
     
     [self.tableView registerClass:[LCVideoDetailEvaluateCell class] forCellReuseIdentifier:identifier];
+    self.tableView.tableFooterView = [UIView new];
     [super viewDidLoad];
     self.view.backgroundColor = [KDColor getC6Color];
 }

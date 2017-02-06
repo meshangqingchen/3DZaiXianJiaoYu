@@ -28,7 +28,7 @@
     
     self.tiemLB = [UILabel new];
     [self addSubview:_tiemLB];
-//    _tiemLB.backgroundColor = [UIColor blueColor];
+
     _tiemLB.text = @"12-13 11:49";
     _tiemLB.font = [[KDFont sharedKDFont]getF28Font];
     _tiemLB.textColor = [KDColor getX0Color];
@@ -39,7 +39,7 @@
     
     self.evaYLB = [YYLabel new];
     [self addSubview:_evaYLB];
-//    _evaYLB.backgroundColor = [UIColor redColor];
+//    _evaYLB.backgroundColor = ;
     _evaYLB.top = _tiemLB.bottom+21;
     _evaYLB.left = 70;
     _evaYLB.width = SCREEN_WIDTH-70-25;

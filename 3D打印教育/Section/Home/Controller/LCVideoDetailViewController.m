@@ -25,6 +25,7 @@
 #import "KDFileManager.h"
 #import "JCAlertView.h"
 #import "LC34GNetworkAlerView.h"
+#import "UIView+BlocksKit.h"
 @interface LCVideoDetailViewController ()
 <
 ZFPlayerDelegate
@@ -54,9 +55,10 @@ ZFPlayerDelegate
     /*
      视频view
      */
+    self.view.backgroundColor = [UIColor blackColor];
     self.playerView = [[ZFPlayerView alloc]init];
     self.playerView.delegate = self;
-    UIView *videoViewFatherView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, VIDEO_H)];
+    UIView *videoViewFatherView = [[UIView alloc]initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH, VIDEO_H)];
     videoViewFatherView.backgroundColor = [UIColor blackColor];
     [self.view addSubview:videoViewFatherView];
     self.videoViewFatherView = videoViewFatherView;
@@ -65,11 +67,16 @@ ZFPlayerDelegate
     self.backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     [self.view addSubview:_backView];
     _backView.backgroundColor = [KDColor getC10Color];
+    @weakify(self)
+    [self.backView bk_whenTapped:^{
+        @strongify(self)
+        [self.lcInputAccessoryView.textView resignFirstResponder];
+    }];
     _backView.hidden = YES;
 
     self.lcInputAccessoryView = [[LCDetailEvaluateInputAccessoryView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, 276/2+30)];
     [self.view addSubview:_lcInputAccessoryView];
-    @weakify(self)
+    
     [self.viewModel setPopLcInputAccessoryView:^(NSString *videoID) {
         @strongify(self)
         [self.lcInputAccessoryView.textView becomeFirstResponder];
@@ -237,7 +244,7 @@ ZFPlayerDelegate
         self.titleColorNormal = [KDColor getC2Color];
         self.titleColorSelected = [KDColor getX1Color];
         self.itemsMargins = @[@35,@50,@50,@35];
-        self.viewFrame = CGRectMake(0, VIDEO_H, SCREEN_WIDTH, SCREEN_HEIGHT-VIDEO_H-49);
+        self.viewFrame = CGRectMake(0, VIDEO_H+20, SCREEN_WIDTH, SCREEN_HEIGHT-VIDEO_H-49-20);
         self.keys = [self getKeys];
         self.values = [self getValues];
     }

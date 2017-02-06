@@ -443,7 +443,7 @@ static NSString *const PARAM_orderSn          = @"orderSn";
 
 //课程评价列表
 -(NSURLSessionDataTask *)assessListWithPlanld:(NSString *)planId andCurpage:(NSInteger)curpage CompleteHandle:(void (^)(id, NSError *))complete{
-    NSDictionary *params = @{PARAM_planId:planId,PARAM_page:@(1),PARAM_curpage:@(curpage)};
+    NSDictionary *params = @{PARAM_planId:planId,PARAM_page:@(15),PARAM_curpage:@(curpage)};
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_assessList encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
     }];

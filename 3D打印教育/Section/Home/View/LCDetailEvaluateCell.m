@@ -60,7 +60,6 @@
     
     self.evaYLB = [YYLabel new];
     [self.contentView addSubview:_evaYLB];
-//    _evaYLB.backgroundColor = [UIColor redColor];
     _evaYLB.top = _timeLB.bottom+21;
     _evaYLB.left = 70;
     _evaYLB.width = SCREEN_WIDTH-70-25;

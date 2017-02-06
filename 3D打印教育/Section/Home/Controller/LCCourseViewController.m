@@ -38,6 +38,7 @@ static NSString *identifier = @"LCCourseCell";
     }];
     
     [self.tableView registerClass:[LCCourseCell class] forCellReuseIdentifier:identifier];
+    self.tableView.tableFooterView = [UIView new];
     [super viewDidLoad];
     self.view.backgroundColor = [KDColor getC6Color];
 }
