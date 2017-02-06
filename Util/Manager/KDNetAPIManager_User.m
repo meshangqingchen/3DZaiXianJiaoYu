@@ -133,6 +133,7 @@ static NSString *const PARAM_price            = @"price";
 static NSString *const PARAM_typeId           = @"typeId"; //课程分类type
 static NSString *const PARAM_birthday         = @"birthday";
 static NSString *const PARAM_sex              = @"sex";
+static NSString *const PARAM_des              = @"des";    //修改简介
 static NSString *const PARAM_msg              = @"msg";
 static NSString *const PARAM_teacherId        = @"teacherId";
 static NSString *const PARAM_toId             = @"toId";
@@ -279,6 +280,14 @@ static NSString *const PARAM_orderSn          = @"orderSn";
 ///修改昵称
 -(NSURLSessionDataTask *)changeNickName:(NSString *)nickName CompleteHandle:(void (^)(id, NSError *))complete{
     NSDictionary *params = @{PARAM_nickName:nickName};
+    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_editOwn encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+        complete(responseObj,error);
+    }];
+}
+
+///修改简介
+-(NSURLSessionDataTask *)changeJianJie:(NSString *)jianjie CompleteHandle:(void (^)(id, NSError *))complete{
+    NSDictionary *params = @{PARAM_des:jianjie};
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_editOwn encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
     }];

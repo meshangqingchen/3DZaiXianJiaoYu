@@ -31,7 +31,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor yellowColor];
     self.tabBarController = [[RDVTabBarController alloc]init];
     self.tabBarController.delegate = self;
     self.tabBarController.view.frame = self.view.bounds;

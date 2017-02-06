@@ -26,7 +26,7 @@
     _nameLB.top = 21;
     _nameLB.width = 200;
     _nameLB.height = 15;
-//    _nameLB.backgroundColor = [UIColor yellowColor];
+
     
     
     self.timeLB = [UILabel new];

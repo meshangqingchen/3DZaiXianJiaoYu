@@ -16,7 +16,7 @@
     self.contentView.backgroundColor = [KDColor getC0Color];
     
     self.leftLB = [UILabel new];
-    _leftLB.font = [[KDFont sharedKDFont]getF22Font];
+    _leftLB.font = [[KDFont sharedKDFont]getF28Font];
     _leftLB.textColor = [KDColor getC2Color];
     [self.contentView addSubview:_leftLB];
     [_leftLB mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -35,7 +35,7 @@
     }];
     
     self.rightLB = [UILabel new];
-    _rightLB.font = [[KDFont sharedKDFont]getF22Font];
+    _rightLB.font = [[KDFont sharedKDFont]getF28Font];
     _rightLB.textColor = [KDColor getX0Color];
     [self.contentView addSubview:_rightLB];
     [_rightLB mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -44,7 +44,6 @@
     }];
     
     self.headImageView = [UIImageView new];
-    _headImageView.backgroundColor = [UIColor yellowColor];
     [self.contentView addSubview:_headImageView];
     [_headImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(rightJinatoiuView.mas_left).mas_offset(-15);

@@ -14,6 +14,7 @@
         LCTeacherModel *teacherModel = model;
         _teacherName = teacherModel.nick_name;
         _teacherDetail = teacherModel.shot_discription;
+        _teacherID = teacherModel.iid;
         _teacherHeadImageURL = [NSURL URLWithString:teacherModel.avatar];
         [self layout];
     }

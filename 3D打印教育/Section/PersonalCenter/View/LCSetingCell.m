@@ -16,7 +16,7 @@
     self.contentView.backgroundColor = [KDColor getC0Color];
     
     self.leftLB = [UILabel new];
-    _leftLB.font = [[KDFont sharedKDFont] getF22Font];
+    _leftLB.font = [[KDFont sharedKDFont] getF28Font];
     _leftLB.textColor = [KDColor getC2Color];
     [self.contentView addSubview:_leftLB];
     [_leftLB mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -25,7 +25,7 @@
     }];
     
     self.middleLB = [UILabel new];
-    _middleLB.font = [[KDFont sharedKDFont] getF24Font];
+    _middleLB.font = [[KDFont sharedKDFont] getF28Font];
     _middleLB.textColor = [KDColor getC20Color];
     _middleLB.text = @"推出登录";
     [self.contentView addSubview:_middleLB];
@@ -34,7 +34,7 @@
     }];
     
     self.rightLB = [UILabel new];
-    _rightLB.font = [[KDFont sharedKDFont] getF22Font];
+    _rightLB.font = [[KDFont sharedKDFont] getF28Font];
     _rightLB.textColor = [KDColor getX0Color];
     _rightLB.text = @"0M";
     [self.contentView addSubview:_rightLB];

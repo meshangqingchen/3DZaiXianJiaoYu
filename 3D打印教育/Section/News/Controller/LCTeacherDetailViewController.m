@@ -33,7 +33,6 @@
     
     UIButton *fanhui = [UIButton new];
     [topView addSubview:fanhui];
-    fanhui.backgroundColor = [UIColor blackColor];
     fanhui.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     [fanhui setImage:[UIImage imageNamed:@"Myself_back_image"] forState:0];
     [fanhui setTitleColor:[KDColor getC0Color] forState:0];

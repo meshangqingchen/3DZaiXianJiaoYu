@@ -16,6 +16,7 @@
 #import "LCSetingViewModel.h"  //设置VM
 #import "LCCollectOJoinRViewModel.h" // 课程 或者 收藏
 #import "LCFeedbackViewModel.h"      // 意见反馈
+#import "LCMyMessageViewModel.h"     // 我的消息
 
 
 @interface LCPersonalCenterViewModel ()
@@ -76,7 +77,8 @@
     LCPersonalCenterCellViewModel *cellVM = setionArr[indexpath.row];
     //消息、课程、收藏、设置、意见反馈
     if ([cellVM.titleName isEqualToString:@"消息"]) {
-        
+        LCMyMessageViewModel *myMessageVM = [[LCMyMessageViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"我的消息"}];
+        [self.navigationStackService pushViewModel:myMessageVM animated:YES];
     }else if ([cellVM.titleName isEqualToString:@"课程"]){
         LCCollectOJoinRViewModel *joinVM = [[LCCollectOJoinRViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"我的课程"}];
         [self.navigationStackService pushViewModel:joinVM animated:YES];

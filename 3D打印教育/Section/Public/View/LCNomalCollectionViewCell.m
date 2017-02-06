@@ -19,7 +19,6 @@
         make.left.top.right.mas_equalTo(0);
         make.height.mas_equalTo(NORMALE_COLLECTIONCELL_W*200/335);
     }];
-    self.backImageView.backgroundColor = [UIColor yellowColor];
     
     self.titleLB = [UILabel new];
     _titleLB.textColor = [KDColor getC2Color];

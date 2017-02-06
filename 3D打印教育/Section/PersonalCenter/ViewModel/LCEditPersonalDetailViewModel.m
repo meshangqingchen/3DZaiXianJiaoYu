@@ -11,6 +11,7 @@
 #import "JCAlertView.h"
 #import "LCChangeNickNameAlerView.h" //改变昵称的alerView;
 #import "LCPerSonalSelectBirthdayAlerView.h" //改变生日
+#import "LCChangeJianjieAlerView.h"
 #import "NSObject+Common.h"
 @interface LCEditPersonalDetailViewModel ()
 @property(nonatomic,strong) LCEditPersonalDetailCellViewModel *cellVMHeaderImage;
@@ -70,6 +71,8 @@
     JCAlertView *alertView = nil;
     if (indexpath.section == 0 & indexpath.row == 1) {
         LCChangeNickNameAlerView *nickNameAlerView = [[LCChangeNickNameAlerView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH-50, 150)];
+        
+        nickNameAlerView.nickName = self.cellVMNickName.rightTitle;
         nickNameAlerView.layer.cornerRadius = 5;
         alertView = [[JCAlertView alloc]initWithCustomView:nickNameAlerView dismissWhenTouchedBackground:YES];
         [alertView show];
@@ -140,6 +143,35 @@
         //修改手机号
     }else if (indexpath.section == 1 & indexpath.row == 0){
         //个人简介
+        LCChangeJianjieAlerView *jianJieAlerView = [[LCChangeJianjieAlerView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH-50, 150)];
+        
+        jianJieAlerView.layer.cornerRadius = 5;
+        alertView = [[JCAlertView alloc]initWithCustomView:jianJieAlerView dismissWhenTouchedBackground:YES];
+        [alertView show];
+        
+        [jianJieAlerView.leftBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+            [alertView dismissWithCompletion:nil];
+        }];
+        @weakify(jianJieAlerView)
+        [jianJieAlerView.rightBt addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+            @strongify(jianJieAlerView)
+            [alertView dismissWithCompletion:nil];
+            NSString *textFiledText = jianJieAlerView.textFiled.text;
+            if (textFiledText == nil | textFiledText.length == 0) {
+                return ;
+            }
+            //走网络接口
+            [self.netApi_Manager changeJianJie:textFiledText CompleteHandle:^(id responseObj, NSError *error) {
+                NSDictionary *dic = responseObj;
+                NSString *msg = dic[@"msg"];
+                [NSObject showWarning:msg];
+//                if ([dic[@"status"] isEqualToNumber:@1]) {
+//                    self.cellVMNickName.rightTitle = textFiledText;
+//                    self.dataSource = self.mutableDataArr.copy;
+//                }
+            }];
+        }];
+        
     }
 }
 
@@ -151,7 +183,7 @@
     self.cellVMSex = [[LCEditPersonalDetailCellViewModel alloc]initWithModel:@{@"leftTitle":@"性别",@"rightTitle":self.selfCreatUser.sex}];
     self.cellVMBrithyDay = [[LCEditPersonalDetailCellViewModel alloc]initWithModel:@{@"leftTitle":@"出生日期",@"rightTitle":self.selfCreatUser.birthday}];
     self.cellVMPhoneNum = [[LCEditPersonalDetailCellViewModel alloc]initWithModel:@{@"leftTitle":@"手机号",@"rightTitle":self.selfCreatUser.user_name}];
-    self.cellVMJianJie = [[LCEditPersonalDetailCellViewModel alloc]initWithModel:@{@"leftTitle":@"个人简介",@"rightTitle":self.selfCreatUser.des}];
+    self.cellVMJianJie = [[LCEditPersonalDetailCellViewModel alloc]initWithModel:@{@"leftTitle":@"个人简介",@"rightTitle":@" "}];
     
     [self.mutableDataArr addObjectsFromArray:@[@[self.cellVMHeaderImage,
                                                  self.cellVMNickName,

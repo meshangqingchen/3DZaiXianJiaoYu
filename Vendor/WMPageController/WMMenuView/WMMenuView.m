@@ -459,7 +459,6 @@ static NSInteger const WMBadgeViewTagOffset = 1212;
         }
         item.userInteractionEnabled = YES;
         item.backgroundColor = [UIColor clearColor];
-        item.backgroundColor = [UIColor yellowColor];
         item.normalSize    = self.normalSize;
         item.selectedSize  = self.selectedSize;
         item.normalColor   = self.normalColor;

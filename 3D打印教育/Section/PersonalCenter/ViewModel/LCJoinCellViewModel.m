@@ -16,6 +16,7 @@
         self.topStr = joinCourseModel.name;
         self.middleStr = [NSString stringWithFormat:@"¥: %@",joinCourseModel.price];
         self.bottomStr = [NSString stringWithFormat:@"参加课程时间: %@",joinCourseModel.created_time];
+        self.courseIID = joinCourseModel.iid;
     }
     return self;
 }

@@ -80,6 +80,7 @@
                 if ([msg isEqualToString:@"取消收藏成功"]) { //ifCollected
                     collection_BT.selected = NO;
                     self.videoDetailViewViewModel.ifCollected = NO;
+                    [NSObject showWarning:msg];
                 }
             }];
         }else{

@@ -10,6 +10,7 @@
 #import "LCEditPersonalDetailViewModel.h"
 
 #import "LCEditPersonalDetailCell.h"
+#import <MobileCoreServices/MobileCoreServices.h>
 @interface LCEditPersonalDetailViewController ()
 <
 UIActionSheetDelegate,
@@ -28,7 +29,6 @@ static NSString *identifierHeader = @"UITableViewHeaderFooterView";
 - (void)viewDidLoad {
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64) style:UITableViewStylePlain];
     self.tableView.backgroundColor = [KDColor getC19Color];
-    self.tableView.rowHeight = 35;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerClass:[LCEditPersonalDetailCell class] forCellReuseIdentifier:identifier];
     [self.tableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:identifierHeader];
@@ -86,7 +86,7 @@ static NSString *identifierHeader = @"UITableViewHeaderFooterView";
     if (indexPath.section == 0 & indexPath.row == 0) {
         return 64;
     }
-    return 35;
+    return 44;
 }
 
 
@@ -99,7 +99,12 @@ static NSString *identifierHeader = @"UITableViewHeaderFooterView";
     if ([title isEqualToString:@"相机拍摄"]) {
         UIImagePickerController *picker=[[UIImagePickerController alloc]init];
         picker.sourceType=UIImagePickerControllerSourceTypeCamera;
-        picker.mediaTypes=[UIImagePickerController availableMediaTypesForSourceType:picker.sourceType];
+//        picker.mediaTypes=[UIImagePickerController availableMediaTypesForSourceType:picker.sourceType];
+        
+//         NSString *requiredMediaType = 
+        
+        NSString *requiredMediaType = ( NSString *)kUTTypeImage;
+        picker.mediaTypes = [NSArray arrayWithObjects:requiredMediaType,nil];
         picker.allowsEditing=YES;
         picker.delegate=self;
         [self presentViewController:picker animated:YES completion:nil];
@@ -107,7 +112,7 @@ static NSString *identifierHeader = @"UITableViewHeaderFooterView";
     }else if ([title isEqualToString:@"从相册选取"]){
         UIImagePickerController *picker=[[UIImagePickerController alloc]init];
         picker.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
-        picker.mediaTypes=[UIImagePickerController availableMediaTypesForSourceType:picker.sourceType];
+//        picker.mediaTypes=[UIImagePickerController availableMediaTypesForSourceType:picker.sourceType];
         picker.allowsEditing=YES;
         picker.delegate=self;
         [self presentViewController:picker animated:YES completion:nil];

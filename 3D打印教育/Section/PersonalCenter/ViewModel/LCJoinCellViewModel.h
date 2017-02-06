@@ -16,4 +16,5 @@
 @property(nonatomic,strong) NSString *courseIID;
 
 -(instancetype)initWithModel:(id)model;
+//收藏
 @end

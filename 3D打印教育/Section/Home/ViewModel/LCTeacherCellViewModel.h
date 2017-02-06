@@ -13,6 +13,7 @@
 
 @property(nonatomic,strong) NSString *teacherName;
 @property(nonatomic,strong) NSString *teacherDetail;
+@property(nonatomic,strong) NSString *teacherID;
 
 @property(nonatomic,strong) NSURL *teacherHeadImageURL;
 @property(nonatomic, strong) YYTextLayout *nameTextLayout; //用户名字

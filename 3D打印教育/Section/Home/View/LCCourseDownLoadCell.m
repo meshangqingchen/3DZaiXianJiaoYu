@@ -23,7 +23,7 @@
     }];
     
     self.downLoadBT = [UIButton new];
-//    _downLoadBT.backgroundColor = [UIColor yellowColor];
+
     _downLoadBT.titleLabel.font = [[KDFont sharedKDFont] getF26Font];
     [_downLoadBT setTitleColor:[KDColor getX0Color] forState:0];
     _downLoadBT.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;

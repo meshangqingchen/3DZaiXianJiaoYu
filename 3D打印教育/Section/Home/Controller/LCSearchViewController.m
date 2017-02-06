@@ -19,7 +19,7 @@
 @dynamic viewModel;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _tf = [[LCTextFiled alloc]initWithFrame:CGRectMake(30, 7, SEARCHTEXTFIELD_W - 15, 30)];
+    _tf = [[LCTextFiled alloc]initWithFrame:CGRectMake(30, 7, SEARCHTEXTFIELD_W - 30, 30)];
 //    _tf.delegate = self;
     _tf.layer.cornerRadius = 15;
     _tf.backgroundColor = [KDColor getC1Color];

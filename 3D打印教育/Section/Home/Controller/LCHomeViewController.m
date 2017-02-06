@@ -48,7 +48,6 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
 @dynamic viewModel,collectionView;
 - (void)viewDidLoad {
     
-//    self.view.backgroundColor = [UIColor yellowColor];
     _tf = [[LCTextFiled alloc]initWithFrame:SEARCHTEXTFIELD_FREAM];
     _tf.delegate = self;
     _tf.layer.cornerRadius = 15;
@@ -87,16 +86,16 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    UIImage *have_image = [UIImage imageNamed:@"have_message"];
-    
+    UIImage *have_image = [UIImage imageNamed:@"no_message"];
     MYLog(@"%@",@"根据接口来判断 显示那个状态的铃铛");
-    CustomBarItem *rightItem = [self.navigationItem setItemWithImage:@"have_message" size:have_image.size itemType:right];
+    CustomBarItem *rightItem = [self.navigationItem setItemWithImage:@"no_message" size:have_image.size itemType:right];
     @weakify(self)
     [rightItem addBlockForControlEvents:UIControlEventTouchUpInside block:^(id sender) {
         @strongify(self)
         LCMyMessageViewModel *myMessageVM = [[LCMyMessageViewModel alloc]initWithServices:self.viewModel.navigationStackService params:@{KEY_TITLE:@"我的消息"}];
         [self.viewModel.navigationStackService pushViewModel:myMessageVM animated:YES];
     }];
+    //设置
 }
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{

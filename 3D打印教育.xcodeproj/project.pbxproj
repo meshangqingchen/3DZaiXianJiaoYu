@@ -146,6 +146,7 @@
 		747BF6EF1E2F5707000137E5 /* LCNotarizeZiXunOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6EE1E2F5707000137E5 /* LCNotarizeZiXunOrderViewController.m */; };
 		747BF6F21E2F572B000137E5 /* LCNotarizeZiXunOrderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6F11E2F572B000137E5 /* LCNotarizeZiXunOrderViewModel.m */; };
 		747BF6F51E309F85000137E5 /* LCTalkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6F41E309F85000137E5 /* LCTalkModel.m */; };
+		747BF7631E417F39000137E5 /* LCChangeJianjieAlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF7621E417F39000137E5 /* LCChangeJianjieAlerView.m */; };
 		747EFB701E080F4100041C56 /* UIView+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 747EFB6F1E080F4100041C56 /* UIView+BlocksKit.m */; };
 		748245041E13C363004735DB /* LCHomeDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 748245031E13C363004735DB /* LCHomeDetailModel.m */; };
 		748245071E14D4B7004735DB /* LCMyMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 748245061E14D4B7004735DB /* LCMyMessageViewController.m */; };
@@ -269,10 +270,6 @@
 		7485FDAE1DFFFA1500E6D23D /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FD961DFFFA1500E6D23D /* UIView+WebCacheOperation.m */; };
 		7485FDAF1DFFFA1500E6D23D /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FD981DFFFA1500E6D23D /* UIView+SDExtension.m */; };
 		7485FDB21DFFFD4500E6D23D /* LCCollectionReusableBannerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FDB11DFFFD4500E6D23D /* LCCollectionReusableBannerHeaderView.m */; };
-		7485FDB71E0004D400E6D23D /* h1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7485FDB31E0004D400E6D23D /* h1.jpg */; };
-		7485FDB81E0004D400E6D23D /* h3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7485FDB41E0004D400E6D23D /* h3.jpg */; };
-		7485FDB91E0004D400E6D23D /* h2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7485FDB51E0004D400E6D23D /* h2.jpg */; };
-		7485FDBA1E0004D400E6D23D /* h4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7485FDB61E0004D400E6D23D /* h4.jpg */; };
 		7485FDC01E00EEAC00E6D23D /* LCVideoDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FDBF1E00EEAC00E6D23D /* LCVideoDetailViewModel.m */; };
 		7485FDC31E00EEE200E6D23D /* LCVideoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FDC21E00EEE200E6D23D /* LCVideoDetailViewController.m */; };
 		7485FDC61E00F81600E6D23D /* LCIntroViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485FDC51E00F81600E6D23D /* LCIntroViewModel.m */; };
@@ -662,6 +659,8 @@
 		747BF6F11E2F572B000137E5 /* LCNotarizeZiXunOrderViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNotarizeZiXunOrderViewModel.m; sourceTree = "<group>"; };
 		747BF6F31E309F85000137E5 /* LCTalkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCTalkModel.h; path = "3D打印教育/Section/News/ViewModel/LCTalkModel.h"; sourceTree = SOURCE_ROOT; };
 		747BF6F41E309F85000137E5 /* LCTalkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCTalkModel.m; path = "3D打印教育/Section/News/ViewModel/LCTalkModel.m"; sourceTree = SOURCE_ROOT; };
+		747BF7611E417F39000137E5 /* LCChangeJianjieAlerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCChangeJianjieAlerView.h; sourceTree = "<group>"; };
+		747BF7621E417F39000137E5 /* LCChangeJianjieAlerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCChangeJianjieAlerView.m; sourceTree = "<group>"; };
 		747EFB6E1E080F4100041C56 /* UIView+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BlocksKit.h"; sourceTree = "<group>"; };
 		747EFB6F1E080F4100041C56 /* UIView+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BlocksKit.m"; sourceTree = "<group>"; };
 		748245021E13C363004735DB /* LCHomeDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHomeDetailModel.h; sourceTree = "<group>"; };
@@ -909,10 +908,6 @@
 		7485FD981DFFFA1500E6D23D /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
 		7485FDB01DFFFD4500E6D23D /* LCCollectionReusableBannerHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCollectionReusableBannerHeaderView.h; sourceTree = "<group>"; };
 		7485FDB11DFFFD4500E6D23D /* LCCollectionReusableBannerHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCollectionReusableBannerHeaderView.m; sourceTree = "<group>"; };
-		7485FDB31E0004D400E6D23D /* h1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h1.jpg; sourceTree = "<group>"; };
-		7485FDB41E0004D400E6D23D /* h3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h3.jpg; sourceTree = "<group>"; };
-		7485FDB51E0004D400E6D23D /* h2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h2.jpg; sourceTree = "<group>"; };
-		7485FDB61E0004D400E6D23D /* h4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h4.jpg; sourceTree = "<group>"; };
 		7485FDBE1E00EEAC00E6D23D /* LCVideoDetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCVideoDetailViewModel.h; sourceTree = "<group>"; };
 		7485FDBF1E00EEAC00E6D23D /* LCVideoDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCVideoDetailViewModel.m; sourceTree = "<group>"; };
 		7485FDC11E00EEE200E6D23D /* LCVideoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCVideoDetailViewController.h; sourceTree = "<group>"; };
@@ -1261,10 +1256,6 @@
 				7485FB171DF90A1B00E6D23D /* LaunchScreen.storyboard */,
 				7485FB1A1DF90A1B00E6D23D /* Info.plist */,
 				7485FB0A1DF90A1B00E6D23D /* main.m */,
-				7485FDB31E0004D400E6D23D /* h1.jpg */,
-				7485FDB41E0004D400E6D23D /* h3.jpg */,
-				7485FDB51E0004D400E6D23D /* h2.jpg */,
-				7485FDB61E0004D400E6D23D /* h4.jpg */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1958,6 +1949,8 @@
 				74450C8E1E238F1B00F01EB7 /* LCChangeNickNameAlerView.m */,
 				74450C901E23BB3700F01EB7 /* LCPerSonalSelectBirthdayAlerView.h */,
 				74450C911E23BB3700F01EB7 /* LCPerSonalSelectBirthdayAlerView.m */,
+				747BF7611E417F39000137E5 /* LCChangeJianjieAlerView.h */,
+				747BF7621E417F39000137E5 /* LCChangeJianjieAlerView.m */,
 				741B05961E20D1BE002860A7 /* LCSetingCell.h */,
 				741B05971E20D1BE002860A7 /* LCSetingCell.m */,
 				74450C9B1E247C0500F01EB7 /* LCChangePasswordCell.h */,
@@ -2350,15 +2343,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7485FDBA1E0004D400E6D23D /* h4.jpg in Resources */,
-				7485FDB71E0004D400E6D23D /* h1.jpg in Resources */,
 				747BF5EF1E28DC5F000137E5 /* AlipaySDK.bundle in Resources */,
 				7485FBA41DFC382800E6D23D /* YZEmotionCell.xib in Resources */,
 				7485FB9F1DFC382800E6D23D /* emotion.plist in Resources */,
-				7485FDB91E0004D400E6D23D /* h2.jpg in Resources */,
 				7485FBA61DFC382800E6D23D /* YZEmotionKeyboard.xib in Resources */,
 				7485FBA01DFC382800E6D23D /* emotionToText.plist in Resources */,
-				7485FDB81E0004D400E6D23D /* h3.jpg in Resources */,
 				7485FB191DF90A1B00E6D23D /* LaunchScreen.storyboard in Resources */,
 				7485FB161DF90A1B00E6D23D /* Assets.xcassets in Resources */,
 				7485FB941DFC382800E6D23D /* JCAlertView.bundle in Resources */,
@@ -2741,6 +2730,7 @@
 				7485FC081DFC39FB00E6D23D /* KDColor.m in Sources */,
 				7485FDD51E00F8E700E6D23D /* LCEvaluateViewController.m in Sources */,
 				740F0EF81E11210800EEFC3B /* LCCourseDownLoadViewController.m in Sources */,
+				747BF7631E417F39000137E5 /* LCChangeJianjieAlerView.m in Sources */,
 				747BF6EC1E2F39A9000137E5 /* LCTeacherDetailViewViewModel.m in Sources */,
 				7485FDD21E00F8CF00E6D23D /* LCEvaluateViewModel.m in Sources */,
 				747BF6401E2C9149000137E5 /* LCCourseListModel.m in Sources */,

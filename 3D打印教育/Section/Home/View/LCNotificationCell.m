@@ -51,7 +51,6 @@
     LCNotificationCellViewModel *notificationCellVM = viewModel;
     self.detailLB.height = notificationCellVM.detail_H;
     
-    _detailLB.backgroundColor = [UIColor yellowColor];
     if (notificationCellVM.ifReaded) {
         //根据数据 填充颜色
     }else{

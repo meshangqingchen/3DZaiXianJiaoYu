@@ -59,5 +59,7 @@ static NSString *identifier = @"LCTeacherCell";
     return cellViewM.teacherCellTotal_h;
 }
 
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self.viewModel didSelectRowAtIndexPath:indexPath in:tableView];
+}
 @end

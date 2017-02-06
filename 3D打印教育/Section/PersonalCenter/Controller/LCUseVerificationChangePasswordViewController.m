@@ -29,7 +29,6 @@
     
     
     UIView *topBackView = [UIView new];
-    topBackView.backgroundColor = [UIColor yellowColor];
     //    topBackView.backgroundColor = [KDColor getC0Color];
     [self.view addSubview:topBackView];
     [topBackView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -83,7 +82,6 @@
     }];
     
     UIView *middleBackView = [UIView new];
-    middleBackView.backgroundColor = [UIColor yellowColor];
     //    topBackView.backgroundColor = [KDColor getC0Color];
     [self.view addSubview:middleBackView];
     [middleBackView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -116,7 +114,6 @@
     }];
     
     UIView *bottomBackView = [UIView new];
-    bottomBackView.backgroundColor = [UIColor yellowColor];
     //    topBackView.backgroundColor = [KDColor getC0Color];
     [self.view addSubview:bottomBackView];
     [bottomBackView mas_makeConstraints:^(MASConstraintMaker *make) {

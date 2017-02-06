@@ -43,6 +43,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 
 ///修改昵称
 -(NSURLSessionDataTask *)changeNickName:(NSString *)nickName CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
+///修改简介
+-(NSURLSessionDataTask *)changeJianJie:(NSString *)jianjie CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 ///串头像
 
 ///使用旧密码
