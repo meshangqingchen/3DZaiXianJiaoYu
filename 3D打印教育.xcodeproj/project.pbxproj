@@ -292,6 +292,7 @@
 		74C91A671E160D950065BAFE /* LCMessageAndNotificationHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C91A661E160D950065BAFE /* LCMessageAndNotificationHeaderView.m */; };
 		74C91A6A1E1643480065BAFE /* LCUserTeacherTalkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C91A691E1643480065BAFE /* LCUserTeacherTalkViewController.m */; };
 		74C91A6D1E1644860065BAFE /* LCUserTeacherTalkViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C91A6C1E1644860065BAFE /* LCUserTeacherTalkViewModel.m */; };
+		74D2AD091E485BE700C2D737 /* LC34GNetworkAlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D2AD081E485BE700C2D737 /* LC34GNetworkAlerView.m */; };
 		74D2F66D1E0394DA00C84317 /* LCTextLinePositionModifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D2F66C1E0394DA00C84317 /* LCTextLinePositionModifier.m */; };
 		74D2F6701E03A14800C84317 /* LCVideoDetailEvaluateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D2F66F1E03A14800C84317 /* LCVideoDetailEvaluateCell.m */; };
 		74D2F6731E08067400C84317 /* LCEvaluateDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D2F6721E08067400C84317 /* LCEvaluateDetailViewModel.m */; };
@@ -952,6 +953,8 @@
 		74C91A691E1643480065BAFE /* LCUserTeacherTalkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCUserTeacherTalkViewController.m; sourceTree = "<group>"; };
 		74C91A6B1E1644860065BAFE /* LCUserTeacherTalkViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCUserTeacherTalkViewModel.h; sourceTree = "<group>"; };
 		74C91A6C1E1644860065BAFE /* LCUserTeacherTalkViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCUserTeacherTalkViewModel.m; sourceTree = "<group>"; };
+		74D2AD071E485BE700C2D737 /* LC34GNetworkAlerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LC34GNetworkAlerView.h; sourceTree = "<group>"; };
+		74D2AD081E485BE700C2D737 /* LC34GNetworkAlerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LC34GNetworkAlerView.m; sourceTree = "<group>"; };
 		74D2F66B1E0394DA00C84317 /* LCTextLinePositionModifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTextLinePositionModifier.h; sourceTree = "<group>"; };
 		74D2F66C1E0394DA00C84317 /* LCTextLinePositionModifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTextLinePositionModifier.m; sourceTree = "<group>"; };
 		74D2F66E1E03A14800C84317 /* LCVideoDetailEvaluateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCVideoDetailEvaluateCell.h; sourceTree = "<group>"; };
@@ -1781,6 +1784,8 @@
 				74388C4C1E1B505000DF2795 /* LCFromUserCell.m */,
 				74388C4E1E1B8E3300DF2795 /* LCUserTeacherTalkBottomView.h */,
 				74388C4F1E1B8E3300DF2795 /* LCUserTeacherTalkBottomView.m */,
+				74D2AD071E485BE700C2D737 /* LC34GNetworkAlerView.h */,
+				74D2AD081E485BE700C2D737 /* LC34GNetworkAlerView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2658,6 +2663,7 @@
 				7485FC141DFC39FB00E6D23D /* KDNetAPIManager_User.m in Sources */,
 				747BF5F51E28DC5F000137E5 /* openssl_wrapper.m in Sources */,
 				7485FC011DFC39FB00E6D23D /* UIPickerView+KDAdd.m in Sources */,
+				74D2AD091E485BE700C2D737 /* LC34GNetworkAlerView.m in Sources */,
 				7485FC051DFC39FB00E6D23D /* UIView+KDAdd.m in Sources */,
 				7485FCC41DFD523100E6D23D /* BaseTableViewController.m in Sources */,
 				74C4FB4C1E029319007BC549 /* LCSonEvaluateCellViewModel.m in Sources */,

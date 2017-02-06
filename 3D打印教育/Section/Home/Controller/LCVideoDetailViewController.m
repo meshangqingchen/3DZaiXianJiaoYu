@@ -22,6 +22,9 @@
 #import "LCDetailEvaluateInputAccessoryView.h"
 
 #import "LCHomeDetailModel.h"
+#import "KDFileManager.h"
+#import "JCAlertView.h"
+#import "LC34GNetworkAlerView.h"
 @interface LCVideoDetailViewController ()
 <
 ZFPlayerDelegate
@@ -39,6 +42,7 @@ ZFPlayerDelegate
 @property(nonatomic,strong) LCVideoDetailViewViewModel *videoDetailVideModel;
 
 @property(nonatomic,copy) void (^selectVideoCell)(id model);//点击课程的cell 可以吧事件传递过去.
+@property(nonatomic,strong) JCAlertView *alertView;
 @end
 
 @implementation LCVideoDetailViewController
@@ -86,8 +90,31 @@ ZFPlayerDelegate
         self.videoDetailVideModel = videoDetailVideModel;
         if (videoDetailVideModel.ifPlay) {
             [self creatZFPlayerModel:videoDetailVideModel.firstVideo];
-            [self.playerView playerControlView:nil playerModel:self.playerModel];
-            [self.playerView autoPlayTheVideo]; //自动播放
+            
+            if (kSharedAppDelegate.networkStatus == AFNetworkReachabilityStatusReachableViaWWAN && ![[KDFileManager readUserDataForKey:LCCBOFANG] isEqualToNumber:@1]) {
+                self.alertView = nil;
+                LC34GNetworkAlerView *netWorkAlerView = [[LC34GNetworkAlerView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH-50, 150)];
+                netWorkAlerView.layer.cornerRadius = 5;
+                self.alertView = [[JCAlertView alloc]initWithCustomView:netWorkAlerView dismissWhenTouchedBackground:NO];
+                [self.alertView show];
+                
+                [netWorkAlerView.leftBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+                    @strongify(self)
+                    [self.alertView dismissWithCompletion:nil];
+                }];
+                
+                [netWorkAlerView.rightBt addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+                    @strongify(self)
+                    [self.alertView dismissWithCompletion:nil];
+                    [self.playerView playerControlView:nil playerModel:self.playerModel];
+                    [self.playerView autoPlayTheVideo]; //自动播放
+                    [KDFileManager saveUserData:@1 forKey:LCCBOFANG];
+                }];
+            }else{
+                [self.playerView playerControlView:nil playerModel:self.playerModel];
+                [self.playerView autoPlayTheVideo]; //自动播放
+            }
+            
         }
         
         [tabbarView bindViewModel:videoDetailVideModel];
@@ -107,24 +134,91 @@ ZFPlayerDelegate
         @strongify(self)
         self.videoDetailVideModel.ifPlay = YES; //付完款改变状态
         [self creatZFPlayerModel:self.videoDetailVideModel.firstVideo];
-        [self.playerView playerControlView:nil playerModel:self.playerModel];
-        [self.playerView autoPlayTheVideo]; //自动播放
+        if (kSharedAppDelegate.networkStatus == AFNetworkReachabilityStatusReachableViaWWAN && ![[KDFileManager readUserDataForKey:LCCBOFANG] isEqualToNumber:@1]) {
+            self.alertView = nil;
+            LC34GNetworkAlerView *netWorkAlerView = [[LC34GNetworkAlerView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH-50, 150)];
+            netWorkAlerView.layer.cornerRadius = 5;
+            self.alertView = [[JCAlertView alloc]initWithCustomView:netWorkAlerView dismissWhenTouchedBackground:NO];
+            [self.alertView show];
+            
+            [netWorkAlerView.leftBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+                @strongify(self)
+                [self.alertView dismissWithCompletion:nil];
+            }];
+            
+            [netWorkAlerView.rightBt addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+                @strongify(self)
+                [self.alertView dismissWithCompletion:nil];
+                [self.playerView playerControlView:nil playerModel:self.playerModel];
+                [self.playerView autoPlayTheVideo]; //自动播放
+                [KDFileManager saveUserData:@1 forKey:LCCBOFANG];
+            }];
+        }else{
+            [self.playerView playerControlView:nil playerModel:self.playerModel];
+            [self.playerView autoPlayTheVideo]; //自动播放
+        }
     }];
     //免费参加课程成功回调
     [self.viewModel setJoinFreeCourseSucceed:^{
         @strongify(self)
         self.videoDetailVideModel.ifPlay = YES; //付完款改变状态
         [self creatZFPlayerModel:self.videoDetailVideModel.firstVideo];
-        [self.playerView playerControlView:nil playerModel:self.playerModel];
-        [self.playerView autoPlayTheVideo]; //自动播放
+        
+        if (kSharedAppDelegate.networkStatus == AFNetworkReachabilityStatusReachableViaWWAN && ![[KDFileManager readUserDataForKey:LCCBOFANG] isEqualToNumber:@1]) {
+            self.alertView = nil;
+            LC34GNetworkAlerView *netWorkAlerView = [[LC34GNetworkAlerView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH-50, 150)];
+            netWorkAlerView.layer.cornerRadius = 5;
+            self.alertView = [[JCAlertView alloc]initWithCustomView:netWorkAlerView dismissWhenTouchedBackground:NO];
+            [self.alertView show];
+            
+            [netWorkAlerView.leftBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+                @strongify(self)
+                [self.alertView dismissWithCompletion:nil];
+            }];
+            
+            [netWorkAlerView.rightBt addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+                @strongify(self)
+                [self.alertView dismissWithCompletion:nil];
+                [self.playerView playerControlView:nil playerModel:self.playerModel];
+                [self.playerView autoPlayTheVideo]; //自动播放
+                [KDFileManager saveUserData:@1 forKey:LCCBOFANG];
+            }];
+        }else{
+            [self.playerView playerControlView:nil playerModel:self.playerModel];
+            [self.playerView autoPlayTheVideo]; //自动播放
+        }
     }];
     //点击课程控制器的每一个cell回调
     [self setSelectVideoCell:^(LCVideoDetailVideolist *model) {
         @strongify(self)
-        // = videoDetailVideModel;
+        
         if (self.videoDetailVideModel.ifPlay) {
             [self creatZFPlayerModel:model];
             [self.playerView resetToPlayNewVideo:self.playerModel];
+            
+            if (kSharedAppDelegate.networkStatus == AFNetworkReachabilityStatusReachableViaWWAN && ![[KDFileManager readUserDataForKey:LCCBOFANG] isEqualToNumber:@1]) {
+                self.alertView = nil;
+                LC34GNetworkAlerView *netWorkAlerView = [[LC34GNetworkAlerView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH-50, 150)];
+                netWorkAlerView.layer.cornerRadius = 5;
+                self.alertView = [[JCAlertView alloc]initWithCustomView:netWorkAlerView dismissWhenTouchedBackground:NO];
+                [self.alertView show];
+                
+                [netWorkAlerView.leftBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+                    @strongify(self)
+                    [self.alertView dismissWithCompletion:nil];
+                }];
+                
+                [netWorkAlerView.rightBt addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+                    @strongify(self)
+                    [self.alertView dismissWithCompletion:nil];
+                    [self creatZFPlayerModel:model];
+                    [self.playerView resetToPlayNewVideo:self.playerModel];
+                    [KDFileManager saveUserData:@1 forKey:LCCBOFANG];
+                }];
+            }else{
+                [self creatZFPlayerModel:model];
+                [self.playerView resetToPlayNewVideo:self.playerModel];
+            }
         }
 
     }];

@@ -69,6 +69,7 @@
 
 -(void)didSelectRowAtIndexPath:(NSIndexPath *)indexpath in:(UITableView *)tableView{
     
+    
     JCAlertView *alertView = nil;
     if (indexpath.section == 0 & indexpath.row == 1) {
         LCChangeNickNameAlerView *nickNameAlerView = [[LCChangeNickNameAlerView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH-50, 150)];
