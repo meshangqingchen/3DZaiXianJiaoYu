@@ -42,7 +42,7 @@
     [backView addSubview:_headerImageView];
     [_headerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_offset(20);
-        make.width.height.mas_equalTo(60);
+        make.width.height.mas_equalTo(70);
         make.centerY.mas_equalTo(0);
     }];
     
