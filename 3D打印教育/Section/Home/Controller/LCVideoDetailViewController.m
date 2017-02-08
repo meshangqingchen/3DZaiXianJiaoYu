@@ -26,6 +26,7 @@
 #import "JCAlertView.h"
 #import "LC34GNetworkAlerView.h"
 #import "UIView+BlocksKit.h"
+#import "NSObject+Common.h"
 @interface LCVideoDetailViewController ()
 <
 ZFPlayerDelegate
@@ -95,9 +96,10 @@ ZFPlayerDelegate
     [self.viewModel setBindViewModel:^(LCVideoDetailViewViewModel *videoDetailVideModel) {
         @strongify(self)
         self.videoDetailVideModel = videoDetailVideModel;
+        
         if (videoDetailVideModel.ifPlay) {
-            [self creatZFPlayerModel:videoDetailVideModel.firstVideo];
             
+            [self creatZFPlayerModel:videoDetailVideModel.firstVideo];
             if (kSharedAppDelegate.networkStatus == AFNetworkReachabilityStatusReachableViaWWAN && ![[KDFileManager readUserDataForKey:LCCBOFANG] isEqualToNumber:@1]) {
                 self.alertView = nil;
                 LC34GNetworkAlerView *netWorkAlerView = [[LC34GNetworkAlerView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH-50, 150)];
@@ -119,9 +121,14 @@ ZFPlayerDelegate
                 }];
             }else{
                 [self.playerView playerControlView:nil playerModel:self.playerModel];
-                [self.playerView autoPlayTheVideo]; //自动播放
+//                [self.playerView autoPlayTheVideo]; //自动播放
+                [NSObject showWarning:@"请先参加课程"];
             }
             
+        }else{
+            [self creatZFPlayerModelNoURL:videoDetailVideModel.firstVideo];
+            [self.playerView playerControlView:nil playerModel:self.playerModel];
+//            [self.playerView autoPlayTheVideo]; //自动播放
         }
         
         [tabbarView bindViewModel:videoDetailVideModel];
@@ -320,6 +327,16 @@ ZFPlayerDelegate
     _playerModel.placeholderImage = [UIImage imageWithColor:[UIColor blackColor]];
     return self.playerModel;
 }
+
+-(ZFPlayerModel *)creatZFPlayerModelNoURL:(LCVideoDetailVideolist *)model{
+    self.playerModel = [[ZFPlayerModel alloc]init];
+    _playerModel.title = model.name;
+    _playerModel.videoURL = nil;
+    _playerModel.fatherView = self.videoViewFatherView;
+    _playerModel.placeholderImage = [UIImage imageWithColor:[UIColor blackColor]];
+    return self.playerModel;
+}
+
 
 - (void)zf_playerBackAction{
     [self.viewModel.navigationStackService popViewModelAnimated:YES];
