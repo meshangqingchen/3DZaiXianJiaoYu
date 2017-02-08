@@ -138,7 +138,7 @@ static void *xxcontext = &xxcontext;
 #pragma mark - DZNEmptyDataSetDelegate
 - (BOOL)emptyDataSetShouldDisplay:(UIScrollView *)scrollView
 {
-    return self.viewModel.dataSource == nil || self.viewModel.dataSource.count == 0;
+    return (self.viewModel.dataSource == nil || self.viewModel.dataSource.count == 0)&&(![NSStringFromClass([self class]) isEqualToString:@"LCUserTeacherTalkViewController"]);
 }
 
 - (BOOL)emptyDataSetShouldAllowScroll:(UIScrollView *)scrollView {

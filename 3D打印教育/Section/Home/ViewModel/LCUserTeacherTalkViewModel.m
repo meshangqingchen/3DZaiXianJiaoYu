@@ -73,14 +73,12 @@
     __block dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, globalQueue);
     _timer = timer;
     dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 15.0*NSEC_PER_SEC, 0);
+    @weakify(self)
     dispatch_source_set_event_handler(timer, ^{
-        
+        @strongify(self)
         [self.netApi_Manager pollingWithTeacherID:self.teacherIID CompleteHandle:^(id responseObj, NSError *error) {
             
-            MYLog(@" = = = = %@",responseObj);
-            
             NSArray *contents = responseObj[@"contents"];
-            MYLog(@" ++++++ %@",contents);
             if (contents && contents.count > 0) {
                 
                 for (int i = 0; i<contents.count; i++) {
@@ -104,4 +102,7 @@
     return self;
 }
 
+-(void)dealloc{
+    MYLog(@"释放了啊");
+}
 @end

@@ -41,10 +41,12 @@ static NSString *identifierTeacher = @"LCFromTeacherCell";
     [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.mas_equalTo(0);
     }];
+    @weakify(self)
     @weakify(bottomView)
     [bottomView.fasongBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
         @strongify(bottomView)
-        !self.viewModel.sendMassage ? : self.viewModel.sendMassage(bottomView.textView.text);
+        @strongify(self)
+        !self.viewModel.sendMassage ? : self.viewModel.sendMassage(bottomView.textView.text);//;
         bottomView.textView.text = nil;
     }];
     
@@ -81,7 +83,7 @@ static NSString *identifierTeacher = @"LCFromTeacherCell";
         make.width.mas_equalTo(200);
     }];
     
-    @weakify(self)
+    
     [self.viewModel setSendMassageSessed:^{
         @strongify(self)
         [self scrollToBottom];
@@ -221,5 +223,8 @@ static NSString *identifierTeacher = @"LCFromTeacherCell";
     }
 }
 
+-(void)dealloc{
+    MYLog(@"----");
+}
 
 @end
