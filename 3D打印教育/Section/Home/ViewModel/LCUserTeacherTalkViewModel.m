@@ -32,7 +32,7 @@
             
             NSDictionary *dic = responseObj;
             if ([dic[@"status"] isEqualToNumber:@1]) {
-                LCUserTeacherTalkCellViewModel *messageCellVM = [[LCUserTeacherTalkCellViewModel alloc]initWithModel: @{@"messageBody":messageString,@"fromWho":@1}];
+                LCUserTeacherTalkCellViewModel *messageCellVM = [[LCUserTeacherTalkCellViewModel alloc]initWithModel: @{@"messageBody":messageString,@"fromWho":@1,@"userImageURL":self.userHeadImageURL,@"teacherImageURL":self.teacherImageURL}];
                 [self.mutableDataArr addObject:messageCellVM];
                 self.dataSource = self.mutableDataArr.copy;
                 !self.sendMassageSessed ? : self.sendMassageSessed();
@@ -77,12 +77,16 @@
         
         [self.netApi_Manager pollingWithTeacherID:self.teacherIID CompleteHandle:^(id responseObj, NSError *error) {
             
+            MYLog(@" = = = = %@",responseObj);
+            
             NSArray *contents = responseObj[@"contents"];
-            if (!contents && contents.count>0) {
+            MYLog(@" ++++++ %@",contents);
+            if (contents && contents.count > 0) {
+                
                 for (int i = 0; i<contents.count; i++) {
                     LCTalkList *messageModel =[LCTalkList parseJSON:contents[i]];
                     NSNumber *typeNUM = [messageModel.send_type numberValue];
-                    LCUserTeacherTalkCellViewModel *messageCellVM = [[LCUserTeacherTalkCellViewModel alloc]initWithModel: @{@"messageBody":messageModel.discrip,@"fromWho":typeNUM}];
+                    LCUserTeacherTalkCellViewModel *messageCellVM = [[LCUserTeacherTalkCellViewModel alloc]initWithModel: @{@"messageBody":messageModel.discrip,@"fromWho":typeNUM,@"userImageURL":self.userHeadImageURL,@"teacherImageURL":self.teacherImageURL}];
                     [self.mutableDataArr addObject:messageCellVM];
                 }
                 self.dataSource = self.mutableDataArr.copy;

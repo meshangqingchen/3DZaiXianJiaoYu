@@ -48,8 +48,8 @@
     
     self.topTitleLB = [UILabel new];
     _topTitleLB.textColor = [KDColor getC0Color];
-    _topTitleLB.font = [[KDFont sharedKDFont]getF32Font];
-    _topTitleLB.text = @"一米阳光";
+    _topTitleLB.font = [[KDFont sharedKDFont]getF38Font];
+    //_topTitleLB.text = @"";
     [backView addSubview:_topTitleLB];
     [_topTitleLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.headerImageView.mas_right).mas_offset(15);
@@ -58,8 +58,8 @@
     
     self.signatureLB = [UILabel new];
     _signatureLB.textColor = [KDColor getC0Color];
-    _signatureLB.font = [[KDFont sharedKDFont]getF24Font];
-    _signatureLB.text = @"脚步匆匆只因我有梦想";
+    _signatureLB.font = [[KDFont sharedKDFont]getF26Font];
+    //_signatureLB.text = @"脚步匆匆只因我有梦想";
     [backView addSubview:_signatureLB];
     [_signatureLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.headerImageView.mas_right).mas_offset(15);
@@ -114,7 +114,7 @@
     self.topTitleLB.text = _headerVM.topTitle;
     self.signatureLB.text = _headerVM.signature;
     [self.headerImageView setImageWithURL:_headerVM.headerImageURL
-                            placeholder:[UIImage imageNamed:@"noLog_Headimage"]
+                            placeholder:[UIImage imageNamed:@"noLog_HeadImage"]
                                 options:kNilOptions
                                 manager:[LCAboutYYWebImage avatarImageManager1]
                                progress:nil

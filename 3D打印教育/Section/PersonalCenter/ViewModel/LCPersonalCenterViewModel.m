@@ -21,6 +21,7 @@
 
 @interface LCPersonalCenterViewModel ()
 @property(nonatomic,strong) LCUser *selfCreatUser;
+@property(nonatomic,assign) NSInteger status; //传到设置的ViewModel,判断登录成功没 来隐藏退出登录的按钮.
 @end
 
 @implementation LCPersonalCenterViewModel
@@ -46,6 +47,7 @@
         [self.netApi_Manager personalInformationCompleteHandle:^(id responseObj, NSError *error) {
             
             LCUserModel *userModel = [LCUserModel parseJSON:responseObj];
+            self.status = userModel.status;
             
             LCUser *selfCreatUser = [[LCUser alloc]initWithUserContents:userModel.contents];
             self.selfCreatUser = selfCreatUser;
@@ -87,6 +89,7 @@
         [self.navigationStackService pushViewModel:collectVM animated:YES];
     }else if ([cellVM.titleName isEqualToString:@"设置"]){
         LCSetingViewModel *setIngVM = [[LCSetingViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"设置"}];
+        setIngVM.status = self.status;
         [self.navigationStackService pushViewModel:setIngVM animated:YES];
     }else if ([cellVM.titleName isEqualToString:@"意见反馈"]){
         LCFeedbackViewModel *feedbackVM = [[LCFeedbackViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"意见反馈"}];

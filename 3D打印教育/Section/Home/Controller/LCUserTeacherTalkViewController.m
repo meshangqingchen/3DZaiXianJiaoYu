@@ -58,6 +58,7 @@ static NSString *identifierTeacher = @"LCFromTeacherCell";
         make.top.mas_offset(64);
         make.bottom.mas_equalTo(bottomView.mas_top).mas_equalTo(0);
     }];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     self.tableView.tableFooterView = [UIView new];
     UIPanGestureRecognizer *panGR = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(pan:)];

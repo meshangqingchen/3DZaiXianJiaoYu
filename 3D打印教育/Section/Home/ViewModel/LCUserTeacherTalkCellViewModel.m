@@ -21,11 +21,11 @@
         
         //@"userImageURL":self.userHeadImageURL,@"teacherImageURL":self.teacherImageURL
         
-        if ([dic[@"fromWho"] isEqualToNumber:@0]) {
+        if ([dic[@"fromWho"] isEqualToNumber:@2]) {
             self.fromWho = fromTeacher;
             messageBodyAtt.color = [KDColor getC2Color];
             self.headImageURL = dic[@"teacherImageURL"];
-        }else {
+        }else if ([dic[@"fromWho"] isEqualToNumber:@1]) {
             self.fromWho = fromUser;
             messageBodyAtt.color = [KDColor getC0Color];
             self.headImageURL = dic[@"userImageURL"];

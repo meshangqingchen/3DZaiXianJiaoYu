@@ -9,5 +9,5 @@
 #import "BaseTableViewModel.h"
 
 @interface LCSetingViewModel : BaseTableViewModel
-
+@property(nonatomic,assign) NSInteger status;
 @end

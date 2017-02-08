@@ -25,6 +25,7 @@ static void *xxcontext = &xxcontext;
  
  我们是继承baseViewController的在base中没有写@dynamic 默认就是@synthesize所以base中是是有get方法的
  这样就呢动态的 获得我么ViewMode 是神马类
+ 课程分类
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -77,6 +78,15 @@ static void *xxcontext = &xxcontext;
         }];
     }
     
+    [self reloadData];
+    for (int i=0; i<self.tableView.subviews.count; i++) {
+        UIView *emptyDataSetView = self.tableView.subviews[i];
+        MYLog(@"+++++++++%@",NSStringFromClass(emptyDataSetView.class));
+        if ([NSStringFromClass(emptyDataSetView.class) isEqualToString:@"DZNEmptyDataSetView"]) {
+            emptyDataSetView.hidden = YES;
+        }
+    }
+
     [self.viewModel requestRemoteDataWithPage:self.viewModel.curpage completeHandle:^(id responseObj) {
         
     }];
@@ -97,6 +107,51 @@ static void *xxcontext = &xxcontext;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
     return cell;
 }
+
+#pragma mark - DZNEmptyDataSetSource
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView
+{
+    
+    if (kSharedAppDelegate.networkStatus == AFNetworkReachabilityStatusNotReachable || kSharedAppDelegate.networkStatus == AFNetworkReachabilityStatusUnknown) {
+        
+        MYLog(@"Reachability: %@", AFStringFromNetworkReachabilityStatus(kSharedAppDelegate.networkStatus));
+        return [UIImage imageNamed:@"no_network"];
+    }
+    return [UIImage imageNamed:@"zanwushuju"];
+}
+
+
+-(NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView{
+    NSString *title = @"";
+    if (kSharedAppDelegate.networkStatus == AFNetworkReachabilityStatusNotReachable || kSharedAppDelegate.networkStatus == AFNetworkReachabilityStatusUnknown) {
+        title = @"请检查您的网络";
+    }else{
+        title = @"暂无数据";
+    }
+    NSMutableAttributedString *attr = [[NSMutableAttributedString alloc]initWithString:title attributes:nil];
+    [attr addAttribute:NSFontAttributeName value:[[KDFont new] getF34Font] range:NSMakeRange(0, title.length)];
+    [attr addAttribute:NSForegroundColorAttributeName value:[KDColor getC3Color] range:NSMakeRange(0, title.length)];
+    return attr;
+}
+
+// 返回显示内容协议
+#pragma mark - DZNEmptyDataSetDelegate
+- (BOOL)emptyDataSetShouldDisplay:(UIScrollView *)scrollView
+{
+    return self.viewModel.dataSource == nil || self.viewModel.dataSource.count == 0;
+}
+
+- (BOOL)emptyDataSetShouldAllowScroll:(UIScrollView *)scrollView {
+    return YES;
+}
+
+- (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView{
+    return -60;
+}
+
+
+
+
 
 -(void)bindViewModel{
     [super bindViewModel];

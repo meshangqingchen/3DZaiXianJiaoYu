@@ -37,9 +37,20 @@
     [tempView addSubview:imageView];
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(0);
-        make.centerY.mas_equalTo(0);
+        make.centerY.mas_equalTo(-60);
         make.size.mas_equalTo(zanwushujuImage.size);
     }];
+    
+    UILabel *label = [UILabel new];
+    label.font = [[KDFont sharedKDFont] getF34Font];
+    label.textColor = [KDColor getC3Color];
+    label.text = @"暂无消息";
+    [tempView addSubview:label];
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(0);
+        make.top.mas_equalTo(imageView.mas_bottom).mas_offset(10);
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
