@@ -149,7 +149,13 @@
         shortDetail.text = viewModel.shortDis;
         detailLB.textLayout = viewModel.disLayout;
         priceLB.text = viewModel.price;
-        
+        if ([viewModel.price isEqualToString:@"0"]) {
+            priceLB.hidden = YES;
+            wenda.hidden = YES;
+        }else{
+            detailLB.hidden = NO;
+            wenda.hidden = NO;
+        }
         middleView.height = viewModel.backView_H;
         self.scrollView.height = viewModel.scro_H;
         self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH-50, viewModel.disLB_H);
