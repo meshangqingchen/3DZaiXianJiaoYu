@@ -126,12 +126,15 @@
     if (signUpDataArr.count == 3) {
         LCHomeCollectionBananaViewModel *bannerVM1 = signUpDataArr[0];
         self.bannerVM1 = bannerVM1;
+        self.lable1.text = bannerVM1.name;
         
         LCHomeCollectionBananaViewModel *bannerVM2 = signUpDataArr[1];
         self.bannerVM2 = bannerVM2;
+        self.lable2.text = bannerVM2.name;
         
         LCHomeCollectionBananaViewModel *bannerVM3 = signUpDataArr[2];
         self.bannerVM3 = bannerVM3;
+        self.lable3.text = bannerVM3.name;
     }
 }
 
