@@ -29,11 +29,15 @@
         LCCollectCellViewModel *cellVM = self.dataSource[indexpath.row];
         LCVideoDetailViewModel *videoDetailVM = [[LCVideoDetailViewModel alloc]initWithServices:self.navigationStackService params:nil];
         videoDetailVM.planID = cellVM.courseIID;
+        videoDetailVM.imageUrl = cellVM.leftImageURL;
+        videoDetailVM.titleti = cellVM.topStr;
         [self.navigationStackService pushViewModel:videoDetailVM animated:YES];
     }else if ([self.nvTitle isEqualToString:@"我的课程"]){
         LCJoinCellViewModel *cellVM = self.dataSource[indexpath.row];
         LCVideoDetailViewModel *videoDetailVM = [[LCVideoDetailViewModel alloc]initWithServices:self.navigationStackService params:nil];
         videoDetailVM.planID = cellVM.courseIID;
+        videoDetailVM.imageUrl = cellVM.leftImageURL;
+        videoDetailVM.titleti = cellVM.topStr;
         [self.navigationStackService pushViewModel:videoDetailVM animated:YES];
     }
 }

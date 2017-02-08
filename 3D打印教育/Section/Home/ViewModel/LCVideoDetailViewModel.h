@@ -10,6 +10,9 @@
 
 @interface LCVideoDetailViewModel : BaseViewModel
 @property(nonatomic,strong) NSString *planID;
+@property(nonatomic,strong) NSURL *imageUrl;
+@property(nonatomic,strong) NSString *titleti;
+
 @property(nonatomic,copy) void (^networkRequests)(NSString *planID);
 @property(nonatomic,copy) void (^bindViewModel)(id viewModel);
 @property(nonatomic,copy) void (^chuanShuData)(id model);

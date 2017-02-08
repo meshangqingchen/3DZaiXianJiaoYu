@@ -76,6 +76,8 @@
         
         LCVideoDetailViewModel *videoDetailVM = [[LCVideoDetailViewModel alloc]initWithServices:self.navigationStackService params:nil];
         videoDetailVM.planID = cellViewModel.idd;
+        videoDetailVM.imageUrl = cellViewModel.smallImgURL;
+        videoDetailVM.titleti = cellViewModel.title;
         [self.navigationStackService pushViewModel:videoDetailVM animated:YES];
     }else if (indexpath.section == 2){
     

@@ -25,6 +25,8 @@
     LCCourseCollectionCellViewModel *cellVM = self.dataSource[indexpath.row];
     LCVideoDetailViewModel *videoDetailVM = [[LCVideoDetailViewModel alloc]initWithServices:self.navigationStackService params:nil];
     videoDetailVM.planID = cellVM.iid;
+    videoDetailVM.imageUrl = cellVM.imageURL;
+    videoDetailVM.titleti = cellVM.title;
     [self.navigationStackService pushViewModel:videoDetailVM animated:YES];
 }
 

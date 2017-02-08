@@ -59,16 +59,43 @@ ZFPlayerDelegate
     self.view.backgroundColor = [UIColor blackColor];
     self.playerView = [[ZFPlayerView alloc]init];
     self.playerView.delegate = self;
-    UIView *videoViewFatherView = [[UIView alloc]initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH, VIDEO_H)];
+    UIImageView *videoViewFatherView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH, VIDEO_H)];
     videoViewFatherView.backgroundColor = [UIColor blackColor];
     [self.view addSubview:videoViewFatherView];
     self.videoViewFatherView = videoViewFatherView;
+    [videoViewFatherView setImageWithURL:self.viewModel.imageUrl placeholder:nil];
+    videoViewFatherView.userInteractionEnabled = YES;
+    UIImage *image = [UIImage imageNamed:@"Myself_back_image"];
+    UIButton *butionfahui = [UIButton new];
+    [butionfahui setImage:image forState:0];
+    @weakify(self)
+    [butionfahui addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+        @strongify(self)
+        [self.viewModel.navigationStackService popViewModelAnimated:YES];
+    }];
+    videoViewFatherView.backgroundColor = [UIColor redColor];
+    [videoViewFatherView addSubview:butionfahui];
+    [butionfahui mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_offset(5);
+        make.top.mas_offset(15);
+        make.size.mas_equalTo(CGSizeMake(40, 20));
+    }];
+    
+    UILabel *lb = [UILabel new];
+    [videoViewFatherView addSubview:lb];
+    lb.textColor = [UIColor whiteColor];
+    lb.font = [[KDFont sharedKDFont] getF36Font];
+    lb.text = self.viewModel.titleti;
+    [lb mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(butionfahui.mas_right).mas_equalTo(5);
+        make.top.mas_equalTo(butionfahui);
+    }];
     
     
     self.backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     [self.view addSubview:_backView];
     _backView.backgroundColor = [KDColor getC10Color];
-    @weakify(self)
+    
     [self.backView bk_whenTapped:^{
         @strongify(self)
         [self.lcInputAccessoryView.textView resignFirstResponder];
@@ -121,14 +148,11 @@ ZFPlayerDelegate
                 }];
             }else{
                 [self.playerView playerControlView:nil playerModel:self.playerModel];
-//                [self.playerView autoPlayTheVideo]; //自动播放
-                [NSObject showWarning:@"请先参加课程"];
+                [self.playerView autoPlayTheVideo]; //自动播放
             }
             
         }else{
-            [self creatZFPlayerModelNoURL:videoDetailVideModel.firstVideo];
-            [self.playerView playerControlView:nil playerModel:self.playerModel];
-//            [self.playerView autoPlayTheVideo]; //自动播放
+            
         }
         
         [tabbarView bindViewModel:videoDetailVideModel];
@@ -328,14 +352,6 @@ ZFPlayerDelegate
     return self.playerModel;
 }
 
--(ZFPlayerModel *)creatZFPlayerModelNoURL:(LCVideoDetailVideolist *)model{
-    self.playerModel = [[ZFPlayerModel alloc]init];
-    _playerModel.title = model.name;
-    _playerModel.videoURL = nil;
-    _playerModel.fatherView = self.videoViewFatherView;
-    _playerModel.placeholderImage = [UIImage imageWithColor:[UIColor blackColor]];
-    return self.playerModel;
-}
 
 
 - (void)zf_playerBackAction{
