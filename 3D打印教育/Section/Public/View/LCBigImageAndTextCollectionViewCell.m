@@ -12,7 +12,9 @@
 
 -(void)setupViews{
     self.backImageView = [UIImageView new];
+    self.backImageView.backgroundColor = [KDColor getC26Color];
     [self.contentView addSubview:_backImageView];
+    
     [_backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.mas_equalTo(0);
         make.height.mas_equalTo((SCREEN_WIDTH-30)*27/69);

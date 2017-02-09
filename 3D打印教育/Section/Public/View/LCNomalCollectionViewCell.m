@@ -15,6 +15,7 @@
 -(void)setupViews{
     self.backImageView = [UIImageView new];
     [self.contentView addSubview:_backImageView];
+    self.backImageView.backgroundColor = [KDColor getC26Color];
     [_backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.mas_equalTo(0);
         make.height.mas_equalTo(NORMALE_COLLECTIONCELL_W*200/335);

@@ -14,6 +14,7 @@
 //    self.backgroundCol 
 //    self.contentView.backgroundColor = [UIColor grayColor];
     self.backImageView = [UIImageView new];
+//    self.backImageView.backgroundColor = [KDColor getC26Color];
     [self.contentView addSubview:_backImageView];
     [_backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_offset(0);
@@ -35,7 +36,7 @@
 -(void)bindViewModel:(id)viewModel{
     LCHomeSmallCollectionCellModel *cellVM = viewModel;
     self.titleLB.text = cellVM.title;
-    [self.backImageView setImageWithURL:cellVM.smallImgURL placeholder:nil];
+    [self.backImageView setImageWithURL:cellVM.smallImgURL placeholder:[[UIImage imageWithColor:[KDColor getC26Color] size:CGSizeMake(50, 50)]imageByRoundCornerRadius:25]];
 }
 
 @end
