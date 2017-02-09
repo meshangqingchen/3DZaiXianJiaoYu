@@ -65,8 +65,9 @@
 
 //0xc8c8c8
 + (UIColor *)getC25Color;
-
+//0xF1F6F7 站位图背景色
 + (UIColor *)getC26Color;
+
 + (UIColor *)getC27Color;
 + (UIColor *)getC28Color;
 + (UIColor *)getC29Color;
