@@ -24,6 +24,7 @@
         make.left.mas_offset(15);
     }];
     
+    
     self.middleLB = [UILabel new];
     _middleLB.font = [[KDFont sharedKDFont] getF28Font];
     _middleLB.textColor = [KDColor getC20Color];
@@ -33,10 +34,11 @@
         make.center.mas_offset(0);
     }];
     
+    
     self.rightLB = [UILabel new];
     _rightLB.font = [[KDFont sharedKDFont] getF28Font];
     _rightLB.textColor = [KDColor getX0Color];
-    _rightLB.text = @"0M";
+    
     [self.contentView addSubview:_rightLB];
     [_rightLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_offset(-15);
@@ -83,7 +85,8 @@
     LCSetingCellViewModel *cellVM = viewModel;
     self.leftLB.text = cellVM.leftTitle;
     self.middleLB.text = cellVM.middleTitle;
-    
+    float a = [KDFileManager folderSizeAtPath:[KDFileManager getCachePath]];
+    _rightLB.text = [NSString stringWithFormat:@"%.2fM",a];
     switch (cellVM.rightTyp) {
         case jiantou:
             self.rightImageView.hidden = NO;

@@ -152,6 +152,7 @@
                 [[NSFileManager defaultManager] removeItemAtPath:path error:&error];
             }
         }
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             complete();
         });

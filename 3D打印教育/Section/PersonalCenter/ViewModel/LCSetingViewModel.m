@@ -13,6 +13,7 @@
 #import "LCChangePasswordViewModel.h" //修改密码
 #import "WAboutUsViewModel.h"        // 关于我们
 #import "NSObject+Common.h"
+#import "KDFileManager.h"
 @implementation LCSetingViewModel
 -(void)initialize{
     [super initialize];
@@ -23,8 +24,13 @@
     if (indexpath.section == 0 &indexpath.row == 0) {
         LCChangePasswordViewModel *changePasswordVM = [[LCChangePasswordViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"修改密码"}];
         [self.navigationStackService pushViewModel:changePasswordVM animated:YES];
-    }else if (indexpath.section == 0&indexpath.row == 2){
-    
+    }else if (indexpath.section == 0 & indexpath.row == 2){
+
+        [KDFileManager clearFolderOfContent:[KDFileManager getCachePath] CompleteHandle:^{
+            self.dataSource = self.mutableDataArr.copy;
+        }];
+        
+        
     }else if (indexpath.section == 0 & indexpath.row == 3){
         WAboutUsViewModel *aboutUS = [[WAboutUsViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"关于我们"}];
         [self.navigationStackService pushViewModel:aboutUS animated:YES];
