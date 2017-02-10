@@ -86,14 +86,7 @@
                                      orderInfoEncoded, signedString];
             // NOTE: 调用支付结果开始支付
             [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *responseObj) {
-                
                 NSString *resultStatusSTR =responseObj[@"resultStatus"];
-                
-                
-                MYLog(@"%@",responseObj);
-                MYLog(@"%@",responseObj);
-                MYLog(@"%@",responseObj);
-                MYLog(@" = = = = %@",responseObj);
                 if ([resultStatusSTR isEqualToString:@"9000"]) {
                     NSString *order_sn = [KDFileManager readUserDataForKey:LCCORDER_SN];
 //                    第一次请求
