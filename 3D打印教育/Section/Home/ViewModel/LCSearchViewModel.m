@@ -54,6 +54,7 @@
         return;
     }
     [self.netApi_Manager courseKeyWord:_keyWord AndCurpage:curpage completeHandle:^(id responseObj, NSError *error) {
+        
         LCCourseListModel *courseListModel = [LCCourseListModel parseJSON:responseObj];
         for (int i =0; i<courseListModel.contents.count; i++) {
             LCCourseCollectionCellViewModel *cellVM = [[LCCourseCollectionCellViewModel alloc]initWithModel:courseListModel.contents[i]];

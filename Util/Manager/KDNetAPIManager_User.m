@@ -68,10 +68,8 @@ static NSString *const Api_loginEdit = @"loginEdit";
 static NSString *const Api_favList = @"favList";
 ///加入课程的列表
 static NSString *const Api_userPlanList = @"userPlanList";
-
-
-/////首页
-//static NSString *const Api_homePage = @"homePage";
+///根据关键字搜索
+static NSString *const Api_search = @"search";
 /////主题图片列表
 //static NSString *const Api_adBigImgList = @"adBigImgList";
 
@@ -135,7 +133,7 @@ static NSString *const PARAM_grade            = @"grade";
 static NSString *const PARAM_description      = @"description";
 static NSString *const PARAM_price            = @"price";
 static NSString *const PARAM_typeId           = @"typeId"; //课程分类type
-static NSString *const PARAM_search          = @"search"; //课程分类type
+static NSString *const PARAM_search           = @"search"; //课程分类type
 
 static NSString *const PARAM_birthday         = @"birthday";
 static NSString *const PARAM_sex              = @"sex";
@@ -189,7 +187,6 @@ static NSString *const PARAM_orderSn          = @"orderSn";
         complete(responseObj,error);
     }];
 };
-
 
 ///登录
 -(NSURLSessionDataTask *)loginWith:(NSString *)phoneNum andPassword:(NSString *)password completeHandle:(void (^)(id, NSError *))complete{
@@ -291,7 +288,8 @@ static NSString *const PARAM_orderSn          = @"orderSn";
 -(NSURLSessionDataTask *)courseKeyWord:(NSString *)keyWord AndCurpage:(NSUInteger)curpage completeHandle:(void (^)(id, NSError *))complete{
     
     NSDictionary *params = @{PARAM_curpage:@(curpage),PARAM_page:@14,PARAM_search:keyWord};
-    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_getPlanListByTypeId encodeParams:params withMethodType:Post andBaseApi:BaseApi_plan completeHandle:^(id responseObj, NSError *error) {
+    
+    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_search encodeParams:params withMethodType:Post andBaseApi:BaseApi_plan completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
     }];
 
