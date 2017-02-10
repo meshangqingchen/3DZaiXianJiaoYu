@@ -76,7 +76,8 @@
         
         nickNameAlerView.nickName = self.cellVMNickName.rightTitle;
         nickNameAlerView.layer.cornerRadius = 5;
-        alertView = [[JCAlertView alloc]initWithCustomView:nickNameAlerView dismissWhenTouchedBackground:YES];
+        alertView = [[JCAlertView alloc]initWithCustomView:nickNameAlerView andCustomViewCenter:CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2-40) dismissWhenTouchedBackground:YES];
+        
         [alertView show];
         
         [nickNameAlerView.leftBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
@@ -149,7 +150,7 @@
         LCChangeJianjieAlerView *jianJieAlerView = [[LCChangeJianjieAlerView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH-50, 150)];
         
         jianJieAlerView.layer.cornerRadius = 5;
-        alertView = [[JCAlertView alloc]initWithCustomView:jianJieAlerView dismissWhenTouchedBackground:YES];
+        alertView = [[JCAlertView alloc]initWithCustomView:jianJieAlerView andCustomViewCenter:CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2-40) dismissWhenTouchedBackground:YES];
         [alertView show];
         
         [jianJieAlerView.leftBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
