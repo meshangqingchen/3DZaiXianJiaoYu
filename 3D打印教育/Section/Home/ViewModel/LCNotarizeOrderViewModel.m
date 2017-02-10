@@ -112,25 +112,6 @@
                             kSharedAppDelegate.payForCourseSucced = nil;
                         }
                     }];
-                    //第一次请求
-//                    [self.netApi_Manager paySucceedWithOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
-//                        if ([responseObj[@"status"] isEqualToNumber:@1]) {
-//                            [kSharedAppDelegate setPayForCourseSucced:^{
-//                                !self.callBackforZifuSucceed ? : self.callBackforZifuSucceed();
-//                            }];
-//                        }
-//                        if (![responseObj[@"status"] isEqualToNumber:@1] || error) {
-//                            //第二次请求
-//                            [self.netApi_Manager paySucceedWithOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
-//                                if ([responseObj[@"status"] isEqualToNumber:@1]) {
-//                                    [kSharedAppDelegate setPayForCourseSucced:^{
-//                                        !self.callBackforZifuSucceed ? : self.callBackforZifuSucceed();
-//                                    }];
-//                                }
-//                            }];
-//                        }
-//                    }];
-                    
                 }
             }];
         }
