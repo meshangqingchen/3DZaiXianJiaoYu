@@ -90,6 +90,28 @@
                 NSString *resultStatusSTR =responseObj[@"resultStatus"];
                 if ([resultStatusNUM isEqualToNumber:@9000]|[resultStatusSTR isEqualToString:@"9000"]) {
                     NSString *order_sn = [KDFileManager readUserDataForKey:LCCORDER_SN];
+                    [[KDNetAPIManager_User sharedKDNetAPIManager_User] paySucceedWithCourseOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
+                        if ([responseObj[@"status"] isEqualToNumber:@0]) {
+                            [[KDNetAPIManager_User sharedKDNetAPIManager_User] paySucceedWithCourseOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
+                                if ([responseObj[@"status"] isEqualToNumber:@0]) {
+                                    [[KDNetAPIManager_User sharedKDNetAPIManager_User] paySucceedWithCourseOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
+                                        if ([responseObj[@"status"] isEqualToNumber:@0]) {
+                                            MYLog(@"真的错了 调了三次还是错的");
+                                        }else{
+                                            !kSharedAppDelegate.payForCourseSucced ? : kSharedAppDelegate.payForCourseSucced();
+                                            kSharedAppDelegate.payForCourseSucced = nil;
+                                        }
+                                    }];
+                                }else{
+                                    !kSharedAppDelegate.payForCourseSucced ? : kSharedAppDelegate.payForCourseSucced();
+                                    kSharedAppDelegate.payForCourseSucced = nil;
+                                }
+                            }];
+                        }else{
+                            !kSharedAppDelegate.payForCourseSucced ? : kSharedAppDelegate.payForCourseSucced();
+                            kSharedAppDelegate.payForCourseSucced = nil;
+                        }
+                    }];
                     //第一次请求
 //                    [self.netApi_Manager paySucceedWithOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
 //                        if ([responseObj[@"status"] isEqualToNumber:@1]) {
@@ -108,12 +130,14 @@
 //                            }];
 //                        }
 //                    }];
+                    
                 }
             }];
         }
     }];
     
     //为课程支付成功 课程支付成功 就返回并 播放第一个 视频
+    
     [kSharedAppDelegate setPayForCourseSucced:^{
         !self.callBackforZifuSucceed ? : self.callBackforZifuSucceed();
         [self.navigationStackService popViewModelAnimated:YES];

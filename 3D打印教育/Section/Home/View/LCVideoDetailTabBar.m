@@ -99,10 +99,9 @@
     }];
     
     self.joinFreeCourseBT = [UIButton new];
-    [self.joinFreeCourseBT setTitle:@"参加该课程" forState:0];
     [self.joinFreeCourseBT setTitleColor:[KDColor getC0Color] forState:0];
     self.joinFreeCourseBT.titleLabel.font = [[KDFont sharedKDFont]getF30Font];
-    self.joinFreeCourseBT.backgroundColor = [KDColor getX1Color];
+    
     [self addSubview:_joinFreeCourseBT];
     [self.joinFreeCourseBT mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.collectBT.mas_right).mas_offset(0);
@@ -111,6 +110,11 @@
     }];
     [self.joinFreeCourseBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
         @strongify(self)
+        
+        if (self.videoDetailViewViewModel.ifPlay) {
+            return ;
+        }
+        
         if (self.videoDetailViewViewModel.ifFree) {
             !self.videoDetailViewViewModel.joinFreeCourse ? : self.videoDetailViewViewModel.joinFreeCourse(self.videoDetailViewViewModel.courseID);
         }else{
@@ -118,32 +122,17 @@
             !self.videoDetailViewViewModel.creatOrder ? : self.videoDetailViewViewModel.creatOrder(self.videoDetailViewViewModel.courseID,self.videoDetailViewViewModel.price,self.videoDetailViewViewModel.imageURL,self.videoDetailViewViewModel.title);
         }
     }];
-    
-    
-    
-    
-//    self.counselBT = [UIButton new];
-//    [_counselBT setImage:[UIImage imageNamed:@"zixun"] forState:0];
-//    [_counselBT setTitleColor:[KDColor getC3Color] forState:0];
-//    _counselBT.titleLabel.font = [[KDFont sharedKDFont]getF20Font];
-//    [_counselBT setTitle:@"咨询" forState:0];
-//    [self addSubview:_counselBT];
-//    [_counselBT mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.mas_equalTo(_commentBT.mas_right).mas_equalTo(0);
-//        make.top.bottom.mas_equalTo(0);
-//        make.width.mas_equalTo(w);
-//    }];
-//    [_counselBT setButtonImageTitleStyle:ButtonImageTitleStyleTop padding:7];
-//    [_counselBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
-//        @strongify(self)
-//        !self.videoDetailViewViewModel.consultVideo ? : self.videoDetailViewViewModel.consultVideo(@"videoID");
-//    }];
-
-    
 }
 
 -(void)bindViewModel:(id)viewModel{
     self.videoDetailViewViewModel = viewModel;
     self.collectBT.selected = self.videoDetailViewViewModel.ifCollected;
+    if (self.videoDetailViewViewModel.ifPlay) {
+        [self.joinFreeCourseBT setTitle:@"已加入该课程" forState:0];
+        self.joinFreeCourseBT.backgroundColor = [KDColor getX0Color];
+    }else{
+        [self.joinFreeCourseBT setTitle:@"请加入该课程" forState:0];
+        self.joinFreeCourseBT.backgroundColor = [KDColor getX1Color];
+    }
 }
 @end

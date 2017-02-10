@@ -172,8 +172,6 @@
                 
                 //29000000000002801 19000000000002801
                 NSString *firstStr = [order_sn substringToIndex:1];
-                MYLog(@" - -%@",firstStr);
-                MYLog(@" - -%@",firstStr);
                 if ([firstStr isEqualToString:@"1"]) {
                     [[KDNetAPIManager_User sharedKDNetAPIManager_User] paySucceedWithZiXunOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
                         if ([responseObj[@"status"] isEqualToNumber:@0]) {
