@@ -245,7 +245,7 @@ static NSString *const PARAM_orderSn          = @"orderSn";
 
 //老师列表
 -(NSURLSessionDataTask *)teacherListWith:(NSUInteger)curpage completeHandle:(void (^)(id, NSError *))complete{
-    NSDictionary *params = @{PARAM_curpage:@(curpage),PARAM_page:@15};
+    NSDictionary *params = @{PARAM_curpage:@(curpage),PARAM_page:@14};
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_teacherList encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
     }];
@@ -273,7 +273,7 @@ static NSString *const PARAM_orderSn          = @"orderSn";
 ////根据课程的分类找课程的list
 -(NSURLSessionDataTask *)courseListWithtypeId:(NSString *)typeId andCurpage:(NSUInteger)curpage completeHandle:(void (^)(id, NSError *))complete{
     
-    NSDictionary *params = @{PARAM_typeId:typeId,PARAM_curpage:@(curpage),PARAM_page:@15};
+    NSDictionary *params = @{PARAM_typeId:typeId,PARAM_curpage:@(curpage),PARAM_page:@14};
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_getPlanListByTypeId encodeParams:params withMethodType:Post andBaseApi:BaseApi_plan completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
     }];
@@ -281,7 +281,7 @@ static NSString *const PARAM_orderSn          = @"orderSn";
 
 ///更多推荐课程
 -(NSURLSessionDataTask *)moreCourseListAndCurpage:(NSUInteger)curpage completeHandle:(void (^)(id, NSError *))complete{
-    NSDictionary *params = @{PARAM_curpage:@(curpage),PARAM_page:@15};
+    NSDictionary *params = @{PARAM_curpage:@(curpage),PARAM_page:@14};
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_getPlanListByTypeId encodeParams:params withMethodType:Post andBaseApi:BaseApi_plan completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
     }];
@@ -290,7 +290,7 @@ static NSString *const PARAM_orderSn          = @"orderSn";
 //根据关键字搜索
 -(NSURLSessionDataTask *)courseKeyWord:(NSString *)keyWord AndCurpage:(NSUInteger)curpage completeHandle:(void (^)(id, NSError *))complete{
     
-    NSDictionary *params = @{PARAM_curpage:@(curpage),PARAM_page:@4,PARAM_search:keyWord};
+    NSDictionary *params = @{PARAM_curpage:@(curpage),PARAM_page:@14,PARAM_search:keyWord};
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_getPlanListByTypeId encodeParams:params withMethodType:Post andBaseApi:BaseApi_plan completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
     }];
@@ -408,7 +408,7 @@ static NSString *const PARAM_orderSn          = @"orderSn";
 
 //收藏课程列表
 -(NSURLSessionDataTask *)collectListWithType:(NSNumber *)collectType andCurpag:(NSUInteger)curpage CompleteHandle:(void (^)(id, NSError *))complete{
-    NSDictionary *params = @{PARAM_type:@(1),PARAM_curpage:@(curpage),PARAM_page:@15};
+    NSDictionary *params = @{PARAM_type:@(1),PARAM_curpage:@(curpage),PARAM_page:@14};
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_favList encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
     }];
@@ -416,7 +416,7 @@ static NSString *const PARAM_orderSn          = @"orderSn";
 
 //参加课程列表
 -(NSURLSessionDataTask *)joinCourseListWithCurpag:(NSUInteger)curpage CompleteHandle:(void (^)(id, NSError *))complete{
-    NSDictionary *params = @{PARAM_curpage:@(curpage),PARAM_page:@15};
+    NSDictionary *params = @{PARAM_curpage:@(curpage),PARAM_page:@14};
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_userPlanList encodeParams:params withMethodType:Post andBaseApi:BaseApi_plan completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
     }];
@@ -454,7 +454,7 @@ static NSString *const PARAM_orderSn          = @"orderSn";
 
 //课程评价列表
 -(NSURLSessionDataTask *)assessListWithPlanld:(NSString *)planId andCurpage:(NSInteger)curpage CompleteHandle:(void (^)(id, NSError *))complete{
-    NSDictionary *params = @{PARAM_planId:planId,PARAM_page:@(15),PARAM_curpage:@(curpage)};
+    NSDictionary *params = @{PARAM_planId:planId,PARAM_page:@(14),PARAM_curpage:@(curpage)};
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_assessList encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
     }];
