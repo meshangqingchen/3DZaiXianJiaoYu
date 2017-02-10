@@ -2963,9 +2963,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendor/Alipay",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.3ddyjy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wxswbj.sdzxjy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -2974,6 +2975,7 @@
 			baseConfigurationReference = 927A6CCB0A9DACC2135DFAB3 /* Pods-3D打印教育.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Qingdao Wuxian 3D E-Commerce Co.,Ltd (U7UTR28EZN)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = U7UTR28EZN;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3004,9 +3006,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendor/Alipay",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.3ddyjy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wxswbj.sdzxjy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
