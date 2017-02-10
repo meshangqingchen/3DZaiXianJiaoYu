@@ -15,7 +15,11 @@
         LCJoinCourseContents *joinCourseModel = model;
         self.leftImageURL = [NSURL URLWithString:joinCourseModel.image];
         self.topStr = joinCourseModel.name;
-        self.middleStr = [NSString stringWithFormat:@"¥: %@",joinCourseModel.price];
+        if ([joinCourseModel.price isEqualToString:@"0"]) {
+            self.middleStr = @"";
+        }else{
+            self.middleStr = [NSString stringWithFormat:@"¥: %@",joinCourseModel.price];
+        }
         self.bottomStr = [NSString stringWithFormat:@"参加课程时间: %@",[NSString getDataStrWithIntStr: joinCourseModel.created_time]];
         self.courseIID = joinCourseModel.iid;
     }

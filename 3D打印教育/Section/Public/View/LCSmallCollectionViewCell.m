@@ -30,6 +30,7 @@
     [_titleLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_offset(0);
         make.centerX.mas_offset(0);
+        //我的课程
     }];
 }
 

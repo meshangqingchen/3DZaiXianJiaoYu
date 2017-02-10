@@ -27,6 +27,7 @@
 #import "LC34GNetworkAlerView.h"
 #import "UIView+BlocksKit.h"
 #import "NSObject+Common.h"
+#import "UIView+BlocksKit.h"
 @interface LCVideoDetailViewController ()
 <
 ZFPlayerDelegate
@@ -65,6 +66,10 @@ ZFPlayerDelegate
     self.videoViewFatherView = videoViewFatherView;
     [videoViewFatherView setImageWithURL:self.viewModel.imageUrl placeholder:nil];
     videoViewFatherView.userInteractionEnabled = YES;
+    [videoViewFatherView bk_whenTapped:^{
+        [NSObject showWarning:@"参加该课程"];
+    }];
+    
     UIImage *image = [UIImage imageNamed:@"Myself_back_image"];
     UIButton *butionfahui = [UIButton new];
     [butionfahui setImage:image forState:0];
