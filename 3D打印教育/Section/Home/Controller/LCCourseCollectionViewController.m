@@ -4,7 +4,7 @@
 //
 //  Created by 3D on 17/1/16.
 //  Copyright © 2017年 3D. All rights reserved.
-//
+//  course....
 
 #import "LCCourseCollectionViewController.h"
 #import "LCCourseCollectionViewModel.h"
@@ -38,6 +38,7 @@ static NSString *identifier = @"LCVideoCollectionViewCell";
     [self.collectionView registerClass:[LCCourseCollectionCell class] forCellWithReuseIdentifier:identifier];
     
     [super viewDidLoad];
+    
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{

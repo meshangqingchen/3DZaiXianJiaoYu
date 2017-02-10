@@ -41,7 +41,7 @@
         if (indexPath.section == 0) {
             
         }else if (indexPath.section == 1){
-            LCCourseCollectionViewModel *courseCollectionVM = [[LCCourseCollectionViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"跟多精品"}];
+            LCCourseCollectionViewModel *courseCollectionVM = [[LCCourseCollectionViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"更多精品"}];
             [self.navigationStackService pushViewModel:courseCollectionVM animated:YES];
         }else if (indexPath.section == 2){
             LCMoreTeacherViewModel *moreTeacherVM = [[LCMoreTeacherViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"讲师列表"}];

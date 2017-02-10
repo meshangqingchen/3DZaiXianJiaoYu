@@ -11,7 +11,7 @@
 @interface BaseCollectionViewModel : BaseViewModel
 @property(nonatomic,strong) NSArray *dataSource;
 @property(nonatomic,strong) NSMutableArray *mutableDataArr;
-@property (nonatomic, assign) NSUInteger page;// 每页有几条.
+//@property (nonatomic, assign) NSUInteger page;// 每页有几条.
 @property (nonatomic, assign) NSUInteger curpage;//第几页
 
 /// 加 下拉刷新

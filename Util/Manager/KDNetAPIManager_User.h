@@ -43,6 +43,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 ///更多推荐课程
 -(NSURLSessionDataTask *)moreCourseListAndCurpage:(NSUInteger)curpage  completeHandle:(void(^)(id responseObj,NSError *error))complete;
 
+///根据关键字找课程 list
+-(NSURLSessionDataTask *)courseKeyWord:(NSString *)keyWord AndCurpage:(NSUInteger)curpage  completeHandle:(void(^)(id responseObj,NSError *error))complete;
 
 ///修改昵称
 -(NSURLSessionDataTask *)changeNickName:(NSString *)nickName CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
@@ -115,6 +117,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 
 ///课程分类 planTypeList
 -(NSURLSessionDataTask *)planTypeListCompleteHandle:(void(^)(id responseObj,NSError *error))complete;
+
 ///第三部通知后台
 -(NSURLSessionDataTask *)paySucceedWithCourseOrder_sn:(NSString*)order_sn completeHandle:(void(^)(id responseObj,NSError *error))complete;
 ///第三部 告诉后台老子支付好了 这个资讯

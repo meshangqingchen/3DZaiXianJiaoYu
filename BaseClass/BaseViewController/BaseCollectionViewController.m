@@ -48,7 +48,7 @@ static void *xxcontext = &xxcontext;
     if (self.viewModel.shouldInfiniteScrolling) {
         self.collectionView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
             self.viewModel.curpage = self.viewModel.curpage + 1;
-            [self.viewModel requestRemoteDataWithPage:self.viewModel.page completeHandle:^(id responseObj) {
+            [self.viewModel requestRemoteDataWithPage:self.viewModel.curpage completeHandle:^(id responseObj) {
                 @strongify(self)
                 NSDictionary *objDic = responseObj;
                 NSNumber *morepage = objDic[@"morepage"];

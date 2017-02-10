@@ -4,10 +4,10 @@
 //
 //  Created by 3D on 17/1/17.
 //  Copyright © 2017年 3D. All rights reserved.
-//
+//  跟多精品
 
-#import "BaseViewModel.h"
+#import "BaseCollectionViewModel.h"
 
-@interface LCSearchViewModel : BaseViewModel
-
+@interface LCSearchViewModel : BaseCollectionViewModel
+@property(nonatomic,copy) void (^searchKeyWord)(NSString *key);
 @end

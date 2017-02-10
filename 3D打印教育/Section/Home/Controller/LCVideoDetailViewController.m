@@ -61,10 +61,27 @@ ZFPlayerDelegate
     self.playerView = [[ZFPlayerView alloc]init];
     self.playerView.delegate = self;
     UIImageView *videoViewFatherView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH, VIDEO_H)];
-    videoViewFatherView.backgroundColor = [UIColor blackColor];
+//    videoViewFatherView.contentMode = UIViewContentModeScaleAspectFit;
+    /*
+     UIViewContentModeScaleToFill,
+     UIViewContentModeScaleAspectFit,      // contents scaled to fit with fixed aspect. remainder is transparent
+     UIViewContentModeScaleAspectFill,     // contents scaled to fill with fixed aspect. some portion of content may be clipped.
+     UIViewContentModeRedraw,              // redraw on bounds change (calls -setNeedsDisplay)
+     UIViewContentModeCenter,              // contents remain same size. positioned adjusted.
+     UIViewContentModeTop,
+     UIViewContentModeBottom,
+     UIViewContentModeLeft,
+     UIViewContentModeRight,
+     UIViewContentModeTopLeft,
+     UIViewContentModeTopRight,
+     UIViewContentModeBottomLeft,
+     UIViewContentModeBottomRight,
+     */
+    videoViewFatherView.backgroundColor = [UIColor blackColor];[UIColor redColor];
     [self.view addSubview:videoViewFatherView];
     self.videoViewFatherView = videoViewFatherView;
     [videoViewFatherView setImageWithURL:self.viewModel.imageUrl placeholder:nil];
+    MYLog(@"self.viewModel.imageUrl = = %@",self.viewModel.imageUrl);
     videoViewFatherView.userInteractionEnabled = YES;
     [videoViewFatherView bk_whenTapped:^{
         [NSObject showWarning:@"参加该课程"];
@@ -78,7 +95,7 @@ ZFPlayerDelegate
         @strongify(self)
         [self.viewModel.navigationStackService popViewModelAnimated:YES];
     }];
-    videoViewFatherView.backgroundColor = [UIColor redColor];
+    
     [videoViewFatherView addSubview:butionfahui];
     [butionfahui mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_offset(5);

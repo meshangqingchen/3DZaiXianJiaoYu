@@ -6,8 +6,8 @@
 //  Copyright © 2017年 3D. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "BaseCollectionViewController.h"
 
-@interface LCSearchViewController : BaseViewController
+@interface LCSearchViewController : BaseCollectionViewController
 
 @end
