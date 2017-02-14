@@ -21,9 +21,12 @@
 
 #import "LCNavigationStackService.h"//栈实例
 
+#import "KDFileManager.h"
+
 @interface LCRootViewController ()<RDVTabBarControllerDelegate>
 @property(nonatomic,strong) LCRootViewModel *viewModel;
 @property(nonatomic,strong) RDVTabBarController *tabBarController;
+
 @end
 
 @implementation LCRootViewController
@@ -31,6 +34,46 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [KDFileManager removeUserDataForkey:LCENCRYPTKey];
+    //下载图片
+    [[KDNetAPIManager_User sharedKDNetAPIManager_User] launchScreenImageCompleteHandle:^(id responseObj, NSError *error) {
+        MYLog(@"%@",responseObj);
+        MYLog(@"%@",responseObj);
+        NSNumber *status  = responseObj[@"status"];
+        
+        if ([status isEqualToNumber:@1]) {
+            NSDictionary *contents = responseObj[@"contents"];
+
+            NSString *imageUrlStr = contents[@"img"];
+            
+            NSURLSessionDownloadTask *task=[[NSURLSession sharedSession] downloadTaskWithURL:[NSURL URLWithString:imageUrlStr] completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                
+                NSData * imageData = [NSData dataWithContentsOfURL:location];
+                [KDFileManager saveUserData:imageData forKey:LCCLAUNCHTOPIMAGEDATA];
+            }];
+            [task resume];
+
+        }
+    }];
+    
+    if ([KDFileManager readUserDataForKey:LCCLOIN_AUTO]) {
+        [[KDNetAPIManager_User sharedKDNetAPIManager_User]loginWithAuto:[KDFileManager readUserDataForKey:LCCLOIN_AUTO] completeHandle:^(id responseObj, NSError *error) {
+            NSNumber *status = responseObj[@"status"];
+            if ([status isEqualToNumber:@1]) {
+                //如果状态是1 就代表自动登录成功了
+                NSDictionary *contents = responseObj[@"contents"];
+                NSString     *encryptKey = contents[@"key"];
+                [KDFileManager saveUserData:encryptKey forKey:LCENCRYPTKey];
+            }
+            
+        }];
+    }
+    [self creatTabBarController];
+}
+
+-(void)creatTabBarController{
+    
     self.tabBarController = [[RDVTabBarController alloc]init];
     self.tabBarController.delegate = self;
     self.tabBarController.view.frame = self.view.bounds;
@@ -39,7 +82,9 @@
     [self.view addSubview:self.tabBarController.view];
     [self setupViewControllers];
     [self customizeTabBarForController];
+
 }
+
 
 -(void)setupViewControllers{
     LCHomeViewController *homeVC = [[LCHomeViewController alloc]initWithViewModel:self.viewModel.homeViewModel];
@@ -88,7 +133,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 
 @end

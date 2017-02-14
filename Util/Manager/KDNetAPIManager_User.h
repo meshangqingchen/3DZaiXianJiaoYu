@@ -128,4 +128,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 -(NSURLSessionDataTask *)historyTalkWithTeacherID:(NSString *)teacherID CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 ///发送消息
 -(NSURLSessionDataTask *)sendMessageWithTeacherID:(NSString *)teacherID andMessage:(NSString*)message CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
+
+
+///启动界面 Api_getStartPage
+-(NSURLSessionDataTask *)launchScreenImageCompleteHandle:(void(^)(id responseObj,NSError *error))complete;
+
 @end

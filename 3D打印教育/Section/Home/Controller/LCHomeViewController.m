@@ -25,6 +25,8 @@
 #import "UINavigationItem+CustomItem.h"
 
 #import "LCMyMessageViewModel.h"
+#import "KDFileManager.h"
+
 @interface LCHomeViewController ()
 <
 UITextFieldDelegate,
@@ -34,6 +36,7 @@ UICollectionViewDelegateFlowLayout
 @property(nonatomic,strong) LCTextFiled *tf;
 @property(nonatomic,strong) UICollectionView *collectionView;
 @property(nonatomic,strong) UICollectionViewFlowLayout *flowLayout;
+@property(nonatomic,strong) UIView *launchView;
 @end
 
 static NSString *identifierSmall = @"LCSmallCollectionViewCell";
@@ -47,6 +50,8 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
 @implementation LCHomeViewController
 @dynamic viewModel,collectionView;
 - (void)viewDidLoad {
+    
+    
     
     _tf = [[LCTextFiled alloc]initWithFrame:SEARCHTEXTFIELD_FREAM];
     _tf.delegate = self;
@@ -81,7 +86,22 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
     
     [self.collectionView registerClass:[LCCollectionReusableBannerHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:identifierBannerHeader];
     
+    [kSharedAppDelegate.window addSubview:self.launchView];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self animationLaunchView];
+    });
+
     [super viewDidLoad];
+}
+
+
+
+-(void)animationLaunchView{
+    [UIView animateWithDuration:0.5 animations:^{
+        self.launchView.alpha = 0;
+    } completion:^(BOOL finished) {
+        [self.launchView removeFromSuperview];
+    }];;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -223,6 +243,37 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [self.viewModel didSelectRowAtIndexPath:indexPath in:collectionView];
 }
+
+- (UIView *)launchView {
+    if(_launchView == nil) {
+        _launchView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+        _launchView.backgroundColor = [UIColor whiteColor];
+        UIImageView *bottomImage = [UIImageView new];
+        bottomImage.image = [UIImage imageNamed:@"qidong"];
+        [_launchView addSubview:bottomImage];
+        [bottomImage mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.mas_offset(0);
+            make.bottom.mas_offset(-40);
+            make.size.mas_equalTo(CGSizeMake(193, 50));
+        }];
+        
+        if ([KDFileManager readUserDataForKey:LCCLAUNCHTOPIMAGEDATA]) {
+            NSData * imageData = [KDFileManager readUserDataForKey:LCCLAUNCHTOPIMAGEDATA];
+            UIImage *topLaunchImage = [UIImage imageWithData:imageData];
+            UIImageView *topimageView = [UIImageView new];
+            topimageView.image = topLaunchImage;
+            [_launchView addSubview:topimageView];
+            [topimageView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.top.right.mas_offset(0);
+                make.height.mas_equalTo(SCREEN_WIDTH*97/75);
+            }];
+        }
+        
+    }
+    return _launchView;
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

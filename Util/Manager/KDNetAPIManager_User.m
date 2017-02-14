@@ -70,8 +70,6 @@ static NSString *const Api_favList = @"favList";
 static NSString *const Api_userPlanList = @"userPlanList";
 ///根据关键字搜索
 static NSString *const Api_search = @"search";
-/////主题图片列表
-//static NSString *const Api_adBigImgList = @"adBigImgList";
 
 /////视频接口
 //static NSString *const Api_video = @"video";
@@ -109,6 +107,8 @@ static NSString *const Api_getMessage = @"getMessage";
 static NSString *const Api_problemView = @"problemView";
 ///addProblem 发送消息
 static NSString *const Api_addProblem = @"addProblem";
+///启动界面
+static NSString *const Api_getStartPage = @"getStartPage";
 
 
 
@@ -364,14 +364,7 @@ static NSString *const PARAM_orderSn          = @"orderSn";
    }];
 }
 
-////视频详情
-//-(NSURLSessionDataTask *)videoDetailVideoID:(NSString *)videoID CompleteHandle:(void (^)(id, NSError *))complete{
-//    NSDictionary *params = @{PARAM_videoId:videoID};
-//    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_video encodeParams:params withMethodType:Post completeHandle:^(id responseObj, NSError *error) {
-//        complete(responseObj,error);
-//    }];
-//}
-//报名
+
 -(NSURLSessionDataTask *)baomingWithZhiYuan:(NSNumber *)zhiYuan
                                     andName:(NSString *)name
                                      andSex:(NSNumber *)sex
@@ -530,6 +523,14 @@ static NSString *const PARAM_orderSn          = @"orderSn";
     NSDictionary *params = @{PARAM_toId:teacherID,PARAM_description:message};
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_addProblem encodeParams:params withMethodType:Post andBaseApi:BaseApi_problem completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
+    }];
+}
+
+-(NSURLSessionDataTask *)launchScreenImageCompleteHandle:(void (^)(id, NSError *))complete{
+    
+    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_getStartPage encodeParams:nil withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+        complete(responseObj,error);
+        
     }];
 }
 @end
