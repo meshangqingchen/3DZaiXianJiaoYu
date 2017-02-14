@@ -68,7 +68,6 @@
 		747812C41E01127200507DCA /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 747812C31E01127200507DCA /* BaseView.m */; };
 		747812C71E0113A200507DCA /* LCVideoDetailTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 747812C61E0113A200507DCA /* LCVideoDetailTabBar.m */; };
 		747812CA1E011D5C00507DCA /* LCIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 747812C91E011D5C00507DCA /* LCIntroView.m */; };
-		747BF1AC1E275331000137E5 /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF1AB1E275331000137E5 /* LaunchViewController.m */; };
 		747BF1F11E279C59000137E5 /* KDFiveStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF1F01E279C59000137E5 /* KDFiveStarView.m */; };
 		747BF5EF1E28DC5F000137E5 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 747BF5931E28DC5F000137E5 /* AlipaySDK.bundle */; };
 		747BF5F01E28DC5F000137E5 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 747BF5941E28DC5F000137E5 /* AlipaySDK.framework */; };
@@ -443,8 +442,6 @@
 		747812C61E0113A200507DCA /* LCVideoDetailTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCVideoDetailTabBar.m; sourceTree = "<group>"; };
 		747812C81E011D5C00507DCA /* LCIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCIntroView.h; sourceTree = "<group>"; };
 		747812C91E011D5C00507DCA /* LCIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCIntroView.m; sourceTree = "<group>"; };
-		747BF1AA1E275331000137E5 /* LaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchViewController.h; sourceTree = "<group>"; };
-		747BF1AB1E275331000137E5 /* LaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchViewController.m; sourceTree = "<group>"; };
 		747BF1EF1E279C59000137E5 /* KDFiveStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDFiveStarView.h; sourceTree = "<group>"; };
 		747BF1F01E279C59000137E5 /* KDFiveStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDFiveStarView.m; sourceTree = "<group>"; };
 		747BF5931E28DC5F000137E5 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
@@ -2213,8 +2210,6 @@
 				74450CC41E271C9700F01EB7 /* LCRegisteredViewController.m */,
 				74450CC91E27211300F01EB7 /* LCForgotPasswordViewController.h */,
 				74450CCA1E27211300F01EB7 /* LCForgotPasswordViewController.m */,
-				747BF1AA1E275331000137E5 /* LaunchViewController.h */,
-				747BF1AB1E275331000137E5 /* LaunchViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2658,7 +2653,6 @@
 				7485FC061DFC39FB00E6D23D /* UIViewController+Example.m in Sources */,
 				744EEBCF1E1E94B5002FE8B1 /* LCPersonalCenterCellViewModel.m in Sources */,
 				7485FBFE1DFC39FB00E6D23D /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
-				747BF1AC1E275331000137E5 /* LaunchViewController.m in Sources */,
 				74D2F6701E03A14800C84317 /* LCVideoDetailEvaluateCell.m in Sources */,
 				7485FC141DFC39FB00E6D23D /* KDNetAPIManager_User.m in Sources */,
 				747BF5F51E28DC5F000137E5 /* openssl_wrapper.m in Sources */,

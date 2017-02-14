@@ -15,8 +15,6 @@
 
 #import "BaseViewModel.h"
 #import "LCRootViewModel.h"
-#import "LaunchViewController.h"
-#import "KDNetAPIManager_User.h"
 #import "LCUserTeacherTalkViewController.h"
 
 @interface AppDelegate ()
