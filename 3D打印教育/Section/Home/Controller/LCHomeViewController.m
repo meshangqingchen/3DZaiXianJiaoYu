@@ -257,9 +257,10 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
             make.size.mas_equalTo(CGSizeMake(193, 50));
         }];
         
-        if ([KDFileManager readUserDataForKey:LCCLAUNCHTOPIMAGEDATA]) {
-            NSData * imageData = [KDFileManager readUserDataForKey:LCCLAUNCHTOPIMAGEDATA];
-            UIImage *topLaunchImage = [UIImage imageWithData:imageData];
+        if ([[UIImage alloc]initWithContentsOfFile:[NSString stringWithFormat:@"%@/%@",[KDFileManager getCachePath],@"LCimage"]]) {
+            
+            
+            UIImage *topLaunchImage = [[UIImage alloc]initWithContentsOfFile:[NSString stringWithFormat:@"%@/%@",[KDFileManager getCachePath],@"LCimage"]];
             UIImageView *topimageView = [UIImageView new];
             topimageView.image = topLaunchImage;
             [_launchView addSubview:topimageView];

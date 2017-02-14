@@ -50,7 +50,10 @@
             NSURLSessionDownloadTask *task=[[NSURLSession sharedSession] downloadTaskWithURL:[NSURL URLWithString:imageUrlStr] completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                 
                 NSData * imageData = [NSData dataWithContentsOfURL:location];
-                [KDFileManager saveUserData:imageData forKey:LCCLAUNCHTOPIMAGEDATA];
+                NSString *path = [NSString stringWithFormat:@"%@/%@",[KDFileManager getCachePath],@"LCimage"];
+                UIImage *image = [UIImage imageWithData:imageData];
+                [UIImageJPEGRepresentation(image, 1) writeToFile:path atomically:YES];
+                
             }];
             [task resume];
 
