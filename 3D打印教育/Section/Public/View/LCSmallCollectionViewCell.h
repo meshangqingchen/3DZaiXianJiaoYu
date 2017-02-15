@@ -11,4 +11,6 @@
 @interface LCSmallCollectionViewCell : BaseCollectionViewCell
 @property(nonatomic,strong) UIImageView *backImageView;
 @property(nonatomic,strong) UILabel *titleLB;
+
+-(void)bindViewModel:(id)viewModel AndIndexPath:(NSIndexPath *)indexPath andDateCount:(NSInteger )num;
 @end

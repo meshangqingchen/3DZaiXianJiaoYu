@@ -8,6 +8,12 @@
 
 #import "LCSmallCollectionViewCell.h"
 #import "LCHomeSmallCollectionCellModel.h"
+
+@interface LCSmallCollectionViewCell ()
+@property(nonatomic,strong) UIView *bottomLineView;
+@property(nonatomic,strong) UIView *rightLineView;
+@end
+
 @implementation LCSmallCollectionViewCell
 -(void)setupViews{
     
@@ -17,7 +23,7 @@
 //    self.backImageView.backgroundColor = [KDColor getC26Color];
     [self.contentView addSubview:_backImageView];
     [_backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_offset(0);
+        make.top.mas_offset(15);
         make.centerX.mas_offset(0);
         make.size.mas_equalTo(CGSizeMake(50, 50));
     }];
@@ -28,16 +34,49 @@
     _titleLB.font = [[KDFont sharedKDFont]getF24Font];
     [self.contentView addSubview:_titleLB];
     [_titleLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_offset(0);
+        make.bottom.mas_offset(-10);
         make.centerX.mas_offset(0);
         //我的课程
     }];
+
+
+  
+    self.bottomLineView = [UIView new];
+    _bottomLineView.backgroundColor = [KDColor getC2Color];
+    [self.contentView addSubview:_bottomLineView];
+
+    [_bottomLineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.mas_offset(0);
+        make.height.mas_equalTo(0.6);
+    }];
+    
+    self.rightLineView = [UIView new];
+    _rightLineView.backgroundColor = [KDColor getC2Color];
+    [self.contentView addSubview:_rightLineView];
+    
+    [_rightLineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.right.top.mas_offset(0);
+        make.width.mas_equalTo(0.6);
+    }];
+    
 }
 
--(void)bindViewModel:(id)viewModel{
+-(void)bindViewModel:(id)viewModel AndIndexPath:(NSIndexPath *)indexPath andDateCount:(NSInteger)num{
+    
+    if (num - indexPath.row < 3) {
+        self.bottomLineView.hidden  = YES;
+    }else{
+        self.bottomLineView.hidden  = NO;
+    }
+    
+    if (indexPath.row % 3 == 2) {
+        self.rightLineView.hidden  = YES;
+    }else{
+        self.rightLineView.hidden  = NO;
+    }
+    
     LCHomeSmallCollectionCellModel *cellVM = viewModel;
     self.titleLB.text = cellVM.title;
     [self.backImageView setImageWithURL:cellVM.smallImgURL placeholder:[[UIImage imageWithColor:[KDColor getC26Color] size:CGSizeMake(50, 50)]imageByRoundCornerRadius:25]];
 }
-
 @end

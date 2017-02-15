@@ -94,6 +94,8 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
     [super viewDidLoad];
 }
 
+
+
 -(void)animationLaunchView{
     [UIView animateWithDuration:0.5 animations:^{
         self.launchView.alpha = 0;
@@ -137,7 +139,8 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
     
     if (indexPath.section == 0) {
         LCSmallCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifierSmall forIndexPath:indexPath];
-        [cell bindViewModel:sectionModel.data[indexPath.row]];
+//        [cell bindViewModel: AndIndexPath:indexPath];
+        [cell bindViewModel:sectionModel.data[indexPath.row] AndIndexPath:indexPath andDateCount:sectionModel.data.count];
         return cell;
     }else if (indexPath.section == 1 & indexPath.row == 0){
         LCBigImageAndTextCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifierBigImageAndText forIndexPath:indexPath];
@@ -182,7 +185,7 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
    
     if (indexPath.section == 0) {
         
-        return CGSizeMake(60, 66);
+        return CGSizeMake(SCREEN_WIDTH/3,SCREEN_WIDTH/4);
     }else if (indexPath.section == 1 & indexPath.row == 0){
          return CGSizeMake(BIGIMAGEADDTEXT_W, BIGIMAGEADDTEXT_H);
         
@@ -199,7 +202,7 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
     //{top, left, bottom, right}
     if (section == 0) {
-        return  UIEdgeInsetsMake(20, 85/2, 20, 85/2);
+        return  UIEdgeInsetsMake(0, 0, 0, 0);
     }else if (section == 1){
         return  UIEdgeInsetsMake(25, 15, 0, 15);
     }else if (section == 2){
@@ -212,23 +215,24 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
     
-    if (section == 0) {
-        return 15;
-    }else if (section == 1){
-        return 0;
-    }else if (section == 2){
-        return 0;
-    }else{
-        return 0;
-    }
+//    if (section == 0) {
+//        return 0;
+//    }else if (section == 1){
+//        return 0;
+//    }else if (section == 2){
+//        return 0;
+//    }else{
+//        return 0;
+//    }
 
+    return 0;
 }
 
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
     
     if (section == 0) {
-        return ((SCREEN_WIDTH-60*3-85)/2);
+        return (0);
     }else if (section == 1){
         return 10;
     }else if (section == 2){
