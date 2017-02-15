@@ -185,7 +185,7 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
    
     if (indexPath.section == 0) {
         
-        return CGSizeMake(SCREEN_WIDTH/3,SCREEN_WIDTH/4);
+        return CGSizeMake(SCREEN_WIDTH/3,SCREEN_WIDTH/3.5);
     }else if (indexPath.section == 1 & indexPath.row == 0){
          return CGSizeMake(BIGIMAGEADDTEXT_W, BIGIMAGEADDTEXT_H);
         

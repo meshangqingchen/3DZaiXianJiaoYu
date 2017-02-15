@@ -47,7 +47,7 @@
 
     [_bottomLineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.mas_offset(0);
-        make.height.mas_equalTo(0.6);
+        make.height.mas_equalTo(0.4);
     }];
     
     self.rightLineView = [UIView new];
@@ -56,7 +56,7 @@
     
     [_rightLineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.right.top.mas_offset(0);
-        make.width.mas_equalTo(0.6);
+        make.width.mas_equalTo(0.4);
     }];
     
 }
