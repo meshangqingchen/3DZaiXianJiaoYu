@@ -56,7 +56,6 @@
                 
             }];
             [task resume];
-
         }
     }];
     
@@ -69,10 +68,11 @@
                 NSString     *encryptKey = contents[@"key"];
                 [KDFileManager saveUserData:encryptKey forKey:LCENCRYPTKey];
             }
-            
+            [self creatTabBarController];
         }];
+    }else{
+        [self creatTabBarController];
     }
-    [self creatTabBarController];
 }
 
 -(void)creatTabBarController{
@@ -85,6 +85,7 @@
     [self.view addSubview:self.tabBarController.view];
     [self setupViewControllers];
     [self customizeTabBarForController];
+    [self.tabBarController setSelectedIndex:0];
 
 }
 

@@ -53,7 +53,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self setSelectedIndex:[self selectedIndex]];
+//    [self setSelectedIndex:[self selectedIndex]];
 }
 
 - (BOOL)shouldAutorotate{

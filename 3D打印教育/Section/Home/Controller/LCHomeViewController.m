@@ -94,8 +94,6 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
     [super viewDidLoad];
 }
 
-
-
 -(void)animationLaunchView{
     [UIView animateWithDuration:0.5 animations:^{
         self.launchView.alpha = 0;
@@ -258,7 +256,6 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
         }];
         
         if ([[UIImage alloc]initWithContentsOfFile:[NSString stringWithFormat:@"%@/%@",[KDFileManager getCachePath],@"LCimage"]]) {
-            
             
             UIImage *topLaunchImage = [[UIImage alloc]initWithContentsOfFile:[NSString stringWithFormat:@"%@/%@",[KDFileManager getCachePath],@"LCimage"]];
             UIImageView *topimageView = [UIImageView new];

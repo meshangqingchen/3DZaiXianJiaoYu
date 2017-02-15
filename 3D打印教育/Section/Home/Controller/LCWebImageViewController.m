@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _webView = [UIWebView new];
+    _webView.backgroundColor = [UIColor whiteColor];
     [_webView loadRequest:[NSURLRequest requestWithURL:self.viewModel.webURl]];
     [self.view addSubview:self.webView];
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {

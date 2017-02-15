@@ -21,6 +21,7 @@
 -(void)initialize{
     [super initialize];
     self.homeViewModel = [[LCHomeViewModel alloc]initWithServices:self.navigationStackService params:nil];
+    
     self.courseClassViewModel = [[LCCourseClassViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"课程分类"}];
     self.counselTeacherViewModel =[[LCCounselTeacherViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"专家咨询"}];
     

@@ -128,10 +128,12 @@
     }];
     [zixun addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
         @strongify(self)
-        if (self.viewNM.ifProblem) {
-            !self.viewModel.pushTackWithTeacher ? : self.viewModel.pushTackWithTeacher(self.viewNM);
-        }else{
-            !self.viewModel.pushZhiFuForZiXun ? : self.viewModel.pushZhiFuForZiXun(self.viewNM);
+        if ((self.viewNM)) {
+            if (self.viewNM.ifProblem) {
+                !self.viewModel.pushTackWithTeacher ? : self.viewModel.pushTackWithTeacher(self.viewNM);
+            }else{
+                !self.viewModel.pushZhiFuForZiXun ? : self.viewModel.pushZhiFuForZiXun(self.viewNM);
+            }
         }
     }];
     
