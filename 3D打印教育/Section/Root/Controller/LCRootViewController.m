@@ -35,10 +35,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [KDFileManager removeUserDataForkey:LCENCRYPTKey];
+    MYLog(@"%@",[KDFileManager getDocumentPath]);
+    MYLog(@"%@",[KDFileManager getDocumentPath]);
+    LCENCRYPTKEY = nil;
     //下载图片
     [[KDNetAPIManager_User sharedKDNetAPIManager_User] launchScreenImageCompleteHandle:^(id responseObj, NSError *error) {
-        MYLog(@"%@",responseObj);
         MYLog(@"%@",responseObj);
         NSNumber *status  = responseObj[@"status"];
         
@@ -66,7 +67,11 @@
                 //如果状态是1 就代表自动登录成功了
                 NSDictionary *contents = responseObj[@"contents"];
                 NSString     *encryptKey = contents[@"key"];
-                [KDFileManager saveUserData:encryptKey forKey:LCENCRYPTKey];
+                LCENCRYPTKEY = encryptKey;
+                
+                MYLog(@"===============================");
+                MYLog(@"===============================");
+                MYLog(@"===============================");
             }
             [self creatTabBarController];
         }];

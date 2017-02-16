@@ -49,7 +49,7 @@
                 NSNumber *isTeacher           = contents[@"is_teacher"];
                 
                 [KDFileManager saveUserData:login_autoValue forKey:LCCLOIN_AUTO];
-                [KDFileManager saveUserData:keyValue forKey:LCENCRYPTKey];
+                LCENCRYPTKEY = keyValue;
                 [self.navigationStackService dismissViewModelAnimated:YES completion:nil];
             }else{
                 [NSObject showWarning:msg];

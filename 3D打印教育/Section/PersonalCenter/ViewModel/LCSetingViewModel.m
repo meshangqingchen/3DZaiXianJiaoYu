@@ -41,7 +41,7 @@
             NSDictionary *dic = responseObj;
             if ([dic[@"status"] isEqualToNumber:@1]) {
                 [self.navigationStackService popViewModelAnimated:YES];
-                [KDFileManager removeUserDataForkey:LCENCRYPTKey];
+                LCENCRYPTKEY = nil;
                 [KDFileManager removeUserDataForkey:LCCLOIN_AUTO]; 
             }
             [NSObject showWarning:dic[@"msg"]];

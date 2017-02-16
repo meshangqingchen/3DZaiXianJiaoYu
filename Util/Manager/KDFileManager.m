@@ -48,7 +48,6 @@
 + (void)saveUserData:(id)data forKey:(NSString *)key {
   if (data) {
     [[NSUserDefaults standardUserDefaults] setObject:data forKey:key];
-    [[NSUserDefaults standardUserDefaults] synchronize];
   }
 }
 

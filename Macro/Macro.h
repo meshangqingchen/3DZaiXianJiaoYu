@@ -69,7 +69,6 @@
 
 #define kSharedAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
 
-#define LCENCRYPTKey @"LCEncryptKey"   //加密key
 #define LCCLOIN_AUTO @"LCClogin_auto"  //自动登录的key LCCRSA2PRIVATEKEY
 #define LCCBOFANG    @"LCCBOFANG"      //设置界面 开关的状态
 #define LCCORDER_SN  @"order_sn"

@@ -57,8 +57,11 @@ static dispatch_once_t onceToken;
     NSString *time = [NSString stringWithFormat:@"%ld-%ld-%ld %ld:%ld:%ld",date.year,date.month,date.day,date.hour,date.minute,date.second];
     [mutableDic addEntriesFromDictionary:params];
     [mutableDic setObject:time forKey:@"time"];
-    [mutableDic setObject:[KDFileManager readUserDataForKey:LCENCRYPTKey] ? [KDFileManager readUserDataForKey:LCENCRYPTKey] : @"YangtechApiKey_3feFE4" forKey:@"key"];
-    [mutableDic setObject:[[NSString stringWithFormat:@"%@%@",time,[KDFileManager readUserDataForKey:LCENCRYPTKey] ? [KDFileManager readUserDataForKey:LCENCRYPTKey] : @"YangtechApiKey_3feFE4"] md5String] forKey:@"signature"]; 
+    
+    MYLog(@"= = = = LCEncryptKey%@",LCENCRYPTKEY);//后台加密key
+    
+    [mutableDic setObject:LCENCRYPTKEY ? LCENCRYPTKEY : @"YangtechApiKey_3feFE4" forKey:@"key"];
+    [mutableDic setObject:[[NSString stringWithFormat:@"%@%@",time,LCENCRYPTKEY ? LCENCRYPTKEY : @"YangtechApiKey_3feFE4"] md5String] forKey:@"signature"];
    MYLog(@"参数 = = = = =  = %@",mutableDic);
     switch (method) {
         case Get:
@@ -191,8 +194,8 @@ static dispatch_once_t onceToken;
     NSString *time = [NSString stringWithFormat:@"%ld-%ld-%ld %ld:%ld:%ld",date.year,date.month,date.day,date.hour,date.minute,date.second];
     [mutableDic addEntriesFromDictionary:params];
     [mutableDic setObject:time forKey:@"time"];
-    [mutableDic setObject:[KDFileManager readUserDataForKey:LCENCRYPTKey] ? [KDFileManager readUserDataForKey:LCENCRYPTKey] : @"YangtechApiKey_3feFE4" forKey:@"key"];
-    [mutableDic setObject:[[NSString stringWithFormat:@"%@%@",time,[KDFileManager readUserDataForKey:LCENCRYPTKey] ? [KDFileManager readUserDataForKey:LCENCRYPTKey] : @"YangtechApiKey_3feFE4"] md5String] forKey:@"signature"];
+    [mutableDic setObject:LCENCRYPTKEY ? LCENCRYPTKEY : @"YangtechApiKey_3feFE4" forKey:@"key"];
+    [mutableDic setObject:[[NSString stringWithFormat:@"%@%@",time,LCENCRYPTKEY ? LCENCRYPTKEY : @"YangtechApiKey_3feFE4"] md5String] forKey:@"signature"];
     if (mimeType == nil || ![mimeType isKindOfClass:[NSString class]] || mimeType.length == 0) {
         mimeType = @"image/jpeg";
     }

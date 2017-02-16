@@ -13,6 +13,10 @@
 extern NSString *const KEY_TITLE;
 
 extern NSString *const KEY_DATASOURCE;
+
+extern NSString *LCENCRYPTKEY;
+
+
 //extern NSString *const
 //extern NSString *const
 //extern NSString *const
