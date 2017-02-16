@@ -26,7 +26,7 @@
 @interface LCRootViewController ()<RDVTabBarControllerDelegate>
 @property(nonatomic,strong) LCRootViewModel *viewModel;
 @property(nonatomic,strong) RDVTabBarController *tabBarController;
-
+@property(nonatomic,strong) UIView *launchView;
 @end
 
 @implementation LCRootViewController
@@ -68,10 +68,6 @@
                 NSDictionary *contents = responseObj[@"contents"];
                 NSString     *encryptKey = contents[@"key"];
                 LCENCRYPTKEY = encryptKey;
-                
-                MYLog(@"===============================");
-                MYLog(@"===============================");
-                MYLog(@"===============================");
             }
             [self creatTabBarController];
         }];
@@ -81,6 +77,11 @@
 }
 
 -(void)creatTabBarController{
+    
+    [kSharedAppDelegate.window addSubview:self.launchView];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self animationLaunchView];
+    });
     
     self.tabBarController = [[RDVTabBarController alloc]init];
     self.tabBarController.delegate = self;
@@ -136,6 +137,43 @@
     
     [(LCNavigationStackService *)self.viewModel.navigationStackService popNavigationController];
     [(LCNavigationStackService *)self.viewModel.navigationStackService pushNavigationController:(id)viewController];
+}
+
+-(void)animationLaunchView{
+    [UIView animateWithDuration:0.5 animations:^{
+        self.launchView.alpha = 0;
+    } completion:^(BOOL finished) {
+        [self.launchView removeFromSuperview];
+    }];;
+}
+
+- (UIView *)launchView {
+    if(_launchView == nil) {
+        _launchView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+        _launchView.backgroundColor = [UIColor whiteColor];
+        UIImageView *bottomImage = [UIImageView new];
+        bottomImage.image = [UIImage imageNamed:@"qidong"];
+        [_launchView addSubview:bottomImage];
+        [bottomImage mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.mas_offset(0);
+            make.bottom.mas_offset(-40);
+            make.size.mas_equalTo(CGSizeMake(193, 50));
+        }];
+        
+        if ([[UIImage alloc]initWithContentsOfFile:[NSString stringWithFormat:@"%@/%@",[KDFileManager getCachePath],@"LCimage"]]) {
+            
+            UIImage *topLaunchImage = [[UIImage alloc]initWithContentsOfFile:[NSString stringWithFormat:@"%@/%@",[KDFileManager getCachePath],@"LCimage"]];
+            UIImageView *topimageView = [UIImageView new];
+            topimageView.image = topLaunchImage;
+            [_launchView addSubview:topimageView];
+            [topimageView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.top.right.mas_offset(0);
+                make.height.mas_equalTo(SCREEN_WIDTH*97/75);
+            }];
+        }
+        
+    }
+    return _launchView;
 }
 
 - (void)didReceiveMemoryWarning {
