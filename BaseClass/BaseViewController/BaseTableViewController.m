@@ -170,7 +170,9 @@ static void *xxcontext = &xxcontext;
 }
 
 -(void)dealloc{
-    [self.viewModel removeObserver:self forKeyPath:KEY_DATASOURCE];
+//    [self.viewModel removeObserver:self forKeyPath:KEY_DATASOURCE];
+    [self.viewModel removeObserver:self forKeyPath:KEY_DATASOURCE context:xxcontext];
+//    [self.viewModel removeObserver:self forKeyPath:KEY_DATASOURCE context:xxcontext];
     _tableView.dataSource = nil;
     _tableView.delegate = nil;
 }

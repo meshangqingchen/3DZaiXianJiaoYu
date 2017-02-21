@@ -67,8 +67,9 @@
 + (UIColor *)getC25Color;
 //0xF1F6F7 站位图背景色
 + (UIColor *)getC26Color;
-
+//0xdab95c vip卡日期颜色
 + (UIColor *)getC27Color;
+//0xebc55c 代金卡黄色字体按钮
 + (UIColor *)getC28Color;
 + (UIColor *)getC29Color;
 + (UIColor *)getC30Color;

@@ -32,7 +32,6 @@ static NSString *identifierTeacher = @"LCFromTeacherCell";
 @dynamic tableView,viewModel;
 
 - (void)viewDidLoad {
-
     
     LCUserTeacherTalkBottomView *bottomView = [LCUserTeacherTalkBottomView new];
     bottomView.textView.delegate = self;

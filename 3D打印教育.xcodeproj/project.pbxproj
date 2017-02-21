@@ -288,6 +288,12 @@
 		74C869C71E559D2E006D50E4 /* LCNotarizeZiXunOrderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C869B91E559D2E006D50E4 /* LCNotarizeZiXunOrderViewModel.m */; };
 		74C869C81E559D2E006D50E4 /* LCTeacherDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C869BB1E559D2E006D50E4 /* LCTeacherDetailViewModel.m */; };
 		74C869C91E559D2E006D50E4 /* LCTeacherDetailViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C869BD1E559D2E006D50E4 /* LCTeacherDetailViewViewModel.m */; };
+		74C86A0B1E569EFF006D50E4 /* LCMemberViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C86A0A1E569EFF006D50E4 /* LCMemberViewModel.m */; };
+		74C86A0E1E56A225006D50E4 /* LCMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C86A0D1E56A225006D50E4 /* LCMemberViewController.m */; };
+		74C86A111E56A555006D50E4 /* LCMemberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C86A101E56A555006D50E4 /* LCMemberCell.m */; };
+		74C86A171E56BD3D006D50E4 /* LCMemberHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C86A161E56BD3D006D50E4 /* LCMemberHeaderView.m */; };
+		74C86A1A1E56BD7E006D50E4 /* LCMemberFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C86A191E56BD7E006D50E4 /* LCMemberFootView.m */; };
+		74C86A1D1E56CFE8006D50E4 /* LCMemberTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C86A1C1E56CFE8006D50E4 /* LCMemberTopCell.m */; };
 		74C91A671E160D950065BAFE /* LCMessageAndNotificationHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C91A661E160D950065BAFE /* LCMessageAndNotificationHeaderView.m */; };
 		74C91A6A1E1643480065BAFE /* LCUserTeacherTalkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C91A691E1643480065BAFE /* LCUserTeacherTalkViewController.m */; };
 		74C91A6D1E1644860065BAFE /* LCUserTeacherTalkViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C91A6C1E1644860065BAFE /* LCUserTeacherTalkViewModel.m */; };
@@ -296,6 +302,15 @@
 		74D2F6701E03A14800C84317 /* LCVideoDetailEvaluateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D2F66F1E03A14800C84317 /* LCVideoDetailEvaluateCell.m */; };
 		74D2F6731E08067400C84317 /* LCEvaluateDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D2F6721E08067400C84317 /* LCEvaluateDetailViewModel.m */; };
 		74D2F6761E080AAE00C84317 /* LCEvaluateDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D2F6751E080AAE00C84317 /* LCEvaluateDetailViewController.m */; };
+		74E02C331E5ACE5300A2FB4F /* LCMemberTopCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E02C321E5ACE5300A2FB4F /* LCMemberTopCellViewModel.m */; };
+		74E02C361E5ACE6700A2FB4F /* LCMemberCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E02C351E5ACE6700A2FB4F /* LCMemberCellViewModel.m */; };
+		74E02C391E5BED3C00A2FB4F /* LCMyVoucherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E02C381E5BED3C00A2FB4F /* LCMyVoucherViewController.m */; };
+		74E02C3C1E5BED5F00A2FB4F /* LCVoucherViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E02C3B1E5BED5F00A2FB4F /* LCVoucherViewModel.m */; };
+		74E02C3F1E5BEF0600A2FB4F /* LCDaiJinQuanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E02C3E1E5BEF0600A2FB4F /* LCDaiJinQuanViewController.m */; };
+		74E02C421E5BEF1C00A2FB4F /* LCZheKouQuanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E02C411E5BEF1C00A2FB4F /* LCZheKouQuanViewController.m */; };
+		74E02C451E5BEF4800A2FB4F /* LCDaiJinQuanViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E02C441E5BEF4800A2FB4F /* LCDaiJinQuanViewModel.m */; };
+		74E02C481E5BEF6800A2FB4F /* LCZheKouQuanViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E02C471E5BEF6800A2FB4F /* LCZheKouQuanViewModel.m */; };
+		74E02C4B1E5BFFD900A2FB4F /* LCPublicVoucherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E02C4A1E5BFFD900A2FB4F /* LCPublicVoucherCell.m */; };
 		74F90D011E1265B7005E5D09 /* LCHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F90D001E1265B7005E5D09 /* LCHomeModel.m */; };
 		74F90D071E1381A4005E5D09 /* LCHomeCollectionBananaViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F90D061E1381A4005E5D09 /* LCHomeCollectionBananaViewModel.m */; };
 		D2781A4C36A2A69961E1662A /* libPods-3D打印教育.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C89CD1AB96CEC93A8A4619C /* libPods-3D打印教育.a */; };
@@ -944,6 +959,18 @@
 		74C869BB1E559D2E006D50E4 /* LCTeacherDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTeacherDetailViewModel.m; sourceTree = "<group>"; };
 		74C869BC1E559D2E006D50E4 /* LCTeacherDetailViewViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTeacherDetailViewViewModel.h; sourceTree = "<group>"; };
 		74C869BD1E559D2E006D50E4 /* LCTeacherDetailViewViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTeacherDetailViewViewModel.m; sourceTree = "<group>"; };
+		74C86A091E569EFF006D50E4 /* LCMemberViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMemberViewModel.h; sourceTree = "<group>"; };
+		74C86A0A1E569EFF006D50E4 /* LCMemberViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMemberViewModel.m; sourceTree = "<group>"; };
+		74C86A0C1E56A225006D50E4 /* LCMemberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMemberViewController.h; sourceTree = "<group>"; };
+		74C86A0D1E56A225006D50E4 /* LCMemberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMemberViewController.m; sourceTree = "<group>"; };
+		74C86A0F1E56A555006D50E4 /* LCMemberCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMemberCell.h; sourceTree = "<group>"; };
+		74C86A101E56A555006D50E4 /* LCMemberCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMemberCell.m; sourceTree = "<group>"; };
+		74C86A151E56BD3D006D50E4 /* LCMemberHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMemberHeaderView.h; sourceTree = "<group>"; };
+		74C86A161E56BD3D006D50E4 /* LCMemberHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMemberHeaderView.m; sourceTree = "<group>"; };
+		74C86A181E56BD7E006D50E4 /* LCMemberFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMemberFootView.h; sourceTree = "<group>"; };
+		74C86A191E56BD7E006D50E4 /* LCMemberFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMemberFootView.m; sourceTree = "<group>"; };
+		74C86A1B1E56CFE8006D50E4 /* LCMemberTopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMemberTopCell.h; sourceTree = "<group>"; };
+		74C86A1C1E56CFE8006D50E4 /* LCMemberTopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMemberTopCell.m; sourceTree = "<group>"; };
 		74C91A651E160D950065BAFE /* LCMessageAndNotificationHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMessageAndNotificationHeaderView.h; sourceTree = "<group>"; };
 		74C91A661E160D950065BAFE /* LCMessageAndNotificationHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMessageAndNotificationHeaderView.m; sourceTree = "<group>"; };
 		74C91A681E1643480065BAFE /* LCUserTeacherTalkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCUserTeacherTalkViewController.h; sourceTree = "<group>"; };
@@ -960,6 +987,24 @@
 		74D2F6721E08067400C84317 /* LCEvaluateDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCEvaluateDetailViewModel.m; sourceTree = "<group>"; };
 		74D2F6741E080AAE00C84317 /* LCEvaluateDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCEvaluateDetailViewController.h; sourceTree = "<group>"; };
 		74D2F6751E080AAE00C84317 /* LCEvaluateDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCEvaluateDetailViewController.m; sourceTree = "<group>"; };
+		74E02C311E5ACE5300A2FB4F /* LCMemberTopCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMemberTopCellViewModel.h; sourceTree = "<group>"; };
+		74E02C321E5ACE5300A2FB4F /* LCMemberTopCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMemberTopCellViewModel.m; sourceTree = "<group>"; };
+		74E02C341E5ACE6700A2FB4F /* LCMemberCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMemberCellViewModel.h; sourceTree = "<group>"; };
+		74E02C351E5ACE6700A2FB4F /* LCMemberCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMemberCellViewModel.m; sourceTree = "<group>"; };
+		74E02C371E5BED3C00A2FB4F /* LCMyVoucherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCMyVoucherViewController.h; sourceTree = "<group>"; };
+		74E02C381E5BED3C00A2FB4F /* LCMyVoucherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMyVoucherViewController.m; sourceTree = "<group>"; };
+		74E02C3A1E5BED5F00A2FB4F /* LCVoucherViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCVoucherViewModel.h; sourceTree = "<group>"; };
+		74E02C3B1E5BED5F00A2FB4F /* LCVoucherViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCVoucherViewModel.m; sourceTree = "<group>"; };
+		74E02C3D1E5BEF0600A2FB4F /* LCDaiJinQuanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDaiJinQuanViewController.h; sourceTree = "<group>"; };
+		74E02C3E1E5BEF0600A2FB4F /* LCDaiJinQuanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDaiJinQuanViewController.m; sourceTree = "<group>"; };
+		74E02C401E5BEF1C00A2FB4F /* LCZheKouQuanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCZheKouQuanViewController.h; sourceTree = "<group>"; };
+		74E02C411E5BEF1C00A2FB4F /* LCZheKouQuanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCZheKouQuanViewController.m; sourceTree = "<group>"; };
+		74E02C431E5BEF4800A2FB4F /* LCDaiJinQuanViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDaiJinQuanViewModel.h; sourceTree = "<group>"; };
+		74E02C441E5BEF4800A2FB4F /* LCDaiJinQuanViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDaiJinQuanViewModel.m; sourceTree = "<group>"; };
+		74E02C461E5BEF6800A2FB4F /* LCZheKouQuanViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCZheKouQuanViewModel.h; sourceTree = "<group>"; };
+		74E02C471E5BEF6800A2FB4F /* LCZheKouQuanViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCZheKouQuanViewModel.m; sourceTree = "<group>"; };
+		74E02C491E5BFFD900A2FB4F /* LCPublicVoucherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPublicVoucherCell.h; sourceTree = "<group>"; };
+		74E02C4A1E5BFFD900A2FB4F /* LCPublicVoucherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPublicVoucherCell.m; sourceTree = "<group>"; };
 		74F90CFF1E1265B7005E5D09 /* LCHomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHomeModel.h; sourceTree = "<group>"; };
 		74F90D001E1265B7005E5D09 /* LCHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHomeModel.m; sourceTree = "<group>"; };
 		74F90D051E1381A4005E5D09 /* LCHomeCollectionBananaViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHomeCollectionBananaViewModel.h; sourceTree = "<group>"; };
@@ -1898,18 +1943,26 @@
 				7485FCF71DFE475500E6D23D /* LCPersonalCenterViewController.m */,
 				74450C841E236C8000F01EB7 /* LCEditPersonalDetailViewController.h */,
 				74450C851E236C8000F01EB7 /* LCEditPersonalDetailViewController.m */,
-				741B05901E20CBE7002860A7 /* LCSetingViewController.h */,
-				741B05911E20CBE7002860A7 /* LCSetingViewController.m */,
 				74450C951E2478FA00F01EB7 /* LCChangePasswordViewController.h */,
 				74450C961E2478FA00F01EB7 /* LCChangePasswordViewController.m */,
 				74450C9E1E24817500F01EB7 /* LCUseOldPaswordChangePaswordViewController.h */,
 				74450C9F1E24817500F01EB7 /* LCUseOldPaswordChangePaswordViewController.m */,
 				74450CA71E249ABC00F01EB7 /* LCUseVerificationChangePasswordViewController.h */,
 				74450CA81E249ABC00F01EB7 /* LCUseVerificationChangePasswordViewController.m */,
+				741B05901E20CBE7002860A7 /* LCSetingViewController.h */,
+				741B05911E20CBE7002860A7 /* LCSetingViewController.m */,
 				747BF68B1E2DE10E000137E5 /* LCCollectOJoinRViewController.h */,
 				747BF68C1E2DE10E000137E5 /* LCCollectOJoinRViewController.m */,
 				747BF6A61E2E007F000137E5 /* LCFeedbackViewController.h */,
 				747BF6A71E2E007F000137E5 /* LCFeedbackViewController.m */,
+				74C86A0C1E56A225006D50E4 /* LCMemberViewController.h */,
+				74C86A0D1E56A225006D50E4 /* LCMemberViewController.m */,
+				74E02C371E5BED3C00A2FB4F /* LCMyVoucherViewController.h */,
+				74E02C381E5BED3C00A2FB4F /* LCMyVoucherViewController.m */,
+				74E02C3D1E5BEF0600A2FB4F /* LCDaiJinQuanViewController.h */,
+				74E02C3E1E5BEF0600A2FB4F /* LCDaiJinQuanViewController.m */,
+				74E02C401E5BEF1C00A2FB4F /* LCZheKouQuanViewController.h */,
+				74E02C411E5BEF1C00A2FB4F /* LCZheKouQuanViewController.m */,
 				747BF6AA1E2E0556000137E5 /* WAboutUsViewController.h */,
 				747BF6AB1E2E0556000137E5 /* WAboutUsViewController.m */,
 			);
@@ -1948,6 +2001,16 @@
 				74450C9C1E247C0500F01EB7 /* LCChangePasswordCell.m */,
 				747BF69A1E2DE32A000137E5 /* LCCollectOrJoinCourseCell.h */,
 				747BF69B1E2DE32A000137E5 /* LCCollectOrJoinCourseCell.m */,
+				74C86A0F1E56A555006D50E4 /* LCMemberCell.h */,
+				74C86A101E56A555006D50E4 /* LCMemberCell.m */,
+				74C86A1B1E56CFE8006D50E4 /* LCMemberTopCell.h */,
+				74C86A1C1E56CFE8006D50E4 /* LCMemberTopCell.m */,
+				74C86A151E56BD3D006D50E4 /* LCMemberHeaderView.h */,
+				74C86A161E56BD3D006D50E4 /* LCMemberHeaderView.m */,
+				74C86A181E56BD7E006D50E4 /* LCMemberFootView.h */,
+				74C86A191E56BD7E006D50E4 /* LCMemberFootView.m */,
+				74E02C491E5BFFD900A2FB4F /* LCPublicVoucherCell.h */,
+				74E02C4A1E5BFFD900A2FB4F /* LCPublicVoucherCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1983,6 +2046,18 @@
 				747BF6981E2DE1BD000137E5 /* LCJoinCellViewModel.m */,
 				747BF6A31E2E0063000137E5 /* LCFeedbackViewModel.h */,
 				747BF6A41E2E0063000137E5 /* LCFeedbackViewModel.m */,
+				74C86A091E569EFF006D50E4 /* LCMemberViewModel.h */,
+				74C86A0A1E569EFF006D50E4 /* LCMemberViewModel.m */,
+				74E02C311E5ACE5300A2FB4F /* LCMemberTopCellViewModel.h */,
+				74E02C321E5ACE5300A2FB4F /* LCMemberTopCellViewModel.m */,
+				74E02C341E5ACE6700A2FB4F /* LCMemberCellViewModel.h */,
+				74E02C351E5ACE6700A2FB4F /* LCMemberCellViewModel.m */,
+				74E02C3A1E5BED5F00A2FB4F /* LCVoucherViewModel.h */,
+				74E02C3B1E5BED5F00A2FB4F /* LCVoucherViewModel.m */,
+				74E02C431E5BEF4800A2FB4F /* LCDaiJinQuanViewModel.h */,
+				74E02C441E5BEF4800A2FB4F /* LCDaiJinQuanViewModel.m */,
+				74E02C461E5BEF6800A2FB4F /* LCZheKouQuanViewModel.h */,
+				74E02C471E5BEF6800A2FB4F /* LCZheKouQuanViewModel.m */,
 				747BF6AE1E2E0575000137E5 /* WAboutUsViewModel.h */,
 				747BF6AF1E2E0575000137E5 /* WAboutUsViewModel.m */,
 			);
@@ -2520,6 +2595,7 @@
 				7485FB9A1DFC382800E6D23D /* WMMenuView.m in Sources */,
 				748245221E14F8DB004735DB /* LCNotificationCellViewModel.m in Sources */,
 				740F0EE61E10C0F600EEFC3B /* BaseSectionTableHeaderFooterView.m in Sources */,
+				74E02C3F1E5BEF0600A2FB4F /* LCDaiJinQuanViewController.m in Sources */,
 				740F0EF21E10FBBD00EEFC3B /* LCVideoDetailViewViewModel.m in Sources */,
 				74F90D011E1265B7005E5D09 /* LCHomeModel.m in Sources */,
 				7485FD1D1DFFECDD00E6D23D /* UIButton+ImageTitleStyle.m in Sources */,
@@ -2542,6 +2618,7 @@
 				7485FDA91DFFFA1500E6D23D /* UIImage+GIF.m in Sources */,
 				7485FB111DF90A1B00E6D23D /* ViewController.m in Sources */,
 				747BF6901E2DE136000137E5 /* LCCollectOJoinRViewModel.m in Sources */,
+				74C86A171E56BD3D006D50E4 /* LCMemberHeaderView.m in Sources */,
 				747BF68D1E2DE10E000137E5 /* LCCollectOJoinRViewController.m in Sources */,
 				7485FBF91DFC39FB00E6D23D /* NSDate+CalendarLogic.m in Sources */,
 				7485FC0A1DFC39FB00E6D23D /* KDRouter.m in Sources */,
@@ -2549,8 +2626,10 @@
 				7485FD9F1DFFFA1500E6D23D /* MKAnnotationView+WebCache.m in Sources */,
 				741B05921E20CBE7002860A7 /* LCSetingViewController.m in Sources */,
 				7485FBFD1DFC39FB00E6D23D /* NSString+PJR.m in Sources */,
+				74C86A1D1E56CFE8006D50E4 /* LCMemberTopCell.m in Sources */,
 				74388C501E1B8E3300DF2795 /* LCUserTeacherTalkBottomView.m in Sources */,
 				74F90D071E1381A4005E5D09 /* LCHomeCollectionBananaViewModel.m in Sources */,
+				74E02C391E5BED3C00A2FB4F /* LCMyVoucherViewController.m in Sources */,
 				74D2F66D1E0394DA00C84317 /* LCTextLinePositionModifier.m in Sources */,
 				7485FD141DFFB8D600E6D23D /* LCHomeCollectionCellModel.m in Sources */,
 				74D2F6761E080AAE00C84317 /* LCEvaluateDetailViewController.m in Sources */,
@@ -2597,6 +2676,7 @@
 				7485FD9D1DFFFA1500E6D23D /* SDCollectionViewCell.m in Sources */,
 				747BF6CA1E2E1936000137E5 /* LCSelectXueLiAlerView.m in Sources */,
 				747BF6C61E2E1936000137E5 /* LCBaoMingFooterView.m in Sources */,
+				74C86A0E1E56A225006D50E4 /* LCMemberViewController.m in Sources */,
 				74450C891E2375CA00F01EB7 /* LCEditPersonalDetailCell.m in Sources */,
 				7485FCBA1DFD4FC800E6D23D /* JDStatusBarNotification.m in Sources */,
 				747BF6841E2CCEFB000137E5 /* LCCourseClassViewController.m in Sources */,
@@ -2610,6 +2690,7 @@
 				7485FDAF1DFFFA1500E6D23D /* UIView+SDExtension.m in Sources */,
 				7485FCC51DFD523100E6D23D /* BaseViewController.m in Sources */,
 				74450CC21E271C7B00F01EB7 /* LCRegisteredViewModel.m in Sources */,
+				74E02C481E5BEF6800A2FB4F /* LCZheKouQuanViewModel.m in Sources */,
 				747BF6C51E2E1936000137E5 /* LCBaoMingTFCell.m in Sources */,
 				74450CA01E24817500F01EB7 /* LCUseOldPaswordChangePaswordViewController.m in Sources */,
 				74450CA91E249ABC00F01EB7 /* LCUseVerificationChangePasswordViewController.m in Sources */,
@@ -2651,6 +2732,7 @@
 				7485FBFF1DFC39FB00E6D23D /* UIButton+Common.m in Sources */,
 				7485FC061DFC39FB00E6D23D /* UIViewController+Example.m in Sources */,
 				744EEBCF1E1E94B5002FE8B1 /* LCPersonalCenterCellViewModel.m in Sources */,
+				74E02C421E5BEF1C00A2FB4F /* LCZheKouQuanViewController.m in Sources */,
 				7485FBFE1DFC39FB00E6D23D /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
 				74D2F6701E03A14800C84317 /* LCVideoDetailEvaluateCell.m in Sources */,
 				7485FC141DFC39FB00E6D23D /* KDNetAPIManager_User.m in Sources */,
@@ -2661,9 +2743,11 @@
 				7485FCC41DFD523100E6D23D /* BaseTableViewController.m in Sources */,
 				74C4FB4C1E029319007BC549 /* LCSonEvaluateCellViewModel.m in Sources */,
 				74C869C31E559D2E006D50E4 /* LCTeacherDetailModel.m in Sources */,
+				74E02C3C1E5BED5F00A2FB4F /* LCVoucherViewModel.m in Sources */,
 				7485FB0E1DF90A1B00E6D23D /* AppDelegate.m in Sources */,
 				74C869BF1E559D2E006D50E4 /* LCNotarizeZiXunOrderViewController.m in Sources */,
 				74450CB61E24C4FF00F01EB7 /* iCarousel.m in Sources */,
+				74E02C361E5ACE6700A2FB4F /* LCMemberCellViewModel.m in Sources */,
 				7485FBFB1DFC39FB00E6D23D /* NSObject+Common.m in Sources */,
 				7485FB981DFC382800E6D23D /* RDVTabBarItem.m in Sources */,
 				7485FDA41DFFFA1500E6D23D /* SDWebImageDownloader.m in Sources */,
@@ -2689,6 +2773,7 @@
 				7485FBA21DFC382800E6D23D /* UITextView+YZEmotion.m in Sources */,
 				74450C8F1E238F1B00F01EB7 /* LCChangeNickNameAlerView.m in Sources */,
 				7485FDAE1DFFFA1500E6D23D /* UIView+WebCacheOperation.m in Sources */,
+				74E02C331E5ACE5300A2FB4F /* LCMemberTopCellViewModel.m in Sources */,
 				747BF6C91E2E1936000137E5 /* LCSelectBirthdayAlerView.m in Sources */,
 				7485FCDD1DFE425D00E6D23D /* LCRootViewModel.m in Sources */,
 				7485FDA71DFFFA1500E6D23D /* SDWebImagePrefetcher.m in Sources */,
@@ -2712,14 +2797,18 @@
 				7485FDCC1E00F87C00E6D23D /* LCCourseViewModel.m in Sources */,
 				74450CC81E27210400F01EB7 /* LCForgotPasswordViewModel.m in Sources */,
 				7485FB0B1DF90A1B00E6D23D /* main.m in Sources */,
+				74C86A1A1E56BD7E006D50E4 /* LCMemberFootView.m in Sources */,
 				747BF6DD1E2E652B000137E5 /* LCCourseClassSCellViewModel.m in Sources */,
 				74450CA31E24818F00F01EB7 /* LCUseOldPaswordChangePaswordViewModel.m in Sources */,
 				7485FBA91DFC382800E6D23D /* YZTextAttachment.m in Sources */,
 				74C869C51E559D2E006D50E4 /* LCCounselTeacherCellViewModel.m in Sources */,
+				74C86A0B1E569EFF006D50E4 /* LCMemberViewModel.m in Sources */,
 				7485FCFB1DFE82C300E6D23D /* LCHomeViewController.m in Sources */,
+				74C86A111E56A555006D50E4 /* LCMemberCell.m in Sources */,
 				7485FD9B1DFFFA1500E6D23D /* TADotView.m in Sources */,
 				7485FDA31DFFFA1500E6D23D /* SDWebImageDecoder.m in Sources */,
 				7485FB601DFAA3A100E6D23D /* BaseCollectionViewModel.m in Sources */,
+				74E02C451E5BEF4800A2FB4F /* LCDaiJinQuanViewModel.m in Sources */,
 				747812C71E0113A200507DCA /* LCVideoDetailTabBar.m in Sources */,
 				74388C9B1E1E0A7800DF2795 /* LCMySelfMainViewController.m in Sources */,
 				747BF6961E2DE19B000137E5 /* LCCollectCellViewModel.m in Sources */,
@@ -2745,6 +2834,7 @@
 				747BF6A51E2E0063000137E5 /* LCFeedbackViewModel.m in Sources */,
 				74C869C81E559D2E006D50E4 /* LCTeacherDetailViewModel.m in Sources */,
 				747BF6D11E2E26C3000137E5 /* LCSearchViewModel.m in Sources */,
+				74E02C4B1E5BFFD900A2FB4F /* LCPublicVoucherCell.m in Sources */,
 				74450CB91E24C72B00F01EB7 /* LCTeacherCollectionCellViewModel.m in Sources */,
 				7485FB961DFC382800E6D23D /* RDVTabBar.m in Sources */,
 				74C91A6D1E1644860065BAFE /* LCUserTeacherTalkViewModel.m in Sources */,

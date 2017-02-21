@@ -14,6 +14,7 @@
     self.shouldPullToRefresh = NO;
     self.shouldInfiniteScrolling = NO;
     self.mutableDataArr = [NSMutableArray array];
+    self.dataSource = [NSArray array];
     self.curpage = 1;
 }
 

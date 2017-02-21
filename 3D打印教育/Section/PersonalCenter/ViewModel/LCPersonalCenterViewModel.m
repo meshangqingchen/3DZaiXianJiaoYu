@@ -17,6 +17,8 @@
 #import "LCCollectOJoinRViewModel.h" // 课程 或者 收藏
 #import "LCFeedbackViewModel.h"      // 意见反馈
 #import "LCMyMessageViewModel.h"     // 我的消息
+#import "LCMemberViewModel.h"        // 会员中心
+#import "LCVoucherViewModel.h"
 
 
 @interface LCPersonalCenterViewModel ()
@@ -94,6 +96,12 @@
     }else if ([cellVM.titleName isEqualToString:@"意见反馈"]){
         LCFeedbackViewModel *feedbackVM = [[LCFeedbackViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"意见反馈"}];
         [self.navigationStackService pushViewModel:feedbackVM animated:YES];
+    }else if ([cellVM.titleName isEqualToString:@"会员中心"]){
+        LCMemberViewModel *memberVM = [[LCMemberViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"会员中心"}];
+        [self.navigationStackService pushViewModel:memberVM animated:YES];
+    }else if ([cellVM.titleName isEqualToString:@"我的卡券"]){
+        LCVoucherViewModel *voucherViewModel = [[LCVoucherViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"我的卡券"}];
+        [self.navigationStackService pushViewModel:voucherViewModel animated:YES];
     }
 }
 
@@ -104,11 +112,17 @@
     LCPersonalCenterCellViewModel *cellVM0 = [[LCPersonalCenterCellViewModel alloc]initWithModel:@{@"titleName":@"消息",@"imageName":@"xiaoxitixing"}];
     LCPersonalCenterCellViewModel *cellVM1 = [[LCPersonalCenterCellViewModel alloc]initWithModel:@{@"titleName":@"课程",@"imageName":@"wodekecheng"}];
     LCPersonalCenterCellViewModel *cellVM2 = [[LCPersonalCenterCellViewModel alloc]initWithModel:@{@"titleName":@"收藏",@"imageName":@"shoucang"}];
+    
     LCPersonalCenterCellViewModel *cellVM3 = [[LCPersonalCenterCellViewModel alloc]initWithModel:@{@"titleName":@"设置",@"imageName":@"seting"}];
     LCPersonalCenterCellViewModel *cellVM4 = [[LCPersonalCenterCellViewModel alloc]initWithModel:@{@"titleName":@"意见反馈",@"imageName":@"yijianfankui"}];
+    
+    LCPersonalCenterCellViewModel *cellVM5 = [[LCPersonalCenterCellViewModel alloc]initWithModel:@{@"titleName":@"会员中心",@"imageName":@"huiyuanzhongxin"}];
+    LCPersonalCenterCellViewModel *cellVM6 = [[LCPersonalCenterCellViewModel alloc]initWithModel:@{@"titleName":@"我的卡券",@"imageName":@"wodekaquan"}];
+    NSArray *setionArr3 = @[cellVM5,cellVM6];
+    
     NSArray *setionArr0 = @[cellVM0,cellVM1];
     NSArray *setionArr1 = @[cellVM2,cellVM3,cellVM4];
-    [self.mutableDataArr addObjectsFromArray:@[setionArr0,setionArr1]];//
+    [self.mutableDataArr addObjectsFromArray:@[setionArr3,setionArr0,setionArr1]];//
     self.dataSource = self.mutableDataArr.copy;
 }
 @end

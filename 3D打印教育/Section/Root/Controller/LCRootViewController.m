@@ -39,26 +39,7 @@
     MYLog(@"%@",[KDFileManager getDocumentPath]);
     LCENCRYPTKEY = nil;
     //下载图片
-    [[KDNetAPIManager_User sharedKDNetAPIManager_User] launchScreenImageCompleteHandle:^(id responseObj, NSError *error) {
-        MYLog(@"%@",responseObj);
-        NSNumber *status  = responseObj[@"status"];
-        
-        if ([status isEqualToNumber:@1]) {
-            NSDictionary *contents = responseObj[@"contents"];
-
-            NSString *imageUrlStr = contents[@"img"];
-            
-            NSURLSessionDownloadTask *task=[[NSURLSession sharedSession] downloadTaskWithURL:[NSURL URLWithString:imageUrlStr] completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-                
-                NSData * imageData = [NSData dataWithContentsOfURL:location];
-                NSString *path = [NSString stringWithFormat:@"%@/%@",[KDFileManager getCachePath],@"LCimage"];
-                UIImage *image = [UIImage imageWithData:imageData];
-                [UIImageJPEGRepresentation(image, 1) writeToFile:path atomically:YES];
-                
-            }];
-            [task resume];
-        }
-    }];
+    
     
     if ([KDFileManager readUserDataForKey:LCCLOIN_AUTO]) {
         [[KDNetAPIManager_User sharedKDNetAPIManager_User]loginWithAuto:[KDFileManager readUserDataForKey:LCCLOIN_AUTO] completeHandle:^(id responseObj, NSError *error) {
@@ -70,9 +51,11 @@
                 LCENCRYPTKEY = encryptKey;
             }
             [self creatTabBarController];
+            [self downloadImage];
         }];
     }else{
         [self creatTabBarController];
+        [self downloadImage];
     }
 }
 
@@ -174,6 +157,29 @@
         
     }
     return _launchView;
+}
+
+-(void)downloadImage{
+    [[KDNetAPIManager_User sharedKDNetAPIManager_User] launchScreenImageCompleteHandle:^(id responseObj, NSError *error) {
+        MYLog(@"%@",responseObj);
+        NSNumber *status  = responseObj[@"status"];
+        
+        if ([status isEqualToNumber:@1]) {
+            NSDictionary *contents = responseObj[@"contents"];
+            
+            NSString *imageUrlStr = contents[@"img"];
+            
+            NSURLSessionDownloadTask *task=[[NSURLSession sharedSession] downloadTaskWithURL:[NSURL URLWithString:imageUrlStr] completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                
+                NSData * imageData = [NSData dataWithContentsOfURL:location];
+                NSString *path = [NSString stringWithFormat:@"%@/%@",[KDFileManager getCachePath],@"LCimage"];
+                UIImage *image = [UIImage imageWithData:imageData];
+                [UIImageJPEGRepresentation(image, 1) writeToFile:path atomically:YES];
+                
+            }];
+            [task resume];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

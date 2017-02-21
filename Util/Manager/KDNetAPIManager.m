@@ -58,11 +58,11 @@ static dispatch_once_t onceToken;
     [mutableDic addEntriesFromDictionary:params];
     [mutableDic setObject:time forKey:@"time"];
     
-    MYLog(@"= = = = LCEncryptKey%@",LCENCRYPTKEY);//后台加密key
-    
+    MYLog(@"= = = = LCEncryptKey %@",LCENCRYPTKEY);//后台加密key
+    MYLog(@"= = = = api %@",aPath);
     [mutableDic setObject:LCENCRYPTKEY ? LCENCRYPTKEY : @"YangtechApiKey_3feFE4" forKey:@"key"];
     [mutableDic setObject:[[NSString stringWithFormat:@"%@%@",time,LCENCRYPTKEY ? LCENCRYPTKEY : @"YangtechApiKey_3feFE4"] md5String] forKey:@"signature"];
-   MYLog(@"参数 = = = = =  = %@",mutableDic);
+//   MYLog(@"参数 = = = = =  = %@",mutableDic);
     switch (method) {
         case Get:
             return [self LC_GET:aPath parameters:mutableDic andBaseApi:baseApi completeHandle:complete];
@@ -122,12 +122,37 @@ static dispatch_once_t onceToken;
     
     NSURLSessionDataTask *task = [self dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         
+        
+        //转换NSURLResponse成为HTTPResponse
+        
+        
         if ([NSJSONSerialization isValidJSONObject:(NSDictionary *)responseObject]) {
             NSError *error1;
             NSData *jsonData = [NSJSONSerialization dataWithJSONObject:(NSDictionary *)responseObject options:NSJSONWritingPrettyPrinted error:&error1];
             
             NSString *json = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-             MYLog(@"原始数据 ============= %@",json);
+            MYLog(@"%@",[KDFileManager getDocumentPath]);
+            MYLog(@"参数 = = %@ = = %@ = = %@",path,parameters,json);
+            
+            NSHTTPURLResponse *HTTPResponse = (NSHTTPURLResponse *)response;
+            NSDictionary *fields = HTTPResponse.allHeaderFields;
+            NSLog(@"fields = %@",fields);
+            NSLog(@"fields = %@",[fields description]);
+            NSArray *cookies = [NSHTTPCookie cookiesWithResponseHeaderFields:fields forURL:[NSURL URLWithString:urlStr]];
+            NSLog(@"cookiess = %@",cookies);
+            
+            for (NSHTTPCookie *cookie in cookies) {
+                MYLog(@"========");
+                NSLog(@"++++++cookie,name:= %@,valuie = %@",cookie.name,cookie.value);
+            }
+            
+            
+            NSHTTPCookieStorage *cookieJar = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+            for (NSHTTPCookie *cookie in [cookieJar cookies]) {
+                NSLog(@"cookie == == = %@", cookie);
+            }
+            
+
         }
         MYLog(@"错误信息 ============= %@",error);
         MYLog(@"====++++++%@",[NSThread currentThread]);
@@ -137,9 +162,8 @@ static dispatch_once_t onceToken;
     return task;
 }
 
-
 -(NSURLSessionDataTask *)checkAppUpdateWithPath:(NSString *)aPath completeHandle:(void (^)(id, NSError *))complete{
-
+    
     NSError *serializationError = nil;
     NSURLRequest *request = [self.requestSerializer requestWithMethod:@"POST" URLString:[[NSURL URLWithString:aPath relativeToURL:nil] absoluteString] parameters:nil error:&serializationError];
 #ifdef DEBUG
@@ -163,8 +187,6 @@ static dispatch_once_t onceToken;
     }];
     [task resume]; //开始请求
     return task;
-
-
 }
 
 ///图片上传

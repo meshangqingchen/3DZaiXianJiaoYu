@@ -15,6 +15,9 @@
     self.contentView.backgroundColor = [KDColor getC0Color];
     
     UIImage *image = [UIImage imageNamed:@"gerendongtai"];
+    MYLog(@"++++++===++++ %@",NSStringFromCGSize(image.size));
+    MYLog(@"++++++===++++ %@",NSStringFromCGSize(image.size));
+    MYLog(@"++++++===++++ %@",NSStringFromCGSize(image.size));
     self.leftImageView = [UIImageView new];
     [self.contentView addSubview:_leftImageView];
     [_leftImageView mas_makeConstraints:^(MASConstraintMaker *make) {
