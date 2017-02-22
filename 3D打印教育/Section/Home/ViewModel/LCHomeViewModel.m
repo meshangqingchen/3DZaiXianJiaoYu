@@ -19,6 +19,13 @@
 #import "LCMoreTeacherViewModel.h"          //更多老师
 #import "LCSearchViewModel.h"
 #import "LCTeacherDetailViewModel.h"   //老师详情
+#import "JCAlertView.h"
+#import "LCNewUserAlertView.h"
+#import "KDFileManager.h"
+
+@interface LCHomeViewModel ()
+@property(nonatomic,strong) UIView *launchView;
+@end
 
 @implementation LCHomeViewModel
 -(void)initialize{
@@ -83,55 +90,14 @@
     
     }
 }
--(void)requestRemoteDataWithPage:(NSUInteger)curpage completeHandle:(void(^)(id responseObj))complete{
-    
-//    LCHomeModel *homeModel = [LCHomeModel parseJSON:nil];
-//    MYLog(@"+++++homeModel = %@",homeModel);
-//    MYLog(@"+++++homeModel = %@",homeModel);
-//    MYLog(@"+++++homeModel = %@",homeModel);
-//    
-//    NSMutableArray *sectionDataArr0 = [NSMutableArray array];
-//    for (int i = 0; i<6; i++) {
-//        LCHomeSmallCollectionCellModel *semallCellVM = [[LCHomeSmallCollectionCellModel alloc]initWithModel:homeModel.contents.classTypeList[i]];
-//        semallCellVM.title = [NSString stringWithFormat:@"我是title%d",i];
-//        [sectionDataArr0 addObject:semallCellVM];
-//    }
-//    LCHomeCollectionSectionModel *sectionVM0 = [LCHomeCollectionSectionModel new];
-//    sectionVM0.sectionTitle = @"课程设置";
-//    sectionVM0.data = sectionDataArr0.copy;
-//    
-//    
-//    NSMutableArray *sectionDataArr1 = [NSMutableArray array];
-//    for (int i = 0; i<5; i++) {
-//        LCHomeCollectionCellModel *CellVM = [[LCHomeCollectionCellModel alloc]initWithModel:homeModel.contents.recommendClassTypeList[i]];
-//        CellVM.title = [NSString stringWithFormat:@"我是title%d",i];
-//        [sectionDataArr1 addObject:CellVM];
-//    }
-//    LCHomeCollectionSectionModel *sectionVM1 = [LCHomeCollectionSectionModel new];
-//    sectionVM1.sectionTitle = @"设备工艺";
-//    sectionVM1.data = sectionDataArr1.copy;
-//    
-//    
-//    
-//    NSMutableArray *sectionDataArr2 = [NSMutableArray array];
-//    for (int i = 0; i<3; i++) {
-//        LCTeacherCollectionCellViewModel *teacherCellVM = [[LCTeacherCollectionCellViewModel alloc]initWithModel:homeModel.contents.teacherList[i]];
-//        teacherCellVM.textViewText = [NSString stringWithFormat:@"我是老师介绍%d",i];
-//        [sectionDataArr2 addObject:teacherCellVM];
-//    }
-//    NSArray *teacherArr = @[sectionDataArr2.copy];
-//    LCHomeCollectionSectionModel *sectionVM2 = [LCHomeCollectionSectionModel new];
-//    sectionVM2.sectionTitle = @"名师导航";
-//    sectionVM2.data = teacherArr;
-//    
-//    [self.mutableDataArr addObjectsFromArray:@[sectionVM0,sectionVM1,sectionVM2]];
-//    self.dataSource = self.mutableDataArr.copy;
 
-    
-    
+-(void)requestRemoteDataWithPage:(NSUInteger)curpage completeHandle:(void(^)(id responseObj))complete{
+    [self starLaunch];
+    LCNewUserAlertView *newUserView= [[LCNewUserAlertView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH/750*526)];
+    newUserView.backgroundColor = [UIColor yellowColor];
+    JCAlertView *alertView = [[JCAlertView alloc]initWithCustomView:newUserView dismissWhenTouchedBackground:YES];
     [self.netApi_Manager homeJsonCompleteHandle:^(id responseObj, NSError *error) {
         LCHomeModel *homeModel = [LCHomeModel parseJSON:responseObj];
-        
         NSMutableArray *bannerMutableArr = [NSMutableArray array];
         for (int i = 0; i<homeModel.contents.carouselList.count; i++) {
             LCHomeCollectionBananaViewModel *bannerVM = [[LCHomeCollectionBananaViewModel alloc]initWithModel:homeModel.contents.carouselList[i]];
@@ -139,7 +105,6 @@
             [bannerMutableArr addObject:bannerVM];
         }
         self.homeBannerDataArr = bannerMutableArr.copy;
-        
         NSMutableArray *signUpListMutableArr = [NSMutableArray array];
         for (int i = 0; i<homeModel.contents.signUpList.count; i++) {
             //signUpList 和 carouselList 的model 一样 所以就创建 signUpList的ViewModel了
@@ -148,10 +113,6 @@
             [signUpListMutableArr addObject:ignUpVM];
         }
         self.homesignUpListDataArr = signUpListMutableArr.copy;
-
-        
-        
-        
         NSMutableArray *sectionDataArr0 = [NSMutableArray array];
         for (int i = 0; i<homeModel.contents.classTypeList.count; i++) {
             LCHomeSmallCollectionCellModel *semallCellVM = [[LCHomeSmallCollectionCellModel alloc]initWithModel:homeModel.contents.classTypeList[i]];
@@ -189,6 +150,52 @@
         
         [self.mutableDataArr addObjectsFromArray:@[sectionVM0,sectionVM1,sectionVM2]];
         self.dataSource = self.mutableDataArr.copy;
+        //弹出来
+        [alertView show];
     }];
 }
+
+
+-(void)starLaunch{
+    [kSharedAppDelegate.window addSubview:self.launchView];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self animationLaunchView];
+    });
+}
+
+- (UIView *)launchView {
+    if(_launchView == nil) {
+        _launchView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+        _launchView.backgroundColor = [UIColor whiteColor];
+        UIImageView *bottomImage = [UIImageView new];
+        bottomImage.image = [UIImage imageNamed:@"qidong"];
+        [_launchView addSubview:bottomImage];
+        [bottomImage mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.mas_offset(0);
+            make.bottom.mas_offset(-40);
+            make.size.mas_equalTo(CGSizeMake(193, 50));
+        }];
+        
+        if ([[UIImage alloc]initWithContentsOfFile:[NSString stringWithFormat:@"%@/%@",[KDFileManager getCachePath],@"LCimage"]]) {
+            UIImage *topLaunchImage = [[UIImage alloc]initWithContentsOfFile:[NSString stringWithFormat:@"%@/%@",[KDFileManager getCachePath],@"LCimage"]];
+            UIImageView *topimageView = [UIImageView new];
+            topimageView.image = topLaunchImage;
+            [_launchView addSubview:topimageView];
+            [topimageView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.top.right.mas_offset(0);
+                make.height.mas_equalTo(SCREEN_WIDTH*97/75);
+            }];
+        }
+    }
+    return _launchView;
+}
+
+-(void)animationLaunchView{
+    [UIView animateWithDuration:0.5 animations:^{
+        self.launchView.alpha = 0;
+    } completion:^(BOOL finished) {
+        [self.launchView removeFromSuperview];
+    }];;
+}
+
 @end

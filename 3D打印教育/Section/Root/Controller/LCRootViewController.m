@@ -60,12 +60,6 @@
 }
 
 -(void)creatTabBarController{
-    
-    [kSharedAppDelegate.window addSubview:self.launchView];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self animationLaunchView];
-    });
-    
     self.tabBarController = [[RDVTabBarController alloc]init];
     self.tabBarController.delegate = self;
     self.tabBarController.view.frame = self.view.bounds;
@@ -75,7 +69,6 @@
     [self setupViewControllers];
     [self customizeTabBarForController];
     [self.tabBarController setSelectedIndex:0];
-
 }
 
 

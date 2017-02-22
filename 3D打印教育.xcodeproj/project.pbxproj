@@ -311,6 +311,7 @@
 		74E02C451E5BEF4800A2FB4F /* LCDaiJinQuanViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E02C441E5BEF4800A2FB4F /* LCDaiJinQuanViewModel.m */; };
 		74E02C481E5BEF6800A2FB4F /* LCZheKouQuanViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E02C471E5BEF6800A2FB4F /* LCZheKouQuanViewModel.m */; };
 		74E02C4B1E5BFFD900A2FB4F /* LCPublicVoucherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E02C4A1E5BFFD900A2FB4F /* LCPublicVoucherCell.m */; };
+		74E02C4E1E5D6E3500A2FB4F /* LCNewUserAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E02C4D1E5D6E3500A2FB4F /* LCNewUserAlertView.m */; };
 		74F90D011E1265B7005E5D09 /* LCHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F90D001E1265B7005E5D09 /* LCHomeModel.m */; };
 		74F90D071E1381A4005E5D09 /* LCHomeCollectionBananaViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F90D061E1381A4005E5D09 /* LCHomeCollectionBananaViewModel.m */; };
 		D2781A4C36A2A69961E1662A /* libPods-3D打印教育.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C89CD1AB96CEC93A8A4619C /* libPods-3D打印教育.a */; };
@@ -1005,6 +1006,8 @@
 		74E02C471E5BEF6800A2FB4F /* LCZheKouQuanViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCZheKouQuanViewModel.m; sourceTree = "<group>"; };
 		74E02C491E5BFFD900A2FB4F /* LCPublicVoucherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPublicVoucherCell.h; sourceTree = "<group>"; };
 		74E02C4A1E5BFFD900A2FB4F /* LCPublicVoucherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPublicVoucherCell.m; sourceTree = "<group>"; };
+		74E02C4C1E5D6E3500A2FB4F /* LCNewUserAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNewUserAlertView.h; sourceTree = "<group>"; };
+		74E02C4D1E5D6E3500A2FB4F /* LCNewUserAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNewUserAlertView.m; sourceTree = "<group>"; };
 		74F90CFF1E1265B7005E5D09 /* LCHomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHomeModel.h; sourceTree = "<group>"; };
 		74F90D001E1265B7005E5D09 /* LCHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHomeModel.m; sourceTree = "<group>"; };
 		74F90D051E1381A4005E5D09 /* LCHomeCollectionBananaViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHomeCollectionBananaViewModel.h; sourceTree = "<group>"; };
@@ -2101,6 +2104,8 @@
 				747BF6C11E2E1936000137E5 /* LCSelectBirthdayAlerView.m */,
 				747BF6C21E2E1936000137E5 /* LCSelectXueLiAlerView.h */,
 				747BF6C31E2E1936000137E5 /* LCSelectXueLiAlerView.m */,
+				74E02C4C1E5D6E3500A2FB4F /* LCNewUserAlertView.h */,
+				74E02C4D1E5D6E3500A2FB4F /* LCNewUserAlertView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2633,6 +2638,7 @@
 				74D2F66D1E0394DA00C84317 /* LCTextLinePositionModifier.m in Sources */,
 				7485FD141DFFB8D600E6D23D /* LCHomeCollectionCellModel.m in Sources */,
 				74D2F6761E080AAE00C84317 /* LCEvaluateDetailViewController.m in Sources */,
+				74E02C4E1E5D6E3500A2FB4F /* LCNewUserAlertView.m in Sources */,
 				7485FD111DFF9DAD00E6D23D /* LCBigImageAndTextCollectionViewCell.m in Sources */,
 				740F0EEF1E10D92F00EEFC3B /* LCCourseCellSonViewModel.m in Sources */,
 				7485FC041DFC39FB00E6D23D /* UIView+HUD.m in Sources */,

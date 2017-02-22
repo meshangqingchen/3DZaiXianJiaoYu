@@ -71,6 +71,7 @@
 + (UIColor *)getC27Color;
 //0xebc55c 代金卡黄色字体按钮
 + (UIColor *)getC28Color;
+//0xeebb40 优惠券上的按钮 s我都不知道和获取验证码的按钮颜色有神马不一样的b
 + (UIColor *)getC29Color;
 + (UIColor *)getC30Color;
 + (UIColor *)getC31Color;
