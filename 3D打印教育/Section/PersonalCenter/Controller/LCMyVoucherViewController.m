@@ -31,7 +31,7 @@
         self.viewControllerClasses = @[[LCDaiJinQuanViewController class],[LCZheKouQuanViewController class]];
         self.titles = @[@"代金券",@"折扣券"];
         self.menuViewStyle = WMMenuViewStyleLine;
-        self.menuBGColor = [KDColor getC5Color];
+        self.menuBGColor = [KDColor getC0Color];
         self.menuHeight = 39;
         self.titleSizeNormal = 16;
         self.titleSizeSelected = 17;

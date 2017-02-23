@@ -133,4 +133,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 ///启动界面 Api_getStartPage
 -(NSURLSessionDataTask *)launchScreenImageCompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 
+-(NSURLSessionDataTask *)myCouponCompleteHandle:(void(^)(id responseObj,NSError *error))complete;
+
 @end

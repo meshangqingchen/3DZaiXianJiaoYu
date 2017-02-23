@@ -62,7 +62,6 @@
 + (UIColor *)getC23Color;
 //0xfcd757
 + (UIColor *)getC24Color;
-
 //0xc8c8c8
 + (UIColor *)getC25Color;
 //0xF1F6F7 站位图背景色
@@ -73,7 +72,11 @@
 + (UIColor *)getC28Color;
 //0xeebb40 优惠券上的按钮 s我都不知道和获取验证码的按钮颜色有神马不一样的b
 + (UIColor *)getC29Color;
+//0xf26b6b 优惠券上的按钮 红
 + (UIColor *)getC30Color;
+
+
+
 + (UIColor *)getC31Color;
 + (UIColor *)getC32Color;
 + (UIColor *)getC33Color;

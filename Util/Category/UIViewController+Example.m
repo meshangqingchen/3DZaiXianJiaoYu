@@ -36,4 +36,25 @@ static char MethodKey;
 {
     return objc_getAssociatedObject(self, &MethodKey);
 }
+
+//获取当前控制器
++ (UIViewController *)hsm_currentViewController
+{
+    UIViewController *rootViewController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+    return [self hsm_topViewControllerForViewController:rootViewController];
+}
+
++ (UIViewController *)hsm_topViewControllerForViewController:(UIViewController *)rootViewController
+{
+    if ([rootViewController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *navigationController = (UINavigationController *)rootViewController;
+        return [self hsm_topViewControllerForViewController:navigationController.visibleViewController];
+    }
+    
+    if (rootViewController.presentedViewController) {
+        return [self hsm_topViewControllerForViewController:rootViewController.presentedViewController];
+    }
+    return rootViewController;
+}
+
 @end

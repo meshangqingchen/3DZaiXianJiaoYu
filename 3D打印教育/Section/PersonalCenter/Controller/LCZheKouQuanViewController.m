@@ -31,12 +31,13 @@ static NSString * const identiFier = @"LCPublicVoucherCell";
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
     return self.viewModel.dataSource.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     LCPublicVoucherCell *cell = [tableView dequeueReusableCellWithIdentifier:identiFier forIndexPath:indexPath];
-    
+    [cell bindViewModel:self.viewModel.dataSource[indexPath.row]];
     return cell;
 }
 

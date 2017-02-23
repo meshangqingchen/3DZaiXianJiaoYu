@@ -1,21 +1,23 @@
 //
-//  LCNewUserAlertView.m
+//  LCActivityAlertView.m
 //  3D打印教育
 //
-//  Created by 3D on 17/2/22.
+//  Created by 3D on 17/2/23.
 //  Copyright © 2017年 3D. All rights reserved.
 //
 
-#import "LCNewUserAlertView.h"
+#import "LCActivityAlertView.h"
 
-@implementation LCNewUserAlertView
+@implementation LCActivityAlertView
+
 -(void)setupViews{
     self.imageView = [UIImageView new];
-    self.imageView.userInteractionEnabled = YES;
-    self.imageView.image = [UIImage imageNamed:@"newUser"];
+    self.imageView.image = [UIImage imageNamed:@"activity"];
     [self addSubview:self.imageView];
     [_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_offset(0);
+        make.top.bottom.mas_offset(0);
+        make.centerX.mas_offset(0);//637  407
+        make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH*637/750, SCREEN_WIDTH*407/750));
     }];
     
     self.btChaKan = [UIButton new];
@@ -28,10 +30,10 @@
     [_btChaKan mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_offset(0);
         make.size.mas_equalTo(CGSizeMake(70, 30));
-        make.bottom.mas_offset(-61.5);
+        make.bottom.mas_offset(-30.5);
     }];
     @weakify(self)
-    [self.btChaKan addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+    [_btChaKan addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
         @strongify(self)
         !self.pushMyVoucherVC ? : self.pushMyVoucherVC(self.jcalertView);
     }];
@@ -53,10 +55,8 @@
     [self addSubview:_msgLB];
     [_msgLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_offset(0);
-        make.top.mas_offset(86.5);
+        make.top.mas_offset(67);
         make.width.mas_equalTo(SCREEN_WIDTH-168);
-//        make.bottom.mas_equalTo(self.btChaKan.mas_top).mas_offset(-10);
     }];
-    
 }
 @end

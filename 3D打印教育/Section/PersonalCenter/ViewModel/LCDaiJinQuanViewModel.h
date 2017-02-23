@@ -9,5 +9,5 @@
 #import "BaseTableViewModel.h"
 
 @interface LCDaiJinQuanViewModel : BaseTableViewModel
-
+@property(nonatomic,copy) void (^pushCourseList)(); //跳转到更多精品课程
 @end

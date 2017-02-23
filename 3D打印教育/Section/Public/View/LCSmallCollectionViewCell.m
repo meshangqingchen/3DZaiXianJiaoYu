@@ -63,7 +63,7 @@
 
 -(void)bindViewModel:(id)viewModel AndIndexPath:(NSIndexPath *)indexPath andDateCount:(NSInteger)num{
     
-    if (num - indexPath.row < 3) {
+    if (num - indexPath.row < 4) {
         self.bottomLineView.hidden  = YES;
     }else{
         self.bottomLineView.hidden  = NO;

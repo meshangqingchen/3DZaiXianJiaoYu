@@ -41,12 +41,25 @@
             NSString *msg = jsonDic[@"msg"];
             if ([statusNum isEqualToNumber:@1]) {
                 NSDictionary *contents    = jsonDic[@"contents"];
-                
+                MYLog(@"contents = %@",contents);
                 NSString *login_autoValue      = contents[@"login_auto"];
                 MYLog(@"%@",login_autoValue);
                 NSString *keyValue             = contents[@"key"];
                 MYLog(@"%@",keyValue);
                 NSNumber *isTeacher           = contents[@"is_teacher"];
+               
+                NSString *activeCouponMessage = contents[@"activeCouponMessage"];
+                MYLog(@"activeCouponMessage = %@",activeCouponMessage);
+                NSString *registerCouponMessage = contents[@"registerCouponMessage"];
+                MYLog(@"registerCouponMessage = %@",registerCouponMessage);
+               
+                if (activeCouponMessage.length != 0 & activeCouponMessage != nil) {
+                    [KDFileManager saveUserData:activeCouponMessage forKey:LCACTIVEMSG];
+                }
+                
+                if (registerCouponMessage.length != 0 & registerCouponMessage != nil) {
+                    [KDFileManager saveUserData:registerCouponMessage forKey:LCNEWUSERMSG];
+                }
                 
                 [KDFileManager saveUserData:login_autoValue forKey:LCCLOIN_AUTO];
                 LCENCRYPTKEY = keyValue;

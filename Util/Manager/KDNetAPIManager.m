@@ -134,23 +134,23 @@ static dispatch_once_t onceToken;
             MYLog(@"%@",[KDFileManager getDocumentPath]);
             MYLog(@"参数 = = %@ = = %@ = = %@",path,parameters,json);
             
-            NSHTTPURLResponse *HTTPResponse = (NSHTTPURLResponse *)response;
-            NSDictionary *fields = HTTPResponse.allHeaderFields;
-            NSLog(@"fields = %@",fields);
-            NSLog(@"fields = %@",[fields description]);
-            NSArray *cookies = [NSHTTPCookie cookiesWithResponseHeaderFields:fields forURL:[NSURL URLWithString:urlStr]];
-            NSLog(@"cookiess = %@",cookies);
-            
-            for (NSHTTPCookie *cookie in cookies) {
-                MYLog(@"========");
-                NSLog(@"++++++cookie,name:= %@,valuie = %@",cookie.name,cookie.value);
-            }
-            
-            
-            NSHTTPCookieStorage *cookieJar = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-            for (NSHTTPCookie *cookie in [cookieJar cookies]) {
-                NSLog(@"cookie == == = %@", cookie);
-            }
+//            NSHTTPURLResponse *HTTPResponse = (NSHTTPURLResponse *)response;
+//            NSDictionary *fields = HTTPResponse.allHeaderFields;
+//            NSLog(@"fields = %@",fields);
+//            NSLog(@"fields = %@",[fields description]);
+//            NSArray *cookies = [NSHTTPCookie cookiesWithResponseHeaderFields:fields forURL:[NSURL URLWithString:urlStr]];
+//            NSLog(@"cookiess = %@",cookies);
+//            
+//            for (NSHTTPCookie *cookie in cookies) {
+//                MYLog(@"========");
+//                NSLog(@"++++++cookie,name:= %@,valuie = %@",cookie.name,cookie.value);
+//            }
+//            
+//            
+//            NSHTTPCookieStorage *cookieJar = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+//            for (NSHTTPCookie *cookie in [cookieJar cookies]) {
+//                NSLog(@"cookie == == = %@", cookie);
+//            }
             
 
         }

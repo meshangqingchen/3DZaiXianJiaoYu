@@ -109,6 +109,8 @@ static NSString *const Api_problemView = @"problemView";
 static NSString *const Api_addProblem = @"addProblem";
 ///启动界面
 static NSString *const Api_getStartPage = @"getStartPage";
+///我的券
+static NSString *const Api_myCoupon = @"myCoupon";
 
 
 
@@ -525,10 +527,17 @@ static NSString *const PARAM_orderSn          = @"orderSn";
         complete(responseObj,error);
     }];
 }
-
+//启动图
 -(NSURLSessionDataTask *)launchScreenImageCompleteHandle:(void (^)(id, NSError *))complete{
     
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_getStartPage encodeParams:nil withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+        complete(responseObj,error);
+        
+    }];
+}
+//我的优惠券
+-(NSURLSessionDataTask *)myCouponCompleteHandle:(void (^)(id, NSError *))complete{
+    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_myCoupon encodeParams:nil withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
         
     }];

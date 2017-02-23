@@ -132,7 +132,7 @@
 }
 
 + (UIColor *)getC30Color {
-    return kUIColorRGB16(0xa3a3a3);
+    return kUIColorRGB16(0xf26b6b);
 }
 
 + (UIColor *)getC31Color {

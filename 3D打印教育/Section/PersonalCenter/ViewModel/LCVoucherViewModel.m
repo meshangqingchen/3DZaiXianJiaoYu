@@ -9,5 +9,8 @@
 #import "LCVoucherViewModel.h"
 
 @implementation LCVoucherViewModel
-
+-(void)initialize{
+    [super initialize];
+    self.shouldNavBackItem = YES;
+}
 @end

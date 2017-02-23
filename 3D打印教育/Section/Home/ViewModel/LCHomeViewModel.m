@@ -20,11 +20,17 @@
 #import "LCSearchViewModel.h"
 #import "LCTeacherDetailViewModel.h"   //老师详情
 #import "JCAlertView.h"
-#import "LCNewUserAlertView.h"
+#import "LCNewUserAlertView.h"         //新人优惠
+#import "LCActivityAlertView.h"        //活动
 #import "KDFileManager.h"
+#import "LCVoucherViewModel.h"         //我的卡券
+#import "LCMyVoucherViewController.h"
+#import "UIViewController+Example.h"
 
 @interface LCHomeViewModel ()
 @property(nonatomic,strong) UIView *launchView;
+@property(nonatomic,strong) JCAlertView *nnewUserAlertView;
+@property(nonatomic,strong) JCAlertView *activityAlertView;
 @end
 
 @implementation LCHomeViewModel
@@ -68,6 +74,16 @@
         teacherDeatilVM.teacherID = teacherID;
         [self.navigationStackService pushViewModel:teacherDeatilVM animated:YES];
     }];
+    __block int a = 0;
+    [self setPushMyVoucherVC:^(JCAlertView *AlertView){
+        @strongify(self)
+        if (a == 0) {
+            LCVoucherViewModel *voucherViewModel = [[LCVoucherViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"我的卡券"}];
+            [self.navigationStackService pushViewModel:voucherViewModel animated:YES];
+            a++;
+        }
+        [AlertView dismissWithCompletion:nil];
+    }];
 }
 
 -(void)didSelectRowAtIndexPath:(NSIndexPath *)indexpath in:(UICollectionView *)collectionView{
@@ -92,10 +108,12 @@
 }
 
 -(void)requestRemoteDataWithPage:(NSUInteger)curpage completeHandle:(void(^)(id responseObj))complete{
+    MYLog(@" = = = %@",[KDFileManager getCachePath]);
+    MYLog(@" = = = %@",[KDFileManager getCachePath]);
     [self starLaunch];
-    LCNewUserAlertView *newUserView= [[LCNewUserAlertView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH/750*526)];
-    newUserView.backgroundColor = [UIColor yellowColor];
-    JCAlertView *alertView = [[JCAlertView alloc]initWithCustomView:newUserView dismissWhenTouchedBackground:YES];
+    [self creatNewUserView];
+    [self creatActivityView];
+    
     [self.netApi_Manager homeJsonCompleteHandle:^(id responseObj, NSError *error) {
         LCHomeModel *homeModel = [LCHomeModel parseJSON:responseObj];
         NSMutableArray *bannerMutableArr = [NSMutableArray array];
@@ -151,7 +169,15 @@
         [self.mutableDataArr addObjectsFromArray:@[sectionVM0,sectionVM1,sectionVM2]];
         self.dataSource = self.mutableDataArr.copy;
         //弹出来
-        [alertView show];
+        if ([KDFileManager readUserDataForKey:LCACTIVEMSG]) {
+            [self.nnewUserAlertView show];
+//            [KDFileManager removeUserDataForkey:LCACTIVEMSG];
+        }
+        
+        if ([KDFileManager readUserDataForKey:LCNEWUSERMSG]) {
+            [self.activityAlertView show];
+//            [KDFileManager removeUserDataForkey:LCNEWUSERMSG];
+        }
     }];
 }
 
@@ -198,4 +224,30 @@
     }];;
 }
 
+-(void)creatNewUserView{
+    LCNewUserAlertView *newUserView= [[LCNewUserAlertView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH/750*526)];
+    newUserView.pushMyVoucherVC = self.pushMyVoucherVC;
+    newUserView.jcalertView = self.nnewUserAlertView;
+    
+    JCAlertView *nnewUserAlertView = [[JCAlertView alloc]initWithCustomView:newUserView dismissWhenTouchedBackground:YES];
+    newUserView.jcalertView = nnewUserAlertView;
+    self.nnewUserAlertView = nnewUserAlertView;
+    if ([KDFileManager readUserDataForKey:LCACTIVEMSG]) {
+        newUserView.msgLB.text = [KDFileManager readUserDataForKey:LCACTIVEMSG];
+    }
+}
+
+-(void)creatActivityView{
+    
+    LCActivityAlertView *activityView = [[LCActivityAlertView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH/750*407)];
+    activityView.pushMyVoucherVC = self.pushMyVoucherVC;
+    JCAlertView *activityAlertView = [[JCAlertView alloc]initWithCustomView:activityView dismissWhenTouchedBackground:YES];
+    activityView.jcalertView = activityAlertView;
+    self.activityAlertView = activityAlertView;
+    
+    if ([KDFileManager readUserDataForKey:LCNEWUSERMSG]) {
+        activityView.msgLB.text = [KDFileManager readUserDataForKey:LCACTIVEMSG];
+    }
+   
+}
 @end

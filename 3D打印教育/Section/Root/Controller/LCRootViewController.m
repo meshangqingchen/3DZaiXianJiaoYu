@@ -35,16 +35,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    MYLog(@"%@",[KDFileManager getDocumentPath]);
-    MYLog(@"%@",[KDFileManager getDocumentPath]);
+//    MYLog(@"%@",[KDFileManager getDocumentPath]);
+//    MYLog(@"%@",[KDFileManager getDocumentPath]);
     LCENCRYPTKEY = nil;
-    //下载图片
-    
-    
     if ([KDFileManager readUserDataForKey:LCCLOIN_AUTO]) {
         [[KDNetAPIManager_User sharedKDNetAPIManager_User]loginWithAuto:[KDFileManager readUserDataForKey:LCCLOIN_AUTO] completeHandle:^(id responseObj, NSError *error) {
             NSNumber *status = responseObj[@"status"];
             if ([status isEqualToNumber:@1]) {
+                
                 //如果状态是1 就代表自动登录成功了
                 NSDictionary *contents = responseObj[@"contents"];
                 NSString     *encryptKey = contents[@"key"];

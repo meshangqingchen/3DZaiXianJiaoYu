@@ -121,7 +121,6 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
     
     if (indexPath.section == 0) {
         LCSmallCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifierSmall forIndexPath:indexPath];
-//        [cell bindViewModel: AndIndexPath:indexPath];
         [cell bindViewModel:sectionModel.data[indexPath.row] AndIndexPath:indexPath andDateCount:sectionModel.data.count];
         return cell;
     }else if (indexPath.section == 1 & indexPath.row == 0){

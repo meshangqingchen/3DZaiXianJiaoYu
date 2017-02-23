@@ -17,5 +17,6 @@
 
 
 @property(nonatomic,copy) void (^moreClick)(NSIndexPath *indexpath);
-@property(nonatomic,copy) void (^searchClick)();
+@property(nonatomic,copy) void (^searchClick)();//搜索
+@property(nonatomic,copy) void(^pushMyVoucherVC)(id view);//弹出框按钮 跳转到我的购物券
 @end

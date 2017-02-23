@@ -14,7 +14,7 @@ extern NSString *const KEY_TITLE;
 
 extern NSString *const KEY_DATASOURCE;
 
-extern NSString *LCENCRYPTKEY;
+extern NSString *LCENCRYPTKEY; //加密用的
 
 
 //extern NSString *const

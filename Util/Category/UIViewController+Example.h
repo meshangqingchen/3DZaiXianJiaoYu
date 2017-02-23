@@ -10,4 +10,5 @@
 
 @interface UIViewController (Example)
 @property (copy, nonatomic) NSString *method;
++ (UIViewController *)hsm_currentViewController;
 @end

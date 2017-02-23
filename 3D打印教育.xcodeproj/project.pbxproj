@@ -312,6 +312,9 @@
 		74E02C481E5BEF6800A2FB4F /* LCZheKouQuanViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E02C471E5BEF6800A2FB4F /* LCZheKouQuanViewModel.m */; };
 		74E02C4B1E5BFFD900A2FB4F /* LCPublicVoucherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E02C4A1E5BFFD900A2FB4F /* LCPublicVoucherCell.m */; };
 		74E02C4E1E5D6E3500A2FB4F /* LCNewUserAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E02C4D1E5D6E3500A2FB4F /* LCNewUserAlertView.m */; };
+		74E02C511E5EA23D00A2FB4F /* LCActivityAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E02C501E5EA23D00A2FB4F /* LCActivityAlertView.m */; };
+		74E02C541E5EB86000A2FB4F /* LCMyCouponModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E02C531E5EB86000A2FB4F /* LCMyCouponModel.m */; };
+		74E02C571E5EBA6400A2FB4F /* LCCouponCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E02C561E5EBA6400A2FB4F /* LCCouponCellViewModel.m */; };
 		74F90D011E1265B7005E5D09 /* LCHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F90D001E1265B7005E5D09 /* LCHomeModel.m */; };
 		74F90D071E1381A4005E5D09 /* LCHomeCollectionBananaViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F90D061E1381A4005E5D09 /* LCHomeCollectionBananaViewModel.m */; };
 		D2781A4C36A2A69961E1662A /* libPods-3D打印教育.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C89CD1AB96CEC93A8A4619C /* libPods-3D打印教育.a */; };
@@ -1008,6 +1011,12 @@
 		74E02C4A1E5BFFD900A2FB4F /* LCPublicVoucherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPublicVoucherCell.m; sourceTree = "<group>"; };
 		74E02C4C1E5D6E3500A2FB4F /* LCNewUserAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNewUserAlertView.h; sourceTree = "<group>"; };
 		74E02C4D1E5D6E3500A2FB4F /* LCNewUserAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNewUserAlertView.m; sourceTree = "<group>"; };
+		74E02C4F1E5EA23D00A2FB4F /* LCActivityAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCActivityAlertView.h; sourceTree = "<group>"; };
+		74E02C501E5EA23D00A2FB4F /* LCActivityAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCActivityAlertView.m; sourceTree = "<group>"; };
+		74E02C521E5EB86000A2FB4F /* LCMyCouponModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCMyCouponModel.h; path = "3D打印教育/Section/Public/View/LCMyCouponModel.h"; sourceTree = SOURCE_ROOT; };
+		74E02C531E5EB86000A2FB4F /* LCMyCouponModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCMyCouponModel.m; path = "3D打印教育/Section/Public/View/LCMyCouponModel.m"; sourceTree = SOURCE_ROOT; };
+		74E02C551E5EBA6400A2FB4F /* LCCouponCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCouponCellViewModel.h; sourceTree = "<group>"; };
+		74E02C561E5EBA6400A2FB4F /* LCCouponCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCouponCellViewModel.m; sourceTree = "<group>"; };
 		74F90CFF1E1265B7005E5D09 /* LCHomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHomeModel.h; sourceTree = "<group>"; };
 		74F90D001E1265B7005E5D09 /* LCHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHomeModel.m; sourceTree = "<group>"; };
 		74F90D051E1381A4005E5D09 /* LCHomeCollectionBananaViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHomeCollectionBananaViewModel.h; sourceTree = "<group>"; };
@@ -1979,6 +1988,8 @@
 				747BF69E1E2DF28D000137E5 /* LCCollectCourseModel.m */,
 				747BF6A01E2DF806000137E5 /* LCJoinCourseModel.h */,
 				747BF6A11E2DF806000137E5 /* LCJoinCourseModel.m */,
+				74E02C521E5EB86000A2FB4F /* LCMyCouponModel.h */,
+				74E02C531E5EB86000A2FB4F /* LCMyCouponModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2061,6 +2072,8 @@
 				74E02C441E5BEF4800A2FB4F /* LCDaiJinQuanViewModel.m */,
 				74E02C461E5BEF6800A2FB4F /* LCZheKouQuanViewModel.h */,
 				74E02C471E5BEF6800A2FB4F /* LCZheKouQuanViewModel.m */,
+				74E02C551E5EBA6400A2FB4F /* LCCouponCellViewModel.h */,
+				74E02C561E5EBA6400A2FB4F /* LCCouponCellViewModel.m */,
 				747BF6AE1E2E0575000137E5 /* WAboutUsViewModel.h */,
 				747BF6AF1E2E0575000137E5 /* WAboutUsViewModel.m */,
 			);
@@ -2106,6 +2119,8 @@
 				747BF6C31E2E1936000137E5 /* LCSelectXueLiAlerView.m */,
 				74E02C4C1E5D6E3500A2FB4F /* LCNewUserAlertView.h */,
 				74E02C4D1E5D6E3500A2FB4F /* LCNewUserAlertView.m */,
+				74E02C4F1E5EA23D00A2FB4F /* LCActivityAlertView.h */,
+				74E02C501E5EA23D00A2FB4F /* LCActivityAlertView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2602,6 +2617,7 @@
 				740F0EE61E10C0F600EEFC3B /* BaseSectionTableHeaderFooterView.m in Sources */,
 				74E02C3F1E5BEF0600A2FB4F /* LCDaiJinQuanViewController.m in Sources */,
 				740F0EF21E10FBBD00EEFC3B /* LCVideoDetailViewViewModel.m in Sources */,
+				74E02C511E5EA23D00A2FB4F /* LCActivityAlertView.m in Sources */,
 				74F90D011E1265B7005E5D09 /* LCHomeModel.m in Sources */,
 				7485FD1D1DFFECDD00E6D23D /* UIButton+ImageTitleStyle.m in Sources */,
 				7485FDAB1DFFFA1500E6D23D /* UIImage+WebP.m in Sources */,
@@ -2799,6 +2815,7 @@
 				7485FBA71DFC382800E6D23D /* YZEmotionManager.m in Sources */,
 				747812CA1E011D5C00507DCA /* LCIntroView.m in Sources */,
 				747BF6991E2DE1BD000137E5 /* LCJoinCellViewModel.m in Sources */,
+				74E02C571E5EBA6400A2FB4F /* LCCouponCellViewModel.m in Sources */,
 				7485FCBC1DFD4FC800E6D23D /* JDStatusBarView.m in Sources */,
 				7485FDCC1E00F87C00E6D23D /* LCCourseViewModel.m in Sources */,
 				74450CC81E27210400F01EB7 /* LCForgotPasswordViewModel.m in Sources */,
@@ -2859,6 +2876,7 @@
 				747BF6D71E2E604E000137E5 /* LCCourseClassModel.m in Sources */,
 				747BF6CE1E2E1A15000137E5 /* LCBaoMingModel.m in Sources */,
 				748CF1DC1E0A71F100E60F68 /* LCDetailEvaluateCell.m in Sources */,
+				74E02C541E5EB86000A2FB4F /* LCMyCouponModel.m in Sources */,
 				7485FB4A1DFA831E00E6D23D /* Constants.m in Sources */,
 				747BF68A1E2CD154000137E5 /* LCCourseClassCollectionCell.m in Sources */,
 				7485FC131DFC39FB00E6D23D /* KDNetAPIManager.m in Sources */,
