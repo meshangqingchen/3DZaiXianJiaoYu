@@ -136,7 +136,7 @@
                         }
                     }];
                     !self.payForZixunSucceed ? : self.payForZixunSucceed();
-                    self.payForZixunSucceed = nil;
+
                 }else if ([firstStr isEqualToString:@"2"]){
                     [[KDNetAPIManager_User sharedKDNetAPIManager_User] paySucceedWithCourseOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
                         if ([responseObj[@"status"] isEqualToNumber:@0]) {
@@ -152,7 +152,30 @@
                         }
                     }];
                     !self.payForCourseSucced ? : self.payForCourseSucced();
-                    self.payForCourseSucced = nil;
+                }else if ([firstStr isEqualToString:@"3"]){
+                    [[KDNetAPIManager_User sharedKDNetAPIManager_User] paySucceedWithMemberOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
+                        NSNumber *status = responseObj[@"status"];
+                        NSString *contents = responseObj[@"contents"];
+                        if ([status isEqualToNumber:@1]) {
+                            kSharedAppDelegate.payForMemberCarSucced(contents);
+                        }else{
+                            [[KDNetAPIManager_User sharedKDNetAPIManager_User] paySucceedWithMemberOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
+                                NSNumber *status = responseObj[@"status"];
+                                if ([status isEqualToNumber:@1]) {
+                                    kSharedAppDelegate.payForMemberCarSucced(contents);
+                                }else{
+                                    [[KDNetAPIManager_User sharedKDNetAPIManager_User] paySucceedWithMemberOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
+                                        NSNumber *status = responseObj[@"status"];
+                                        if ([status isEqualToNumber:@1]) {
+                                            kSharedAppDelegate.payForMemberCarSucced(contents);
+                                        }else{
+                                            NSLog(@"无能无力里了");
+                                        }
+                                    }];
+                                }
+                            }];
+                        }
+                    }];
                 }
             }
         }];
@@ -191,7 +214,6 @@
                         }
                     }];
                     !self.payForZixunSucceed ? : self.payForZixunSucceed();
-                    self.payForZixunSucceed = nil;
                 }else if ([firstStr isEqualToString:@"2"]){
                     [[KDNetAPIManager_User sharedKDNetAPIManager_User] paySucceedWithCourseOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
                         if ([responseObj[@"status"] isEqualToNumber:@0]) {
@@ -207,7 +229,30 @@
                         }
                     }];
                     !self.payForCourseSucced ? : self.payForCourseSucced();
-                    self.payForCourseSucced = nil;
+                }else if ([firstStr isEqualToString:@"3"]){
+                    [[KDNetAPIManager_User sharedKDNetAPIManager_User] paySucceedWithMemberOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
+                        NSNumber *status = responseObj[@"status"];
+                        NSString *contents = responseObj[@"contents"];
+                        if ([status isEqualToNumber:@1]) {
+                            kSharedAppDelegate.payForMemberCarSucced(contents);
+                        }else{
+                            [[KDNetAPIManager_User sharedKDNetAPIManager_User] paySucceedWithMemberOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
+                                NSNumber *status = responseObj[@"status"];
+                                if ([status isEqualToNumber:@1]) {
+                                    kSharedAppDelegate.payForMemberCarSucced(contents);
+                                }else{
+                                    [[KDNetAPIManager_User sharedKDNetAPIManager_User] paySucceedWithMemberOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
+                                        NSNumber *status = responseObj[@"status"];
+                                        if ([status isEqualToNumber:@1]) {
+                                            kSharedAppDelegate.payForMemberCarSucced(contents);
+                                        }else{
+                                            NSLog(@"无能无力里了");
+                                        }
+                                    }];
+                                }
+                            }];
+                        }
+                    }];
                 }
             }
         }];

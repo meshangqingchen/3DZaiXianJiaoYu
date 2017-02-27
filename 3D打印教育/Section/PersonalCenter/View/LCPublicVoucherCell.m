@@ -12,6 +12,7 @@
 
 @interface LCPublicVoucherCell ()
 @property(nonatomic,strong) LCCouponCellViewModel *couponcellVM;
+@property(nonatomic,strong) NSIndexPath *indexPath;
 @end
 
 @implementation LCPublicVoucherCell
@@ -97,11 +98,40 @@
     @weakify(self)
     [self.shiyongBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
         @strongify(self)
-        !self.couponcellVM.pushCourseList ? : self.couponcellVM.pushCourseList();
+        !self.couponcellVM.pushCourseList ? : self.couponcellVM.pushCourseList(self.indexPath);
     }];
 }
 
--(void)bindViewModel:(id)viewModel{
+//-(void)bindViewModel:(id)viewModel{
+//    LCCouponCellViewModel *couponcellVM = viewModel;
+//    self.couponcellVM = couponcellVM;
+//    if (couponcellVM.youHuiQianType == XianJinQuan) {
+//        self.leftLB.text = @"¥";
+//        self.leftLB.textColor = [KDColor getC28Color];
+//        self.leftLB.font = [[KDFont sharedKDFont] getF34Font];
+//        
+//        self.rightLB.text = couponcellVM.coupon_discount;
+//        self.rightLB.textColor = [KDColor getC28Color];
+//        self.rightLB.font = [[KDFont sharedKDFont] getF50Font];
+//        
+//        self.shiyongBT.backgroundColor = [KDColor getC28Color];
+//    }else if (couponcellVM.youHuiQianType == ZheKouQuan){
+//        self.leftLB.text = couponcellVM.coupon_discount;
+//        self.leftLB.textColor = [KDColor getC30Color];
+//        self.leftLB.font = [[KDFont sharedKDFont] getF50Font];
+//        self.rightLB.text = @"折";
+//        self.rightLB.textColor = [KDColor getC30Color];
+//        self.rightLB.font = [[KDFont sharedKDFont] getF30Font];
+//        self.shiyongBT.backgroundColor = [KDColor getC30Color];
+//    }
+//    self.topLB.text = couponcellVM.coupon_name;
+//    self.conditionLB.text = [NSString stringWithFormat:@"∙%@",couponcellVM.coupon_rule];
+//    self.timeLB.text = [NSString stringWithFormat:@"∙%@后到期",[NSString getDataStrWithIntStr:couponcellVM.end_time]];
+//}
+
+-(void)bindViewModel:(id)viewModel AndIndexPath:(NSIndexPath *)indexPath{
+    
+    self.indexPath = indexPath;
     LCCouponCellViewModel *couponcellVM = viewModel;
     self.couponcellVM = couponcellVM;
     if (couponcellVM.youHuiQianType == XianJinQuan) {
@@ -127,5 +157,4 @@
     self.conditionLB.text = [NSString stringWithFormat:@"∙%@",couponcellVM.coupon_rule];
     self.timeLB.text = [NSString stringWithFormat:@"∙%@后到期",[NSString getDataStrWithIntStr:couponcellVM.end_time]];
 }
-
 @end

@@ -128,11 +128,18 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 -(NSURLSessionDataTask *)historyTalkWithTeacherID:(NSString *)teacherID CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 ///发送消息
 -(NSURLSessionDataTask *)sendMessageWithTeacherID:(NSString *)teacherID andMessage:(NSString*)message CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
-
-
 ///启动界面 Api_getStartPage
 -(NSURLSessionDataTask *)launchScreenImageCompleteHandle:(void(^)(id responseObj,NSError *error))complete;
-
+//我的优惠券
 -(NSURLSessionDataTask *)myCouponCompleteHandle:(void(^)(id responseObj,NSError *error))complete;
+//使用卡券
+-(NSURLSessionDataTask *)useCouponWithID:(NSString *)couponID andorderSn:(NSString *)orderSn CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
+//我的优惠券
+-(NSURLSessionDataTask *)memberCardCompleteHandle:(void(^)(id responseObj,NSError *error))complete;
+//购买会员
+-(NSURLSessionDataTask *)buyMemberWithMemberCarID:(NSString *)memberID CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
+//购买会员第三部 告诉后台
+-(NSURLSessionDataTask *)paySucceedWithMemberOrder_sn:(NSString*)order_sn completeHandle:(void(^)(id responseObj,NSError *error))complete;
 
 @end
+

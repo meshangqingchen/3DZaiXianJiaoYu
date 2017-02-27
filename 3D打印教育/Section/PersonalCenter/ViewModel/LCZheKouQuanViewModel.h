@@ -7,7 +7,10 @@
 //
 
 #import "BaseTableViewModel.h"
-
+@class LCUseCouponModel;
 @interface LCZheKouQuanViewModel : BaseTableViewModel
+@property(nonatomic,strong) NSString *orderSn;
+@property(nonatomic,copy) void (^pushCourseList)(NSIndexPath *indexPath); //跳转到更多精品课程
+@property(nonatomic,copy) void (^refreshThePrice)(LCUseCouponModel *model);//刷新订单价格
 
 @end

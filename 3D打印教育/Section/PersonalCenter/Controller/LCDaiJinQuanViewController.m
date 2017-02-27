@@ -35,7 +35,8 @@ static NSString * const identiFier = @"LCPublicVoucherCell";
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     LCPublicVoucherCell *cell = [tableView dequeueReusableCellWithIdentifier:identiFier forIndexPath:indexPath];
-    [cell bindViewModel:self.viewModel.dataSource[indexPath.row]];
+    
+    [cell bindViewModel:self.viewModel.dataSource[indexPath.row] AndIndexPath:indexPath];
     return cell;
 }
 
@@ -45,13 +46,4 @@ static NSString * const identiFier = @"LCPublicVoucherCell";
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 @end

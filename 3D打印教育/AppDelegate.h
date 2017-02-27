@@ -18,5 +18,6 @@
 
 @property(nonatomic,strong) void (^payForZixunSucceed)();
 @property(nonatomic,strong) void (^payForCourseSucced)();
+@property(nonatomic,strong) void (^payForMemberCarSucced)(NSString *stopTime);
 @end
 

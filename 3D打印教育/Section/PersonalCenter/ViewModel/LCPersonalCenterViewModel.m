@@ -47,10 +47,8 @@
         @strongify(self)
         //个人中心
         [self.netApi_Manager personalInformationCompleteHandle:^(id responseObj, NSError *error) {
-            
             LCUserModel *userModel = [LCUserModel parseJSON:responseObj];
             self.status = userModel.status;
-            
             LCUser *selfCreatUser = [[LCUser alloc]initWithUserContents:userModel.contents];
             self.selfCreatUser = selfCreatUser;
             NSDictionary *dic = nil;
@@ -70,7 +68,6 @@
             headerVM.goToLoginVC = self.goToLoginVC;
             headerVM.pushToEditDataVM = self.pushToEditDataVM;
             !self.bindViewModel ? :self.bindViewModel(headerVM);
-            
         }];
     }];
     

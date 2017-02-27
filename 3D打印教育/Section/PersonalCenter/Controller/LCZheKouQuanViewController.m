@@ -37,7 +37,8 @@ static NSString * const identiFier = @"LCPublicVoucherCell";
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     LCPublicVoucherCell *cell = [tableView dequeueReusableCellWithIdentifier:identiFier forIndexPath:indexPath];
-    [cell bindViewModel:self.viewModel.dataSource[indexPath.row]];
+    [cell bindViewModel:self.viewModel.dataSource[indexPath.row] AndIndexPath:indexPath];
+    
     return cell;
 }
 

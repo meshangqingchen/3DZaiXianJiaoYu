@@ -38,24 +38,20 @@ static  NSString *identifiertop = @"LCMemberTopCell";
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.row == 0) {
+    if ((indexPath.row == 0) & isMember) {
         LCMemberTopCell *cell = [tableView dequeueReusableCellWithIdentifier:identifiertop forIndexPath:indexPath];
         return cell;
     }
     LCMemberCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+    [cell bindViewModel:self.viewModel.dataSource[indexPath.row]];
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0) {
+    if ((indexPath.row == 0) & isMember) {
         return 164;
     }
     return 44;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

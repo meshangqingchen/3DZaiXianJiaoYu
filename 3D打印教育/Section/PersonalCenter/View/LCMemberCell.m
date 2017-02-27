@@ -7,6 +7,12 @@
 //
 
 #import "LCMemberCell.h"
+#import "LCMemberTopCellViewModel.h"
+#import "LCMemberCellViewModel.h"
+
+@interface LCMemberCell ()
+@property(nonatomic,strong)LCMemberCellViewModel *cellVM;
+@end
 
 @implementation LCMemberCell
 
@@ -26,17 +32,29 @@
     _rightBT.backgroundColor = [KDColor getC21Color];
     _rightBT.titleLabel.font = [[KDFont sharedKDFont] getF28Font];
     _rightBT.layer.cornerRadius = 12.5;
-    [_rightBT setTitle:@"续费" forState:0];
+    
     [self.contentView addSubview:_rightBT];
     [_rightBT mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_offset(0);
         make.right.mas_offset(-15);
         make.size.mas_equalTo(CGSizeMake(60, 25));
     }];
+    @weakify(self)
+    [self.rightBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+        @strongify(self)
+        !self.cellVM.buyMembersCreatOrder ? : self.cellVM.buyMembersCreatOrder(self.cellVM.iid,self.cellVM.price);
+    }];
 }
 
 
 -(void)bindViewModel:(id)viewModel{
-
+    LCMemberCellViewModel *cellVM = viewModel;
+    self.cellVM = viewModel;
+    self.leftLB.text = [NSString stringWithFormat:@"%@个月/%@元",cellVM.longTime,cellVM.price];
+    if (isMember) {
+        [_rightBT setTitle:@"续费" forState:0];
+    }else{
+        [_rightBT setTitle:@"购买" forState:0];
+    }
 }
 @end

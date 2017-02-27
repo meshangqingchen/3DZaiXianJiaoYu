@@ -27,8 +27,10 @@ typedef enum {
 
 @property (nonatomic, copy) NSString *coupon_name;
 
+@property (nonatomic, copy) NSString *coupon_id;
+
 @property(nonatomic,assign) YouHuiQuan youHuiQianType;
 
-@property(nonatomic,copy) void (^pushCourseList)(); //跳转到更多精品课程
+@property(nonatomic,copy) void (^pushCourseList)(NSIndexPath *indexPath); //跳转到更多精品课程
 -(instancetype)initWithModel:(id)model;
 @end

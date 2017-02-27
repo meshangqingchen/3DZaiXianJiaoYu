@@ -8,7 +8,7 @@
 
 #import "LCNotarizeOrderViewController.h"
 #import "LCNotarizeOrderViewModel.h"
-
+#import "UIView+BlocksKit.h"
 
 @interface LCNotarizeOrderViewController ()
 @property(nonatomic,strong) LCNotarizeOrderViewModel *viewModel;
@@ -69,7 +69,47 @@
         make.bottom .mas_equalTo(imageView);
     }];
     
-    UIView *backView3 = [[UIView alloc]initWithFrame:CGRectMake(0, backView2.bottom+5, SCREEN_WIDTH, 44)];
+    UIView *backView25 = [[UIView alloc]initWithFrame:CGRectMake(0, backView2.bottom+5, SCREEN_WIDTH, 44)];
+    backView25.backgroundColor = [KDColor getC0Color];
+    [self.view addSubview:backView25];
+    @weakify(self)
+    [backView25 bk_whenTapped:^{
+        @strongify(self)
+        !self.viewModel.pushSearchVoucher ? : self.viewModel.pushSearchVoucher(self.viewModel.order_sn,self.viewModel.refreshThePrice);
+    }];
+    UILabel *cardVoucherLB = [UILabel new];
+    cardVoucherLB.text = @"卡券";
+    cardVoucherLB.textColor = [KDColor getC2Color];
+    cardVoucherLB.font = [[KDFont sharedKDFont]getF30Font];
+    [backView25 addSubview:cardVoucherLB];
+    [cardVoucherLB mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_offset(15);
+        make.centerY.mas_offset(0);
+        
+    }];
+    
+    UIImageView *jantouImageView = [UIImageView new];
+    jantouImageView.userInteractionEnabled = YES;
+    
+    UIImage *jiantouimage = [UIImage imageNamed:@"danjiantou"];
+    jantouImageView.image = jiantouimage;
+    [backView25 addSubview:jantouImageView];
+    [jantouImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(-15);
+        make.centerY.mas_offset(0);
+        make.size.mas_equalTo(jiantouimage.size);
+    }];
+    
+    UILabel *jianPrice = [UILabel new];
+    jianPrice.textColor = [KDColor getC23Color];
+    jianPrice.font = [[KDFont sharedKDFont] getF26Font];
+    [backView25 addSubview:jianPrice];
+    [jianPrice mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(jantouImageView.mas_right).mas_offset(-8);
+        make.centerY.mas_offset(0);
+    }];
+    
+    UIView *backView3 = [[UIView alloc]initWithFrame:CGRectMake(0, backView25.bottom+5, SCREEN_WIDTH, 44)];
     backView3.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:backView3];
     UILabel *allPrice = [UILabel new];
@@ -164,30 +204,25 @@
         make.height.mas_equalTo(49);
         make.width.mas_equalTo(100);
     }];
-    @weakify(self)
+   
     [bottomRightBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
         @strongify(self)
         !self.viewModel.zhifu ? : self.viewModel.zhifu();
     }];
+
+
+    [self.viewModel setRefreshThePrice:^(LCUseCouponModel *model) {
+        @strongify(self)
+        self.viewModel.price = model.contents.price;
+        float pricenum = [model.contents.price floatValue];
+        trulyPriceLB.text = [NSString stringWithFormat:@"¥ %.2f",pricenum];
+        allPrice.text = [NSString stringWithFormat:@"%@:%.2f",@"总计",pricenum];
+        float jiannum = [model.contents.discount floatValue];
+        jianPrice.text = [NSString stringWithFormat:@"-¥ %.2f",jiannum];
+        
+    }];
+
 }
-
-
-//- (NSString *)generateTradeNO
-//{
-//    static int kNumber = 15;
-//    
-//    NSString *sourceStr = @"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-//    NSMutableString *resultStr = [[NSMutableString alloc] init];
-//    srand((unsigned)time(0));
-//    for (int i = 0; i < kNumber; i++)
-//    {
-//        unsigned index = rand() % [sourceStr length];
-//        NSString *oneStr = [sourceStr substringWithRange:NSMakeRange(index, 1)];
-//        [resultStr appendString:oneStr];
-//    }
-//    return resultStr;
-//}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

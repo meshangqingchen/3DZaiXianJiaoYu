@@ -56,6 +56,12 @@
 - (NSMutableArray *)getValues{
     LCDaiJinQuanViewModel *DIViewModel = [[LCDaiJinQuanViewModel alloc]initWithServices:self.viewModel.navigationStackService params:nil];
     LCZheKouQuanViewModel *ZKViewModel = [[LCZheKouQuanViewModel alloc]initWithServices:self.viewModel.navigationStackService params:nil];
+    if (self.viewModel.orderSn) {
+        DIViewModel.orderSn = self.viewModel.orderSn;
+        DIViewModel.refreshThePrice = self.viewModel.refreshThePrice;
+        ZKViewModel.orderSn = self.viewModel.orderSn;
+        ZKViewModel.refreshThePrice = self.viewModel.refreshThePrice;
+    }
     return [@[DIViewModel,ZKViewModel] mutableCopy];
 }
 

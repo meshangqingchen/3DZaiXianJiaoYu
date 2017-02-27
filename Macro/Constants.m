@@ -11,10 +11,12 @@
 @implementation Constants
 
 NSString *const KEY_TITLE = @"title";
-//                                   dataSource
-NSString *const KEY_DATASOURCE = @"dataSource";
-NSString * LCENCRYPTKEY = nil;
 
+NSString *const KEY_DATASOURCE = @"dataSource";
+
+NSString * LCENCRYPTKEY = nil; //登录的加密key
+
+BOOL isMember = NO;  //是否会员
 
 
 

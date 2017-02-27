@@ -9,5 +9,6 @@
 #import "BaseTableViewModel.h"
 
 @interface LCMemberViewModel : BaseTableViewModel
+@property(nonatomic,copy) void (^buyMembersCreatOrder)(NSString *memberCarID,NSString *price);
 
 @end

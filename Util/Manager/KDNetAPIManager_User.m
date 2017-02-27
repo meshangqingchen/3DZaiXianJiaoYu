@@ -111,6 +111,14 @@ static NSString *const Api_addProblem = @"addProblem";
 static NSString *const Api_getStartPage = @"getStartPage";
 ///我的券
 static NSString *const Api_myCoupon = @"myCoupon";
+///使用卡券
+static NSString *const Api_useCoupon = @"useCoupon";
+///我的优惠券.
+static NSString *const Api_memberCard = @"memberCard";
+///购买会员生成会员订单
+static NSString *const Api_createMemberOrder = @"createMemberOrder";
+///购买好会员告诉后台 paymentMemberOrder
+static NSString *const Api_paymentMemberOrder = @"paymentMemberOrder";
 
 
 
@@ -161,6 +169,8 @@ static NSString *const PARAM_contact          = @"contact";
 static NSString *const PARAM_qq               = @"qq";
 static NSString *const PARAM_discription      = @"discription";
 static NSString *const PARAM_orderSn          = @"orderSn";
+static NSString *const PARAM_couponId         = @"couponId"; //使用优惠券
+static NSString *const PARAM_memberCardId     = @"ssss";//@"memberCardId";//会员卡ID
 
 
 ///发送短信获得验证码
@@ -535,11 +545,42 @@ static NSString *const PARAM_orderSn          = @"orderSn";
         
     }];
 }
-//我的优惠券
+//我的优惠券列表
 -(NSURLSessionDataTask *)myCouponCompleteHandle:(void (^)(id, NSError *))complete{
+    
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_myCoupon encodeParams:nil withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
+    }];
+}
+//使用优惠券
+-(NSURLSessionDataTask *)useCouponWithID:(NSString *)couponID andorderSn:(NSString *)orderSn CompleteHandle:(void (^)(id, NSError *))complete{
+    NSDictionary *params = @{PARAM_couponId:couponID,PARAM_orderSn:orderSn};
+    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_useCoupon encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+        complete(responseObj,error);
         
+    }];
+}
+//会员价格表
+-(NSURLSessionDataTask *)memberCardCompleteHandle:(void (^)(id, NSError *))complete{
+    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_memberCard encodeParams:nil withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+        complete(responseObj,error);
+    }];
+}
+
+//购买会员 生成订单
+-(NSURLSessionDataTask *)buyMemberWithMemberCarID:(NSString *)memberID CompleteHandle:(void (^)(id, NSError *))complete{
+    
+    NSDictionary *params = @{PARAM_memberCardId:memberID};
+    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_createMemberOrder encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+        complete(responseObj,error);
+    }];
+}
+//高所后台 会员买好了
+-(NSURLSessionDataTask *)paySucceedWithMemberOrder_sn:(NSString *)order_sn completeHandle:(void (^)(id, NSError *))complete{
+
+    NSDictionary *params = @{PARAM_orderSn:order_sn};
+    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_paymentMemberOrder encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+        complete(responseObj,error);
     }];
 }
 @end

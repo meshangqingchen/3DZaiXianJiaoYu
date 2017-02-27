@@ -62,7 +62,6 @@
         }
         if (userContents.birthday) {
             self.birthday = [NSString getDataStrWithIntStr:userContents.birthday];
-            
         }
     }
     return self;

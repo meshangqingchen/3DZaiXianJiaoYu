@@ -40,14 +40,29 @@
             NSNumber *statusNum = jsonDic[@"status"];
             NSString *msg = jsonDic[@"msg"];
             if ([statusNum isEqualToNumber:@1]) {
+                
+                
+                
                 NSDictionary *contents    = jsonDic[@"contents"];
+                
+                
+                [contents enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+                    NSLog(@" = = key %@",key);
+                    NSLog(@" = = obj %@",NSStringFromClass([obj class]));
+                }];
+                
                 MYLog(@"contents = %@",contents);
                 NSString *login_autoValue      = contents[@"login_auto"];
                 MYLog(@"%@",login_autoValue);
                 NSString *keyValue             = contents[@"key"];
                 MYLog(@"%@",keyValue);
                 NSNumber *isTeacher           = contents[@"is_teacher"];
-               
+                
+                NSNumber *is_member           = contents[@"is_member"];
+                isMember = [is_member boolValue];
+                
+                
+                
                 NSString *activeCouponMessage = contents[@"activeCouponMessage"];
                 MYLog(@"activeCouponMessage = %@",activeCouponMessage);
                 NSString *registerCouponMessage = contents[@"registerCouponMessage"];

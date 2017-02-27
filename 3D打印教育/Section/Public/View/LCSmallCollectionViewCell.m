@@ -63,16 +63,24 @@
 
 -(void)bindViewModel:(id)viewModel AndIndexPath:(NSIndexPath *)indexPath andDateCount:(NSInteger)num{
     
-    if (num - indexPath.row < 4) {
-        self.bottomLineView.hidden  = YES;
-    }else{
-        self.bottomLineView.hidden  = NO;
-    }
-    
-    if (indexPath.row % 3 == 2) {
-        self.rightLineView.hidden  = YES;
-    }else{
-        self.rightLineView.hidden  = NO;
+    if (num % 3 == 0) {
+        if (num - indexPath.row < 4) {
+            self.bottomLineView.hidden  = YES;
+        }else{
+            self.bottomLineView.hidden  = NO;
+        }
+    }else if (num % 3 == 1){
+        if (num - indexPath.row < 2) {
+            self.bottomLineView.hidden  = YES;
+        }else{
+            self.bottomLineView.hidden  = NO;
+        }
+    }else if (num %3 == 2){
+        if (num - indexPath.row < 3) {
+            self.bottomLineView.hidden  = YES;
+        }else{
+            self.bottomLineView.hidden  = NO;
+        }
     }
     
     LCHomeSmallCollectionCellModel *cellVM = viewModel;

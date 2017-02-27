@@ -40,13 +40,31 @@
     LCENCRYPTKEY = nil;
     if ([KDFileManager readUserDataForKey:LCCLOIN_AUTO]) {
         [[KDNetAPIManager_User sharedKDNetAPIManager_User]loginWithAuto:[KDFileManager readUserDataForKey:LCCLOIN_AUTO] completeHandle:^(id responseObj, NSError *error) {
+            
+            MYLog(@"responseObj = %@",responseObj);
+            
             NSNumber *status = responseObj[@"status"];
             if ([status isEqualToNumber:@1]) {
-                
                 //如果状态是1 就代表自动登录成功了
                 NSDictionary *contents = responseObj[@"contents"];
                 NSString     *encryptKey = contents[@"key"];
                 LCENCRYPTKEY = encryptKey;
+                NSNumber *is_member      = contents[@"is_member"];
+                isMember = [is_member boolValue];
+
+                
+                NSString *activeCouponMessage = contents[@"activeCouponMessage"];
+                MYLog(@"activeCouponMessage = %@",activeCouponMessage);
+                NSString *registerCouponMessage = contents[@"registerCouponMessage"];
+                MYLog(@"registerCouponMessage = %@",registerCouponMessage);
+                
+                if (activeCouponMessage.length != 0 & activeCouponMessage != nil) {
+                    [KDFileManager saveUserData:activeCouponMessage forKey:LCACTIVEMSG];
+                }
+                
+                if (registerCouponMessage.length != 0 & registerCouponMessage != nil) {
+                    [KDFileManager saveUserData:registerCouponMessage forKey:LCNEWUSERMSG];
+                }
             }
             [self creatTabBarController];
             [self downloadImage];

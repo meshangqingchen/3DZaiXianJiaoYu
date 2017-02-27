@@ -7,7 +7,17 @@
 //
 
 #import "LCMemberCellViewModel.h"
+#import "LCMembersPriceModel.h"
 
 @implementation LCMemberCellViewModel
-
+-(instancetype)initWithModel:(id)model{
+    if (self = [super init]) {
+        LCMemberPriceContents *memberPriceContents = model;
+        self.iid = memberPriceContents.iid;
+        self.longTime = memberPriceContents.longTime;
+        self.name = memberPriceContents.name;
+        self.price = memberPriceContents.price;
+    }
+    return self;
+}
 @end

@@ -16,6 +16,8 @@ extern NSString *const KEY_DATASOURCE;
 
 extern NSString *LCENCRYPTKEY; //加密用的
 
+extern BOOL isMember;
+
 
 //extern NSString *const
 //extern NSString *const

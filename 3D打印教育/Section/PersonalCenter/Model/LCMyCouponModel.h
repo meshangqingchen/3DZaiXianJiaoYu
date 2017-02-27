@@ -40,6 +40,8 @@
 
 @property (nonatomic, copy) NSString *coupon_name;
 
+@property (nonatomic, copy) NSString *coupon_id;
+
 @end
 
 @interface Cashcouponlist : NSObject
@@ -51,6 +53,8 @@
 @property (nonatomic, copy) NSString *end_time;
 
 @property (nonatomic, copy) NSString *coupon_name;
+
+@property (nonatomic, copy) NSString *coupon_id;
 
 @end
 

@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewModel.h"
-
+#import "LCUseCouponModel.h"
 @interface LCNotarizeOrderViewModel : BaseViewModel
 @property(nonatomic,strong) NSURL *imageURL;
 @property(nonatomic,strong) NSString *titleName;
@@ -17,4 +17,7 @@
 
 @property(nonatomic,copy) void (^zhifu)();
 @property(nonatomic,copy) void (^callBackforZifuSucceed)();//支付成功回调
+@property(nonatomic,copy) void (^pushSearchVoucher)(NSString *orderSn ,void (^refreshThePrice)(LCUseCouponModel *model));
+@property(nonatomic,copy) void (^refreshThePrice)(LCUseCouponModel *model);
+
 @end

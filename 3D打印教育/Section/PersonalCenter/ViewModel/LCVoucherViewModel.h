@@ -7,7 +7,10 @@
 //
 
 #import "BaseViewModel.h"
+@class LCUseCouponModel;
 
 @interface LCVoucherViewModel : BaseViewModel
+@property(nonatomic,strong) NSString *orderSn;
+@property(nonatomic,copy) void (^refreshThePrice)(LCUseCouponModel *model);
 
 @end

@@ -13,6 +13,7 @@
 #import "Order.h"
 #import "RSADataSigner.h"
 #import <AlipaySDK/AlipaySDK.h>
+#import "LCVoucherViewModel.h"
 @interface LCNotarizeOrderViewModel ()
 
 @end
@@ -118,10 +119,17 @@
     }];
     
     //为课程支付成功 课程支付成功 就返回并 播放第一个 视频
-    
     [kSharedAppDelegate setPayForCourseSucced:^{
         !self.callBackforZifuSucceed ? : self.callBackforZifuSucceed();
         [self.navigationStackService popViewModelAnimated:YES];
+    }];
+    
+    [self setPushSearchVoucher:^(NSString *orderSn ,void (^refreshThePrice)(LCUseCouponModel *model)) {
+        @strongify(self)
+        LCVoucherViewModel *voucherViewModel = [[LCVoucherViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"我的卡券"}];
+        voucherViewModel.orderSn = orderSn;
+        voucherViewModel.refreshThePrice = refreshThePrice;
+        [self.navigationStackService pushViewModel:voucherViewModel animated:YES];
     }];
 }
 
