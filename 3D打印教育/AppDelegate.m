@@ -232,19 +232,21 @@
                 }else if ([firstStr isEqualToString:@"3"]){
                     [[KDNetAPIManager_User sharedKDNetAPIManager_User] paySucceedWithMemberOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
                         NSNumber *status = responseObj[@"status"];
-                        NSString *contents = responseObj[@"contents"];
+                        NSDictionary *contents = responseObj[@"contents"];
+                        NSNumber *memberStopTimeNum = contents[@"memberStopTime"];
+                        NSString *memberStopTime = [memberStopTimeNum stringValue];
                         if ([status isEqualToNumber:@1]) {
-                            kSharedAppDelegate.payForMemberCarSucced(contents);
+                            kSharedAppDelegate.payForMemberCarSucced(memberStopTime);
                         }else{
                             [[KDNetAPIManager_User sharedKDNetAPIManager_User] paySucceedWithMemberOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
                                 NSNumber *status = responseObj[@"status"];
                                 if ([status isEqualToNumber:@1]) {
-                                    kSharedAppDelegate.payForMemberCarSucced(contents);
+                                    kSharedAppDelegate.payForMemberCarSucced(memberStopTime);
                                 }else{
                                     [[KDNetAPIManager_User sharedKDNetAPIManager_User] paySucceedWithMemberOrder_sn:order_sn completeHandle:^(id responseObj, NSError *error) {
                                         NSNumber *status = responseObj[@"status"];
                                         if ([status isEqualToNumber:@1]) {
-                                            kSharedAppDelegate.payForMemberCarSucced(contents);
+                                            kSharedAppDelegate.payForMemberCarSucced(memberStopTime);
                                         }else{
                                             NSLog(@"无能无力里了");
                                         }

@@ -40,6 +40,7 @@ static  NSString *identifiertop = @"LCMemberTopCell";
     
     if ((indexPath.row == 0) & isMember) {
         LCMemberTopCell *cell = [tableView dequeueReusableCellWithIdentifier:identifiertop forIndexPath:indexPath];
+        [cell bindViewModel:self.viewModel.dataSource[indexPath.row]];
         return cell;
     }
     LCMemberCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];

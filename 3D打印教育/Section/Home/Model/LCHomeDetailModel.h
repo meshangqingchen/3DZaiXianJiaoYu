@@ -33,11 +33,11 @@
 
 @property (nonatomic, copy) NSString *created_time;
 
-@property (nonatomic, copy) NSString *is_fav;
+@property (nonatomic, copy) NSString *is_fav;//是否收藏
 
 @property (nonatomic, assign) NSInteger is_play;
 
-@property (nonatomic, assign) NSInteger is_assess;
+@property (nonatomic, assign) NSInteger is_assess;//是否评价
 
 @property (nonatomic, copy) NSString *recommend;
 

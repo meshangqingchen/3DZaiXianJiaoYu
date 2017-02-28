@@ -18,8 +18,10 @@ extern NSString *LCENCRYPTKEY; //加密用的
 
 extern BOOL isMember;
 
+extern NSString *memberStopTime;
 
-//extern NSString *const
+extern BOOL Apponline;  //默认上线了
+
 //extern NSString *const
 //extern NSString *const
 //extern NSString *const

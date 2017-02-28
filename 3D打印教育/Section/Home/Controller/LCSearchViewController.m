@@ -28,7 +28,7 @@ static NSString *identifier = @"LCVideoCollectionViewCell";
 @dynamic viewModel,collectionView;
 - (void)viewDidLoad {
     
-    _tf = [[LCTextFiled alloc]initWithFrame:CGRectMake(30, 7, SEARCHTEXTFIELD_W - 30, 30)];
+    _tf = [[LCTextFiled alloc]initWithFrame:CGRectMake(30, 7, SCREEN_WIDTH - 80, 30)];
     _tf.layer.cornerRadius = 15;
     _tf.backgroundColor = [KDColor getC1Color];
     _tf.leftView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"fangdajing"]];

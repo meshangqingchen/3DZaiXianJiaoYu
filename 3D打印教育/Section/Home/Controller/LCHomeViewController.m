@@ -50,19 +50,28 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
 @implementation LCHomeViewController
 @dynamic viewModel,collectionView;
 - (void)viewDidLoad {
+    
+    UIImage *logeImage = [UIImage imageNamed:@"logo"];
+    UIImageView *logeImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 6, 112, 32)];
+    logeImageView.image = logeImage;
+    [self.navigationController.navigationBar addSubview:logeImageView];
+    
+//    CGSize tfsize = CGSizeZero;
+    
     _tf = [[LCTextFiled alloc]initWithFrame:SEARCHTEXTFIELD_FREAM];
     _tf.delegate = self;
     _tf.layer.cornerRadius = 15;
-    _tf.backgroundColor = [KDColor getC1Color];
-    _tf.leftView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"fangdajing"]];
+    _tf.backgroundColor = [KDColor getC0Color];
+    
+    _tf.leftView = [[UIImageView alloc]initWithImage:[[UIImage imageNamed:@"fangdajing"]imageByTintColor:[KDColor getC3Color]]];
     _tf.leftViewMode = UITextFieldViewModeAlways;
     _tf.text = @"搜索想要的内容";
-    _tf.textColor = [KDColor getC0Color];
+    _tf.textColor = [KDColor getC3Color];
     _tf.font = [[KDFont sharedKDFont] getF28Font];
     [self.navigationController.navigationBar addSubview:_tf];
     
-    _flowLayout = [[UICollectionViewFlowLayout alloc]init];
     
+    _flowLayout = [[UICollectionViewFlowLayout alloc]init];
     self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-(64+49)) collectionViewLayout:_flowLayout];
     self.collectionView.backgroundColor = [UIColor whiteColor];
     
@@ -88,15 +97,15 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    UIImage *have_image = [UIImage imageNamed:@"no_message"];
-    MYLog(@"%@",@"根据接口来判断 显示那个状态的铃铛");
-    CustomBarItem *rightItem = [self.navigationItem setItemWithImage:@"no_message" size:have_image.size itemType:right];
-    @weakify(self)
-    [rightItem addBlockForControlEvents:UIControlEventTouchUpInside block:^(id sender) {
-        @strongify(self)
-        LCMyMessageViewModel *myMessageVM = [[LCMyMessageViewModel alloc]initWithServices:self.viewModel.navigationStackService params:@{KEY_TITLE:@"我的消息"}];
-        [self.viewModel.navigationStackService pushViewModel:myMessageVM animated:YES];
-    }];
+//    UIImage *have_image = [UIImage imageNamed:@"no_message"];
+//    MYLog(@"%@",@"根据接口来判断 显示那个状态的铃铛");
+//    CustomBarItem *rightItem = [self.navigationItem setItemWithImage:@"no_message" size:have_image.size itemType:right];
+//    @weakify(self)
+//    [rightItem addBlockForControlEvents:UIControlEventTouchUpInside block:^(id sender) {
+//        @strongify(self)
+//        LCMyMessageViewModel *myMessageVM = [[LCMyMessageViewModel alloc]initWithServices:self.viewModel.navigationStackService params:@{KEY_TITLE:@"我的消息"}];
+//        [self.viewModel.navigationStackService pushViewModel:myMessageVM animated:YES];
+//    }];
     //设置
 }
 

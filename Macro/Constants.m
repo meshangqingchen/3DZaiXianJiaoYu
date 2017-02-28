@@ -18,8 +18,9 @@ NSString * LCENCRYPTKEY = nil; //登录的加密key
 
 BOOL isMember = NO;  //是否会员
 
+NSString *memberStopTime = nil;//会员到期时间
 
-
+BOOL Apponline = YES;  //默认上线了
 //NSString *const
 //NSString *const
 //NSString *const

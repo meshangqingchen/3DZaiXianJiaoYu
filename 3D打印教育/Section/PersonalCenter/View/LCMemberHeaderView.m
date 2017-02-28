@@ -8,9 +8,6 @@
 
 #import "LCMemberHeaderView.h"
 
-
-
-
 @interface LCMemberHeaderView ()
 
 @property(nonatomic,strong) UIImageView *vipImageView;
@@ -19,6 +16,7 @@
 
 @implementation LCMemberHeaderView
 -(void)setupViews{
+    
     UIView *bottomView = [UIView new];
     bottomView.backgroundColor = [KDColor getC0Color];
     [self addSubview:bottomView];

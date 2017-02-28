@@ -119,7 +119,8 @@ static NSString *const Api_memberCard = @"memberCard";
 static NSString *const Api_createMemberOrder = @"createMemberOrder";
 ///购买好会员告诉后台 paymentMemberOrder
 static NSString *const Api_paymentMemberOrder = @"paymentMemberOrder";
-
+/// 判断正在上线
+static NSString *const Api_isOnline = @"isOnline";
 
 
 #pragma mark - api params key
@@ -170,7 +171,7 @@ static NSString *const PARAM_qq               = @"qq";
 static NSString *const PARAM_discription      = @"discription";
 static NSString *const PARAM_orderSn          = @"orderSn";
 static NSString *const PARAM_couponId         = @"couponId"; //使用优惠券
-static NSString *const PARAM_memberCardId     = @"ssss";//@"memberCardId";//会员卡ID
+static NSString *const PARAM_memberCardId     = @"memberCardId";//会员卡ID
 
 
 ///发送短信获得验证码
@@ -580,6 +581,12 @@ static NSString *const PARAM_memberCardId     = @"ssss";//@"memberCardId";//会�
 
     NSDictionary *params = @{PARAM_orderSn:order_sn};
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_paymentMemberOrder encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+        complete(responseObj,error);
+    }];
+}
+
+-(NSURLSessionDataTask *)isOnlineCardCompleteHandle:(void (^)(id, NSError *))complete{
+    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_isOnline encodeParams:nil withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
     }];
 }

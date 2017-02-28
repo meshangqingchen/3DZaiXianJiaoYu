@@ -108,6 +108,15 @@
 }
 
 -(void)requestRemoteDataWithPage:(NSUInteger)curpage completeHandle:(void(^)(id responseObj))complete{
+    
+    
+    [self.netApi_Manager isOnlineCardCompleteHandle:^(id responseObj, NSError *error) {
+        NSDictionary *contents = responseObj[@"contents"];
+        NSNumber *online = contents[@"contents"];
+        Apponline = [online boolValue];
+        //这个是判断是否正在上线还是是否正在上线 的版本..
+    }];
+    
     MYLog(@" = = = %@",[KDFileManager getCachePath]);
     MYLog(@" = = = %@",[KDFileManager getCachePath]);
     [self starLaunch];
@@ -171,12 +180,12 @@
         //弹出来
         if ([KDFileManager readUserDataForKey:LCACTIVEMSG]) {
             [self.nnewUserAlertView show];
-//            [KDFileManager removeUserDataForkey:LCACTIVEMSG];
+            [KDFileManager removeUserDataForkey:LCACTIVEMSG];
         }
         
         if ([KDFileManager readUserDataForKey:LCNEWUSERMSG]) {
             [self.activityAlertView show];
-//            [KDFileManager removeUserDataForkey:LCNEWUSERMSG];
+            [KDFileManager removeUserDataForkey:LCNEWUSERMSG];
         }
     }];
 }
@@ -248,6 +257,5 @@
     if ([KDFileManager readUserDataForKey:LCNEWUSERMSG]) {
         activityView.msgLB.text = [KDFileManager readUserDataForKey:LCACTIVEMSG];
     }
-   
 }
 @end

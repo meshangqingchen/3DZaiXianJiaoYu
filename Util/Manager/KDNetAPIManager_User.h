@@ -141,5 +141,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 //购买会员第三部 告诉后台
 -(NSURLSessionDataTask *)paySucceedWithMemberOrder_sn:(NSString*)order_sn completeHandle:(void(^)(id responseObj,NSError *error))complete;
 
+-(NSURLSessionDataTask *)isOnlineCardCompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 @end
 

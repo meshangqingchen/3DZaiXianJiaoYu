@@ -43,24 +43,19 @@
                 
                 
                 
-                NSDictionary *contents    = jsonDic[@"contents"];
-                
-                
-                [contents enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-                    NSLog(@" = = key %@",key);
-                    NSLog(@" = = obj %@",NSStringFromClass([obj class]));
-                }];
-                
+                NSDictionary *contents         = jsonDic[@"contents"];
+            
                 MYLog(@"contents = %@",contents);
                 NSString *login_autoValue      = contents[@"login_auto"];
                 MYLog(@"%@",login_autoValue);
                 NSString *keyValue             = contents[@"key"];
                 MYLog(@"%@",keyValue);
-                NSNumber *isTeacher           = contents[@"is_teacher"];
+                NSNumber *isTeacher            = contents[@"is_teacher"];
                 
-                NSNumber *is_member           = contents[@"is_member"];
+                NSNumber *is_member            = contents[@"is_member"];
                 isMember = [is_member boolValue];
-                
+                memberStopTime                 = contents[@"memberStopTime"];
+
                 
                 
                 NSString *activeCouponMessage = contents[@"activeCouponMessage"];

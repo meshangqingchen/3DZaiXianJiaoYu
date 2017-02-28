@@ -51,7 +51,6 @@
                 [NSObject showWarning:dic[@"msg"]];
             }else{
                 NSDictionary *contents = dic[@"contents"];
-                
                 NSString *order_sn = contents[@"order_sn"];
                 [KDFileManager saveUserData:order_sn forKey:LCCORDER_SN];
                 LCNotarizeOrderViewModel *orderVM = [[LCNotarizeOrderViewModel alloc]initWithServices:self.navigationStackService params:@{@"couresID":couresID,

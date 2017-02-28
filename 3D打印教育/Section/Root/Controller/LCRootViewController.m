@@ -37,6 +37,10 @@
     
 //    MYLog(@"%@",[KDFileManager getDocumentPath]);
 //    MYLog(@"%@",[KDFileManager getDocumentPath]);
+    [self.view addSubview:self.launchView];
+    [_launchView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_offset(0);
+    }];
     LCENCRYPTKEY = nil;
     if ([KDFileManager readUserDataForKey:LCCLOIN_AUTO]) {
         [[KDNetAPIManager_User sharedKDNetAPIManager_User]loginWithAuto:[KDFileManager readUserDataForKey:LCCLOIN_AUTO] completeHandle:^(id responseObj, NSError *error) {
@@ -46,25 +50,23 @@
             NSNumber *status = responseObj[@"status"];
             if ([status isEqualToNumber:@1]) {
                 //如果状态是1 就代表自动登录成功了
-                NSDictionary *contents = responseObj[@"contents"];
-                NSString     *encryptKey = contents[@"key"];
-                LCENCRYPTKEY = encryptKey;
-                NSNumber *is_member      = contents[@"is_member"];
-                isMember = [is_member boolValue];
-
+                NSDictionary *contents    = responseObj[@"contents"];
+                NSString     *encryptKey  = contents[@"key"];
+                LCENCRYPTKEY = encryptKey; //加密用
+                NSNumber *is_member       = contents[@"is_member"];
+                isMember = [is_member boolValue];//判断个人中心是否展示 会员卡
                 
-                NSString *activeCouponMessage = contents[@"activeCouponMessage"];
-                MYLog(@"activeCouponMessage = %@",activeCouponMessage);
-                NSString *registerCouponMessage = contents[@"registerCouponMessage"];
-                MYLog(@"registerCouponMessage = %@",registerCouponMessage);
+                memberStopTime            = contents[@"memberStopTime"];
                 
+                NSString *activeCouponMessage   = contents[@"activeCouponMessage"];//首页的活动卡弹出
+                NSString *registerCouponMessage = contents[@"registerCouponMessage"];//新人卡弹出都是送的优惠券
                 if (activeCouponMessage.length != 0 & activeCouponMessage != nil) {
                     [KDFileManager saveUserData:activeCouponMessage forKey:LCACTIVEMSG];
                 }
-                
                 if (registerCouponMessage.length != 0 & registerCouponMessage != nil) {
                     [KDFileManager saveUserData:registerCouponMessage forKey:LCNEWUSERMSG];
                 }
+                
             }
             [self creatTabBarController];
             [self downloadImage];
@@ -73,6 +75,7 @@
         [self creatTabBarController];
         [self downloadImage];
     }
+    
 }
 
 -(void)creatTabBarController{
@@ -131,13 +134,13 @@
     [(LCNavigationStackService *)self.viewModel.navigationStackService pushNavigationController:(id)viewController];
 }
 
--(void)animationLaunchView{
-    [UIView animateWithDuration:0.5 animations:^{
-        self.launchView.alpha = 0;
-    } completion:^(BOOL finished) {
-        [self.launchView removeFromSuperview];
-    }];;
-}
+//-(void)animationLaunchView{
+//    [UIView animateWithDuration:0.5 animations:^{
+//        self.launchView.alpha = 0;
+//    } completion:^(BOOL finished) {
+//        [self.launchView removeFromSuperview];
+//    }];;
+//}
 
 - (UIView *)launchView {
     if(_launchView == nil) {
@@ -163,7 +166,6 @@
                 make.height.mas_equalTo(SCREEN_WIDTH*97/75);
             }];
         }
-        
     }
     return _launchView;
 }

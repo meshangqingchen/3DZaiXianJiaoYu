@@ -19,14 +19,6 @@
 #import "RSADataSigner.h"
 #import <AlipaySDK/AlipaySDK.h>
 #import "KDFileManager.h"
-/*
- 
- 
- 
- 
- */
-
-
 
 @implementation LCMemberViewModel
 -(void)initialize{
@@ -42,10 +34,10 @@
             NSNumber *status = responseObj[@"status"];
             NSString *msg = responseObj[@"msg"];
             
-            [responseObj enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-                NSLog(@"key = %@",key);
-                NSLog(@"obj = %@",NSStringFromClass([obj class]));
-            }];
+//            [responseObj enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+//                NSLog(@"key = %@",key);
+//                NSLog(@"obj = %@",NSStringFromClass([obj class]));
+//            }];
             
             if ([status isEqualToNumber:@0]) {
                 [NSObject showWarning:msg];
@@ -110,20 +102,24 @@
                     if ([resultStatusSTR isEqualToString:@"9000"]) {
                         //成功了就....
                         [self.netApi_Manager paySucceedWithMemberOrder_sn:memberOrder completeHandle:^(id responseObj, NSError *error) {
+                            
                             NSNumber *status = responseObj[@"status"];
-                            NSString *contents = responseObj[@"contents"];
+                            NSDictionary *contents = responseObj[@"contents"];
+                            NSNumber *memberStopTimeNum = contents[@"memberStopTime"];
+                            NSString *memberStopTime = [memberStopTimeNum stringValue];
+                            
                             if ([status isEqualToNumber:@1]) {
-                                kSharedAppDelegate.payForMemberCarSucced(contents);
+                                kSharedAppDelegate.payForMemberCarSucced(memberStopTime);
                             }else{
                                 [self.netApi_Manager paySucceedWithMemberOrder_sn:memberOrder completeHandle:^(id responseObj, NSError *error) {
                                     NSNumber *status = responseObj[@"status"];
                                     if ([status isEqualToNumber:@1]) {
-                                        kSharedAppDelegate.payForMemberCarSucced(contents);
+                                        kSharedAppDelegate.payForMemberCarSucced(memberStopTime);
                                     }else{
                                         [self.netApi_Manager paySucceedWithMemberOrder_sn:memberOrder completeHandle:^(id responseObj, NSError *error) {
                                             NSNumber *status = responseObj[@"status"];
                                             if ([status isEqualToNumber:@1]) {
-                                                kSharedAppDelegate.payForMemberCarSucced(contents);
+                                                kSharedAppDelegate.payForMemberCarSucced(memberStopTime);
                                             }else{
                                                 NSLog(@"无能无力里了");
                                             }
@@ -139,7 +135,12 @@
     }];
     
     [kSharedAppDelegate setPayForMemberCarSucced:^(NSString *storpTime) {
-        
+        //在这里刷新ui 先赋值状态 赋值状态
+        memberStopTime = storpTime;
+        [self.mutableDataArr removeFirstObject];
+        LCMemberTopCellViewModel *topCellVM = [[LCMemberTopCellViewModel alloc]initWithModel:memberStopTime];
+        [self.mutableDataArr insertObject:topCellVM atIndex:0];
+        self.dataSource = self.mutableDataArr.copy;
     }];
 }
 
@@ -159,7 +160,7 @@
             cellVM.buyMembersCreatOrder = self.buyMembersCreatOrder;
             [self.mutableDataArr addObject:cellVM];
         }
-        LCMemberTopCellViewModel *topCellVM = [LCMemberTopCellViewModel new];
+        LCMemberTopCellViewModel *topCellVM = [[LCMemberTopCellViewModel alloc]initWithModel:memberStopTime];
         if (isMember) {
             [self.mutableDataArr insertObject:topCellVM atIndex:0];
         }

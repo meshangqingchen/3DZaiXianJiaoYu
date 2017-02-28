@@ -7,7 +7,7 @@
 //
 
 #import "LCMemberTopCell.h"
-
+#import "LCMemberTopCellViewModel.h"
 @interface LCMemberTopCell ()
 @property(nonatomic,strong) UIImageView *backImageView;
 @property(nonatomic,strong) UILabel *timeLB;
@@ -49,25 +49,48 @@
         make.size.mas_equalTo(CGSizeMake(50, 15));
     }];
     
+    
+    
     self.backImageView = [UIImageView new];
-    self.backImageView.image = [UIImage imageNamed:@"vip"];
+    self.backImageView.image = [UIImage imageNamed:@"vipBack"];
     [self addSubview:self.backImageView];
     [self.backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.mas_offset(0);
         make.height.mas_equalTo(120);
     }];
     
+    UIImageView *vipImageView = [UIImageView new];
+    [self.backImageView addSubview:vipImageView];
+    vipImageView.image = [UIImage imageNamed:@"vip"];
+    [vipImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_offset(0);
+        make.bottom.mas_offset(0);
+        make.top.mas_offset(10);
+        make.width.mas_offset(SCREEN_WIDTH*482/750);
+    }];
+    
     self.timeLB = [UILabel new];
     _timeLB.textColor = [KDColor getC27Color];
     self.timeLB.font = [[KDFont sharedKDFont] getF32Font];
-    [self.backImageView addSubview:_timeLB];
+    [vipImageView addSubview:_timeLB];
     [_timeLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_offset(SCREEN_WIDTH*165/750);
+        make.left.mas_offset(15);
         make.bottom.mas_offset(-9);
+    }];
+    
+    UILabel *effectiveTime = [UILabel new];
+    effectiveTime.text = @"有效期至";
+    effectiveTime.textColor = [KDColor getC27Color];
+    effectiveTime.font = [[KDFont sharedKDFont] getF22Font];
+    [vipImageView addSubview:effectiveTime];
+    [effectiveTime mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_offset(15);
+        make.bottom.mas_equalTo(self.timeLB.mas_top).mas_offset(-6);
     }];
 }
 
 -(void)bindViewModel:(id)viewModel{
-
+    LCMemberTopCellViewModel *topCellVM = viewModel;
+    self.timeLB.text = topCellVM.stopTime;
 }
 @end

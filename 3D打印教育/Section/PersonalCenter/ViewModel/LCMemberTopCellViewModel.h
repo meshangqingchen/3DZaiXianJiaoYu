@@ -10,4 +10,8 @@
 
 @interface LCMemberTopCellViewModel : NSObject
 
+@property(nonatomic,strong) NSString *stopTime;
+
+-(instancetype)initWithModel:(id)model;
+
 @end
