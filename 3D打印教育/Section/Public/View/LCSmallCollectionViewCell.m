@@ -42,7 +42,7 @@
 
   
     self.bottomLineView = [UIView new];
-    _bottomLineView.backgroundColor = [KDColor getX0Color];
+    _bottomLineView.backgroundColor = [KDColor getC4Color];
     [self.contentView addSubview:_bottomLineView];
 
     [_bottomLineView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -51,7 +51,7 @@
     }];
     
     self.rightLineView = [UIView new];
-    _rightLineView.backgroundColor = [KDColor getX0Color];
+    _rightLineView.backgroundColor = [KDColor getC4Color];
     [self.contentView addSubview:_rightLineView];
     
     [_rightLineView mas_makeConstraints:^(MASConstraintMaker *make) {
