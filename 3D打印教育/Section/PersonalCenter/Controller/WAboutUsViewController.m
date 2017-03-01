@@ -45,7 +45,7 @@
     _headerView.backgroundColor = [UIColor whiteColor];
     
     UIImageView *logo = [[UIImageView alloc]initWithFrame:CGRectMake((SCREEN_WIDTH - 85)/2, 60, 85, 85)];
-    logo.image = [UIImage imageNamed:@"XXH"];
+    logo.image = [UIImage imageNamed:@"XH"];
     
     [_headerView addSubview:logo];
     
