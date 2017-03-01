@@ -37,12 +37,16 @@
     }else if (indexpath.section == 1 & indexpath.row == 0){
         
         //推出登录
+        NSString *temporary = LCENCRYPTKEY;
+        LCENCRYPTKEY = nil;
         [self.netApi_Manager logOutWithCompleteHandle:^(id responseObj, NSError *error) {
             NSDictionary *dic = responseObj;
             if ([dic[@"status"] isEqualToNumber:@1]) {
                 [self.navigationStackService popViewModelAnimated:YES];
                 LCENCRYPTKEY = nil;
                 [KDFileManager removeUserDataForkey:LCCLOIN_AUTO]; 
+            }else{
+                LCENCRYPTKEY = temporary;
             }
             [NSObject showWarning:dic[@"msg"]];
         }];

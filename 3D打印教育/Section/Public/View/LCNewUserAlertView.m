@@ -36,6 +36,8 @@
         !self.pushMyVoucherVC ? : self.pushMyVoucherVC(self.jcalertView);
     }];
     
+    //推出登录
+    
     self.msgLB = [UILabel new];
     _msgLB.numberOfLines = 3;
     _msgLB.font = [[KDFont sharedKDFont] getF30Font];
