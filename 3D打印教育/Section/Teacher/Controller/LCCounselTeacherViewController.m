@@ -10,6 +10,9 @@
 #import "LCCounselTeacherViewModel.h"
 #import "LCCounseTeacherCell.h"
 
+#import "UINavigationItem+CustomItem.h"
+#import "LCHistoryTalkViewModel.h"
+
 @interface LCCounselTeacherViewController ()
 @property(nonatomic,strong) LCCounselTeacherViewModel *viewModel;
 @property(nonatomic,strong) UITableView *tableView;
@@ -32,6 +35,18 @@ static NSString *identifier = @"LCCounseTeacherCell";
 
     [super viewDidLoad];
     
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    UIImage *have_image = [UIImage imageNamed:@"historyTalk"];
+    CustomBarItem *rightItem = [self.navigationItem setItemWithImage:@"historyTalk" size:have_image.size itemType:right];
+    @weakify(self)
+    [rightItem addBlockForControlEvents:UIControlEventTouchUpInside block:^(id sender) {
+        @strongify(self)
+        LCHistoryTalkViewModel *historyTalkViewMode = [[LCHistoryTalkViewModel alloc]initWithServices:self.viewModel.navigationStackService params:@{KEY_TITLE:@"聊天历史"}];
+        [self.viewModel.navigationStackService pushViewModel:historyTalkViewMode animated:YES];
+    }];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

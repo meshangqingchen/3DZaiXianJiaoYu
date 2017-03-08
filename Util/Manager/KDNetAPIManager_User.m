@@ -52,6 +52,8 @@ static NSString *const Api_addUserPlan = @"addUserPlan";
 static NSString *const Api_addAssess = @"addAssess";
 ///教师列表
 static NSString *const Api_teacherList = @"teacherList";
+///历史聊天problemTeacherList
+static NSString *const Api_problemTeacherList = @"problemTeacherList";
 ///教师详情
 static NSString *const Api_getDetailByTeacherId = @"getDetailByTeacherId";
 ///创建订单
@@ -260,6 +262,15 @@ static NSString *const PARAM_memberCardId     = @"memberCardId";//会员卡ID
         complete(responseObj,error);
     }];
 }
+
+//Api_problemTeacherList历史记录
+-(NSURLSessionDataTask *)historyTalkListWith:(NSUInteger)curpage completeHandle:(void (^)(id, NSError *))complete{
+    NSDictionary *params = @{PARAM_curpage:@(curpage),PARAM_page:@14};
+    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_problemTeacherList encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+        complete(responseObj,error);
+    }];
+}
+
 //
 //老师详情
 -(NSURLSessionDataTask *)teacherDetailWith:(NSString *)teacherID completeHandle:(void (^)(id, NSError *))complete{

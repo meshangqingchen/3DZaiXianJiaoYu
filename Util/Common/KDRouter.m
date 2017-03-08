@@ -62,7 +62,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(KDRouter)
                                    @"LCTeacherDetailViewModel" : @"LCTeacherDetailViewController",
                                    @"LCNotarizeZiXunOrderViewModel" : @"LCNotarizeZiXunOrderViewController",
                                    @"LCMemberViewModel":@"LCMemberViewController",
-                                   @"LCVoucherViewModel":@"LCMyVoucherViewController"};
+                                   @"LCVoucherViewModel":@"LCMyVoucherViewController",
+                                   @"LCHistoryTalkViewModel":@"LCHistoryTalkViewController"};
     }
 	return _viewModelViewMappings;
 }

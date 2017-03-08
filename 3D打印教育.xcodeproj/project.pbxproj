@@ -269,6 +269,11 @@
 		748CF1E81E0A9FE100E60F68 /* LCDetailEvaluateHeaderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 748CF1E71E0A9FE100E60F68 /* LCDetailEvaluateHeaderViewModel.m */; };
 		748CF1EB1E0B704700E60F68 /* LCDetailEvaluateBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 748CF1EA1E0B704700E60F68 /* LCDetailEvaluateBottomView.m */; };
 		748CF1EE1E0B7DFF00E60F68 /* LCDetailEvaluateInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 748CF1ED1E0B7DFF00E60F68 /* LCDetailEvaluateInputAccessoryView.m */; };
+		74B5E9DA1E6FC472009DC3E4 /* LCHistoryTalkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B5E9D91E6FC472009DC3E4 /* LCHistoryTalkViewController.m */; };
+		74B5E9DD1E6FC4AF009DC3E4 /* LCHistoryTalkViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B5E9DC1E6FC4AF009DC3E4 /* LCHistoryTalkViewModel.m */; };
+		74B5E9E01E6FD36E009DC3E4 /* LCHistoryTalkTeacherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B5E9DF1E6FD36E009DC3E4 /* LCHistoryTalkTeacherModel.m */; };
+		74B5E9E31E6FD71E009DC3E4 /* LCHistoryTalkCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B5E9E21E6FD71E009DC3E4 /* LCHistoryTalkCellViewModel.m */; };
+		74B5E9E61E6FE2ED009DC3E4 /* LCHistoryTeacherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B5E9E51E6FE2ED009DC3E4 /* LCHistoryTeacherCell.m */; };
 		74C3D9F31E1F5EEB00BA7F0F /* LCLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C3D9F21E1F5EEB00BA7F0F /* LCLoginViewModel.m */; };
 		74C3D9F61E1F5F0D00BA7F0F /* LCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C3D9F51E1F5F0D00BA7F0F /* LCLoginViewController.m */; };
 		74C3D9F91E1F687800BA7F0F /* LCPersonalCenterHeaderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C3D9F81E1F687800BA7F0F /* LCPersonalCenterHeaderViewModel.m */; };
@@ -928,6 +933,16 @@
 		748CF1EA1E0B704700E60F68 /* LCDetailEvaluateBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDetailEvaluateBottomView.m; sourceTree = "<group>"; };
 		748CF1EC1E0B7DFF00E60F68 /* LCDetailEvaluateInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDetailEvaluateInputAccessoryView.h; sourceTree = "<group>"; };
 		748CF1ED1E0B7DFF00E60F68 /* LCDetailEvaluateInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDetailEvaluateInputAccessoryView.m; sourceTree = "<group>"; };
+		74B5E9D81E6FC472009DC3E4 /* LCHistoryTalkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHistoryTalkViewController.h; sourceTree = "<group>"; };
+		74B5E9D91E6FC472009DC3E4 /* LCHistoryTalkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHistoryTalkViewController.m; sourceTree = "<group>"; };
+		74B5E9DB1E6FC4AF009DC3E4 /* LCHistoryTalkViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHistoryTalkViewModel.h; sourceTree = "<group>"; };
+		74B5E9DC1E6FC4AF009DC3E4 /* LCHistoryTalkViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHistoryTalkViewModel.m; sourceTree = "<group>"; };
+		74B5E9DE1E6FD36E009DC3E4 /* LCHistoryTalkTeacherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHistoryTalkTeacherModel.h; sourceTree = "<group>"; };
+		74B5E9DF1E6FD36E009DC3E4 /* LCHistoryTalkTeacherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHistoryTalkTeacherModel.m; sourceTree = "<group>"; };
+		74B5E9E11E6FD71E009DC3E4 /* LCHistoryTalkCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHistoryTalkCellViewModel.h; sourceTree = "<group>"; };
+		74B5E9E21E6FD71E009DC3E4 /* LCHistoryTalkCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHistoryTalkCellViewModel.m; sourceTree = "<group>"; };
+		74B5E9E41E6FE2ED009DC3E4 /* LCHistoryTeacherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHistoryTeacherCell.h; sourceTree = "<group>"; };
+		74B5E9E51E6FE2ED009DC3E4 /* LCHistoryTeacherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCHistoryTeacherCell.m; sourceTree = "<group>"; };
 		74C3D9F11E1F5EEB00BA7F0F /* LCLoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCLoginViewModel.h; sourceTree = "<group>"; };
 		74C3D9F21E1F5EEB00BA7F0F /* LCLoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCLoginViewModel.m; sourceTree = "<group>"; };
 		74C3D9F41E1F5F0D00BA7F0F /* LCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCLoginViewController.h; sourceTree = "<group>"; };
@@ -2277,6 +2292,8 @@
 			children = (
 				74C869A31E559D2E006D50E4 /* LCCounselTeacherViewController.h */,
 				74C869A41E559D2E006D50E4 /* LCCounselTeacherViewController.m */,
+				74B5E9D81E6FC472009DC3E4 /* LCHistoryTalkViewController.h */,
+				74B5E9D91E6FC472009DC3E4 /* LCHistoryTalkViewController.m */,
 				74C869A51E559D2E006D50E4 /* LCNotarizeZiXunOrderViewController.h */,
 				74C869A61E559D2E006D50E4 /* LCNotarizeZiXunOrderViewController.m */,
 				74C869A71E559D2E006D50E4 /* LCTeacherDetailViewController.h */,
@@ -2294,6 +2311,8 @@
 				74C869AD1E559D2E006D50E4 /* LCTalkModel.m */,
 				74C869AE1E559D2E006D50E4 /* LCTeacherDetailModel.h */,
 				74C869AF1E559D2E006D50E4 /* LCTeacherDetailModel.m */,
+				74B5E9DE1E6FD36E009DC3E4 /* LCHistoryTalkTeacherModel.h */,
+				74B5E9DF1E6FD36E009DC3E4 /* LCHistoryTalkTeacherModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2303,6 +2322,8 @@
 			children = (
 				74C869B11E559D2E006D50E4 /* LCCounseTeacherCell.h */,
 				74C869B21E559D2E006D50E4 /* LCCounseTeacherCell.m */,
+				74B5E9E41E6FE2ED009DC3E4 /* LCHistoryTeacherCell.h */,
+				74B5E9E51E6FE2ED009DC3E4 /* LCHistoryTeacherCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -2310,10 +2331,14 @@
 		74C869B31E559D2E006D50E4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				74C869B41E559D2E006D50E4 /* LCCounselTeacherCellViewModel.h */,
-				74C869B51E559D2E006D50E4 /* LCCounselTeacherCellViewModel.m */,
 				74C869B61E559D2E006D50E4 /* LCCounselTeacherViewModel.h */,
 				74C869B71E559D2E006D50E4 /* LCCounselTeacherViewModel.m */,
+				74C869B41E559D2E006D50E4 /* LCCounselTeacherCellViewModel.h */,
+				74C869B51E559D2E006D50E4 /* LCCounselTeacherCellViewModel.m */,
+				74B5E9DB1E6FC4AF009DC3E4 /* LCHistoryTalkViewModel.h */,
+				74B5E9DC1E6FC4AF009DC3E4 /* LCHistoryTalkViewModel.m */,
+				74B5E9E11E6FD71E009DC3E4 /* LCHistoryTalkCellViewModel.h */,
+				74B5E9E21E6FD71E009DC3E4 /* LCHistoryTalkCellViewModel.m */,
 				74C869B81E559D2E006D50E4 /* LCNotarizeZiXunOrderViewModel.h */,
 				74C869B91E559D2E006D50E4 /* LCNotarizeZiXunOrderViewModel.m */,
 				74C869BA1E559D2E006D50E4 /* LCTeacherDetailViewModel.h */,
@@ -2713,6 +2738,7 @@
 				7485FD9D1DFFFA1500E6D23D /* SDCollectionViewCell.m in Sources */,
 				747BF6CA1E2E1936000137E5 /* LCSelectXueLiAlerView.m in Sources */,
 				747BF6C61E2E1936000137E5 /* LCBaoMingFooterView.m in Sources */,
+				74B5E9DA1E6FC472009DC3E4 /* LCHistoryTalkViewController.m in Sources */,
 				74C86A0E1E56A225006D50E4 /* LCMemberViewController.m in Sources */,
 				74450C891E2375CA00F01EB7 /* LCEditPersonalDetailCell.m in Sources */,
 				7485FCBA1DFD4FC800E6D23D /* JDStatusBarNotification.m in Sources */,
@@ -2800,6 +2826,7 @@
 				74450C931E23BB3700F01EB7 /* LCPerSonalSelectBirthdayAlerView.m in Sources */,
 				7485FB521DFA8CCC00E6D23D /* LCNavigationStackService.m in Sources */,
 				747BF1F11E279C59000137E5 /* KDFiveStarView.m in Sources */,
+				74B5E9E01E6FD36E009DC3E4 /* LCHistoryTalkTeacherModel.m in Sources */,
 				7485FDA01DFFFA1500E6D23D /* NSData+ImageContentType.m in Sources */,
 				7485FC0D1DFC39FB00E6D23D /* LCAboutYYWebImage.m in Sources */,
 				74C3D9F31E1F5EEB00BA7F0F /* LCLoginViewModel.m in Sources */,
@@ -2855,6 +2882,7 @@
 				7485FBFA1DFC39FB00E6D23D /* NSDate+KDAdd.m in Sources */,
 				74388C4A1E1B503D00DF2795 /* LCFromTeacherCell.m in Sources */,
 				74388CA11E1E0D8B00DF2795 /* LCMySelfMainCellViewModel.m in Sources */,
+				74B5E9E31E6FD71E009DC3E4 /* LCHistoryTalkCellViewModel.m in Sources */,
 				740F0EFB1E1121BC00EEFC3B /* LCCourseDownLoadCell.m in Sources */,
 				7485FC081DFC39FB00E6D23D /* KDColor.m in Sources */,
 				7485FDD51E00F8E700E6D23D /* LCEvaluateViewController.m in Sources */,
@@ -2866,6 +2894,7 @@
 				747BF6D41E2E26F8000137E5 /* LCSearchViewController.m in Sources */,
 				747BF6701E2CB843000137E5 /* LCTeacherCell.m in Sources */,
 				74E02CA21E60183500A2FB4F /* LCMyCouponModel.m in Sources */,
+				74B5E9DD1E6FC4AF009DC3E4 /* LCHistoryTalkViewModel.m in Sources */,
 				747BF6871E2CCF35000137E5 /* LCCourseClassViewModel.m in Sources */,
 				7485FCF51DFE46E500E6D23D /* LCPersonalCenterViewModel.m in Sources */,
 				748245161E14D61C004735DB /* LCNotificationViewController.m in Sources */,
@@ -2907,6 +2936,7 @@
 				7485FDAC1DFFFA1500E6D23D /* UIImageView+HighlightedWebCache.m in Sources */,
 				7485FD031DFF936000E6D23D /* BaseCollectionViewCell.m in Sources */,
 				747BF5F71E28DC5F000137E5 /* RSADataVerifier.m in Sources */,
+				74B5E9E61E6FE2ED009DC3E4 /* LCHistoryTeacherCell.m in Sources */,
 				744EEBC61E1E4F3D002FE8B1 /* LCMySelfMainHeaderView.m in Sources */,
 				7485FBA81DFC382800E6D23D /* YZEmotionPageCell.m in Sources */,
 				740F0F011E12132400EEFC3B /* LCCourseDownLoadHeaderView.m in Sources */,

@@ -27,7 +27,7 @@
 }
 
 -(void)requestRemoteDataWithPage:(NSUInteger)curpage completeHandle:(void (^)(id))complete{
-    [self.netApi_Manager teacherListWith:self.curpage completeHandle:^(id responseObj, NSError *error) {
+    [self.netApi_Manager teacherListWith:curpage completeHandle:^(id responseObj, NSError *error) {
         LCCounselTeacherModel *counselTeacherModel = [LCCounselTeacherModel parseJSON:responseObj];
         for (int i=0; i<counselTeacherModel.contents.count; i++) {
             LCTeacherCellViewModel *cellVM = [[LCTeacherCellViewModel alloc]initWithModel:counselTeacherModel.contents[i]];

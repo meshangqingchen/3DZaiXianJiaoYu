@@ -37,9 +37,7 @@
         @strongify(self)
         LCTeacherDetailViewViewModel *teacherVM = viewModel;
         [self.netApi_Manager creatOrderWithZiXunTeacherID:teacherVM.teacherIID andPrice:teacherVM.price completeHandle:^(id responseObj, NSError *error) {
-            MYLog(@"%@",responseObj);
-            MYLog(@"%@",responseObj);
-            MYLog(@"%@",responseObj);
+
             NSDictionary *dic = responseObj;
             if ([dic[@"status"] isEqualToNumber:@1]) {
                 LCNotarizeZiXunOrderViewModel *zixunOrder = [[LCNotarizeZiXunOrderViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"购买服务"}];

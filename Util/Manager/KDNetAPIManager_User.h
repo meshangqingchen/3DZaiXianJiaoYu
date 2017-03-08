@@ -31,6 +31,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 
 ///老师列表
 -(NSURLSessionDataTask *)teacherListWith:(NSUInteger)curpage completeHandle:(void(^)(id responseObj,NSError *error))complete;
+///历史老师列表
+-(NSURLSessionDataTask *)historyTalkListWith:(NSUInteger)curpage completeHandle:(void (^)(id responseObj,NSError *error))complete;
+
 
 ///老师详情
 -(NSURLSessionDataTask *)teacherDetailWith:(NSString *)teacherID completeHandle:(void(^)(id responseObj,NSError *error))complete;

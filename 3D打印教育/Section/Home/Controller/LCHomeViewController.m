@@ -22,7 +22,7 @@
 #import "LCHomeCollectionCellModel.h"
 #import "LCHomeCollectionSectionModel.h"
 
-#import "UINavigationItem+CustomItem.h"
+//#import "UINavigationItem+CustomItem.h"
 
 #import "LCMyMessageViewModel.h"
 #import "KDFileManager.h"
@@ -70,7 +70,7 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
     _tf.font = [[KDFont sharedKDFont] getF28Font];
     [self.navigationController.navigationBar addSubview:_tf];
     
-    
+
     _flowLayout = [[UICollectionViewFlowLayout alloc]init];
     self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-(64+49)) collectionViewLayout:_flowLayout];
     self.collectionView.backgroundColor = [UIColor whiteColor];
@@ -183,7 +183,8 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
         return CGSizeMake(NORMALE_COLLECTIONCELL_W, NORMALE_COLLECTIONCELL_H);
     }else if (indexPath.section == 2){
         //SCREEN_WIDTH/750*(622-88)
-        return CGSizeMake(SCREEN_WIDTH, SCREEN_WIDTH/750*413);
+        //SCREEN_WIDTH/750*413)
+        return CGSizeMake(SCREEN_WIDTH, SCREEN_WIDTH/750*300);
     }else{
         return CGSizeZero;
     }

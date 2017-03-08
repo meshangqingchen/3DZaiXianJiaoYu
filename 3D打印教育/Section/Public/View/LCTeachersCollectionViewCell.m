@@ -48,16 +48,16 @@
         make.right.mas_equalTo(_nameLB.mas_left).mas_equalTo(-20);
         make.width.height.mas_equalTo(55);
     }];
-    self.detailLB = [UILabel new];
-    [self addSubview:_detailLB];
-    _detailLB.numberOfLines = 2;
-    _detailLB.textColor = [KDColor getC22Color];
-    _detailLB.font = [[KDFont new]getF26Font];
-    [_detailLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.headImageView.mas_bottom).mas_offset(17);
-        make.left.mas_equalTo(32);
-        make.right.mas_equalTo(-32);
-    }];
+//    self.detailLB = [UILabel new];
+//    [self addSubview:_detailLB];
+//    _detailLB.numberOfLines = 2;
+//    _detailLB.textColor = [KDColor getC22Color];
+//    _detailLB.font = [[KDFont new]getF26Font];
+//    [_detailLB mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.mas_equalTo(self.headImageView.mas_bottom).mas_offset(17);
+//        make.left.mas_equalTo(32);
+//        make.right.mas_equalTo(-32);
+//    }];
 }
 @end
 
@@ -126,7 +126,7 @@
                              completion:nil];
     self.textView.nameLB.text = teacherCellVM.name;
     self.textView.introduceLB.text = teacherCellVM.introduce;
-    self.textView.detailLB.text= teacherCellVM.textViewText;
+//    self.textView.detailLB.text= teacherCellVM.textViewText;
     
     
 }
@@ -140,7 +140,7 @@
     self.maxNum = 0;
     self.carousel = [[iCarousel alloc]init];
     [self.contentView addSubview:_carousel];
-    _carousel.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH/750*413);
+    _carousel.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH/750*300);
     self.carousel.type = iCarouselTypeLinear;
     self.carousel.bounceDistance = 0.01f;//多余能滚动的距离
     //    self.carousel.perspective = 20.f;   //
@@ -151,14 +151,13 @@
 }
 
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel{
-    
     return self.maxNum;
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view{
     UIView *cardView = view;
     if (!cardView) {
-        cardView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH/750*413)];
+        cardView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH/750*300)];
         TeacherBackView *teacherBackView = [TeacherBackView new];
         [cardView addSubview:teacherBackView];
         teacherBackView.cell = self;
