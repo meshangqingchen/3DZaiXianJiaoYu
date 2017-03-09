@@ -39,6 +39,7 @@
     
     
     self.headerImageView = [UIImageView new];
+    self.headerImageView.image = [UIImage imageNamed:@"noLog_HeadImage"];
     [backView addSubview:_headerImageView];
     [_headerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_offset(20);
