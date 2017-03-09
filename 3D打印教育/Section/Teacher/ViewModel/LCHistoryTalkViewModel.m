@@ -19,6 +19,7 @@
 -(void)didSelectRowAtIndexPath:(NSIndexPath *)indexpath in:(UITableView *)tableView{
     LCHistoryTalkCellViewModel *cellVM = self.dataSource[indexpath.row];
     LCUserTeacherTalkViewModel *teacherTalkVM = [[LCUserTeacherTalkViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"资讯",@"teacherImageURL":cellVM.avatarURL,@"teacherIID":cellVM.teacherID}];
+    
     [self.navigationStackService pushViewModel:teacherTalkVM animated:YES];
 }
 
