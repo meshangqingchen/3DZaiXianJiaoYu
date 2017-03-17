@@ -75,7 +75,7 @@ static NSString *LCBaoMingTFCellIdf = @"LCBaoMingTFCell";
 
 - (LCBaoMingFooterView *)baoMingFotterView {
 	if(_baoMingFotterView == nil) {
-		_baoMingFotterView = [[LCBaoMingFooterView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 210)];
+		_baoMingFotterView = [[LCBaoMingFooterView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 210+145/2)];
         _baoMingFotterView.TextViewDidEndDding = self.viewModel.TextViewDidEndDding;
 	}
 	return _baoMingFotterView;

@@ -74,10 +74,9 @@
 + (UIColor *)getC29Color;
 //0xf26b6b 优惠券上的按钮 红
 + (UIColor *)getC30Color;
-
-
-
+//0xf68b3c
 + (UIColor *)getC31Color;
+//0x91acd5
 + (UIColor *)getC32Color;
 + (UIColor *)getC33Color;
 @end

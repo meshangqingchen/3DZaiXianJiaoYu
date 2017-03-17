@@ -69,8 +69,6 @@
     
     [self setTextViewDidEndDding:^(NSString *textViewText) {
         @strongify(self)
-        
-       
         self.beiZhu = textViewText;
     }];
 }
@@ -101,8 +99,8 @@
             self.bmModel.canShu = @"硕士教育";
             self.dataSource = self.mutableDataArr.copy;
             [self.JCZYVIew dismissWithCompletion:nil];
-            
         }];
+        
     }else if (indexpath.row == 2){
         [self.JCSXEVIew show];
         [self.sexAlertView.manBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
@@ -324,7 +322,7 @@
 
 -(JCAlertView *)JCZYVIew{
     if (!_JCZYVIew) {
-        self.zhiYuanAlertView = [[LCSelectZhiYuanAlerView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 24, 88.5)];
+        self.zhiYuanAlertView = [[LCSelectZhiYuanAlerView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 24, 200)];
 //        _JCZYVIew = [[JCAlertView alloc]initWithCustomView:self.zhiYuanAlertView andCustomViewCenter:CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT*543/1344) dismissWhenTouchedBackground:YES];
         _JCZYVIew = [[JCAlertView alloc]initWithCustomView:self.zhiYuanAlertView dismissWhenTouchedBackground:YES];
     }

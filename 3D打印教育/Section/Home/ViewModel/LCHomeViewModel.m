@@ -16,6 +16,7 @@
 #import "LCVideoDetailViewModel.h"          //课程的detail
 #import "LCCourseCollectionViewModel.h"     //根据课程分类进课程 list
 #import "LCWebImageViewModel.h"             //大图
+#import "LCPiexunClassViewModel.h"          //报名的课程list
 #import "LCMoreTeacherViewModel.h"          //更多老师
 #import "LCSearchViewModel.h"
 #import "LCTeacherDetailViewModel.h"   //老师详情
@@ -43,10 +44,23 @@
         LCWebImageViewModel *webImageVM = [[LCWebImageViewModel alloc]initWithServices:self.navigationStackService params:@{@"className":className,@"webURL":webURL,KEY_TITLE:title}];
         [self.navigationStackService pushViewModel:webImageVM animated:YES];
     }];
+    
+    //三个按钮push到下级界面
     [self setClickBT:^(NSString *className, NSURL *webURL, NSString *title) {
         @strongify(self)
-        LCWebImageViewModel *webImageVM = [[LCWebImageViewModel alloc]initWithServices:self.navigationStackService params:@{@"className":className,@"webURL":webURL,KEY_TITLE:title}];
-        [self.navigationStackService pushViewModel:webImageVM animated:YES];
+        NSLog(@"%@",className);
+        NSLog(@"%@",title);
+
+//        LCHomeCollectionBananaViewModel *model = self.homesignUpListDataArr.firstObject;
+        
+        if ([className isEqualToString:@"LCHomeSignuplist"]&&[title isEqualToString:@"基础课程"]) {
+            LCPiexunClassViewModel *viewModel = [[LCPiexunClassViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:title}];
+            [self.navigationStackService pushViewModel:viewModel animated:YES];
+            
+        }else{
+            LCWebImageViewModel *webImageVM = [[LCWebImageViewModel alloc]initWithServices:self.navigationStackService params:@{@"className":className,@"webURL":webURL,KEY_TITLE:title}];
+            [self.navigationStackService pushViewModel:webImageVM animated:YES];
+        }
     }];
     
     [self setMoreClick:^(NSIndexPath *indexPath) {
@@ -127,6 +141,7 @@
         LCHomeModel *homeModel = [LCHomeModel parseJSON:responseObj];
         NSMutableArray *bannerMutableArr = [NSMutableArray array];
         for (int i = 0; i<homeModel.contents.carouselList.count; i++) {
+            //这个是 是头部的的viewModel
             LCHomeCollectionBananaViewModel *bannerVM = [[LCHomeCollectionBananaViewModel alloc]initWithModel:homeModel.contents.carouselList[i]];
             bannerVM.clickBanner = self.clickBanner;
             [bannerMutableArr addObject:bannerVM];
@@ -136,6 +151,7 @@
         for (int i = 0; i<homeModel.contents.signUpList.count; i++) {
             //signUpList 和 carouselList 的model 一样 所以就创建 signUpList的ViewModel了
             LCHomeCollectionBananaViewModel *ignUpVM = [[LCHomeCollectionBananaViewModel alloc]initWithModel:homeModel.contents.signUpList[i]];
+            
             ignUpVM.clickBT = self.clickBT;
             [signUpListMutableArr addObject:ignUpVM];
         }

@@ -143,7 +143,10 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 -(NSURLSessionDataTask *)buyMemberWithMemberCarID:(NSString *)memberID CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 //购买会员第三部 告诉后台
 -(NSURLSessionDataTask *)paySucceedWithMemberOrder_sn:(NSString*)order_sn completeHandle:(void(^)(id responseObj,NSError *error))complete;
-
+//控制在线审核
 -(NSURLSessionDataTask *)isOnlineCardCompleteHandle:(void(^)(id responseObj,NSError *error))complete;
+
+//报名课程的list
+-(NSURLSessionDataTask *)getBaoMingClassList:(void(^)(id responseObj,NSError *error))complete;
 @end
 

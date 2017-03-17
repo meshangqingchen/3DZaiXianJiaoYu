@@ -26,8 +26,8 @@
         make.left.right.bottom.mas_offset(0);
         make.top.mas_offset(64);
     }];
-    _webView.delegate = self;
     
+    _webView.delegate = self;
     UIButton *bt = [UIButton new];
     [self.view addSubview:bt];
     [bt mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -44,7 +44,6 @@
     if ([self.viewModel.className isEqualToString:@"LCHomeCarousellist"]) {
         bt.hidden = YES;
     }
-
 }
 
 #pragma mark - UIWebViewDelegate

@@ -80,4 +80,29 @@
     });
     return manager;
 }
+
++ (YYWebImageManager *)avatarImageManager3 {
+    static YYWebImageManager *manager;
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        NSString *path = [[UIApplication sharedApplication].cachesPath stringByAppendingPathComponent:@"Peixun.avatar1"];
+        YYImageCache *cache = [[YYImageCache alloc] initWithPath:path];
+        
+        manager = [[YYWebImageManager alloc] initWithCache:cache queue:[YYWebImageManager sharedManager].queue];
+        manager.sharedTransformBlock = ^(UIImage *image, NSURL *url) {
+            if (!image) return image;
+            UIImage *newImg = image;
+            if (image.size.width != image.size.height) {
+                CGFloat min = MIN(image.size.width, image.size.height);
+                newImg = [image imageByResizeToSize:CGSizeMake(min, min) contentMode:UIViewContentModeScaleToFill];
+            }
+            
+            UIImage *imgg = [newImg imageByRoundCornerRadius:0];
+            return imgg; // a large value
+        };
+    });
+    return manager;
+}
+
 @end

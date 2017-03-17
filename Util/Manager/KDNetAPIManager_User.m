@@ -123,7 +123,8 @@ static NSString *const Api_createMemberOrder = @"createMemberOrder";
 static NSString *const Api_paymentMemberOrder = @"paymentMemberOrder";
 /// 判断正在上线
 static NSString *const Api_isOnline = @"isOnline";
-
+///getEducationList
+static NSString *const Api_getEducationList = @"getEducationList";
 
 #pragma mark - api params key
 static NSString *const PARAM_planId             = @"planId";
@@ -595,10 +596,17 @@ static NSString *const PARAM_memberCardId     = @"memberCardId";//会员卡ID
         complete(responseObj,error);
     }];
 }
-
+//控制在线
 -(NSURLSessionDataTask *)isOnlineCardCompleteHandle:(void (^)(id, NSError *))complete{
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_isOnline encodeParams:nil withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
     }];
+}
+//报名课程的list
+-(NSURLSessionDataTask *)getBaoMingClassList:(void (^)(id, NSError *))complete{
+    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_getEducationList encodeParams:nil withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+        complete(responseObj,error);
+    }];
+
 }
 @end

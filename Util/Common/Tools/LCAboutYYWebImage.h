@@ -13,4 +13,5 @@
 + (YYWebImageManager *)avatarImageManager;
 + (YYWebImageManager *)avatarImageManager1;
 + (YYWebImageManager *)avatarImageManager2;
++ (YYWebImageManager *)avatarImageManager3;
 @end

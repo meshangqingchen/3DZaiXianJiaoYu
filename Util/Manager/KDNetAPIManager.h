@@ -14,9 +14,6 @@ typedef NS_ENUM(NSUInteger , NetworkMethod) {
     
 };
 //cc/json/mobile_tel_segment.htm?
-
-
-
 //192.168.1.113/3d/api.php/home/api/
 //192.168.1.113/web/shop/index.php?
 //wxswjy.com
@@ -26,8 +23,9 @@ typedef NS_ENUM(NSUInteger , NetworkMethod) {
 //http://www.wxswjy.com/api.php/home/api/
 //http://www.wxswjy.com/api2.php/home/ 服务器上的
 //@"http://192.168.1.108/3d/api.php/home/" 测试
+//192.168.1.109/3d/api.php/home/api/getEducationList
 
-static NSString *const AppNetAPIBaseURLString = @"http://www.wxswjy.com/api2.1.php/home/";
+static NSString *const AppNetAPIBaseURLString = @"http://192.168.1.109/3d/api.php/home/";
 @interface KDNetAPIManager : AFHTTPSessionManager
 + (instancetype)sharedJsonClient;
 //andBaseApi:(NSString *)baseApi
