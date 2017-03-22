@@ -11,12 +11,14 @@
 #import "LCBaoMingLBCell.h"
 #import "LCBaoMingTFCell.h"
 #import "LCBaoMingFooterView.h"
+#import "LCBaoMingHeaderView.h"
 #import "UINavigationItem+CustomItem.h"
 @interface LCBaoMingViewController ()
 
 @property(nonatomic,strong) LCBaoMingViewModel  *viewModel;
 @property(nonatomic,strong) UITableView *tableView;
 @property(nonatomic,strong) LCBaoMingFooterView *baoMingFotterView;
+@property(nonatomic,strong) LCBaoMingHeaderView *baoMingHeaderView;
 @end
 
 static NSString *LCBaoMingLBCellIdf = @"LCBaoMingLBCell";
@@ -34,6 +36,7 @@ static NSString *LCBaoMingTFCellIdf = @"LCBaoMingTFCell";
     [self.tableView registerClass:[LCBaoMingTFCell class] forCellReuseIdentifier:LCBaoMingTFCellIdf];
     [self.view addSubview:self.tableView];
     self.tableView.tableFooterView = self.baoMingFotterView;
+    self.tableView.tableHeaderView = self.baoMingHeaderView;
     [super viewDidLoad];
 }
 
@@ -56,7 +59,7 @@ static NSString *LCBaoMingTFCellIdf = @"LCBaoMingTFCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    if (indexPath.row == 0 | indexPath.row == 2 | indexPath.row == 6 | indexPath.row == 3) {
+    if (indexPath.row == 1 | indexPath.row == 4 | indexPath.row == 2) {
         LCBaoMingLBCell *cell = [tableView dequeueReusableCellWithIdentifier:LCBaoMingLBCellIdf forIndexPath:indexPath];
         [cell bindViewModel:self.viewModel.dataSource[indexPath.row]];
         return cell;
@@ -64,7 +67,6 @@ static NSString *LCBaoMingTFCellIdf = @"LCBaoMingTFCell";
     
     LCBaoMingTFCell *cell = [tableView dequeueReusableCellWithIdentifier:LCBaoMingTFCellIdf forIndexPath:indexPath];
     [cell bindViewModel:self.viewModel.dataSource[indexPath.row]];
-    
     cell.TextFiledDidEndDding = self.viewModel.TextFiledDidEndDding;
     return cell;
 }
@@ -77,8 +79,22 @@ static NSString *LCBaoMingTFCellIdf = @"LCBaoMingTFCell";
 	if(_baoMingFotterView == nil) {
 		_baoMingFotterView = [[LCBaoMingFooterView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 210+145/2)];
         _baoMingFotterView.TextViewDidEndDding = self.viewModel.TextViewDidEndDding;
+        _baoMingFotterView.showMethodOfpaymentView = self.viewModel.showMethodOfpaymentView;
+        @weakify(self)
+        self.viewModel.bingViewModelToBottomFooterView = ^(id mode){
+            @strongify(self)
+            [self.baoMingFotterView.similarCell bindViewModel:mode];
+        };
+
 	}
 	return _baoMingFotterView;
 }
 
+- (LCBaoMingHeaderView *)baoMingHeaderView{
+    if (_baoMingHeaderView == nil) {
+        _baoMingHeaderView = [[LCBaoMingHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40)];
+        _baoMingHeaderView.titleLB.text = self.viewModel.topTitle;
+    }
+    return _baoMingHeaderView;
+}
 @end

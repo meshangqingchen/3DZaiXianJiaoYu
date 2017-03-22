@@ -20,9 +20,20 @@
     LCPiexunClassCellViewModel *cellVM = self.dataSource[indexpath.row];
     
     LCPeiXunClassDetailViewModel *detailVM = [[LCPeiXunClassDetailViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"课程详情"}];
+    /*
+     @property(nonatomic,strong) NSString *name;
+     @property(nonatomic,strong) NSString *long_time;
+     @property(nonatomic,strong) NSString *descrip;
+     @property(nonatomic,strong) NSString *classIID;
+     @property (nonatomic, copy) NSString *price;
+     @property (nonatomic, copy) NSString *online_price;
+     */
     detailVM.name = cellVM.name;
     detailVM.long_time = cellVM.long_time;
     detailVM.descrip = cellVM.descrip;
+    detailVM.classIID = cellVM.iid;
+    detailVM.price = cellVM.price;
+    detailVM.online_price = cellVM.online_price;
     [self.navigationStackService pushViewModel:detailVM animated:YES];
 }
 
@@ -35,7 +46,6 @@
             [self.mutableDataArr addObject:cellVM];
         }
         self.dataSource = self.mutableDataArr.copy;
-//
     }];
 }
 @end

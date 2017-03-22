@@ -22,8 +22,8 @@
 @property(nonatomic,copy) void (^creatOrder)(NSString *couresID,NSString *price,NSURL *urlStr,NSString *title);// 课程是 收费的生成订单第一步.
 
 
-@property(nonatomic,assign) BOOL ifPlay;
-@property(nonatomic,assign) BOOL ifFree;
+@property(nonatomic,assign) BOOL ifPlay;          //是否可以播放
+@property(nonatomic,assign) BOOL ifFree;          //是否免费
 @property(nonatomic,assign) BOOL ifCollected;     //是否收藏过了
 @property(nonatomic,strong) NSString *courseID;   //课程ID;
 @property(nonatomic,strong) NSString *price;
@@ -33,6 +33,4 @@
 @property(nonatomic,strong) LCVideoDetailVideolist *firstVideo;  //第一个视频的url
 
 -(instancetype)initWithViewModel:(id)viewModel;
-
-
 @end

@@ -72,6 +72,12 @@
 		745EB1581E7BCC3A00B648AA /* LCPeixunClassModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 745EB1571E7BCC3A00B648AA /* LCPeixunClassModel.m */; };
 		745EB15B1E7BE1D100B648AA /* LCPeiXunClassDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 745EB15A1E7BE1D100B648AA /* LCPeiXunClassDetailViewModel.m */; };
 		745EB15E1E7BE1F800B648AA /* LCPeixunClassDeailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 745EB15D1E7BE1F800B648AA /* LCPeixunClassDeailViewController.m */; };
+		745EB2251E7F76E600B648AA /* LCZaiXianZiXunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 745EB2241E7F76E600B648AA /* LCZaiXianZiXunViewController.m */; };
+		745EB2281E7F780D00B648AA /* LCZaiXianZiXunViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 745EB2271E7F780D00B648AA /* LCZaiXianZiXunViewModel.m */; };
+		745EB22B1E7FA16F00B648AA /* LCPayMethodAlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 745EB22A1E7FA16F00B648AA /* LCPayMethodAlerView.m */; };
+		745EB22E1E7FAB4700B648AA /* LCBaoMingHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 745EB22D1E7FAB4700B648AA /* LCBaoMingHeaderView.m */; };
+		746C1A441E80F717001DBCAD /* LCBaoMingZhiFuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 746C1A431E80F717001DBCAD /* LCBaoMingZhiFuViewController.m */; };
+		746C1A471E80F856001DBCAD /* LCBaoMingZhiFuViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 746C1A461E80F856001DBCAD /* LCBaoMingZhiFuViewModel.m */; };
 		74746E311E0E7B75002B0BFF /* HSSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74746E301E0E7B75002B0BFF /* HSSessionModel.m */; };
 		747812C41E01127200507DCA /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 747812C31E01127200507DCA /* BaseView.m */; };
 		747812C71E0113A200507DCA /* LCVideoDetailTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 747812C61E0113A200507DCA /* LCVideoDetailTabBar.m */; };
@@ -128,7 +134,6 @@
 		747BF6C41E2E1936000137E5 /* LCBaoMingLBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6B71E2E1936000137E5 /* LCBaoMingLBCell.m */; };
 		747BF6C51E2E1936000137E5 /* LCBaoMingTFCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6B91E2E1936000137E5 /* LCBaoMingTFCell.m */; };
 		747BF6C61E2E1936000137E5 /* LCBaoMingFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6BB1E2E1936000137E5 /* LCBaoMingFooterView.m */; };
-		747BF6C71E2E1936000137E5 /* LCSelectZhiYuanAlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6BD1E2E1936000137E5 /* LCSelectZhiYuanAlerView.m */; };
 		747BF6C81E2E1936000137E5 /* LCSelectSexAlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6BF1E2E1936000137E5 /* LCSelectSexAlerView.m */; };
 		747BF6C91E2E1936000137E5 /* LCSelectBirthdayAlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6C11E2E1936000137E5 /* LCSelectBirthdayAlerView.m */; };
 		747BF6CA1E2E1936000137E5 /* LCSelectXueLiAlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 747BF6C31E2E1936000137E5 /* LCSelectXueLiAlerView.m */; };
@@ -485,6 +490,18 @@
 		745EB15A1E7BE1D100B648AA /* LCPeiXunClassDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPeiXunClassDetailViewModel.m; sourceTree = "<group>"; };
 		745EB15C1E7BE1F800B648AA /* LCPeixunClassDeailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPeixunClassDeailViewController.h; sourceTree = "<group>"; };
 		745EB15D1E7BE1F800B648AA /* LCPeixunClassDeailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPeixunClassDeailViewController.m; sourceTree = "<group>"; };
+		745EB2231E7F76E600B648AA /* LCZaiXianZiXunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCZaiXianZiXunViewController.h; sourceTree = "<group>"; };
+		745EB2241E7F76E600B648AA /* LCZaiXianZiXunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCZaiXianZiXunViewController.m; sourceTree = "<group>"; };
+		745EB2261E7F780D00B648AA /* LCZaiXianZiXunViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCZaiXianZiXunViewModel.h; sourceTree = "<group>"; };
+		745EB2271E7F780D00B648AA /* LCZaiXianZiXunViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCZaiXianZiXunViewModel.m; sourceTree = "<group>"; };
+		745EB2291E7FA16F00B648AA /* LCPayMethodAlerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPayMethodAlerView.h; sourceTree = "<group>"; };
+		745EB22A1E7FA16F00B648AA /* LCPayMethodAlerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCPayMethodAlerView.m; sourceTree = "<group>"; };
+		745EB22C1E7FAB4700B648AA /* LCBaoMingHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCBaoMingHeaderView.h; sourceTree = "<group>"; };
+		745EB22D1E7FAB4700B648AA /* LCBaoMingHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCBaoMingHeaderView.m; sourceTree = "<group>"; };
+		746C1A421E80F717001DBCAD /* LCBaoMingZhiFuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCBaoMingZhiFuViewController.h; sourceTree = "<group>"; };
+		746C1A431E80F717001DBCAD /* LCBaoMingZhiFuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCBaoMingZhiFuViewController.m; sourceTree = "<group>"; };
+		746C1A451E80F856001DBCAD /* LCBaoMingZhiFuViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCBaoMingZhiFuViewModel.h; sourceTree = "<group>"; };
+		746C1A461E80F856001DBCAD /* LCBaoMingZhiFuViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCBaoMingZhiFuViewModel.m; sourceTree = "<group>"; };
 		74746E2F1E0E7B75002B0BFF /* HSSessionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSessionModel.h; sourceTree = "<group>"; };
 		74746E301E0E7B75002B0BFF /* HSSessionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSessionModel.m; sourceTree = "<group>"; };
 		747812C21E01127200507DCA /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
@@ -657,8 +674,6 @@
 		747BF6B91E2E1936000137E5 /* LCBaoMingTFCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCBaoMingTFCell.m; sourceTree = "<group>"; };
 		747BF6BA1E2E1936000137E5 /* LCBaoMingFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCBaoMingFooterView.h; sourceTree = "<group>"; };
 		747BF6BB1E2E1936000137E5 /* LCBaoMingFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCBaoMingFooterView.m; sourceTree = "<group>"; };
-		747BF6BC1E2E1936000137E5 /* LCSelectZhiYuanAlerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCSelectZhiYuanAlerView.h; sourceTree = "<group>"; };
-		747BF6BD1E2E1936000137E5 /* LCSelectZhiYuanAlerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCSelectZhiYuanAlerView.m; sourceTree = "<group>"; };
 		747BF6BE1E2E1936000137E5 /* LCSelectSexAlerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCSelectSexAlerView.h; sourceTree = "<group>"; };
 		747BF6BF1E2E1936000137E5 /* LCSelectSexAlerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCSelectSexAlerView.m; sourceTree = "<group>"; };
 		747BF6C01E2E1936000137E5 /* LCSelectBirthdayAlerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCSelectBirthdayAlerView.h; sourceTree = "<group>"; };
@@ -1617,10 +1632,10 @@
 			children = (
 				7485FBAB1DFC389B00E6D23D /* CustomBarItem.h */,
 				7485FBAC1DFC389B00E6D23D /* CustomBarItem.m */,
-				7485FBAD1DFC389B00E6D23D /* RTRootNavigationController.h */,
-				7485FBAE1DFC389B00E6D23D /* RTRootNavigationController.m */,
 				7485FBAF1DFC389B00E6D23D /* UINavigationItem+CustomItem.h */,
 				7485FBB01DFC389B00E6D23D /* UINavigationItem+CustomItem.m */,
+				7485FBAD1DFC389B00E6D23D /* RTRootNavigationController.h */,
+				7485FBAE1DFC389B00E6D23D /* RTRootNavigationController.m */,
 				7485FBB11DFC389B00E6D23D /* UIViewController+RTRootNavigationController.h */,
 				7485FBB21DFC389B00E6D23D /* UIViewController+RTRootNavigationController.m */,
 			);
@@ -1779,10 +1794,14 @@
 				745EB14E1E7B95DC00B648AA /* LCPeixunClassViewController.m */,
 				745EB15C1E7BE1F800B648AA /* LCPeixunClassDeailViewController.h */,
 				745EB15D1E7BE1F800B648AA /* LCPeixunClassDeailViewController.m */,
+				745EB2231E7F76E600B648AA /* LCZaiXianZiXunViewController.h */,
+				745EB2241E7F76E600B648AA /* LCZaiXianZiXunViewController.m */,
 				747BF60E1E2B2502000137E5 /* LCWebImageViewController.h */,
 				747BF60F1E2B2502000137E5 /* LCWebImageViewController.m */,
 				747BF6B11E2E18A9000137E5 /* LCBaoMingViewController.h */,
 				747BF6B21E2E18A9000137E5 /* LCBaoMingViewController.m */,
+				746C1A421E80F717001DBCAD /* LCBaoMingZhiFuViewController.h */,
+				746C1A431E80F717001DBCAD /* LCBaoMingZhiFuViewController.m */,
 				747BF6351E2C8882000137E5 /* LCCourseCollectionViewController.h */,
 				747BF6361E2C8882000137E5 /* LCCourseCollectionViewController.m */,
 				747BF65F1E2CACAD000137E5 /* LCMoreTeacherViewController.h */,
@@ -1916,8 +1935,12 @@
 				745EB1541E7BB3B700B648AA /* LCPiexunClassCellViewModel.m */,
 				745EB1591E7BE1D100B648AA /* LCPeiXunClassDetailViewModel.h */,
 				745EB15A1E7BE1D100B648AA /* LCPeiXunClassDetailViewModel.m */,
+				745EB2261E7F780D00B648AA /* LCZaiXianZiXunViewModel.h */,
+				745EB2271E7F780D00B648AA /* LCZaiXianZiXunViewModel.m */,
 				747BF6B41E2E18E7000137E5 /* LCBaoMingViewModel.h */,
 				747BF6B51E2E18E7000137E5 /* LCBaoMingViewModel.m */,
+				746C1A451E80F856001DBCAD /* LCBaoMingZhiFuViewModel.h */,
+				746C1A461E80F856001DBCAD /* LCBaoMingZhiFuViewModel.m */,
 				747BF6381E2C88B6000137E5 /* LCCourseCollectionViewModel.h */,
 				747BF6391E2C88B6000137E5 /* LCCourseCollectionViewModel.m */,
 				747BF6411E2C9234000137E5 /* LCCourseCollectionCellViewModel.h */,
@@ -2177,12 +2200,14 @@
 				747BF6B91E2E1936000137E5 /* LCBaoMingTFCell.m */,
 				747BF6BA1E2E1936000137E5 /* LCBaoMingFooterView.h */,
 				747BF6BB1E2E1936000137E5 /* LCBaoMingFooterView.m */,
-				747BF6BC1E2E1936000137E5 /* LCSelectZhiYuanAlerView.h */,
-				747BF6BD1E2E1936000137E5 /* LCSelectZhiYuanAlerView.m */,
+				745EB22C1E7FAB4700B648AA /* LCBaoMingHeaderView.h */,
+				745EB22D1E7FAB4700B648AA /* LCBaoMingHeaderView.m */,
 				745EB1411E7A6E3400B648AA /* LCZXBaoMingClassTypCell.h */,
 				745EB1421E7A6E3400B648AA /* LCZXBaoMingClassTypCell.m */,
 				747BF6BE1E2E1936000137E5 /* LCSelectSexAlerView.h */,
 				747BF6BF1E2E1936000137E5 /* LCSelectSexAlerView.m */,
+				745EB2291E7FA16F00B648AA /* LCPayMethodAlerView.h */,
+				745EB22A1E7FA16F00B648AA /* LCPayMethodAlerView.m */,
 				747BF6C01E2E1936000137E5 /* LCSelectBirthdayAlerView.h */,
 				747BF6C11E2E1936000137E5 /* LCSelectBirthdayAlerView.m */,
 				747BF6C21E2E1936000137E5 /* LCSelectXueLiAlerView.h */,
@@ -2703,6 +2728,7 @@
 				7485FDAB1DFFFA1500E6D23D /* UIImage+WebP.m in Sources */,
 				7485FD0E1DFF9D7700E6D23D /* LCBigImageCollectionViewCell.m in Sources */,
 				7485FD171DFFBF3000E6D23D /* LCHomeCollectionSectionModel.m in Sources */,
+				745EB2281E7F780D00B648AA /* LCZaiXianZiXunViewModel.m in Sources */,
 				74388C981E1E09CF00DF2795 /* LCMySelfMainViewModel.m in Sources */,
 				7485FD9A1DFFFA1500E6D23D /* TAAnimatedDotView.m in Sources */,
 				747BF6371E2C8882000137E5 /* LCCourseCollectionViewController.m in Sources */,
@@ -2751,13 +2777,13 @@
 				74C4FB491E028F55007BC549 /* LCEvaluateCellViewModel.m in Sources */,
 				7485FB9C1DFC382800E6D23D /* WMScrollView.m in Sources */,
 				741B059B1E20F4E1002860A7 /* NKColorSwitch.m in Sources */,
+				746C1A471E80F856001DBCAD /* LCBaoMingZhiFuViewModel.m in Sources */,
 				748245191E14F162004735DB /* LCMessageCell.m in Sources */,
 				740F0EFE1E1126B500EEFC3B /* LCCourseDownLoadCellViewModel.m in Sources */,
 				747BF6431E2C9234000137E5 /* LCCourseCollectionCellViewModel.m in Sources */,
 				748CF1EE1E0B7DFF00E60F68 /* LCDetailEvaluateInputAccessoryView.m in Sources */,
 				747BF5F61E28DC5F000137E5 /* RSADataSigner.m in Sources */,
 				7485FC121DFC39FB00E6D23D /* KDFileManager.m in Sources */,
-				747BF6C71E2E1936000137E5 /* LCSelectZhiYuanAlerView.m in Sources */,
 				74C3D9F91E1F687800BA7F0F /* LCPersonalCenterHeaderViewModel.m in Sources */,
 				740F0EE31E10B62B00EEFC3B /* LCCourseCell.m in Sources */,
 				748245071E14D4B7004735DB /* LCMyMessageViewController.m in Sources */,
@@ -2793,8 +2819,10 @@
 				7485FB9B1DFC382800E6D23D /* WMProgressView.m in Sources */,
 				7485FDAF1DFFFA1500E6D23D /* UIView+SDExtension.m in Sources */,
 				7485FCC51DFD523100E6D23D /* BaseViewController.m in Sources */,
+				745EB22E1E7FAB4700B648AA /* LCBaoMingHeaderView.m in Sources */,
 				74450CC21E271C7B00F01EB7 /* LCRegisteredViewModel.m in Sources */,
 				74E02C481E5BEF6800A2FB4F /* LCZheKouQuanViewModel.m in Sources */,
+				746C1A441E80F717001DBCAD /* LCBaoMingZhiFuViewController.m in Sources */,
 				747BF6C51E2E1936000137E5 /* LCBaoMingTFCell.m in Sources */,
 				745EB14F1E7B95DC00B648AA /* LCPeixunClassViewController.m in Sources */,
 				74450CA01E24817500F01EB7 /* LCUseOldPaswordChangePaswordViewController.m in Sources */,
@@ -2913,6 +2941,7 @@
 				7485FB0B1DF90A1B00E6D23D /* main.m in Sources */,
 				74C86A1A1E56BD7E006D50E4 /* LCMemberFootView.m in Sources */,
 				747BF6DD1E2E652B000137E5 /* LCCourseClassSCellViewModel.m in Sources */,
+				745EB22B1E7FA16F00B648AA /* LCPayMethodAlerView.m in Sources */,
 				74450CA31E24818F00F01EB7 /* LCUseOldPaswordChangePaswordViewModel.m in Sources */,
 				7485FBA91DFC382800E6D23D /* YZTextAttachment.m in Sources */,
 				74C869C51E559D2E006D50E4 /* LCCounselTeacherCellViewModel.m in Sources */,
@@ -2963,6 +2992,7 @@
 				7485FBB41DFC389B00E6D23D /* RTRootNavigationController.m in Sources */,
 				74E02CA51E60186400A2FB4F /* LCUseCouponModel.m in Sources */,
 				748245101E14D5DE004735DB /* LCNotificationViewModel.m in Sources */,
+				745EB2251E7F76E600B648AA /* LCZaiXianZiXunViewController.m in Sources */,
 				745EB1551E7BB3B700B648AA /* LCPiexunClassCellViewModel.m in Sources */,
 				747BF5F41E28DC5F000137E5 /* NSDataEx.m in Sources */,
 				7485FC071DFC39FB00E6D23D /* UIViewController+Swizzle.m in Sources */,

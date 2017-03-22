@@ -51,9 +51,9 @@
         NSLog(@"%@",className);
         NSLog(@"%@",title);
 
-//        LCHomeCollectionBananaViewModel *model = self.homesignUpListDataArr.firstObject;
-        
-        if ([className isEqualToString:@"LCHomeSignuplist"]&&[title isEqualToString:@"基础课程"]) {
+        LCHomeCollectionBananaViewModel *model = self.homesignUpListDataArr.firstObject;
+                                       //LCHomeSignuplist
+        if ([className isEqualToString:model.className]&&[title isEqualToString:model.name]) {
             LCPiexunClassViewModel *viewModel = [[LCPiexunClassViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:title}];
             [self.navigationStackService pushViewModel:viewModel animated:YES];
             
@@ -126,10 +126,12 @@
     
     [self.netApi_Manager isOnlineCardCompleteHandle:^(id responseObj, NSError *error) {
         NSDictionary *contents = responseObj[@"contents"];
-        NSNumber *online = contents[@"contents"];
-        Apponline = [online boolValue];
+        NSNumber *online = contents[@"onlineing"];
+        NSLog(@"%@",online);
+        Apponline = [online boolValue]; //yes 正在上线
         //这个是判断是否正在上线还是是否正在上线 的版本..
     }];
+    
     
     MYLog(@" = = = %@",[KDFileManager getCachePath]);
     MYLog(@" = = = %@",[KDFileManager getCachePath]);

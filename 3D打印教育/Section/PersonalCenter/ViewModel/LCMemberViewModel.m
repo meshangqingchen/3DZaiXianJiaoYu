@@ -45,6 +45,8 @@
             }
             memberOrder = responseObj[@"contents"];
             [KDFileManager saveUserData:memberOrder forKey:LCCORDER_SN];
+            
+            
             //"NSObject+Common.h
             NSString *appID = @"2017011205016142";
             NSString *rsa2PrivateKey = LCCRSA2PRIVATEKEY;

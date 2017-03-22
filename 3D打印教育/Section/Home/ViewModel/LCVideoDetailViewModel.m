@@ -67,7 +67,7 @@
             [NSObject hideProgress];
         }];
     }];
-    
+    //收藏或者取消收藏
     [self setCollectVideo:^(NSString *courseID, UIButton *collection_BT) {
         @strongify(self);
         if (self.videoDetailViewViewModel.ifCollected) {
@@ -97,7 +97,6 @@
             }];
         }
     }];
-    
     //都让弹出键盘
     [self setPinglunVideo:^(NSString *courseID) {
         @strongify(self)
@@ -116,7 +115,6 @@
            [NSObject showWarning:msg];
        }];
     }];
-
     //网络
     [self setNetworkRequests:^(NSString *planID) {
         @strongify(self)

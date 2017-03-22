@@ -73,17 +73,16 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 -(NSURLSessionDataTask *)suggestionFeedbackMsg:(NSString *)msg amdContact:(NSString *)contact CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 
 ///报名
--(NSURLSessionDataTask *)baomingWithZhiYuan:(NSNumber *)zhiYuan
-                                    andName:(NSString *)name
-                                     andSex:(NSNumber *)sex
-                                andBirthday:(NSString *)birthday
-                            andBiYeYuanXiao:(NSString *)graduateSchool
-                            andProfessional:(NSString *)professional
-                                   andXueLi:(NSString *)xueLi
-                                andPhoneNum:(NSString *)phoneNum
-                                      andQQ:(NSString *)qq
-                                  andBeiZhu:(NSString *)beiZhu
-                             CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
+-(NSURLSessionDataTask *)baomingWithName:(NSString *)name
+                                  andSex:(NSNumber *)sex
+                             andBirthday:(NSString *)birthday
+                         andProfessional:(NSString *)professional
+                                andXueLi:(NSString *)xueLi
+                             andPhoneNum:(NSString *)phoneNum
+                                andEmail:(NSString *)email
+                                ndBeiZhu:(NSString *)beiZhu
+                                   andID:(NSString *)ID
+                          CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 ///上传头像
 -(NSURLSessionDataTask *)uploadHeadImage:(UIImage *)image andName:(NSString *)name CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 ///收藏列表

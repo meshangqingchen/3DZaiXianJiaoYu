@@ -23,13 +23,15 @@
     }];
     
     self.titleLB = [UILabel new];
-    self.titleLB.text = @"卧槽";
+    self.titleLB.text = @"--";
     [self.contentView addSubview:self.titleLB];
+    self.timeLB.numberOfLines = 2;
     self.titleLB.font = [[KDFont sharedKDFont]getF28Font];
     self.titleLB.textColor = [KDColor getC2Color];
     [self.titleLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.videoImageView.mas_right).mas_offset(15);
         make.top.mas_equalTo(12);
+        make.right.mas_offset(-15);
     }];
     
     self.timeLB = [UILabel new];

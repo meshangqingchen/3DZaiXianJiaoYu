@@ -65,7 +65,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(KDRouter)
                                    @"LCVoucherViewModel":@"LCMyVoucherViewController",
                                    @"LCHistoryTalkViewModel":@"LCHistoryTalkViewController",
                                    @"LCPiexunClassViewModel":@"LCPeixunClassViewController",
-                                   @"LCPeiXunClassDetailViewModel":@"LCPeixunClassDeailViewController"};
+                                   @"LCPeiXunClassDetailViewModel":@"LCPeixunClassDeailViewController",
+                                   @"LCZaiXianZiXunViewModel":@"LCZaiXianZiXunViewController",
+                                   @"LCBaoMingZhiFuViewModel":@"LCBaoMingZhiFuViewController"};
     }
 	return _viewModelViewMappings;
 }

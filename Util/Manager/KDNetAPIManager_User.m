@@ -96,7 +96,7 @@ static NSString *const Api_createFeedBack = @"createFeedBack";
 ///忘记密码修改密码
 static NSString *const Api_forgetPassword = @"forgetPassword";
 ///报名
-static NSString *const Api_enrol = @"enrol";
+static NSString *const Api_createEducationOrder = @"createEducationOrder";
 ///课程分类
 static NSString *const Api_planTypeList = @"planTypeList";
 ///收费课程
@@ -165,17 +165,17 @@ static NSString *const PARAM_toId             = @"toId";
 //static NSString *const PARAM_img              = @"img";
 static NSString *const PARAM_name             = @"name";
 
-static NSString *const PARAM_school           = @"school";
+//static NSString *const PARAM_school           = @"school";
 static NSString *const PARAM_major            = @"major";//专业
 static NSString *const PARAM_education        = @"education";//学历
 
 static NSString *const PARAM_contact          = @"contact";
-static NSString *const PARAM_qq               = @"qq";
+static NSString *const PARAM_email            = @"email";
 static NSString *const PARAM_discription      = @"discription";
 static NSString *const PARAM_orderSn          = @"orderSn";
 static NSString *const PARAM_couponId         = @"couponId"; //使用优惠券
 static NSString *const PARAM_memberCardId     = @"memberCardId";//会员卡ID
-
+static NSString *const PARAM_educationId      = @"educationId";//报名的ID
 
 ///发送短信获得验证码
 -(NSURLSessionDataTask *)getPhoneCordeWith:(NSString *)phoneNum andOperation:(NSString *)operation completeHandle:(void (^)(id, NSError *))complete{
@@ -388,33 +388,34 @@ static NSString *const PARAM_memberCardId     = @"memberCardId";//会员卡ID
         complete(responseObj,error);
    }];
 }
-
-
--(NSURLSessionDataTask *)baomingWithZhiYuan:(NSNumber *)zhiYuan
-                                    andName:(NSString *)name
-                                     andSex:(NSNumber *)sex
-                                andBirthday:(NSString *)birthday
-                            andBiYeYuanXiao:(NSString *)graduateSchool
-                            andProfessional:(NSString *)professional
-                                   andXueLi:(NSString *)xueLi
-                                andPhoneNum:(NSString *)phoneNum
-                                      andQQ:(NSString *)qq
-                                  andBeiZhu:(NSString *)beiZhu
-                             CompleteHandle:(void (^)(id, NSError *))complete{
-    NSDictionary *params = @{PARAM_type:zhiYuan,
+///报名
+-(NSURLSessionDataTask *)baomingWithName:(NSString *)name
+                                  andSex:(NSNumber *)sex
+                             andBirthday:(NSString *)birthday
+                         andProfessional:(NSString *)professional
+                                andXueLi:(NSString *)xueLi
+                             andPhoneNum:(NSString *)phoneNum
+                                andEmail:(NSString *)email
+                                ndBeiZhu:(NSString *)beiZhu
+                                   andID:(NSString *)ID
+                          CompleteHandle:(void (^)(id, NSError *))complete{
+    NSDictionary *params = @{
                              PARAM_name:name,
                              PARAM_sex:sex,
                              PARAM_birthday:birthday,
-                             PARAM_school:graduateSchool,
                              PARAM_major:professional,
                              PARAM_education:xueLi,
                              PARAM_phone:phoneNum,
-                             PARAM_qq:qq,
-                             PARAM_discription:beiZhu};
-    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_favList encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+                             PARAM_email:email,
+                             PARAM_discription:beiZhu,
+                             PARAM_educationId:ID};
+    
+    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_createEducationOrder encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
     }];
+
 }
+
 ///上穿头像
 -(NSURLSessionDataTask *)uploadHeadImage:(UIImage *)image andName:(NSString *)name CompleteHandle:(void (^)(id, NSError *))complete{
     return [[KDNetAPIManager sharedJsonClient] uploadImageApi:Api_upload withParams:nil andImage:image andfilename:nil andName:name andMethodType:Post andMimeType:nil completeHandle:^(id responseObj, NSError *error) {
@@ -604,7 +605,8 @@ static NSString *const PARAM_memberCardId     = @"memberCardId";//会员卡ID
 }
 //报名课程的list
 -(NSURLSessionDataTask *)getBaoMingClassList:(void (^)(id, NSError *))complete{
-    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_getEducationList encodeParams:nil withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+    NSDictionary *params = @{PARAM_type:@(1)};
+    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_getEducationList encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
     }];
 

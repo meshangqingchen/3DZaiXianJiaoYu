@@ -144,6 +144,6 @@
 }
 
 + (UIColor *)getC33Color {
-    return kUIColorRGB16(0xa3a3a3);
+    return kUIColorRGB16(0xee5628);
 }
 @end

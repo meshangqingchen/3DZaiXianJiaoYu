@@ -8,7 +8,6 @@
 
 #import "LCVideoDetailViewViewModel.h"
 
-
 @implementation LCVideoDetailViewViewModel
 -(instancetype)initWithViewModel:(id)viewModel{
     if (self = [super init]) {
@@ -23,6 +22,9 @@
             self.ifFree = YES;
         }else if ([homeDetailModel.contents.is_free isEqualToString:@"0"]){
             self.ifFree = NO;
+            if (Apponline) {
+               self.ifFree = YES;
+            }
         }
         if (homeDetailModel.contents.is_play == 1) {
             self.ifPlay = YES;

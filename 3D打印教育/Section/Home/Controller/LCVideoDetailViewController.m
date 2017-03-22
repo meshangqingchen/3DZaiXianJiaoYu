@@ -77,7 +77,7 @@ ZFPlayerDelegate
      UIViewContentModeBottomLeft,
      UIViewContentModeBottomRight,
      */
-    videoViewFatherView.backgroundColor = [UIColor blackColor];[UIColor redColor];
+    videoViewFatherView.backgroundColor = [UIColor blackColor];
     [self.view addSubview:videoViewFatherView];
     self.videoViewFatherView = videoViewFatherView;
     [videoViewFatherView setImageWithURL:self.viewModel.imageUrl placeholder:nil];
@@ -124,9 +124,9 @@ ZFPlayerDelegate
     }];
     _backView.hidden = YES;
 
+    //点击评论弹出的 评论view..
     self.lcInputAccessoryView = [[LCDetailEvaluateInputAccessoryView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, 276/2+30)];
     [self.view addSubview:_lcInputAccessoryView];
-    
     [self.viewModel setPopLcInputAccessoryView:^(NSString *videoID) {
         @strongify(self)
         [self.lcInputAccessoryView.textView becomeFirstResponder];
@@ -136,7 +136,7 @@ ZFPlayerDelegate
         !self.viewModel.sendPingLun ? : self.viewModel.sendPingLun(self.viewModel.planID,self.lcInputAccessoryView.textView.text,self.lcInputAccessoryView.starView.count);
         [self.lcInputAccessoryView.textView resignFirstResponder];
     }];
-    
+    //最下面的tabBar
     LCVideoDetailTabBar *tabbarView = [[LCVideoDetailTabBar alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT-49, SCREEN_WIDTH, 49)];
     tabbarView.backgroundColor = [KDColor getC5Color];
     [self.view addSubview:tabbarView];
@@ -145,9 +145,7 @@ ZFPlayerDelegate
     [self.viewModel setBindViewModel:^(LCVideoDetailViewViewModel *videoDetailVideModel) {
         @strongify(self)
         self.videoDetailVideModel = videoDetailVideModel;
-        
         if (videoDetailVideModel.ifPlay) {
-            
             [self creatZFPlayerModel:videoDetailVideModel.firstVideo];
             if (kSharedAppDelegate.networkStatus == AFNetworkReachabilityStatusReachableViaWWAN && ![[KDFileManager readUserDataForKey:LCCBOFANG] isEqualToNumber:@1]) {
                 self.alertView = nil;
@@ -179,7 +177,7 @@ ZFPlayerDelegate
         
         [tabbarView bindViewModel:videoDetailVideModel];
     }];
-    
+    //给简介和课程传输数据
     [self.viewModel setChuanShuData:^(id model) {
         @strongify(self)
         !self.IntroViewModel.fromVideoVMGetData ? : self.IntroViewModel.fromVideoVMGetData(model);//得到数据
@@ -188,7 +186,6 @@ ZFPlayerDelegate
     
     //网络请求
     !self.viewModel.networkRequests ? : self.viewModel.networkRequests(self.viewModel.planID);
-    
     //这个是收费视频 付完款之后回调
     [self.viewModel setCreatplayerModel:^{
         @strongify(self)

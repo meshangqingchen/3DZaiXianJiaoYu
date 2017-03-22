@@ -35,6 +35,20 @@
         make.left.right.bottom.mas_equalTo(0);
     }];
     [self.wkwebView loadHTMLString:self.viewModel.descrip baseURL:nil];
+    
+    UIButton *bt = [UIButton new];
+    [self.view addSubview:bt];
+    [bt mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(-15);
+        make.bottom.mas_equalTo(-59);
+        make.width.height.mas_equalTo(70);
+    }];
+    [bt setImage:[UIImage imageNamed:@"bao_ming"] forState:UIControlStateNormal];
+    @weakify(self)
+    [bt addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+        @strongify(self)
+        !self.viewModel.baoMing ? : self.viewModel.baoMing();
+    }];
 }
 
 -(UIView *)creatheaderView{

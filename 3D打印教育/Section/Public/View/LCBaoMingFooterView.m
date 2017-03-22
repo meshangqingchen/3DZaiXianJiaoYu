@@ -8,6 +8,7 @@
 
 #import "LCBaoMingFooterView.h"
 #import "LCBaoMingModel.h"
+#import "UIView+BlocksKit.h"
 @interface LCSimilarBaoMingLBCell ()
 
 @end
@@ -42,20 +43,20 @@
         make.edges.mas_equalTo(UIEdgeInsetsMake(0.5, 0.5, 0.5, 0.5));
     }];
     
-    UIImageView *pullArrowsImageView = [UIImageView new];
-    [backWhiteView addSubview:pullArrowsImageView];
-    pullArrowsImageView.image = [UIImage imageNamed:@"pullArrows"];
-    [pullArrowsImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(-10);
-        make.centerY.mas_equalTo(0);
-        make.width.mas_equalTo(25/2);
-        make.height.mas_equalTo(7);
-    }];
+//    UIImageView *pullArrowsImageView = [UIImageView new];
+//    [backWhiteView addSubview:pullArrowsImageView];
+//    pullArrowsImageView.image = [UIImage imageNamed:@"pullArrows"];
+//    [pullArrowsImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.right.mas_equalTo(-10);
+//        make.centerY.mas_equalTo(0);
+//        make.width.mas_equalTo(25/2);
+//        make.height.mas_equalTo(7);
+//    }];
     
     self.placHoderLB = [UILabel new];
     _placHoderLB.font = [[KDFont sharedKDFont]getF30Font];
     _placHoderLB.textColor = [KDColor getX0Color];
-    _placHoderLB.text = @"报名职员";
+    _placHoderLB.text = @"请选择支付方式";
     [backWhiteView addSubview:_placHoderLB];
     [_placHoderLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(0);
@@ -66,10 +67,15 @@
     [self addSubview:_titleLB];
     _titleLB.font = [[KDFont sharedKDFont]getF30Font];
     _titleLB.textColor = [KDColor getC2Color];
-    _titleLB.text = @"报名志愿";
+    _titleLB.text = @"支付方式";
     [_titleLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(20);
         make.bottom.mas_equalTo(shadowView.mas_top).mas_equalTo(-10);
+    }];
+    @weakify(self)
+    [backWhiteView bk_whenTapped:^{
+        @strongify(self)
+        !self.showMethodOfpaymentView ? : self.showMethodOfpaymentView();
     }];
 }
 
@@ -95,7 +101,7 @@ UITextViewDelegate
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         [self setupViews];
-        self.backgroundColor = [UIColor yellowColor];
+//        self.backgroundColor = [UIColor yellowColor];
     }
     return self;
 }
@@ -152,9 +158,11 @@ UITextViewDelegate
     
 }
 
-//-(void)textFieldDidEndEditing:(UITextField *)textField{
-//    !self.TextFiledDidEndDding ? : self.TextFiledDidEndDding(self.titleLB.
 
+-(void)setShowMethodOfpaymentView:(void (^)())showMethodOfpaymentView{
+    _showMethodOfpaymentView = showMethodOfpaymentView;
+    self.similarCell.showMethodOfpaymentView = _showMethodOfpaymentView;
+}
 -(void)textViewDidEndEditing:(UITextView *)textView{
     !self.TextViewDidEndDding ? : self.TextViewDidEndDding(textView.text);
 }

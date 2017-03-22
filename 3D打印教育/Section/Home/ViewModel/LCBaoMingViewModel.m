@@ -10,17 +10,17 @@
 #import "LCBaoMingModel.h"
 
 #import "JCAlertView.h"
-#import "LCSelectZhiYuanAlerView.h"
 #import "LCSelectSexAlerView.h"
 #import "LCSelectXueLiAlerView.h"
 #import "LCSelectBirthdayAlerView.h"
+#import "LCPayMethodAlerView.h"
 
 #import "NSObject+Common.h"
 #import "RegexUtil.h"
+
+#import "LCBaoMingZhiFuViewModel.h"
 @interface LCBaoMingViewModel ()
-//@property(nonatomic,strong) NSMutableArray *mutableDataArr;
-@property(nonatomic,strong) JCAlertView *JCZYVIew;
-@property(nonatomic,strong) LCSelectZhiYuanAlerView *zhiYuanAlertView;
+
 
 @property(nonatomic,strong) JCAlertView *JCSXEVIew;
 @property(nonatomic,strong) LCSelectSexAlerView *sexAlertView;
@@ -31,15 +31,20 @@
 @property(nonatomic,strong) JCAlertView *JCBIRTHDAYVIew;
 @property(nonatomic,strong) LCSelectBirthdayAlerView *birthdayAlertView;
 
-@property(nonatomic,strong) LCBaoMingModel *bmModel;
+@property(nonatomic,strong) JCAlertView *JCPAYVIew;
+@property(nonatomic,strong) LCPayMethodAlerView *payAlertView;
+
+
+//@property(nonatomic,strong) LCBaoMingModel *bmModel;
 @property(nonatomic,strong) LCBaoMingModel *xmModel;
 @property(nonatomic,strong) LCBaoMingModel *xbModel;
 @property(nonatomic,strong) LCBaoMingModel *csnyrModel;
-@property(nonatomic,strong) LCBaoMingModel *byModel;
+//@property(nonatomic,strong) LCBaoMingModel *byModel;
 @property(nonatomic,strong) LCBaoMingModel *zyModel;
 @property(nonatomic,strong) LCBaoMingModel *xlModel;
 @property(nonatomic,strong) LCBaoMingModel *dhModel;
-@property(nonatomic,strong) LCBaoMingModel *qqModel;
+@property(nonatomic,strong) LCBaoMingModel *emlModel;
+@property(nonatomic,strong) LCBaoMingModel *onlinePayModel;
 
 @property(nonatomic,strong) NSString *beiZhu;
 @property(nonatomic,strong) NSString *birthdayStr;
@@ -56,14 +61,12 @@
         @strongify(self)
         if ([title isEqualToString:@"姓名"]) {
             self.xmModel.canShu = textFiledtext;
-        }else if ([title isEqualToString:@"毕业院校"]){
-            self.byModel.canShu = textFiledtext;
         }else if ([title isEqualToString:@"所学专业"]){
             self.zyModel.canShu = textFiledtext;
         }else if ([title isEqualToString:@"联系电话"]){
             self.dhModel.canShu = textFiledtext;
-        }else if ([title isEqualToString:@"QQ"]){
-            self.qqModel.canShu = textFiledtext;
+        }else if ([title isEqualToString:@"Email"]){
+            self.emlModel.canShu = textFiledtext;
         }
     }];
     
@@ -71,37 +74,31 @@
         @strongify(self)
         self.beiZhu = textViewText;
     }];
+    
+    [self setShowMethodOfpaymentView:^{
+        @strongify(self)
+        [self.JCPAYVIew show];
+        [self.payAlertView.xianXiaPayBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+            @strongify(self)
+            self.onlinePayModel.canShu = self.payAlertView.xianXiaPay;
+            self.bingViewModelToBottomFooterView(self.onlinePayModel);
+            [self.JCPAYVIew dismissWithCompletion:nil];
+        }];
+        
+        [self.payAlertView.onlinePayBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+            @strongify(self)
+            self.onlinePayModel.canShu = self.payAlertView.onlinePay;
+            self.bingViewModelToBottomFooterView(self.onlinePayModel);
+            [self.JCPAYVIew dismissWithCompletion:nil];
+        }];
+    }];
+    
 }
 
 
 -(void)didSelectRowAtIndexPath:(NSIndexPath *)indexpath in:(UITableView *)tableView{
    @weakify(self)
-   
-    if (indexpath.row == 0) {
-        
-        [self.JCZYVIew show];
-        [self.zhiYuanAlertView.zhiyeBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
-           //职业教育
-           @strongify(self)
-            self.zhiYuanAlertView.zhiyeBT.selected = YES;
-            self.zhiYuanAlertView.shuoshiBT.selected = NO;
-            self.bmModel.canShu = @"职业教育";
-            self.dataSource = self.mutableDataArr.copy;
-            [self.JCZYVIew dismissWithCompletion:nil];
-          
-        }];
-        
-        [self.zhiYuanAlertView.shuoshiBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
-            //硕士教育
-            @strongify(self)
-            self.zhiYuanAlertView.zhiyeBT.selected = NO;
-            self.zhiYuanAlertView.shuoshiBT.selected = YES;
-            self.bmModel.canShu = @"硕士教育";
-            self.dataSource = self.mutableDataArr.copy;
-            [self.JCZYVIew dismissWithCompletion:nil];
-        }];
-        
-    }else if (indexpath.row == 2){
+    if (indexpath.row == 1){
         [self.JCSXEVIew show];
         [self.sexAlertView.manBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
             @strongify(self)
@@ -123,7 +120,7 @@
             [self.JCSXEVIew dismissWithCompletion:nil];
         }];
         
-    }else if (indexpath.row == 6){
+    }else if (indexpath.row == 4){
         [self.JCXLVIew show];
         [self.xueLiAlertView.gzBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
             @strongify(self)
@@ -187,7 +184,7 @@
             self.dataSource = self.mutableDataArr.copy;
             [self.JCXLVIew dismissWithCompletion:nil];
         }];
-    }else if (indexpath.row == 3){
+    }else if (indexpath.row == 2){
         [self.JCBIRTHDAYVIew show];
         [self.birthdayAlertView.datePickerView addBlockForControlEvents:UIControlEventValueChanged block:^(id  _Nonnull sender) {
             @strongify(self)
@@ -209,10 +206,10 @@
 
 -(void)requestRemoteDataWithPage:(NSUInteger)page completeHandle:(void (^)(id responseObj))complete{
     
-    self.bmModel= [LCBaoMingModel new];
-    _bmModel.title = @"报名志愿";
-    _bmModel.placeholderTitle = @"请选择报名志愿";
-    [self.mutableDataArr addObject:_bmModel];
+    self.onlinePayModel = [LCBaoMingModel new];//这个model没有加到数组里面因为这个付款方式是在fotterView上不是个cell
+    self.onlinePayModel.title = @"支付方式";
+    self.onlinePayModel.placeholderTitle = @"请选择支付方式";
+
     
     self.xmModel = [LCBaoMingModel new];
     _xmModel.title = @"姓名";
@@ -229,11 +226,6 @@
     _csnyrModel.placeholderTitle = @"请填写出生年月日";
     [self.mutableDataArr addObject:_csnyrModel];
     
-    _byModel = [LCBaoMingModel new];
-    _byModel.title = @"毕业院校";
-    _byModel.placeholderTitle = @"请填写毕业院校";
-    [self.mutableDataArr addObject:_byModel];
-    
     _zyModel = [LCBaoMingModel new];
     _zyModel.title = @"所学专业";
     _zyModel.placeholderTitle = @"请选填写转业";
@@ -249,13 +241,28 @@
     _dhModel.placeholderTitle = @"请填写联系电话";
     [self.mutableDataArr addObject:_dhModel];
     
-    _qqModel = [LCBaoMingModel new];
-    _qqModel.title = @"QQ";
-    _qqModel.placeholderTitle = @"请填写QQ号";
-    [self.mutableDataArr addObject:_qqModel];
+    _emlModel = [LCBaoMingModel new];
+    _emlModel.title = @"Email";
+    _emlModel.placeholderTitle = @"请填写email";
+    [self.mutableDataArr addObject:_emlModel];
     
     self.dataSource = self.mutableDataArr.copy;
 }
+
+
+
+//-(void)networkPresent{
+//    LCBaoMingZhiFuViewModel *baomingZhifuVM = [[LCBaoMingZhiFuViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"在线支付"}];
+//    
+//    baomingZhifuVM.price = self.price;
+//    baomingZhifuVM.long_time = self.long_time;
+//    baomingZhifuVM.privilegePrice = [NSString stringWithFormat:@"%.2f",[self.price floatValue]-[self.online_price floatValue]];
+//    baomingZhifuVM.onlineprice = self.online_price;
+//    baomingZhifuVM.name = self.topTitle;
+//    
+//    
+//    [self.navigationStackService pushViewModel:baomingZhifuVM animated:YES];
+//}
 
 //提交报名
 -(void)networkPresent{
@@ -270,17 +277,14 @@
  @property(nonatomic,strong) LCBaoMingModel *dhModel;
  @property(nonatomic,strong) LCBaoMingModel *qqModel;
  @property(nonatomic,strong) NSDateFormatter *dateFormatter;
-
  */
-    if (self.bmModel.canShu == nil|
-        self.xmModel.canShu == nil|
+    if (self.xmModel.canShu == nil|
         self.xbModel.canShu == nil|
         self.csnyrModel.canShu == nil|
-        self.byModel.canShu == nil|
         self.zyModel.canShu == nil|
         self.xlModel.canShu == nil|
         self.dhModel.canShu == nil|
-        self.qqModel.canShu == nil) {
+        self.emlModel.canShu == nil) {
         [NSObject showWarning:@"您的信息不完善请完善信息再提交"];
         return;
     }else if (![RegexUtil checkTelNumber:self.dhModel.canShu]){
@@ -290,12 +294,7 @@
         self.beiZhu = @" ";
     }
     
-    NSNumber *zhiYuanType = nil;
-    if ([self.bmModel.canShu isEqualToString:@"职业教育"]) {
-        zhiYuanType = @1;
-    }else{
-        zhiYuanType = @2;
-    }
+    
     NSNumber *sexType = nil;
     if ([self.xbModel.canShu isEqualToString:@"男"]) {
         sexType = @1;
@@ -303,30 +302,31 @@
         sexType = @2;
     }
     
-    [self.netApi_Manager baomingWithZhiYuan:zhiYuanType
-                                    andName:self.xmModel.canShu
-                                     andSex:sexType
-                                andBirthday:self.birthdayStr
-                            andBiYeYuanXiao:self.byModel.canShu
-                            andProfessional:self.zyModel.canShu
-                                   andXueLi:self.xlModel.canShu
-                                andPhoneNum:self.dhModel.canShu
-                                      andQQ:self.qqModel.canShu
-                                  andBeiZhu:self.beiZhu
-                             CompleteHandle:^(id responseObj, NSError *error) {
-                                 NSDictionary *dic = responseObj;
-                                 NSString *msg = dic[@"msg"];
-                                 [NSObject showWarning:msg];
-                             }];
-}
-
--(JCAlertView *)JCZYVIew{
-    if (!_JCZYVIew) {
-        self.zhiYuanAlertView = [[LCSelectZhiYuanAlerView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 24, 200)];
-//        _JCZYVIew = [[JCAlertView alloc]initWithCustomView:self.zhiYuanAlertView andCustomViewCenter:CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT*543/1344) dismissWhenTouchedBackground:YES];
-        _JCZYVIew = [[JCAlertView alloc]initWithCustomView:self.zhiYuanAlertView dismissWhenTouchedBackground:YES];
-    }
-    return _JCZYVIew;
+    [self.netApi_Manager baomingWithName:self.xmModel.canShu
+                                  andSex:sexType
+                             andBirthday:self.birthdayStr
+                         andProfessional:self.zyModel.canShu
+                                andXueLi:self.xlModel.canShu
+                             andPhoneNum:self.dhModel.canShu
+                                andEmail:self.emlModel.canShu
+                                ndBeiZhu:self.beiZhu
+                                   andID:self.classIID
+                          CompleteHandle:^(id responseObj, NSError *error) {
+                              NSDictionary *dic = responseObj;
+                                    if ([dic[@"msg"] isEqualToString:@"报名成功"]) {
+                                        NSDictionary *contents = dic[@"contents"];
+                                        NSString *orderSn = contents[@"orderSn"];
+                                        LCBaoMingZhiFuViewModel *baomingZhifuVM = [[LCBaoMingZhiFuViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"在线支付"}];
+                                        baomingZhifuVM.price = self.price;
+                                        baomingZhifuVM.long_time = self.long_time;
+                                        baomingZhifuVM.privilegePrice = [NSString stringWithFormat:@"%.2f",[self.price floatValue]-[self.online_price floatValue]];
+                                        baomingZhifuVM.onlineprice = self.online_price;
+                                        baomingZhifuVM.name = self.topTitle;
+                                        baomingZhifuVM.order_Sn = orderSn;
+                                        [self.navigationStackService pushViewModel:baomingZhifuVM animated:YES];
+                                    }
+                                    
+    }];
 }
 
 -(JCAlertView *)JCSXEVIew{
@@ -336,6 +336,17 @@
         _JCSXEVIew = [[JCAlertView alloc]initWithCustomView:self.sexAlertView dismissWhenTouchedBackground:YES];
     }
     return _JCSXEVIew;
+}
+
+-(JCAlertView *)JCPAYVIew{
+    if (!_JCPAYVIew) {
+        self.payAlertView = [[LCPayMethodAlerView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 24, 88.5)];
+        self.payAlertView.onlinePay = [NSString stringWithFormat:@"在线支付(%@元)",self.online_price];
+        self.payAlertView.xianXiaPay = [NSString stringWithFormat:@"线下支付(%@元)",self.price];
+        _JCPAYVIew = [[JCAlertView alloc]initWithCustomView:self.payAlertView  dismissWhenTouchedBackground:YES];
+    }
+    return _JCPAYVIew;
+
 }
 
 -(JCAlertView *)JCXLVIew{

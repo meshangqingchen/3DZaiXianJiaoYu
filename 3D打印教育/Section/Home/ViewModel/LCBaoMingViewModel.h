@@ -9,7 +9,15 @@
 #import "BaseTableViewModel.h"
 
 @interface LCBaoMingViewModel : BaseTableViewModel
+@property(nonatomic,strong) NSString *topTitle;
+@property(nonatomic,strong) NSString *long_time;
+@property(nonatomic,strong) NSString *classIID;
+@property (nonatomic, copy) NSString *price;
+@property (nonatomic, copy) NSString *online_price;
+
 @property(nonatomic,copy) void (^TextFiledDidEndDding)(NSString *title , NSString*textFiledtext);
 @property(nonatomic,copy) void (^TextViewDidEndDding)(NSString *textViewText);
+@property(nonatomic,copy) void (^showMethodOfpaymentView)();
+@property(nonatomic,copy) void (^bingViewModelToBottomFooterView)(id model);
 -(void)networkPresent;
 @end

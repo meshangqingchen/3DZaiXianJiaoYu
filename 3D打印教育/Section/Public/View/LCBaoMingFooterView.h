@@ -11,6 +11,8 @@
 @interface LCSimilarBaoMingLBCell : UIView
 @property(nonatomic,strong) UILabel *titleLB;
 @property(nonatomic,strong) UILabel *placHoderLB;
+@property(nonatomic,copy) void (^showMethodOfpaymentView)();
+-(void)bindViewModel:(id)viewModel;
 @end
 
 
@@ -18,4 +20,6 @@
 @property(nonatomic,strong) UITextView *textView;
 @property(nonatomic,strong) LCSimilarBaoMingLBCell *similarCell;
 @property(nonatomic,copy) void (^TextViewDidEndDding)(NSString *textViewText);
+@property(nonatomic,copy) void (^showMethodOfpaymentView)();
+
 @end

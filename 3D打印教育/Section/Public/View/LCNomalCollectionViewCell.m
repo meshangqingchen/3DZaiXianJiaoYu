@@ -28,6 +28,7 @@
     [_titleLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
         make.top.mas_equalTo(self.backImageView.mas_bottom).mas_offset(10);
+        make.right.mas_equalTo(-2);
     }];
 }
 

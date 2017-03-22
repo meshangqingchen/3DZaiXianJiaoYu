@@ -78,5 +78,6 @@
 + (UIColor *)getC31Color;
 //0x91acd5
 + (UIColor *)getC32Color;
+//0xee5628
 + (UIColor *)getC33Color;
 @end
