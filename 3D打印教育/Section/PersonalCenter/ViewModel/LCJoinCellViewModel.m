@@ -15,7 +15,7 @@
         LCJoinCourseContents *joinCourseModel = model;
         self.leftImageURL = [NSURL URLWithString:joinCourseModel.image];
         self.topStr = joinCourseModel.name;
-        if ([joinCourseModel.price isEqualToString:@"0"]) {
+        if (ApponlineIng) {
             self.middleStr = @"";
         }else{
             self.middleStr = [NSString stringWithFormat:@"¥: %@",joinCourseModel.price];

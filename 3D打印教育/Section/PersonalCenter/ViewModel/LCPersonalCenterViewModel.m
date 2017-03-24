@@ -120,9 +120,9 @@
     NSArray *setionArr0 = @[cellVM0,cellVM1];
     NSArray *setionArr1 = @[cellVM2,cellVM3,cellVM4];
     [self.mutableDataArr addObjectsFromArray:@[setionArr3,setionArr0,setionArr1]];//
-//    if (!Apponline) {
-//        [self.mutableDataArr removeFirstObject];
-//    }
+    if (ApponlineIng) {
+        [self.mutableDataArr removeFirstObject];
+    }
     self.dataSource = self.mutableDataArr.copy;
 }
 @end

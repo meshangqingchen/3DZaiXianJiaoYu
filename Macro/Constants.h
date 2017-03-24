@@ -20,7 +20,7 @@ extern BOOL isMember;
 
 extern NSString *memberStopTime;
 
-extern BOOL Apponline;  //默认上线了 返回YES
+extern BOOL ApponlineIng;  // 返回NO
 
 //extern NSString *const
 //extern NSString *const

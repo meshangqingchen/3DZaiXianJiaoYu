@@ -20,7 +20,7 @@ BOOL isMember = NO;  //是否会员
 
 NSString *memberStopTime = nil;//会员到期时间
 
-BOOL Apponline = YES;  //默认上线了
+BOOL ApponlineIng = NO;  //默认不是在上线
 //NSString *const
 //NSString *const
 //NSString *const

@@ -128,7 +128,7 @@
         NSDictionary *contents = responseObj[@"contents"];
         NSNumber *online = contents[@"onlineing"];
         NSLog(@"%@",online);
-        Apponline = [online boolValue]; //yes 正在上线
+        ApponlineIng = [online boolValue]; //yes 正在上线
         //这个是判断是否正在上线还是是否正在上线 的版本..
     }];
     

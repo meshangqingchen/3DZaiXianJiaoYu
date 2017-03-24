@@ -22,7 +22,7 @@
             self.ifFree = YES;
         }else if ([homeDetailModel.contents.is_free isEqualToString:@"0"]){
             self.ifFree = NO;
-            if (Apponline) {
+            if (ApponlineIng) {
                self.ifFree = YES;
             }
         }

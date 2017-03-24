@@ -49,6 +49,7 @@
 @property(nonatomic,strong) NSString *beiZhu;
 @property(nonatomic,strong) NSString *birthdayStr;
 @property(nonatomic,strong) NSDateFormatter *dateFormatter;
+@property(nonatomic,assign) BOOL isXianXia;
 @end
 
 @implementation LCBaoMingViewModel
@@ -78,18 +79,21 @@
     [self setShowMethodOfpaymentView:^{
         @strongify(self)
         [self.JCPAYVIew show];
-        [self.payAlertView.xianXiaPayBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
-            @strongify(self)
-            self.onlinePayModel.canShu = self.payAlertView.xianXiaPay;
-            self.bingViewModelToBottomFooterView(self.onlinePayModel);
-            [self.JCPAYVIew dismissWithCompletion:nil];
-        }];
-        
         [self.payAlertView.onlinePayBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
             @strongify(self)
             self.onlinePayModel.canShu = self.payAlertView.onlinePay;
             self.bingViewModelToBottomFooterView(self.onlinePayModel);
+            self.isXianXia = NO;
             [self.JCPAYVIew dismissWithCompletion:nil];
+        }];
+        
+        [self.payAlertView.xianXiaPayBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+            @strongify(self)
+            self.onlinePayModel.canShu = self.payAlertView.xianXiaPay;
+            self.bingViewModelToBottomFooterView(self.onlinePayModel);
+            self.isXianXia = YES;
+            [self.JCPAYVIew dismissWithCompletion:nil];
+            
         }];
     }];
     
@@ -314,16 +318,28 @@
                           CompleteHandle:^(id responseObj, NSError *error) {
                               NSDictionary *dic = responseObj;
                                     if ([dic[@"msg"] isEqualToString:@"报名成功"]) {
-                                        NSDictionary *contents = dic[@"contents"];
-                                        NSString *orderSn = contents[@"orderSn"];
-                                        LCBaoMingZhiFuViewModel *baomingZhifuVM = [[LCBaoMingZhiFuViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"在线支付"}];
-                                        baomingZhifuVM.price = self.price;
-                                        baomingZhifuVM.long_time = self.long_time;
-                                        baomingZhifuVM.privilegePrice = [NSString stringWithFormat:@"%.2f",[self.price floatValue]-[self.online_price floatValue]];
-                                        baomingZhifuVM.onlineprice = self.online_price;
-                                        baomingZhifuVM.name = self.topTitle;
-                                        baomingZhifuVM.order_Sn = orderSn;
-                                        [self.navigationStackService pushViewModel:baomingZhifuVM animated:YES];
+                                        
+                                        if (ApponlineIng) {
+                                            //如果在审核直接return报名成功不跳支付界面
+                                            [NSObject showWarning:@"报名成功"];
+                                            return ;
+                                        }else{
+                                            if (self.isXianXia) {
+                                                //如果选择线下付款直接return报名成功不跳支付界面否则跳转到支付界面.
+                                                [NSObject showWarning:@"报名成功"];
+                                            }else{
+                                                NSDictionary *contents = dic[@"contents"];
+                                                NSString *orderSn = contents[@"orderSn"];
+                                                LCBaoMingZhiFuViewModel *baomingZhifuVM = [[LCBaoMingZhiFuViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"在线支付"}];
+                                                baomingZhifuVM.price = self.price;
+                                                baomingZhifuVM.long_time = self.long_time;
+                                                baomingZhifuVM.privilegePrice = [NSString stringWithFormat:@"%.2f",[self.price floatValue]-[self.online_price floatValue]];
+                                                baomingZhifuVM.onlineprice = self.online_price;
+                                                baomingZhifuVM.name = self.topTitle;
+                                                baomingZhifuVM.order_Sn = orderSn;
+                                                [self.navigationStackService pushViewModel:baomingZhifuVM animated:YES];
+                                            }
+                                        }
                                     }
                                     
     }];

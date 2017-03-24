@@ -13,7 +13,7 @@
 
 -(void)setupViews{
     self.videoImageView = [UIImageView new];
-    
+    _videoImageView.backgroundColor = [KDColor getC26Color];
     [self.contentView addSubview:self.videoImageView];
     [self.videoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(10);
@@ -25,7 +25,7 @@
     self.titleLB = [UILabel new];
     self.titleLB.text = @"--";
     [self.contentView addSubview:self.titleLB];
-    self.timeLB.numberOfLines = 2;
+    self.titleLB.numberOfLines = 2;
     self.titleLB.font = [[KDFont sharedKDFont]getF28Font];
     self.titleLB.textColor = [KDColor getC2Color];
     [self.titleLB mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -43,8 +43,6 @@
         make.right.mas_equalTo(-12);
         make.bottom.mas_equalTo(self.videoImageView);
     }];
-    
-
 }
 
 -(void)bindViewModel:(id)viewModel{

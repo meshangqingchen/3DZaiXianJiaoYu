@@ -25,11 +25,11 @@
 
 -(void)setupViews{
 
-    CGFloat gap_W = (SCREEN_WIDTH- 60*4 )/4;
+    CGFloat gap_W = (SCREEN_WIDTH- 60*3 )/3;
     CGFloat backView_W = 60;
     
     UIView *backView1 = [UIView new];
-    backView1.backgroundColor = [UIColor yellowColor];
+//    backView1.backgroundColor = [UIColor yellowColor];
     [self addSubview:backView1];
     [backView1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_offset(gap_W/2);
@@ -125,36 +125,36 @@
         !self.bannerVM3.clickBT ? : self.bannerVM3.clickBT(self.bannerVM3.className,self.bannerVM3.detailURL,self.bannerVM3.name) ;
     }];
     
-    UIView *backView4 = [UIView new];
-    [self addSubview:backView4];
-    [backView4 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(backView3.mas_right).mas_equalTo(gap_W);
-        make.top.bottom.mas_offset(0);
-        make.width.mas_equalTo(backView_W);
-        
-    }];
-    self.imageView4 = [UIImageView new];
-    _imageView4.userInteractionEnabled = YES;
-    _imageView4.image = [UIImage imageNamed:@"33"];
-    [backView4 addSubview:_imageView4];
-    [_imageView4 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_offset(15);
-        make.size.mas_equalTo(CGSizeMake(50, 50));
-        make.centerX.mas_equalTo(0);
-    }];
-    self.lable4 = [UILabel new];
-    _lable4.textColor = [KDColor getC2Color];
-    _lable4.font = [[KDFont sharedKDFont]getF24Font];
-    _lable4.text = @"名校留学";
-    [backView4 addSubview:_lable4];
-    [_lable4 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.imageView1.mas_bottom).mas_offset(4);
-        make.centerX.mas_offset(0);
-    }];
-    [backView4 bk_whenTapped:^{
-        @strongify(self)
-//        !self.bannerVM3.clickBT ? : self.bannerVM3.clickBT(self.bannerVM3.className,self.bannerVM3.detailURL,self.bannerVM3.name) ;//
-    }];
+//    UIView *backView4 = [UIView new];
+//    [self addSubview:backView4];
+//    [backView4 mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(backView3.mas_right).mas_equalTo(gap_W);
+//        make.top.bottom.mas_offset(0);
+//        make.width.mas_equalTo(backView_W);
+//        
+//    }];
+//    self.imageView4 = [UIImageView new];
+//    _imageView4.userInteractionEnabled = YES;
+//    _imageView4.image = [UIImage imageNamed:@"33"];
+//    [backView4 addSubview:_imageView4];
+//    [_imageView4 mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.mas_offset(15);
+//        make.size.mas_equalTo(CGSizeMake(50, 50));
+//        make.centerX.mas_equalTo(0);
+//    }];
+//    self.lable4 = [UILabel new];
+//    _lable4.textColor = [KDColor getC2Color];
+//    _lable4.font = [[KDFont sharedKDFont]getF24Font];
+//    _lable4.text = @"名校留学";
+//    [backView4 addSubview:_lable4];
+//    [_lable4 mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.mas_equalTo(self.imageView1.mas_bottom).mas_offset(4);
+//        make.centerX.mas_offset(0);
+//    }];
+//    [backView4 bk_whenTapped:^{
+//        @strongify(self)
+////        !self.bannerVM3.clickBT ? : self.bannerVM3.clickBT(self.bannerVM3.className,self.bannerVM3.detailURL,self.bannerVM3.name) ;//
+//    }];
 
 }
 

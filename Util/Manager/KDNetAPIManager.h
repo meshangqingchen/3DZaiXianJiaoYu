@@ -25,7 +25,7 @@ typedef NS_ENUM(NSUInteger , NetworkMethod) {
 //@"http://192.168.1.108/3d/api.php/home/" 测试
 //192.168.1.109/3d/api.php/home/api/getEducationList
 
-static NSString *const AppNetAPIBaseURLString = @"http://192.168.1.109/3d/api.php/home/";
+static NSString *const AppNetAPIBaseURLString = @"http://www.wxswjy.com/api2.1.php/home/";
 @interface KDNetAPIManager : AFHTTPSessionManager
 + (instancetype)sharedJsonClient;
 //andBaseApi:(NSString *)baseApi
