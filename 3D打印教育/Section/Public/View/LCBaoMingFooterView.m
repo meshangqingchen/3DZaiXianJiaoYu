@@ -158,6 +158,9 @@ UITextViewDelegate
     
 }
 
+-(void)hidenZhiFuView:(BOOL)isbool{
+    self.similarCell.hidden = isbool;
+}
 
 -(void)setShowMethodOfpaymentView:(void (^)())showMethodOfpaymentView{
     _showMethodOfpaymentView = showMethodOfpaymentView;

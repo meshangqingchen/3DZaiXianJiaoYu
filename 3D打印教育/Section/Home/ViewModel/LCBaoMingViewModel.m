@@ -56,7 +56,7 @@
 -(void)initialize{
     [super initialize];
     self.shouldNavBackItem = YES;
-    
+    self.isXianXia = YES;//默认线下付款
     @weakify(self)
     [self setTextFiledDidEndDding:^(NSString *title, NSString *textFiledtext) {
         @strongify(self)

@@ -61,6 +61,7 @@
     
     UIImageView *vipImageView = [UIImageView new];
     [self.backImageView addSubview:vipImageView];
+    vipImageView.hidden = !isMember;
     vipImageView.image = [UIImage imageNamed:@"vip"];
     [vipImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_offset(0);

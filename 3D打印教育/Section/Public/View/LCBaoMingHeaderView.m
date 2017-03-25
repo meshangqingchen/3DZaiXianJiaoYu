@@ -18,13 +18,15 @@
 
 -(void)setupViews{
     self.titleLB = [UILabel new];
-    _titleLB.font = [[KDFont sharedKDFont] getF40Font];
+    _titleLB.font = [[KDFont sharedKDFont] getF36Font];
     _titleLB.textColor = [KDColor getC2Color];
+    _titleLB.numberOfLines = 2;
     [self addSubview:_titleLB];
-    _titleLB.backgroundColor = [UIColor yellowColor];
+//    _titleLB.backgroundColor = [UIColor yellowColor];
     [_titleLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_offset(15);
-        make.right.bottom.top.mas_offset(0);
+        make.right.mas_offset(-15);
+        make.bottom.top.mas_offset(0);
     }];
 }
 @end

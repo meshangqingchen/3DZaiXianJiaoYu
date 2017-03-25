@@ -18,6 +18,8 @@
     [self setBaoMing:^{
         @strongify(self)
         LCBaoMingViewModel *baomingVM = [[LCBaoMingViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"在线报名"}];
+        baomingVM.topTitle = @"谢菲尔德大学3D打印硕士留学申请";
+        baomingVM.baomingTyp = shuoShi;
         [self.navigationStackService pushViewModel:baomingVM animated:YES];
     }];
 }

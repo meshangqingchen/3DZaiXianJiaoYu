@@ -4,7 +4,7 @@
 //
 //  Created by 3D on 17/2/17.
 //  Copyright © 2017年 3D. All rights reserved.
-//
+//  专家咨询
 
 #import "LCMemberViewModel.h"
 #import "LCMemberTopCellViewModel.h"
@@ -162,10 +162,10 @@
             cellVM.buyMembersCreatOrder = self.buyMembersCreatOrder;
             [self.mutableDataArr addObject:cellVM];
         }
+        
+        
         LCMemberTopCellViewModel *topCellVM = [[LCMemberTopCellViewModel alloc]initWithModel:memberStopTime];
-        if (isMember) {
-            [self.mutableDataArr insertObject:topCellVM atIndex:0];
-        }
+        [self.mutableDataArr insertObject:topCellVM atIndex:0];
         self.dataSource = self.mutableDataArr.copy;
     }];
 }

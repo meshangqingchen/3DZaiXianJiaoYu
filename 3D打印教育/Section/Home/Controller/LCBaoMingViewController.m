@@ -77,22 +77,33 @@ static NSString *LCBaoMingTFCellIdf = @"LCBaoMingTFCell";
 
 - (LCBaoMingFooterView *)baoMingFotterView {
 	if(_baoMingFotterView == nil) {
-		_baoMingFotterView = [[LCBaoMingFooterView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 210+145/2)];
-        _baoMingFotterView.TextViewDidEndDding = self.viewModel.TextViewDidEndDding;
-        _baoMingFotterView.showMethodOfpaymentView = self.viewModel.showMethodOfpaymentView;
-        @weakify(self)
-        self.viewModel.bingViewModelToBottomFooterView = ^(id mode){
-            @strongify(self)
-            [self.baoMingFotterView.similarCell bindViewModel:mode];
-        };
+		
+        if (self.viewModel.baomingTyp == jiChuPeiXun) {
+            _baoMingFotterView = [[LCBaoMingFooterView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 210+145/2)];
+            _baoMingFotterView.TextViewDidEndDding = self.viewModel.TextViewDidEndDding;
+            _baoMingFotterView.showMethodOfpaymentView = self.viewModel.showMethodOfpaymentView;
+            @weakify(self)
+            self.viewModel.bingViewModelToBottomFooterView = ^(id mode){
+                @strongify(self)
+                [self.baoMingFotterView.similarCell bindViewModel:mode];
+            };
+            [_baoMingFotterView hidenZhiFuView:NO];
+        }else{
+            _baoMingFotterView = [[LCBaoMingFooterView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 210)];
+            _baoMingFotterView.TextViewDidEndDding = self.viewModel.TextViewDidEndDding;
+            [_baoMingFotterView hidenZhiFuView:YES];
+        }
 
+        
+        
+        
 	}
 	return _baoMingFotterView;
 }
 
 - (LCBaoMingHeaderView *)baoMingHeaderView{
     if (_baoMingHeaderView == nil) {
-        _baoMingHeaderView = [[LCBaoMingHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40)];
+        _baoMingHeaderView = [[LCBaoMingHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 45)];
         _baoMingHeaderView.titleLB.text = self.viewModel.topTitle;
     }
     return _baoMingHeaderView;

@@ -38,7 +38,7 @@ static  NSString *identifiertop = @"LCMemberTopCell";
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if ((indexPath.row == 0) & isMember) {
+    if (indexPath.row == 0) {
         LCMemberTopCell *cell = [tableView dequeueReusableCellWithIdentifier:identifiertop forIndexPath:indexPath];
         [cell bindViewModel:self.viewModel.dataSource[indexPath.row]];
         return cell;
@@ -49,7 +49,7 @@ static  NSString *identifiertop = @"LCMemberTopCell";
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if ((indexPath.row == 0) & isMember) {
+    if (indexPath.row == 0) {
         return 164;
     }
     return 44;

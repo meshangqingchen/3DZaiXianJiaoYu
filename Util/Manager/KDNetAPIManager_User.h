@@ -90,7 +90,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(KDNetAPIManager_User)
 ///加入课程列表
 -(NSURLSessionDataTask *)joinCourseListWithCurpag:(NSUInteger )curpage CompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 
-/////推出接口
+/////退出接口
 -(NSURLSessionDataTask *)logOutWithCompleteHandle:(void(^)(id responseObj,NSError *error))complete;
 /////检查更新
 //+(NSURLSessionDataTask *)checkUpdateWith:(NSString *)strUrl CompleteHandle:(void(^)(id responseObj,NSError *error))complete;

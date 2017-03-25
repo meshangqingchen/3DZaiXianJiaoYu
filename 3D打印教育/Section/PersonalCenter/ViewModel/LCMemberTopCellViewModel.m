@@ -12,7 +12,9 @@
 -(instancetype)initWithModel:(id)model{
     if (self =  [super init]) {
         NSString *time = model;
-        self.stopTime = [NSString getDataStrWithIntStr:time];
+        if (time) {
+            self.stopTime = [NSString getDataStrWithIntStr:time];
+        }
     }
     return self;
 }

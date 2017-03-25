@@ -33,7 +33,9 @@ static NSString * const identifier = @"LCPeixunClassCell";
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    CustomBarItem *rightItem = [self.navigationItem setItemWithTitle:@"资讯" textColor:[KDColor getC0Color] fontSize:15 itemType:right];
+//    CustomBarItem *rightItem = [self.navigationItem setItemWithTitle:@"资讯" textColor:[KDColor getC0Color] fontSize:15 itemType:right];
+    
+    CustomBarItem *rightItem = [self.navigationItem setItemWithImage:@"zixunkefu" size:CGSizeMake(22, 22) itemType:right];
     [rightItem  addBlockForControlEvents:UIControlEventTouchUpInside block:^(id sender) {
         LCZaiXianZiXunViewModel *zixunVM = [[LCZaiXianZiXunViewModel alloc]initWithServices:self.viewModel.navigationStackService params:@{KEY_TITLE:@"在线资讯"}];
         [self.viewModel.navigationStackService pushViewModel:zixunVM animated:YES];

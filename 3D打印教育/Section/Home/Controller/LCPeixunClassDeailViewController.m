@@ -11,7 +11,7 @@
 #import <WebKit/WKWebView.h>
 @interface LCPeixunClassDeailViewController ()
 @property(nonatomic,strong) LCPeiXunClassDetailViewModel *viewModel;
-@property(nonatomic,strong) WKWebView *wkwebView;
+@property(nonatomic,strong) UIWebView *wkwebView;
 @end
 
 @implementation LCPeixunClassDeailViewController
@@ -28,12 +28,14 @@
         make.right.mas_equalTo(0);
     }];
     
-    self.wkwebView = [WKWebView new];
+    self.wkwebView = [UIWebView new];
+    _wkwebView.backgroundColor = [KDColor getC0Color];
     [self.view addSubview:_wkwebView];
     [_wkwebView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(Lanview.mas_bottom).mas_equalTo(42);
         make.left.right.bottom.mas_equalTo(0);
     }];
+   
     [self.wkwebView loadHTMLString:self.viewModel.descrip baseURL:nil];
     
     UIButton *bt = [UIButton new];

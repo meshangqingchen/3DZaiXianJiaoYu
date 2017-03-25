@@ -19,6 +19,6 @@
 @property(nonatomic,strong) UILabel *couresNLB;
 @property(nonatomic,strong) UILabel *courseNameLB;
 @property(nonatomic,strong) UILabel *courseDLB;
-@property(nonatomic,strong) WKWebView *webView;
+@property(nonatomic,strong) UIWebView *webView;
 //@property(nonatomic,strong) UILabel *courseDetailLB;
 @end

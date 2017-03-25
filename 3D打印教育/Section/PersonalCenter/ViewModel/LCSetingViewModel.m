@@ -20,8 +20,13 @@
     self.shouldNavBackItem = YES;
 }
 
+
 -(void)didSelectRowAtIndexPath:(NSIndexPath *)indexpath in:(UITableView *)tableView{
     if (indexpath.section == 0 &indexpath.row == 0) {
+        if ((self.status != 1)) {
+            [NSObject showWarning:@"请登录"];
+            return;
+        }
         LCChangePasswordViewModel *changePasswordVM = [[LCChangePasswordViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"修改密码"}];
         [self.navigationStackService pushViewModel:changePasswordVM animated:YES];
     }else if (indexpath.section == 0 & indexpath.row == 2){
@@ -29,8 +34,6 @@
         [KDFileManager clearFolderOfContent:[KDFileManager getCachePath] CompleteHandle:^{
             self.dataSource = self.mutableDataArr.copy;
         }];
-        
-        
     }else if (indexpath.section == 0 & indexpath.row == 3){
         WAboutUsViewModel *aboutUS = [[WAboutUsViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"关于我们"}];
         [self.navigationStackService pushViewModel:aboutUS animated:YES];
@@ -44,7 +47,9 @@
             if ([dic[@"status"] isEqualToNumber:@1]) {
                 [self.navigationStackService popViewModelAnimated:YES];
                 LCENCRYPTKEY = nil;
-                [KDFileManager removeUserDataForkey:LCCLOIN_AUTO]; 
+                [KDFileManager removeUserDataForkey:LCCLOIN_AUTO];
+                isMember = NO;
+                memberStopTime = nil;
             }else{
                 LCENCRYPTKEY = temporary;
             }

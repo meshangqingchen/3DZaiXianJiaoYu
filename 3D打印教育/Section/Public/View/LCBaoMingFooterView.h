@@ -22,4 +22,5 @@
 @property(nonatomic,copy) void (^TextViewDidEndDding)(NSString *textViewText);
 @property(nonatomic,copy) void (^showMethodOfpaymentView)();
 
+-(void)hidenZhiFuView:(BOOL)isbool;
 @end

@@ -28,7 +28,7 @@
         baomingVM.price = self.price;
         baomingVM.classIID = self.classIID;
         baomingVM.online_price = self.online_price;
-        
+        baomingVM.baomingTyp = jiChuPeiXun;
 
         [self.navigationStackService pushViewModel:baomingVM animated:YES];
 

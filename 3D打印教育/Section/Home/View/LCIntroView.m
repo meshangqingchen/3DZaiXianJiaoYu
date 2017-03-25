@@ -11,7 +11,7 @@
 #import "LCIntroViewViewModel.h"
 #import "LCAboutYYWebImage.h"
 
-@interface LCIntroView ()<WKNavigationDelegate>
+@interface LCIntroView ()<WKNavigationDelegate,UIWebViewDelegate>
 
 @end
 
@@ -197,32 +197,47 @@
         make.top.mas_equalTo(_courseNameLB.mas_bottom).mas_equalTo(20);
     }];
     
-    self.webView = [WKWebView new];
+    self.webView = [UIWebView new];
     self.webView.scrollView.scrollEnabled = NO;
-    self.webView.navigationDelegate = self;
+    self.webView.delegate = self;
+
     [self addSubview:self.webView];
     
     [self.webView loadHTMLString:IntroViewViewModel.courseDisCription baseURL:nil];
 
 }
 
-- (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation{
-    @weakify(self)
-    [webView evaluateJavaScript:@"document.body.offsetHeight" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
-        @strongify(self)
-        [result doubleValue];
-        
-//        self.webView.height =  [result doubleValue];
-//        self.courseIntroductionCellModel.callBackCell_H([result doubleValue]);
-        [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(54);
-            make.right.mas_equalTo(-54);
-            make.top.mas_equalTo(self.courseDLB.mas_bottom).mas_offset(20);
-            make.height.mas_equalTo([result doubleValue]);
-            make.bottom.mas_equalTo(-27);
-        }];
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    CGFloat sizeHeight = webView.scrollView.contentSize.height;
+    [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(54);
+        make.right.mas_equalTo(-54);
+        make.top.mas_equalTo(self.courseDLB.mas_bottom).mas_offset(20);
+        make.height.mas_equalTo(sizeHeight/2);
+        make.bottom.mas_equalTo(-27);
     }];
 }
+
+//- (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation{
+//    @weakify(self)
+//    
+//   
+//    
+//    [webView evaluateJavaScript:@"document.body.offsetHeight" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+//        @strongify(self)
+//        [result doubleValue];
+//        
+////        self.webView.height =  [result doubleValue];
+////        self.courseIntroductionCellModel.callBackCell_H([result doubleValue]);
+//        [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.mas_equalTo(54);
+//            make.right.mas_equalTo(-54);
+//            make.top.mas_equalTo(self.courseDLB.mas_bottom).mas_offset(20);
+//            make.height.mas_equalTo([result doubleValue]);
+//            make.bottom.mas_equalTo(-27);
+//        }];
+//    }];
+//}
 
 
 @end
