@@ -155,7 +155,7 @@
  */
 - (void)MakePhoneCall{
     
-    NSString *telStr = @"4000079838";
+    NSString *telStr = @"01084783797";
     UIWebView *callWebView = [[UIWebView alloc] init];
     NSURL *telURL          = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",telStr]];
     [callWebView loadRequest:[NSURLRequest requestWithURL:telURL]];
@@ -166,7 +166,7 @@
 - (NSArray *)dataArray{
     
     if (!_dataArray) {
-        _dataArray = @[@[@"官方网址", @"联系电话"],@[@"http://www.wxswjy.com", @"010-84783365"]];
+        _dataArray = @[@[@"官方网址", @"联系电话"],@[@"http://www.wxswjy.com", @"010-84783797"]];
     }
     return _dataArray;
 }
