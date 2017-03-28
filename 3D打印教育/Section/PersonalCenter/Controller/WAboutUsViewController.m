@@ -139,13 +139,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.row == 0) {
-        
-        WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
-        [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.wxswjy.com"]]];
-        [self.view addSubview:webView];
-        
-    }else if(indexPath.row == 1){
+//    if (indexPath.row == 0) {
+//        
+//        WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
+//        [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.wxswjy.com"]]];
+//        [self.view addSubview:webView];
+//        
+//    }else
+    if(indexPath.row == 1){
     
         [self MakePhoneCall];
     }
@@ -155,7 +156,7 @@
  */
 - (void)MakePhoneCall{
     
-    NSString *telStr = @"4000079838";
+    NSString *telStr = @"01084783797";
     UIWebView *callWebView = [[UIWebView alloc] init];
     NSURL *telURL          = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",telStr]];
     [callWebView loadRequest:[NSURLRequest requestWithURL:telURL]];
@@ -166,7 +167,7 @@
 - (NSArray *)dataArray{
     
     if (!_dataArray) {
-        _dataArray = @[@[@"官方网址", @"联系电话"],@[@"http://www.wxswjy.com", @"010-84783365"]];
+        _dataArray = @[@[@"官方网址", @"联系电话"],@[@"http://www.wxswjy.com", @"010-84783797"]];
     }
     return _dataArray;
 }

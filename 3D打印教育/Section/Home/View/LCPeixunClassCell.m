@@ -27,7 +27,7 @@
     self.introduceLB = [UILabel new];
     _introduceLB.textColor = [KDColor getC2Color];
     _introduceLB.font = [[KDFont sharedKDFont] getF44Font];
-    _introduceLB.text = @"3D打印机特色班";
+//    _introduceLB.text = @"3D打印机特色班";
     [self.backImageV addSubview:_introduceLB];
     [_introduceLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_offset(22);
@@ -36,7 +36,7 @@
     
     self.priceLB = [UILabel new];
     [self.backImageV addSubview:_priceLB];
-    _priceLB.text = @"3800";
+//    _priceLB.text = @"3800";
     _priceLB.textColor = [KDColor getC31Color];
     _priceLB.font = [[KDFont sharedKDFont] getF40Font];
     [self.backImageV addSubview:_priceLB];
@@ -46,7 +46,7 @@
     }];
     
     self.timeLB = [UILabel new];
-    _timeLB.text = @"元/5天";
+//    _timeLB.text = @"元/5天";
     _timeLB.textColor = [KDColor getC31Color];
     _timeLB.font = [[KDFont sharedKDFont] getF30Font];
     [self.backImageV addSubview:_timeLB];
