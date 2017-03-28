@@ -139,13 +139,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.row == 0) {
-        
-        WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
-        [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.wxswjy.com"]]];
-        [self.view addSubview:webView];
-        
-    }else if(indexPath.row == 1){
+//    if (indexPath.row == 0) {
+//        
+//        WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
+//        [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.wxswjy.com"]]];
+//        [self.view addSubview:webView];
+//        
+//    }else
+    if(indexPath.row == 1){
     
         [self MakePhoneCall];
     }

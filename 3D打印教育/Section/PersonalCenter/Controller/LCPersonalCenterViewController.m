@@ -42,6 +42,7 @@ static NSString *identifierHeader = @"UITableViewHeaderFooterView";
         [headerView bindViewModel:model];
     }];
     [super viewDidLoad];
+    self.tableView.scrollEnabled = NO;
     
 }
 

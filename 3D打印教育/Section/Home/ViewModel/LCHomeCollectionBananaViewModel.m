@@ -19,7 +19,9 @@
             self.detailURL = [NSURL URLWithString:carouselModel.url];
             self.name = carouselModel.name;
             self.className = @"LCHomeCarousellist";
+            
         }else if ([[model className]isEqualToString:@"LCHomeSignuplist"]){
+            
             LCHomeSignuplist *carouselModel = model;
             self.iid = carouselModel.iid;
             self.imageURL = [NSURL URLWithString:carouselModel.image];

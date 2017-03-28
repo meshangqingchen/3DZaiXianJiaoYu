@@ -37,13 +37,20 @@
     }];
     [bt setImage:[UIImage imageNamed:@"bao_ming"] forState:UIControlStateNormal];
     @weakify(self)
+   
     [bt addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
         @strongify(self)
         !self.viewModel.baoMing ? : self.viewModel.baoMing();
     }];
     if ([self.viewModel.className isEqualToString:@"LCHomeCarousellist"]) {
         bt.hidden = YES;
+        //banner的报名隐藏
     }
+    if ([self.viewModel.params[KEY_TITLE] isEqualToString:@"职业院校"]) {
+        bt.hidden = YES;
+    }
+    
+    
 }
 
 #pragma mark - UIWebViewDelegate
