@@ -88,6 +88,13 @@ static NSString *LCBaoMingTFCellIdf = @"LCBaoMingTFCell";
                 [self.baoMingFotterView.similarCell bindViewModel:mode];
             };
             [_baoMingFotterView hidenZhiFuView:NO];
+            
+            if (ApponlineIng) {
+                _baoMingFotterView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 210);
+                [_baoMingFotterView hidenZhiFuView:YES];
+            }
+            
+            
         }else{
             _baoMingFotterView = [[LCBaoMingFooterView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 210)];
             _baoMingFotterView.TextViewDidEndDding = self.viewModel.TextViewDidEndDding;
