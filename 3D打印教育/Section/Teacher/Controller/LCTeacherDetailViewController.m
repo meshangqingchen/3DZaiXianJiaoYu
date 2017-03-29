@@ -59,7 +59,7 @@
     
     UILabel *nameLB = [UILabel new];
     nameLB.textColor = [KDColor getC0Color];
-    nameLB.font = [[KDFont sharedKDFont] getF32Font];
+    nameLB.font = [[KDFont sharedKDFont] getF34Font];
     [topView addSubview:nameLB];
     [nameLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(headerImageView.mas_top).mas_offset(10);
@@ -68,7 +68,7 @@
     
     UILabel *shortDetail = [UILabel new];
     shortDetail.textColor = [KDColor getC0Color];
-    shortDetail.font = [[KDFont sharedKDFont] getF26Font];
+    shortDetail.font = [[KDFont sharedKDFont] getF32Font];
     shortDetail.numberOfLines = 2;
     [topView addSubview:shortDetail];
     [shortDetail mas_makeConstraints:^(MASConstraintMaker *make) {
