@@ -103,7 +103,7 @@ static NSString *LCBaoMingTFCellIdf = @"LCBaoMingTFCell";
 
 - (LCBaoMingHeaderView *)baoMingHeaderView{
     if (_baoMingHeaderView == nil) {
-        _baoMingHeaderView = [[LCBaoMingHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 45)];
+        _baoMingHeaderView = [[LCBaoMingHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 55)];
         _baoMingHeaderView.titleLB.text = self.viewModel.topTitle;
     }
     return _baoMingHeaderView;

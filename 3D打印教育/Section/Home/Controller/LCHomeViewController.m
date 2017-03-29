@@ -174,7 +174,7 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
     }else if (indexPath.section == 2){
         //SCREEN_WIDTH/750*(622-88)
         //SCREEN_WIDTH/750*413)
-        return CGSizeMake(SCREEN_WIDTH, SCREEN_WIDTH/750*300);
+        return CGSizeMake(SCREEN_WIDTH, 225);
     }else{
         return CGSizeZero;
     }

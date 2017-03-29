@@ -26,7 +26,8 @@
     [_titleLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_offset(15);
         make.right.mas_offset(-15);
-        make.bottom.top.mas_offset(0);
+        make.bottom.mas_offset(0);
+        make.top.mas_offset(10);
     }];
 }
 @end

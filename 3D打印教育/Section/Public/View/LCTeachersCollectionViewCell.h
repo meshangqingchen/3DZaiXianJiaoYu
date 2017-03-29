@@ -7,33 +7,32 @@
 //
 
 #import "BaseCollectionViewCell.h"
-#import "iCarousel.h"
+//#import "iCarousel.h"
 #import "BaseView.h"
 
-@interface TextView : BaseView
-
-@property(nonatomic,strong) UILabel *detailLB;
-@property(nonatomic,strong) UIImageView *backImageView;
-@property(nonatomic,strong) UIImageView *headImageView;
-@property(nonatomic,strong) UILabel *nameLB;
-@property(nonatomic,strong) UILabel *introduceLB;
-@end
-
-@class LCTeachersCollectionViewCell;
-@interface TeacherBackView : BaseView
+//@interface TextView : BaseView
+//
+//@property(nonatomic,strong) UILabel *detailLB;
+//@property(nonatomic,strong) UIImageView *backImageView;
 //@property(nonatomic,strong) UIImageView *headImageView;
 //@property(nonatomic,strong) UILabel *nameLB;
 //@property(nonatomic,strong) UILabel *introduceLB;
-@property(nonatomic,strong) UIButton *leftArrowBT;
-@property(nonatomic,strong) UIButton *rightArrowBT;
-@property(nonatomic,strong) TextView *textView;
+//@end
+
+@class LCTeachersCollectionViewCell;
+@interface TeacherBackView : BaseView
+@property(nonatomic,strong) UIImageView *headImageView;
+@property(nonatomic,strong) UILabel *nameLB;
+@property(nonatomic,strong) UILabel *introduceLB;
+//@property(nonatomic,strong) UIButton *leftArrowBT;
+//@property(nonatomic,strong) UIButton *rightArrowBT;
+//@property(nonatomic,strong) TextView *textView;
 @property(nonatomic,weak)   LCTeachersCollectionViewCell *cell;
 @end
 
-@interface LCTeachersCollectionViewCell : BaseCollectionViewCell <iCarouselDataSource,iCarouselDelegate>
+@interface LCTeachersCollectionViewCell : BaseCollectionViewCell
 @property(nonatomic,strong) TeacherBackView *teacherBackView;
-@property(nonatomic,strong) iCarousel *carousel;
-@property(nonatomic,assign) NSInteger currentItemIndex;
-@property(nonatomic,assign) NSInteger maxNum;
+@property(nonatomic,strong) UIScrollView *scrollView;
+
 @property(nonatomic,strong) NSArray *dataArr;
 @end
