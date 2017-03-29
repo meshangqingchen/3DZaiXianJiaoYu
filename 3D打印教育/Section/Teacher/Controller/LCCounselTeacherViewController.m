@@ -20,7 +20,6 @@
 
 static NSString *identifier = @"LCCounseTeacherCell";
 
-
 @implementation LCCounselTeacherViewController
 @dynamic viewModel,tableView;
 
