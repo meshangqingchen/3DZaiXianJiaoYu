@@ -23,11 +23,11 @@
         self.teacherIID = teacherModel.iid;
         
         NSMutableAttributedString *jianjieAtt = [[NSMutableAttributedString alloc]initWithString:@"简介: "];
-        jianjieAtt.font = [[KDFont sharedKDFont] getF32Font];
+        jianjieAtt.font = [[KDFont sharedKDFont] getF34Font];
         jianjieAtt.color = [KDColor getC2Color];
         
         NSMutableAttributedString *detailAtt = [[NSMutableAttributedString alloc]initWithString:teacherModel.discription];
-        detailAtt.font = [[KDFont sharedKDFont] getF26Font];
+        detailAtt.font = [[KDFont sharedKDFont] getF30Font];
         detailAtt.color = [KDColor getC3Color];
         [detailAtt insertAttributedString:jianjieAtt atIndex:0];
 
