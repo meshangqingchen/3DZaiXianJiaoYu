@@ -28,6 +28,7 @@ static NSString * const identifier = @"LCPeixunClassCell";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.tableHeaderView = [self creatheaderView];
     self.tableView.backgroundColor = [KDColor getC12Color];
+    self.tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 15)];
     [super viewDidLoad];
     
     
