@@ -27,9 +27,7 @@
     @weakify(self)
     [self setBuyMembersCreatOrder:^(NSString *memberCarID,NSString *price) {
         @strongify(self)
-        [self showProgress];
         [self.netApi_Manager buyMemberWithMemberCarID:memberCarID CompleteHandle:^(id responseObj, NSError *error) {
-            [self hideProgress];
             NSString *memberOrder = nil;
             NSNumber *status = responseObj[@"status"];
             NSString *msg = responseObj[@"msg"];

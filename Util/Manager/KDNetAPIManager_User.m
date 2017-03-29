@@ -9,6 +9,7 @@
 #import "KDNetAPIManager_User.h"
 #import "KDNetAPIManager.h"
 #import "KDFileManager.h"
+#import "NSObject+Common.h"
 @implementation KDNetAPIManager_User
 SYNTHESIZE_SINGLETON_FOR_CLASS(KDNetAPIManager_User)
 
@@ -260,8 +261,10 @@ static NSString *const PARAM_educationId      = @"educationId";//报名的ID
 
 //老师列表
 -(NSURLSessionDataTask *)teacherListWith:(NSUInteger)curpage completeHandle:(void (^)(id, NSError *))complete{
+    [self showProgress];
     NSDictionary *params = @{PARAM_curpage:@(curpage),PARAM_page:@14};
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_canQuestionTeacherList encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+        [self hideProgress];
         complete(responseObj,error);
     }];
 }
@@ -269,7 +272,9 @@ static NSString *const PARAM_educationId      = @"educationId";//报名的ID
 //Api_problemTeacherList历史记录
 -(NSURLSessionDataTask *)historyTalkListWith:(NSUInteger)curpage completeHandle:(void (^)(id, NSError *))complete{
     NSDictionary *params = @{PARAM_curpage:@(curpage),PARAM_page:@14};
+    [self showProgress];
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_problemTeacherList encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+        [self hideProgress];
         complete(responseObj,error);
     }];
 }
@@ -278,7 +283,9 @@ static NSString *const PARAM_educationId      = @"educationId";//报名的ID
 //老师详情
 -(NSURLSessionDataTask *)teacherDetailWith:(NSString *)teacherID completeHandle:(void (^)(id, NSError *))complete{
     NSDictionary *params = @{PARAM_teacherId:teacherID};
+    [self showProgress];
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_getDetailByTeacherId encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+        [self hideProgress];
         complete(responseObj,error);
     }];
 }
@@ -296,9 +303,10 @@ static NSString *const PARAM_educationId      = @"educationId";//报名的ID
 
 ////根据课程的分类找课程的list
 -(NSURLSessionDataTask *)courseListWithtypeId:(NSString *)typeId andCurpage:(NSUInteger)curpage completeHandle:(void (^)(id, NSError *))complete{
-    
     NSDictionary *params = @{PARAM_typeId:typeId,PARAM_curpage:@(curpage),PARAM_page:@14};
+    [self showProgress];
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_getPlanListByTypeId encodeParams:params withMethodType:Post andBaseApi:BaseApi_plan completeHandle:^(id responseObj, NSError *error) {
+        [self hideProgress];
         complete(responseObj,error);
     }];
 }
@@ -428,7 +436,9 @@ static NSString *const PARAM_educationId      = @"educationId";//报名的ID
 //收藏课程列表
 -(NSURLSessionDataTask *)collectListWithType:(NSNumber *)collectType andCurpag:(NSUInteger)curpage CompleteHandle:(void (^)(id, NSError *))complete{
     NSDictionary *params = @{PARAM_type:@(1),PARAM_curpage:@(curpage),PARAM_page:@14};
+    [self showProgress];
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_favList encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+        [self hideProgress];
         complete(responseObj,error);
     }];
 }
@@ -458,9 +468,10 @@ static NSString *const PARAM_educationId      = @"educationId";//报名的ID
 
 //首页
 -(NSURLSessionDataTask *)homeJsonCompleteHandle:(void (^)(id, NSError *))complete{
-    
+    [self showProgress];
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_homePage encodeParams:nil withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
+        [self hideProgress];
     }];
 }
 //课程详情 里面有课程视频列表
@@ -504,7 +515,6 @@ static NSString *const PARAM_educationId      = @"educationId";//报名的ID
 }
 ///评价
 -(NSURLSessionDataTask *)evaluateCourse:(NSString *)coursrID andGrade:(int)grade andDes:(NSString *)des CompleteHandle:(void (^)(id, NSError *))complete{
-    
     NSDictionary *params = @{PARAM_planId:coursrID,PARAM_grade:@(grade),PARAM_description:des};
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_addAssess encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
@@ -512,8 +522,10 @@ static NSString *const PARAM_educationId      = @"educationId";//报名的ID
 }
 //课程分类
 -(NSURLSessionDataTask *)planTypeListCompleteHandle:(void (^)(id, NSError *))complete{
+    [self showProgress];
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_planTypeList encodeParams:nil withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
+        [self hideProgress];
     }];
 }
 
@@ -542,7 +554,9 @@ static NSString *const PARAM_educationId      = @"educationId";//报名的ID
 //历史对话
 -(NSURLSessionDataTask *)historyTalkWithTeacherID:(NSString *)teacherID CompleteHandle:(void (^)(id, NSError *))complete{
     NSDictionary *params = @{PARAM_teacherId:teacherID};
+    [self showProgress];
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_problemView encodeParams:params withMethodType:Post andBaseApi:BaseApi_problem completeHandle:^(id responseObj, NSError *error) {
+        [self hideProgress];
         complete(responseObj,error);
     }];
 }
@@ -563,8 +577,9 @@ static NSString *const PARAM_educationId      = @"educationId";//报名的ID
 }
 //我的优惠券列表
 -(NSURLSessionDataTask *)myCouponCompleteHandle:(void (^)(id, NSError *))complete{
-    
+    [self showProgress];
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_myCoupon encodeParams:nil withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+        [self hideProgress];
         complete(responseObj,error);
     }];
 }
@@ -578,16 +593,19 @@ static NSString *const PARAM_educationId      = @"educationId";//报名的ID
 }
 //会员价格表
 -(NSURLSessionDataTask *)memberCardCompleteHandle:(void (^)(id, NSError *))complete{
+    [self showProgress];
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_memberCard encodeParams:nil withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+        [self hideProgress];
         complete(responseObj,error);
     }];
 }
 
 //购买会员 生成订单
 -(NSURLSessionDataTask *)buyMemberWithMemberCarID:(NSString *)memberID CompleteHandle:(void (^)(id, NSError *))complete{
-    
+    [self showProgress];
     NSDictionary *params = @{PARAM_memberCardId:memberID};
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_createMemberOrder encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+        [self hideProgress];
         complete(responseObj,error);
     }];
 }
@@ -608,7 +626,9 @@ static NSString *const PARAM_educationId      = @"educationId";//报名的ID
 //报名课程的list
 -(NSURLSessionDataTask *)getBaoMingClassList:(void (^)(id, NSError *))complete{
     NSDictionary *params = @{PARAM_type:@(1)};
+    [self showProgress];
     return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_getEducationList encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+        [self hideProgress];
         complete(responseObj,error);
     }];
 

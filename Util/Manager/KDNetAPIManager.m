@@ -35,17 +35,6 @@ static dispatch_once_t onceToken;
     return self;
 }
 
-//-(instancetype)initWithBaseURL:(NSURL *)url{
-//    self = [super initWithBaseURL:url];
-//    if (!self) {
-//        return nil;
-//    }
-//    self.requestSerializer.timeoutInterval = kAppNetTimeoutInterval;
-////    self.responseSerializer = [AFJSONResponseSerializer serializer];
-//    self.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/plain", @"text/javascript", @"text/json", @"text/html", nil];
-//    
-//    return self;
-//}
 
 
 -(NSURLSessionDataTask *)requestJsonDataWithPath:(NSString *)aPath encodeParams:(NSDictionary *)params withMethodType:(NetworkMethod)method andBaseApi:(NSString *)baseApi completeHandle:(void (^)(id, NSError *))complete{
