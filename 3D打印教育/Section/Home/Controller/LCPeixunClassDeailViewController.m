@@ -80,7 +80,7 @@
     UILabel *timeLb = [UILabel new];
     timeLb.textColor = [KDColor getC2Color];
     timeLb.font = [[KDFont sharedKDFont] getF28Font];
-    timeLb.text = @"学习时间4";//self.viewModel.name;
+    timeLb.text = [NSString stringWithFormat:@"学习时长%@",self.viewModel.long_time];//@"学习时间4";//self.viewModel.name;
     [leftView addSubview:timeLb];
     [timeLb mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_offset(-5);

@@ -27,7 +27,9 @@ static NSString * const identifier = @"LCPeixunClassCell";
     self.tableView.rowHeight = 135;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.tableHeaderView = [self creatheaderView];
+    self.tableView.backgroundColor = [KDColor getC12Color];
     [super viewDidLoad];
+    
     
 }
 
@@ -37,7 +39,7 @@ static NSString * const identifier = @"LCPeixunClassCell";
     
     CustomBarItem *rightItem = [self.navigationItem setItemWithImage:@"zixunkefu" size:CGSizeMake(22, 22) itemType:right];
     [rightItem  addBlockForControlEvents:UIControlEventTouchUpInside block:^(id sender) {
-        LCZaiXianZiXunViewModel *zixunVM = [[LCZaiXianZiXunViewModel alloc]initWithServices:self.viewModel.navigationStackService params:@{KEY_TITLE:@"在线资讯"}];
+        LCZaiXianZiXunViewModel *zixunVM = [[LCZaiXianZiXunViewModel alloc]initWithServices:self.viewModel.navigationStackService params:@{KEY_TITLE:@"在线咨询"}];
         [self.viewModel.navigationStackService pushViewModel:zixunVM animated:YES];
     }];
 }

@@ -51,7 +51,9 @@ static NSString *const Api_addUserPlan = @"addUserPlan";
 ///评论 课程
 static NSString *const Api_addAssess = @"addAssess";
 ///教师列表
-static NSString *const Api_teacherList = @"teacherList";
+static NSString *const Api_teacherList = @"teacherList";//canQuestionTeacherList//teacherList
+///教师列表
+static NSString *const Api_canQuestionTeacherList = @"canQuestionTeacherList";//canQuestionTeacherList//teacherList/ 在线咨
 ///历史聊天problemTeacherList
 static NSString *const Api_problemTeacherList = @"problemTeacherList";
 ///教师详情
@@ -259,7 +261,7 @@ static NSString *const PARAM_educationId      = @"educationId";//报名的ID
 //老师列表
 -(NSURLSessionDataTask *)teacherListWith:(NSUInteger)curpage completeHandle:(void (^)(id, NSError *))complete{
     NSDictionary *params = @{PARAM_curpage:@(curpage),PARAM_page:@14};
-    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_teacherList encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
+    return [[KDNetAPIManager sharedJsonClient] requestJsonDataWithPath:Api_canQuestionTeacherList encodeParams:params withMethodType:Post andBaseApi:BaseApi_api completeHandle:^(id responseObj, NSError *error) {
         complete(responseObj,error);
     }];
 }

@@ -14,7 +14,7 @@
     
     self.contentView.backgroundColor = [KDColor getC12Color];
     self.backImageV = [UIImageView new];
-    
+    _backImageV.backgroundColor = [KDColor getC26Color];
 //    _backImageV.layer.cornerRadius = 4;
     [self.contentView addSubview:_backImageV];
     [_backImageV mas_makeConstraints:^(MASConstraintMaker *make) {

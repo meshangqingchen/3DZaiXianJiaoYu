@@ -14,9 +14,9 @@
 -(void)setupViews{
     UIView *shadowView = [UIView new];
     shadowView.layer.cornerRadius = 3.5;
-    shadowView.layer.shadowOpacity = 0.5;
+    shadowView.layer.shadowOpacity = 0.3;
     shadowView.layer.shadowOffset = CGSizeMake(0, 1);
-    shadowView.layer.backgroundColor = [KDColor getC2Color].CGColor;
+    shadowView.layer.backgroundColor = [KDColor getC3Color].CGColor;
     [self.contentView addSubview:shadowView];
     [shadowView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.mas_equalTo(6);

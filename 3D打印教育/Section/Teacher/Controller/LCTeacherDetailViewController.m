@@ -69,9 +69,10 @@
     UILabel *shortDetail = [UILabel new];
     shortDetail.textColor = [KDColor getC0Color];
     shortDetail.font = [[KDFont sharedKDFont] getF26Font];
+    shortDetail.numberOfLines = 2;
     [topView addSubview:shortDetail];
     [shortDetail mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_offset(-25);
+        make.bottom.mas_offset(-15);
         make.left.mas_equalTo(headerImageView.mas_right).mas_offset(10);
         make.right.mas_offset(-15);
     }];
@@ -162,8 +163,6 @@
         self.scrollView.height = viewModel.scro_H;
         self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH-50, viewModel.disLB_H);
         detailLB.height = viewModel.disLB_H;
-        
-        
     }];
 }
 
