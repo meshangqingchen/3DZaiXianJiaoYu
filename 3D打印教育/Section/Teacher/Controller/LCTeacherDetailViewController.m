@@ -68,7 +68,7 @@
     
     UILabel *shortDetail = [UILabel new];
     shortDetail.textColor = [KDColor getC0Color];
-    shortDetail.font = [[KDFont sharedKDFont] getF32Font];
+    shortDetail.font = [[KDFont sharedKDFont] getF30Font];
     shortDetail.numberOfLines = 2;
     [topView addSubview:shortDetail];
     [shortDetail mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -99,7 +99,7 @@
     bottomView.backgroundColor = [KDColor getC5Color];
     
     UILabel *wenda = [UILabel new];
-    wenda.font = [[KDFont sharedKDFont] getF26Font];
+    wenda.font = [[KDFont sharedKDFont] getF32Font];
     wenda.textColor = [KDColor getC2Color];
     wenda.text = @"问答:";
     [bottomView addSubview:wenda];
@@ -122,7 +122,7 @@
     zixun.backgroundColor = [KDColor getX1Color];
     [zixun setTitle:@"咨询" forState:0];
     [zixun setTitleColor:[KDColor getC0Color] forState:0];
-    zixun.titleLabel.font = [[KDFont sharedKDFont] getF26Font];
+    zixun.titleLabel.font = [[KDFont sharedKDFont] getF32Font];
     [zixun mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.top.bottom.mas_offset(0);
         make.width.mas_equalTo(90);
@@ -148,17 +148,20 @@
                                    progress:nil
                                   transform:nil
                                  completion:nil];
+        
         nameLB.text = viewModel.teacherName;
         shortDetail.text = viewModel.shortDis;
         detailLB.textLayout = viewModel.disLayout;
         priceLB.text = viewModel.price;
-        if ([viewModel.price isEqualToString:@"0"]) {
+        if (ApponlineIng) {
             priceLB.hidden = YES;
             wenda.hidden = YES;
         }else{
             detailLB.hidden = NO;
             wenda.hidden = NO;
         }
+        
+        
         middleView.height = viewModel.backView_H;
         self.scrollView.height = viewModel.scro_H;
         self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH-50, viewModel.disLB_H);

@@ -43,14 +43,14 @@
         self.disLayout = [YYTextLayout layoutWithContainer:container text:detailAtt];
         self.disLB_H = [modifier heightForLineCount:_disLayout.lines.count];
         
-        if (_disLB_H >= ((SCREEN_HEIGHT-(574/2))-40)) {
-            _scro_H = (SCREEN_HEIGHT-(574/2))-40;
-            _backView_H = (SCREEN_HEIGHT-(574/2));
-            MYLog(@" ++++ + + + + %f",_backView_H);
+        if (_disLB_H >= ((SCREEN_HEIGHT-(500/2))-40)) {
+            _scro_H = (SCREEN_HEIGHT-(500/2))-40;
+            _backView_H = (SCREEN_HEIGHT-(500/2));
+            
         }else{
             _scro_H = _disLB_H;
             _backView_H = _disLB_H+40;
-            MYLog(@" = = == =   %f",_backView_H);
+            
         }
     }
     return self;
