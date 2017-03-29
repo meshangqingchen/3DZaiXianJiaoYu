@@ -111,7 +111,6 @@
 }
 
 -(void)bindViewModel:(id)viewModel{
-
     LCTeacherCollectionCellViewModel *teacherCellVM = viewModel;
     [self.headImageView setImageWithURL:teacherCellVM.headImageURL
                             placeholder:[UIImage imageNamed:@"noLog_Headimage"]
@@ -131,6 +130,8 @@
 -(void)setupViews{
 //    self.scrollView.backgroundColor = [KDColor getC0Color];
     self.scrollView = [UIScrollView new];
+    self.scrollView.showsVerticalScrollIndicator = NO;
+    self.scrollView.showsHorizontalScrollIndicator = NO;
     [self.contentView addSubview:self.scrollView];
     [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);

@@ -37,23 +37,39 @@
     self.headImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 15, 55, 55)];;
     [cardView addSubview:_headImageView];
     
-    // 15
-    self.nickNameLB = [[UILabel alloc]initWithFrame:CGRectMake(_headImageView.right+10, 20, 100, 14)];
-    [cardView addSubview:_nickNameLB];
-    _nickNameLB.textColor = [KDColor getC2Color];
-    _nickNameLB.font = [[KDFont sharedKDFont]getF28Font];
-
-    self.bottomLB = [UILabel new];
-    _bottomLB.text = @"中国3D打印机的前途之无限想象";
-    [cardView addSubview:_bottomLB];
-    _bottomLB.textColor = [KDColor getC2Color];
-    _bottomLB.font = [[KDFont sharedKDFont]getF26Font];
-    [_bottomLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.nickNameLB);
-        make.right.mas_offset(-25);
-        make.bottom.mas_equalTo(-25);
+    UIView *backView = [UIView new];
+    [cardView addSubview:backView];
+    
+    [backView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_offset(self.headImageView.right+10);
+        make.right.mas_offset(0);
+        make.centerY.mas_offset(0);
     }];
     
+    // 15 (_headImageView.right+10, 20, 100, 14)
+    self.nickNameLB = [UILabel new];
+    [backView addSubview:_nickNameLB];
+    _nickNameLB.textColor = [KDColor getC2Color];
+    _nickNameLB.font = [[KDFont sharedKDFont]getF32Font];
+    [_nickNameLB mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_offset(0);
+        make.top.mas_offset(0);
+    }];
+//    _nickNameLB.backgroundColor = [UIColor redColor];
+    
+    self.bottomLB = [UILabel new];
+    _bottomLB.text = @"中国3D打印机的前途之无限想象";
+    [backView addSubview:_bottomLB];
+    _bottomLB.textColor = [KDColor getC2Color];
+    _bottomLB.font = [[KDFont sharedKDFont]getF28Font];
+    _bottomLB.numberOfLines = 2;
+//    _bottomLB.backgroundColor = [UIColor yellowColor];
+    [_bottomLB mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(0);
+        make.right.mas_offset(-25);
+        make.bottom.mas_offset(0);
+        make.top.mas_equalTo(self.nickNameLB.mas_bottom).mas_offset(5);
+    }];
 }
 
 -(void)bindViewModel:(id)viewModel{

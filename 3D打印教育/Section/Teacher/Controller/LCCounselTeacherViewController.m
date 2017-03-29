@@ -32,7 +32,7 @@ static NSString *identifier = @"LCCounseTeacherCell";
     self.tableView.backgroundColor = [KDColor getC19Color];
     [self.view addSubview:self.tableView];
     [self.tableView registerClass:[LCCounseTeacherCell class] forCellReuseIdentifier:identifier];
-
+    self.tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 5)];
     [super viewDidLoad];
     
 }
@@ -62,5 +62,6 @@ static NSString *identifier = @"LCCounseTeacherCell";
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.viewModel didSelectRowAtIndexPath:indexPath in:tableView];
 }
+
 
 @end
