@@ -222,4 +222,10 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)dailifangfa:(NSString *)canshu index:(NSIndexPath *)index{
+
+//    self.viewModel.block(canshu ,index);
+    
+}
 @end

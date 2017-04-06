@@ -11,8 +11,8 @@
 
 @interface KDColor : NSObject
 ///0x999999 回复字体颜色
-+ (UIColor *)getX0Color;
-///0x23dee5 课程蓝色title select 系统导航
++ (UIColor *)getX0Color; 
+///0x23dee5 课程蓝色title select 系统导航 //改变0x2c96ef
 + (UIColor *)getX1Color;
 ///0xffffff 白色
 + (UIColor *)getC0Color;

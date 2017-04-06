@@ -19,10 +19,10 @@
 @implementation LCPersonalCenterHeaderView
 -(void)setupViews{
     
-    self.backgroundColor = [KDColor getC17Color];
+    self.backgroundColor = [KDColor getX1Color];
     
     UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 170)];
-    backView.backgroundColor = [KDColor getC17Color];
+    backView.backgroundColor = [KDColor getX1Color];
     @weakify(self)
     [backView bk_whenTapped:^{
         @strongify(self)

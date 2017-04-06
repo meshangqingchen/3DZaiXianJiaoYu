@@ -49,8 +49,8 @@
     _phoneNumtextField.textColor = [UIColor whiteColor];
     NSString *phoneNumplaceholder= @"手机号";
     NSMutableAttributedString *phoneNumpplaceholderAr = [[NSMutableAttributedString alloc]initWithString:phoneNumplaceholder];
-    [phoneNumpplaceholderAr addAttribute:NSFontAttributeName value:[[KDFont new]getF30Font] range:NSMakeRange(0, phoneNumpplaceholderAr.length)];
-    [phoneNumpplaceholderAr addAttribute:NSForegroundColorAttributeName value:[KDColor getX0Color] range:NSMakeRange(0, phoneNumpplaceholderAr.length)];
+    [phoneNumpplaceholderAr addAttribute:NSFontAttributeName value:[[KDFont new]getF30Font] range:NSMakeRange(0, phoneNumpplaceholderAr.length)];                       
+    [phoneNumpplaceholderAr addAttribute:NSForegroundColorAttributeName value:[KDColor getC12Color] range:NSMakeRange(0, phoneNumpplaceholderAr.length)];
     self.phoneNumtextField.attributedPlaceholder = phoneNumpplaceholderAr;
     [_phoneNumtextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(topLeneView.mas_top).mas_equalTo(0);
@@ -85,7 +85,7 @@
     NSString *passwordplaceholder= @"输入密码";
     NSMutableAttributedString *passwordplaceholderAr = [[NSMutableAttributedString alloc]initWithString:passwordplaceholder];
     [passwordplaceholderAr addAttribute:NSFontAttributeName value:[[KDFont new]getF30Font] range:NSMakeRange(0, passwordplaceholderAr.length)];
-    [passwordplaceholderAr addAttribute:NSForegroundColorAttributeName value:[KDColor getX0Color] range:NSMakeRange(0, passwordplaceholderAr.length)];
+    [passwordplaceholderAr addAttribute:NSForegroundColorAttributeName value:[KDColor getC12Color] range:NSMakeRange(0, passwordplaceholderAr.length)];
     self.passwordTextField.attributedPlaceholder = passwordplaceholderAr;
     [_passwordTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(bottomLeneView.mas_top).mas_equalTo(0);
