@@ -76,15 +76,16 @@
         make.height.mas_equalTo(20);
     }];
     
-    self.introduceLB = [UILabel new];
-    [self addSubview:_introduceLB];
-    _introduceLB.textColor = [KDColor getC3Color];
-    _introduceLB.font = [[KDFont new]getF26Font];
-    _introduceLB.text = @"高级技术讲师";
-    [_introduceLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_offset(0);
-        make.bottom.mas_equalTo(zixunLB.mas_top).mas_offset(-15);
-    }];
+//    self.introduceLB = [UILabel new];
+//    _introduceLB.hidden = YES;
+//    [self addSubview:_introduceLB];
+//    _introduceLB.textColor = [KDColor getC3Color];
+//    _introduceLB.font = [[KDFont new]getF26Font];
+//    _introduceLB.text = @"高级技术讲师";
+//    [_introduceLB mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerX.mas_offset(0);
+//        make.bottom.mas_equalTo(zixunLB.mas_top).mas_offset(-15);
+//    }];
     
     self.nameLB = [UILabel new];
     [self addSubview:_nameLB];
@@ -93,7 +94,7 @@
     _nameLB.text = @"吕文敏";
     [_nameLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(0);
-        make.bottom.mas_equalTo(self.introduceLB.mas_top).mas_offset(-5);
+        make.bottom.mas_equalTo(zixunLB.mas_top).mas_offset(-10);
     }];
     
     
@@ -103,7 +104,6 @@
     [_headImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(0);
         make.bottom.mas_equalTo(self.nameLB.mas_top).mas_offset(-10);
-
         make.width.height.mas_equalTo(55);
     }];
 
@@ -120,7 +120,7 @@
                               transform:nil
                              completion:nil];
     self.nameLB.text = teacherCellVM.name;
-    self.introduceLB.text = teacherCellVM.introduce;
+//    self.introduceLB.text = teacherCellVM.introduce;
 }
 
 @end
@@ -151,7 +151,7 @@
     CGFloat gap = 10.0;
     CGFloat border = 15.0;
     CGFloat itemW = 125.0;
-    CGFloat itemH = 175.0;
+    CGFloat itemH = 150.0;
     
     self.scrollView.contentSize = CGSizeMake(125*n+gap*(n-1)+border*2, itemH);
     for (int i=0; i<n; i++) {

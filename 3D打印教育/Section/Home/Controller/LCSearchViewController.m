@@ -28,19 +28,23 @@ static NSString *identifier = @"LCVideoCollectionViewCell";
 @dynamic viewModel,collectionView;
 - (void)viewDidLoad {
     
-    _tf = [[LCTextFiled alloc]initWithFrame:CGRectMake(30, 7, SCREEN_WIDTH - 80, 30)];
+    _tf = [[LCTextFiled alloc]initWithFrame:CGRectMake(35, 7, SCREEN_WIDTH - 90, 30)];
     _tf.layer.cornerRadius = 15;
-    _tf.backgroundColor = [KDColor getC1Color];
-    _tf.leftView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"fangdajing"]];
+    _tf.backgroundColor = [KDColor getC0Color];
+    _tf.leftView = [[UIImageView alloc]initWithImage:[[UIImage imageNamed:@"fangdajing"]imageByTintColor:[KDColor getC3Color]]];
     _tf.leftViewMode = UITextFieldViewModeAlways;
 
-    _tf.textColor = [KDColor getC0Color];
+
+    
+    
+    _tf.textColor = [KDColor getC3Color];
     _tf.font = [[KDFont sharedKDFont] getF28Font];
     NSString *placeholderString = @"搜一搜";
     
+
     NSMutableAttributedString *placeholder = [[NSMutableAttributedString alloc]initWithString:placeholderString];
     [placeholder addAttribute:NSFontAttributeName value:[[KDFont sharedKDFont] getF28Font] range:NSMakeRange(0, placeholderString.length)];
-    [placeholder addAttribute:NSForegroundColorAttributeName value:[KDColor getC0Color] range:NSMakeRange(0,placeholderString.length)];
+    [placeholder addAttribute:NSForegroundColorAttributeName value:[KDColor getC3Color] range:NSMakeRange(0,placeholderString.length)];
     _tf.attributedPlaceholder = placeholder;
     [self.navigationController.navigationBar addSubview:_tf];
     

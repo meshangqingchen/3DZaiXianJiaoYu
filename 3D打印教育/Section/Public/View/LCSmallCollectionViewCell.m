@@ -23,7 +23,7 @@
 //    self.backImageView.backgroundColor = [KDColor getC26Color];
     [self.contentView addSubview:_backImageView];
     [_backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_offset(15);
+        make.top.mas_offset(10);
         make.centerX.mas_offset(0);
         make.size.mas_equalTo(CGSizeMake(50, 50));
     }];
@@ -34,7 +34,7 @@
     _titleLB.font = [[KDFont sharedKDFont]getF24Font];
     [self.contentView addSubview:_titleLB];
     [_titleLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_offset(-10);
+        make.top.mas_equalTo(self.backImageView.mas_bottom).mas_offset(8);
         make.centerX.mas_offset(0);
         //我的课程
     }];

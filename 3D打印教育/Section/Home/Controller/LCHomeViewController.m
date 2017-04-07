@@ -23,6 +23,7 @@
 #import "LCHomeCollectionSectionModel.h"
 
 //#import "UINavigationItem+CustomItem.h"
+#import "LCZaiXianZiXunViewModel.h"//资讯
 
 #import "LCMyMessageViewModel.h"
 #import "KDFileManager.h"
@@ -56,20 +57,39 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
     logeImageView.image = logeImage;
     [self.navigationController.navigationBar addSubview:logeImageView];
     
-//    CGSize tfsize = CGSizeZero;
+//    _tf = [[LCTextFiled alloc]initWithFrame:SEARCHTEXTFIELD_FREAM];
+//    _tf.delegate = self;
+//    _tf.layer.cornerRadius = 15;
+//    _tf.backgroundColor = [KDColor getC0Color];
+//    
+//    _tf.leftView = [[UIImageView alloc]initWithImage:[[UIImage imageNamed:@"fangdajing"]imageByTintColor:[KDColor getC3Color]]];
+//    _tf.leftViewMode = UITextFieldViewModeAlways;
+//    _tf.text = @"搜索想要的内容";
+//    _tf.textColor = [KDColor getC3Color];
+//    _tf.font = [[KDFont sharedKDFont] getF28Font];
+//    [self.navigationController.navigationBar addSubview:_tf];
     
-    _tf = [[LCTextFiled alloc]initWithFrame:SEARCHTEXTFIELD_FREAM];
-    _tf.delegate = self;
-    _tf.layer.cornerRadius = 15;
-    _tf.backgroundColor = [KDColor getC0Color];
     
-    _tf.leftView = [[UIImageView alloc]initWithImage:[[UIImage imageNamed:@"fangdajing"]imageByTintColor:[KDColor getC3Color]]];
-    _tf.leftViewMode = UITextFieldViewModeAlways;
-    _tf.text = @"搜索想要的内容";
-    _tf.textColor = [KDColor getC3Color];
-    _tf.font = [[KDFont sharedKDFont] getF28Font];
-    [self.navigationController.navigationBar addSubview:_tf];
     
+    UIImage *zixunImage= [UIImage imageNamed:@"zixunkefu"];
+    
+    UIButton *searchBT = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH-88, 0, 44, 44)];
+    [searchBT setImage:[[UIImage imageNamed:@"fangdajing"] imageByResizeToSize:zixunImage.size] forState:0];
+    [self.navigationController.navigationBar addSubview:searchBT];
+    @weakify(self);
+    [searchBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+        @strongify(self)
+        !self.viewModel.searchClick ? : self.viewModel.searchClick();
+    }];
+
+    UIButton *zixunBT = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH-44, 0, 44, 44)];
+    [zixunBT setImage:zixunImage forState:0];
+    [self.navigationController.navigationBar addSubview:zixunBT];
+    [zixunBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+        @strongify(self)
+        LCZaiXianZiXunViewModel *zixunVM = [[LCZaiXianZiXunViewModel alloc]initWithServices:self.viewModel.navigationStackService params:@{KEY_TITLE:@"在线咨询"}];
+        [self.viewModel.navigationStackService pushViewModel:zixunVM animated:YES];
+    }];
 
     _flowLayout = [[UICollectionViewFlowLayout alloc]init];
     self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-(64+49)) collectionViewLayout:_flowLayout];
@@ -99,10 +119,10 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
     [super viewWillAppear:animated];
 }
 
--(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-    !self.viewModel.searchClick ? : self.viewModel.searchClick();
-    return NO;
-}
+//-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+//    !self.viewModel.searchClick ? : self.viewModel.searchClick();
+//    return NO;
+//}
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     
@@ -165,7 +185,7 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
    
     if (indexPath.section == 0) {
         
-        return CGSizeMake(SCREEN_WIDTH/3,SCREEN_WIDTH/3.5);
+        return CGSizeMake(SCREEN_WIDTH/3,90);//SCREEN_WIDTH/3.5
     }else if (indexPath.section == 1 & indexPath.row == 0){
          return CGSizeMake(BIGIMAGEADDTEXT_W, BIGIMAGEADDTEXT_H);
         
@@ -174,7 +194,7 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
     }else if (indexPath.section == 2){
         //SCREEN_WIDTH/750*(622-88)
         //SCREEN_WIDTH/750*413)
-        return CGSizeMake(SCREEN_WIDTH, 225);
+        return CGSizeMake(SCREEN_WIDTH, 200);
     }else{
         return CGSizeZero;
     }

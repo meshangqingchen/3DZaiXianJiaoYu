@@ -31,9 +31,7 @@ return CGRectMake(bounds.origin.x + bounds.size.width - 50, bounds.origin.y + bo
 {
     UIImage *image = [UIImage imageNamed:@"fangdajing"];
     CGRect inset = CGRectMake(bounds.origin.x +15+5+image.size.width, bounds.origin.y, bounds.size.width , bounds.size.height);//更好理解些
-    
     return inset;
-    
 }
 //控制编辑文本的位置
 -(CGRect)editingRectForBounds:(CGRect)bounds

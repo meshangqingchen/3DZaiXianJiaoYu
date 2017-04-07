@@ -23,7 +23,7 @@
 @interface TeacherBackView : BaseView
 @property(nonatomic,strong) UIImageView *headImageView;
 @property(nonatomic,strong) UILabel *nameLB;
-@property(nonatomic,strong) UILabel *introduceLB;
+//@property(nonatomic,strong) UILabel *introduceLB;
 //@property(nonatomic,strong) UIButton *leftArrowBT;
 //@property(nonatomic,strong) UIButton *rightArrowBT;
 //@property(nonatomic,strong) TextView *textView;
