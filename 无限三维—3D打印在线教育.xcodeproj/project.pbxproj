@@ -721,7 +721,7 @@
 		7482451E1E14F8A3004735DB /* LCMessageCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCMessageCellViewModel.m; sourceTree = "<group>"; };
 		748245201E14F8DB004735DB /* LCNotificationCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNotificationCellViewModel.h; sourceTree = "<group>"; };
 		748245211E14F8DB004735DB /* LCNotificationCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNotificationCellViewModel.m; sourceTree = "<group>"; };
-		7485FB061DF90A1B00E6D23D /* 3D打印教育.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "3D打印教育.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7485FB061DF90A1B00E6D23D /* 无限三维—3D打印在线教育.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "无限三维—3D打印在线教育.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7485FB0A1DF90A1B00E6D23D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7485FB0C1DF90A1B00E6D23D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7485FB0D1DF90A1B00E6D23D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -731,10 +731,10 @@
 		7485FB151DF90A1B00E6D23D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7485FB181DF90A1B00E6D23D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7485FB1A1DF90A1B00E6D23D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7485FB1F1DF90A1B00E6D23D /* 3D打印教育Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "3D打印教育Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7485FB1F1DF90A1B00E6D23D /* 无限三维—3D打印在线教育Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "无限三维—3D打印在线教育Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7485FB231DF90A1B00E6D23D /* _D____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_D____Tests.m"; sourceTree = "<group>"; };
 		7485FB251DF90A1B00E6D23D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7485FB2A1DF90A1B00E6D23D /* 3D打印教育UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "3D打印教育UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7485FB2A1DF90A1B00E6D23D /* 无限三维—3D打印在线教育UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "无限三维—3D打印在线教育UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7485FB2E1DF90A1B00E6D23D /* _D____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_D____UITests.m"; sourceTree = "<group>"; };
 		7485FB301DF90A1B00E6D23D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7485FB461DFA7EBE00E6D23D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -1347,9 +1347,9 @@
 		7485FB071DF90A1B00E6D23D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7485FB061DF90A1B00E6D23D /* 3D打印教育.app */,
-				7485FB1F1DF90A1B00E6D23D /* 3D打印教育Tests.xctest */,
-				7485FB2A1DF90A1B00E6D23D /* 3D打印教育UITests.xctest */,
+				7485FB061DF90A1B00E6D23D /* 无限三维—3D打印在线教育.app */,
+				7485FB1F1DF90A1B00E6D23D /* 无限三维—3D打印在线教育Tests.xctest */,
+				7485FB2A1DF90A1B00E6D23D /* 无限三维—3D打印在线教育UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2430,9 +2430,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7485FB051DF90A1B00E6D23D /* 3D打印教育 */ = {
+		7485FB051DF90A1B00E6D23D /* 无限三维—3D打印在线教育 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7485FB331DF90A1B00E6D23D /* Build configuration list for PBXNativeTarget "3D打印教育" */;
+			buildConfigurationList = 7485FB331DF90A1B00E6D23D /* Build configuration list for PBXNativeTarget "无限三维—3D打印在线教育" */;
 			buildPhases = (
 				532337754077B5F6A324933C /* [CP] Check Pods Manifest.lock */,
 				7485FB021DF90A1B00E6D23D /* Sources */,
@@ -2445,14 +2445,14 @@
 			);
 			dependencies = (
 			);
-			name = "3D打印教育";
+			name = "无限三维—3D打印在线教育";
 			productName = "3D打印教育";
-			productReference = 7485FB061DF90A1B00E6D23D /* 3D打印教育.app */;
+			productReference = 7485FB061DF90A1B00E6D23D /* 无限三维—3D打印在线教育.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7485FB1E1DF90A1B00E6D23D /* 3D打印教育Tests */ = {
+		7485FB1E1DF90A1B00E6D23D /* 无限三维—3D打印在线教育Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7485FB361DF90A1B00E6D23D /* Build configuration list for PBXNativeTarget "3D打印教育Tests" */;
+			buildConfigurationList = 7485FB361DF90A1B00E6D23D /* Build configuration list for PBXNativeTarget "无限三维—3D打印在线教育Tests" */;
 			buildPhases = (
 				4BBBB38BBED76BA1DE282399 /* [CP] Check Pods Manifest.lock */,
 				7485FB1B1DF90A1B00E6D23D /* Sources */,
@@ -2466,14 +2466,14 @@
 			dependencies = (
 				7485FB211DF90A1B00E6D23D /* PBXTargetDependency */,
 			);
-			name = "3D打印教育Tests";
+			name = "无限三维—3D打印在线教育Tests";
 			productName = "3D打印教育Tests";
-			productReference = 7485FB1F1DF90A1B00E6D23D /* 3D打印教育Tests.xctest */;
+			productReference = 7485FB1F1DF90A1B00E6D23D /* 无限三维—3D打印在线教育Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		7485FB291DF90A1B00E6D23D /* 3D打印教育UITests */ = {
+		7485FB291DF90A1B00E6D23D /* 无限三维—3D打印在线教育UITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7485FB391DF90A1B00E6D23D /* Build configuration list for PBXNativeTarget "3D打印教育UITests" */;
+			buildConfigurationList = 7485FB391DF90A1B00E6D23D /* Build configuration list for PBXNativeTarget "无限三维—3D打印在线教育UITests" */;
 			buildPhases = (
 				619936B583BA30E448F7D56E /* [CP] Check Pods Manifest.lock */,
 				7485FB261DF90A1B00E6D23D /* Sources */,
@@ -2487,9 +2487,9 @@
 			dependencies = (
 				7485FB2C1DF90A1B00E6D23D /* PBXTargetDependency */,
 			);
-			name = "3D打印教育UITests";
+			name = "无限三维—3D打印在线教育UITests";
 			productName = "3D打印教育UITests";
-			productReference = 7485FB2A1DF90A1B00E6D23D /* 3D打印教育UITests.xctest */;
+			productReference = 7485FB2A1DF90A1B00E6D23D /* 无限三维—3D打印在线教育UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -2518,7 +2518,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7485FB011DF90A1B00E6D23D /* Build configuration list for PBXProject "3D打印教育" */;
+			buildConfigurationList = 7485FB011DF90A1B00E6D23D /* Build configuration list for PBXProject "无限三维—3D打印在线教育" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -2531,9 +2531,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7485FB051DF90A1B00E6D23D /* 3D打印教育 */,
-				7485FB1E1DF90A1B00E6D23D /* 3D打印教育Tests */,
-				7485FB291DF90A1B00E6D23D /* 3D打印教育UITests */,
+				7485FB051DF90A1B00E6D23D /* 无限三维—3D打印在线教育 */,
+				7485FB1E1DF90A1B00E6D23D /* 无限三维—3D打印在线教育Tests */,
+				7485FB291DF90A1B00E6D23D /* 无限三维—3D打印在线教育UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -3042,12 +3042,12 @@
 /* Begin PBXTargetDependency section */
 		7485FB211DF90A1B00E6D23D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7485FB051DF90A1B00E6D23D /* 3D打印教育 */;
+			target = 7485FB051DF90A1B00E6D23D /* 无限三维—3D打印在线教育 */;
 			targetProxy = 7485FB201DF90A1B00E6D23D /* PBXContainerItemProxy */;
 		};
 		7485FB2C1DF90A1B00E6D23D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7485FB051DF90A1B00E6D23D /* 3D打印教育 */;
+			target = 7485FB051DF90A1B00E6D23D /* 无限三维—3D打印在线教育 */;
 			targetProxy = 7485FB2B1DF90A1B00E6D23D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -3256,7 +3256,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "lcc.-D----Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/3D打印教育.app/3D打印教育";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/无限三维—3D打印在线教育.app/无限三维—3D打印在线教育";
 			};
 			name = Debug;
 		};
@@ -3269,7 +3269,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "lcc.-D----Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/3D打印教育.app/3D打印教育";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/无限三维—3D打印在线教育.app/无限三维—3D打印在线教育";
 			};
 			name = Release;
 		};
@@ -3300,7 +3300,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7485FB011DF90A1B00E6D23D /* Build configuration list for PBXProject "3D打印教育" */ = {
+		7485FB011DF90A1B00E6D23D /* Build configuration list for PBXProject "无限三维—3D打印在线教育" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7485FB311DF90A1B00E6D23D /* Debug */,
@@ -3309,7 +3309,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7485FB331DF90A1B00E6D23D /* Build configuration list for PBXNativeTarget "3D打印教育" */ = {
+		7485FB331DF90A1B00E6D23D /* Build configuration list for PBXNativeTarget "无限三维—3D打印在线教育" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7485FB341DF90A1B00E6D23D /* Debug */,
@@ -3318,7 +3318,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7485FB361DF90A1B00E6D23D /* Build configuration list for PBXNativeTarget "3D打印教育Tests" */ = {
+		7485FB361DF90A1B00E6D23D /* Build configuration list for PBXNativeTarget "无限三维—3D打印在线教育Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7485FB371DF90A1B00E6D23D /* Debug */,
@@ -3327,7 +3327,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7485FB391DF90A1B00E6D23D /* Build configuration list for PBXNativeTarget "3D打印教育UITests" */ = {
+		7485FB391DF90A1B00E6D23D /* Build configuration list for PBXNativeTarget "无限三维—3D打印在线教育UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7485FB3A1DF90A1B00E6D23D /* Debug */,

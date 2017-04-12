@@ -19,7 +19,7 @@
 
 + (UIColor *)getX1Color
 {
-    return kUIColorRGB16(0x2c96ef);
+    return kUIColorRGB16(0x0096ff);
 }
 
 + (UIColor *)getC0Color {

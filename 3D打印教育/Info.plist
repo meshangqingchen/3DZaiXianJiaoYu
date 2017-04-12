@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>Chinese</string>
 	<key>CFBundleDisplayName</key>
-	<string>无限教育</string>
+	<string>无限三维—3D打印在线教育</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
