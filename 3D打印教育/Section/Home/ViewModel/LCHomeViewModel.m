@@ -86,6 +86,7 @@
         @strongify(self)
         LCTeacherDetailViewModel *teacherDeatilVM = [[LCTeacherDetailViewModel alloc]initWithServices:self.navigationStackService params:@{KEY_TITLE:@"讲师详情"}];
         teacherDeatilVM.teacherID = teacherID;
+        teacherDeatilVM.frome = hiddenFromTYP;
         [self.navigationStackService pushViewModel:teacherDeatilVM animated:YES];
     }];
     __block int a = 0;

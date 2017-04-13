@@ -18,6 +18,8 @@
 @implementation LCVideoDetailEvaluateCell
 -(void)setupViews{
     self.headerImgView = [[UIImageView alloc]initWithFrame:CGRectMake(15, 15, 40, 40)];
+    self.headerImgView.layer.cornerRadius = 20.0;
+    self.headerImgView.layer.backgroundColor = [KDColor getC26Color].CGColor;
     self.headerImgView.userInteractionEnabled = YES;
 //    [_headerImgView bk_whenTapped:^{
 //        !self.evaluateCellViewModel.headerImageViewClick ? : self.evaluateCellViewModel.headerImageViewClick(@"userID");

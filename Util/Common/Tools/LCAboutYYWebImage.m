@@ -50,7 +50,7 @@
                 CGFloat min = MIN(image.size.width, image.size.height);
                 newImg = [image imageByResizeToSize:CGSizeMake(min, min) contentMode:UIViewContentModeCenter];
             }
-            UIImage *imgg = [newImg imageByRoundCornerRadius:newImg.size.width/2 borderWidth:10 borderColor:[KDColor getX1Color]];
+            UIImage *imgg = [newImg imageByRoundCornerRadius:newImg.size.width/2 borderWidth:0 borderColor:[KDColor getX1Color]];
             return imgg; // a large value
         };
     });
@@ -74,7 +74,7 @@
                 newImg = [image imageByResizeToSize:CGSizeMake(min, min) contentMode:UIViewContentModeScaleAspectFill];
             }
             
-            UIImage *imgg = [newImg imageByRoundCornerRadius:newImg.size.width/2 borderWidth:newImg.size.width/50 borderColor:[KDColor getX1Color]];
+            UIImage *imgg = [newImg imageByRoundCornerRadius:newImg.size.width/2 borderWidth:0 borderColor:[KDColor getX1Color]];
             return imgg; // a large value
         };
     });

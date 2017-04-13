@@ -153,6 +153,7 @@
         shortDetail.text = viewModel.shortDis;
         detailLB.textLayout = viewModel.disLayout;
         priceLB.text = viewModel.price;
+        
         if (ApponlineIng) {
             priceLB.hidden = YES;
             wenda.hidden = YES;
@@ -161,6 +162,11 @@
             wenda.hidden = NO;
         }
         
+        if (self.viewModel.frome == showFromTYP) {
+            bottomView.hidden = NO;
+        }else if (self.viewModel.frome == hiddenFromTYP){
+            bottomView.hidden = YES;
+        }
         
         middleView.height = viewModel.backView_H;
         self.scrollView.height = viewModel.scro_H;

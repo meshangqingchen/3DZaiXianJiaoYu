@@ -8,8 +8,17 @@
 
 #import "BaseViewModel.h"
 
+typedef enum{
+    showFromTYP,
+    hiddenFromTYP
+}FromeTYP;
+
+
+
+
 @interface LCTeacherDetailViewModel : BaseViewModel
 @property(nonatomic,strong) NSString *teacherID;
+@property(nonatomic,assign) FromeTYP frome;
 @property(nonatomic,copy) void (^networkRequests)(NSString *teacherID);
 @property(nonatomic,copy) void (^bingViewModel)(id viewModel);
 

@@ -65,7 +65,7 @@
     zixunLB.layer.cornerRadius = 3.0;
     zixunLB.layer.borderColor = [KDColor getX1Color].CGColor;
     zixunLB.layer.borderWidth = 1.0;
-    zixunLB.text = @"咨询";
+    zixunLB.text = @"详情";
     zixunLB.textAlignment = NSTextAlignmentCenter;
     
     [self addSubview:zixunLB];
@@ -101,6 +101,9 @@
     
     self.headImageView = [UIImageView new];
     [self addSubview:_headImageView];
+    self.headImageView.layer.cornerRadius = 55/2;
+    self.headImageView.layer.backgroundColor = [KDColor getC26Color].CGColor;
+    
     [_headImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(0);
         make.bottom.mas_equalTo(self.nameLB.mas_top).mas_offset(-10);
