@@ -71,11 +71,11 @@ static NSString *identifierBannerHeader = @"LCCollectionReusableBannerHeaderView
     
     
     
-    UIImage *zixunImage= [UIImage imageNamed:@"zixunkefu"];
+    UIImage *zixunImage= [[UIImage imageNamed:@"zixunkefu"]imageByResizeToSize:CGSizeMake(23, 23)];
     
     UIButton *searchBT = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH-88, 0, 44, 44)];
     
-    [searchBT setImage:[UIImage imageNamed:@"shouyefangdajing"] forState:0];
+    [searchBT setImage:[[UIImage imageNamed:@"shouyefangdajing"]imageByResizeToSize:CGSizeMake(23, 23)] forState:0];
     [self.navigationController.navigationBar addSubview:searchBT];
     @weakify(self);
     [searchBT addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
