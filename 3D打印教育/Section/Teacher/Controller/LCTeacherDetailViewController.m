@@ -95,6 +95,7 @@
     
     UIView *bottomView = [UIView new];
     [self.view addSubview:bottomView];
+    bottomView.hidden = YES;
     bottomView.frame = CGRectMake(0, SCREEN_HEIGHT-49, SCREEN_WIDTH, 49);
     bottomView.backgroundColor = [KDColor getC5Color];
     

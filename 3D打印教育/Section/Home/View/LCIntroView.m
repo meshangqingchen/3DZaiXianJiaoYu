@@ -70,6 +70,19 @@
         make.centerX.mas_equalTo(0);
         make.width.height.mas_equalTo(55);
     }];
+    
+    self.teacherName = [UILabel new];
+    _teacherName.text = @"name";
+    _teacherName.textColor = [KDColor getC2Color];
+    _teacherName.font = [[KDFont sharedKDFont]getF30Font];
+    [self addSubview:_teacherName];
+    [_teacherName mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.mas_equalTo(topLV.mas_bottom).mas_offset(20);
+        make.left.mas_equalTo(self.headerImageV.mas_right).mas_offset(10);
+//        make.width.height.mas_equalTo(55);
+        make.bottom.mas_equalTo(self.headerImageV.mas_bottom).mas_equalTo(-10);
+    }];
+
 }
 
 -(void)bindViewModel:(id)viewModel{
@@ -96,7 +109,7 @@
                                progress:nil
                               transform:nil
                             completion:nil];
-    
+    self.teacherName.text = IntroViewViewModel.teacherName;
 //    @property(nonatomic,strong) NSString *favCount;
 //    @property(nonatomic,strong) NSURL *teacherHeaderURL;
 //    @property(nonatomic,strong) NSArray *teacherShaortDiscriptions;

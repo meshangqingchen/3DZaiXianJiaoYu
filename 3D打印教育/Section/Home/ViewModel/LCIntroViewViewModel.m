@@ -16,6 +16,7 @@
         self.favCount = homeDetailModel.contents.fav_count;
         self.teacherHeaderURL = [NSURL URLWithString:homeDetailModel.contents.teacher.avatar];
         self.teacherShaortDiscriptions = homeDetailModel.contents.teacher.shot_discription;
+        self.teacherName = homeDetailModel.contents.teacher.nick_name;
         self.courseNamel = homeDetailModel.contents.name;
         self.courseDisCription = homeDetailModel.contents.des;
     }

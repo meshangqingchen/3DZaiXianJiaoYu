@@ -13,6 +13,7 @@
 @property(nonatomic,strong) NSString *favCount;
 @property(nonatomic,strong) NSURL *teacherHeaderURL;
 @property(nonatomic,strong) NSArray *teacherShaortDiscriptions;
+@property(nonatomic,strong) NSString *teacherName;
 @property(nonatomic,strong) NSString *courseNamel;
 @property(nonatomic,strong) NSString *courseDisCription;
 

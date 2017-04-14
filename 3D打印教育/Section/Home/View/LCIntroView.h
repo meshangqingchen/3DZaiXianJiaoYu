@@ -14,6 +14,7 @@
 @property(nonatomic,strong) UILabel *numCollectLB;
 @property(nonatomic,strong) UIImageView *jsJJImageV;
 @property(nonatomic,strong) UIImageView *headerImageV;
+@property(nonatomic,strong) UILabel *teacherName;
 @property(nonatomic,strong) UIImageView *cJJImageV;
 
 @property(nonatomic,strong) UILabel *couresNLB;
